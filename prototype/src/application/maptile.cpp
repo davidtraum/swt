@@ -3,12 +3,19 @@
 #include <QBrush>
 #include <QColor>
 
+/**
+ * @brief MapTile::MapTile Konstruktor.
+ */
 MapTile::MapTile()
 {
     pixmapItem = new QGraphicsPixmapItem();
     currentRotation = 0;
 }
 
+/**
+ * @brief MapTile::setType Setzt den Typ der Kachel.
+ * @param pType Der Typ.
+ */
 void MapTile::setType(MapTile::TYPE pType){
     switch(pType){
         case MapTile::TYPE::GRASS:
@@ -51,6 +58,10 @@ void MapTile::setType(MapTile::TYPE pType){
     type = pType;
 }
 
+/**
+ * @brief MapTile::getType Liefert den Typ des Quadranten.
+ * @return Den Typ.
+ */
 MapTile::TYPE MapTile::getType(){
     return type;
 }
@@ -78,12 +89,20 @@ void MapTile::setRotation(int pRotation){
     currentRotation = pRotation;
 }
 
+/**
+ * @brief MapTile::getRotation Liefert die aktuelle Rotation. (Himmelsrichtung)
+ * @return Die aktuelle Rotation (0-3)
+ */
 int MapTile::getRotation(){
     return currentRotation;
 }
 
 
 
+/**
+ * @brief MapTile::isRiver Checkt ob die Kachel ein Fluss ist.
+ * @return Ob die Kachel ein Fluss ist.
+ */
 bool MapTile::isRiver(){
     return type!=MapTile::TYPE::RIVER_H
             && type!=MapTile::TYPE::RIVER_V
@@ -93,11 +112,21 @@ bool MapTile::isRiver(){
             && type!=MapTile::TYPE::RIVER_RT;
 }
 
+/**
+ * @brief MapTile::setup Setzt Typ und Pixelposition der Kachel.
+ * @param pType Typ der Kachel.
+ * @param posX Position.
+ * @param posY Position.
+ */
 void MapTile::setup(MapTile::TYPE pType, int posX, int posY){
     setType(pType);
     pixmapItem->setPos(posX, posY);
 }
 
+/**
+ * @brief MapTile::getPixmapItem Liefert das Pixmap Item.
+ * @return Das Pixmap Item.
+ */
 QGraphicsPixmapItem * MapTile::getPixmapItem(){
     return pixmapItem;
 }

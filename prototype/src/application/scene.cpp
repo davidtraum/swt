@@ -3,6 +3,9 @@
 #include <QPen>
 
 
+/**
+ * @brief Scene::Scene Konstruktor
+ */
 Scene::Scene()
 {
     QGraphicsScene::setSceneRect(0,0, MAP_SIZE*TILE_SIZE, MAP_SIZE*TILE_SIZE);
@@ -87,6 +90,11 @@ void Scene::generateWorld(){
     QGraphicsScene::addItem(highlighter);
 }
 
+
+/**
+ * @brief Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen.
+ * @param pItem Ein Grafikitem zu dem die Methode den zugehörigen Maptile bestimmt.
+ */
 void Scene::setActiveTile(QGraphicsItem *pItem){
     if(activeTile != nullptr){
         //Alten aktiven Quadrant zurücksetzen.

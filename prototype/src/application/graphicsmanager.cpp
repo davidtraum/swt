@@ -3,6 +3,9 @@
 #include "graphicsmanager.h"
 
 
+/**
+ * @brief GraphicsManager::GraphicsManager Lädt alle Grafiken. Neue bitte im selben Stil ergänzen.
+ */
 GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("grass", QPixmap::fromImage(QImage(":/images/grass.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("wald", QPixmap::fromImage(QImage(":/images/wald.png"))));
@@ -18,6 +21,11 @@ GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("schiene_h", QPixmap::fromImage(QImage(":/images/schienen/schiene_h.png"))));
 }
 
+/**
+ * @brief GraphicsManager::get Liefert eine Grafik mit einem bestimmten Namen.
+ * @param key Name der Grafik.
+ * @return  Die Grafik.
+ */
 QPixmap GraphicsManager::get(std::string key){
     return GRAPHICS[key];
 }

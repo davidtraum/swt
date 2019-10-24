@@ -6,6 +6,10 @@
 #include <QString>
 #include <QGraphicsItem>
 
+/**
+ * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
+ * @param pScene Das Zugehörige Szenenobjekt.
+ */
 View::View(Scene * pScene)
 {
     scene = pScene;
@@ -17,6 +21,10 @@ View::View(Scene * pScene)
 }
 
 
+/**
+ * @brief View::mousePressEvent QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde.
+ * @param event Enthält Informationen über die Taste und Position.
+ */
 void View::mousePressEvent(QMouseEvent *event){
     View::dragOriginX = event->x();
     View::dragOriginY = event->y();
@@ -26,6 +34,10 @@ void View::mousePressEvent(QMouseEvent *event){
 }
 
 
+/**
+ * @brief View::mouseReleaseEvent QT Methode. Wird aufgerufen wenn die Maus losgelassen wird.
+ * @param event Informationen über Position und Taste
+ */
 void View::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
@@ -53,6 +65,10 @@ void View::mouseReleaseEvent(QMouseEvent *event)
     mouseDown = false;
 }
 
+/**
+ * @brief View::mouseMoveEvent QT Methode. Wird aufgerufen wenn die Maus bewegt wird.
+ * @param event Informationen über Position der Maus
+ */
 void View::mouseMoveEvent(QMouseEvent *event)
 {
     if(mouseDown){
@@ -68,6 +84,10 @@ void View::mouseMoveEvent(QMouseEvent *event)
     }
 }
 
+/**
+ * @brief View::wheelEvent QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird.
+ * @param event Eventobjekt mit Infos. Wichtig: event->delta(): Positiv oder negativ jenachdem in welche Richtung gedreht wurde.
+ */
 void View::wheelEvent(QWheelEvent *event)
 {
    if(event->delta()>0){
@@ -84,6 +104,10 @@ void View::wheelEvent(QWheelEvent *event)
    qDebug() << "[EVENT] Skalierung geändert.";
 }
 
+/**
+ * @brief View::keyPressEvent QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird.
+ * @param event Event mit Informationen. Wichtig: event->text(): Text der Taste und event->key(): Id der Taste
+ */
 void View::keyPressEvent(QKeyEvent *event){
     if(event->text()[0]=='g'){
 
