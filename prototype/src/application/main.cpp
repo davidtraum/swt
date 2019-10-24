@@ -1,11 +1,10 @@
-#include "mainwindow.h"
-
 #include <QApplication>
 #include <QMenuBar>
 #include <QDebug>
 #include <QAction>
 #include <QTextItem>
 
+#include "mainwindow.h"
 #include "main.h"
 #include "view.h"
 #include "scene.h"

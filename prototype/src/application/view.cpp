@@ -25,6 +25,7 @@ void View::mousePressEvent(QMouseEvent *event){
     mouseDown = true;
 }
 
+
 void View::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
@@ -32,7 +33,9 @@ void View::mouseReleaseEvent(QMouseEvent *event)
         QGraphicsItem * clickedItem = View::itemAt(event->pos());
         MapTile * clickedTile = scene->getTileAt(int(clickedItem->x()), int(clickedItem->y()), true); //Der Quadrant der angeklickt wurde.
         if(event->button() == Qt::LeftButton){ //Linksklick
-            clickedTile->setType(MapTile::TYPE::RAIL_H);
+            if(clickedTile->getType() == MapTile::TYPE::GRASS){
+                clickedTile->setType(MapTile::TYPE::RAIL_H);
+            }
             qDebug() << "[EVENT] Linksklick.";
         }else{ //Rechtsklick
             if(clickedTile->getType()==MapTile::TYPE::RAIL_H){

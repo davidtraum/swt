@@ -45,6 +45,7 @@ void MapTile::setType(MapTile::TYPE pType){
 
         case MapTile::TYPE::RAIL_H:
             pixmapItem->setPixmap(graphics->GRAPHICS["schiene_h"]);
+            pixmapItem->setToolTip("Schiene");
             break;
     }
     type = pType;
