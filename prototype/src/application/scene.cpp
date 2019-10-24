@@ -1,9 +1,20 @@
 #include "scene.h"
 #include <QDebug>
+#include <QPen>
+
 
 Scene::Scene()
 {
     QGraphicsScene::setSceneRect(0,0, MAP_SIZE*TILE_SIZE, MAP_SIZE*TILE_SIZE);
+    activeTile = nullptr;
+
+    highlighter = new QGraphicsRectItem();
+    highlighter->setRect(0,0,TILE_SIZE,TILE_SIZE);
+    QPen * outline = new QPen();
+    outline->setColor(QColor(Qt::white));
+    outline->setWidth(2);
+    highlighter->setPen(*outline);
+    highlighter->setZValue(2);
 }
 
 /**
@@ -13,7 +24,6 @@ void Scene::generateWorld(){
     QGraphicsScene::clear();
 
     //Hier wird die Landschaft generiert.
-    MapTile data[Scene::MAP_SIZE][Scene::MAP_SIZE]{};
     for(int x = 0; x<MAP_SIZE; x++){
         for(int y = 0; y<MAP_SIZE; y++){
             int random = std::rand()%100;
@@ -71,5 +81,29 @@ void Scene::generateWorld(){
                 dir*=-1; //Richtung wird umgekehrt
             }
         }while(posX < MAP_SIZE && posX>=0 && posY<MAP_SIZE && posY>=0);
+    }
+
+    //Sonderfunktionen werden hinzugefügt
+    QGraphicsScene::addItem(highlighter);
+}
+
+void Scene::setActiveTile(QGraphicsItem *pItem){
+    if(activeTile != nullptr){
+        //Alten aktiven Quadrant zurücksetzen.
+    }
+    activeTile = &data[int(pItem->x()/TILE_SIZE)][int(pItem->y()/TILE_SIZE)];
+    highlighter->setPos(pItem->pos());
+}
+
+/**
+ * @brief Scene::getTileAt Liefert ein MapTile anhand der Pixel-Koordinaten.
+ * @param posX Die X-Koordinate
+ * @param posY Die Y-Koordinate
+ */
+MapTile * Scene::getTileAt(int posX, int posY, bool isPixelCoordinate){
+    if(isPixelCoordinate){
+        return &data[int(posX/TILE_SIZE)][int(posY/TILE_SIZE)];
+    }else{
+        return &data[posX][posY];
     }
 }

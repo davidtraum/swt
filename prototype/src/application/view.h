@@ -2,12 +2,16 @@
 #define VIEW_H
 
 #include <QGraphicsView>
+#include "main.h"
+#include "scene.h"
 
 class View: public QGraphicsView
 {
 public:
-    View();
-    int dragOriginX,dragOriginY;
+    Scene * scene;
+    View(Scene * pScene);
+    int dragOriginX,dragOriginY,dragPosX,dragPosY;
+    bool mouseDown;
     double currentScale{1.0};
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;

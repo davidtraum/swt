@@ -4,6 +4,7 @@
 #include <QMenuBar>
 #include <QDebug>
 #include <QAction>
+#include <QTextItem>
 
 #include "main.h"
 #include "view.h"
@@ -25,10 +26,7 @@ int main(int argc, char *argv[])
 
     w.setWindowTitle("Railroad Tycoon Prototyp");
     w.setFixedSize(1000,600);
-
-    QMenu * menu = w.menuBar()->addMenu("Spiel");
-    QMenu * map = menu->addMenu("Karte");
-    w.menuBar()->addMenu("Einstellungen");
+    w.setWindowIcon(QIcon(":/images/schienen/schiene_h.png"));
 
     graphics = new GraphicsManager();
 
@@ -38,10 +36,12 @@ int main(int argc, char *argv[])
     scene = new Scene();
     scene->generateWorld();
 
-    view = new View();
+    view = new View(scene);
     view->setScene(scene);
 
     w.setCentralWidget(view);
+
+    w.menuBar()->addMenu("Spiel")->addMenu("Karte")->addMenu("Neue Karte generieren");
 
 
     w.show();

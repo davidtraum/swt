@@ -7,9 +7,12 @@
 class MapTile
 {
 public:
-    enum TYPE{GRASS,FORREST,CITY, RIVER_H,RIVER_V,RIVER_LB,RIVER_LT,RIVER_RT,RIVER_RB};
+    enum TYPE{GRASS,FORREST,CITY, RIVER_H,RIVER_V,RIVER_LB,RIVER_LT,RIVER_RT,RIVER_RB, RAIL_H};
     MapTile();
     void setType(TYPE pType);
+    TYPE getType();
+    void setRotation(int pRotation);
+    int getRotation();
     void setup(TYPE pType, int posX, int posY);
     bool isRiver();
     QGraphicsPixmapItem * getPixmapItem();
@@ -17,6 +20,7 @@ public:
 private:
     TYPE type;
     QGraphicsPixmapItem * pixmapItem;
+    int currentRotation;
 };
 
 #endif // MAPTILE_H

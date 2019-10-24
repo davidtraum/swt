@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include "graphicsmanager.h"
+#include <QLabel>
 
 extern GraphicsManager * graphics;
 
