@@ -109,7 +109,11 @@ void View::wheelEvent(QWheelEvent *event)
  * @param event Event mit Informationen. Wichtig: event->text(): Text der Taste und event->key(): Id der Taste
  */
 void View::keyPressEvent(QKeyEvent *event){
-    if(event->text()[0]=='g'){
-
+    if(event->key() == Qt::Key_F11){
+        if(mainWindow->isFullScreen()){
+            mainWindow->showNormal();
+        }else{
+            mainWindow->showFullScreen();
+        }
     }
 }

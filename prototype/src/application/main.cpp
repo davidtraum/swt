@@ -11,6 +11,7 @@
 #include "graphicsmanager.h"
 
 GraphicsManager * graphics;
+MainWindow * mainWindow;
 /**
  * @brief main Startmethode.
  * @param argc Anzahl der Parameter
@@ -21,11 +22,10 @@ int main(int argc, char *argv[])
 {
     qDebug() << "Spiel wird gestartet.";
     QApplication a(argc, argv);
-    MainWindow w;
+    mainWindow = new MainWindow();
 
-    w.setWindowTitle("Railroad Tycoon Prototyp");
-    w.setFixedSize(1000,600);
-    w.setWindowIcon(QIcon(":/images/schienen/schiene_h.png"));
+    mainWindow->setWindowTitle("Railroad Tycoon Prototyp");
+    mainWindow->setWindowIcon(QIcon(":/images/schienen/schiene_h.png"));
 
     graphics = new GraphicsManager();
 
@@ -38,11 +38,11 @@ int main(int argc, char *argv[])
     view = new View(scene);
     view->setScene(scene);
 
-    w.setCentralWidget(view);
+    mainWindow->setCentralWidget(view);
 
-    w.menuBar()->addMenu("Spiel")->addMenu("Karte")->addMenu("Neue Karte generieren");
+    mainWindow->menuBar()->addMenu("Spiel")->addMenu("Karte")->addMenu("Neue Karte generieren");
 
 
-    w.show();
+    mainWindow->show();
     return a.exec();
 }

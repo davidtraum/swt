@@ -20,7 +20,3 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::generateNew(){
-    qDebug() << "NG";
-}
-
