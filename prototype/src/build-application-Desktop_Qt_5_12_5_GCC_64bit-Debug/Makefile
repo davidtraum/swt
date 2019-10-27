@@ -52,14 +52,16 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../application/graphicsmanager.cpp \
+SOURCES       = ../application/city.cpp \
+		../application/graphicsmanager.cpp \
 		../application/main.cpp \
 		../application/mainwindow.cpp \
 		../application/maptile.cpp \
 		../application/scene.cpp \
 		../application/view.cpp qrc_Graphics.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = graphicsmanager.o \
+OBJECTS       = city.o \
+		graphicsmanager.o \
 		main.o \
 		mainwindow.o \
 		maptile.o \
@@ -261,12 +263,14 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/exceptions.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/yacc.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/lex.prf \
-		../application/application.pro ../application/graphicsmanager.h \
+		../application/application.pro ../application/city.h \
+		../application/graphicsmanager.h \
 		../application/main.h \
 		../application/mainwindow.h \
 		../application/maptile.h \
 		../application/scene.h \
-		../application/view.h ../application/graphicsmanager.cpp \
+		../application/view.h ../application/city.cpp \
+		../application/graphicsmanager.cpp \
 		../application/main.cpp \
 		../application/mainwindow.cpp \
 		../application/maptile.cpp \
@@ -692,8 +696,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/scene.h ../application/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/scene.cpp ../application/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/scene.h ../application/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/scene.cpp ../application/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/mainwindow.ui $(DISTDIR)/
 
 
@@ -726,6 +730,7 @@ qrc_Graphics.cpp: ../application/Graphics.qrc \
 		../application/wald.png \
 		../application/grass.png \
 		../application/stadt.png \
+		../application/rathaus.png \
 		../application/fluss_kurve_links_unten.png \
 		../application/fluss_kurve_rechts_oben.png \
 		../application/fluss_kurve_rechts_unten.png \
@@ -851,6 +856,7 @@ moc_mainwindow.cpp: ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/prototype/src/application -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application/mainwindow.h -o moc_mainwindow.cpp
@@ -875,6 +881,9 @@ compiler_lex_clean:
 compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+city.o: ../application/city.cpp ../application/city.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o city.o ../application/city.cpp
 
 graphicsmanager.o: ../application/graphicsmanager.cpp /home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdebug.h \
@@ -966,9 +975,8 @@ graphicsmanager.o: ../application/graphicsmanager.cpp /home/david/Qt/5.12.5/gcc_
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graphicsmanager.o ../application/graphicsmanager.cpp
 
-main.o: ../application/main.cpp ../application/mainwindow.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
+main.o: ../application/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtguiglobal.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobal.h \
@@ -994,22 +1002,20 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qversiontagging.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtgui-config.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstring.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qchar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearray.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qarraydata.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringliteral.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringalgorithms.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringview.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlist.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qalgorithms.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiterator.h \
@@ -1025,11 +1031,17 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvarlengtharray.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontainerfwd.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpoint.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsize.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcursor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmargins.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpaintdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrect.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsize.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpoint.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpalette.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcolor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qrgb.h \
@@ -1055,7 +1067,6 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontmetrics.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontinfo.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcursor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qkeysequence.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qevent.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvariant.h \
@@ -1071,18 +1082,12 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qeventloop.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qguiapplication.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qinputmethod.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenuBar \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qactiongroup.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
@@ -1092,6 +1097,11 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
+		../application/mainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application/main.h \
 		../application/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
@@ -1111,8 +1121,10 @@ main.o: ../application/main.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
 		../application/maptile.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../application/city.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application/main.cpp
 
 mainwindow.o: ../application/mainwindow.cpp ../application/mainwindow.h \
@@ -1222,6 +1234,7 @@ mainwindow.o: ../application/mainwindow.cpp ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
@@ -1335,9 +1348,9 @@ maptile.o: ../application/maptile.cpp ../application/maptile.h \
 		../application/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/mainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpalette.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qbrush.h \
@@ -1354,6 +1367,13 @@ maptile.o: ../application/maptile.cpp ../application/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QBrush \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QColor
@@ -1455,15 +1475,16 @@ scene.o: ../application/scene.cpp ../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontiguouscache.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
 		../application/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application/main.h \
 		../application/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/mainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpalette.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontmetrics.h \
@@ -1478,6 +1499,13 @@ scene.o: ../application/scene.cpp ../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPen
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o ../application/scene.cpp
@@ -1598,6 +1626,12 @@ view.o: ../application/view.cpp ../application/view.h \
 		../application/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
+		../application/mainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		../application/scene.h \
@@ -1606,8 +1640,10 @@ view.o: ../application/view.cpp ../application/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
 		../application/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QMouseEvent \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QPointF \

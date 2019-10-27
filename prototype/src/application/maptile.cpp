@@ -30,6 +30,10 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setPixmap(graphics->GRAPHICS["stadt"]);
             pixmapItem->setToolTip("Stadt");
             break;
+        case MapTile::TYPE::CITY_CENTER:
+            pixmapItem->setPixmap(graphics->GRAPHICS["rathaus"]);
+            pixmapItem->setToolTip("Stadtmitte");
+            break;
 
         case MapTile::TYPE::RIVER_H:
             pixmapItem->setPixmap(graphics->GRAPHICS["fluss_h"]);
@@ -127,6 +131,14 @@ void MapTile::setPosition(int posX, int posY){
  */
 QGraphicsPixmapItem * MapTile::getPixmapItem(){
     return pixmapItem;
+}
+
+City * MapTile::getCity(){
+    return city;
+}
+
+void MapTile::setCity(City * pCity){
+    city = pCity;
 }
 
 

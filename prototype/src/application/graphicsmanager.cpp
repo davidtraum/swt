@@ -10,6 +10,7 @@ GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("grass", QPixmap::fromImage(QImage(":/images/grass.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("wald", QPixmap::fromImage(QImage(":/images/wald.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("stadt", QPixmap::fromImage(QImage(":/images/stadt.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("rathaus", QPixmap::fromImage(QImage(":/images/rathaus.png"))));
 
     GRAPHICS.insert(std::pair<std::string, QPixmap>("fluss_h", QPixmap::fromImage(QImage(":/images/fluss/fluss_horizontal.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("fluss_v", QPixmap::fromImage(QImage(":/images/fluss/fluss_vertikal.png"))));

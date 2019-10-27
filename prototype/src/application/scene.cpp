@@ -1,6 +1,7 @@
 #include "scene.h"
 #include <QDebug>
 #include <QPen>
+#include <QPainter>
 
 
 /**
@@ -18,6 +19,18 @@ Scene::Scene()
     outline->setWidth(2);
     highlighter->setPen(*outline);
     highlighter->setZValue(2);
+
+    radiusHighlighter = new QGraphicsEllipseItem();
+    outline->setWidth(6);
+    outline->setColor(QColor(Qt::yellow));
+    radiusHighlighter->setPen(*outline);
+    radiusHighlighter->setZValue(1);
+    showRadius = false;
+
+    textHint = new QGraphicsTextItem();
+    textHint->setDefaultTextColor(QColor(Qt::white));
+    textHint->setScale(4);
+    textHint->setZValue(3);
 }
 
 /**
@@ -31,20 +44,61 @@ void Scene::generateWorld(){
         for(int y = 0; y<MAP_SIZE; y++){
             int random = std::rand()%100;
             data[x][y].setPosition(x*TILE_SIZE, y*TILE_SIZE);
-            if(random>95){
-                data[x][y].setType(MapTile::TYPE::CITY);
-            }else if(random>60){
+            if(random>80){
                 data[x][y].setType(MapTile::TYPE::FORREST);
             }else{
                 data[x][y].setType(MapTile::TYPE::GRASS);
             }
             data[x][y].setRotation(std::rand()%4); //Zufällige Rotation
+            data[x][y].getPixmapItem()->setZValue(0);
             QGraphicsScene::addItem(data[x][y].getPixmapItem());
         }
     }
 
-    //Hier werden die Flüsse generiert
-    for(int riverIndex = 0; riverIndex<5; riverIndex++){
+    for(int townIndex = 0; townIndex<MAP_SIZE; townIndex++){
+        int townSize = std::rand()%20;
+        City * city = new City();
+        city->setSize(townSize);
+        city->setName("Stadt " + std::to_string(townIndex));
+        int posX = std::rand()%MAP_SIZE;
+        int posY = std::rand()%MAP_SIZE;
+        int minX = posX;
+        int minY = posY;
+        int maxX = posX;
+        int maxY = posY;
+        for(int i = 0; i<townSize; i++){
+            if(i==int(townSize/2)){
+                city->setCenter(posX,posY);
+            }
+            data[posX][posY].setType(MapTile::TYPE::CITY);
+            data[posX][posY].setCity(city);
+            data[posX][posY].setRotation(std::rand()%4);
+            posX+=(1-(std::rand()%3));
+            posY+=(1-(std::rand()%3));
+            if(posX<0){
+                posX=0;
+            }else if(posX>=MAP_SIZE){
+                posX=MAP_SIZE-1;
+            }
+            if(posY<0){
+                posY=0;
+            }else if(posY>=MAP_SIZE){
+                posY=MAP_SIZE-1;
+            }
+            if(posX<minX){
+                minX=posX;
+            }else if(posX>maxX){
+                maxX=posX;
+            }
+            if(posY<minY){
+                minY=posY;
+            }else if(posY>maxY){
+                maxY=posX;
+            }
+        }
+    }
+
+    for(int riverIndex = 0; riverIndex<MAP_SIZE/100; riverIndex++){
         int posX = (std::rand()%MAP_SIZE);
         int posY = (std::rand()%MAP_SIZE);
         int vx = 1;
@@ -90,6 +144,8 @@ void Scene::generateWorld(){
 
     //Sonderfunktionen werden hinzugefügt
     QGraphicsScene::addItem(highlighter);
+    QGraphicsScene::addItem(radiusHighlighter);
+    QGraphicsScene::addItem(textHint);
 }
 
 
@@ -103,6 +159,27 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
     }
     activeTile = &data[int(pItem->x()/TILE_SIZE)][int(pItem->y()/TILE_SIZE)];
     highlighter->setPos(pItem->pos());
+    if(activeTile->getType()==MapTile::CITY){
+        qDebug() << "City detected";
+        City * city = activeTile->getCity();
+        radiusHighlighter->setX(city->getCenterX()*TILE_SIZE+32);
+        radiusHighlighter->setY(city->getCenterY()*TILE_SIZE+32);
+        radiusHighlighter->setRect(-(city->getSize()*TILE_SIZE)*0.5,
+                                   -(city->getSize()*TILE_SIZE)*0.5,
+                                   city->getSize()*TILE_SIZE,
+                                   city->getSize()*TILE_SIZE);
+        radiusHighlighter->setVisible(true);
+        textHint->setPos(city->getCenterX()*TILE_SIZE-textHint->boundingRect().width()*0.5, city->getCenterY()*TILE_SIZE-city->getSize()*TILE_SIZE*0.5-50);
+        textHint->setPlainText(QString::fromStdString(city->getName()));
+        textHint->setVisible(true);
+        showRadius = true;
+        highlighter->setVisible(false);
+    }else if(showRadius){
+        radiusHighlighter->setVisible(false);
+        highlighter->setVisible(true);
+        textHint->setVisible(false);
+        showRadius = false;
+    }
 }
 
 /**
