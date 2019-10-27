@@ -60,13 +60,13 @@ void Scene::generateWorld(){
         City * city = new City();
         city->setSize(townSize);
         if(townSize<4){
-              city->setName("Dorf " + std::to_string(townIndex));
+              city->setName("Dorf #" + std::to_string(townIndex));
         }else if(townSize<10){
-            city->setName("Stadt " + std::to_string(townIndex));
+            city->setName("Stadt #" + std::to_string(townIndex));
         }else if(townSize<15){
-            city->setName("Großstadt " + std::to_string(townIndex));
+            city->setName("Großstadt #" + std::to_string(townIndex));
         }else{
-            city->setName("Metropole " + std::to_string(townIndex));
+            city->setName("Metropole #" + std::to_string(townIndex));
         }
 
         int posX = std::rand()%MAP_SIZE;
@@ -94,50 +94,6 @@ void Scene::generateWorld(){
                 posX++;
             }
         }
-    }
-
-    for(int riverIndex = 0; riverIndex<MAP_SIZE/100; riverIndex++){
-        int posX = (std::rand()%MAP_SIZE);
-        int posY = (std::rand()%MAP_SIZE);
-        int vx = 1;
-        int vy = 0;
-        int dir = 1;
-        do{
-            if(vx==1 && vy==0){
-                data[posX][posY].setType(MapTile::TYPE::RIVER_H); //Horizontales Stück
-            }else if(vx==0 && vy==1){
-                data[posX][posY].setType(MapTile::TYPE::RIVER_V); //Vertikales Stück
-            }else if(vx==1 && vy==2){
-                if(dir==1){
-                    data[posX][posY].setType(MapTile::TYPE::RIVER_LB); //Kurve nach unten
-                }else{
-                    data[posX][posY].setType(MapTile::TYPE::RIVER_RB);
-                }
-                vx=0;
-                vy=1;
-            }else if(vx==2 && vy==1){
-                if(dir==1){
-                    data[posX][posY].setType(MapTile::TYPE::RIVER_RT); //Kurve nach rechts
-                }else{
-                    data[posX][posY].setType(MapTile::TYPE::RIVER_LT);
-                }
-                vx=1;
-                vy=0;
-            }
-            posX+=(vx*dir);
-            posY+=(vy*dir);
-            if(std::rand()%100 > 90){
-                if(vx==0){
-                    vx=2;
-                    vy=1; //Kurve in die Horizontale
-                }else{
-                    vx=1; //Kurve in die Vertikale
-                    vy=2;
-                }
-            }else if(std::rand()%100 > 90){
-                dir*=-1; //Richtung wird umgekehrt
-            }
-        }while(posX < MAP_SIZE && posX>=0 && posY<MAP_SIZE && posY>=0);
     }
 
     //Sonderfunktionen werden hinzugefügt

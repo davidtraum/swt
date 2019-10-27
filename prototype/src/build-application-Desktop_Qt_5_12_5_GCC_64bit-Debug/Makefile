@@ -737,7 +737,8 @@ qrc_Graphics.cpp: ../application/Graphics.qrc \
 		../application/fluss_kurve_links_oben.png \
 		../application/fluss_vertikal.png \
 		../application/fluss_horizontal.png \
-		../application/schiene_h.png
+		../application/schiene_h.png \
+		../application/schiene_kurve.png
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Graphics ../application/Graphics.qrc -o qrc_Graphics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1507,7 +1508,10 @@ scene.o: ../application/scene.cpp ../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
 		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPen
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPen \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o ../application/scene.cpp
 
 view.o: ../application/view.cpp ../application/view.h \

@@ -50,12 +50,6 @@ void View::mouseReleaseEvent(QMouseEvent *event)
             }
             qDebug() << "[EVENT] Linksklick.";
         }else{ //Rechtsklick
-            if(clickedTile->getType()==MapTile::TYPE::RAIL_H){
-                int currentRotation = clickedTile->getRotation();
-                currentRotation++;
-                if(currentRotation>3)currentRotation=0;
-                clickedTile->setRotation(currentRotation);
-            }
             qDebug() << "[EVENT] Rechtsklick.";
         }
 
@@ -73,8 +67,8 @@ void View::mouseMoveEvent(QMouseEvent *event)
 {
     if(mouseDown){
         QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
-        sceneCenter.setX(sceneCenter.x() - (event->x() - View::dragPosX));
-        sceneCenter.setY(sceneCenter.y() - (event->y() - View::dragPosY));
+        sceneCenter.setX(sceneCenter.x() - ((event->x() - View::dragPosX) * 1.0/currentScale));
+        sceneCenter.setY(sceneCenter.y() - ((event->y() - View::dragPosY) * 1.0/currentScale));
         QGraphicsView::centerOn(sceneCenter);
         View::dragPosX = event->x();
         View::dragPosY = event->y();

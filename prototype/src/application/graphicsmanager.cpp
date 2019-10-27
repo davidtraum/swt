@@ -20,6 +20,7 @@ GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("fluss_lb", QPixmap::fromImage(QImage(":/images/fluss/fluss_kurve_links_unten.png"))));
 
     GRAPHICS.insert(std::pair<std::string, QPixmap>("schiene_h", QPixmap::fromImage(QImage(":/images/schienen/schiene_h.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("schiene_kurve", QPixmap::fromImage(QImage(":/images/schienen/schiene_kurve.png"))));
 }
 
 /**

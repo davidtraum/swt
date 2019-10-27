@@ -10,6 +10,7 @@ MapTile::MapTile()
 {
     pixmapItem = new QGraphicsPixmapItem();
     currentRotation = 0;
+    city = nullptr;
 }
 
 /**
@@ -58,8 +59,13 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setPixmap(graphics->GRAPHICS["schiene_h"]);
             pixmapItem->setToolTip("Schiene");
             break;
+        case MapTile::TYPE::RAIL_CURVE:
+            pixmapItem->setPixmap(graphics->GRAPHICS["schiene_kurve"]);
+            pixmapItem->setToolTip("Schiene");
+            break;
     }
     type = pType;
+    setRotation(0);
 }
 
 /**
@@ -133,12 +139,35 @@ QGraphicsPixmapItem * MapTile::getPixmapItem(){
     return pixmapItem;
 }
 
+/**
+ * @brief MapTile::getCity Die Informationen. Falls keine Stadt: null
+ * @return Liefert die Informationen über eine Stadt auf der Kachel.
+ */
 City * MapTile::getCity(){
     return city;
 }
 
+/**
+ * @brief MapTile::setCity
+ * @param pCity Fügt dem Quadranten Daten über eine Stadt hinzu.
+ */
 void MapTile::setCity(City * pCity){
     city = pCity;
+}
+
+/**
+ * @brief MapTile::getX
+ * @return Der X Index des Quadranten.
+ */
+int MapTile::getX(){
+    return int(pixmapItem->x()/64);
+}
+/**
+ * @brief MapTile::getY
+ * @return Der Y Index des Quadranten.
+ */
+int MapTile::getY(){
+    return int(pixmapItem->y()/64);
 }
 
 
