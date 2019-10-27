@@ -113,13 +113,11 @@ bool MapTile::isRiver(){
 }
 
 /**
- * @brief MapTile::setup Setzt Typ und Pixelposition der Kachel.
- * @param pType Typ der Kachel.
- * @param posX Position.
- * @param posY Position.
+ * @brief MapTile::setPosition Setzt die Position der Kachel. (In Pixeln)
+ * @param posX Die X Koordinate.
+ * @param posY Die Y Koordinate.
  */
-void MapTile::setup(MapTile::TYPE pType, int posX, int posY){
-    setType(pType);
+void MapTile::setPosition(int posX, int posY){
     pixmapItem->setPos(posX, posY);
 }
 

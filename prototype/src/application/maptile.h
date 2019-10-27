@@ -13,7 +13,7 @@ public:
     TYPE getType();
     void setRotation(int pRotation);
     int getRotation();
-    void setup(TYPE pType, int posX, int posY);
+    void setPosition(int posX, int posY);
     bool isRiver();
     QGraphicsPixmapItem * getPixmapItem();
 

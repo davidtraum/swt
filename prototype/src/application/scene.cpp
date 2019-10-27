@@ -30,13 +30,15 @@ void Scene::generateWorld(){
     for(int x = 0; x<MAP_SIZE; x++){
         for(int y = 0; y<MAP_SIZE; y++){
             int random = std::rand()%100;
+            data[x][y].setPosition(x*TILE_SIZE, y*TILE_SIZE);
             if(random>95){
-                data[x][y].setup(MapTile::TYPE::CITY, x*TILE_SIZE, y*TILE_SIZE);
+                data[x][y].setType(MapTile::TYPE::CITY);
             }else if(random>60){
-                data[x][y].setup(MapTile::TYPE::FORREST, x*TILE_SIZE, y*TILE_SIZE);
+                data[x][y].setType(MapTile::TYPE::FORREST);
             }else{
-                data[x][y].setup(MapTile::TYPE::GRASS, x*TILE_SIZE, y*TILE_SIZE);
+                data[x][y].setType(MapTile::TYPE::GRASS);
             }
+            data[x][y].setRotation(std::rand()%4); //Zufällige Rotation
             QGraphicsScene::addItem(data[x][y].getPixmapItem());
         }
     }
