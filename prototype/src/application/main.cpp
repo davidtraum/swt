@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QAction>
 #include <QTextItem>
+#include <QTimer>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -10,8 +11,27 @@
 #include "scene.h"
 #include "graphicsmanager.h"
 
+
+
 GraphicsManager * graphics;
 MainWindow * mainWindow;
+bool gameRunning = true;
+View * view;
+Scene * scene;
+
+double scale = 0.01;
+
+void introAnimation(){
+    scale+=0.01;
+    view->resetMatrix();
+    view->scale(scale,scale);
+
+    if(scale<1){
+        QTimer::singleShot(10, []{introAnimation();});
+    }
+}
+
+
 /**
  * @brief main Startmethode.
  * @param argc Anzahl der Parameter
@@ -29,9 +49,6 @@ int main(int argc, char *argv[])
 
     graphics = new GraphicsManager();
 
-    Scene * scene;
-    View * view;
-
     scene = new Scene();
     scene->generateWorld();
 
@@ -42,7 +59,9 @@ int main(int argc, char *argv[])
 
     mainWindow->menuBar()->addMenu("Spiel")->addMenu("Karte")->addMenu("Neue Karte generieren");
 
+    introAnimation();
 
     mainWindow->show();
+
     return a.exec();
 }

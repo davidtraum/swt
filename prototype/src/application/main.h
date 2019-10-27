@@ -7,5 +7,6 @@
 
 extern GraphicsManager * graphics;
 extern MainWindow * mainWindow;
+extern bool gameRunning;
 
 #endif // MAIN_H
