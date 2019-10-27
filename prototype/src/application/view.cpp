@@ -5,6 +5,7 @@
 #include <QPointF>
 #include <QString>
 #include <QGraphicsItem>
+#include <QTimer>
 
 /**
  * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
@@ -32,6 +33,7 @@ void View::mousePressEvent(QMouseEvent *event){
     View::dragPosY = View::dragOriginY;
     mouseDown = true;
 }
+
 
 
 /**
