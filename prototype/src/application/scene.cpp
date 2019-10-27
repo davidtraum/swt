@@ -56,16 +56,21 @@ void Scene::generateWorld(){
     }
 
     for(int townIndex = 0; townIndex<MAP_SIZE; townIndex++){
-        int townSize = std::rand()%20;
+        int townSize = (std::rand()%20)+1;
         City * city = new City();
         city->setSize(townSize);
-        city->setName("Stadt " + std::to_string(townIndex));
+        if(townSize<4){
+              city->setName("Dorf " + std::to_string(townIndex));
+        }else if(townSize<10){
+            city->setName("Stadt " + std::to_string(townIndex));
+        }else if(townSize<15){
+            city->setName("Großstadt " + std::to_string(townIndex));
+        }else{
+            city->setName("Metropole " + std::to_string(townIndex));
+        }
+
         int posX = std::rand()%MAP_SIZE;
         int posY = std::rand()%MAP_SIZE;
-        int minX = posX;
-        int minY = posY;
-        int maxX = posX;
-        int maxY = posY;
         for(int i = 0; i<townSize; i++){
             if(i==int(townSize/2)){
                 city->setCenter(posX,posY);
@@ -85,15 +90,8 @@ void Scene::generateWorld(){
             }else if(posY>=MAP_SIZE){
                 posY=MAP_SIZE-1;
             }
-            if(posX<minX){
-                minX=posX;
-            }else if(posX>maxX){
-                maxX=posX;
-            }
-            if(posY<minY){
-                minY=posY;
-            }else if(posY>maxY){
-                maxY=posX;
+            while(data[posX][posY].getType()==MapTile::CITY && posX<MAP_SIZE-1){
+                posX++;
             }
         }
     }
@@ -160,7 +158,6 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
     activeTile = &data[int(pItem->x()/TILE_SIZE)][int(pItem->y()/TILE_SIZE)];
     highlighter->setPos(pItem->pos());
     if(activeTile->getType()==MapTile::CITY){
-        qDebug() << "City detected";
         City * city = activeTile->getCity();
         radiusHighlighter->setX(city->getCenterX()*TILE_SIZE+32);
         radiusHighlighter->setY(city->getCenterY()*TILE_SIZE+32);
