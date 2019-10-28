@@ -6,6 +6,8 @@
 #include <QString>
 #include <QGraphicsItem>
 #include <QTimer>
+#include <QMessageBox>
+#include <QIcon>
 
 /**
  * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
@@ -19,6 +21,7 @@ View::View(Scene * pScene)
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
     QGraphicsView::setMouseTracking(true);
     mouseDown = false;
+    doAnimations = false;
 }
 
 
@@ -42,6 +45,7 @@ void View::mousePressEvent(QMouseEvent *event){
  */
 void View::mouseReleaseEvent(QMouseEvent *event)
 {
+    doAnimations = false;
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
     if(View::dragOriginX==event->x() && View::dragOriginY==event->y()){ //Es wurde nur geklickt, nicht verschoben.
         QGraphicsItem * clickedItem = View::itemAt(event->pos());
@@ -49,6 +53,12 @@ void View::mouseReleaseEvent(QMouseEvent *event)
         if(event->button() == Qt::LeftButton){ //Linksklick
             if(clickedTile->getType() == MapTile::TYPE::GRASS){
                 clickedTile->setType(MapTile::TYPE::RAIL_H);
+            }else if(clickedTile->getType() == MapTile::CITY){
+                    City * city = clickedTile->getCity();
+                    doAnimations = true;
+                    fluidMovement(city->getCenterX()*64, city->getCenterY()*64);
+                    fluidZoom(0.5, currentScale<0.5);
+
             }
             qDebug() << "[EVENT] Linksklick.";
         }else{ //Rechtsklick
@@ -75,6 +85,7 @@ void View::mouseMoveEvent(QMouseEvent *event)
         View::dragPosX = event->x();
         View::dragPosY = event->y();
         QGraphicsView::setCursor(QCursor(Qt::PointingHandCursor));
+        doAnimations = false;
     }else{
         scene->setActiveTile(QGraphicsView::itemAt(event->pos()));
     }
@@ -113,4 +124,33 @@ void View::keyPressEvent(QKeyEvent *event){
             mainWindow->showFullScreen();
         }
     }
+}
+
+void View::fluidZoom(double target, bool in){
+    if(!doAnimations)return;
+    resetMatrix();
+    if(in){
+        currentScale+=0.01;
+        if(currentScale < target) QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+    }else{
+        currentScale-=0.05;
+        if(currentScale > target) QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+    }
+    scale(currentScale, currentScale);
+}
+
+void View::fluidMovement(int pX, int pY){
+    if(!doAnimations)return;
+    QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
+    int diffX = int(pX<sceneCenter.x() ? sceneCenter.x()-pX : pX-sceneCenter.x());
+    int diffY = int(pY<sceneCenter.y() ? sceneCenter.y()-pY : pY-sceneCenter.y());
+    qDebug() << diffX << "  -  " << diffY;
+        if(diffX > 1) sceneCenter.setX(sceneCenter.x()-(sceneCenter.x()-pX)*0.1);
+        if(diffY > 1) sceneCenter.setY(sceneCenter.y()-(sceneCenter.y()-pY)*0.1);
+        View::centerOn(sceneCenter);
+        if((diffX > 1 || diffY>1) && (diffY-diffY>2 || diffX-diffY>2)){
+          QTimer::singleShot(10, [this,pX,pY]{fluidMovement(pX,pY);});
+        }else{
+            qDebug() << "Fluid finished.";
+        }
 }

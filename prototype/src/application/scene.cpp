@@ -1,4 +1,5 @@
 #include "scene.h"
+#include "maptile.h"
 #include <QDebug>
 #include <QPen>
 #include <QPainter>
@@ -40,6 +41,7 @@ void Scene::generateWorld(){
     QGraphicsScene::clear();
 
     //Hier wird die Landschaft generiert.
+    qDebug() << "[WELT] Landschaft wird generiert...";
     for(int x = 0; x<MAP_SIZE; x++){
         for(int y = 0; y<MAP_SIZE; y++){
             int random = std::rand()%100;
@@ -55,6 +57,7 @@ void Scene::generateWorld(){
         }
     }
 
+    qDebug() << "[WELT] Es werden " << MAP_SIZE << " Städte generiert...";
     for(int townIndex = 0; townIndex<MAP_SIZE; townIndex++){
         int townSize = (std::rand()%20)+1;
         City * city = new City();
@@ -102,6 +105,8 @@ void Scene::generateWorld(){
     QGraphicsScene::addItem(highlighter);
     QGraphicsScene::addItem(radiusHighlighter);
     QGraphicsScene::addItem(textHint);
+
+    qDebug() << "[WELT] Generierung abgeschlossen.";
 }
 
 

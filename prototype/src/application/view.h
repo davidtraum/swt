@@ -18,6 +18,10 @@ public:
     void mouseMoveEvent(QMouseEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
+private:
+    bool doAnimations;
+    void fluidZoom(double target, bool in);
+    void fluidMovement(int pX, int pY);
 };
 
 #endif // VIEW_H
