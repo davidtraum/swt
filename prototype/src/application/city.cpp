@@ -31,16 +31,16 @@ int City::getSize(){
 }
 
 /**
- * @brief City::getCenterX
- * @return Die X Koordinate des Mittelpunktes der Stadt.
+ * @brief City::getCenterX Gibt den X-Index des Mittelpunktes.
+ * @return Der X-Index des Mittelpunktes der Stadt.
  */
 int City::getCenterX(){
     return centerX;
 }
 
 /**
- * @brief City::getCenterY
- * @return Die Y Koordinate des Mittelpunktes der Stadt.
+ * @brief City::getCenterX Gibt den Y-Index des Mittelpunktes.
+ * @return Der Y-Index des Mittelpunktes der Stadt.
  */
 int City::getCenterY(){
     return centerY;
