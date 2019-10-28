@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Railroad Tycoon Prototyp
    </div>
@@ -64,6 +65,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classView-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">View Class Reference</div>  </div>
@@ -72,22 +75,7 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for View:</div>
 <div class="dyncontent">
-<div class="center"><img src="classView__inherit__graph.png" border="0" usemap="#View_inherit__map" alt="Inheritance graph"/></div>
-<map name="View_inherit__map" id="View_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,131,172,369"/>
-<area shape="rect" title=" " alt="" coords="31,5,147,83"/>
-</map>
-</div>
-<div class="dynheader">
-Collaboration diagram for View:</div>
-<div class="dyncontent">
-<div class="center"><img src="classView__coll__graph.png" border="0" usemap="#View_coll__map" alt="Collaboration graph"/></div>
-<map name="View_coll__map" id="View_coll__map">
-<area shape="rect" title=" " alt="" coords="28,331,195,555"/>
-<area shape="rect" title=" " alt="" coords="5,161,121,239"/>
-<area shape="rect" href="classScene.html" title=" " alt="" coords="145,132,277,268"/>
-<area shape="rect" title=" " alt="" coords="149,5,274,83"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView__inherit__graph.svg" width="178" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -134,6 +122,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseDown</b></td></t
 <tr class="memitem:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memItemLeft" align="right" valign="top"><a id="a01cf6ac75c04e38bfb0b471c22b21697"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>currentScale</b> {1.0}</td></tr>
 <tr class="separator:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a33de978d43cde59ae344035ebcb60184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184">fluidZoom</a> (double target, bool in)</td></tr>
+<tr class="memdesc:a33de978d43cde59ae344035ebcb60184"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein....">View::fluidZoom</a> Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein.  <a href="classView.html#a33de978d43cde59ae344035ebcb60184">More...</a><br /></td></tr>
+<tr class="separator:a33de978d43cde59ae344035ebcb60184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240c2bf51520324466ab8f2e435f77b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2">fluidMove</a> (int vX, int vY)</td></tr>
+<tr class="memdesc:a240c2bf51520324466ab8f2e435f77b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2" title="View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.">View::fluidMove</a> Verschiebt die Karte animiert und relativ zur aktuellen Position.  <a href="classView.html#a240c2bf51520324466ab8f2e435f77b2">More...</a><br /></td></tr>
+<tr class="separator:a240c2bf51520324466ab8f2e435f77b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">fluidMovement</a> (int pX, int pY)</td></tr>
+<tr class="memdesc:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1" title="View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.">View::fluidMovement</a> Verschiebt die Karte animiert an zu einer absoluten Koordinate.  <a href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">More...</a><br /></td></tr>
+<tr class="separator:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a31d7cea2414022ff47f8289ea922deba"><td class="memItemLeft" align="right" valign="top"><a id="a31d7cea2414022ff47f8289ea922deba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>doAnimations</b></td></tr>
+<tr class="separator:a31d7cea2414022ff47f8289ea922deba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af425358762e264a313ed536d15844d0d"></a>
@@ -163,6 +169,161 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>currentScale</b> {1
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a240c2bf51520324466ab8f2e435f77b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240c2bf51520324466ab8f2e435f77b2">&#9670;&nbsp;</a></span>fluidMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::fluidMove </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2" title="View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.">View::fluidMove</a> Verschiebt die Karte animiert und relativ zur aktuellen Position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vX</td><td>Verschiebung in X-Richtung. </td></tr>
+    <tr><td class="paramname">vY</td><td>Verschiebung in Y-Richtung. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.svg" width="324" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.svg" width="328" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a5b3625ec64bc9d2432cc09d33e6879f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3625ec64bc9d2432cc09d33e6879f1">&#9670;&nbsp;</a></span>fluidMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::fluidMovement </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1" title="View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.">View::fluidMovement</a> Verschiebt die Karte animiert an zu einer absoluten Koordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pX</td><td>Die X-Koordinate. </td></tr>
+    <tr><td class="paramname">pY</td><td>Due Y-Koordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.svg" width="590" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a33de978d43cde59ae344035ebcb60184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33de978d43cde59ae344035ebcb60184">&#9670;&nbsp;</a></span>fluidZoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::fluidZoom </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein....">View::fluidZoom</a> Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Die angestrebte Skalierung. </td></tr>
+    <tr><td class="paramname">in</td><td>Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a33de978d43cde59ae344035ebcb60184_icgraph.svg" width="364" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="aca6faa6bfdfbaf8214f62ddced6d169c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca6faa6bfdfbaf8214f62ddced6d169c">&#9670;&nbsp;</a></span>keyPressEvent()</h2>
 
@@ -194,6 +355,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>currentScale</b> {1
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.svg" width="524" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -231,17 +397,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>currentScale</b> {1
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classView_aae14a814f17c825ce462509655e54ee4_cgraph.png" border="0" usemap="#classView_aae14a814f17c825ce462509655e54ee4_cgraph" alt=""/></div>
-<map name="classView_aae14a814f17c825ce462509655e54ee4_cgraph" id="classView_aae14a814f17c825ce462509655e54ee4_cgraph">
-<area shape="rect" title="View::mouseMoveEvent QT Methode. Wird aufgerufen wenn die Maus bewegt wird." alt="" coords="5,132,173,159"/>
-<area shape="rect" href="classScene.html#a4caee3e7069bad7901a4a12b19cd304c" title="Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen." alt="" coords="221,132,369,159"/>
-<area shape="rect" href="classCity.html#a0543ff407447b87a952c40bb36f5eef1" title="City::getCenterX Gibt den X&#45;Index des Mittelpunktes." alt="" coords="422,5,543,32"/>
-<area shape="rect" href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df" title="City::getCenterX Gibt den Y&#45;Index des Mittelpunktes." alt="" coords="422,56,543,83"/>
-<area shape="rect" href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" title="MapTile::getCity Die Informationen. Falls keine Stadt: null." alt="" coords="421,107,544,133"/>
-<area shape="rect" href="classCity.html#adc7fe5313b3572973918cf6385e87fd5" title="City::getName Gibt den Namen der Stadt." alt="" coords="429,157,537,184"/>
-<area shape="rect" href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb" title="City::getSize Gibt die Anzahl der Felder zurück die zur Stadt gehören." alt="" coords="433,208,532,235"/>
-<area shape="rect" href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac" title="MapTile::getType Liefert den Typ des Quadranten." alt="" coords="417,259,548,285"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_aae14a814f17c825ce462509655e54ee4_cgraph.svg" width="554" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -314,15 +470,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classView_a76d60435e43027b8497091d02acb77bd_cgraph.png" border="0" usemap="#classView_a76d60435e43027b8497091d02acb77bd_cgraph" alt=""/></div>
-<map name="classView_a76d60435e43027b8497091d02acb77bd_cgraph" id="classView_a76d60435e43027b8497091d02acb77bd_cgraph">
-<area shape="rect" title="View::mouseReleaseEvent QT Methode. Wird aufgerufen wenn die Maus losgelassen wird." alt="" coords="5,81,191,108"/>
-<area shape="rect" href="classCity.html#a0543ff407447b87a952c40bb36f5eef1" title="City::getCenterX Gibt den X&#45;Index des Mittelpunktes." alt="" coords="243,5,365,32"/>
-<area shape="rect" href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df" title="City::getCenterX Gibt den Y&#45;Index des Mittelpunktes." alt="" coords="243,56,365,83"/>
-<area shape="rect" href="classScene.html#a39b85af5f6c0da2fa10c534a57c0cbf0" title="Scene::getTileAt Liefert ein MapTile anhand der Pixel&#45;Koordinaten." alt="" coords="242,107,366,133"/>
-<area shape="rect" href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel." alt="" coords="239,157,369,184"/>
-<area shape="rect" href="classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat." alt="" coords="417,157,564,184"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a76d60435e43027b8497091d02acb77bd_cgraph.svg" width="586" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

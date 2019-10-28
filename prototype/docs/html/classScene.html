@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Railroad Tycoon Prototyp
    </div>
@@ -64,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classScene-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Scene Class Reference</div>  </div>
@@ -72,20 +74,7 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for Scene:</div>
 <div class="dyncontent">
-<div class="center"><img src="classScene__inherit__graph.png" border="0" usemap="#Scene_inherit__map" alt="Inheritance graph"/></div>
-<map name="Scene_inherit__map" id="Scene_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,131,137,267"/>
-<area shape="rect" title=" " alt="" coords="9,5,134,83"/>
-</map>
-</div>
-<div class="dynheader">
-Collaboration diagram for Scene:</div>
-<div class="dyncontent">
-<div class="center"><img src="classScene__coll__graph.png" border="0" usemap="#Scene_coll__map" alt="Collaboration graph"/></div>
-<map name="Scene_coll__map" id="Scene_coll__map">
-<area shape="rect" title=" " alt="" coords="5,131,137,267"/>
-<area shape="rect" title=" " alt="" coords="9,5,134,83"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classScene__inherit__graph.svg" width="143" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -113,6 +102,27 @@ const static int&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_SIZE<
 <tr class="memitem:a0bf17eb78a573f6717516aabe19402f3"><td class="memItemLeft" align="right" valign="top"><a id="a0bf17eb78a573f6717516aabe19402f3"></a>
 const static int&#160;</td><td class="memItemRight" valign="bottom"><b>TILE_SIZE</b> {64}</td></tr>
 <tr class="separator:a0bf17eb78a573f6717516aabe19402f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a504fcabbeda467e84349f665ffd31713"><td class="memItemLeft" align="right" valign="top"><a id="a504fcabbeda467e84349f665ffd31713"></a>
+<a class="el" href="classMapTile.html">MapTile</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> [Scene::MAP_SIZE][Scene::MAP_SIZE]</td></tr>
+<tr class="separator:a504fcabbeda467e84349f665ffd31713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47bfe0cac879212214d16188ae09bdc4"><td class="memItemLeft" align="right" valign="top"><a id="a47bfe0cac879212214d16188ae09bdc4"></a>
+QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><b>highlighter</b></td></tr>
+<tr class="separator:a47bfe0cac879212214d16188ae09bdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7ae69b9ac9c7965a7091536ccaae83"><td class="memItemLeft" align="right" valign="top"><a id="abb7ae69b9ac9c7965a7091536ccaae83"></a>
+QGraphicsEllipseItem *&#160;</td><td class="memItemRight" valign="bottom"><b>radiusHighlighter</b></td></tr>
+<tr class="separator:abb7ae69b9ac9c7965a7091536ccaae83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03320edcd924b9ff8453026e03d41f6e"><td class="memItemLeft" align="right" valign="top"><a id="a03320edcd924b9ff8453026e03d41f6e"></a>
+QGraphicsTextItem *&#160;</td><td class="memItemRight" valign="bottom"><b>textHint</b></td></tr>
+<tr class="separator:a03320edcd924b9ff8453026e03d41f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb59164e9feda75eda4f5e6f540ef18"><td class="memItemLeft" align="right" valign="top"><a id="aecb59164e9feda75eda4f5e6f540ef18"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>showRadius</b></td></tr>
+<tr class="separator:aecb59164e9feda75eda4f5e6f540ef18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefde35137fe2630f84e8271f48846c6"><td class="memItemLeft" align="right" valign="top"><a id="abefde35137fe2630f84e8271f48846c6"></a>
+<a class="el" href="classMapTile.html">MapTile</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>activeTile</b></td></tr>
+<tr class="separator:abefde35137fe2630f84e8271f48846c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a39b85af5f6c0da2fa10c534a57c0cbf0"></a>
@@ -158,11 +168,7 @@ const static int&#160;</td><td class="memItemRight" valign="bottom"><b>TILE_SIZE
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.png" border="0" usemap="#classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph" alt=""/></div>
-<map name="classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph" id="classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph">
-<area shape="rect" title="Scene::getTileAt Liefert ein MapTile anhand der Pixel&#45;Koordinaten." alt="" coords="239,5,363,32"/>
-<area shape="rect" href="classView.html#a76d60435e43027b8497091d02acb77bd" title="View::mouseReleaseEvent QT Methode. Wird aufgerufen wenn die Maus losgelassen wird." alt="" coords="5,5,191,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.svg" width="368" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -193,25 +199,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.png" border="0" usemap="#classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph" alt=""/></div>
-<map name="classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph" id="classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph">
-<area shape="rect" title="Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen." alt="" coords="5,132,153,159"/>
-<area shape="rect" href="classCity.html#a0543ff407447b87a952c40bb36f5eef1" title="City::getCenterX Gibt den X&#45;Index des Mittelpunktes." alt="" coords="206,5,327,32"/>
-<area shape="rect" href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df" title="City::getCenterX Gibt den Y&#45;Index des Mittelpunktes." alt="" coords="206,56,327,83"/>
-<area shape="rect" href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" title="MapTile::getCity Die Informationen. Falls keine Stadt: null." alt="" coords="205,107,328,133"/>
-<area shape="rect" href="classCity.html#adc7fe5313b3572973918cf6385e87fd5" title="City::getName Gibt den Namen der Stadt." alt="" coords="213,157,321,184"/>
-<area shape="rect" href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb" title="City::getSize Gibt die Anzahl der Felder zurück die zur Stadt gehören." alt="" coords="217,208,316,235"/>
-<area shape="rect" href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac" title="MapTile::getType Liefert den Typ des Quadranten." alt="" coords="201,259,332,285"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.svg" width="338" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.png" border="0" usemap="#classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph" alt=""/></div>
-<map name="classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph" id="classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph">
-<area shape="rect" title="Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen." alt="" coords="221,5,369,32"/>
-<area shape="rect" href="classView.html#aae14a814f17c825ce462509655e54ee4" title="View::mouseMoveEvent QT Methode. Wird aufgerufen wenn die Maus bewegt wird." alt="" coords="5,5,173,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.svg" width="375" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
