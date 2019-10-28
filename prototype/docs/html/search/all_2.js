@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isriver_14',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
+  ['isriver_15',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
 ];

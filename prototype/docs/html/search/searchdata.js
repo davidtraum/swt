@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "cgikmsvw~",
   1: "cgmsv",
-  2: "gikmsvw~",
+  2: "cgikmsvw~",
   3: "s"
 };
 
