@@ -151,6 +151,11 @@ void View::keyPressEvent(QKeyEvent *event){
     }
 }
 
+/**
+ * @brief View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein.
+ * @param target Die angestrebte Skalierung.
+ * @param in Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen).
+ */
 void View::fluidZoom(double target, bool in){
     if(!doAnimations){
         qDebug() << "[ANIMATION] Zoom abgebrochen";
@@ -175,12 +180,22 @@ void View::fluidZoom(double target, bool in){
     scale(currentScale, currentScale);
 }
 
+/**
+ * @brief View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.
+ * @param vX Verschiebung in X-Richtung.
+ * @param vY Verschiebung in Y-Richtung.
+ */
 void View::fluidMove(int vX, int vY){
     doAnimations = true;
     QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
     fluidMovement(int(sceneCenter.x() + vX), int(sceneCenter.y() + vY));
 }
 
+/**
+ * @brief View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.
+ * @param pX Die X-Koordinate.
+ * @param pY Due Y-Koordinate.
+ */
 void View::fluidMovement(int pX, int pY){
     if(!doAnimations){
         qDebug() << "[ANIMATION] Bewegung abgebrochen.";
