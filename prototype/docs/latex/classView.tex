@@ -1,15 +1,15 @@
-\hypertarget{classView}{}\doxysection{View Class Reference}
+\hypertarget{classView}{}\doxysection{View Klassenreferenz}
 \label{classView}\index{View@{View}}
 
 
-Inheritance diagram for View\+:\nopagebreak
+Klassendiagramm für View\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=205pt]{classView__inherit__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene)
@@ -24,7 +24,7 @@ void \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{wheel\+Event}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{View\+::wheel\+Event}} QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{key\+Press\+Event}} (Q\+Key\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classView_a9b77fe3414a870fcbf3f174dc894ce38}\label{classView_a9b77fe3414a870fcbf3f174dc894ce38}} 
@@ -48,7 +48,7 @@ bool {\bfseries mouse\+Down}
 \mbox{\Hypertarget{classView_a01cf6ac75c04e38bfb0b471c22b21697}\label{classView_a01cf6ac75c04e38bfb0b471c22b21697}} 
 double {\bfseries current\+Scale} \{1.\+0\}
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
+\doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{fluid\+Zoom}} (double target, bool in)
@@ -57,7 +57,7 @@ void \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{fluid\+Move}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{View\+::fluid\+Move}} Verschiebt die Karte animiert und relativ zur aktuellen Position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Movement}} (int pX, int pY)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{View\+::fluid\+Movement}} Verschiebt die Karte animiert an zu einer absoluten Koordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classView_a31d7cea2414022ff47f8289ea922deba}\label{classView_a31d7cea2414022ff47f8289ea922deba}} 
@@ -65,7 +65,7 @@ bool {\bfseries do\+Animations}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
 \mbox{\Hypertarget{classView_af425358762e264a313ed536d15844d0d}\label{classView_af425358762e264a313ed536d15844d0d}} 
 \index{View@{View}!View@{View}}
 \index{View@{View}!View@{View}}
@@ -77,13 +77,13 @@ bool {\bfseries do\+Animations}
 \mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em p\+Scene} & Das Zugehörige Szenenobjekt. \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Dokumentation der Elementfunktionen}
 \mbox{\Hypertarget{classView_a240c2bf51520324466ab8f2e435f77b2}\label{classView_a240c2bf51520324466ab8f2e435f77b2}} 
 \index{View@{View}!fluidMove@{fluidMove}}
 \index{fluidMove@{fluidMove}!View@{View}}
@@ -95,20 +95,20 @@ bool {\bfseries do\+Animations}
 \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{View\+::fluid\+Move}} Verschiebt die Karte animiert und relativ zur aktuellen Position. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em vX} & Verschiebung in X-\/\+Richtung. \\
 \hline
 {\em vY} & Verschiebung in Y-\/\+Richtung. \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=315pt]{classView_a240c2bf51520324466ab8f2e435f77b2_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -126,13 +126,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{View\+::fluid\+Movement}} Verschiebt die Karte animiert an zu einer absoluten Koordinate. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em pX} & Die X-\/\+Koordinate. \\
 \hline
 {\em pY} & Due Y-\/\+Koordinate. \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,13 +150,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{View\+::fluid\+Zoom}} Startet eine Zoom-\/\+Animation. Zuvor muss do\+Animations=true gesetzt sein. Bsp\+: fluid\+Zoom(3, true) zoomt 3x in die Karte hinein. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em target} & Die angestrebte Skalierung. \\
 \hline
 {\em in} & Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,11 +174,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em event} & Event mit Informationen. Wichtig\+: event-\/$>$text()\+: Text der Taste und event-\/$>$key()\+: Id der Taste \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,11 +196,11 @@ Here is the call graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_aae14a814f17c825ce462509655e54ee4}{View\+::mouse\+Move\+Event}} QT Methode. Wird aufgerufen wenn die Maus bewegt wird. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -218,7 +218,7 @@ Here is the call graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em event} & Enthält Informationen über die Taste und Position. \\
 \hline
 \end{DoxyParams}
@@ -233,11 +233,11 @@ Here is the call graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_a76d60435e43027b8497091d02acb77bd}{View\+::mouse\+Release\+Event}} QT Methode. Wird aufgerufen wenn die Maus losgelassen wird. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em event} & Informationen über Position und Taste \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,13 +255,13 @@ Here is the call graph for this function\+:\nopagebreak
 \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{View\+::wheel\+Event}} QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parameter}
 {\em event} & Eventobjekt mit Infos. Wichtig\+: event-\/$>$delta()\+: Positiv oder negativ jenachdem in welche Richtung gedreht wurde. \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
 \item 
 src/application/view.\+h\item 
 src/application/view.\+cpp\end{DoxyCompactItemize}

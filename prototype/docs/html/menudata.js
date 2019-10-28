@@ -21,13 +21,13 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Main Page",url:"index.html"},
-{text:"Classes",url:"annotated.html",children:[
-{text:"Class List",url:"annotated.html"},
-{text:"Class Index",url:"classes.html"},
-{text:"Class Hierarchy",url:"inherits.html"},
-{text:"Class Members",url:"functions.html",children:[
-{text:"All",url:"functions.html",children:[
+{text:"Hauptseite",url:"index.html"},
+{text:"Klassen",url:"annotated.html",children:[
+{text:"Auflistung der Klassen",url:"annotated.html"},
+{text:"Klassen-Verzeichnis",url:"classes.html"},
+{text:"Klassenhierarchie",url:"inherits.html"},
+{text:"Klassen-Elemente",url:"functions.html",children:[
+{text:"Alle",url:"functions.html",children:[
 {text:"c",url:"functions.html#index_c"},
 {text:"f",url:"functions.html#index_f"},
 {text:"g",url:"functions.html#index_g"},
@@ -38,7 +38,7 @@ var menudata={children:[
 {text:"v",url:"functions.html#index_v"},
 {text:"w",url:"functions.html#index_w"},
 {text:"~",url:"functions.html#index__7E"}]},
-{text:"Functions",url:"functions_func.html",children:[
+{text:"Funktionen",url:"functions_func.html",children:[
 {text:"c",url:"functions_func.html#index_c"},
 {text:"f",url:"functions_func.html#index_f"},
 {text:"g",url:"functions_func.html#index_g"},
@@ -49,5 +49,5 @@ var menudata={children:[
 {text:"v",url:"functions_func.html#index_v"},
 {text:"w",url:"functions_func.html#index_w"},
 {text:"~",url:"functions_func.html#index__7E"}]}]}]},
-{text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"}]}]}
+{text:"Dateien",url:"files.html",children:[
+{text:"Auflistung der Dateien",url:"files.html"}]}]}
