@@ -117,40 +117,84 @@ void View::wheelEvent(QWheelEvent *event)
  */
 void View::keyPressEvent(QKeyEvent *event){
     qDebug() << "[EVENT] Tastatur gedrückt.";
+    switch(event->key()){
+        case Qt::Key_F11:
+            if(mainWindow->isFullScreen()){
+                mainWindow->showNormal();
+            }else{
+                mainWindow->showFullScreen();
+            }
+            break;
+        case Qt::Key_O:
+            if(currentScale>0.06){
+                doAnimations=true;
+                fluidZoom(0.06, false);
+            }
+            break;
+
+        case Qt::Key_Left:
+            fluidMove(-128,0);
+            break;
+        case Qt::Key_Right:
+            fluidMove(128,0);
+            break;
+        case Qt::Key_Up:
+            fluidMove(0,-128);
+            break;
+        case Qt::Key_Down:
+            fluidMove(0,128);
+            break;
+    }
+
     if(event->key() == Qt::Key_F11){
-        if(mainWindow->isFullScreen()){
-            mainWindow->showNormal();
-        }else{
-            mainWindow->showFullScreen();
-        }
+
     }
 }
 
 void View::fluidZoom(double target, bool in){
-    if(!doAnimations)return;
+    if(!doAnimations){
+        qDebug() << "[ANIMATION] Zoom abgebrochen";
+        return;
+    }
     resetMatrix();
     if(in){
         currentScale+=0.01;
-        if(currentScale < target) QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+        if(currentScale < target){
+            QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+        }else{
+            qDebug() << "[ANIMATION] Zoom abgeschlossen.";
+        }
     }else{
         currentScale-=0.05;
-        if(currentScale > target) QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+        if(currentScale > target){
+            QTimer::singleShot(10, [this,target,in]{fluidZoom(target,in);});
+        }else{
+            qDebug() << "[ANIMATION] Zoom abgeschlossen.";
+        }
     }
     scale(currentScale, currentScale);
 }
 
+void View::fluidMove(int vX, int vY){
+    doAnimations = true;
+    QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
+    fluidMovement(int(sceneCenter.x() + vX), int(sceneCenter.y() + vY));
+}
+
 void View::fluidMovement(int pX, int pY){
-    if(!doAnimations)return;
+    if(!doAnimations){
+        qDebug() << "[ANIMATION] Bewegung abgebrochen.";
+        return;
+    }
     QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
     int diffX = int(pX<sceneCenter.x() ? sceneCenter.x()-pX : pX-sceneCenter.x());
     int diffY = int(pY<sceneCenter.y() ? sceneCenter.y()-pY : pY-sceneCenter.y());
-    qDebug() << diffX << "  -  " << diffY;
-        if(diffX > 1) sceneCenter.setX(sceneCenter.x()-(sceneCenter.x()-pX)*0.1);
-        if(diffY > 1) sceneCenter.setY(sceneCenter.y()-(sceneCenter.y()-pY)*0.1);
+        if(diffX > 64) sceneCenter.setX(sceneCenter.x()-(sceneCenter.x()-pX)*0.1);
+        if(diffY > 64) sceneCenter.setY(sceneCenter.y()-(sceneCenter.y()-pY)*0.1);
         View::centerOn(sceneCenter);
-        if((diffX > 1 || diffY>1) && (diffY-diffY>2 || diffX-diffY>2)){
+        if((diffX > 64 || diffY>64)){
           QTimer::singleShot(10, [this,pX,pY]{fluidMovement(pX,pY);});
         }else{
-            qDebug() << "Fluid finished.";
+            qDebug() << "[ANIMATION] Bewegung abgeschlossen.";
         }
 }

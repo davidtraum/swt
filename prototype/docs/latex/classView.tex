@@ -1,0 +1,149 @@
+\hypertarget{classView}{}\doxysection{View Class Reference}
+\label{classView}\index{View@{View}}
+Inheritance diagram for View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classView}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a76d60435e43027b8497091d02acb77bd}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a76d60435e43027b8497091d02acb77bd}{View\+::mouse\+Release\+Event}} QT Methode. Wird aufgerufen wenn die Maus losgelassen wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_aae14a814f17c825ce462509655e54ee4}{mouse\+Move\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_aae14a814f17c825ce462509655e54ee4}{View\+::mouse\+Move\+Event}} QT Methode. Wird aufgerufen wenn die Maus bewegt wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{wheel\+Event}} (Q\+Wheel\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{View\+::wheel\+Event}} QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{key\+Press\+Event}} (Q\+Key\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classView_a9b77fe3414a870fcbf3f174dc894ce38}\label{classView_a9b77fe3414a870fcbf3f174dc894ce38}} 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ {\bfseries scene}
+\item 
+\mbox{\Hypertarget{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}\label{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}} 
+int {\bfseries drag\+OriginX}
+\item 
+\mbox{\Hypertarget{classView_a21d0bdfad7b5743d73873e3255d35a13}\label{classView_a21d0bdfad7b5743d73873e3255d35a13}} 
+int {\bfseries drag\+OriginY}
+\item 
+\mbox{\Hypertarget{classView_ac9c829cddcc063f5042778e3403b286d}\label{classView_ac9c829cddcc063f5042778e3403b286d}} 
+int {\bfseries drag\+PosX}
+\item 
+\mbox{\Hypertarget{classView_a701072d3ab33e65141484ecd71a6d99c}\label{classView_a701072d3ab33e65141484ecd71a6d99c}} 
+int {\bfseries drag\+PosY}
+\item 
+\mbox{\Hypertarget{classView_a4ff44ed662bb14b094cc2e02522ad605}\label{classView_a4ff44ed662bb14b094cc2e02522ad605}} 
+bool {\bfseries mouse\+Down}
+\item 
+\mbox{\Hypertarget{classView_a01cf6ac75c04e38bfb0b471c22b21697}\label{classView_a01cf6ac75c04e38bfb0b471c22b21697}} 
+double {\bfseries current\+Scale} \{1.\+0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classView_af425358762e264a313ed536d15844d0d}\label{classView_af425358762e264a313ed536d15844d0d}} 
+\index{View@{View}!View@{View}}
+\index{View@{View}!View@{View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & Das Zugehörige Szenenobjekt. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classView_aca6faa6bfdfbaf8214f62ddced6d169c}\label{classView_aca6faa6bfdfbaf8214f62ddced6d169c}} 
+\index{View@{View}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void View\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Event mit Informationen. Wichtig\+: event-\/$>$text()\+: Text der Taste und event-\/$>$key()\+: Id der Taste \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classView_aae14a814f17c825ce462509655e54ee4}\label{classView_aae14a814f17c825ce462509655e54ee4}} 
+\index{View@{View}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void View\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_aae14a814f17c825ce462509655e54ee4}{View\+::mouse\+Move\+Event}} QT Methode. Wird aufgerufen wenn die Maus bewegt wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Informationen über Position der Maus \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classView_a30e2699528059a572a465211f266384e}\label{classView_a30e2699528059a572a465211f266384e}} 
+\index{View@{View}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void View\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Enthält Informationen über die Taste und Position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classView_a76d60435e43027b8497091d02acb77bd}\label{classView_a76d60435e43027b8497091d02acb77bd}} 
+\index{View@{View}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void View\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_a76d60435e43027b8497091d02acb77bd}{View\+::mouse\+Release\+Event}} QT Methode. Wird aufgerufen wenn die Maus losgelassen wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Informationen über Position und Taste \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classView_a094f2fd748e2855fcd4ec42d171e5bbe}\label{classView_a094f2fd748e2855fcd4ec42d171e5bbe}} 
+\index{View@{View}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
+{\footnotesize\ttfamily void View\+::wheel\+Event (\begin{DoxyParamCaption}\item[{Q\+Wheel\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{View\+::wheel\+Event}} QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Eventobjekt mit Infos. Wichtig\+: event-\/$>$delta()\+: Positiv oder negativ jenachdem in welche Richtung gedreht wurde. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/application/view.\+h\item 
+src/application/view.\+cpp\end{DoxyCompactItemize}

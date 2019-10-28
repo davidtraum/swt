@@ -21,6 +21,7 @@ public:
 private:
     bool doAnimations;
     void fluidZoom(double target, bool in);
+    void fluidMove(int vX, int vY);
     void fluidMovement(int pX, int pY);
 };
 

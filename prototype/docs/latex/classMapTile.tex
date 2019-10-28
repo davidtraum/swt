@@ -1,0 +1,213 @@
+\hypertarget{classMapTile}{}\doxysection{Map\+Tile Class Reference}
+\label{classMapTile}\index{MapTile@{MapTile}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMapTile_addf1438faf6be80e9a1cd44a26483fb5}\label{classMapTile_addf1438faf6be80e9a1cd44a26483fb5}} 
+enum {\bfseries T\+Y\+PE} \{ \newline
+{\bfseries G\+R\+A\+SS}, 
+{\bfseries F\+O\+R\+R\+E\+ST}, 
+{\bfseries C\+I\+TY}, 
+{\bfseries C\+I\+T\+Y\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries R\+I\+V\+E\+R\+\_\+H}, 
+{\bfseries R\+I\+V\+E\+R\+\_\+V}, 
+{\bfseries R\+I\+V\+E\+R\+\_\+\+LB}, 
+{\bfseries R\+I\+V\+E\+R\+\_\+\+LT}, 
+\newline
+{\bfseries R\+I\+V\+E\+R\+\_\+\+RT}, 
+{\bfseries R\+I\+V\+E\+R\+\_\+\+RB}, 
+{\bfseries R\+A\+I\+L\+\_\+H}, 
+{\bfseries R\+A\+I\+L\+\_\+\+C\+U\+R\+VE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMapTile_a40647e6d567d577778e81a81b7047217}\label{classMapTile_a40647e6d567d577778e81a81b7047217}} 
+\mbox{\hyperlink{classMapTile_a40647e6d567d577778e81a81b7047217}{Map\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a40647e6d567d577778e81a81b7047217}{Map\+Tile\+::\+Map\+Tile}} Konstruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapTile_a6f6c6e03095e0f1ed503dd30f499793c}{set\+Type}} (T\+Y\+PE p\+Type)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a6f6c6e03095e0f1ed503dd30f499793c}{Map\+Tile\+::set\+Type}} Setzt den Typ der Kachel. \end{DoxyCompactList}\item 
+T\+Y\+PE \mbox{\hyperlink{classMapTile_af67fb2b04970d5160e8bdacb05484bac}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_af67fb2b04970d5160e8bdacb05484bac}{Map\+Tile\+::get\+Type}} Liefert den Typ des Quadranten. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52}{set\+Rotation}} (int p\+Rotation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52}{Map\+Tile\+::set\+Rotation}} Hilfsfunktion zur Rotation im Quadrat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMapTile_a194a81d5169fd52dc8ddda195eff4ca6}{get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a194a81d5169fd52dc8ddda195eff4ca6}{Map\+Tile\+::get\+Rotation}} Liefert die aktuelle Rotation. (Himmelsrichtung) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapTile_a954bfbd36f8055157616c38392a0ceef}{set\+Position}} (int posX, int posY)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a954bfbd36f8055157616c38392a0ceef}{Map\+Tile\+::set\+Position}} Setzt die Position der Kachel. (In Pixeln) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMapTile_af1dc148431a17720f9254eae4034a49f}{is\+River}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_af1dc148431a17720f9254eae4034a49f}{Map\+Tile\+::is\+River}} Checkt ob die Kachel ein Fluss ist. \end{DoxyCompactList}\item 
+Q\+Graphics\+Pixmap\+Item $\ast$ \mbox{\hyperlink{classMapTile_a04adb2286fb76310bca5f3ecef200c0e}{get\+Pixmap\+Item}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a04adb2286fb76310bca5f3ecef200c0e}{Map\+Tile\+::get\+Pixmap\+Item}} Liefert das Pixmap Item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCity}{City}} $\ast$ \mbox{\hyperlink{classMapTile_ab5245ea56fde79ef7640ed93583a57fd}{get\+City}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_ab5245ea56fde79ef7640ed93583a57fd}{Map\+Tile\+::get\+City}} Die Informationen. Falls keine Stadt\+: null. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}{set\+City}} (\mbox{\hyperlink{classCity}{City}} $\ast$p\+City)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}{Map\+Tile\+::set\+City}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}{getX}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}{Map\+Tile\+::getX}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMapTile_a27013c9d383c819e1af233e551f63bbf}{getY}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a27013c9d383c819e1af233e551f63bbf}{Map\+Tile\+::getY}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMapTile_ab5245ea56fde79ef7640ed93583a57fd}\label{classMapTile_ab5245ea56fde79ef7640ed93583a57fd}} 
+\index{MapTile@{MapTile}!getCity@{getCity}}
+\index{getCity@{getCity}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getCity()}{getCity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCity}{City}} $\ast$ Map\+Tile\+::get\+City (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_ab5245ea56fde79ef7640ed93583a57fd}{Map\+Tile\+::get\+City}} Die Informationen. Falls keine Stadt\+: null. 
+
+\begin{DoxyReturn}{Returns}
+Liefert die Informationen über eine Stadt auf der Kachel. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a04adb2286fb76310bca5f3ecef200c0e}\label{classMapTile_a04adb2286fb76310bca5f3ecef200c0e}} 
+\index{MapTile@{MapTile}!getPixmapItem@{getPixmapItem}}
+\index{getPixmapItem@{getPixmapItem}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getPixmapItem()}{getPixmapItem()}}
+{\footnotesize\ttfamily Q\+Graphics\+Pixmap\+Item $\ast$ Map\+Tile\+::get\+Pixmap\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a04adb2286fb76310bca5f3ecef200c0e}{Map\+Tile\+::get\+Pixmap\+Item}} Liefert das Pixmap Item. 
+
+\begin{DoxyReturn}{Returns}
+Das Pixmap Item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a194a81d5169fd52dc8ddda195eff4ca6}\label{classMapTile_a194a81d5169fd52dc8ddda195eff4ca6}} 
+\index{MapTile@{MapTile}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily int Map\+Tile\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a194a81d5169fd52dc8ddda195eff4ca6}{Map\+Tile\+::get\+Rotation}} Liefert die aktuelle Rotation. (Himmelsrichtung) 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Rotation (0-\/3) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_af67fb2b04970d5160e8bdacb05484bac}\label{classMapTile_af67fb2b04970d5160e8bdacb05484bac}} 
+\index{MapTile@{MapTile}!getType@{getType}}
+\index{getType@{getType}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Map\+Tile\+::\+T\+Y\+PE Map\+Tile\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_af67fb2b04970d5160e8bdacb05484bac}{Map\+Tile\+::get\+Type}} Liefert den Typ des Quadranten. 
+
+\begin{DoxyReturn}{Returns}
+Den Typ. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}\label{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}} 
+\index{MapTile@{MapTile}!getX@{getX}}
+\index{getX@{getX}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Map\+Tile\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}{Map\+Tile\+::getX}}. 
+
+\begin{DoxyReturn}{Returns}
+Der X Index des Quadranten. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a27013c9d383c819e1af233e551f63bbf}\label{classMapTile_a27013c9d383c819e1af233e551f63bbf}} 
+\index{MapTile@{MapTile}!getY@{getY}}
+\index{getY@{getY}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Map\+Tile\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a27013c9d383c819e1af233e551f63bbf}{Map\+Tile\+::getY}}. 
+
+\begin{DoxyReturn}{Returns}
+Der Y Index des Quadranten. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_af1dc148431a17720f9254eae4034a49f}\label{classMapTile_af1dc148431a17720f9254eae4034a49f}} 
+\index{MapTile@{MapTile}!isRiver@{isRiver}}
+\index{isRiver@{isRiver}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{isRiver()}{isRiver()}}
+{\footnotesize\ttfamily bool Map\+Tile\+::is\+River (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_af1dc148431a17720f9254eae4034a49f}{Map\+Tile\+::is\+River}} Checkt ob die Kachel ein Fluss ist. 
+
+\begin{DoxyReturn}{Returns}
+Ob die Kachel ein Fluss ist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}\label{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}} 
+\index{MapTile@{MapTile}!setCity@{setCity}}
+\index{setCity@{setCity}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{setCity()}{setCity()}}
+{\footnotesize\ttfamily void Map\+Tile\+::set\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCity}{City}} $\ast$}]{p\+City }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}{Map\+Tile\+::set\+City}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+City} & Fügt dem Quadranten Daten über eine Stadt hinzu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapTile_a954bfbd36f8055157616c38392a0ceef}\label{classMapTile_a954bfbd36f8055157616c38392a0ceef}} 
+\index{MapTile@{MapTile}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Map\+Tile\+::set\+Position (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a954bfbd36f8055157616c38392a0ceef}{Map\+Tile\+::set\+Position}} Setzt die Position der Kachel. (In Pixeln) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & Die X Koordinate. \\
+\hline
+{\em posY} & Die Y Koordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52}\label{classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52}} 
+\index{MapTile@{MapTile}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Map\+Tile\+::set\+Rotation (\begin{DoxyParamCaption}\item[{int}]{p\+Rotation }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52}{Map\+Tile\+::set\+Rotation}} Hilfsfunktion zur Rotation im Quadrat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Rotation} & 0=Ursprung 1=90° Grad 2=180° Grad 3=270° \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapTile_a6f6c6e03095e0f1ed503dd30f499793c}\label{classMapTile_a6f6c6e03095e0f1ed503dd30f499793c}} 
+\index{MapTile@{MapTile}!setType@{setType}}
+\index{setType@{setType}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Map\+Tile\+::set\+Type (\begin{DoxyParamCaption}\item[{Map\+Tile\+::\+T\+Y\+PE}]{p\+Type }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a6f6c6e03095e0f1ed503dd30f499793c}{Map\+Tile\+::set\+Type}} Setzt den Typ der Kachel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Type} & Der Typ. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/application/maptile.\+h\item 
+src/application/maptile.\+cpp\end{DoxyCompactItemize}
