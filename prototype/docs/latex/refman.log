@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/TeX Live for SUSE Linux) (preloaded format=pdflatex 2019.10.28)  29 OCT 2019 01:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/TeX Live for SUSE Linux) (preloaded format=pdflatex 2019.10.28)  29 OCT 2019 01:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1298,32 +1298,15 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Kapitel 2.
-(./hierarchy.tex
+(./namespaces.tex
 
-LaTeX Warning: Reference `classCity' on page 3 undefined on input line 3.
-
-
-LaTeX Warning: Reference `classGraphicsManager' on page 3 undefined on input li
-ne 4.
-
-
-LaTeX Warning: Reference `classMapTile' on page 3 undefined on input line 5.
-
-
-LaTeX Warning: Reference `classScene' on page 3 undefined on input line 7.
-
-
-LaTeX Warning: Reference `classView' on page 3 undefined on input line 10.
-
-
-LaTeX Warning: Reference `classMainWindow' on page 3 undefined on input line 13
-.
+LaTeX Warning: Reference `namespaceUi' on page 3 undefined on input line 3.
 
 ) [3] [4
 
 ]
 Kapitel 3.
-(./annotated.tex
+(./hierarchy.tex
 
 LaTeX Warning: Reference `classCity' on page 5 undefined on input line 3.
 
@@ -1332,56 +1315,151 @@ LaTeX Warning: Reference `classGraphicsManager' on page 5 undefined on input li
 ne 4.
 
 
-LaTeX Warning: Reference `classMainWindow' on page 5 undefined on input line 5.
-
-
-
-LaTeX Warning: Reference `classMapTile' on page 5 undefined on input line 6.
+LaTeX Warning: Reference `classMapTile' on page 5 undefined on input line 5.
 
 
 LaTeX Warning: Reference `classScene' on page 5 undefined on input line 7.
 
 
-LaTeX Warning: Reference `classView' on page 5 undefined on input line 8.
+LaTeX Warning: Reference `classView' on page 5 undefined on input line 10.
+
+
+LaTeX Warning: Reference `classMainWindow' on page 5 undefined on input line 13
+.
 
 ) [5] [6
 
 ]
 Kapitel 4.
-(./classCity.tex
+(./annotated.tex
+
+LaTeX Warning: Reference `classCity' on page 7 undefined on input line 3.
+
+
+LaTeX Warning: Reference `classGraphicsManager' on page 7 undefined on input li
+ne 4.
+
+
+LaTeX Warning: Reference `classMainWindow' on page 7 undefined on input line 5.
+
+
+
+LaTeX Warning: Reference `classMapTile' on page 7 undefined on input line 6.
+
+
+LaTeX Warning: Reference `classScene' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Reference `classView' on page 7 undefined on input line 8.
+
+) [7] [8
+
+]
+Kapitel 5.
+(./files.tex
+
+LaTeX Warning: Reference `city_8cpp' on page 9 undefined on input line 3.
+
+
+LaTeX Warning: Reference `city_8h' on page 9 undefined on input line 4.
+
+
+LaTeX Warning: Reference `graphicsmanager_8cpp' on page 9 undefined on input li
+ne 5.
+
+
+LaTeX Warning: Reference `graphicsmanager_8h' on page 9 undefined on input line
+ 6.
+
+
+LaTeX Warning: Reference `main_8cpp' on page 9 undefined on input line 7.
+
+
+LaTeX Warning: Reference `main_8h' on page 9 undefined on input line 8.
+
+
+LaTeX Warning: Reference `mainwindow_8cpp' on page 9 undefined on input line 9.
+
+
+
+LaTeX Warning: Reference `mainwindow_8h' on page 9 undefined on input line 10.
+
+
+LaTeX Warning: Reference `maptile_8cpp' on page 9 undefined on input line 11.
+
+
+LaTeX Warning: Reference `maptile_8h' on page 9 undefined on input line 12.
+
+
+LaTeX Warning: Reference `scene_8cpp' on page 9 undefined on input line 13.
+
+
+LaTeX Warning: Reference `scene_8h' on page 9 undefined on input line 14.
+
+
+LaTeX Warning: Reference `view_8cpp' on page 9 undefined on input line 15.
+
+
+LaTeX Warning: Reference `view_8h' on page 9 undefined on input line 16.
+
+) [9] [10
+
+]
+Kapitel 6.
+(./namespaceUi.tex) [11] [12
+
+]
+Kapitel 7.
+(./classCity.tex <./classCity__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./classCity__coll__graph.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>
+<classCity__coll__graph.pdf, id=138, 163.61125pt x 259.97125pt>
+File: classCity__coll__graph.pdf Graphic file (type pdf)
+<use classCity__coll__graph.pdf>
+Package pdftex.def Info: classCity__coll__graph.pdf  used on input line 13.
+(pdftex.def)             Requested size: 163.0pt x 258.99873pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
+(Font)              scaled to size 10.79993pt on input line 16.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 19.
  (/usr/share/texmf/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
+(Font)              scaled to size 8.99994pt on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 7.
+(Font)              scaled to size 8.09995pt on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 7.
+(Font)              scaled to size 8.09995pt on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 7.
+(Font)              scaled to size 6.29996pt on input line 20.
+ [13]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 54.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 54.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 47.
+(Font)              scaled to size 7.19995pt on input line 55.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 55.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 47.
- [7]
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 55.
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.1 on input line 61.
+(longtable)                in table 7.1 on input line 69.
 
-
-Underfull \hbox (badness 10000) detected at line 75
+[14]
+Underfull \hbox (badness 10000) detected at line 93
 [][][]
  []
 
@@ -1391,16 +1469,16 @@ pdfTeX warning: pdflatex (file ./classCity_a0543ff407447b87a952c40bb36f5eef1_ic
 graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
 >
-<classCity_a0543ff407447b87a952c40bb36f5eef1_icgraph.pdf, id=120, 509.905pt x 1
+<classCity_a0543ff407447b87a952c40bb36f5eef1_icgraph.pdf, id=206, 509.905pt x 1
 38.5175pt>
 File: classCity_a0543ff407447b87a952c40bb36f5eef1_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_a0543ff407447b87a952c40bb36f5eef1_icgraph.pdf>
 Package pdftex.def Info: classCity_a0543ff407447b87a952c40bb36f5eef1_icgraph.pd
-f  used on input line 82.
+f  used on input line 100.
 (pdftex.def)             Requested size: 350.0pt x 95.08258pt.
 
-Underfull \hbox (badness 10000) detected at line 95
+Underfull \hbox (badness 10000) detected at line 113
 [][][]
  []
 
@@ -1410,30 +1488,30 @@ pdfTeX warning: pdflatex (file ./classCity_a99261799f5bec9256ef94c3e4ebda0df_ic
 graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
 >
-<classCity_a99261799f5bec9256ef94c3e4ebda0df_icgraph.pdf, id=129, 509.905pt x 1
+<classCity_a99261799f5bec9256ef94c3e4ebda0df_icgraph.pdf, id=213, 509.905pt x 1
 38.5175pt>
 File: classCity_a99261799f5bec9256ef94c3e4ebda0df_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_a99261799f5bec9256ef94c3e4ebda0df_icgraph.pdf>
 Package pdftex.def Info: classCity_a99261799f5bec9256ef94c3e4ebda0df_icgraph.pd
-f  used on input line 102.
+f  used on input line 120.
 (pdftex.def)             Requested size: 350.0pt x 95.08258pt.
- [8]
-Underfull \hbox (badness 10000) detected at line 115
+ [15]
+Underfull \hbox (badness 10000) detected at line 133
 [][][]
  []
 
  <./classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pdf>
-<classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pdf, id=148, 471.7625pt x 
+<classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pdf, id=231, 471.7625pt x 
 100.375pt>
 File: classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pdf>
 Package pdftex.def Info: classCity_adc7fe5313b3572973918cf6385e87fd5_icgraph.pd
-f  used on input line 122.
+f  used on input line 140.
 (pdftex.def)             Requested size: 350.0pt x 74.4693pt.
 
-Underfull \hbox (badness 10000) detected at line 135
+Underfull \hbox (badness 10000) detected at line 153
 [][][]
  []
 
@@ -1443,89 +1521,131 @@ pdfTeX warning: pdflatex (file ./classCity_ae2fad5199ff6b8f11a39fa7500757beb_ic
 graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
 >
-<classCity_ae2fad5199ff6b8f11a39fa7500757beb_icgraph.pdf, id=155, 464.73625pt x
+<classCity_ae2fad5199ff6b8f11a39fa7500757beb_icgraph.pdf, id=238, 464.73625pt x
  100.375pt>
 File: classCity_ae2fad5199ff6b8f11a39fa7500757beb_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_ae2fad5199ff6b8f11a39fa7500757beb_icgraph.pdf>
 Package pdftex.def Info: classCity_ae2fad5199ff6b8f11a39fa7500757beb_icgraph.pd
-f  used on input line 142.
+f  used on input line 160.
 (pdftex.def)             Requested size: 350.0pt x 75.59656pt.
- [9]
+ [16]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.2 on input line 161.
+(longtable)                in table 7.2 on input line 179.
 
  <./classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pdf>
-<classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pdf, id=172, 319.1925pt x 
-100.375pt>
+<classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pdf, id=255, 393.47pt x 10
+0.375pt>
 File: classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pdf>
 Package pdftex.def Info: classCity_aa386d95c7f928b239bc4973ce816106d_icgraph.pd
-f  used on input line 166.
-(pdftex.def)             Requested size: 318.0pt x 100.00102pt.
- [10]
+f  used on input line 184.
+(pdftex.def)             Requested size: 350.0pt x 89.28444pt.
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.3 on input line 183.
+(longtable)                in table 7.3 on input line 201.
 
- <./classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf>
-<classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf, id=189, 316.18124pt x
+ <./classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf
+
+pdfTeX warning: pdflatex (file ./classCity_a198b26b45e0b52f27a18b3631db5070c_ic
+graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>
+<classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf, id=262, 390.45876pt x
  100.375pt>
 File: classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pdf>
 Package pdftex.def Info: classCity_a198b26b45e0b52f27a18b3631db5070c_icgraph.pd
-f  used on input line 188.
-(pdftex.def)             Requested size: 315.0pt x 100.00716pt.
-
+f  used on input line 206.
+(pdftex.def)             Requested size: 350.0pt x 89.97826pt.
+ [17]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.4 on input line 205.
+(longtable)                in table 7.4 on input line 223.
 
- <./classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf
-
-pdfTeX warning: pdflatex (file ./classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_ic
-graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
-age
->
-<classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf, id=196, 310.15875pt x
+ <./classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf>
+<classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf, id=281, 384.43625pt x
  100.375pt>
 File: classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf Graphic file (typ
 e pdf)
 <use classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pdf>
 Package pdftex.def Info: classCity_ac4ff08b2faa48f34b8ffbff37f4b0621_icgraph.pd
-f  used on input line 210.
-(pdftex.def)             Requested size: 309.0pt x 99.9995pt.
-) (./classGraphicsManager.tex [11]
+f  used on input line 228.
+(pdftex.def)             Requested size: 350.0pt x 91.39038pt.
+)
+(./classGraphicsManager.tex <./classGraphicsManager__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./classGraphicsManager__coll__graph.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>
+<classGraphicsManager__coll__graph.pdf, id=289, 193.72375pt x 149.55875pt>
+File: classGraphicsManager__coll__graph.pdf Graphic file (type pdf)
+<use classGraphicsManager__coll__graph.pdf>
+Package pdftex.def Info: classGraphicsManager__coll__graph.pdf  used on input l
+ine 13.
+(pdftex.def)             Requested size: 193.0pt x 149.00154pt.
+ [18] [19]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.5 on input line 34.
+(longtable)                in table 7.5 on input line 58.
 
 
-Underfull \hbox (badness 10000) detected at line 35
+Underfull \hbox (badness 10000) detected at line 59
 [][][]
  []
 
 ) (./classMainWindow.tex <./classMainWindow__inherit__graph.pdf>
-<classMainWindow__inherit__graph.pdf, id=218, 176.66pt x 243.91125pt>
+<classMainWindow__inherit__graph.pdf, id=332, 176.66pt x 243.91125pt>
 File: classMainWindow__inherit__graph.pdf Graphic file (type pdf)
 <use classMainWindow__inherit__graph.pdf>
 Package pdftex.def Info: classMainWindow__inherit__graph.pdf  used on input lin
-e 9.
+e 13.
 (pdftex.def)             Requested size: 176.0pt x 243.00252pt.
+ <./classMainWindow__coll__graph.pdf
 
-Underfull \vbox (badness 4416) has occurred while \output is active []
-
- [12]
-[13]
+pdfTeX warning: pdflatex (file ./classMainWindow__coll__graph.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>
+<classMainWindow__coll__graph.pdf, id=338, 176.66pt x 243.91125pt>
+File: classMainWindow__coll__graph.pdf Graphic file (type pdf)
+<use classMainWindow__coll__graph.pdf>
+Package pdftex.def Info: classMainWindow__coll__graph.pdf  used on input line 2
+2.
+(pdftex.def)             Requested size: 176.0pt x 243.00252pt.
+ [20]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.6 on input line 43.
+(longtable)                in table 7.6 on input line 54.
 
-) (./classMapTile.tex [14]
-Underfull \hbox (badness 10000) detected at line 80
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21])
+(./classMapTile.tex <./classMapTile__coll__graph.pdf>
+<classMapTile__coll__graph.pdf, id=381, 178.6675pt x 508.90125pt>
+File: classMapTile__coll__graph.pdf Graphic file (type pdf)
+<use classMapTile__coll__graph.pdf>
+Package pdftex.def Info: classMapTile__coll__graph.pdf  used on input line 13.
+(pdftex.def)             Requested size: 178.0pt x 507.0286pt.
+
+Underfull \vbox (badness 1442) has occurred while \output is active []
+
+ [22]
+[23]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 7.7 on input line 132.
+
+
+Overfull \vbox (63.36261pt too high) has occurred while \output is active []
+
+
+[24]
+Underfull \hbox (badness 10000) detected at line 159
 [][][]
  []
 
@@ -1535,16 +1655,16 @@ pdfTeX warning: pdflatex (file ./classMapTile_ab5245ea56fde79ef7640ed93583a57fd
 _icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph.pdf, id=309, 482.80376p
+<classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph.pdf, id=492, 482.80376p
 t x 100.375pt>
 File: classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph.pdf>
 Package pdftex.def Info: classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph
-.pdf  used on input line 87.
+.pdf  used on input line 166.
 (pdftex.def)             Requested size: 350.0pt x 72.7677pt.
 
-Underfull \hbox (badness 10000) detected at line 100
+Underfull \hbox (badness 10000) detected at line 179
 [][][]
  []
 
@@ -1554,79 +1674,79 @@ pdfTeX warning: pdflatex (file ./classMapTile_a04adb2286fb76310bca5f3ecef200c0e
 _icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph.pdf, id=316, 363.3575pt
- x 100.375pt>
+<classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph.pdf, id=499, 437.635pt 
+x 100.375pt>
 File: classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph.pdf>
 Package pdftex.def Info: classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph
-.pdf  used on input line 107.
-(pdftex.def)             Requested size: 350.0pt x 96.68817pt.
- [15]
-Underfull \hbox (badness 10000) detected at line 120
+.pdf  used on input line 186.
+(pdftex.def)             Requested size: 350.0pt x 80.27559pt.
+ [25]
+Underfull \hbox (badness 10000) detected at line 199
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 133
+Underfull \hbox (badness 10000) detected at line 212
 [][][]
  []
 
  <./classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.pdf>
-<classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.pdf, id=340, 488.82625p
+<classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.pdf, id=521, 488.82625p
 t x 100.375pt>
 File: classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.pdf>
 Package pdftex.def Info: classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph
-.pdf  used on input line 140.
+.pdf  used on input line 219.
 (pdftex.def)             Requested size: 350.0pt x 71.87018pt.
 
-Underfull \hbox (badness 10000) detected at line 153
+Underfull \hbox (badness 10000) detected at line 232
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 166
+Underfull \hbox (badness 10000) detected at line 245
 [][][]
  []
 
-[16]
-Underfull \hbox (badness 10000) detected at line 179
+[26]
+Underfull \hbox (badness 10000) detected at line 258
 [][][]
  []
 
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.7 on input line 196.
+(longtable)                in table 7.8 on input line 275.
 
  <./classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.pdf>
-<classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.pdf, id=360, 327.2225pt
- x 100.375pt>
+<classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.pdf, id=541, 401.5pt x 
+100.375pt>
 File: classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.pdf>
 Package pdftex.def Info: classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph
-.pdf  used on input line 201.
-(pdftex.def)             Requested size: 326.0pt x 99.9995pt.
- [17]
+.pdf  used on input line 280.
+(pdftex.def)             Requested size: 350.0pt x 87.50626pt.
+ [27]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.8 on input line 220.
+(longtable)                in table 7.9 on input line 299.
 
  <./classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.pdf>
-<classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.pdf, id=378, 346.29375p
+<classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.pdf, id=559, 420.57124p
 t x 100.375pt>
 File: classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.pdf>
 Package pdftex.def Info: classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph
-.pdf  used on input line 225.
-(pdftex.def)             Requested size: 345.0pt x 100.00255pt.
+.pdf  used on input line 304.
+(pdftex.def)             Requested size: 350.0pt x 83.5333pt.
 
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.9 on input line 242.
+(longtable)                in table 7.10 on input line 321.
 
  <./classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.pdf
 
@@ -1634,27 +1754,27 @@ pdfTeX warning: pdflatex (file ./classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52
 _icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.pdf, id=385, 500.87125p
+<classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.pdf, id=566, 575.14874p
 t x 138.5175pt>
 File: classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.pdf>
 Package pdftex.def Info: classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph
-.pdf  used on input line 247.
-(pdftex.def)             Requested size: 350.0pt x 96.7967pt.
- [18]
+.pdf  used on input line 326.
+(pdftex.def)             Requested size: 350.0pt x 84.29475pt.
+ [28]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.10 on input line 264.
+(longtable)                in table 7.11 on input line 343.
 
  <./classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.pdf>
-<classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.pdf, id=403, 325.215pt x
+<classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.pdf, id=585, 325.215pt x
  100.375pt>
 File: classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.pdf Graphic file (t
 ype pdf)
 <use classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.pdf>
 Package pdftex.def Info: classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.
-pdf  used on input line 269.
+pdf  used on input line 348.
 (pdftex.def)             Requested size: 324.0pt x 100.00716pt.
  <./classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.pdf
 
@@ -1662,55 +1782,90 @@ pdfTeX warning: pdflatex (file ./classMapTile_a6f6c6e03095e0f1ed503dd30f499793c
 _icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >
-<classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.pdf, id=409, 354.32375p
+<classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.pdf, id=591, 428.60126p
 t x 138.5175pt>
 File: classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.pdf Graphic file (
 type pdf)
 <use classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.pdf>
 Package pdftex.def Info: classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph
-.pdf  used on input line 276.
-(pdftex.def)             Requested size: 350.0pt x 136.83049pt.
-) (./classScene.tex <./classScene__inherit__graph.pdf
-
-pdfTeX warning: pdflatex (file ./classScene__inherit__graph.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
->
-<classScene__inherit__graph.pdf, id=415, 179.67125pt x 343.2825pt>
+.pdf  used on input line 355.
+(pdftex.def)             Requested size: 350.0pt x 113.11584pt.
+ [29]) (./classScene.tex <./classScene__inherit__graph.pdf>
+<classScene__inherit__graph.pdf, id=613, 179.67125pt x 343.2825pt>
 File: classScene__inherit__graph.pdf Graphic file (type pdf)
 <use classScene__inherit__graph.pdf>
-Package pdftex.def Info: classScene__inherit__graph.pdf  used on input line 9.
+Package pdftex.def Info: classScene__inherit__graph.pdf  used on input line 13.
+
 (pdftex.def)             Requested size: 179.0pt x 342.0245pt.
+ <./classScene__coll__graph.pdf
 
-Underfull \vbox (badness 1635) has occurred while \output is active []
+pdfTeX warning: pdflatex (file ./classScene__coll__graph.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>
+<classScene__coll__graph.pdf, id=619, 291.0875pt x 713.66624pt>
+File: classScene__coll__graph.pdf Graphic file (type pdf)
+<use classScene__coll__graph.pdf>
+Package pdftex.def Info: classScene__coll__graph.pdf  used on input line 22.
+(pdftex.def)             Requested size: 224.34238pt x 550.0pt.
+ [30] [31] <./classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph.pdf>
+<classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph.pdf, id=670, 509.905pt x 3
+67.3725pt>
+File: classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph.pdf Graphic file (typ
+e pdf)
+<use classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph.pdf>
+Package pdftex.def Info: classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph.pd
+f  used on input line 88.
+(pdftex.def)             Requested size: 350.0pt x 252.17555pt.
 
- [19]
-[20]
+[32] <./classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph.pdf
+
+pdfTeX warning: pdflatex (file ./classScene_a1ef1c0e0972913d4c477ead916cf06b0_i
+cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single 
+page
+>
+<classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph.pdf, id=695, 274.02374pt 
+x 100.375pt>
+File: classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph.pdf Graphic file (ty
+pe pdf)
+<use classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph.pdf>
+Package pdftex.def Info: classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph.p
+df  used on input line 95.
+(pdftex.def)             Requested size: 273.0pt x 100.00716pt.
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.11 on input line 74.
+(longtable)                in table 7.12 on input line 114.
 
- <./classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf>
-<classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf, id=461, 349.305pt x 
+ <./classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf
+
+pdfTeX warning: pdflatex (file ./classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_i
+cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single 
+page
+>
+<classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf, id=704, 349.305pt x 
 100.375pt>
 File: classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf Graphic file (ty
 pe pdf)
 <use classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.pdf>
 Package pdftex.def Info: classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph.p
-df  used on input line 79.
+df  used on input line 119.
 (pdftex.def)             Requested size: 348.0pt x 100.00562pt.
- [21]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.12 on input line 96.
+(longtable)                in table 7.13 on input line 136.
 
  <./classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pdf>
-<classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pdf, id=487, 326.21875pt x
+<classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pdf, id=722, 326.21875pt x
  291.0875pt>
 File: classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pdf Graphic file (typ
 e pdf)
 <use classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pdf>
 Package pdftex.def Info: classScene_a4caee3e7069bad7901a4a12b19cd304c_cgraph.pd
-f  used on input line 101.
+f  used on input line 141.
 (pdftex.def)             Requested size: 325.0pt x 290.02522pt.
  <./classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.pdf
 
@@ -1718,33 +1873,46 @@ pdfTeX warning: pdflatex (file ./classScene_a4caee3e7069bad7901a4a12b19cd304c_i
 cgraph.pdf): PDF inclusion: multiple pdfs with page group included in a single 
 page
 >
-<classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.pdf, id=494, 354.32375pt 
+<classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.pdf, id=728, 354.32375pt 
 x 100.375pt>
 File: classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.pdf Graphic file (ty
 pe pdf)
 <use classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.pdf>
 Package pdftex.def Info: classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph.p
-df  used on input line 108.
+df  used on input line 148.
 (pdftex.def)             Requested size: 350.0pt x 99.15251pt.
-) (./classView.tex <./classView__inherit__graph.pdf
-
-pdfTeX warning: pdflatex (file ./classView__inherit__graph.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->
-<classView__inherit__graph.pdf, id=500, 205.76875pt x 398.48875pt>
+ [34] [35]) (./classView.tex <./classView__inherit__graph.pdf>
+<classView__inherit__graph.pdf, id=762, 205.76875pt x 398.48875pt>
 File: classView__inherit__graph.pdf Graphic file (type pdf)
 <use classView__inherit__graph.pdf>
-Package pdftex.def Info: classView__inherit__graph.pdf  used on input line 9.
+Package pdftex.def Info: classView__inherit__graph.pdf  used on input line 13.
 (pdftex.def)             Requested size: 205.0pt x 397.00414pt.
- [22] [23]
+
+Underfull \vbox (badness 1924) has occurred while \output is active []
+
+ [36] <./classView__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./classView__coll__graph.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>
+<classView__coll__graph.pdf, id=776, 362.35374pt x 973.6375pt>
+File: classView__coll__graph.pdf Graphic file (type pdf)
+<use classView__coll__graph.pdf>
+Package pdftex.def Info: classView__coll__graph.pdf  used on input line 22.
+(pdftex.def)             Requested size: 204.69154pt x 550.0pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+[38]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.13 on input line 83.
+(longtable)                in table 7.14 on input line 88.
 
-[24]
+[39]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.14 on input line 103.
+(longtable)                in table 7.15 on input line 108.
 
  <./classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf
 
@@ -1752,13 +1920,13 @@ pdfTeX warning: pdflatex (file ./classView_a240c2bf51520324466ab8f2e435f77b2_cg
 raph.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
 ge
 >
-<classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf, id=574, 316.18124pt x 
+<classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf, id=854, 316.18124pt x 
 100.375pt>
 File: classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf Graphic file (type
  pdf)
 <use classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf>
 Package pdftex.def Info: classView_a240c2bf51520324466ab8f2e435f77b2_cgraph.pdf
-  used on input line 108.
+  used on input line 113.
 (pdftex.def)             Requested size: 315.0pt x 100.00716pt.
  <./classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pdf
 
@@ -1766,68 +1934,65 @@ pdfTeX warning: pdflatex (file ./classView_a240c2bf51520324466ab8f2e435f77b2_ic
 graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
 >
-<classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pdf, id=580, 319.1925pt x 
+<classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pdf, id=860, 319.1925pt x 
 100.375pt>
 File: classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pdf Graphic file (typ
 e pdf)
 <use classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pdf>
 Package pdftex.def Info: classView_a240c2bf51520324466ab8f2e435f77b2_icgraph.pd
-f  used on input line 115.
+f  used on input line 120.
 (pdftex.def)             Requested size: 318.0pt x 100.00102pt.
-
+ [40]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.15 on input line 134.
+(longtable)                in table 7.16 on input line 139.
 
- <./classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf
-
-pdfTeX warning: pdflatex (file ./classView_a5b3625ec64bc9d2432cc09d33e6879f1_ic
-graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
-age
->
-<classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf, id=587, 515.9275pt x 
+ <./classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf>
+<classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf, id=879, 515.9275pt x 
 138.5175pt>
 File: classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf Graphic file (typ
 e pdf)
 <use classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pdf>
 Package pdftex.def Info: classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.pd
-f  used on input line 139.
+f  used on input line 144.
 (pdftex.def)             Requested size: 350.0pt x 93.97083pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.16 on input line 158.
+(longtable)                in table 7.17 on input line 163.
 
- <./classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf>
-<classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf, id=604, 346.29375pt x
+ <./classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf
+
+pdfTeX warning: pdflatex (file ./classView_a33de978d43cde59ae344035ebcb60184_ic
+graph.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>
+<classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf, id=886, 346.29375pt x
  138.5175pt>
 File: classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf Graphic file (typ
 e pdf)
 <use classView_a33de978d43cde59ae344035ebcb60184_icgraph.pdf>
 Package pdftex.def Info: classView_a33de978d43cde59ae344035ebcb60184_icgraph.pd
-f  used on input line 163.
+f  used on input line 168.
 (pdftex.def)             Requested size: 345.0pt x 138.00354pt.
- [26]
+ [41]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.17 on input line 180.
+(longtable)                in table 7.18 on input line 185.
 
  <./classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf>
-<classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf, id=622, 466.74374pt x 
+<classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf, id=903, 466.74374pt x 
 138.5175pt>
 File: classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf Graphic file (type
  pdf)
 <use classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf>
 Package pdftex.def Info: classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.pdf
-  used on input line 185.
+  used on input line 190.
 (pdftex.def)             Requested size: 350.0pt x 103.87517pt.
 
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.18 on input line 202.
+(longtable)                in table 7.19 on input line 207.
 
  <./classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf
 
@@ -1835,49 +2000,270 @@ pdfTeX warning: pdflatex (file ./classView_aae14a814f17c825ce462509655e54ee4_cg
 raph.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
 ge
 >
-<classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf, id=629, 488.82625pt x 
+<classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf, id=910, 488.82625pt x 
 291.0875pt>
 File: classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf Graphic file (type
  pdf)
 <use classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf>
 Package pdftex.def Info: classView_aae14a814f17c825ce462509655e54ee4_cgraph.pdf
-  used on input line 207.
+  used on input line 212.
 (pdftex.def)             Requested size: 350.0pt x 208.42355pt.
- [27]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.19 on input line 224.
+(longtable)                in table 7.20 on input line 229.
 
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.20 on input line 239.
+(longtable)                in table 7.21 on input line 244.
 
  <./classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf>
-<classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf, id=648, 512.91624pt x 
+<classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf, id=928, 512.91624pt x 
 291.0875pt>
 File: classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf Graphic file (type
  pdf)
 <use classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf>
 Package pdftex.def Info: classView_a76d60435e43027b8497091d02acb77bd_cgraph.pdf
-  used on input line 244.
+  used on input line 249.
 (pdftex.def)             Requested size: 350.0pt x 198.62976pt.
- [28]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 4.21 on input line 261.
+(longtable)                in table 7.22 on input line 266.
 
-) [29] [30
+[44]) [45] [46
 
 ]
+Kapitel 8.
+(./city_8cpp.tex <./city_8cpp__incl.pdf
+
+pdfTeX warning: pdflatex (file ./city_8cpp__incl.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>
+<city_8cpp__incl.pdf, id=974, 197.73875pt x 212.795pt>
+File: city_8cpp__incl.pdf Graphic file (type pdf)
+<use city_8cpp__incl.pdf>
+Package pdftex.def Info: city_8cpp__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 197.0pt x 212.0022pt.
+) (./city_8h.tex <./city_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./city_8h__incl.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>
+<city_8h__incl.pdf, id=980, 187.70125pt x 156.585pt>
+File: city_8h__incl.pdf Graphic file (type pdf)
+<use city_8h__incl.pdf>
+Package pdftex.def Info: city_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 187.0pt x 156.00879pt.
+ [47] <./city_8h__dep__incl.pdf>
+<city_8h__dep__incl.pdf, id=996, 517.935pt x 325.215pt>
+File: city_8h__dep__incl.pdf Graphic file (type pdf)
+<use city_8h__dep__incl.pdf>
+Package pdftex.def Info: city_8h__dep__incl.pdf  used on input line 16.
+(pdftex.def)             Requested size: 350.0pt x 219.77861pt.
+) (./graphicsmanager_8cpp.tex <./graphicsmanager_8cpp__incl.pdf
+
+pdfTeX warning: pdflatex (file ./graphicsmanager_8cpp__incl.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>
+<graphicsmanager_8cpp__incl.pdf, id=1003, 376.40625pt x 212.795pt>
+File: graphicsmanager_8cpp__incl.pdf Graphic file (type pdf)
+<use graphicsmanager_8cpp__incl.pdf>
+Package pdftex.def Info: graphicsmanager_8cpp__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 350.0pt x 197.88106pt.
+) (./graphicsmanager_8h.tex [48] <./graphicsmanager_8h__incl.pdf>
+<graphicsmanager_8h__incl.pdf, id=1018, 376.40625pt x 156.585pt>
+File: graphicsmanager_8h__incl.pdf Graphic file (type pdf)
+<use graphicsmanager_8h__incl.pdf>
+Package pdftex.def Info: graphicsmanager_8h__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 145.61058pt.
+ <./graphicsmanager_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./graphicsmanager_8h__dep__incl.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>
+<graphicsmanager_8h__dep__incl.pdf, id=1024, 470.75874pt x 381.425pt>
+File: graphicsmanager_8h__dep__incl.pdf Graphic file (type pdf)
+<use graphicsmanager_8h__dep__incl.pdf>
+Package pdftex.def Info: graphicsmanager_8h__dep__incl.pdf  used on input line 
+18.
+(pdftex.def)             Requested size: 350.0pt x 283.58287pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49])
+(./main_8cpp.tex <./main_8cpp__incl.pdf>
+<main_8cpp__incl.pdf, id=1039, 1382.16376pt x 437.635pt>
+File: main_8cpp__incl.pdf Graphic file (type pdf)
+<use main_8cpp__incl.pdf>
+Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 18.
+(pdftex.def)             Requested size: 350.0pt x 110.81749pt.
+ [50] <./main_8cpp_a797b6e81613edceb3de9b5667ed57098_icgraph.pdf>
+<main_8cpp_a797b6e81613edceb3de9b5667ed57098_icgraph.pdf, id=1066, 234.8775pt x
+ 100.375pt>
+File: main_8cpp_a797b6e81613edceb3de9b5667ed57098_icgraph.pdf Graphic file (typ
+e pdf)
+<use main_8cpp_a797b6e81613edceb3de9b5667ed57098_icgraph.pdf>
+Package pdftex.def Info: main_8cpp_a797b6e81613edceb3de9b5667ed57098_icgraph.pd
+f  used on input line 56.
+(pdftex.def)             Requested size: 234.0pt x 99.9995pt.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 8.1 on input line 75.
+
+
+Overfull \vbox (5.8788pt too high) has occurred while \output is active []
+
+
+[51]
+Underfull \hbox (badness 10000) detected at line 76
+[][][]
+ []
+
+ <./main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>
+<main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf, id=1093, 584.1825pt x 
+367.3725pt>
+File: main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf Graphic file (type
+ pdf)
+<use main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>
+Package pdftex.def Info: main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf
+  used on input line 83.
+(pdftex.def)             Requested size: 350.0pt x 220.11127pt.
+) (./main_8h.tex
+[52] <./main_8h__incl.pdf>
+<main_8h__incl.pdf, id=1114, 563.10374pt x 212.795pt>
+File: main_8h__incl.pdf Graphic file (type pdf)
+<use main_8h__incl.pdf>
+Package pdftex.def Info: main_8h__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 132.26271pt.
+ <./main_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./main_8h__dep__incl.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>
+<main_8h__dep__incl.pdf, id=1120, 452.69125pt x 325.215pt>
+File: main_8h__dep__incl.pdf Graphic file (type pdf)
+<use main_8h__dep__incl.pdf>
+Package pdftex.def Info: main_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 251.43857pt.
+ [53]) (./mainwindow_8cpp.tex <./mainwindow_8cpp__incl.pdf>
+<mainwindow_8cpp__incl.pdf, id=1143, 393.47pt x 212.795pt>
+File: mainwindow_8cpp__incl.pdf Graphic file (type pdf)
+<use mainwindow_8cpp__incl.pdf>
+Package pdftex.def Info: mainwindow_8cpp__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 189.28304pt.
+)
+(./mainwindow_8h.tex [54] <./mainwindow_8h__incl.pdf>
+<mainwindow_8h__incl.pdf, id=1163, 248.93pt x 156.585pt>
+File: mainwindow_8h__incl.pdf Graphic file (type pdf)
+<use mainwindow_8h__incl.pdf>
+Package pdftex.def Info: mainwindow_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 248.0pt x 156.004pt.
+ <./mainwindow_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./mainwindow_8h__dep__incl.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>
+<mainwindow_8h__dep__incl.pdf, id=1169, 657.45625pt x 381.425pt>
+File: mainwindow_8h__dep__incl.pdf Graphic file (type pdf)
+<use mainwindow_8h__dep__incl.pdf>
+Package pdftex.def Info: mainwindow_8h__dep__incl.pdf  used on input line 16.
+(pdftex.def)             Requested size: 350.0pt x 203.05638pt.
+
+Underfull \vbox (badness 3449) has occurred while \output is active []
+
+ [55])
+(./maptile_8cpp.tex <./maptile_8cpp__incl.pdf>
+<maptile_8cpp__incl.pdf, id=1186, 673.51625pt x 325.215pt>
+File: maptile_8cpp__incl.pdf Graphic file (type pdf)
+<use maptile_8cpp__incl.pdf>
+Package pdftex.def Info: maptile_8cpp__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 169.0036pt.
+) (./maptile_8h.tex <./maptile_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./maptile_8h__incl.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>
+<maptile_8h__incl.pdf, id=1192, 673.51625pt x 269.005pt>
+File: maptile_8h__incl.pdf Graphic file (type pdf)
+<use maptile_8h__incl.pdf>
+Package pdftex.def Info: maptile_8h__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 139.79309pt.
+ [56] <./maptile_8h__dep__incl.pdf>
+<maptile_8h__dep__incl.pdf, id=1208, 517.935pt x 269.005pt>
+File: maptile_8h__dep__incl.pdf Graphic file (type pdf)
+<use maptile_8h__dep__incl.pdf>
+Package pdftex.def Info: maptile_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 181.79218pt.
+) (./README_8md.tex) (./scene_8cpp.tex <./scene_8cpp__incl.pdf
+
+pdfTeX warning: pdflatex (file ./scene_8cpp__incl.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>
+<scene_8cpp__incl.pdf, id=1215, 1139.25626pt x 381.425pt>
+File: scene_8cpp__incl.pdf Graphic file (type pdf)
+<use scene_8cpp__incl.pdf>
+Package pdftex.def Info: scene_8cpp__incl.pdf  used on input line 12.
+(pdftex.def)             Requested size: 350.0pt x 117.17545pt.
+) (./scene_8h.tex [57] <./scene_8h__incl.pdf>
+<scene_8h__incl.pdf, id=1235, 1139.25626pt x 325.215pt>
+File: scene_8h__incl.pdf Graphic file (type pdf)
+<use scene_8h__incl.pdf>
+Package pdftex.def Info: scene_8h__incl.pdf  used on input line 13.
+(pdftex.def)             Requested size: 350.0pt x 99.90749pt.
+ <./scene_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./scene_8h__dep__incl.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>
+<scene_8h__dep__incl.pdf, id=1241, 433.62pt x 212.795pt>
+File: scene_8h__dep__incl.pdf Graphic file (type pdf)
+<use scene_8h__dep__incl.pdf>
+Package pdftex.def Info: scene_8h__dep__incl.pdf  used on input line 20.
+(pdftex.def)             Requested size: 350.0pt x 171.76878pt.
+ [58]) (./view_8cpp.tex <./view_8cpp__incl.pdf>
+<view_8cpp__incl.pdf, id=1257, 1222.5675pt x 437.635pt>
+File: view_8cpp__incl.pdf Graphic file (type pdf)
+<use view_8cpp__incl.pdf>
+Package pdftex.def Info: view_8cpp__incl.pdf  used on input line 16.
+(pdftex.def)             Requested size: 350.0pt x 125.28152pt.
+) (./view_8h.tex <./view_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./view_8h__incl.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>
+<view_8h__incl.pdf, id=1263, 873.2625pt x 381.425pt>
+File: view_8h__incl.pdf Graphic file (type pdf)
+<use view_8h__incl.pdf>
+Package pdftex.def Info: view_8h__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 152.86993pt.
+ <./view_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./view_8h__dep__incl.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>
+<view_8h__dep__incl.pdf, id=1269, 347.2975pt x 156.585pt>
+File: view_8h__dep__incl.pdf Graphic file (type pdf)
+<use view_8h__dep__incl.pdf>
+Package pdftex.def Info: view_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 346.0pt x 156.0064pt.
+ [59]) [60]
 No file refman.ind.
 
 Package longtable Warning: Table widths have changed. Rerun LaTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
 (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
 
 
 Package rerunfilecheck Warning: File `refman.out' has changed.
@@ -1886,35 +2272,37 @@ Package rerunfilecheck Warning: File `refman.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `refman.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  059559A42310890E0189CA692111482F;10323.
+(rerunfilecheck)             After:  70D653D07CAFD506F3A8A76F99CC100C;26493.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
  ) 
 Here is how much of TeX's memory you used:
- 16412 strings out of 494008
- 240553 string characters out of 6158123
- 333157 words of memory out of 5000000
- 19273 multiletter control sequences out of 15000+600000
- 64319 words of font info for 90 fonts, out of 8000000 for 9000
+ 16862 strings out of 494008
+ 252548 string characters out of 6158123
+ 343157 words of memory out of 5000000
+ 19460 multiletter control sequences out of 15000+600000
+ 66573 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 53i,16n,92p,468b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,829b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/p
 ublic/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/
-urw/courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/urw/courier/ucrro8a.pfb></
-usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/typ
-e1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.p
-fb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (34 pages, 218494 bytes).
+mmi8.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/
+public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/urw/courier/ucrb8a.p
+fb></usr/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts
+/type1/urw/courier/ucrro8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8
+a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf/
+fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/
+uhvro8a.pfb>
+Output written on refman.pdf (64 pages, 334884 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 230 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1423 PDF objects out of 1440 (max. 8388607)
+ 1202 compressed objects within 13 object streams
+ 421 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 

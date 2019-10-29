@@ -2,6 +2,10 @@
 \label{classScene}\index{Scene@{Scene}}
 
 
+{\ttfamily \#include $<$scene.\+h$>$}
+
+
+
 Klassendiagramm für Scene\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -9,13 +13,20 @@ Klassendiagramm für Scene\+:\nopagebreak
 \includegraphics[width=179pt]{classScene__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Zusammengehörigkeiten von Scene\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classScene__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507}} 
 \mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene\+::\+Scene}} Konstruktor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classScene_a1ef1c0e0972913d4c477ead916cf06b0}\label{classScene_a1ef1c0e0972913d4c477ead916cf06b0}} 
 void \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{generate\+World}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{Scene\+::generate\+World}} Diese Methode generiert eine neue Welt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{set\+Active\+Tile}} (Q\+Graphics\+Item $\ast$p\+Item)
@@ -25,36 +36,65 @@ void \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{set\+Active\
 \doxysubsection*{Statische öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}\label{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}} 
-const static int {\bfseries M\+A\+P\+\_\+\+S\+I\+ZE} \{300\}
+const static int \mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{M\+A\+P\+\_\+\+S\+I\+ZE}} \{300\}
 \item 
-\mbox{\Hypertarget{classScene_a0bf17eb78a573f6717516aabe19402f3}\label{classScene_a0bf17eb78a573f6717516aabe19402f3}} 
-const static int {\bfseries T\+I\+L\+E\+\_\+\+S\+I\+ZE} \{64\}
+const static int \mbox{\hyperlink{classScene_a0bf17eb78a573f6717516aabe19402f3}{T\+I\+L\+E\+\_\+\+S\+I\+ZE}} \{64\}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classScene_a504fcabbeda467e84349f665ffd31713}\label{classScene_a504fcabbeda467e84349f665ffd31713}} 
-\mbox{\hyperlink{classMapTile}{Map\+Tile}} {\bfseries data} \mbox{[}Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE\mbox{]}\mbox{[}Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE\mbox{]}
+\mbox{\hyperlink{classMapTile}{Map\+Tile}} \mbox{\hyperlink{classScene_a504fcabbeda467e84349f665ffd31713}{data}} \mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}
 \item 
-\mbox{\Hypertarget{classScene_a47bfe0cac879212214d16188ae09bdc4}\label{classScene_a47bfe0cac879212214d16188ae09bdc4}} 
-Q\+Graphics\+Rect\+Item $\ast$ {\bfseries highlighter}
+Q\+Graphics\+Rect\+Item $\ast$ \mbox{\hyperlink{classScene_a47bfe0cac879212214d16188ae09bdc4}{highlighter}}
 \item 
-\mbox{\Hypertarget{classScene_abb7ae69b9ac9c7965a7091536ccaae83}\label{classScene_abb7ae69b9ac9c7965a7091536ccaae83}} 
-Q\+Graphics\+Ellipse\+Item $\ast$ {\bfseries radius\+Highlighter}
+Q\+Graphics\+Ellipse\+Item $\ast$ \mbox{\hyperlink{classScene_abb7ae69b9ac9c7965a7091536ccaae83}{radius\+Highlighter}}
 \item 
-\mbox{\Hypertarget{classScene_a03320edcd924b9ff8453026e03d41f6e}\label{classScene_a03320edcd924b9ff8453026e03d41f6e}} 
-Q\+Graphics\+Text\+Item $\ast$ {\bfseries text\+Hint}
+Q\+Graphics\+Text\+Item $\ast$ \mbox{\hyperlink{classScene_a03320edcd924b9ff8453026e03d41f6e}{text\+Hint}}
 \item 
-\mbox{\Hypertarget{classScene_aecb59164e9feda75eda4f5e6f540ef18}\label{classScene_aecb59164e9feda75eda4f5e6f540ef18}} 
-bool {\bfseries show\+Radius}
+bool \mbox{\hyperlink{classScene_aecb59164e9feda75eda4f5e6f540ef18}{show\+Radius}}
 \item 
-\mbox{\Hypertarget{classScene_abefde35137fe2630f84e8271f48846c6}\label{classScene_abefde35137fe2630f84e8271f48846c6}} 
-\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ {\bfseries active\+Tile}
+\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ \mbox{\hyperlink{classScene_abefde35137fe2630f84e8271f48846c6}{active\+Tile}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene\+::\+Scene}} Konstruktor. 
+
+
+
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classScene_a1ef1c0e0972913d4c477ead916cf06b0}\label{classScene_a1ef1c0e0972913d4c477ead916cf06b0}} 
+\index{Scene@{Scene}!generateWorld@{generateWorld}}
+\index{generateWorld@{generateWorld}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{generateWorld()}{generateWorld()}}
+{\footnotesize\ttfamily void Scene\+::generate\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{Scene\+::generate\+World}} Diese Methode generiert eine neue Welt. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}\label{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}} 
 \index{Scene@{Scene}!getTileAt@{getTileAt}}
 \index{getTileAt@{getTileAt}!Scene@{Scene}}
@@ -110,7 +150,58 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \end{figure}
 
 
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classScene_abefde35137fe2630f84e8271f48846c6}\label{classScene_abefde35137fe2630f84e8271f48846c6}} 
+\index{Scene@{Scene}!activeTile@{activeTile}}
+\index{activeTile@{activeTile}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{activeTile}{activeTile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapTile}{Map\+Tile}}$\ast$ Scene\+::active\+Tile\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_a504fcabbeda467e84349f665ffd31713}\label{classScene_a504fcabbeda467e84349f665ffd31713}} 
+\index{Scene@{Scene}!data@{data}}
+\index{data@{data}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapTile}{Map\+Tile}} Scene\+::data\mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_a47bfe0cac879212214d16188ae09bdc4}\label{classScene_a47bfe0cac879212214d16188ae09bdc4}} 
+\index{Scene@{Scene}!highlighter@{highlighter}}
+\index{highlighter@{highlighter}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{highlighter}{highlighter}}
+{\footnotesize\ttfamily Q\+Graphics\+Rect\+Item$\ast$ Scene\+::highlighter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}\label{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}} 
+\index{Scene@{Scene}!MAP\_SIZE@{MAP\_SIZE}}
+\index{MAP\_SIZE@{MAP\_SIZE}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{MAP\_SIZE}{MAP\_SIZE}}
+{\footnotesize\ttfamily const static int Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE \{300\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classScene_abb7ae69b9ac9c7965a7091536ccaae83}\label{classScene_abb7ae69b9ac9c7965a7091536ccaae83}} 
+\index{Scene@{Scene}!radiusHighlighter@{radiusHighlighter}}
+\index{radiusHighlighter@{radiusHighlighter}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{radiusHighlighter}{radiusHighlighter}}
+{\footnotesize\ttfamily Q\+Graphics\+Ellipse\+Item$\ast$ Scene\+::radius\+Highlighter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_aecb59164e9feda75eda4f5e6f540ef18}\label{classScene_aecb59164e9feda75eda4f5e6f540ef18}} 
+\index{Scene@{Scene}!showRadius@{showRadius}}
+\index{showRadius@{showRadius}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{showRadius}{showRadius}}
+{\footnotesize\ttfamily bool Scene\+::show\+Radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_a03320edcd924b9ff8453026e03d41f6e}\label{classScene_a03320edcd924b9ff8453026e03d41f6e}} 
+\index{Scene@{Scene}!textHint@{textHint}}
+\index{textHint@{textHint}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{textHint}{textHint}}
+{\footnotesize\ttfamily Q\+Graphics\+Text\+Item$\ast$ Scene\+::text\+Hint\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_a0bf17eb78a573f6717516aabe19402f3}\label{classScene_a0bf17eb78a573f6717516aabe19402f3}} 
+\index{Scene@{Scene}!TILE\_SIZE@{TILE\_SIZE}}
+\index{TILE\_SIZE@{TILE\_SIZE}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{TILE\_SIZE}{TILE\_SIZE}}
+{\footnotesize\ttfamily const static int Scene\+::\+T\+I\+L\+E\+\_\+\+S\+I\+ZE \{64\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
 Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
 \item 
-src/application/scene.\+h\item 
-src/application/scene.\+cpp\end{DoxyCompactItemize}
+src/application/\mbox{\hyperlink{scene_8h}{scene.\+h}}\item 
+src/application/\mbox{\hyperlink{scene_8cpp}{scene.\+cpp}}\end{DoxyCompactItemize}

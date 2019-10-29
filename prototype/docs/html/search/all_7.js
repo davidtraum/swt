@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['view_35',['View',['../classView.html',1,'View'],['../classView.html#af425358762e264a313ed536d15844d0d',1,'View::View()']]]
+  ['keypressevent_41',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]]
 ];

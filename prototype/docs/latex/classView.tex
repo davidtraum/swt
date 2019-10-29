@@ -2,11 +2,24 @@
 \label{classView}\index{View@{View}}
 
 
+{\ttfamily \#include $<$view.\+h$>$}
+
+
+
 Klassendiagramm für View\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=205pt]{classView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Zusammengehörigkeiten von View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classView__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Öffentliche Methoden}
@@ -27,26 +40,19 @@ void \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{key\+Press\+E
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classView_a9b77fe3414a870fcbf3f174dc894ce38}\label{classView_a9b77fe3414a870fcbf3f174dc894ce38}} 
-\mbox{\hyperlink{classScene}{Scene}} $\ast$ {\bfseries scene}
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classView_a9b77fe3414a870fcbf3f174dc894ce38}{scene}}
 \item 
-\mbox{\Hypertarget{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}\label{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}} 
-int {\bfseries drag\+OriginX}
+int \mbox{\hyperlink{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}{drag\+OriginX}}
 \item 
-\mbox{\Hypertarget{classView_a21d0bdfad7b5743d73873e3255d35a13}\label{classView_a21d0bdfad7b5743d73873e3255d35a13}} 
-int {\bfseries drag\+OriginY}
+int \mbox{\hyperlink{classView_a21d0bdfad7b5743d73873e3255d35a13}{drag\+OriginY}}
 \item 
-\mbox{\Hypertarget{classView_ac9c829cddcc063f5042778e3403b286d}\label{classView_ac9c829cddcc063f5042778e3403b286d}} 
-int {\bfseries drag\+PosX}
+int \mbox{\hyperlink{classView_ac9c829cddcc063f5042778e3403b286d}{drag\+PosX}}
 \item 
-\mbox{\Hypertarget{classView_a701072d3ab33e65141484ecd71a6d99c}\label{classView_a701072d3ab33e65141484ecd71a6d99c}} 
-int {\bfseries drag\+PosY}
+int \mbox{\hyperlink{classView_a701072d3ab33e65141484ecd71a6d99c}{drag\+PosY}}
 \item 
-\mbox{\Hypertarget{classView_a4ff44ed662bb14b094cc2e02522ad605}\label{classView_a4ff44ed662bb14b094cc2e02522ad605}} 
-bool {\bfseries mouse\+Down}
+bool \mbox{\hyperlink{classView_a4ff44ed662bb14b094cc2e02522ad605}{mouse\+Down}}
 \item 
-\mbox{\Hypertarget{classView_a01cf6ac75c04e38bfb0b471c22b21697}\label{classView_a01cf6ac75c04e38bfb0b471c22b21697}} 
-double {\bfseries current\+Scale} \{1.\+0\}
+double \mbox{\hyperlink{classView_a01cf6ac75c04e38bfb0b471c22b21697}{current\+Scale}} \{1.\+0\}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
@@ -60,8 +66,7 @@ void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Moveme
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classView_a31d7cea2414022ff47f8289ea922deba}\label{classView_a31d7cea2414022ff47f8289ea922deba}} 
-bool {\bfseries do\+Animations}
+bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animations}}
 \end{DoxyCompactItemize}
 
 
@@ -261,7 +266,58 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \end{DoxyParams}
 
 
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classView_a01cf6ac75c04e38bfb0b471c22b21697}\label{classView_a01cf6ac75c04e38bfb0b471c22b21697}} 
+\index{View@{View}!currentScale@{currentScale}}
+\index{currentScale@{currentScale}!View@{View}}
+\doxysubsubsection{\texorpdfstring{currentScale}{currentScale}}
+{\footnotesize\ttfamily double View\+::current\+Scale \{1.\+0\}}
+
+\mbox{\Hypertarget{classView_a31d7cea2414022ff47f8289ea922deba}\label{classView_a31d7cea2414022ff47f8289ea922deba}} 
+\index{View@{View}!doAnimations@{doAnimations}}
+\index{doAnimations@{doAnimations}!View@{View}}
+\doxysubsubsection{\texorpdfstring{doAnimations}{doAnimations}}
+{\footnotesize\ttfamily bool View\+::do\+Animations\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}\label{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}} 
+\index{View@{View}!dragOriginX@{dragOriginX}}
+\index{dragOriginX@{dragOriginX}!View@{View}}
+\doxysubsubsection{\texorpdfstring{dragOriginX}{dragOriginX}}
+{\footnotesize\ttfamily int View\+::drag\+OriginX}
+
+\mbox{\Hypertarget{classView_a21d0bdfad7b5743d73873e3255d35a13}\label{classView_a21d0bdfad7b5743d73873e3255d35a13}} 
+\index{View@{View}!dragOriginY@{dragOriginY}}
+\index{dragOriginY@{dragOriginY}!View@{View}}
+\doxysubsubsection{\texorpdfstring{dragOriginY}{dragOriginY}}
+{\footnotesize\ttfamily int View\+::drag\+OriginY}
+
+\mbox{\Hypertarget{classView_ac9c829cddcc063f5042778e3403b286d}\label{classView_ac9c829cddcc063f5042778e3403b286d}} 
+\index{View@{View}!dragPosX@{dragPosX}}
+\index{dragPosX@{dragPosX}!View@{View}}
+\doxysubsubsection{\texorpdfstring{dragPosX}{dragPosX}}
+{\footnotesize\ttfamily int View\+::drag\+PosX}
+
+\mbox{\Hypertarget{classView_a701072d3ab33e65141484ecd71a6d99c}\label{classView_a701072d3ab33e65141484ecd71a6d99c}} 
+\index{View@{View}!dragPosY@{dragPosY}}
+\index{dragPosY@{dragPosY}!View@{View}}
+\doxysubsubsection{\texorpdfstring{dragPosY}{dragPosY}}
+{\footnotesize\ttfamily int View\+::drag\+PosY}
+
+\mbox{\Hypertarget{classView_a4ff44ed662bb14b094cc2e02522ad605}\label{classView_a4ff44ed662bb14b094cc2e02522ad605}} 
+\index{View@{View}!mouseDown@{mouseDown}}
+\index{mouseDown@{mouseDown}!View@{View}}
+\doxysubsubsection{\texorpdfstring{mouseDown}{mouseDown}}
+{\footnotesize\ttfamily bool View\+::mouse\+Down}
+
+\mbox{\Hypertarget{classView_a9b77fe3414a870fcbf3f174dc894ce38}\label{classView_a9b77fe3414a870fcbf3f174dc894ce38}} 
+\index{View@{View}!scene@{scene}}
+\index{scene@{scene}!View@{View}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}}$\ast$ View\+::scene}
+
+
+
 Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
 \item 
-src/application/view.\+h\item 
-src/application/view.\+cpp\end{DoxyCompactItemize}
+src/application/\mbox{\hyperlink{view_8h}{view.\+h}}\item 
+src/application/\mbox{\hyperlink{view_8cpp}{view.\+cpp}}\end{DoxyCompactItemize}
