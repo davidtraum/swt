@@ -15,6 +15,8 @@ Wenn man was geändert hat:
 
 #Changelog
 
-28.10. Start des Changelogs
-28.10. Animationen beim Klicken auf Städte
-28.10. Übersichtskarte (Taste: O)
+Datum|Funktion
+-----|--------
+28.10.|Start Changelog
+28.10.|Animation beim Klick auf Städte
+28.10.|Übersichtskarte mit Taste O
