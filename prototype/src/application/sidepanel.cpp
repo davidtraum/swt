@@ -12,10 +12,12 @@ SidePanel::SidePanel()
     setLayout(layout);
 
     moneyLabel = new QLabel();
-    moneyLabel->setText("Kontostand: 0$");
     layout->addWidget(moneyLabel);
 
-    QGroupBox * groupBox = new QGroupBox("Spieler", moneyLabel);
+    timeLabel = new QLabel();
+    layout->addWidget(timeLabel);
+
+    QGroupBox * groupBox = new QGroupBox("Spiel", moneyLabel);
     QVBoxLayout * boxLayout = new QVBoxLayout(groupBox);
     layout->addWidget(groupBox,0,0);
 }
@@ -26,4 +28,5 @@ SidePanel::SidePanel()
  */
 void SidePanel::hookDataModel(DataModel *pModel){
     pModel->setGuiBalanceLabel(moneyLabel);
+    pModel->setGuiTimeLabel(timeLabel);
 }

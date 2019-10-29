@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emainwindow_178',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['view_185',['View',['../classView.html#af425358762e264a313ed536d15844d0d',1,'View']]]
 ];

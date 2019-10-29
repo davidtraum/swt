@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wheelevent_177',['wheelEvent',['../classView.html#a094f2fd748e2855fcd4ec42d171e5bbe',1,'View']]]
+  ['updatebalance_184',['updateBalance',['../classDataModel.html#abc9c6c796348870e45fda933739585d5',1,'DataModel']]]
 ];

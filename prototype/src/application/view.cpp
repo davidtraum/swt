@@ -213,3 +213,10 @@ void View::fluidMovement(int pX, int pY){
             qDebug() << "[ANIMATION] Bewegung abgeschlossen.";
         }
 }
+
+/**
+ * @brief View::enableAnimation Aktiviert animationen bis zum nächsten Event.
+ */
+void View::enableAnimation(){
+    doAnimations = true;
+}

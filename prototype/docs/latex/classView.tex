@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für View\+:\nopagebreak
+Klassendiagramm für View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für View\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von View\+:\nopagebreak
+Zusammengehörigkeiten von View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -36,7 +38,15 @@ void \mbox{\hyperlink{classView_aae14a814f17c825ce462509655e54ee4}{mouse\+Move\+
 void \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{wheel\+Event}} (Q\+Wheel\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a094f2fd748e2855fcd4ec42d171e5bbe}{View\+::wheel\+Event}} QT Methode. Wird aufgerufen wenn das Mausrad gedreht wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{key\+Press\+Event}} (Q\+Key\+Event $\ast$event) override
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_aca6faa6bfdfbaf8214f62ddced6d169c}{View\+::key\+Press\+Event}} QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{fluid\+Zoom}} (double target, bool in)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{View\+::fluid\+Zoom}} Startet eine Zoom-\/\+Animation. Zuvor muss do\+Animations=true gesetzt sein. Bsp\+: fluid\+Zoom(3, true) zoomt 3x in die Karte hinein. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{fluid\+Move}} (int vX, int vY)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{View\+::fluid\+Move}} Verschiebt die Karte animiert und relativ zur aktuellen Position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Movement}} (int pX, int pY)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{View\+::fluid\+Movement}} Verschiebt die Karte animiert an zu einer absoluten Koordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{enable\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,15 +64,6 @@ bool \mbox{\hyperlink{classView_a4ff44ed662bb14b094cc2e02522ad605}{mouse\+Down}}
 \item 
 double \mbox{\hyperlink{classView_a01cf6ac75c04e38bfb0b471c22b21697}{current\+Scale}} \{1.\+0\}
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Methoden}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{fluid\+Zoom}} (double target, bool in)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a33de978d43cde59ae344035ebcb60184}{View\+::fluid\+Zoom}} Startet eine Zoom-\/\+Animation. Zuvor muss do\+Animations=true gesetzt sein. Bsp\+: fluid\+Zoom(3, true) zoomt 3x in die Karte hinein. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{fluid\+Move}} (int vX, int vY)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{View\+::fluid\+Move}} Verschiebt die Karte animiert und relativ zur aktuellen Position. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Movement}} (int pX, int pY)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{View\+::fluid\+Movement}} Verschiebt die Karte animiert an zu einer absoluten Koordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -89,11 +90,29 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classView_a105b23bffbbea3af00bc47fc38a5e98c}\label{classView_a105b23bffbbea3af00bc47fc38a5e98c}} 
+\index{View@{View}!enableAnimation@{enableAnimation}}
+\index{enableAnimation@{enableAnimation}!View@{View}}
+\doxysubsubsection{\texorpdfstring{enableAnimation()}{enableAnimation()}}
+{\footnotesize\ttfamily void View\+::enable\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classView_a105b23bffbbea3af00bc47fc38a5e98c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classView_a240c2bf51520324466ab8f2e435f77b2}\label{classView_a240c2bf51520324466ab8f2e435f77b2}} 
 \index{View@{View}!fluidMove@{fluidMove}}
 \index{fluidMove@{fluidMove}!View@{View}}
 \doxysubsubsection{\texorpdfstring{fluidMove()}{fluidMove()}}
-{\footnotesize\ttfamily void View\+::fluid\+Move (\begin{DoxyParamCaption}\item[{int}]{vX,  }\item[{int}]{vY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void View\+::fluid\+Move (\begin{DoxyParamCaption}\item[{int}]{vX,  }\item[{int}]{vY }\end{DoxyParamCaption})}
 
 
 
@@ -124,7 +143,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{View@{View}!fluidMovement@{fluidMovement}}
 \index{fluidMovement@{fluidMovement}!View@{View}}
 \doxysubsubsection{\texorpdfstring{fluidMovement()}{fluidMovement()}}
-{\footnotesize\ttfamily void View\+::fluid\+Movement (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void View\+::fluid\+Movement (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})}
 
 
 
@@ -148,7 +167,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{View@{View}!fluidZoom@{fluidZoom}}
 \index{fluidZoom@{fluidZoom}!View@{View}}
 \doxysubsubsection{\texorpdfstring{fluidZoom()}{fluidZoom()}}
-{\footnotesize\ttfamily void View\+::fluid\+Zoom (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{bool}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void View\+::fluid\+Zoom (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{bool}]{in }\end{DoxyParamCaption})}
 
 
 
@@ -161,7 +180,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em in} & Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

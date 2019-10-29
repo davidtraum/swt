@@ -25,19 +25,6 @@ View * view;
 Scene * scene;
 SidePanel * sidePanel;
 
-double scale = 0.01;
-
-void introAnimation(){
-    scale+=0.01;
-    view->resetMatrix();
-    view->scale(scale,scale);
-
-    if(scale<1){
-        QTimer::singleShot(10, []{introAnimation();});
-    }
-}
-
-
 /**
  * @brief main Startmethode.
  * @param argc Anzahl der Parameter
@@ -80,9 +67,18 @@ int main(int argc, char *argv[])
 
 
 
-    introAnimation();
+    view->resetMatrix();
+    view->currentScale=0.05;
+    view->scale(0.05, 0.05);
+    view->enableAnimation();
+    view->fluidZoom(1, true);
 
     mainWindow->show();
 
     return a.exec();
+}
+
+void timeTicker(){
+    dataModel->timeTick();
+    QTimer::singleShot(20, []{timeTicker();});
 }

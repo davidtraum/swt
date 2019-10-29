@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pixmapitem_66',['pixmapItem',['../classMapTile.html#ae28ca49bfe916a3473388176fad8c8af',1,'MapTile']]]
+  ['name_66',['name',['../classCity.html#afea8cd8800a8600fa54af37ac05bf177',1,'City']]]
 ];

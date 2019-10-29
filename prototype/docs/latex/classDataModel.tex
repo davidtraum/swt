@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,13 +24,23 @@ int \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{get\+Bala
 void \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{update\+Balance}} (int p\+Balance)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{Data\+Model\+::update\+Balance}} Aktualisiert den Kontostand. Auch in Anzeigen etc. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{set\+Gui\+Balance\+Label}} (Q\+Label $\ast$label)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{Data\+Model\+::set\+Gui\+Balance\+Label}} Setzt das Label in welchem der Kontostand dargestellt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{Data\+Model\+::set\+Gui\+Balance\+Label}} Setzt das Label in welchem der Kontostand dargestellt wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{set\+Gui\+Time\+Label}} (Q\+Label $\ast$label)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{Data\+Model\+::set\+Gui\+Time\+Label}} Setzt das Label in welchem die Zeit dargestellt wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{time\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}{get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}{Data\+Model\+::get\+Time}} Liefert die aktuelle Zeit als Timecode. (Zahl die je nach Geschwindigkeit wächst) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}{balance}}
 \item 
+long \mbox{\hyperlink{classDataModel_a317b1b09cd4bbc946c625e0dcfd89132}{time}}
+\item 
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a600ee15bba4b83c510afc3fb0b579672}{balance\+Label}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a061c37f6be5ba1da4361f23487fab5ba}{time\+Label}}
 \end{DoxyCompactItemize}
 
 
@@ -60,6 +71,19 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a600ee15bba4b83c510afc3fb0b57967
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Kontostand. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}\label{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}} 
+\index{DataModel@{DataModel}!getTime@{getTime}}
+\index{getTime@{getTime}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily long Data\+Model\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}{Data\+Model\+::get\+Time}} Liefert die aktuelle Zeit als Timecode. (Zahl die je nach Geschwindigkeit wächst) 
+
+\begin{DoxyReturn}{Rückgabe}
+Der Timecode. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classDataModel_aa43618b4473a997594d2f971f3e50874}\label{classDataModel_aa43618b4473a997594d2f971f3e50874}} 
 \index{DataModel@{DataModel}!setGuiBalanceLabel@{setGuiBalanceLabel}}
 \index{setGuiBalanceLabel@{setGuiBalanceLabel}!DataModel@{DataModel}}
@@ -87,6 +111,55 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_aa43618b4473a997594d2f971f3e50874_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}\label{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}} 
+\index{DataModel@{DataModel}!setGuiTimeLabel@{setGuiTimeLabel}}
+\index{setGuiTimeLabel@{setGuiTimeLabel}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{setGuiTimeLabel()}{setGuiTimeLabel()}}
+{\footnotesize\ttfamily void Data\+Model\+::set\+Gui\+Time\+Label (\begin{DoxyParamCaption}\item[{Q\+Label $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{Data\+Model\+::set\+Gui\+Time\+Label}} Setzt das Label in welchem die Zeit dargestellt wird. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}\label{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}} 
+\index{DataModel@{DataModel}!timeTick@{timeTick}}
+\index{timeTick@{timeTick}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{timeTick()}{timeTick()}}
+{\footnotesize\ttfamily void Data\+Model\+::time\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a0c605d45cde1e17a0611c004732ac6ee_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classDataModel_abc9c6c796348870e45fda933739585d5}\label{classDataModel_abc9c6c796348870e45fda933739585d5}} 
@@ -125,6 +198,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{balanceLabel@{balanceLabel}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{balanceLabel}{balanceLabel}}
 {\footnotesize\ttfamily Q\+Label$\ast$ Data\+Model\+::balance\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_a317b1b09cd4bbc946c625e0dcfd89132}\label{classDataModel_a317b1b09cd4bbc946c625e0dcfd89132}} 
+\index{DataModel@{DataModel}!time@{time}}
+\index{time@{time}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily long Data\+Model\+::time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_a061c37f6be5ba1da4361f23487fab5ba}\label{classDataModel_a061c37f6be5ba1da4361f23487fab5ba}} 
+\index{DataModel@{DataModel}!timeLabel@{timeLabel}}
+\index{timeLabel@{timeLabel}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{timeLabel}{timeLabel}}
+{\footnotesize\ttfamily Q\+Label$\ast$ Data\+Model\+::time\+Label\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

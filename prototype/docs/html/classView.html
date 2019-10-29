@@ -67,7 +67,6 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
 <a href="#pub-attribs">Öffentliche Attribute</a> &#124;
-<a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classView-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
@@ -79,12 +78,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für View:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView__inherit__graph.svg" width="178" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView__inherit__graph.svg" width="178" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von View:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classView__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classView__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -107,6 +108,18 @@ Zusammengehörigkeiten von View:</div>
 <tr class="memitem:aca6faa6bfdfbaf8214f62ddced6d169c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#aca6faa6bfdfbaf8214f62ddced6d169c">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
 <tr class="memdesc:aca6faa6bfdfbaf8214f62ddced6d169c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#aca6faa6bfdfbaf8214f62ddced6d169c" title="View::keyPressEvent QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird.">View::keyPressEvent</a> QT Methode. Wird Aufgerufen wenn eine Taste gedrückt wird.  <a href="classView.html#aca6faa6bfdfbaf8214f62ddced6d169c">Mehr ...</a><br /></td></tr>
 <tr class="separator:aca6faa6bfdfbaf8214f62ddced6d169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33de978d43cde59ae344035ebcb60184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184">fluidZoom</a> (double target, bool in)</td></tr>
+<tr class="memdesc:a33de978d43cde59ae344035ebcb60184"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein....">View::fluidZoom</a> Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein.  <a href="classView.html#a33de978d43cde59ae344035ebcb60184">Mehr ...</a><br /></td></tr>
+<tr class="separator:a33de978d43cde59ae344035ebcb60184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240c2bf51520324466ab8f2e435f77b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2">fluidMove</a> (int vX, int vY)</td></tr>
+<tr class="memdesc:a240c2bf51520324466ab8f2e435f77b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2" title="View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.">View::fluidMove</a> Verschiebt die Karte animiert und relativ zur aktuellen Position.  <a href="classView.html#a240c2bf51520324466ab8f2e435f77b2">Mehr ...</a><br /></td></tr>
+<tr class="separator:a240c2bf51520324466ab8f2e435f77b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">fluidMovement</a> (int pX, int pY)</td></tr>
+<tr class="memdesc:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1" title="View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.">View::fluidMovement</a> Verschiebt die Karte animiert an zu einer absoluten Koordinate.  <a href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">Mehr ...</a><br /></td></tr>
+<tr class="separator:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105b23bffbbea3af00bc47fc38a5e98c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a105b23bffbbea3af00bc47fc38a5e98c">enableAnimation</a> ()</td></tr>
+<tr class="memdesc:a105b23bffbbea3af00bc47fc38a5e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a105b23bffbbea3af00bc47fc38a5e98c" title="View::enableAnimation Aktiviert animationen bis zum nächsten Event.">View::enableAnimation</a> Aktiviert animationen bis zum nächsten Event.  <a href="classView.html#a105b23bffbbea3af00bc47fc38a5e98c">Mehr ...</a><br /></td></tr>
+<tr class="separator:a105b23bffbbea3af00bc47fc38a5e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Öffentliche Attribute</h2></td></tr>
@@ -124,18 +137,6 @@ Zusammengehörigkeiten von View:</div>
 <tr class="separator:a4ff44ed662bb14b094cc2e02522ad605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a01cf6ac75c04e38bfb0b471c22b21697">currentScale</a> {1.0}</td></tr>
 <tr class="separator:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Methoden</h2></td></tr>
-<tr class="memitem:a33de978d43cde59ae344035ebcb60184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184">fluidZoom</a> (double target, bool in)</td></tr>
-<tr class="memdesc:a33de978d43cde59ae344035ebcb60184"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein....">View::fluidZoom</a> Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein.  <a href="classView.html#a33de978d43cde59ae344035ebcb60184">Mehr ...</a><br /></td></tr>
-<tr class="separator:a33de978d43cde59ae344035ebcb60184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a240c2bf51520324466ab8f2e435f77b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2">fluidMove</a> (int vX, int vY)</td></tr>
-<tr class="memdesc:a240c2bf51520324466ab8f2e435f77b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2" title="View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.">View::fluidMove</a> Verschiebt die Karte animiert und relativ zur aktuellen Position.  <a href="classView.html#a240c2bf51520324466ab8f2e435f77b2">Mehr ...</a><br /></td></tr>
-<tr class="separator:a240c2bf51520324466ab8f2e435f77b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">fluidMovement</a> (int pX, int pY)</td></tr>
-<tr class="memdesc:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1" title="View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.">View::fluidMovement</a> Verschiebt die Karte animiert an zu einer absoluten Koordinate.  <a href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1">Mehr ...</a><br /></td></tr>
-<tr class="separator:a5b3625ec64bc9d2432cc09d33e6879f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -170,14 +171,36 @@ Private Attribute</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a105b23bffbbea3af00bc47fc38a5e98c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105b23bffbbea3af00bc47fc38a5e98c">&#9670;&nbsp;</a></span>enableAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::enableAnimation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a105b23bffbbea3af00bc47fc38a5e98c" title="View::enableAnimation Aktiviert animationen bis zum nächsten Event.">View::enableAnimation</a> Aktiviert animationen bis zum nächsten Event. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a105b23bffbbea3af00bc47fc38a5e98c_icgraph.svg" width="270" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a240c2bf51520324466ab8f2e435f77b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a240c2bf51520324466ab8f2e435f77b2">&#9670;&nbsp;</a></span>fluidMove()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::fluidMove </td>
@@ -197,11 +220,6 @@ Private Attribute</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="classView.html#a240c2bf51520324466ab8f2e435f77b2" title="View::fluidMove Verschiebt die Karte animiert und relativ zur aktuellen Position.">View::fluidMove</a> Verschiebt die Karte animiert und relativ zur aktuellen Position. </p>
@@ -230,9 +248,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::fluidMovement </td>
@@ -252,11 +267,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="classView.html#a5b3625ec64bc9d2432cc09d33e6879f1" title="View::fluidMovement Verschiebt die Karte animiert an zu einer absoluten Koordinate.">View::fluidMovement</a> Verschiebt die Karte animiert an zu einer absoluten Koordinate. </p>
@@ -280,9 +290,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void View::fluidZoom </td>
@@ -302,11 +309,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein....">View::fluidZoom</a> Startet eine Zoom-Animation. Zuvor muss doAnimations=true gesetzt sein. Bsp: fluidZoom(3, true) zoomt 3x in die Karte hinein. </p>
@@ -320,7 +322,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a33de978d43cde59ae344035ebcb60184_icgraph.svg" width="364" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a33de978d43cde59ae344035ebcb60184_icgraph.svg" width="364" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

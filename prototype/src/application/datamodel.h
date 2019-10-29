@@ -10,9 +10,14 @@ public:
     int getBalance();
     void updateBalance(int pBalance);
     void setGuiBalanceLabel(QLabel * label);
+    void setGuiTimeLabel(QLabel * label);
+    void timeTick();
+    long getTime();
 private:
     int balance;
+    long time;
     QLabel * balanceLabel;
+    QLabel * timeLabel;
 };
 
 #endif // DATAMODEL_H
