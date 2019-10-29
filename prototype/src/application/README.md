@@ -12,3 +12,9 @@ Wenn man was geändert hat:
 1. >> git add *
 1. >> git commit -m "Kurze Nachricht was man gemacht hat"
 2. >> git push origin master (Oder eigenen Branch angeben)
+
+#Changelog
+
+28.10. Start des Changelogs
+28.10. Animationen beim Klicken auf Städte
+28.10. Übersichtskarte (Taste: O)
