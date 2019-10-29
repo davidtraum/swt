@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application/sidepanel.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_844f6ab5c2ae79211596f3dcdd81adb7.html">application</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sidepanel.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sidepanel_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SIDEPANEL_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SIDEPANEL_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="datamodel_8h.html">datamodel.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classSidePanel.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSidePanel.html">SidePanel</a>: <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classSidePanel.html#adb97b292d8925f6c1c8da90aaf5d287b">SidePanel</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4">hookDataModel</a>(<a class="code" href="classDataModel.html">DataModel</a> * pModel);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classSidePanel.html#ae1126e4a1ece272796c4d40c39ce4e4b">   17</a></span>&#160;    QGridLayout * <a class="code" href="classSidePanel.html#ae1126e4a1ece272796c4d40c39ce4e4b">layout</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classSidePanel.html#aea340b0e19380288866985f561539f80">   18</a></span>&#160;    QLabel * <a class="code" href="classSidePanel.html#aea340b0e19380288866985f561539f80">moneyLabel</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif // SIDEPANEL_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassSidePanel_html_aea340b0e19380288866985f561539f80"><div class="ttname"><a href="classSidePanel.html#aea340b0e19380288866985f561539f80">SidePanel::moneyLabel</a></div><div class="ttdeci">QLabel * moneyLabel</div><div class="ttdef"><b>Definition:</b> sidepanel.h:18</div></div>
+<div class="ttc" id="aclassSidePanel_html_adb97b292d8925f6c1c8da90aaf5d287b"><div class="ttname"><a href="classSidePanel.html#adb97b292d8925f6c1c8da90aaf5d287b">SidePanel::SidePanel</a></div><div class="ttdeci">SidePanel()</div><div class="ttdoc">SidePanel::SidePanel Erzeugt ein neues Side-Panel (Menü)</div><div class="ttdef"><b>Definition:</b> sidepanel.cpp:9</div></div>
+<div class="ttc" id="aclassSidePanel_html"><div class="ttname"><a href="classSidePanel.html">SidePanel</a></div><div class="ttdef"><b>Definition:</b> sidepanel.h:11</div></div>
+<div class="ttc" id="adatamodel_8h_html"><div class="ttname"><a href="datamodel_8h.html">datamodel.h</a></div></div>
+<div class="ttc" id="aclassDataModel_html_aa43618b4473a997594d2f971f3e50874"><div class="ttname"><a href="classDataModel.html#aa43618b4473a997594d2f971f3e50874">DataModel::setGuiBalanceLabel</a></div><div class="ttdeci">void setGuiBalanceLabel(QLabel *label)</div><div class="ttdoc">DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird.</div><div class="ttdef"><b>Definition:</b> datamodel.cpp:34</div></div>
+<div class="ttc" id="aclassSidePanel_html_a26f78ad7518003db89a4ec57d63da2e4"><div class="ttname"><a href="classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4">SidePanel::hookDataModel</a></div><div class="ttdeci">void hookDataModel(DataModel *pModel)</div><div class="ttdoc">SidePanel::hookDataModel Verknüpft ein Datenmodell mit der Anzeige. Dadurch können dann Textfelder et...</div><div class="ttdef"><b>Definition:</b> sidepanel.cpp:27</div></div>
+<div class="ttc" id="aclassSidePanel_html_ae1126e4a1ece272796c4d40c39ce4e4b"><div class="ttname"><a href="classSidePanel.html#ae1126e4a1ece272796c4d40c39ce4e4b">SidePanel::layout</a></div><div class="ttdeci">QGridLayout * layout</div><div class="ttdef"><b>Definition:</b> sidepanel.h:17</div></div>
+<div class="ttc" id="aclassDataModel_html"><div class="ttname"><a href="classDataModel.html">DataModel</a></div><div class="ttdef"><b>Definition:</b> datamodel.h:6</div></div>
+<div class="ttc" id="asidepanel_8h_html"><div class="ttname"><a href="sidepanel_8h.html">sidepanel.h</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

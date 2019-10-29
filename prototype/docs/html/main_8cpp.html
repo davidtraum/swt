@@ -81,15 +81,20 @@ $(function() {
 <code>#include &lt;QAction&gt;</code><br />
 <code>#include &lt;QTextItem&gt;</code><br />
 <code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;QDockWidget&gt;</code><br />
+<code>#include &lt;QWidget&gt;</code><br />
+<code>#include &lt;QGridLayout&gt;</code><br />
 <code>#include &quot;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="view_8h_source.html">view.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="scene_8h_source.html">scene.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="graphicsmanager_8h_source.html">graphicsmanager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sidepanel_8h_source.html">sidepanel.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include-Abhängigkeitsdiagramm für main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -106,12 +111,16 @@ Variablen</h2></td></tr>
 <tr class="separator:aa07458f3555202507fc8025e8cae6126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6705fab832298411ae13ace059dd583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMainWindow.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab6705fab832298411ae13ace059dd583">mainWindow</a></td></tr>
 <tr class="separator:ab6705fab832298411ae13ace059dd583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0b33719c4cd854b069613f9f0b360d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataModel.html">DataModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aac0b33719c4cd854b069613f9f0b360d">dataModel</a></td></tr>
+<tr class="separator:aac0b33719c4cd854b069613f9f0b360d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa52a27abaaf72231a84c99f2bfa4283"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aaa52a27abaaf72231a84c99f2bfa4283">gameRunning</a> = true</td></tr>
 <tr class="separator:aaa52a27abaaf72231a84c99f2bfa4283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2dd70d8b95c32fb670ac6f9cc8df201"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classView.html">View</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af2dd70d8b95c32fb670ac6f9cc8df201">view</a></td></tr>
 <tr class="separator:af2dd70d8b95c32fb670ac6f9cc8df201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de66f9ad116ce1d596c7f4edc40c521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6de66f9ad116ce1d596c7f4edc40c521">scene</a></td></tr>
 <tr class="separator:a6de66f9ad116ce1d596c7f4edc40c521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6557e0f5cda6d5bf4852ccb1fe3733d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSidePanel.html">SidePanel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af6557e0f5cda6d5bf4852ccb1fe3733d">sidePanel</a></td></tr>
+<tr class="separator:af6557e0f5cda6d5bf4852ccb1fe3733d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80d402d10e8341004c0caf10133b80ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a80d402d10e8341004c0caf10133b80ab">scale</a> = 0.01</td></tr>
 <tr class="separator:a80d402d10e8341004c0caf10133b80ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -176,12 +185,27 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.svg" width="100%" height="594"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Variablen-Dokumentation</h2>
+<a id="aac0b33719c4cd854b069613f9f0b360d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac0b33719c4cd854b069613f9f0b360d">&#9670;&nbsp;</a></span>dataModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataModel.html">DataModel</a>* dataModel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aaa52a27abaaf72231a84c99f2bfa4283"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa52a27abaaf72231a84c99f2bfa4283">&#9670;&nbsp;</a></span>gameRunning</h2>
 
@@ -246,6 +270,20 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classScene.html">Scene</a>* scene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6557e0f5cda6d5bf4852ccb1fe3733d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6557e0f5cda6d5bf4852ccb1fe3733d">&#9670;&nbsp;</a></span>sidePanel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSidePanel.html">SidePanel</a>* sidePanel</td>
         </tr>
       </table>
 </div><div class="memdoc">

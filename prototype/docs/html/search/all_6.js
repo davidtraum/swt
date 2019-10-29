@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['introanimation_39',['introAnimation',['../main_8cpp.html#a797b6e81613edceb3de9b5667ed57098',1,'main.cpp']]],
-  ['isriver_40',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
+  ['highlighter_44',['highlighter',['../classScene.html#a47bfe0cac879212214d16188ae09bdc4',1,'Scene']]],
+  ['hookdatamodel_45',['hookDataModel',['../classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4',1,'SidePanel']]]
 ];

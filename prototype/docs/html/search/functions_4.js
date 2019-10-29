@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keypressevent_134',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]]
+  ['hookdatamodel_154',['hookDataModel',['../classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4',1,'SidePanel']]]
 ];

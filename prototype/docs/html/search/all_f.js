@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['view_87',['View',['../classView.html',1,'View'],['../classView.html#af425358762e264a313ed536d15844d0d',1,'View::View()'],['../main_8cpp.html#af2dd70d8b95c32fb670ac6f9cc8df201',1,'view():&#160;main.cpp']]],
-  ['view_2ecpp_88',['view.cpp',['../view_8cpp.html',1,'']]],
-  ['view_2eh_89',['view.h',['../view_8h.html',1,'']]]
+  ['texthint_96',['textHint',['../classScene.html#a03320edcd924b9ff8453026e03d41f6e',1,'Scene']]],
+  ['tile_5fsize_97',['TILE_SIZE',['../classScene.html#a0bf17eb78a573f6717516aabe19402f3',1,'Scene']]],
+  ['type_98',['TYPE',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5',1,'MapTile::TYPE()'],['../classMapTile.html#a50841d679e9b804d98aaeddbf1b2c4ad',1,'MapTile::type()']]]
 ];

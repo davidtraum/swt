@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application/datamodel.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_844f6ab5c2ae79211596f3dcdd81adb7.html">application</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">datamodel.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="datamodel_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DATAMODEL_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DATAMODEL_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classDataModel.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDataModel.html">DataModel</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classDataModel.html#abff03aef2cb531142a35781bb87c3365">DataModel</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDataModel.html#a0706aa63d7955b77be45afe44dfec440">getBalance</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDataModel.html#abc9c6c796348870e45fda933739585d5">updateBalance</a>(<span class="keywordtype">int</span> pBalance);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDataModel.html#aa43618b4473a997594d2f971f3e50874">setGuiBalanceLabel</a>(QLabel * label);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classDataModel.html#aedc4085bdf09e5f11b896a7cc44a6072">   14</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDataModel.html#aedc4085bdf09e5f11b896a7cc44a6072">balance</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classDataModel.html#a600ee15bba4b83c510afc3fb0b579672">   15</a></span>&#160;    QLabel * <a class="code" href="classDataModel.html#a600ee15bba4b83c510afc3fb0b579672">balanceLabel</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif // DATAMODEL_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassDataModel_html_aedc4085bdf09e5f11b896a7cc44a6072"><div class="ttname"><a href="classDataModel.html#aedc4085bdf09e5f11b896a7cc44a6072">DataModel::balance</a></div><div class="ttdeci">int balance</div><div class="ttdef"><b>Definition:</b> datamodel.h:14</div></div>
+<div class="ttc" id="adatamodel_8h_html"><div class="ttname"><a href="datamodel_8h.html">datamodel.h</a></div></div>
+<div class="ttc" id="aclassDataModel_html_aa43618b4473a997594d2f971f3e50874"><div class="ttname"><a href="classDataModel.html#aa43618b4473a997594d2f971f3e50874">DataModel::setGuiBalanceLabel</a></div><div class="ttdeci">void setGuiBalanceLabel(QLabel *label)</div><div class="ttdoc">DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird.</div><div class="ttdef"><b>Definition:</b> datamodel.cpp:34</div></div>
+<div class="ttc" id="aclassDataModel_html_a0706aa63d7955b77be45afe44dfec440"><div class="ttname"><a href="classDataModel.html#a0706aa63d7955b77be45afe44dfec440">DataModel::getBalance</a></div><div class="ttdeci">int getBalance()</div><div class="ttdoc">DataModel::getBalance Liefert den aktuellen Kontostand zurück.</div><div class="ttdef"><b>Definition:</b> datamodel.cpp:15</div></div>
+<div class="ttc" id="aclassDataModel_html_abff03aef2cb531142a35781bb87c3365"><div class="ttname"><a href="classDataModel.html#abff03aef2cb531142a35781bb87c3365">DataModel::DataModel</a></div><div class="ttdeci">DataModel()</div><div class="ttdoc">DataModel::DataModel Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf,...</div><div class="ttdef"><b>Definition:</b> datamodel.cpp:6</div></div>
+<div class="ttc" id="aclassDataModel_html_a600ee15bba4b83c510afc3fb0b579672"><div class="ttname"><a href="classDataModel.html#a600ee15bba4b83c510afc3fb0b579672">DataModel::balanceLabel</a></div><div class="ttdeci">QLabel * balanceLabel</div><div class="ttdef"><b>Definition:</b> datamodel.h:15</div></div>
+<div class="ttc" id="aclassDataModel_html_abc9c6c796348870e45fda933739585d5"><div class="ttname"><a href="classDataModel.html#abc9c6c796348870e45fda933739585d5">DataModel::updateBalance</a></div><div class="ttdeci">void updateBalance(int pBalance)</div><div class="ttdoc">DataModel::updateBalance Aktualisiert den Kontostand. Auch in Anzeigen etc.</div><div class="ttdef"><b>Definition:</b> datamodel.cpp:24</div></div>
+<div class="ttc" id="aclassDataModel_html"><div class="ttname"><a href="classDataModel.html">DataModel</a></div><div class="ttdef"><b>Definition:</b> datamodel.h:6</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

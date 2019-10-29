@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['keypressevent_41',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]]
+  ['introanimation_46',['introAnimation',['../main_8cpp.html#a797b6e81613edceb3de9b5667ed57098',1,'main.cpp']]],
+  ['isriver_47',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
 ];

@@ -17,20 +17,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     city.cpp \
+    datamodel.cpp \
     graphicsmanager.cpp \
     main.cpp \
     mainwindow.cpp \
     maptile.cpp \
     scene.cpp \
+    sidepanel.cpp \
     view.cpp
 
 HEADERS += \
     city.h \
+    datamodel.h \
     graphicsmanager.h \
     main.h \
     mainwindow.h \
     maptile.h \
     scene.h \
+    sidepanel.h \
     view.h
 
 FORMS += \

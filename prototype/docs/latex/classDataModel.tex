@@ -1,0 +1,138 @@
+\hypertarget{classDataModel}{}\doxysection{Data\+Model Klassenreferenz}
+\label{classDataModel}\index{DataModel@{DataModel}}
+
+
+{\ttfamily \#include $<$datamodel.\+h$>$}
+
+
+
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classDataModel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{get\+Balance}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{Data\+Model\+::get\+Balance}} Liefert den aktuellen Kontostand zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{update\+Balance}} (int p\+Balance)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{Data\+Model\+::update\+Balance}} Aktualisiert den Kontostand. Auch in Anzeigen etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{set\+Gui\+Balance\+Label}} (Q\+Label $\ast$label)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{Data\+Model\+::set\+Gui\+Balance\+Label}} Setzt das Label in welchem der Kontostand dargestellt wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}{balance}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a600ee15bba4b83c510afc3fb0b579672}{balance\+Label}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classDataModel_abff03aef2cb531142a35781bb87c3365}\label{classDataModel_abff03aef2cb531142a35781bb87c3365}} 
+\index{DataModel@{DataModel}!DataModel@{DataModel}}
+\index{DataModel@{DataModel}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{DataModel()}{DataModel()}}
+{\footnotesize\ttfamily Data\+Model\+::\+Data\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. 
+
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classDataModel_a0706aa63d7955b77be45afe44dfec440}\label{classDataModel_a0706aa63d7955b77be45afe44dfec440}} 
+\index{DataModel@{DataModel}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily int Data\+Model\+::get\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{Data\+Model\+::get\+Balance}} Liefert den aktuellen Kontostand zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Der aktuelle Kontostand. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_aa43618b4473a997594d2f971f3e50874}\label{classDataModel_aa43618b4473a997594d2f971f3e50874}} 
+\index{DataModel@{DataModel}!setGuiBalanceLabel@{setGuiBalanceLabel}}
+\index{setGuiBalanceLabel@{setGuiBalanceLabel}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{setGuiBalanceLabel()}{setGuiBalanceLabel()}}
+{\footnotesize\ttfamily void Data\+Model\+::set\+Gui\+Balance\+Label (\begin{DoxyParamCaption}\item[{Q\+Label $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{Data\+Model\+::set\+Gui\+Balance\+Label}} Setzt das Label in welchem der Kontostand dargestellt wird. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_aa43618b4473a997594d2f971f3e50874_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_aa43618b4473a997594d2f971f3e50874_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_abc9c6c796348870e45fda933739585d5}\label{classDataModel_abc9c6c796348870e45fda933739585d5}} 
+\index{DataModel@{DataModel}!updateBalance@{updateBalance}}
+\index{updateBalance@{updateBalance}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{updateBalance()}{updateBalance()}}
+{\footnotesize\ttfamily void Data\+Model\+::update\+Balance (\begin{DoxyParamCaption}\item[{int}]{p\+Balance }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{Data\+Model\+::update\+Balance}} Aktualisiert den Kontostand. Auch in Anzeigen etc. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Balance} & Der neue Kontostand. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_abc9c6c796348870e45fda933739585d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}\label{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}} 
+\index{DataModel@{DataModel}!balance@{balance}}
+\index{balance@{balance}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{balance}{balance}}
+{\footnotesize\ttfamily int Data\+Model\+::balance\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_a600ee15bba4b83c510afc3fb0b579672}\label{classDataModel_a600ee15bba4b83c510afc3fb0b579672}} 
+\index{DataModel@{DataModel}!balanceLabel@{balanceLabel}}
+\index{balanceLabel@{balanceLabel}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{balanceLabel}{balanceLabel}}
+{\footnotesize\ttfamily Q\+Label$\ast$ Data\+Model\+::balance\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/application/\mbox{\hyperlink{datamodel_8h}{datamodel.\+h}}\item 
+src/application/\mbox{\hyperlink{datamodel_8cpp}{datamodel.\+cpp}}\end{DoxyCompactItemize}

@@ -6,12 +6,17 @@
 {\ttfamily \#include $<$Q\+Action$>$}\newline
 {\ttfamily \#include $<$Q\+Text\+Item$>$}\newline
 {\ttfamily \#include $<$Q\+Timer$>$}\newline
+{\ttfamily \#include $<$Q\+Dock\+Widget$>$}\newline
+{\ttfamily \#include $<$Q\+Widget$>$}\newline
+{\ttfamily \#include $<$Q\+Grid\+Layout$>$}\newline
 {\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}view.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}scene.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}graphicsmanager.\+h\char`\"{}}\newline
-Include-\/\+Abhängigkeitsdiagramm für main.\+cpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}sidepanel.\+h\char`\"{}}\newline
+Include-\/\+Abhängigkeitsdiagramm für main.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,11 +37,15 @@ int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int ar
 \item 
 \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{main_8cpp_ab6705fab832298411ae13ace059dd583}{main\+Window}}
 \item 
+\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{main_8cpp_aac0b33719c4cd854b069613f9f0b360d}{data\+Model}}
+\item 
 bool \mbox{\hyperlink{main_8cpp_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running}} = true
 \item 
 \mbox{\hyperlink{classView}{View}} $\ast$ \mbox{\hyperlink{main_8cpp_af2dd70d8b95c32fb670ac6f9cc8df201}{view}}
 \item 
 \mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{main_8cpp_a6de66f9ad116ce1d596c7f4edc40c521}{scene}}
+\item 
+\mbox{\hyperlink{classSidePanel}{Side\+Panel}} $\ast$ \mbox{\hyperlink{main_8cpp_af6557e0f5cda6d5bf4852ccb1fe3733d}{side\+Panel}}
 \item 
 double \mbox{\hyperlink{main_8cpp_a80d402d10e8341004c0caf10133b80ab}{scale}} = 0.\+01
 \end{DoxyCompactItemize}
@@ -76,7 +85,8 @@ main Startmethode.
 \begin{DoxyReturn}{Rückgabe}
 Exit-\/\+Code (0=Alles gut) 
 \end{DoxyReturn}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -86,6 +96,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 
 \doxysubsection{Variablen-\/\+Dokumentation}
+\mbox{\Hypertarget{main_8cpp_aac0b33719c4cd854b069613f9f0b360d}\label{main_8cpp_aac0b33719c4cd854b069613f9f0b360d}} 
+\index{main.cpp@{main.cpp}!dataModel@{dataModel}}
+\index{dataModel@{dataModel}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dataModel}{dataModel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataModel}{Data\+Model}}$\ast$ data\+Model}
+
 \mbox{\Hypertarget{main_8cpp_aaa52a27abaaf72231a84c99f2bfa4283}\label{main_8cpp_aaa52a27abaaf72231a84c99f2bfa4283}} 
 \index{main.cpp@{main.cpp}!gameRunning@{gameRunning}}
 \index{gameRunning@{gameRunning}!main.cpp@{main.cpp}}
@@ -115,6 +131,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{scene@{scene}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{scene}{scene}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}}$\ast$ scene}
+
+\mbox{\Hypertarget{main_8cpp_af6557e0f5cda6d5bf4852ccb1fe3733d}\label{main_8cpp_af6557e0f5cda6d5bf4852ccb1fe3733d}} 
+\index{main.cpp@{main.cpp}!sidePanel@{sidePanel}}
+\index{sidePanel@{sidePanel}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sidePanel}{sidePanel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSidePanel}{Side\+Panel}}$\ast$ side\+Panel}
 
 \mbox{\Hypertarget{main_8cpp_af2dd70d8b95c32fb670ac6f9cc8df201}\label{main_8cpp_af2dd70d8b95c32fb670ac6f9cc8df201}} 
 \index{main.cpp@{main.cpp}!view@{view}}

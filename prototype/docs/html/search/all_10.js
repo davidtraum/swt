@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wheelevent_90',['wheelEvent',['../classView.html#a094f2fd748e2855fcd4ec42d171e5bbe',1,'View']]]
+  ['ui_99',['Ui',['../namespaceUi.html',1,'Ui'],['../classMainWindow.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui()']]],
+  ['updatebalance_100',['updateBalance',['../classDataModel.html#abc9c6c796348870e45fda933739585d5',1,'DataModel']]]
 ];

@@ -101,6 +101,7 @@ void Scene::generateWorld(){
 
     //Flussgenerierung hier drunter. Bsp: data[1][2].setType(MapTile::RIVER_H) setzt die Kachel bei Position 1,2 auf einen horizontalen Fluss
 
+
     //Sonderfunktionen werden hinzugefügt
     QGraphicsScene::addItem(highlighter);
     QGraphicsScene::addItem(radiusHighlighter);

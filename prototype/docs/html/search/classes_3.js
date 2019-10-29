@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['scene_96',['Scene',['../classScene.html',1,'']]]
+  ['mainwindow_109',['MainWindow',['../classMainWindow.html',1,'']]],
+  ['maptile_110',['MapTile',['../classMapTile.html',1,'']]]
 ];

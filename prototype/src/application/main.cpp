@@ -4,20 +4,26 @@
 #include <QAction>
 #include <QTextItem>
 #include <QTimer>
+#include <QDockWidget>
+#include <QWidget>
+#include <QGridLayout>
 
 #include "mainwindow.h"
 #include "main.h"
 #include "view.h"
 #include "scene.h"
 #include "graphicsmanager.h"
+#include "sidepanel.h"
 
 
 
 GraphicsManager * graphics;
 MainWindow * mainWindow;
+DataModel * dataModel;
 bool gameRunning = true;
 View * view;
 Scene * scene;
+SidePanel * sidePanel;
 
 double scale = 0.01;
 
@@ -49,6 +55,8 @@ int main(int argc, char *argv[])
 
     graphics = new GraphicsManager();
 
+    dataModel = new DataModel();
+
     scene = new Scene();
     scene->generateWorld();
 
@@ -57,7 +65,20 @@ int main(int argc, char *argv[])
 
     mainWindow->setCentralWidget(view);
 
-    mainWindow->menuBar()->addMenu("Spiel")->addMenu("Karte")->addMenu("Neue Karte generieren");
+    QWidget * widget = new QWidget(mainWindow);
+    QGridLayout * layout = new QGridLayout(widget);
+    widget->setLayout(layout);
+
+    sidePanel = new SidePanel();
+    sidePanel->setParent(mainWindow);
+    sidePanel->hookDataModel(dataModel);
+
+    QDockWidget dockWidget;
+    dockWidget.setFeatures(QDockWidget::DockWidgetMovable);
+    dockWidget.setWidget(sidePanel);
+    mainWindow->addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, &dockWidget);
+
+
 
     introAnimation();
 

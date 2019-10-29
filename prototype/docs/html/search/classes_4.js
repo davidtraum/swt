@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['view_97',['View',['../classView.html',1,'']]]
+  ['scene_111',['Scene',['../classScene.html',1,'']]],
+  ['sidepanel_112',['SidePanel',['../classSidePanel.html',1,'']]]
 ];
