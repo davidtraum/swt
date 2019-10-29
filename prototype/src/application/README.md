@@ -20,3 +20,4 @@ Datum|Funktion
 28.10.|Start Changelog
 28.10.|Animation beim Klick auf Städte
 28.10.|Übersichtskarte mit Taste O
+29.10.|Statuspanel hinzugefügt
