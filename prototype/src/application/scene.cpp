@@ -179,7 +179,7 @@ void Scene::generateWorld(){
     QGraphicsScene::addItem(radiusHighlighter);
     QGraphicsScene::addItem(textHint);
 
-    qDebug() << "[WELT] Generierung abgeschlossen.";
+    qDebug() << "[WELT] Generierung abgeschlossen in " << (dataModel->getSystemMillis()-start) << " Millisekunden.";
 }
 
 
