@@ -7,6 +7,7 @@
 #include <QDockWidget>
 #include <QWidget>
 #include <QGridLayout>
+#include <chrono>
 
 #include "mainwindow.h"
 #include "main.h"

@@ -13,6 +13,7 @@ public:
     bool takeBalance(int pAmount);
     void timeTick();
     long getTime();
+    long getSystemMillis();
     void updateCoordinates(int pX, int pY);
     std::string formatTime(long pTime);
 

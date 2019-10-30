@@ -38,6 +38,7 @@ Scene::Scene()
  * @brief Scene::generateWorld Diese Methode generiert eine neue Welt.
  */
 void Scene::generateWorld(){
+    long start = dataModel->getSystemMillis();
     QGraphicsScene::clear();
 
     //Hier wird die Landschaft generiert.

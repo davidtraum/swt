@@ -83,6 +83,13 @@ void DataModel::updateCoordinates(int pX, int pY){
 }
 
 /**
+ * @brief DataModel::getSystemMillis Gibt die Zahl der Millsekunden seit 1970 zurück.
+ * @return Die Zahl der Millisekunden.
+ */
+long DataModel::getSystemMillis(){
+     return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+}
+/**
  * @brief DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird.
  * @param label Ein Pointer auf ein QLabel Objekt.
  */
