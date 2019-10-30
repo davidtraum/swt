@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['view_196',['View',['../classView.html#af425358762e264a313ed536d15844d0d',1,'View']]]
+  ['updatebalance_203',['updateBalance',['../classDataModel.html#abc9c6c796348870e45fda933739585d5',1,'DataModel']]],
+  ['updatecoordinates_204',['updateCoordinates',['../classDataModel.html#a2dcc97fd7387151077bcb3794b1614af',1,'DataModel']]]
 ];

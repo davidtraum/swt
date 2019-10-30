@@ -32,13 +32,11 @@ View::View(Scene * pScene)
  * @param event Enthält Informationen über die Taste und Position.
  */
 void View::mousePressEvent(QMouseEvent *event){
-    if(event->button() == Qt::LeftButton){
         View::dragOriginX = event->x();
         View::dragOriginY = event->y();
         View::dragPosX = View::dragOriginX;
         View::dragPosY = View::dragOriginY;
         mouseDown = true;
-    }
 }
 
 
@@ -55,14 +53,27 @@ void View::mouseReleaseEvent(QMouseEvent *event)
         QGraphicsItem * clickedItem = View::itemAt(event->pos());
         MapTile * clickedTile = scene->getTileAt(int(clickedItem->x()), int(clickedItem->y()), true); //Der Quadrant der angeklickt wurde.
         if(event->button() == Qt::LeftButton){ //Linksklick
-            if(clickedTile->getType() == MapTile::TYPE::GRASS){
-                clickedTile->setType(MapTile::TYPE::RAIL_H);
-            }else if(clickedTile->getType() == MapTile::CITY){
-                    City * city = clickedTile->getCity();
-                    doAnimations = true;
-                    fluidMovement(city->getCenterX()*64, city->getCenterY()*64);
-                    fluidZoom(0.5, currentScale<0.5);
+            switch(clickedTile->getType()){
+                case MapTile::GRASS:
+                    if(dataModel->takeBalance(50)){
+                        clickedTile->setType(MapTile::RAIL_H);
+                    }
+                    break;
 
+                case MapTile::CITY:
+                    doAnimations = true;
+                    fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);
+                    fluidZoom(0.5, currentScale<0.5);
+                    break;
+
+                case MapTile::FORREST:
+                    if(dataModel->takeBalance(40)){
+                       clickedTile->setType(MapTile::GRASS);
+                    }
+                    break;
+
+                default:
+                    break;
             }
             qDebug() << "[EVENT] Linksklick.";
         }else{ //Rechtsklick

@@ -1,6 +1,7 @@
 #include "sidepanel.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
+#include <QPalette>
 
 /**
  * @brief SidePanel::SidePanel Erzeugt ein neues Side-Panel (Menü)
@@ -9,6 +10,7 @@
 SidePanel::SidePanel()
 {
     setFixedWidth(80);
+
 
     layout = new QGridLayout(this);
     setLayout(layout);

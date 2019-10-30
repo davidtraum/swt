@@ -6,8 +6,7 @@
 
 
 
-Zusammengehörigkeiten von Data\+Model\+:
-\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,6 +22,8 @@ int \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{get\+Bala
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{Data\+Model\+::get\+Balance}} Liefert den aktuellen Kontostand zurück. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{update\+Balance}} (int p\+Balance)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{Data\+Model\+::update\+Balance}} Aktualisiert den Kontostand. Auch in Anzeigen etc. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd}{take\+Balance}} (int p\+Amount)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd}{Data\+Model\+::take\+Balance}} Zieht Geld ab falls noch genug da ist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{time\+Tick}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. \end{DoxyCompactList}\item 
 long \mbox{\hyperlink{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}{get\+Time}} ()
@@ -88,8 +89,7 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_aa437ce67fe0141a9821946af7d8bd38
 \begin{DoxyReturn}{Rückgabe}
 Der Text. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -166,16 +166,14 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_aacb6a19e48624b83281db172ef01ef4f_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -197,8 +195,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 {\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,6 +209,38 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd}\label{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd}} 
+\index{DataModel@{DataModel}!takeBalance@{takeBalance}}
+\index{takeBalance@{takeBalance}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{takeBalance()}{takeBalance()}}
+{\footnotesize\ttfamily bool Data\+Model\+::take\+Balance (\begin{DoxyParamCaption}\item[{int}]{p\+Amount }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd}{Data\+Model\+::take\+Balance}} Zieht Geld ab falls noch genug da ist. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Amount} & Die Geldzahl zum Entfernen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+true wenn genug Geld da war und entfernt wurde. false wenn nicht genug Geld da ist. 
+\end{DoxyReturn}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}\label{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}} 
 \index{DataModel@{DataModel}!timeTick@{timeTick}}
 \index{timeTick@{timeTick}!DataModel@{DataModel}}
@@ -222,16 +251,14 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_a0c605d45cde1e17a0611c004732ac6ee_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,8 +304,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em pY} & Die Y Koordinate. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

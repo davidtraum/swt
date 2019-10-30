@@ -10,6 +10,7 @@ public:
     DataModel();
     int getBalance();
     void updateBalance(int pBalance);
+    bool takeBalance(int pAmount);
     void timeTick();
     long getTime();
     void updateCoordinates(int pX, int pY);
@@ -18,6 +19,7 @@ public:
     void setGuiBalanceLabel(QLabel * label);
     void setGuiTimeLabel(QLabel * label);
     void setGuiPositionLabel(QLabel * label);
+
 private:
     int balance;
     long time;

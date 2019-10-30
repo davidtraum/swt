@@ -1,7 +1,6 @@
 #ifndef GRAPHICSMANAGER_H
 #define GRAPHICSMANAGER_H
 
-#include <unordered_map>
 #include <QPixmap>
 #include <QImage>
 #include <string>

@@ -58,6 +58,7 @@ SOURCES       = ../application/city.cpp \
 		../application/main.cpp \
 		../application/mainwindow.cpp \
 		../application/maptile.cpp \
+		../application/river.cpp \
 		../application/scene.cpp \
 		../application/sidepanel.cpp \
 		../application/view.cpp qrc_Graphics.cpp \
@@ -68,6 +69,7 @@ OBJECTS       = city.o \
 		main.o \
 		mainwindow.o \
 		maptile.o \
+		river.o \
 		scene.o \
 		sidepanel.o \
 		view.o \
@@ -273,6 +275,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application/main.h \
 		../application/mainwindow.h \
 		../application/maptile.h \
+		../application/river.h \
 		../application/scene.h \
 		../application/sidepanel.h \
 		../application/view.h ../application/city.cpp \
@@ -281,6 +284,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application/main.cpp \
 		../application/mainwindow.cpp \
 		../application/maptile.cpp \
+		../application/river.cpp \
 		../application/scene.cpp \
 		../application/sidepanel.cpp \
 		../application/view.cpp
@@ -704,8 +708,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/city.h ../application/datamodel.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/scene.h ../application/sidepanel.h ../application/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/city.cpp ../application/datamodel.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/scene.cpp ../application/sidepanel.cpp ../application/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.h ../application/datamodel.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/river.h ../application/scene.h ../application/sidepanel.h ../application/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.cpp ../application/datamodel.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/river.cpp ../application/scene.cpp ../application/sidepanel.cpp ../application/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/mainwindow.ui $(DISTDIR)/
 
 
@@ -1513,6 +1517,9 @@ maptile.o: ../application/maptile.cpp ../application/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maptile.o ../application/maptile.cpp
 
+river.o: ../application/river.cpp ../application/river.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o river.o ../application/river.cpp
+
 scene.o: ../application/scene.cpp ../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
@@ -1763,7 +1770,8 @@ sidepanel.o: ../application/sidepanel.cpp ../application/sidepanel.h \
 		../application/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPalette
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application/sidepanel.cpp
 
 view.o: ../application/view.cpp ../application/view.h \
@@ -1911,7 +1919,8 @@ view.o: ../application/view.cpp ../application/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMessageBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPalette
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application/view.cpp
 
 qrc_Graphics.o: qrc_Graphics.cpp 

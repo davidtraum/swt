@@ -22,6 +22,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     maptile.cpp \
+    river.cpp \
     scene.cpp \
     sidepanel.cpp \
     view.cpp
@@ -33,6 +34,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     maptile.h \
+    river.h \
     scene.h \
     sidepanel.h \
     view.h
@@ -46,4 +48,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    Data.qrc \
     Graphics.qrc

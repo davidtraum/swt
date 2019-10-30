@@ -31,6 +31,20 @@ void DataModel::updateBalance(int pBalance)
 }
 
 /**
+ * @brief DataModel::takeBalance Zieht Geld ab falls noch genug da ist.
+ * @param pAmount Die Geldzahl zum Entfernen.
+ * @return true wenn genug Geld da war und entfernt wurde. false wenn nicht genug Geld da ist.
+ */
+bool DataModel::takeBalance(int pAmount){
+    if(balance>=pAmount){
+        updateBalance(balance-pAmount);
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/**
  * @brief DataModel::getTime Liefert die aktuelle Zeit als Timecode. (Zahl die je nach Geschwindigkeit wächst)
  * @return Der Timecode.
  */
