@@ -101,7 +101,7 @@ void Scene::generateWorld(){
 
     //Flussgenerierung hier drunter. Bsp: data[1][2].setType(MapTile::RIVER_H) setzt die Kachel bei Position 1,2 auf einen horizontalen Fluss
 
-    int riverCount = std::rand()%(MAP_SIZE/3)+2;
+    int riverCount = std::rand()%(MAP_SIZE/3)+15;
     qDebug() << "[WELT] Es werden " << riverCount << " Flüsse generiert.";
 
     for(int riverIndex = 0; riverIndex<riverCount; riverIndex++){
@@ -110,7 +110,7 @@ void Scene::generateWorld(){
         int vx = 1;
         int vy = 0;
         int sinceCurve = 0;
-        MapTile::TYPE type = MapTile::RIVER_H;
+        MapTile::TYPE type = MapTile::RAIL_CURVE;
         do{
             data[posX][posY].setType(type);
             posX+=vx;
@@ -122,17 +122,21 @@ void Scene::generateWorld(){
                         case -1:
                             vy = 0;
                             vx = 1;
-                            type = MapTile::RIVER_RT;
+                            type = MapTile::RIVER_RB;
                             break;
                         case 0:
+                            if(vx==-1){
+                                type = MapTile::RIVER_RT;
+                            }else{
+                                type = MapTile::RIVER_LT;
+                            }
                             vy = -1;
                             vx = 0;
-                            type = MapTile::RIVER_LB;
                             break;
                         case 1:
                             vy = 0;
                             vx = -1;
-                            type = MapTile::RIVER_RT;
+                            type = MapTile::RIVER_LT;
                             break;
                     }
                 }else{
@@ -143,9 +147,13 @@ void Scene::generateWorld(){
                             type = MapTile::RIVER_RB;
                             break;
                         case 0:
+                            if(vy==1){
+                                type = MapTile::RIVER_LT;
+                            }else{
+                                type = MapTile::RIVER_LB;
+                            }
                             vy = 0;
                             vx = -1;
-                            type = MapTile::RIVER_LB;
                             break;
                         case 1:
                             vy = -1;
