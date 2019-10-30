@@ -61,7 +61,8 @@ SOURCES       = ../application/city.cpp \
 		../application/river.cpp \
 		../application/scene.cpp \
 		../application/sidepanel.cpp \
-		../application/view.cpp qrc_Graphics.cpp \
+		../application/view.cpp qrc_Data.cpp \
+		qrc_Graphics.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = city.o \
 		datamodel.o \
@@ -73,6 +74,7 @@ OBJECTS       = city.o \
 		scene.o \
 		sidepanel.o \
 		view.o \
+		qrc_Data.o \
 		qrc_Graphics.o \
 		moc_mainwindow.o
 DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
@@ -494,6 +496,7 @@ Makefile: ../application/application.pro /home/david/Qt/5.12.5/gcc_64/mkspecs/li
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/yacc.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/lex.prf \
 		../application/application.pro \
+		../application/Data.qrc \
 		../application/Graphics.qrc
 	$(QMAKE) -o Makefile ../application/application.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf:
@@ -691,6 +694,7 @@ Makefile: ../application/application.pro /home/david/Qt/5.12.5/gcc_64/mkspecs/li
 /home/david/Qt/5.12.5/gcc_64/mkspecs/features/yacc.prf:
 /home/david/Qt/5.12.5/gcc_64/mkspecs/features/lex.prf:
 ../application/application.pro:
+../application/Data.qrc:
 ../application/Graphics.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../application/application.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
@@ -706,7 +710,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/Graphics.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/Data.qrc ../application/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/city.h ../application/datamodel.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/river.h ../application/scene.h ../application/sidepanel.h ../application/view.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/city.cpp ../application/datamodel.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/river.cpp ../application/scene.cpp ../application/sidepanel.cpp ../application/view.cpp $(DISTDIR)/
@@ -734,9 +738,14 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_Graphics.cpp
+compiler_rcc_make_all: qrc_Data.cpp qrc_Graphics.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_Graphics.cpp
+	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
+qrc_Data.cpp: ../application/Data.qrc \
+		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
+		../application/cities.json
+	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Data ../application/Data.qrc -o qrc_Data.cpp
+
 qrc_Graphics.cpp: ../application/Graphics.qrc \
 		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
 		../application/wald.png \
@@ -1922,6 +1931,9 @@ view.o: ../application/view.cpp ../application/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPalette
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application/view.cpp
+
+qrc_Data.o: qrc_Data.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Data.o qrc_Data.cpp
 
 qrc_Graphics.o: qrc_Graphics.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Graphics.o qrc_Graphics.cpp
