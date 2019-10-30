@@ -102,7 +102,7 @@ void Scene::generateWorld(){
 
     //Flussgenerierung hier drunter. Bsp: data[1][2].setType(MapTile::RIVER_H) setzt die Kachel bei Position 1,2 auf einen horizontalen Fluss
 
-    int riverCount = std::rand()%(MAP_SIZE/3)+15;
+    int riverCount = std::rand()%(MAP_SIZE/6)+5;
     qDebug() << "[WELT] Es werden " << riverCount << " Flüsse generiert.";
 
     for(int riverIndex = 0; riverIndex<riverCount; riverIndex++){
