@@ -4,14 +4,13 @@
 #include <QGraphicsView>
 #include "main.h"
 #include "scene.h"
+#include "datamodel.h"
 
 class View: public QGraphicsView
 {
 public:
     Scene * scene;
     View(Scene * pScene);
-    int dragOriginX,dragOriginY,dragPosX,dragPosY;
-    bool mouseDown;
     double currentScale{1.0};
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
@@ -22,7 +21,11 @@ public:
     void fluidMove(int vX, int vY);
     void fluidMovement(int pX, int pY);
     void enableAnimation();
+    void setDataModel(DataModel * pModel);
 private:
+    DataModel * dataModel;
+    int dragOriginX,dragOriginY,dragPosX,dragPosY;
+    bool mouseDown;
     bool doAnimations;
 };
 

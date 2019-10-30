@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <QIcon>
+#include <QGraphicsItem>
+#include <QPalette>
 
 /**
  * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
@@ -30,11 +32,13 @@ View::View(Scene * pScene)
  * @param event Enthält Informationen über die Taste und Position.
  */
 void View::mousePressEvent(QMouseEvent *event){
-    View::dragOriginX = event->x();
-    View::dragOriginY = event->y();
-    View::dragPosX = View::dragOriginX;
-    View::dragPosY = View::dragOriginY;
-    mouseDown = true;
+    if(event->button() == Qt::LeftButton){
+        View::dragOriginX = event->x();
+        View::dragOriginY = event->y();
+        View::dragPosX = View::dragOriginX;
+        View::dragPosY = View::dragOriginY;
+        mouseDown = true;
+    }
 }
 
 
@@ -62,6 +66,13 @@ void View::mouseReleaseEvent(QMouseEvent *event)
             }
             qDebug() << "[EVENT] Linksklick.";
         }else{ //Rechtsklick
+            if(clickedTile->getType()==MapTile::RAIL_H){
+                clickedTile->getPixmapItem()->setFlag(QGraphicsItem::ItemIsMovable);
+                int rotation = clickedTile->getRotation();
+                rotation++;
+                if(rotation>3)rotation=0;
+                clickedTile->setRotation(rotation);
+            }
             qDebug() << "[EVENT] Rechtsklick.";
         }
 
@@ -87,7 +98,9 @@ void View::mouseMoveEvent(QMouseEvent *event)
         QGraphicsView::setCursor(QCursor(Qt::PointingHandCursor));
         doAnimations = false;
     }else{
-        scene->setActiveTile(QGraphicsView::itemAt(event->pos()));
+        QGraphicsItem * hoverItem = QGraphicsView::itemAt(event->pos());
+        dataModel->updateCoordinates(int(hoverItem->x()/64), int(hoverItem->y()/64));
+        scene->setActiveTile(hoverItem);
     }
 }
 
@@ -116,7 +129,7 @@ void View::wheelEvent(QWheelEvent *event)
  * @param event Event mit Informationen. Wichtig: event->text(): Text der Taste und event->key(): Id der Taste
  */
 void View::keyPressEvent(QKeyEvent *event){
-    qDebug() << "[EVENT] Tastatur gedrückt.";
+    qDebug() << "[EVENT] Tastatur gedrückt. ";
     switch(event->key()){
         case Qt::Key_F11:
             if(mainWindow->isFullScreen()){
@@ -219,4 +232,13 @@ void View::fluidMovement(int pX, int pY){
  */
 void View::enableAnimation(){
     doAnimations = true;
+}
+
+
+/**
+ * @brief View::setDataModel Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben.
+ * @param pModel Ein Datenmodell.
+ */
+void View::setDataModel(DataModel *pModel){
+    dataModel = pModel;
 }

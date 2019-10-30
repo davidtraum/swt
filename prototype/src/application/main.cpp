@@ -25,6 +25,12 @@ View * view;
 Scene * scene;
 SidePanel * sidePanel;
 
+
+void timeTicker(){
+    dataModel->timeTick();
+    QTimer::singleShot(20, []{timeTicker();});
+}
+
 /**
  * @brief main Startmethode.
  * @param argc Anzahl der Parameter
@@ -49,6 +55,7 @@ int main(int argc, char *argv[])
 
     view = new View(scene);
     view->setScene(scene);
+    view->setDataModel(dataModel);
 
     mainWindow->setCentralWidget(view);
 
@@ -75,10 +82,8 @@ int main(int argc, char *argv[])
 
     mainWindow->show();
 
+    timeTicker();
+
     return a.exec();
 }
 
-void timeTicker(){
-    dataModel->timeTick();
-    QTimer::singleShot(20, []{timeTicker();});
-}

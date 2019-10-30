@@ -8,6 +8,8 @@
  */
 SidePanel::SidePanel()
 {
+    setFixedWidth(80);
+
     layout = new QGridLayout(this);
     setLayout(layout);
 
@@ -17,9 +19,8 @@ SidePanel::SidePanel()
     timeLabel = new QLabel();
     layout->addWidget(timeLabel);
 
-    QGroupBox * groupBox = new QGroupBox("Spiel", moneyLabel);
-    QVBoxLayout * boxLayout = new QVBoxLayout(groupBox);
-    layout->addWidget(groupBox,0,0);
+    positionLabel = new QLabel();
+    layout->addWidget(positionLabel);
 }
 
 /**
@@ -29,4 +30,5 @@ SidePanel::SidePanel()
 void SidePanel::hookDataModel(DataModel *pModel){
     pModel->setGuiBalanceLabel(moneyLabel);
     pModel->setGuiTimeLabel(timeLabel);
+    pModel->setGuiPositionLabel(positionLabel);
 }

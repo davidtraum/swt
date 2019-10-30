@@ -46,11 +46,20 @@ void \mbox{\hyperlink{classView_a240c2bf51520324466ab8f2e435f77b2}{fluid\+Move}}
 void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Movement}} (int pX, int pY)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{View\+::fluid\+Movement}} Verschiebt die Karte animiert an zu einer absoluten Koordinate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{enable\+Animation}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{set\+Data\+Model}} (\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Model)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classView_a9b77fe3414a870fcbf3f174dc894ce38}{scene}}
+\item 
+double \mbox{\hyperlink{classView_a01cf6ac75c04e38bfb0b471c22b21697}{current\+Scale}} \{1.\+0\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classView_a0c48e9c14e5b0f55458946ea57c330da}{data\+Model}}
 \item 
 int \mbox{\hyperlink{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}{drag\+OriginX}}
 \item 
@@ -61,11 +70,6 @@ int \mbox{\hyperlink{classView_ac9c829cddcc063f5042778e3403b286d}{drag\+PosX}}
 int \mbox{\hyperlink{classView_a701072d3ab33e65141484ecd71a6d99c}{drag\+PosY}}
 \item 
 bool \mbox{\hyperlink{classView_a4ff44ed662bb14b094cc2e02522ad605}{mouse\+Down}}
-\item 
-double \mbox{\hyperlink{classView_a01cf6ac75c04e38bfb0b471c22b21697}{current\+Scale}} \{1.\+0\}
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attribute}
-\begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animations}}
 \end{DoxyCompactItemize}
@@ -100,8 +104,7 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 
 \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -180,8 +183,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em in} & Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -225,7 +227,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -269,6 +272,29 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classView_a76d60435e43027b8497091d02acb77bd_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classView_a3753656c26f1f7472c5ed8edfe1a1c30}\label{classView_a3753656c26f1f7472c5ed8edfe1a1c30}} 
+\index{View@{View}!setDataModel@{setDataModel}}
+\index{setDataModel@{setDataModel}!View@{View}}
+\doxysubsubsection{\texorpdfstring{setDataModel()}{setDataModel()}}
+{\footnotesize\ttfamily void View\+::set\+Data\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Model }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Model} & Ein Datenmodell. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{classView_a3753656c26f1f7472c5ed8edfe1a1c30_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classView_a094f2fd748e2855fcd4ec42d171e5bbe}\label{classView_a094f2fd748e2855fcd4ec42d171e5bbe}} 
 \index{View@{View}!wheelEvent@{wheelEvent}}
 \index{wheelEvent@{wheelEvent}!View@{View}}
@@ -293,6 +319,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{currentScale}{currentScale}}
 {\footnotesize\ttfamily double View\+::current\+Scale \{1.\+0\}}
 
+\mbox{\Hypertarget{classView_a0c48e9c14e5b0f55458946ea57c330da}\label{classView_a0c48e9c14e5b0f55458946ea57c330da}} 
+\index{View@{View}!dataModel@{dataModel}}
+\index{dataModel@{dataModel}!View@{View}}
+\doxysubsubsection{\texorpdfstring{dataModel}{dataModel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataModel}{Data\+Model}}$\ast$ View\+::data\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classView_a31d7cea2414022ff47f8289ea922deba}\label{classView_a31d7cea2414022ff47f8289ea922deba}} 
 \index{View@{View}!doAnimations@{doAnimations}}
 \index{doAnimations@{doAnimations}!View@{View}}
@@ -303,31 +335,31 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{View@{View}!dragOriginX@{dragOriginX}}
 \index{dragOriginX@{dragOriginX}!View@{View}}
 \doxysubsubsection{\texorpdfstring{dragOriginX}{dragOriginX}}
-{\footnotesize\ttfamily int View\+::drag\+OriginX}
+{\footnotesize\ttfamily int View\+::drag\+OriginX\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_a21d0bdfad7b5743d73873e3255d35a13}\label{classView_a21d0bdfad7b5743d73873e3255d35a13}} 
 \index{View@{View}!dragOriginY@{dragOriginY}}
 \index{dragOriginY@{dragOriginY}!View@{View}}
 \doxysubsubsection{\texorpdfstring{dragOriginY}{dragOriginY}}
-{\footnotesize\ttfamily int View\+::drag\+OriginY}
+{\footnotesize\ttfamily int View\+::drag\+OriginY\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_ac9c829cddcc063f5042778e3403b286d}\label{classView_ac9c829cddcc063f5042778e3403b286d}} 
 \index{View@{View}!dragPosX@{dragPosX}}
 \index{dragPosX@{dragPosX}!View@{View}}
 \doxysubsubsection{\texorpdfstring{dragPosX}{dragPosX}}
-{\footnotesize\ttfamily int View\+::drag\+PosX}
+{\footnotesize\ttfamily int View\+::drag\+PosX\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_a701072d3ab33e65141484ecd71a6d99c}\label{classView_a701072d3ab33e65141484ecd71a6d99c}} 
 \index{View@{View}!dragPosY@{dragPosY}}
 \index{dragPosY@{dragPosY}!View@{View}}
 \doxysubsubsection{\texorpdfstring{dragPosY}{dragPosY}}
-{\footnotesize\ttfamily int View\+::drag\+PosY}
+{\footnotesize\ttfamily int View\+::drag\+PosY\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_a4ff44ed662bb14b094cc2e02522ad605}\label{classView_a4ff44ed662bb14b094cc2e02522ad605}} 
 \index{View@{View}!mouseDown@{mouseDown}}
 \index{mouseDown@{mouseDown}!View@{View}}
 \doxysubsubsection{\texorpdfstring{mouseDown}{mouseDown}}
-{\footnotesize\ttfamily bool View\+::mouse\+Down}
+{\footnotesize\ttfamily bool View\+::mouse\+Down\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_a9b77fe3414a870fcbf3f174dc894ce38}\label{classView_a9b77fe3414a870fcbf3f174dc894ce38}} 
 \index{View@{View}!scene@{scene}}

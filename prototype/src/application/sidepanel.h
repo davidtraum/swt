@@ -17,6 +17,7 @@ private:
     QGridLayout * layout;
     QLabel * moneyLabel;
     QLabel * timeLabel;
+    QLabel * positionLabel;
 };
 
 #endif // SIDEPANEL_H

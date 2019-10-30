@@ -746,7 +746,10 @@ qrc_Graphics.cpp: ../application/Graphics.qrc \
 		../application/fluss_vertikal.png \
 		../application/fluss_horizontal.png \
 		../application/schiene_h.png \
-		../application/schiene_kurve.png
+		../application/schiene_kurve.png \
+		../application/clock.svg \
+		../application/location.svg \
+		../application/cash.svg
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Graphics ../application/Graphics.qrc -o qrc_Graphics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
