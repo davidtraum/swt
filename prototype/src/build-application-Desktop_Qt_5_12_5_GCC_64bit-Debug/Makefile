@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../application -I. -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../application -I. -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/david/Qt/5.12.5/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = application1.0.0
 DISTDIR = /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/.tmp/application1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/david/Qt/5.12.5/gcc_64/lib
-LIBS          = $(SUBLIBS) /home/david/Qt/5.12.5/gcc_64/lib/libQt5Widgets.so /home/david/Qt/5.12.5/gcc_64/lib/libQt5Gui.so /home/david/Qt/5.12.5/gcc_64/lib/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /home/david/Qt/5.12.5/gcc_64/lib/libQt5Widgets.so /home/david/Qt/5.12.5/gcc_64/lib/libQt5Gui.so /home/david/Qt/5.12.5/gcc_64/lib/libQt5Network.so /home/david/Qt/5.12.5/gcc_64/lib/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -53,6 +53,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../application/city.cpp \
+		../application/client.cpp \
 		../application/datamodel.cpp \
 		../application/graphicsmanager.cpp \
 		../application/main.cpp \
@@ -65,6 +66,7 @@ SOURCES       = ../application/city.cpp \
 		qrc_Graphics.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = city.o \
+		client.o \
 		datamodel.o \
 		graphicsmanager.o \
 		main.o \
@@ -272,6 +274,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/yacc.prf \
 		/home/david/Qt/5.12.5/gcc_64/mkspecs/features/lex.prf \
 		../application/application.pro ../application/city.h \
+		../application/client.h \
 		../application/datamodel.h \
 		../application/graphicsmanager.h \
 		../application/main.h \
@@ -281,6 +284,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application/scene.h \
 		../application/sidepanel.h \
 		../application/view.h ../application/city.cpp \
+		../application/client.cpp \
 		../application/datamodel.cpp \
 		../application/graphicsmanager.cpp \
 		../application/main.cpp \
@@ -712,8 +716,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/Data.qrc ../application/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/city.h ../application/datamodel.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/river.h ../application/scene.h ../application/sidepanel.h ../application/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application/city.cpp ../application/datamodel.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/river.cpp ../application/scene.cpp ../application/sidepanel.cpp ../application/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.h ../application/client.h ../application/datamodel.h ../application/graphicsmanager.h ../application/main.h ../application/mainwindow.h ../application/maptile.h ../application/river.h ../application/scene.h ../application/sidepanel.h ../application/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application/city.cpp ../application/client.cpp ../application/datamodel.cpp ../application/graphicsmanager.cpp ../application/main.cpp ../application/mainwindow.cpp ../application/maptile.cpp ../application/river.cpp ../application/scene.cpp ../application/sidepanel.cpp ../application/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application/mainwindow.ui $(DISTDIR)/
 
 
@@ -884,7 +888,7 @@ moc_mainwindow.cpp: ../application/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
-	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/prototype/src/application -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application/mainwindow.h -o moc_mainwindow.cpp
+	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/prototype/src/application -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -909,6 +913,78 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 city.o: ../application/city.cpp ../application/city.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o city.o ../application/city.cpp
+
+client.o: ../application/client.cpp ../application/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtcore-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlogging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qflags.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmutex.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qversiontagging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstring.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qchar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringliteral.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiterator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpair.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregexp.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhash.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlocale.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvariant.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvector.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpoint.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qset.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../application/client.cpp
 
 datamodel.o: ../application/datamodel.cpp ../application/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
@@ -1254,6 +1330,13 @@ main.o: ../application/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWidgets/Q
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -1520,6 +1603,13 @@ maptile.o: ../application/maptile.cpp ../application/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QBrush \
@@ -1656,6 +1746,13 @@ scene.o: ../application/scene.cpp ../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application/city.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPen \
@@ -1908,6 +2005,13 @@ view.o: ../application/view.cpp ../application/view.h \
 		../application/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		../application/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \

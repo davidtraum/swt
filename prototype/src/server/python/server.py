@@ -4,11 +4,16 @@ import json
 import socket
 import random
 from threading import Thread
+import time
 
 
 
 #Klassen
 
+class Player():
+    
+    def __init__(self):
+        self.money = 2000;
 
 class ClientThread(Thread):
     
@@ -16,13 +21,16 @@ class ClientThread(Thread):
         Thread.__init__(self);
         self.connection = connection;
         self.address = address;
+        self.player = Player();
         self.start();
         
+        
+        
     def send(self, msg):
-        self.connection.sendall((msg + "\n").encode("utf-8"));
+        self.connection.sendall((msg + "+").encode("utf-8"));
         
     def run(self):
-        global WORLD;
+        global WORLD,CONFIG;
         print("[THREAD] Client verbunden " + str(self.address));
         self.send("CONN ACTIVE");
         while True:
@@ -30,17 +38,32 @@ class ClientThread(Thread):
             split = command.split(" ");
             if(split[0]=='MAP'):
                 if(split[1]=='GET'):
+                    print("[THREAD] Sending Map to " + str(self.address));
                     for each in WORLD.getAll():
                         self.send(each);
+                    self.send("MONEY " + str(self.player.money));
         
 class MapTile:
     
+    TYPES = {
+        'GRASS': 0,
+        'FORREST': 1,
+        'CITY': 2,
+        'RIVER_H': 3,
+        'RIVER_V': 4,
+        'RIVER_LB': 5,
+        'RIVER_LT': 6,
+        'RIVER_RT': 7,
+        'RIVER_RB': 8,
+        'RAIL_H': 9
+    }
+    
     def __init__(self):
         self.rotation = 0;
-        self.tileType = 'GRASS';
+        self.tileType = 0;
     
     def setType(self, pType):
-        self.tileType = pType;
+        self.tileType = MapTile.TYPES[pType];
     
     def setRotation(self, pRotation):
         self.rotation = pRotation;
@@ -54,11 +77,10 @@ class World:
         
     def getAll(self):
         global CONFIG;
-        yield "MAP BEGIN";
         for x in range(CONFIG['world']['size']):
             for y in range(CONFIG['world']['size']):
-                yield self.data[x][y].tileType + ' ' + str(self.data[x][y].rotation);
-        yield "MAP END";
+                if(self.data[x][y].tileType != 0):
+                    yield "TILE " + str(x) + " " + str(y) + " " + str(self.data[x][y].tileType) + " " + str(self.data[x][y].rotation);
         
     def generate(self):
         global CONFIG;
@@ -75,6 +97,27 @@ class World:
                     tile.setType('GRASS');
                 tile.setRotation(random.randint(0,3));
                 self.data[x].append(tile);
+                     
+        for i in range(CONFIG['world']['size']):
+            townSize = random.randint(2,20);
+            posX = random.randint(0,CONFIG['world']['size']-1);
+            posY = random.randint(0,CONFIG['world']['size']-1);
+            for y in range(townSize):
+                if(y==townSize/2):
+                    pass;
+                self.data[posX][posY].setType('CITY');
+                self.data[posX][posY].setRotation(random.randint(0,3));
+                posX+=random.randint(-1,1);
+                posY+=random.randint(-1,1);
+                if(posX<0):
+                    posX=0;
+                elif(posX>=CONFIG['world']['size']):
+                    posX=CONFIG['world']['size']-1;
+                if(posY<0):
+                    posY=0;
+                elif(posY>=CONFIG['world']['size']):
+                    posY=CONFIG['world']['size']-1;
+                
         
             
 
