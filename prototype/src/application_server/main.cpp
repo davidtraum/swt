@@ -86,15 +86,10 @@ int main(int argc, char *argv[])
 
     timeTicker();
 
-    bool ok;
-    QString connectText = QInputDialog::getText(mainWindow, "Railroad Tycoon",
-                                             "Server:", QLineEdit::Normal,
-                                             "traum.me:2000", &ok);
-    dataModel->setConnectionInfo(connectText);
-
+    dataModel->setConnectionInfo("traum.me:2000");
 
     client = new Client(dataModel, scene);
-    connect(client, &Client::mapLoaded, view, &View::zoomInAnimation);
+    QObject::connect(client, &Client::mapLoaded, view, &View::zoomInAnimation);
 
     a.exec();
 }

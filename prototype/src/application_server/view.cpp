@@ -15,8 +15,7 @@
  * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
  * @param pScene Das Zugehörige Szenenobjekt.
  */
-View::View(Scene * pScene)
-{
+View::View(Scene * pScene) {
     scene = pScene;
     QGraphicsView::setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     QGraphicsView::setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -33,7 +32,7 @@ View::View(Scene * pScene)
  * @brief View::mousePressEvent QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde.
  * @param event Enthält Informationen über die Taste und Position.
  */
-void View::mousePressEvent(QMouseEvent *event){
+void View::mousePressEvent(QMouseEvent *event) {
     View::dragOriginX = event->x();
     View::dragOriginY = event->y();
     View::dragPosX = View::dragOriginX;
@@ -264,6 +263,8 @@ void View::setDataModel(DataModel *pModel){
  * @brief View::zoomInAnimation Slot der nach dem Laden der Karte aufgerufen wird.
  */
 void View::zoomInAnimation(){
-    this->enableAnimation();
-    this->fluidZoom(1, true);
+    QTimer::singleShot(1000, [this]{
+        this->enableAnimation();
+        this->fluidZoom(1, true);
+    });
 }
