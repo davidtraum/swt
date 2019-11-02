@@ -58,7 +58,7 @@ class ClientThread(Thread):
                 print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
                 self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);
             elif(split[0]=='TILE'):
-                print("TILE UPDATE");
+                print("TILE UPDATE " + split[1] + " - " + split[2]);
                 WORLD.data[int(split[1])][int(split[2])].tileType = int(split[3]);
                 WORLD.data[int(split[1])][int(split[2])].setRotation(int(split[4]));
                 self.sendAll("TILE " + split[1] + " " + split[2] + " " + split[3] + " " + split[4]);
