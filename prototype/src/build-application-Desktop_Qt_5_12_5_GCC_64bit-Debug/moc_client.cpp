@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Client_t {
-    QByteArrayData data[6];
-    char stringdata0[72];
+    QByteArrayData data[7];
+    char stringdata0[85];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,11 +36,13 @@ QT_MOC_LITERAL(1, 7, 11), // "tileChanged"
 QT_MOC_LITERAL(2, 19, 0), // ""
 QT_MOC_LITERAL(3, 20, 13), // "playerConnect"
 QT_MOC_LITERAL(4, 34, 20), // "playerPositionChange"
-QT_MOC_LITERAL(5, 55, 16) // "onPositionChange"
+QT_MOC_LITERAL(5, 55, 16), // "onPositionChange"
+QT_MOC_LITERAL(6, 72, 12) // "onTileChange"
 
     },
     "Client\0tileChanged\0\0playerConnect\0"
-    "playerPositionChange\0onPositionChange"
+    "playerPositionChange\0onPositionChange\0"
+    "onTileChange"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +52,7 @@ static const uint qt_meta_data_Client[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,12 +60,13 @@ static const uint qt_meta_data_Client[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    4,   34,    2, 0x06 /* Public */,
-       3,    1,   43,    2, 0x06 /* Public */,
-       4,    3,   46,    2, 0x06 /* Public */,
+       1,    4,   39,    2, 0x06 /* Public */,
+       3,    1,   48,    2, 0x06 /* Public */,
+       4,    3,   51,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    2,   53,    2, 0x0a /* Public */,
+       5,    2,   58,    2, 0x0a /* Public */,
+       6,    4,   63,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
@@ -72,6 +75,7 @@ static const uint qt_meta_data_Client[] = {
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
 
        0        // eod
 };
@@ -86,6 +90,7 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->playerConnect((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->playerPositionChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 3: _t->onPositionChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 4: _t->onTileChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -143,13 +148,13 @@ int Client::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

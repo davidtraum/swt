@@ -27,12 +27,17 @@ Zusammengehörigkeiten von Scene\+:
 \doxysubsection*{Öffentliche Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{set\+Tile\+At}} (int, int, int, int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{Scene\+::set\+Tile\+At}} Setzt ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indezes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_ad861f0bdfab5241fcec39c96f01105b0}{on\+Set\+Tile}} (int, int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_ad861f0bdfab5241fcec39c96f01105b0}{Scene\+::on\+Set\+Tile}} Ändert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} ohne ein Signal an den Server. Notwendig zum Empfangen von Änderungen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{update\+Player\+Position}} (int, int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{add\+Player}} (int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{Scene\+::add\+Player}} Fügt einen Netzwerkspieler hinzu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScene_a9e71243ca5cd6d93a2401817d9e52452}{tile\+Update}} (int, int, int, int)
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,7 +48,11 @@ void \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{generate\+Wo
 void \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{set\+Active\+Tile}} (Q\+Graphics\+Item $\ast$p\+Item)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{Scene\+::set\+Active\+Tile}} Setzt den \mbox{\hyperlink{classMapTile}{Map\+Tile}} über dem die Maus gerade ist. Wird von view aufgerufen. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ \mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{get\+Tile\+At}} (int posX, int posY, bool is\+Pixel\+Coordinate=false)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indizes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{set\+Tile\+At}} (int, int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{Scene\+::set\+Tile\+At}} Setzt ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indezes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{tile\+Changed}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{Scene\+::tile\+Changed}} Meldet das sich ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} geändert hat. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Statische öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -83,8 +92,7 @@ std\+::map$<$ int, \mbox{\hyperlink{classPlayer}{Player}} $\ast$ $>$ \mbox{\hype
 
 \mbox{\hyperlink{classScene_af4da84985eb7279d6f6ae36b299c0757}{Scene\+::\+Scene}} Konstruktor. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -109,8 +117,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 {\em p\+Id} & Die ID des Spielers. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -127,8 +134,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 
 \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{Scene\+::generate\+World}} Diese Methode generiert eine neue Welt. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -152,12 +158,48 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 {\em posY} & Die Y-\/\+Koordinate \\
 \hline
 \end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classScene_a12826e995b183844f9415c9df77a9ac7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScene_ad861f0bdfab5241fcec39c96f01105b0}\label{classScene_ad861f0bdfab5241fcec39c96f01105b0}} 
+\index{Scene@{Scene}!onSetTile@{onSetTile}}
+\index{onSetTile@{onSetTile}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{onSetTile}{onSetTile}}
+{\footnotesize\ttfamily void Scene\+::on\+Set\+Tile (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY,  }\item[{int}]{p\+Type,  }\item[{int}]{p\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classScene_ad861f0bdfab5241fcec39c96f01105b0}{Scene\+::on\+Set\+Tile}} Ändert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} ohne ein Signal an den Server. Notwendig zum Empfangen von Änderungen. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em pX} & Die X-\/\+Koordinate. \\
+\hline
+{\em pY} & Die Y-\/\+Koordinate. \\
+\hline
+{\em p\+Type} & Der Typ. \\
+\hline
+{\em p\+Rotation} & Die Rotation. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene_ad861f0bdfab5241fcec39c96f01105b0_cgraph}
+\end{center}
+\end{figure}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{classScene_a12826e995b183844f9415c9df77a9ac7_icgraph}
+\includegraphics[width=286pt]{classScene_ad861f0bdfab5241fcec39c96f01105b0_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classScene_a4caee3e7069bad7901a4a12b19cd304c}\label{classScene_a4caee3e7069bad7901a4a12b19cd304c}} 
@@ -192,8 +234,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \mbox{\Hypertarget{classScene_a38a79a03ba1fa403296646ee64ea8476}\label{classScene_a38a79a03ba1fa403296646ee64ea8476}} 
 \index{Scene@{Scene}!setTileAt@{setTileAt}}
 \index{setTileAt@{setTileAt}!Scene@{Scene}}
-\doxysubsubsection{\texorpdfstring{setTileAt}{setTileAt}}
-{\footnotesize\ttfamily void Scene\+::set\+Tile\+At (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY,  }\item[{int}]{p\+Type,  }\item[{int}]{p\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+\doxysubsubsection{\texorpdfstring{setTileAt()}{setTileAt()}}
+{\footnotesize\ttfamily void Scene\+::set\+Tile\+At (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY,  }\item[{int}]{p\+Type,  }\item[{int}]{p\+Rotation }\end{DoxyParamCaption})}
 
 
 
@@ -208,20 +250,50 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em is\+Pixel\+Coordinate} & \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classScene_a38a79a03ba1fa403296646ee64ea8476_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classScene_a3491410b9db64ff1771c25dfa5130ac7}\label{classScene_a3491410b9db64ff1771c25dfa5130ac7}} 
+\index{Scene@{Scene}!tileChanged@{tileChanged}}
+\index{tileChanged@{tileChanged}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{tileChanged()}{tileChanged()}}
+{\footnotesize\ttfamily void Scene\+::tile\+Changed (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{Scene\+::tile\+Changed}} Meldet das sich ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} geändert hat. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em pX} & Die X-\/\+Koordinate. \\
+\hline
+{\em pY} & Die Y-\/\+Koordinate. \\
+\hline
+\end{DoxyParams}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{classScene_a38a79a03ba1fa403296646ee64ea8476_icgraph}
+\includegraphics[width=350pt]{classScene_a3491410b9db64ff1771c25dfa5130ac7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScene_a9e71243ca5cd6d93a2401817d9e52452}\label{classScene_a9e71243ca5cd6d93a2401817d9e52452}} 
+\index{Scene@{Scene}!tileUpdate@{tileUpdate}}
+\index{tileUpdate@{tileUpdate}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{tileUpdate}{tileUpdate}}
+{\footnotesize\ttfamily void Scene\+::tile\+Update (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene_a9e71243ca5cd6d93a2401817d9e52452_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classScene_afd6f9b9c25c47cac93b93e70e43becdf}\label{classScene_afd6f9b9c25c47cac93b93e70e43becdf}} 
@@ -234,8 +306,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 
 \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

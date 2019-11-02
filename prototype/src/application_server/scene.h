@@ -13,6 +13,7 @@
 
 class Scene: public QGraphicsScene
 {
+    Q_OBJECT
 public:
     const static int MAP_SIZE{300}; //Die Größe der Karte. (In X und Y Richtung gleich groß)
     const static int TILE_SIZE{64}; //Die Abmessungen einer Kachel in Pixeln. Daher ist die reale Breite der Karte: MAP_SIZE*TILE_SIZE
@@ -20,6 +21,8 @@ public:
     void generateWorld(); //Methode zur zufälligen Generierung der Karte
     void setActiveTile(QGraphicsItem * pItem);
     MapTile * getTileAt(int posX, int posY, bool isPixelCoordinate=false);
+    void setTileAt(int,int,int,int);
+    void tileChanged(int,int);
 
 private:
     MapTile data[Scene::MAP_SIZE][Scene::MAP_SIZE];
@@ -30,11 +33,13 @@ private:
     MapTile * activeTile;
     GraphicsManager * graphicsManager;
     std::map<int, Player *> players;
-
 public slots:
-    void setTileAt(int,int,int,int);
+    void onSetTile(int,int,int,int);
     void updatePlayerPosition(int, int,int);
     void addPlayer(int);
+
+signals:
+    void tileUpdate(int,int,int,int);
 };
 
 #endif // SCENE_H

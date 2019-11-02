@@ -248,6 +248,28 @@ MapTile * Scene::getTileAt(int posX, int posY, bool isPixelCoordinate){
 void Scene::setTileAt(int pX,int pY, int pType, int pRotation){
     data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
     data[pX][pY].setRotation(pRotation);
+    emit tileUpdate(pX,pY,pType,pRotation);
+}
+
+/**
+ * @brief Scene::tileChanged Meldet das sich ein MapTile geändert hat.
+ * @param pX Die X-Koordinate.
+ * @param pY Die Y-Koordinate.
+ */
+void Scene::tileChanged(int pX, int pY){
+    emit tileUpdate(pX, pY, int(data[pX][pY].getType()), data[pX][pY].getRotation());
+}
+
+/**
+ * @brief Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderungen.
+ * @param pX Die X-Koordinate.
+ * @param pY Die Y-Koordinate.
+ * @param pType Der Typ.
+ * @param pRotation Die Rotation.
+ */
+void Scene::onSetTile(int pX, int pY, int pType, int pRotation){
+    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
+    data[pX][pY].setRotation(pRotation);
 }
 
 /**

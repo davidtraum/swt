@@ -10,10 +10,11 @@ Client::Client(DataModel * pDataModel, Scene * pScene)
 {
     scene = pScene;
     dataModel = pDataModel;
-    connect(this, &Client::tileChanged, scene, &Scene::setTileAt);
+    connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(this, &Client::playerConnect, scene, &Scene::addPlayer);
+    connect(scene, &Scene::tileUpdate, this, &Client::onTileChange);
     socket = new QTcpSocket(this);
     socket->connectToHost(*dataModel->getIP(),dataModel->getPort());
     socket->write("MAP GET");
@@ -58,7 +59,24 @@ void Client::processCommand(QString cmd){
 }
 
 
+/**
+ * @brief Client::onPositionChange Slot für Ändern der Position.
+ * @param pX Der X-Index.
+ * @param pY Der Y-Index.
+ */
 void Client::onPositionChange(int pX, int pY){
     socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
+    socket->flush();
+}
+
+/**
+ * @brief Client::onTileChange Slot für Ändern eines Tiles.
+ * @param pX Der X-Index.
+ * @param pY Der Y-Index.
+ * @param pType Der Typ.
+ * @param pRotation Die Rotation.
+ */
+void Client::onTileChange(int pX, int pY, int pType, int pRotation){
+    socket->write(QString::fromStdString("TILE " + std::to_string(pX) + " " + std::to_string(pY) + " " + std::to_string(pType) + " " + std::to_string(pRotation)).toLocal8Bit());
     socket->flush();
 }

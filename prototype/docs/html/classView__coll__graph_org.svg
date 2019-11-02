@@ -63,32 +63,34 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classScene.html" target="_top" xlink:title=" ">
-<polygon fill="#ffffff" stroke="#000000" points="107,-358.5 107,-547.5 235,-547.5 235,-358.5 107,-358.5"/>
-<text text-anchor="middle" x="171" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene</text>
-<polyline fill="none" stroke="#000000" points="107,-528.5 235,-528.5 "/>
-<text text-anchor="start" x="115" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ MAP_SIZE</text>
-<text text-anchor="start" x="115" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ TILE_SIZE</text>
-<text text-anchor="start" x="115" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; highlighter</text>
-<text text-anchor="start" x="115" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; radiusHighlighter</text>
-<text text-anchor="start" x="115" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; textHint</text>
-<text text-anchor="start" x="115" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; showRadius</text>
-<text text-anchor="start" x="115" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; players</text>
-<polyline fill="none" stroke="#000000" points="107,-443.5 235,-443.5 "/>
-<text text-anchor="start" x="115" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ Scene()</text>
-<text text-anchor="start" x="115" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ generateWorld()</text>
-<text text-anchor="start" x="115" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ setActiveTile()</text>
-<text text-anchor="start" x="115" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ getTileAt()</text>
-<text text-anchor="start" x="115" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ setTileAt()</text>
-<text text-anchor="start" x="115" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ updatePlayerPosition()</text>
-<text text-anchor="start" x="115" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ addPlayer()</text>
+<polygon fill="#ffffff" stroke="#000000" points="107,-347.5 107,-558.5 235,-558.5 235,-347.5 107,-347.5"/>
+<text text-anchor="middle" x="171" y="-546.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene</text>
+<polyline fill="none" stroke="#000000" points="107,-539.5 235,-539.5 "/>
+<text text-anchor="start" x="115" y="-527.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ MAP_SIZE</text>
+<text text-anchor="start" x="115" y="-516.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ TILE_SIZE</text>
+<text text-anchor="start" x="115" y="-505.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; highlighter</text>
+<text text-anchor="start" x="115" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; radiusHighlighter</text>
+<text text-anchor="start" x="115" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; textHint</text>
+<text text-anchor="start" x="115" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; showRadius</text>
+<text text-anchor="start" x="115" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; players</text>
+<polyline fill="none" stroke="#000000" points="107,-454.5 235,-454.5 "/>
+<text text-anchor="start" x="115" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ Scene()</text>
+<text text-anchor="start" x="115" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ generateWorld()</text>
+<text text-anchor="start" x="115" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ setActiveTile()</text>
+<text text-anchor="start" x="115" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ getTileAt()</text>
+<text text-anchor="start" x="115" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ setTileAt()</text>
+<text text-anchor="start" x="115" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ tileChanged()</text>
+<text text-anchor="start" x="115" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ onSetTile()</text>
+<text text-anchor="start" x="115" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ updatePlayerPosition()</text>
+<text text-anchor="start" x="115" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ addPlayer()</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M171,-358.1229C171,-329.8389 171,-298.2282 171,-267.7114"/>
-<polygon fill="none" stroke="#404040" points="171.0001,-267.6269 167,-261.6269 171,-255.6269 175,-261.6269 171.0001,-267.6269"/>
+<path fill="none" stroke="#404040" d="M171,-347.4818C171,-322.0863 171,-294.5649 171,-267.874"/>
+<polygon fill="none" stroke="#404040" points="171.0001,-267.6797 167,-261.6797 171,-255.6797 175,-261.6797 171.0001,-267.6797"/>
 <text text-anchor="middle" x="189.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000"> +scene</text>
 </g>
 <!-- Node4 -->
@@ -107,7 +109,7 @@
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="#191970" d="M61.8131,-734.3324C79.5831,-688.5461 110.0075,-610.1542 134.2339,-547.7319"/>
+<path fill="none" stroke="#191970" d="M61.8121,-734.3349C78.5464,-691.217 106.504,-619.1811 129.9392,-558.7978"/>
 <polygon fill="none" stroke="#191970" points="58.4686,-733.2764 58.1133,-743.8653 64.9944,-735.8092 58.4686,-733.2764"/>
 </g>
 <!-- Node5 -->
@@ -141,8 +143,8 @@
 <!-- Node5&#45;&gt;Node3 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node3</title>
-<path fill="none" stroke="#404040" d="M257.0181,-661.2029C243.3406,-628.0972 228.3963,-591.925 214.8578,-559.1559"/>
-<polygon fill="none" stroke="#404040" points="214.7143,-558.8083 208.7263,-554.7903 210.1321,-547.7176 216.1201,-551.7356 214.7143,-558.8083"/>
+<path fill="none" stroke="#404040" d="M257.0181,-661.2029C244.8126,-631.66 231.5982,-599.6751 219.2743,-569.8458"/>
+<polygon fill="none" stroke="#404040" points="219.1808,-569.6193 213.1928,-565.6013 214.5987,-558.5286 220.5866,-562.5465 219.1808,-569.6193"/>
 <text text-anchor="middle" x="275" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000"> &#45;activeTile</text>
 <text text-anchor="middle" x="275" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45;data</text>
 </g>
@@ -163,8 +165,8 @@
 <!-- Node6&#45;&gt;Node3 -->
 <g id="edge7" class="edge">
 <title>Node6&#45;&gt;Node3</title>
-<path fill="none" stroke="#404040" d="M152.6019,-986.4325C147.7736,-958.9102 141.5589,-919.1148 139,-884 131.7968,-785.151 131.4427,-759.8226 139,-661 141.5259,-627.9704 146.2765,-592.2464 151.3592,-559.8796"/>
-<polygon fill="none" stroke="#404040" points="151.4199,-559.5004 148.4201,-552.9428 153.3195,-547.6516 156.3193,-554.2092 151.4199,-559.5004"/>
+<path fill="none" stroke="#404040" d="M152.6019,-986.4325C147.7736,-958.9102 141.5589,-919.1148 139,-884 131.7968,-785.151 131.4427,-759.8226 139,-661 141.2465,-631.6233 145.2529,-600.1152 149.6876,-570.7334"/>
+<polygon fill="none" stroke="#404040" points="149.711,-570.5807 146.6731,-564.0408 151.5415,-558.7211 154.5794,-565.2611 149.711,-570.5807"/>
 <text text-anchor="middle" x="181.5" y="-770" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000"> &#45;graphicsManager</text>
 </g>
 <!-- Node6&#45;&gt;Node5 -->

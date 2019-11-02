@@ -80,7 +80,7 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für Client:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="287"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="302"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -93,7 +93,11 @@ Zusammengehörigkeiten von Client:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Öffentliche Slots</h2></td></tr>
 <tr class="memitem:a660b8879b75b9dbfe82e88991e616fc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a660b8879b75b9dbfe82e88991e616fc3">onPositionChange</a> (int, int)</td></tr>
+<tr class="memdesc:a660b8879b75b9dbfe82e88991e616fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a660b8879b75b9dbfe82e88991e616fc3" title="Client::onPositionChange Slot für Ändern der Position.">Client::onPositionChange</a> Slot für Ändern der Position.  <a href="classClient.html#a660b8879b75b9dbfe82e88991e616fc3">Mehr ...</a><br /></td></tr>
 <tr class="separator:a660b8879b75b9dbfe82e88991e616fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02790b5bbbd56fd7848c4b8f825ffacf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a02790b5bbbd56fd7848c4b8f825ffacf">onTileChange</a> (int, int, int, int)</td></tr>
+<tr class="memdesc:a02790b5bbbd56fd7848c4b8f825ffacf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a02790b5bbbd56fd7848c4b8f825ffacf" title="Client::onTileChange Slot für Ändern eines Tiles.">Client::onTileChange</a> Slot für Ändern eines Tiles.  <a href="classClient.html#a02790b5bbbd56fd7848c4b8f825ffacf">Mehr ...</a><br /></td></tr>
+<tr class="separator:a02790b5bbbd56fd7848c4b8f825ffacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signale</h2></td></tr>
@@ -159,7 +163,7 @@ Private Attribute</h2></td></tr>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e_cgraph.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e_cgraph.svg" width="100%" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -199,10 +203,84 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classClient.html#a660b8879b75b9dbfe82e88991e616fc3" title="Client::onPositionChange Slot für Ändern der Position.">Client::onPositionChange</a> Slot für Ändern der Position. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pX</td><td>Der X-Index. </td></tr>
+    <tr><td class="paramname">pY</td><td>Der Y-Index. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a660b8879b75b9dbfe82e88991e616fc3_icgraph.svg" width="332" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a02790b5bbbd56fd7848c4b8f825ffacf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02790b5bbbd56fd7848c4b8f825ffacf">&#9670;&nbsp;</a></span>onTileChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::onTileChange </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pRotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classClient.html#a02790b5bbbd56fd7848c4b8f825ffacf" title="Client::onTileChange Slot für Ändern eines Tiles.">Client::onTileChange</a> Slot für Ändern eines Tiles. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pX</td><td>Der X-Index. </td></tr>
+    <tr><td class="paramname">pY</td><td>Der Y-Index. </td></tr>
+    <tr><td class="paramname">pType</td><td>Der Typ. </td></tr>
+    <tr><td class="paramname">pRotation</td><td>Die Rotation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a02790b5bbbd56fd7848c4b8f825ffacf_icgraph.svg" width="308" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -234,8 +312,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a120115036fc4595c9343388d2b94c308_icgraph.svg" width="515" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a120115036fc4595c9343388d2b94c308_icgraph.svg" width="515" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -282,8 +359,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a731120106494c93f6cd7c12602328fac_icgraph.svg" width="562" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a731120106494c93f6cd7c12602328fac_icgraph.svg" width="562" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -322,8 +398,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a4cc6ded21fb38d6341fd91314156920e_icgraph.svg" width="316" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a4cc6ded21fb38d6341fd91314156920e_icgraph.svg" width="316" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -355,8 +430,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_ad2cfacbefea1e51e34c4697403fb82cb_cgraph.svg" width="316" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_ad2cfacbefea1e51e34c4697403fb82cb_cgraph.svg" width="316" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -409,8 +483,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_abf75ead98e9700dd6e26539b0e1eb9af_icgraph.svg" width="502" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_abf75ead98e9700dd6e26539b0e1eb9af_icgraph.svg" width="502" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

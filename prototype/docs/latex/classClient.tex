@@ -28,7 +28,9 @@ Zusammengehörigkeiten von Client\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classClient_a660b8879b75b9dbfe82e88991e616fc3}{on\+Position\+Change}} (int, int)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a660b8879b75b9dbfe82e88991e616fc3}{Client\+::on\+Position\+Change}} Slot für Ändern der Position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}{on\+Tile\+Change}} (int, int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}{Client\+::on\+Tile\+Change}} Slot für Ändern eines Tiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -89,6 +91,17 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \doxysubsubsection{\texorpdfstring{onPositionChange}{onPositionChange}}
 {\footnotesize\ttfamily void Client\+::on\+Position\+Change (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
+
+
+\mbox{\hyperlink{classClient_a660b8879b75b9dbfe82e88991e616fc3}{Client\+::on\+Position\+Change}} Slot für Ändern der Position. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em pX} & Der X-\/\+Index. \\
+\hline
+{\em pY} & Der Y-\/\+Index. \\
+\hline
+\end{DoxyParams}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \nopagebreak
 \begin{figure}[H]
@@ -97,14 +110,42 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \includegraphics[width=321pt]{classClient_a660b8879b75b9dbfe82e88991e616fc3_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}\label{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}} 
+\index{Client@{Client}!onTileChange@{onTileChange}}
+\index{onTileChange@{onTileChange}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{onTileChange}{onTileChange}}
+{\footnotesize\ttfamily void Client\+::on\+Tile\+Change (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY,  }\item[{int}]{p\+Type,  }\item[{int}]{p\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}{Client\+::on\+Tile\+Change}} Slot für Ändern eines Tiles. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em pX} & Der X-\/\+Index. \\
+\hline
+{\em pY} & Der Y-\/\+Index. \\
+\hline
+{\em p\+Type} & Der Typ. \\
+\hline
+{\em p\+Rotation} & Die Rotation. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classClient_a02790b5bbbd56fd7848c4b8f825ffacf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classClient_a120115036fc4595c9343388d2b94c308}\label{classClient_a120115036fc4595c9343388d2b94c308}} 
 \index{Client@{Client}!playerConnect@{playerConnect}}
 \index{playerConnect@{playerConnect}!Client@{Client}}
 \doxysubsubsection{\texorpdfstring{playerConnect}{playerConnect}}
 {\footnotesize\ttfamily void Client\+::player\+Connect (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -117,8 +158,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \doxysubsubsection{\texorpdfstring{playerPositionChange}{playerPositionChange}}
 {\footnotesize\ttfamily void Client\+::player\+Position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -140,8 +180,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 {\em cmd} & Der Befehl als String. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,8 +197,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 
 \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{Client\+::run}} Startet den Client-\/\+Thread. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -172,8 +210,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \doxysubsubsection{\texorpdfstring{tileChanged}{tileChanged}}
 {\footnotesize\ttfamily void Client\+::tile\+Changed (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

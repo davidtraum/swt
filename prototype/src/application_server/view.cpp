@@ -59,6 +59,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
                 case MapTile::GRASS:
                     if(dataModel->takeBalance(50)){
                         clickedTile->setType(MapTile::RAIL_H);
+                        scene->tileChanged(clickedTile->getX(), clickedTile->getY());
                     }
                     break;
 
@@ -71,6 +72,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
                 case MapTile::FORREST:
                     if(dataModel->takeBalance(40)){
                        clickedTile->setType(MapTile::GRASS);
+                       scene->tileChanged(clickedTile->getX(), clickedTile->getY());
                     }
                     break;
 
@@ -85,6 +87,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
                 rotation++;
                 if(rotation>3)rotation=0;
                 clickedTile->setRotation(rotation);
+                scene->tileChanged(clickedTile->getX(), clickedTile->getY());
             }
             qDebug() << "[EVENT] Rechtsklick.";
         }

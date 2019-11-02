@@ -30,6 +30,7 @@ signals:
 
 public slots:
     void onPositionChange(int,int);
+    void onTileChange(int,int,int,int);
 };
 
 #endif // CLIENT_H
