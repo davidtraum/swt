@@ -24,6 +24,7 @@ private:
     void processCommand(QString command);
 
 signals:
+    void mapLoaded();
     void tileChanged(int,int,int,int);
     void playerConnect(int);
     void playerPositionChange(int, int,int);

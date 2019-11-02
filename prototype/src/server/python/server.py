@@ -54,6 +54,7 @@ class ClientThread(Thread):
                     for client in clients:
                         if(client != self):
                             self.send("PLAYER CONN " + client.clientId);
+                    self.send("MAP LOADED");
             elif(split[0]=='POS'):
                 print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
                 self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);

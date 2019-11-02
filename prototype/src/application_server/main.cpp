@@ -76,9 +76,9 @@ int main(int argc, char *argv[])
 
 
 
-    //view->resetMatrix();
-    //view->currentScale=0.05;
-    //view->scale(0.05, 0.05);
+    view->resetMatrix();
+    view->currentScale=0.05;
+    view->scale(0.05, 0.05);
     //view->enableAnimation();
     //view->fluidZoom(1, true);
 
@@ -89,11 +89,12 @@ int main(int argc, char *argv[])
     bool ok;
     QString connectText = QInputDialog::getText(mainWindow, "Railroad Tycoon",
                                              "Server:", QLineEdit::Normal,
-                                             "localhost:50505", &ok);
+                                             "traum.me:2000", &ok);
     dataModel->setConnectionInfo(connectText);
 
 
     client = new Client(dataModel, scene);
+    connect(client, &Client::mapLoaded, view, &View::zoomInAnimation);
 
     a.exec();
 }

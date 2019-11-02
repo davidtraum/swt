@@ -64,6 +64,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
                     break;
 
                 case MapTile::CITY:
+                    break;
                     doAnimations = true;
                     fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);
                     fluidZoom(0.5, currentScale<0.5);
@@ -257,4 +258,12 @@ void View::enableAnimation(){
  */
 void View::setDataModel(DataModel *pModel){
     dataModel = pModel;
+}
+
+/**
+ * @brief View::zoomInAnimation Slot der nach dem Laden der Karte aufgerufen wird.
+ */
+void View::zoomInAnimation(){
+    this->enableAnimation();
+    this->fluidZoom(1, true);
 }

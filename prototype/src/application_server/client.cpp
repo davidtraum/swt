@@ -55,6 +55,10 @@ void Client::processCommand(QString cmd){
         }else if(split[1].startsWith("POS")){
             emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
         }
+    }else if(split[0].startsWith("MAP")){
+        if(split[1].startsWith("LOADED")){
+            emit mapLoaded();
+        }
     }
 }
 

@@ -27,6 +27,9 @@ private:
     int dragOriginX,dragOriginY,dragPosX,dragPosY,mouseX,mouseY;
     bool mouseDown;
     bool doAnimations;
+
+public slots:
+    void zoomInAnimation();
 };
 
 #endif // VIEW_H
