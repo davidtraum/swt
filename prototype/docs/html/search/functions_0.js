@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['city_154',['City',['../classCity.html#a75453c1c691bf3465388edb586542176',1,'City::City(int pX, int pY, int pSize)'],['../classCity.html#a1b1f549430f0a7ecd0ec7b1605415193',1,'City::City()']]]
+  ['addplayer_187',['addPlayer',['../classScene.html#a5d29491d77c0b68b00249ef76e16c33e',1,'Scene']]],
+  ['attachgraphicsmanager_188',['attachGraphicsManager',['../classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f',1,'MapTile']]]
 ];

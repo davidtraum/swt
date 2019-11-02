@@ -45,7 +45,7 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Wald");
             break;
         case MapTile::TYPE::CITY:
-            pixmapItem->setPixmap(graphicsManager->get("city"));
+            pixmapItem->setPixmap(graphicsManager->get("stadt"));
             pixmapItem->setToolTip("Stadt");
             break;
 

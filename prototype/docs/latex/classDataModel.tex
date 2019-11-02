@@ -6,13 +6,29 @@
 
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Klassendiagramm für Data\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classDataModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=203pt]{classDataModel__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDataModel_a115caaefffb20dbd713276d3c9937541}{position\+Change}} (int, int)
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +50,12 @@ void \mbox{\hyperlink{classDataModel_a2dcc97fd7387151077bcb3794b1614af}{update\+
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a2dcc97fd7387151077bcb3794b1614af}{Data\+Model\+::update\+Coordinates}} Aktualisiert die Koordinaten des fokussierten Quadrantens. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{format\+Time}} (long p\+Time)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{set\+Connection\+Info}} (Q\+String p\+String)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{Data\+Model\+::set\+Connection\+Info}} Setzt die Verbindungsinformation als String. \end{DoxyCompactList}\item 
+Q\+String $\ast$ \mbox{\hyperlink{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}{get\+IP}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}{Data\+Model\+::get\+IP}} Gibt die IP Adresse zur Verbindung zurück. \end{DoxyCompactList}\item 
+quint16 \mbox{\hyperlink{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}{get\+Port}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}{Data\+Model\+::get\+Port}} Gibt den Port zur Verbindung zurück. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{set\+Gui\+Balance\+Label}} (Q\+Label $\ast$label)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{Data\+Model\+::set\+Gui\+Balance\+Label}} Setzt das Label in welchem der Kontostand dargestellt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{set\+Gui\+Time\+Label}} (Q\+Label $\ast$label)
@@ -50,6 +72,10 @@ long \mbox{\hyperlink{classDataModel_a317b1b09cd4bbc946c625e0dcfd89132}{time}}
 int \mbox{\hyperlink{classDataModel_adddcc70d54445fd7e93ec7016c06ca66}{coordinateX}}
 \item 
 int \mbox{\hyperlink{classDataModel_a0dcb89a7fda479001ef8f92203c00d43}{coordinateY}}
+\item 
+Q\+String \mbox{\hyperlink{classDataModel_a32e94d7559dea5f25325d481ed30d513}{ip}}
+\item 
+quint16 \mbox{\hyperlink{classDataModel_ad0600b5b3c94ed79290f41102637abef}{port}}
 \item 
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a600ee15bba4b83c510afc3fb0b579672}{balance\+Label}}
 \item 
@@ -111,6 +137,48 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Kontostand. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}\label{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}} 
+\index{DataModel@{DataModel}!getIP@{getIP}}
+\index{getIP@{getIP}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getIP()}{getIP()}}
+{\footnotesize\ttfamily Q\+String $\ast$ Data\+Model\+::get\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}{Data\+Model\+::get\+IP}} Gibt die IP Adresse zur Verbindung zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Die IP Adresse als Q\+String 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}\label{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}} 
+\index{DataModel@{DataModel}!getPort@{getPort}}
+\index{getPort@{getPort}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily quint16 Data\+Model\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}{Data\+Model\+::get\+Port}} Gibt den Port zur Verbindung zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Der Port als int. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_a8cf95a63afc8d4cd4384762077ba1ba1}\label{classDataModel_a8cf95a63afc8d4cd4384762077ba1ba1}} 
 \index{DataModel@{DataModel}!getSystemMillis@{getSystemMillis}}
 \index{getSystemMillis@{getSystemMillis}!DataModel@{DataModel}}
@@ -124,13 +192,6 @@ Der aktuelle Kontostand.
 \begin{DoxyReturn}{Rückgabe}
 Die Zahl der Millisekunden. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classDataModel_a8cf95a63afc8d4cd4384762077ba1ba1_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}\label{classDataModel_ae0c1146a6cc770a6150cb6f7b77d5a2a}} 
 \index{DataModel@{DataModel}!getTime@{getTime}}
 \index{getTime@{getTime}!DataModel@{DataModel}}
@@ -144,6 +205,43 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Der Timecode. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_a115caaefffb20dbd713276d3c9937541}\label{classDataModel_a115caaefffb20dbd713276d3c9937541}} 
+\index{DataModel@{DataModel}!positionChange@{positionChange}}
+\index{positionChange@{positionChange}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
+{\footnotesize\ttfamily void Data\+Model\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a115caaefffb20dbd713276d3c9937541_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}\label{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}} 
+\index{DataModel@{DataModel}!setConnectionInfo@{setConnectionInfo}}
+\index{setConnectionInfo@{setConnectionInfo}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{setConnectionInfo()}{setConnectionInfo()}}
+{\footnotesize\ttfamily void Data\+Model\+::set\+Connection\+Info (\begin{DoxyParamCaption}\item[{Q\+String}]{p\+String }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{Data\+Model\+::set\+Connection\+Info}} Setzt die Verbindungsinformation als String. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+String} & Die IP und der Port im Format IP\+:P\+O\+RT \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_aa43618b4473a997594d2f971f3e50874}\label{classDataModel_aa43618b4473a997594d2f971f3e50874}} 
 \index{DataModel@{DataModel}!setGuiBalanceLabel@{setGuiBalanceLabel}}
 \index{setGuiBalanceLabel@{setGuiBalanceLabel}!DataModel@{DataModel}}
@@ -360,6 +458,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{coordinateY}{coordinateY}}
 {\footnotesize\ttfamily int Data\+Model\+::coordinateY\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classDataModel_a32e94d7559dea5f25325d481ed30d513}\label{classDataModel_a32e94d7559dea5f25325d481ed30d513}} 
+\index{DataModel@{DataModel}!ip@{ip}}
+\index{ip@{ip}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily Q\+String Data\+Model\+::ip\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_ad0600b5b3c94ed79290f41102637abef}\label{classDataModel_ad0600b5b3c94ed79290f41102637abef}} 
+\index{DataModel@{DataModel}!port@{port}}
+\index{port@{port}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily quint16 Data\+Model\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classDataModel_aa437ce67fe0141a9821946af7d8bd381}\label{classDataModel_aa437ce67fe0141a9821946af7d8bd381}} 
 \index{DataModel@{DataModel}!positionLabel@{positionLabel}}
 \index{positionLabel@{positionLabel}!DataModel@{DataModel}}
@@ -382,5 +492,5 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
 \item 
-src/application/\mbox{\hyperlink{datamodel_8h}{datamodel.\+h}}\item 
-src/application/\mbox{\hyperlink{datamodel_8cpp}{datamodel.\+cpp}}\end{DoxyCompactItemize}
+src/application\+\_\+server/\mbox{\hyperlink{datamodel_8h}{datamodel.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{datamodel_8cpp}{datamodel.\+cpp}}\end{DoxyCompactItemize}

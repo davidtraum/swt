@@ -9,6 +9,7 @@
 
 #include "maptile.h"
 #include "graphicsmanager.h"
+#include "player.h"
 
 class Scene: public QGraphicsScene
 {
@@ -18,7 +19,6 @@ public:
     Scene(GraphicsManager * pGraphicsManager);
     void generateWorld(); //Methode zur zufälligen Generierung der Karte
     void setActiveTile(QGraphicsItem * pItem);
-    void setTileAt(int posX, int posY, MapTile::TYPE pType, int pRotation=0);
     MapTile * getTileAt(int posX, int posY, bool isPixelCoordinate=false);
 
 private:
@@ -29,6 +29,12 @@ private:
     bool showRadius;
     MapTile * activeTile;
     GraphicsManager * graphicsManager;
+    std::map<int, Player *> players;
+
+public slots:
+    void setTileAt(int,int,int,int);
+    void updatePlayerPosition(int, int,int);
+    void addPlayer(int);
 };
 
 #endif // SCENE_H

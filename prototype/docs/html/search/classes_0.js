@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['city_123',['City',['../classCity.html',1,'']]]
+  ['city_150',['City',['../classCity.html',1,'']]],
+  ['client_151',['Client',['../classClient.html',1,'']]]
 ];

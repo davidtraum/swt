@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enableanimation_156',['enableAnimation',['../classView.html#a105b23bffbbea3af00bc47fc38a5e98c',1,'View']]]
+  ['datamodel_191',['DataModel',['../classDataModel.html#abff03aef2cb531142a35781bb87c3365',1,'DataModel']]]
 ];

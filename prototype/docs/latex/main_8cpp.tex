@@ -1,5 +1,5 @@
-\hypertarget{main_8cpp}{}\doxysection{src/application/main.cpp-\/\+Dateireferenz}
-\label{main_8cpp}\index{src/application/main.cpp@{src/application/main.cpp}}
+\hypertarget{main_8cpp}{}\doxysection{src/application\+\_\+server/main.cpp-\/\+Dateireferenz}
+\label{main_8cpp}\index{src/application\_server/main.cpp@{src/application\_server/main.cpp}}
 {\ttfamily \#include $<$Q\+Application$>$}\newline
 {\ttfamily \#include $<$Q\+Menu\+Bar$>$}\newline
 {\ttfamily \#include $<$Q\+Debug$>$}\newline
@@ -9,14 +9,15 @@
 {\ttfamily \#include $<$Q\+Dock\+Widget$>$}\newline
 {\ttfamily \#include $<$Q\+Widget$>$}\newline
 {\ttfamily \#include $<$Q\+Grid\+Layout$>$}\newline
-{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$Q\+Input\+Dialog$>$}\newline
 {\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}view.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}scene.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}graphicsmanager.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}sidepanel.\+h\char`\"{}}\newline
-Include-\/\+Abhängigkeitsdiagramm für main.\+cpp\+:\nopagebreak
+Include-\/\+Abhängigkeitsdiagramm für main.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -46,6 +47,8 @@ bool \mbox{\hyperlink{main_8cpp_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running
 \mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{main_8cpp_a6de66f9ad116ce1d596c7f4edc40c521}{scene}}
 \item 
 \mbox{\hyperlink{classSidePanel}{Side\+Panel}} $\ast$ \mbox{\hyperlink{main_8cpp_af6557e0f5cda6d5bf4852ccb1fe3733d}{side\+Panel}}
+\item 
+\mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{main_8cpp_a0388c33353644129ea9403f0a5a8ed24}{client}}
 \end{DoxyCompactItemize}
 
 
@@ -70,7 +73,8 @@ main Startmethode.
 \begin{DoxyReturn}{Rückgabe}
 Exit-\/\+Code (0=Alles gut) 
 \end{DoxyReturn}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -100,6 +104,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 \doxysubsection{Variablen-\/\+Dokumentation}
+\mbox{\Hypertarget{main_8cpp_a0388c33353644129ea9403f0a5a8ed24}\label{main_8cpp_a0388c33353644129ea9403f0a5a8ed24}} 
+\index{main.cpp@{main.cpp}!client@{client}}
+\index{client@{client}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}}$\ast$ client}
+
 \mbox{\Hypertarget{main_8cpp_aac0b33719c4cd854b069613f9f0b360d}\label{main_8cpp_aac0b33719c4cd854b069613f9f0b360d}} 
 \index{main.cpp@{main.cpp}!dataModel@{dataModel}}
 \index{dataModel@{dataModel}!main.cpp@{main.cpp}}

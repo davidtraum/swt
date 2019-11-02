@@ -24,6 +24,8 @@ View::View(Scene * pScene)
     QGraphicsView::setMouseTracking(true);
     mouseDown = false;
     doAnimations = false;
+    mouseX = 0;
+    mouseY = 0;
 }
 
 

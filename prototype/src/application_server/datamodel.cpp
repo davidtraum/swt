@@ -77,10 +77,14 @@ std::string DataModel::formatTime(long pTime){
  * @param pY Die Y Koordinate.
  */
 void DataModel::updateCoordinates(int pX, int pY){
+    if(pX!=coordinateX || pY!=coordinateY){
+        emit positionChange(pX,pY);
+    }
     coordinateX = pX;
     coordinateY = pY;
     positionLabel->setText(QString::fromStdString("<img height=\"32\" src=\":/icons/location.svg\"></img><h2>X: " + std::to_string(pX) + "<br>Y: " + std::to_string(pY)));
 }
+
 
 /**
  * @brief DataModel::getSystemMillis Gibt die Zahl der Millsekunden seit 1970 zurück.
@@ -89,6 +93,37 @@ void DataModel::updateCoordinates(int pX, int pY){
 long DataModel::getSystemMillis(){
      return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 }
+
+
+/**
+ * @brief DataModel::setConnectionInfo Setzt die Verbindungsinformation als String.
+ * @param pString Die IP und der Port im Format IP:PORT
+ */
+void DataModel::setConnectionInfo(QString pString){
+    QStringList split = pString.split(":");
+    ip = split[0];
+    port = quint16(split[1].toInt());
+}
+
+/**
+ * @brief DataModel::getIP Gibt die IP Adresse zur Verbindung zurück.
+ * @return Die IP Adresse als QString
+ */
+QString * DataModel::getIP(){
+    return &ip;
+}
+
+/**
+ * @brief DataModel::getPort Gibt den Port zur Verbindung zurück.
+ * @return Der Port als int.
+ */
+quint16 DataModel::getPort(){
+    return port;
+}
+
+
+
+
 /**
  * @brief DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird.
  * @param label Ein Pointer auf ein QLabel Objekt.

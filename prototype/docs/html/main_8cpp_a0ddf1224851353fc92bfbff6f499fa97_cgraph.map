@@ -1,25 +1,14 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="main Startmethode." alt="" coords="5,389,56,416"/>
-<area shape="rect" id="node2" href="$classView.html#a105b23bffbbea3af00bc47fc38a5e98c" title="View::enableAnimation Aktiviert animationen bis zum nächsten Event." alt="" coords="119,183,279,209"/>
-<area shape="rect" id="node3" href="$classView.html#a33de978d43cde59ae344035ebcb60184" title="View::fluidZoom Startet eine Zoom&#45;Animation. Zuvor muss doAnimations=true gesetzt sein...." alt="" coords="139,233,259,260"/>
-<area shape="rect" id="node4" href="$classScene.html#a1ef1c0e0972913d4c477ead916cf06b0" title="Scene::generateWorld Diese Methode generiert eine neue Welt." alt="" coords="120,284,279,311"/>
-<area shape="rect" id="node14" href="$classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4" title="SidePanel::hookDataModel Verknüpft ein Datenmodell mit der Anzeige. Dadurch können dann Textfelder et..." alt="" coords="104,469,295,496"/>
-<area shape="rect" id="node22" href="$classView.html#a3753656c26f1f7472c5ed8edfe1a1c30" title="View::setDataModel Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position we..." alt="" coords="127,520,272,547"/>
-<area shape="rect" id="node23" href="$main_8cpp.html#ad01ac0e0d4b73391ba10338f3ed07976" title=" " alt="" coords="156,607,243,633"/>
-<area shape="rect" id="node5" href="$classMapTile.html#a04adb2286fb76310bca5f3ecef200c0e" title="MapTile::getPixmapItem Liefert das Pixmap Item." alt="" coords="359,5,528,32"/>
-<area shape="rect" id="node6" href="$classDataModel.html#a8cf95a63afc8d4cd4384762077ba1ba1" title="DataModel::getSystemMillis Gibt die Zahl der Millsekunden seit 1970 zurück." alt="" coords="348,56,539,83"/>
-<area shape="rect" id="node7" href="$classCity.html#aa386d95c7f928b239bc4973ce816106d" title="City::setCenter Setzt den Mittelpunkt der Stadt." alt="" coords="388,107,499,133"/>
-<area shape="rect" id="node8" href="$classMapTile.html#a95eefbf7247ae6adef4aaee0a35eaa4f" title="MapTile::setCity." alt="" coords="383,157,504,184"/>
-<area shape="rect" id="node9" href="$classCity.html#a198b26b45e0b52f27a18b3631db5070c" title="City::setName Setzt den Namen der Stadt." alt="" coords="390,208,497,235"/>
-<area shape="rect" id="node10" href="$classMapTile.html#a954bfbd36f8055157616c38392a0ceef" title="MapTile::setPosition Setzt die Position der Kachel. (In Pixeln)" alt="" coords="370,259,517,285"/>
-<area shape="rect" id="node11" href="$classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat." alt="" coords="625,360,771,387"/>
-<area shape="rect" id="node12" href="$classCity.html#ac4ff08b2faa48f34b8ffbff37f4b0621" title="City::setSize Gibt die Größe der Stadt zurück (Anzahl der Gebäude)" alt="" coords="394,360,493,387"/>
-<area shape="rect" id="node13" href="$classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel." alt="" coords="378,411,509,437"/>
-<area shape="rect" id="node15" href="$classDataModel.html#aa43618b4473a997594d2f971f3e50874" title="DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird." alt="" coords="350,462,537,503"/>
-<area shape="rect" id="node17" href="$classDataModel.html#aacb6a19e48624b83281db172ef01ef4f" title="DataModel::setGuiTimeLabel Setzt das Label in welchem die Koordinate dargestellt wird." alt="" coords="351,527,535,569"/>
-<area shape="rect" id="node19" href="$classDataModel.html#ab74444c84fdf3bd06ba46c80463dfe5b" title="DataModel::setGuiTimeLabel Setzt das Label in welchem die Zeit dargestellt wird." alt="" coords="343,593,544,620"/>
-<area shape="rect" id="node16" href="$classDataModel.html#abc9c6c796348870e45fda933739585d5" title="DataModel::updateBalance Aktualisiert den Kontostand. Auch in Anzeigen etc." alt="" coords="604,469,792,496"/>
-<area shape="rect" id="node18" href="$classDataModel.html#a2dcc97fd7387151077bcb3794b1614af" title="DataModel::updateCoordinates Aktualisiert die Koordinaten des fokussierten Quadrantens." alt="" coords="592,535,804,561"/>
-<area shape="rect" id="node20" href="$classDataModel.html#a0c605d45cde1e17a0611c004732ac6ee" title="DataModel::timeTick Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode." alt="" coords="623,619,773,645"/>
-<area shape="rect" id="node21" href="$classDataModel.html#a0f0049332a55bb6de5bd2d0d53f3b93f" title="DataModel::formatTime Formattiert einen Timecode als String." alt="" coords="852,619,1019,645"/>
+<area shape="rect" id="node1" title="main Startmethode." alt="" coords="5,149,56,175"/>
+<area shape="rect" id="node2" href="$classSidePanel.html#a26f78ad7518003db89a4ec57d63da2e4" title="SidePanel::hookDataModel Verknüpft ein Datenmodell mit der Anzeige. Dadurch können dann Textfelder et..." alt="" coords="111,73,301,99"/>
+<area shape="rect" id="node10" href="$classDataModel.html#a3bbffe568b3bc32a4da5ac21226dad42" title="DataModel::setConnectionInfo Setzt die Verbindungsinformation als String." alt="" coords="104,123,308,150"/>
+<area shape="rect" id="node11" href="$classView.html#a3753656c26f1f7472c5ed8edfe1a1c30" title="View::setDataModel Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position we..." alt="" coords="133,174,279,201"/>
+<area shape="rect" id="node12" href="$main_8cpp.html#ad01ac0e0d4b73391ba10338f3ed07976" title=" " alt="" coords="413,203,500,230"/>
+<area shape="rect" id="node3" href="$classDataModel.html#aa43618b4473a997594d2f971f3e50874" title="DataModel::setGuiBalanceLabel Setzt das Label in welchem der Kontostand dargestellt wird." alt="" coords="363,5,550,47"/>
+<area shape="rect" id="node5" href="$classDataModel.html#aacb6a19e48624b83281db172ef01ef4f" title="DataModel::setGuiTimeLabel Setzt das Label in welchem die Koordinate dargestellt wird." alt="" coords="365,71,549,112"/>
+<area shape="rect" id="node7" href="$classDataModel.html#ab74444c84fdf3bd06ba46c80463dfe5b" title="DataModel::setGuiTimeLabel Setzt das Label in welchem die Zeit dargestellt wird." alt="" coords="356,142,557,169"/>
+<area shape="rect" id="node4" href="$classDataModel.html#abc9c6c796348870e45fda933739585d5" title="DataModel::updateBalance Aktualisiert den Kontostand. Auch in Anzeigen etc." alt="" coords="617,13,805,39"/>
+<area shape="rect" id="node6" href="$classDataModel.html#a2dcc97fd7387151077bcb3794b1614af" title="DataModel::updateCoordinates Aktualisiert die Koordinaten des fokussierten Quadrantens." alt="" coords="605,78,817,105"/>
+<area shape="rect" id="node8" href="$classDataModel.html#a0c605d45cde1e17a0611c004732ac6ee" title="DataModel::timeTick Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode." alt="" coords="637,167,786,194"/>
+<area shape="rect" id="node9" href="$classDataModel.html#a0f0049332a55bb6de5bd2d0d53f3b93f" title="DataModel::formatTime Formattiert einen Timecode als String." alt="" coords="865,167,1032,194"/>
 </map>

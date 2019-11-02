@@ -7,7 +7,7 @@
 #include <QDockWidget>
 #include <QWidget>
 #include <QGridLayout>
-#include <chrono>
+#include <QInputDialog>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -86,7 +86,14 @@ int main(int argc, char *argv[])
 
     timeTicker();
 
-    client = new Client(scene);
+    bool ok;
+    QString connectText = QInputDialog::getText(mainWindow, "Railroad Tycoon",
+                                             "Server:", QLineEdit::Normal,
+                                             "localhost:50505", &ok);
+    dataModel->setConnectionInfo(connectText);
+
+
+    client = new Client(dataModel, scene);
 
     a.exec();
 }

@@ -6,33 +6,44 @@
 
 
 
-Klassendiagramm für Scene\+:\nopagebreak
+Klassendiagramm für Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=179pt]{classScene__inherit__graph}
+\includegraphics[width=208pt]{classScene__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Zusammengehörigkeiten von Scene\+:\nopagebreak
+Zusammengehörigkeiten von Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{classScene__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Öffentliche Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{set\+Tile\+At}} (int, int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{Scene\+::set\+Tile\+At}} Setzt ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indezes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{update\+Player\+Position}} (int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{add\+Player}} (int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{Scene\+::add\+Player}} Fügt einen Netzwerkspieler hinzu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene\+::\+Scene}} Konstruktor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene_af4da84985eb7279d6f6ae36b299c0757}{Scene}} (\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$p\+Graphics\+Manager)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_af4da84985eb7279d6f6ae36b299c0757}{Scene\+::\+Scene}} Konstruktor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{generate\+World}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{Scene\+::generate\+World}} Diese Methode generiert eine neue Welt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{set\+Active\+Tile}} (Q\+Graphics\+Item $\ast$p\+Item)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{Scene\+::set\+Active\+Tile}} Setzt den \mbox{\hyperlink{classMapTile}{Map\+Tile}} über dem die Maus gerade ist. Wird von view aufgerufen. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ \mbox{\hyperlink{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}{get\+Tile\+At}} (int posX, int posY, bool is\+Pixel\+Coordinate)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ \mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{get\+Tile\+At}} (int posX, int posY, bool is\+Pixel\+Coordinate=false)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Statische öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,23 +65,58 @@ Q\+Graphics\+Text\+Item $\ast$ \mbox{\hyperlink{classScene_a03320edcd924b9ff8453
 bool \mbox{\hyperlink{classScene_aecb59164e9feda75eda4f5e6f540ef18}{show\+Radius}}
 \item 
 \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ \mbox{\hyperlink{classScene_abefde35137fe2630f84e8271f48846c6}{active\+Tile}}
+\item 
+\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{classScene_a8117d555b381577bc6d82a1c74e5eef7}{graphics\+Manager}}
+\item 
+std\+::map$<$ int, \mbox{\hyperlink{classPlayer}{Player}} $\ast$ $>$ \mbox{\hyperlink{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}{players}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507}} 
+\mbox{\Hypertarget{classScene_af4da84985eb7279d6f6ae36b299c0757}\label{classScene_af4da84985eb7279d6f6ae36b299c0757}} 
 \index{Scene@{Scene}!Scene@{Scene}}
 \index{Scene@{Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
-{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$}]{p\+Graphics\+Manager }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene\+::\+Scene}} Konstruktor. 
+\mbox{\hyperlink{classScene_af4da84985eb7279d6f6ae36b299c0757}{Scene\+::\+Scene}} Konstruktor. 
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene_af4da84985eb7279d6f6ae36b299c0757_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classScene_a5d29491d77c0b68b00249ef76e16c33e}\label{classScene_a5d29491d77c0b68b00249ef76e16c33e}} 
+\index{Scene@{Scene}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{addPlayer}{addPlayer}}
+{\footnotesize\ttfamily void Scene\+::add\+Player (\begin{DoxyParamCaption}\item[{int}]{p\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{Scene\+::add\+Player}} Fügt einen Netzwerkspieler hinzu. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Id} & Die ID des Spielers. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classScene_a5d29491d77c0b68b00249ef76e16c33e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classScene_a1ef1c0e0972913d4c477ead916cf06b0}\label{classScene_a1ef1c0e0972913d4c477ead916cf06b0}} 
 \index{Scene@{Scene}!generateWorld@{generateWorld}}
 \index{generateWorld@{generateWorld}!Scene@{Scene}}
@@ -81,29 +127,23 @@ bool \mbox{\hyperlink{classScene_aecb59164e9feda75eda4f5e6f540ef18}{show\+Radius
 
 \mbox{\hyperlink{classScene_a1ef1c0e0972913d4c477ead916cf06b0}{Scene\+::generate\+World}} Diese Methode generiert eine neue Welt. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classScene_a1ef1c0e0972913d4c477ead916cf06b0_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=273pt]{classScene_a1ef1c0e0972913d4c477ead916cf06b0_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}\label{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}} 
+\mbox{\Hypertarget{classScene_a12826e995b183844f9415c9df77a9ac7}\label{classScene_a12826e995b183844f9415c9df77a9ac7}} 
 \index{Scene@{Scene}!getTileAt@{getTileAt}}
 \index{getTileAt@{getTileAt}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{getTileAt()}{getTileAt()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ Scene\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{bool}]{is\+Pixel\+Coordinate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$ Scene\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{bool}]{is\+Pixel\+Coordinate = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten. 
+\mbox{\hyperlink{classScene_a12826e995b183844f9415c9df77a9ac7}{Scene\+::get\+Tile\+At}} Liefert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indizes. 
 
 
 \begin{DoxyParams}{Parameter}
@@ -112,11 +152,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em posY} & Die Y-\/\+Koordinate \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{classScene_a39b85af5f6c0da2fa10c534a57c0cbf0_icgraph}
+\includegraphics[width=348pt]{classScene_a12826e995b183844f9415c9df77a9ac7_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classScene_a4caee3e7069bad7901a4a12b19cd304c}\label{classScene_a4caee3e7069bad7901a4a12b19cd304c}} 
@@ -148,6 +189,59 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classScene_a4caee3e7069bad7901a4a12b19cd304c_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classScene_a38a79a03ba1fa403296646ee64ea8476}\label{classScene_a38a79a03ba1fa403296646ee64ea8476}} 
+\index{Scene@{Scene}!setTileAt@{setTileAt}}
+\index{setTileAt@{setTileAt}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{setTileAt}{setTileAt}}
+{\footnotesize\ttfamily void Scene\+::set\+Tile\+At (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY,  }\item[{int}]{p\+Type,  }\item[{int}]{p\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{Scene\+::set\+Tile\+At}} Setzt ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indezes. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em posX} & \\
+\hline
+{\em posY} & \\
+\hline
+{\em is\+Pixel\+Coordinate} & \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene_a38a79a03ba1fa403296646ee64ea8476_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classScene_a38a79a03ba1fa403296646ee64ea8476_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classScene_afd6f9b9c25c47cac93b93e70e43becdf}\label{classScene_afd6f9b9c25c47cac93b93e70e43becdf}} 
+\index{Scene@{Scene}!updatePlayerPosition@{updatePlayerPosition}}
+\index{updatePlayerPosition@{updatePlayerPosition}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{updatePlayerPosition}{updatePlayerPosition}}
+{\footnotesize\ttfamily void Scene\+::update\+Player\+Position (\begin{DoxyParamCaption}\item[{int}]{p\+Id,  }\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classScene_afd6f9b9c25c47cac93b93e70e43becdf_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
@@ -163,6 +257,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{data}{data}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMapTile}{Map\+Tile}} Scene\+::data\mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{classScene_a5dfdbdb576e6c1c6dd8896f0629cd20e}{Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classScene_a8117d555b381577bc6d82a1c74e5eef7}\label{classScene_a8117d555b381577bc6d82a1c74e5eef7}} 
+\index{Scene@{Scene}!graphicsManager@{graphicsManager}}
+\index{graphicsManager@{graphicsManager}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{graphicsManager}{graphicsManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}}$\ast$ Scene\+::graphics\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classScene_a47bfe0cac879212214d16188ae09bdc4}\label{classScene_a47bfe0cac879212214d16188ae09bdc4}} 
 \index{Scene@{Scene}!highlighter@{highlighter}}
 \index{highlighter@{highlighter}!Scene@{Scene}}
@@ -174,6 +274,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{MAP\_SIZE@{MAP\_SIZE}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{MAP\_SIZE}{MAP\_SIZE}}
 {\footnotesize\ttfamily const static int Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE \{300\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}\label{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}} 
+\index{Scene@{Scene}!players@{players}}
+\index{players@{players}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily std\+::map$<$int, \mbox{\hyperlink{classPlayer}{Player}} $\ast$$>$ Scene\+::players\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classScene_abb7ae69b9ac9c7965a7091536ccaae83}\label{classScene_abb7ae69b9ac9c7965a7091536ccaae83}} 
 \index{Scene@{Scene}!radiusHighlighter@{radiusHighlighter}}
@@ -203,5 +309,5 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
 \item 
-src/application/\mbox{\hyperlink{scene_8h}{scene.\+h}}\item 
-src/application/\mbox{\hyperlink{scene_8cpp}{scene.\+cpp}}\end{DoxyCompactItemize}
+src/application\+\_\+server/\mbox{\hyperlink{scene_8h}{scene.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{scene_8cpp}{scene.\+cpp}}\end{DoxyCompactItemize}

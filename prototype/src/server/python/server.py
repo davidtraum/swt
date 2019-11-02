@@ -17,11 +17,12 @@ class Player():
 
 class ClientThread(Thread):
     
-    def __init__(self, connection, address):
+    def __init__(self, connection, address, pId):
         Thread.__init__(self);
         self.connection = connection;
         self.address = address;
         self.player = Player();
+        self.clientId = pId;
         self.start();
         
         
@@ -29,19 +30,33 @@ class ClientThread(Thread):
     def send(self, msg):
         self.connection.sendall((msg + "+").encode("utf-8"));
         
+    def sendAll(self, msg, exceptSelf=True):
+        for client in clients:
+            if(not exceptSelf or client!=self):
+                client.send(msg);
+        
     def run(self):
-        global WORLD,CONFIG;
-        print("[THREAD] Client verbunden " + str(self.address));
-        self.send("CONN ACTIVE");
+        global WORLD,CONFIG,clients;
+        print("[THREAD] Client verbunden " + str(self.address) + " ID: " + self.clientId);
+        self.sendAll("PLAYER CONN " + self.clientId);
         while True:
-            command = self.connection.recv(32).decode('utf-8');
+            command = self.connection.recv(32).decode('utf-8'); 
             split = command.split(" ");
             if(split[0]=='MAP'):
                 if(split[1]=='GET'):
                     print("[THREAD] Sending Map to " + str(self.address));
+                    count = 0;
                     for each in WORLD.getAll():
                         self.send(each);
+                        count+=len(each);
+                    print("Transferred " + str(int(count/1000)) + "kb"); 
                     self.send("MONEY " + str(self.player.money));
+                    for client in clients:
+                        if(client != self):
+                            self.send("PLAYER CONN " + client.clientId);
+            elif(split[0]=='POS'):
+                print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
+                self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);
         
 class MapTile:
     
@@ -67,6 +82,9 @@ class MapTile:
     
     def setRotation(self, pRotation):
         self.rotation = pRotation;
+        
+    def isRiver(self):
+        return self.tileType>2 and self.tileType<9;
         
         
 class World:
@@ -117,6 +135,61 @@ class World:
                     posY=0;
                 elif(posY>=CONFIG['world']['size']):
                     posY=CONFIG['world']['size']-1;
+                    
+        for i in range(random.randint(5, (CONFIG['world']['size']/6))):
+            posX = random.randint(0, CONFIG['world']['size']-1);
+            posY = random.randint(0, CONFIG['world']['size']-1);
+            vx = 1;
+            vy = 1;
+            sinceCurve = 0;
+            typ = 'RIVER_H';
+            while(True):
+                self.data[posX][posY].setType(typ);
+                posX+=vx;
+                posY+=vy;
+                sinceCurve+=1;
+                if(sinceCurve>random.randint(2,8)):
+                    if(random.random()>0.5):
+                        if(vy==-1):
+                            vy = 0;
+                            vx = 1;
+                            typ = 'RIVER_RB';
+                        elif(vy==0):
+                            if(vx==-1):
+                                typ = 'RIVER_RT';
+                            else:
+                                typ = 'RIVER_LT';
+                            vy = -1;
+                            vx = 0;
+                        else:
+                            vy = 0;
+                            vx = -1;
+                            typ = 'RIVER_LT';
+                    else:
+                        if(vx==-1):
+                            vy = 1;
+                            vx = 0;
+                            typ = 'RIVER_RB';
+                        elif(vx==0):
+                            if(vy==1):
+                                typ = 'RIVER_LT';
+                            else:
+                                typ = 'RIVER_LB';
+                            vy = 0;
+                            vx = -1;
+                        else:
+                            vy = -1;
+                            vx = 0;
+                            typ = 'RIVER_LT';
+                    sinceCurve = 0;
+                else:
+                    if(vy==0):
+                        typ = 'RIVER_H';
+                    else:
+                        typ = 'RIVER_V';
+                        
+                if(not (posX>0 and posY>0 and posX<CONFIG['world']['size']-1 and posY<CONFIG['world']['size']-1 and not self.data[posX][posY].isRiver())):
+                    break;
                 
         
             
@@ -142,6 +215,9 @@ DEFAULT_CONFIG = {
     'bind_port': 50505,
     'world': {
         'size': 300
+    },
+    'game': {
+        'max_players': 10
     }
 }
 
@@ -163,7 +239,7 @@ with open('config.json') as file:
 log("Konfiguration: ");
 print(CONFIG);
 
-global WORLD;
+global WORLD,clients;
 WORLD = World();
 
 clients = list();
@@ -176,5 +252,9 @@ log("Server gestartet.");
 while True:
     log("Es wird auf eine Verbindung gewartet.");
     conn,address = sock.accept();
-    thread = ClientThread(conn,address);
-    clients.append(thread);
+    if(len(clients)<CONFIG['game']['max_players']):
+        thread = ClientThread(conn,address,str(len(clients)));
+        clients.append(thread);
+    else:
+        conn.write(b"FULL");
+        conn.close();

@@ -3,9 +3,11 @@
 
 #include <string>
 #include <QLabel>
+#include <QWidget>
 
-class DataModel
+class DataModel: public QObject
 {
+    Q_OBJECT
 public:
     DataModel();
     int getBalance();
@@ -16,7 +18,9 @@ public:
     long getSystemMillis();
     void updateCoordinates(int pX, int pY);
     std::string formatTime(long pTime);
-
+    void setConnectionInfo(QString pString);
+    QString * getIP();
+    quint16 getPort();
     void setGuiBalanceLabel(QLabel * label);
     void setGuiTimeLabel(QLabel * label);
     void setGuiPositionLabel(QLabel * label);
@@ -25,9 +29,14 @@ private:
     int balance;
     long time;
     int coordinateX,coordinateY;
+    QString ip;
+    quint16 port;
     QLabel * balanceLabel;
     QLabel * timeLabel;
     QLabel * positionLabel;
+
+signals:
+    void positionChange(int,int);
 };
 
 #endif // DATAMODEL_H

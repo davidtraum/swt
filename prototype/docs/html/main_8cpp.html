@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Railroad Tycoon Prototyp: src/application/main.cpp-Dateireferenz</title>
+<title>Railroad Tycoon Prototyp: src/application_server/main.cpp-Dateireferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_844f6ab5c2ae79211596f3dcdd81adb7.html">application</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c6321f114837da3d6e2438c49f4e78f.html">application_server</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,7 +84,7 @@ $(function() {
 <code>#include &lt;QDockWidget&gt;</code><br />
 <code>#include &lt;QWidget&gt;</code><br />
 <code>#include &lt;QGridLayout&gt;</code><br />
-<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;QInputDialog&gt;</code><br />
 <code>#include &quot;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="view_8h_source.html">view.h</a>&quot;</code><br />
@@ -94,7 +94,8 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include-Abhängigkeitsdiagramm für main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -121,6 +122,8 @@ Variablen</h2></td></tr>
 <tr class="separator:a6de66f9ad116ce1d596c7f4edc40c521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6557e0f5cda6d5bf4852ccb1fe3733d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSidePanel.html">SidePanel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af6557e0f5cda6d5bf4852ccb1fe3733d">sidePanel</a></td></tr>
 <tr class="separator:af6557e0f5cda6d5bf4852ccb1fe3733d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0388c33353644129ea9403f0a5a8ed24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0388c33353644129ea9403f0a5a8ed24">client</a></td></tr>
+<tr class="separator:a0388c33353644129ea9403f0a5a8ed24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
@@ -161,7 +164,8 @@ Variablen</h2></td></tr>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -194,6 +198,20 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </div>
 </div>
 <h2 class="groupheader">Variablen-Dokumentation</h2>
+<a id="a0388c33353644129ea9403f0a5a8ed24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0388c33353644129ea9403f0a5a8ed24">&#9670;&nbsp;</a></span>client</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html">Client</a>* client</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aac0b33719c4cd854b069613f9f0b360d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac0b33719c4cd854b069613f9f0b360d">&#9670;&nbsp;</a></span>dataModel</h2>
 

@@ -24,7 +24,7 @@ public:
     void setDataModel(DataModel * pModel);
 private:
     DataModel * dataModel;
-    int dragOriginX,dragOriginY,dragPosX,dragPosY;
+    int dragOriginX,dragOriginY,dragPosX,dragPosY,mouseX,mouseY;
     bool mouseDown;
     bool doAnimations;
 };

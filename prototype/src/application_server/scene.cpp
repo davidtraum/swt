@@ -4,7 +4,6 @@
 #include <QPen>
 #include <QPainter>
 
-
 /**
  * @brief Scene::Scene Konstruktor
  */
@@ -21,6 +20,7 @@ Scene::Scene(GraphicsManager * pGraphicsManager)
     outline->setWidth(2);
     highlighter->setPen(*outline);
     highlighter->setZValue(2);
+    QGraphicsScene::addItem(highlighter);
 
     radiusHighlighter = new QGraphicsEllipseItem();
     outline->setWidth(6);
@@ -120,7 +120,7 @@ void Scene::generateWorld(){
         int vx = 1;
         int vy = 0;
         int sinceCurve = 0;
-        MapTile::TYPE type = MapTile::RAIL_CURVE;
+        MapTile::TYPE type = MapTile::RIVER_H;
         do{
             data[posX][posY].setType(type);
             posX+=vx;
@@ -237,13 +237,35 @@ MapTile * Scene::getTileAt(int posX, int posY, bool isPixelCoordinate){
     }
 }
 
+
+
 /**
  * @brief Scene::setTileAt Setzt ein MapTile anhand der Pixel-Koordinaten oder der  Indezes.
  * @param posX
  * @param posY
  * @param isPixelCoordinate
  */
-void Scene::setTileAt(int posX, int posY, MapTile::TYPE pType, int pRotation){
-    qDebug() << posX << " : " << posY << " : " << pType;
-    data[posX][posY].setType(pType);
+void Scene::setTileAt(int pX,int pY, int pType, int pRotation){
+    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
+    data[pX][pY].setRotation(pRotation);
+}
+
+/**
+ * @brief Scene::updatePlayerPosition Slot zum Updaten eines Spielers.
+ */
+void Scene::updatePlayerPosition(int pId, int pX, int pY)
+{
+    qDebug() << "Pos update";
+    players[pId]->setPosition(pX,pY);
+}
+
+/**
+ * @brief Scene::addPlayer Fügt einen Netzwerkspieler hinzu.
+ * @param pId Die ID des Spielers.
+ */
+void Scene::addPlayer(int pId){
+    qDebug() << "[MULTIPLAYER] New player connected.";
+    Player * newPlayer = new Player(pId);
+    QGraphicsScene::addItem(newPlayer->highlighter);
+    players.insert(std::pair<int, Player *>(pId, newPlayer));
 }

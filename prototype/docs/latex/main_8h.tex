@@ -1,37 +1,45 @@
-\hypertarget{main_8h}{}\doxysection{src/application/main.h-\/\+Dateireferenz}
-\label{main_8h}\index{src/application/main.h@{src/application/main.h}}
-{\ttfamily \#include \char`\"{}graphicsmanager.\+h\char`\"{}}\newline
+\hypertarget{main_8h}{}\doxysection{src/application\+\_\+server/main.h-\/\+Dateireferenz}
+\label{main_8h}\index{src/application\_server/main.h@{src/application\_server/main.h}}
 {\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}datamodel.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$Q\+Label$>$}\newline
-Include-\/\+Abhängigkeitsdiagramm für main.\+h\+:\nopagebreak
+{\ttfamily \#include $<$client.\+h$>$}\newline
+Include-\/\+Abhängigkeitsdiagramm für main.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8h__incl}
 \end{center}
 \end{figure}
-Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:\nopagebreak
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{main_8h__dep__incl}
+\includegraphics[width=328pt]{main_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Variablen}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{main_8h_aa07458f3555202507fc8025e8cae6126}{graphics}}
 \item 
 \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{main_8h_ab6705fab832298411ae13ace059dd583}{main\+Window}}
 \item 
 bool \mbox{\hyperlink{main_8h_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running}}
 \item 
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{main_8h_aac0b33719c4cd854b069613f9f0b360d}{data\+Model}}
+\item 
+\mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{main_8h_a0388c33353644129ea9403f0a5a8ed24}{client}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Variablen-\/\+Dokumentation}
+\mbox{\Hypertarget{main_8h_a0388c33353644129ea9403f0a5a8ed24}\label{main_8h_a0388c33353644129ea9403f0a5a8ed24}} 
+\index{main.h@{main.h}!client@{client}}
+\index{client@{client}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}}$\ast$ client}
+
 \mbox{\Hypertarget{main_8h_aac0b33719c4cd854b069613f9f0b360d}\label{main_8h_aac0b33719c4cd854b069613f9f0b360d}} 
 \index{main.h@{main.h}!dataModel@{dataModel}}
 \index{dataModel@{dataModel}!main.h@{main.h}}
@@ -43,12 +51,6 @@ bool \mbox{\hyperlink{main_8h_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running}}
 \index{gameRunning@{gameRunning}!main.h@{main.h}}
 \doxysubsubsection{\texorpdfstring{gameRunning}{gameRunning}}
 {\footnotesize\ttfamily bool game\+Running}
-
-\mbox{\Hypertarget{main_8h_aa07458f3555202507fc8025e8cae6126}\label{main_8h_aa07458f3555202507fc8025e8cae6126}} 
-\index{main.h@{main.h}!graphics@{graphics}}
-\index{graphics@{graphics}!main.h@{main.h}}
-\doxysubsubsection{\texorpdfstring{graphics}{graphics}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}}$\ast$ graphics}
 
 \mbox{\Hypertarget{main_8h_ab6705fab832298411ae13ace059dd583}\label{main_8h_ab6705fab832298411ae13ace059dd583}} 
 \index{main.h@{main.h}!mainWindow@{mainWindow}}

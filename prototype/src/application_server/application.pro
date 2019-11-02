@@ -23,6 +23,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     maptile.cpp \
+    player.cpp \
     river.cpp \
     scene.cpp \
     sidepanel.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     maptile.h \
+    player.h \
     river.h \
     scene.h \
     sidepanel.h \
