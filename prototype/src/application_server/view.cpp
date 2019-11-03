@@ -106,8 +106,8 @@ void View::mouseMoveEvent(QMouseEvent *event)
 {
     if(mouseDown){
         QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
-        sceneCenter.setX(sceneCenter.x() - ((event->x() - View::dragPosX) * 1.0/currentScale));
-        sceneCenter.setY(sceneCenter.y() - ((event->y() - View::dragPosY) * 1.0/currentScale));
+        sceneCenter.setX(sceneCenter.x() - ((event->x() - View::dragPosX - 1.2) * 1.0/currentScale));   //"-1.2" gleicht 'Drall' nach oben links aus
+        sceneCenter.setY(sceneCenter.y() - ((event->y() - View::dragPosY -1.2) * 1.0/currentScale));
         QGraphicsView::centerOn(sceneCenter);
         View::dragPosX = event->x();
         View::dragPosY = event->y();
