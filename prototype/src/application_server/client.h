@@ -21,6 +21,7 @@ private:
     QTcpSocket * socket;
     Scene * scene;
     DataModel * dataModel;
+    bool debug;
     void processCommand(QString command);
 
 signals:

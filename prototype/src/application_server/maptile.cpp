@@ -40,7 +40,6 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Leere Grasfläche");
             break;
         case MapTile::TYPE::FORREST:
-            qDebug() << "WALD";
             pixmapItem->setPixmap(graphicsManager->get("wald"));
             pixmapItem->setToolTip("Wald");
             break;

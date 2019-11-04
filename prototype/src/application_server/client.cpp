@@ -19,6 +19,8 @@ Client::Client(DataModel * pDataModel, Scene * pScene)
     socket->connectToHost(*dataModel->getIP(),dataModel->getPort());
     socket->write("MAP GET");
 
+    debug = true;
+
     start();
 }
 
@@ -28,13 +30,15 @@ Client::Client(DataModel * pDataModel, Scene * pScene)
 void Client::run() {
     QString data;
     QStringList split;
+    QString buffer = "";
     while(true){
-        if(socket->bytesAvailable()>3){
-            data = socket->read(128).data();
-            split = data.split("+");
-            for(QString s:split){
-                if(s.length()>0)
-                processCommand(s);
+        if(socket->bytesAvailable()>1){
+            data = socket->read(1).data();
+            if(data[0]=='~'){
+                processCommand(buffer);
+                buffer = "";
+            }else{
+                buffer+=data;
             }
         }
     }
@@ -45,17 +49,17 @@ void Client::run() {
  * @param cmd Der Befehl als String.
  */
 void Client::processCommand(QString cmd){
-    qDebug() << cmd;
+    if(debug) qDebug() << "[CLIENT] Command: " + cmd;
     QStringList split = cmd.split(" ");
-    if(split[0].startsWith("TILE") && split.length()==5){
+    if(split[0].startsWith("T") && split.length()==5){
         emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
-    }else if(split[0].startsWith("PLAYER")){
-        if(split[1].startsWith("CONN")){
+    }else if(split[0].startsWith("PLAYER") && split.length()>=2){
+        if(split[1].startsWith("CONN") && split.length()==3){
             emit playerConnect(split[2].toInt());
-        }else if(split[1].startsWith("POS")){
+        }else if(split[1].startsWith("POS") && split.length()==5){
             emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
         }
-    }else if(split[0].startsWith("MAP")){
+    }else if(split[0].startsWith("MAP") && split.length()>=2){
         if(split[1].startsWith("LOADED")){
             emit mapLoaded();
         }

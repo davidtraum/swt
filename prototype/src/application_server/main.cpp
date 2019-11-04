@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 
     timeTicker();
 
-    dataModel->setConnectionInfo("traum.me:2000");
+    dataModel->setConnectionInfo("localhost:2000");
 
     client = new Client(dataModel, scene);
     QObject::connect(client, &Client::mapLoaded, view, &View::zoomInAnimation);

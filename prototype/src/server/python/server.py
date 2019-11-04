@@ -6,8 +6,6 @@ import random
 from threading import Thread
 import time
 
-
-
 #Klassen
 
 class Player():
@@ -28,7 +26,7 @@ class ClientThread(Thread):
         
         
     def send(self, msg):
-        self.connection.sendall((msg + "+").encode("utf-8"));
+        self.connection.sendall((msg + "~").encode("utf-8"));
         
     def sendAll(self, msg, exceptSelf=True):
         for client in clients:
@@ -36,33 +34,53 @@ class ClientThread(Thread):
                 client.send(msg);
         
     def run(self):
-        global WORLD,CONFIG,clients;
-        print("[THREAD] Client verbunden " + str(self.address) + " ID: " + self.clientId);
-        self.sendAll("PLAYER CONN " + self.clientId);
-        while True:
-            command = self.connection.recv(32).decode('utf-8'); 
-            split = command.split(" ");
-            if(split[0]=='MAP'):
-                if(split[1]=='GET'):
-                    print("[THREAD] Sending Map to " + str(self.address));
-                    count = 0;
-                    for each in WORLD.getAll():
-                        self.send(each);
-                        count+=len(each);
-                    print("Transferred " + str(int(count/1000)) + "kb"); 
-                    self.send("MONEY " + str(self.player.money));
-                    for client in clients:
-                        if(client != self):
-                            self.send("PLAYER CONN " + client.clientId);
-                    self.send("MAP LOADED");
-            elif(split[0]=='POS'):
-                print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
-                self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);
-            elif(split[0]=='TILE'):
-                print("TILE UPDATE " + split[1] + " - " + split[2]);
-                WORLD.data[int(split[1])][int(split[2])].tileType = int(split[3]);
-                WORLD.data[int(split[1])][int(split[2])].setRotation(int(split[4]));
-                self.sendAll("TILE " + split[1] + " " + split[2] + " " + split[3] + " " + split[4]);
+        try:
+            global WORLD,CONFIG,clients;
+            print("[THREAD] Client verbunden " + str(self.address) + " ID: " + self.clientId);
+            self.sendAll("PLAYER CONN " + self.clientId);
+            while True:
+                command = self.connection.recv(32).decode('utf-8'); 
+                split = command.split(" ");
+                if(split[0]=='MAP'):
+                    if(split[1]=='GET'):
+                        print("[THREAD] Sending Map to " + str(self.address));
+                        count = 0;
+                        for each in WORLD.getAll():
+                            self.send(each);
+                            count+=len(each);
+                        print("Transferred " + str(int(count/1000)) + "kb"); 
+                        self.send("MONEY " + str(self.player.money));
+                        for client in clients:
+                            if(client != self):
+                                self.send("PLAYER CONN " + client.clientId);
+                        self.send("MAP LOADED");
+                elif(split[0]=='POS'):
+                    print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
+                    self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);
+                elif(split[0]=='TILE'):
+                    print("TILE UPDATE " + split[1] + " - " + split[2]);
+                    WORLD.data[int(split[1])][int(split[2])].tileType = int(split[3]);
+                    WORLD.data[int(split[1])][int(split[2])].setRotation(int(split[4]));
+                    self.sendAll("TILE " + split[1] + " " + split[2] + " " + split[3] + " " + split[4]);
+        except BrokenPipeError:
+            if(self in clients):
+                clients.remove(self);
+            print("[THREAD] Disconnected " + str(self.address));
+            print("[THREAD] Players online: " + str(len(clients)));
+        
+class City:
+    counter = 0;
+    
+    def __init__(self):
+        self.centerX = 0;
+        self.centerY = 0;
+        self.tiles = [];
+        self.cityID = City.counter;
+        City.counter+=1;
+        
+    def setCenter(self, pX,pY):
+        self.centerX = pX;
+        self.centerY = pY;
         
 class MapTile:
     
@@ -79,9 +97,11 @@ class MapTile:
         'RAIL_H': 9
     }
     
-    def __init__(self):
+    def __init__(self, posX, posY):
         self.rotation = 0;
         self.tileType = 0;
+        self.posX = posX;
+        self.posY = posY;
     
     def setType(self, pType):
         self.tileType = MapTile.TYPES[pType];
@@ -98,13 +118,18 @@ class World:
     def __init__(self):
         self.data = [];
         self.generate();
+        self.cities = [];
         
     def getAll(self):
         global CONFIG;
         for x in range(CONFIG['world']['size']):
             for y in range(CONFIG['world']['size']):
                 if(self.data[x][y].tileType != 0):
-                    yield "TILE " + str(x) + " " + str(y) + " " + str(self.data[x][y].tileType) + " " + str(self.data[x][y].rotation);
+                    yield "T " + str(x) + " " + str(y) + " " + str(self.data[x][y].tileType) + " " + str(self.data[x][y].rotation);
+        for city in self.cities:
+            yield "C C " + str(city.cityID) + " " + str(city.centerX) + " " + str(city.centerY);
+            for tile in city.tiles:
+                yield "C T " + str(city.cityID) + " " + str(tile.posX) + " " + str(tile.posY);
         
     def generate(self):
         global CONFIG;
@@ -126,11 +151,13 @@ class World:
             townSize = random.randint(2,20);
             posX = random.randint(0,CONFIG['world']['size']-1);
             posY = random.randint(0,CONFIG['world']['size']-1);
+            city = City();
             for y in range(townSize):
                 if(y==townSize/2):
-                    pass;
+                    city.setCenter(posX,posY);
                 self.data[posX][posY].setType('CITY');
                 self.data[posX][posY].setRotation(random.randint(0,3));
+                city.tiles.append(self.data[posX][posY]);
                 posX+=random.randint(-1,1);
                 posY+=random.randint(-1,1);
                 if(posX<0):
@@ -141,16 +168,18 @@ class World:
                     posY=0;
                 elif(posY>=CONFIG['world']['size']):
                     posY=CONFIG['world']['size']-1;
+            self.cities.append(city);
                     
         for i in range(random.randint(5, (CONFIG['world']['size']/6))):
             posX = random.randint(0, CONFIG['world']['size']-1);
             posY = random.randint(0, CONFIG['world']['size']-1);
             vx = 1;
-            vy = 1;
+            vy = 0;
             sinceCurve = 0;
             typ = 'RIVER_H';
             while(True):
                 self.data[posX][posY].setType(typ);
+                self.data[posX][posY].setRotation(0);
                 posX+=vx;
                 posY+=vy;
                 sinceCurve+=1;

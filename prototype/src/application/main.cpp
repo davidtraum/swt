@@ -40,7 +40,7 @@ void timeTicker(){
  */
 int main(int argc, char *argv[])
 {
-    qDebug() << "Spiel wird gestartet.";
+    qDebug() << "Spiel wird gestartet. Das richtige";
     QApplication a(argc, argv);
     mainWindow = new MainWindow();
 
