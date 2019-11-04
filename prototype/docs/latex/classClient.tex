@@ -34,6 +34,8 @@ void \mbox{\hyperlink{classClient_a02790b5bbbd56fd7848c4b8f825ffacf}{on\+Tile\+C
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classClient_a7eb68233905bad7e20ed057bb67ab856}{map\+Loaded}} ()
+\item 
 void \mbox{\hyperlink{classClient_abf75ead98e9700dd6e26539b0e1eb9af}{tile\+Changed}} (int, int, int, int)
 \item 
 void \mbox{\hyperlink{classClient_a120115036fc4595c9343388d2b94c308}{player\+Connect}} (int)
@@ -43,8 +45,8 @@ void \mbox{\hyperlink{classClient_a731120106494c93f6cd7c12602328fac}{player\+Pos
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e}{Client}} (\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Data\+Model, \mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740}{Client}} (Q\+String $\ast$connection\+Info, \mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{run}} () override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{Client\+::run}} Startet den Client-\/\+Thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
@@ -60,31 +62,47 @@ Q\+Tcp\+Socket $\ast$ \mbox{\hyperlink{classClient_acfb33719fbe6b0685ca7324c0ee8
 \mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classClient_ab6e2c17f09b8386de4d7af70a809df75}{scene}}
 \item 
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classClient_a3e54a1387070da225bfa114f364fb297}{data\+Model}}
+\item 
+bool \mbox{\hyperlink{classClient_a764f0d6601b0c32acc45ba1606b0c2c9}{debug}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e}\label{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e}} 
+\mbox{\Hypertarget{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740}\label{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740}} 
 \index{Client@{Client}!Client@{Client}}
 \index{Client@{Client}!Client@{Client}}
 \doxysubsubsection{\texorpdfstring{Client()}{Client()}}
-{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Data\+Model,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{Q\+String $\ast$}]{connection\+Info,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. 
+\mbox{\hyperlink{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. 
 
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classClient_afd6a04bd8f8859c1927b6a6f3a1ca38e_cgraph}
+\includegraphics[width=350pt]{classClient_a5bb9b3ee4f397eed771c9bfe56ca9740_cgraph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classClient_a7eb68233905bad7e20ed057bb67ab856}\label{classClient_a7eb68233905bad7e20ed057bb67ab856}} 
+\index{Client@{Client}!mapLoaded@{mapLoaded}}
+\index{mapLoaded@{mapLoaded}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{mapLoaded}{mapLoaded}}
+{\footnotesize\ttfamily void Client\+::map\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClient_a7eb68233905bad7e20ed057bb67ab856_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classClient_a660b8879b75b9dbfe82e88991e616fc3}\label{classClient_a660b8879b75b9dbfe82e88991e616fc3}} 
 \index{Client@{Client}!onPositionChange@{onPositionChange}}
 \index{onPositionChange@{onPositionChange}!Client@{Client}}
@@ -145,7 +163,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \doxysubsubsection{\texorpdfstring{playerConnect}{playerConnect}}
 {\footnotesize\ttfamily void Client\+::player\+Connect (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,7 +177,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{playerPositionChange}{playerPositionChange}}
 {\footnotesize\ttfamily void Client\+::player\+Position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -210,7 +230,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tileChanged}{tileChanged}}
 {\footnotesize\ttfamily void Client\+::tile\+Changed (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -225,6 +246,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{dataModel@{dataModel}!Client@{Client}}
 \doxysubsubsection{\texorpdfstring{dataModel}{dataModel}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classDataModel}{Data\+Model}}$\ast$ Client\+::data\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_a764f0d6601b0c32acc45ba1606b0c2c9}\label{classClient_a764f0d6601b0c32acc45ba1606b0c2c9}} 
+\index{Client@{Client}!debug@{debug}}
+\index{debug@{debug}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Client\+::debug\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classClient_ab6e2c17f09b8386de4d7af70a809df75}\label{classClient_ab6e2c17f09b8386de4d7af70a809df75}} 
 \index{Client@{Client}!scene@{scene}}

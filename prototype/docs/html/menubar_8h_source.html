@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application_server/menubar.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c6321f114837da3d6e2438c49f4e78f.html">application_server</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">menubar.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="menubar_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MENUBAR_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MENUBAR_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QMenuBar&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QInputDialog&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scene_8h.html">scene.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classMenuBar.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMenuBar.html">MenuBar</a>: <span class="keyword">public</span> QMenuBar</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   <span class="comment">// Q_OBJECT</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classMenuBar.html#a27d25b9c7a90fa888e8dc11a9241b730">MenuBar</a>(<a class="code" href="classScene.html">Scene</a>* pScene);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMenuBar.html#a9cb9b56d70909f63c4f490170825dfdc">   15</a></span>&#160;    <a class="code" href="classScene.html">Scene</a>* <a class="code" href="classMenuBar.html#a9cb9b56d70909f63c4f490170825dfdc">scene</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMenuBar.html#a065f4d5047c978f690c259e976e9a706">slotOpenConnection</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMenuBar.html#a5e8c1514db69e715ec939d9faa2988d6">slotCloseConnection</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // MENUBAR_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassMenuBar_html_a5e8c1514db69e715ec939d9faa2988d6"><div class="ttname"><a href="classMenuBar.html#a5e8c1514db69e715ec939d9faa2988d6">MenuBar::slotCloseConnection</a></div><div class="ttdeci">void slotCloseConnection()</div><div class="ttdoc">MenuBar::closeConnection Schließt die aktuelle Verbindung mit dem Server.</div><div class="ttdef"><b>Definition:</b> menubar.cpp:39</div></div>
+<div class="ttc" id="aclassMenuBar_html"><div class="ttname"><a href="classMenuBar.html">MenuBar</a></div><div class="ttdef"><b>Definition:</b> menubar.h:7</div></div>
+<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> scene.h:14</div></div>
+<div class="ttc" id="aclassMenuBar_html_a065f4d5047c978f690c259e976e9a706"><div class="ttname"><a href="classMenuBar.html#a065f4d5047c978f690c259e976e9a706">MenuBar::slotOpenConnection</a></div><div class="ttdeci">void slotOpenConnection()</div><div class="ttdoc">MenuBar::openConnection Öffnet Input-Dialog für IP-Adresse und iniitiert Client.</div><div class="ttdef"><b>Definition:</b> menubar.cpp:23</div></div>
+<div class="ttc" id="amenubar_8h_html"><div class="ttname"><a href="menubar_8h.html">menubar.h</a></div></div>
+<div class="ttc" id="aclassMenuBar_html_a27d25b9c7a90fa888e8dc11a9241b730"><div class="ttname"><a href="classMenuBar.html#a27d25b9c7a90fa888e8dc11a9241b730">MenuBar::MenuBar</a></div><div class="ttdeci">MenuBar(Scene *pScene)</div><div class="ttdoc">MenuBar::MenuBar Erzeugt Menüstruktur.</div><div class="ttdef"><b>Definition:</b> menubar.cpp:9</div></div>
+<div class="ttc" id="adatamodel_8h_html"><div class="ttname"><a href="datamodel_8h.html">datamodel.h</a></div></div>
+<div class="ttc" id="ascene_8h_html"><div class="ttname"><a href="scene_8h.html">scene.h</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a6de66f9ad116ce1d596c7f4edc40c521"><div class="ttname"><a href="main_8cpp.html#a6de66f9ad116ce1d596c7f4edc40c521">scene</a></div><div class="ttdeci">Scene * scene</div><div class="ttdef"><b>Definition:</b> main.cpp:26</div></div>
+<div class="ttc" id="aclassMenuBar_html_a9cb9b56d70909f63c4f490170825dfdc"><div class="ttname"><a href="classMenuBar.html#a9cb9b56d70909f63c4f490170825dfdc">MenuBar::scene</a></div><div class="ttdeci">Scene * scene</div><div class="ttdef"><b>Definition:</b> menubar.h:15</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> client.h:13</div></div>
+<div class="ttc" id="amain_8cpp_html_a0388c33353644129ea9403f0a5a8ed24"><div class="ttname"><a href="main_8cpp.html#a0388c33353644129ea9403f0a5a8ed24">client</a></div><div class="ttdeci">Client * client</div><div class="ttdef"><b>Definition:</b> main.cpp:28</div></div>
+<div class="ttc" id="aclient_8h_html"><div class="ttname"><a href="client_8h.html">client.h</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

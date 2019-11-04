@@ -18,7 +18,7 @@ MenuBar::MenuBar(Scene * pScene) :
 }
 
 /**
- * @brief MenuBar::openConnection
+ * @brief MenuBar::openConnection Öffnet Input-Dialog für IP-Adresse und iniitiert Client.
  */
 void MenuBar::slotOpenConnection(){
 
@@ -31,11 +31,10 @@ void MenuBar::slotOpenConnection(){
                                          &ok);
 
     Client * client = new Client(&text, scene);
-
 }
 
 /**
- * @brief MenuBar::closeConnection
+ * @brief MenuBar::closeConnection Schließt die aktuelle Verbindung mit dem Server.
  */
 void MenuBar::slotCloseConnection()
 {
