@@ -5,6 +5,7 @@
 #include "datamodel.h"
 #include <QLabel>
 #include <client.h>
+#include "menubar.h"
 
 extern MainWindow * mainWindow;
 extern bool gameRunning;

@@ -6,17 +6,19 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(DataModel * pDataModel, Scene * pScene)
+Client::Client(QString * connectionInfo, Scene * pScene)
 {
     scene = pScene;
-    dataModel = pDataModel;
+    QStringList split = connectionInfo->split(":");
+    QString iP = split[0];
+    unsigned short int port =  quint16(split[1].toInt());
     connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(this, &Client::playerConnect, scene, &Scene::addPlayer);
     connect(scene, &Scene::tileUpdate, this, &Client::onTileChange);
     socket = new QTcpSocket(this);
-    socket->connectToHost(*dataModel->getIP(),dataModel->getPort());
+    socket->connectToHost(iP, port);
     socket->write("MAP GET");
 
     debug = true;

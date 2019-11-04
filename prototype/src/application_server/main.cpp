@@ -28,6 +28,7 @@ SidePanel * sidePanel;
 Client * client;
 
 
+
 void timeTicker(){
     dataModel->timeTick();
     QTimer::singleShot(20, []{timeTicker();});
@@ -65,6 +66,8 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
+    MenuBar * menuBar = new MenuBar(scene);
+    mainWindow->setMenuBar(menuBar);
     sidePanel = new SidePanel();
     sidePanel->setParent(mainWindow);
     sidePanel->hookDataModel(dataModel);
@@ -84,12 +87,9 @@ int main(int argc, char *argv[])
 
     mainWindow->show();
 
-    timeTicker();
+    timeTicker();    
 
-    dataModel->setConnectionInfo("traum.me:2000");
 
-    client = new Client(dataModel, scene);
-    QObject::connect(client, &Client::mapLoaded, view, &View::zoomInAnimation);
 
     a.exec();
 }

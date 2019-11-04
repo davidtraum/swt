@@ -14,7 +14,7 @@ class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(DataModel * pDataModel, Scene * pScene);
+    Client(QString * connectionInfo, Scene * pScene);
     void run() override;
 
 private:
