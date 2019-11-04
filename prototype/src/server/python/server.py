@@ -291,5 +291,4 @@ while True:
         thread = ClientThread(conn,address,str(len(clients)));
         clients.append(thread);
     else:
-        conn.write(b"FULL");
         conn.close();
