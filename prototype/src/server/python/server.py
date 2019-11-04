@@ -117,8 +117,8 @@ class World:
     
     def __init__(self):
         self.data = [];
+        self.cities = list();
         self.generate();
-        self.cities = [];
         
     def getAll(self):
         global CONFIG;
@@ -139,7 +139,7 @@ class World:
         for x in range(CONFIG['world']['size']):
             self.data.append(list());
             for y in range(CONFIG['world']['size']):
-                tile = MapTile();
+                tile = MapTile(x,y);
                 if(random.random()>0.8):
                     tile.setType('FORREST');
                 else:
