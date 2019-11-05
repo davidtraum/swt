@@ -64,6 +64,7 @@ SOURCES       = ../application_server/city.cpp \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
 		../application_server/sidepanel.cpp \
+		../application_server/tooltipmenu.cpp \
 		../application_server/view.cpp qrc_Data.cpp \
 		qrc_Graphics.cpp \
 		moc_client.cpp \
@@ -82,6 +83,7 @@ OBJECTS       = city.o \
 		river.o \
 		scene.o \
 		sidepanel.o \
+		tooltipmenu.o \
 		view.o \
 		qrc_Data.o \
 		qrc_Graphics.o \
@@ -295,6 +297,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/river.h \
 		../application_server/scene.h \
 		../application_server/sidepanel.h \
+		../application_server/tooltipmenu.h \
 		../application_server/view.h ../application_server/city.cpp \
 		../application_server/client.cpp \
 		../application_server/datamodel.cpp \
@@ -307,6 +310,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
 		../application_server/sidepanel.cpp \
+		../application_server/tooltipmenu.cpp \
 		../application_server/view.cpp
 QMAKE_TARGET  = application
 DESTDIR       = 
@@ -730,8 +734,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/graphicsmanager.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/graphicsmanager.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/graphicsmanager.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/graphicsmanager.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -778,9 +782,13 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/fluss_horizontal.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
+		../application_server/verbindungsaufbau.svg \
+		../application_server/verbindungstrennung.svg \
+		../application_server/Nahrung.svg \
 		../application_server/clock.svg \
 		../application_server/location.svg \
-		../application_server/cash.svg
+		../application_server/cash.svg \
+		../application_server/server.svg
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Graphics ../application_server/Graphics.qrc -o qrc_Graphics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1805,6 +1813,9 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qscrollarea.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../application_server/tooltipmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		../application_server/sidepanel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
@@ -1917,6 +1928,22 @@ mainwindow.o: ../application_server/mainwindow.cpp ../application_server/mainwin
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qguiapplication.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qinputmethod.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenuBar \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QStatusBar \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../application_server/mainwindow.cpp
 
@@ -2152,6 +2179,10 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
 		../application_server/player.h \
+		../application_server/datamodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
@@ -2164,10 +2195,7 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qthread.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QStringList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString \
-		../application_server/datamodel.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h \
@@ -2499,6 +2527,122 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPalette
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application_server/sidepanel.cpp
 
+tooltipmenu.o: ../application_server/tooltipmenu.cpp ../application_server/tooltipmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtcore-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlogging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qflags.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmutex.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qversiontagging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtgui-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstring.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qchar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringliteral.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiterator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpair.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregexp.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmargins.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrect.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsize.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpoint.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpalette.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcolor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qrgb.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qrgba64.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qbrush.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvector.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qregion.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qline.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtransform.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qimage.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhash.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfont.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcursor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qevent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvariant.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlocale.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qset.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qurl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfile.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGridLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tooltipmenu.o ../application_server/tooltipmenu.cpp
+
 view.o: ../application_server/view.cpp ../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -2659,6 +2803,14 @@ view.o: ../application_server/view.cpp ../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextcursor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextformat.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
+		../application_server/tooltipmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGridLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QMouseEvent \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QPointF \

@@ -67,7 +67,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
 
                 case MapTile::CITY:
                     tooltip->showAt(event->x(), event->y());
-                    tooltip->setText("<h1>Haus</h1><br><hr><br><p>100</p>");
+                    tooltip->setText("<h2>Haus</h2><p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
                     break;
                     doAnimations = true;
                     fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);

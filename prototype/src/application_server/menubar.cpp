@@ -28,7 +28,7 @@ void MenuBar::slotOpenConnection(){
                                          "Serververbindung",
                                          "IP-Adresse",
                                          QLineEdit::Normal,
-                                         "localhost:2000",
+                                         "traum.me:2000",
                                          &ok);
 
     if(ok){
