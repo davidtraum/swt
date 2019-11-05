@@ -62,6 +62,7 @@ SOURCES       = ../application_server/city.cpp \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
 		../application_server/sidepanel.cpp \
+		../application_server/tooltipmenu.cpp \
 		../application_server/view.cpp qrc_Data.cpp \
 		qrc_Graphics.cpp \
 		moc_client.cpp \
@@ -80,6 +81,7 @@ OBJECTS       = city.o \
 		river.o \
 		scene.o \
 		sidepanel.o \
+		tooltipmenu.o \
 		view.o \
 		qrc_Data.o \
 		qrc_Graphics.o \
@@ -174,6 +176,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/river.h \
 		../application_server/scene.h \
 		../application_server/sidepanel.h \
+		../application_server/tooltipmenu.h \
 		../application_server/view.h ../application_server/city.cpp \
 		../application_server/client.cpp \
 		../application_server/datamodel.cpp \
@@ -186,6 +189,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
 		../application_server/sidepanel.cpp \
+		../application_server/tooltipmenu.cpp \
 		../application_server/view.cpp
 QMAKE_TARGET  = application
 DESTDIR       = 
@@ -379,8 +383,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/graphicsmanager.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/graphicsmanager.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/graphicsmanager.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/graphicsmanager.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -427,9 +431,13 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/fluss_horizontal.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
+		../application_server/verbindungsaufbau.svg \
+		../application_server/verbindungstrennung.svg \
+		../application_server/Nahrung.svg \
 		../application_server/clock.svg \
 		../application_server/location.svg \
-		../application_server/cash.svg
+		../application_server/cash.svg \
+		../application_server/server.svg
 	/usr/lib/qt5/bin/rcc -name Graphics ../application_server/Graphics.qrc -o qrc_Graphics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -519,6 +527,7 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/player.h \
 		../application_server/menubar.h \
 		../application_server/view.h \
+		../application_server/tooltipmenu.h \
 		../application_server/sidepanel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
@@ -531,7 +540,14 @@ maptile.o: ../application_server/maptile.cpp ../application_server/maptile.h \
 		../application_server/graphicsmanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maptile.o ../application_server/maptile.cpp
 
-menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h
+menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
+		../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h \
+		../application_server/player.h \
+		../application_server/datamodel.h \
+		../application_server/client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h
@@ -551,6 +567,9 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		../application_server/datamodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application_server/sidepanel.cpp
 
+tooltipmenu.o: ../application_server/tooltipmenu.cpp ../application_server/tooltipmenu.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tooltipmenu.o ../application_server/tooltipmenu.cpp
+
 view.o: ../application_server/view.cpp ../application_server/view.h \
 		../application_server/main.h \
 		../application_server/mainwindow.h \
@@ -561,7 +580,8 @@ view.o: ../application_server/view.cpp ../application_server/view.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
-		../application_server/menubar.h
+		../application_server/menubar.h \
+		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application_server/view.cpp
 
 qrc_Data.o: qrc_Data.cpp 

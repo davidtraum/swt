@@ -2,6 +2,7 @@
 #include <QDebug>
 #include "client.h"
 #include "datamodel.h"
+#include <QIcon>
 
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
@@ -10,9 +11,9 @@ MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel) :
     scene{pScene}, dataModel{pDataModel}
 {
     QMenu * mainMenu = QMenuBar::addMenu("Spiel");
-    QMenu * serverSelection = mainMenu->addMenu("Serververbindung");
-    QAction * openConnection = serverSelection->addAction("Verbindungsaufbau");
-    QAction * closeConnection = serverSelection->addAction("Verbindung trennen");
+    QMenu * serverSelection = mainMenu->addMenu(QIcon(":/icons/server.svg"), "Serververbindung");
+    QAction * openConnection = serverSelection->addAction(QIcon(":/icons/verbindungsaufbau.svg"), "Verbindungsaufbau");
+    QAction * closeConnection = serverSelection->addAction(QIcon(":/icons/verbindungstrennung.svg"), "Verbindung trennen");
     connect(openConnection, &QAction::triggered, this, &MenuBar::slotOpenConnection);
     connect(closeConnection, &QAction::triggered, this, &MenuBar::slotCloseConnection);
 }
@@ -27,10 +28,12 @@ void MenuBar::slotOpenConnection(){
                                          "Serververbindung",
                                          "IP-Adresse",
                                          QLineEdit::Normal,
-                                         "traum.me:2000",
+                                         "localhost:2000",
                                          &ok);
 
-    Client * client = new Client(&text, scene, dataModel);
+    if(ok){
+        Client * client = new Client(&text, scene, dataModel);
+          }
 }
 
 /**

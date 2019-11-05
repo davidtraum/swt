@@ -11,12 +11,14 @@
 #include <QGraphicsItem>
 #include <QPalette>
 
+
 /**
  * @brief View::View Konstruktor. Versteckt u.a. die Scrollbars und aktiviert Mousetracking.
  * @param pScene Das Zugehörige Szenenobjekt.
  */
-View::View(Scene * pScene) {
-    scene = pScene;
+View::View(Scene * pScene, ToolTipMenu * pToolTip) :
+    tooltip{pToolTip}, scene{pScene}
+{
     QGraphicsView::setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     QGraphicsView::setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
@@ -38,6 +40,7 @@ void View::mousePressEvent(QMouseEvent *event) {
     View::dragPosX = View::dragOriginX;
     View::dragPosY = View::dragOriginY;
     mouseDown = true;
+
 }
 
 
@@ -63,6 +66,8 @@ void View::mouseReleaseEvent(QMouseEvent *event)
                     break;
 
                 case MapTile::CITY:
+                    tooltip->showAt(event->x(), event->y());
+                    tooltip->setText("<h1>Haus</h1><br><hr><br><p>100</p>");
                     break;
                     doAnimations = true;
                     fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);
@@ -105,6 +110,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
 void View::mouseMoveEvent(QMouseEvent *event)
 {
     if(mouseDown){
+        tooltip->hide();
         QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
         sceneCenter.setX(sceneCenter.x() - ((event->x() - View::dragPosX - 1.2) * 1.0/currentScale));   //"-1.2" gleicht 'Drall' nach oben links aus
         sceneCenter.setY(sceneCenter.y() - ((event->y() - View::dragPosY -1.2) * 1.0/currentScale));
@@ -126,6 +132,7 @@ void View::mouseMoveEvent(QMouseEvent *event)
  */
 void View::wheelEvent(QWheelEvent *event)
 {
+    tooltip->hide();
    if(event->delta()>0){
        if(View::currentScale<3){
            View::currentScale*=1.1;

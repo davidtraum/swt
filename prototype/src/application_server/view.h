@@ -5,12 +5,13 @@
 #include "main.h"
 #include "scene.h"
 #include "datamodel.h"
+#include "tooltipmenu.h"
 
 class View: public QGraphicsView
 {
 public:
     Scene * scene;
-    View(Scene * pScene);
+    View(Scene * pScene, ToolTipMenu * pToolTip);
     double currentScale{1.0};
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
@@ -27,6 +28,7 @@ private:
     int dragOriginX,dragOriginY,dragPosX,dragPosY,mouseX,mouseY;
     bool mouseDown;
     bool doAnimations;
+    ToolTipMenu * tooltip;
 
 public slots:
     void zoomInAnimation();

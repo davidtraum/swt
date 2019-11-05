@@ -15,6 +15,7 @@
 #include "scene.h"
 #include "graphicsmanager.h"
 #include "sidepanel.h"
+#include "tooltipmenu.h"
 
 
 
@@ -56,11 +57,17 @@ int main(int argc, char *argv[])
 
     scene = new Scene(graphics);
 
-    view = new View(scene);
+
+    ToolTipMenu * tooltip = new ToolTipMenu();
+
+
+    view = new View(scene, tooltip);
     view->setScene(scene);
     view->setDataModel(dataModel);
 
     mainWindow->setCentralWidget(view);
+    tooltip->setParent(view);
+    tooltip->show();
 
     QWidget * widget = new QWidget(mainWindow);
     QGridLayout * layout = new QGridLayout(widget);
@@ -68,6 +75,7 @@ int main(int argc, char *argv[])
 
     MenuBar * menuBar = new MenuBar(scene, dataModel);
     mainWindow->setMenuBar(menuBar);
+
     sidePanel = new SidePanel();
     sidePanel->setParent(mainWindow);
     sidePanel->hookDataModel(dataModel);

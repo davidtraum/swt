@@ -28,6 +28,7 @@ SOURCES += \
     river.cpp \
     scene.cpp \
     sidepanel.cpp \
+    tooltipmenu.cpp \
     view.cpp
 
 HEADERS += \
@@ -43,6 +44,7 @@ HEADERS += \
     river.h \
     scene.h \
     sidepanel.h \
+    tooltipmenu.h \
     view.h
 
 FORMS += \
