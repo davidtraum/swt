@@ -13,6 +13,26 @@ class Player():
     def __init__(self):
         self.money = 2000;
 
+class NotifierThread(Thread):
+
+    def __init__(self):
+        Thread.__init__(self);
+        self.queue = [];
+        self.start();
+
+    def add(self, msg, pExcept):
+        self.queue.append((msg, pExcept));
+
+    def run(self):
+        while True:
+            if(len(self.queue)>0):
+                msg = self.queue.pop();
+                print("[NOTIFIER] Sending " + str(msg[0]));
+                for client in clients:
+                    if(client != msg[1]):
+                        client.send(msg[0]);
+
+
 class ClientThread(Thread):
     
     def __init__(self, connection, address, pId):
@@ -24,25 +44,25 @@ class ClientThread(Thread):
         self.start();
         
         
-        
     def send(self, msg):
-        self.connection.sendall((msg + "~").encode("utf-8"));
+        self.connection.send((msg + "~").encode("utf-8"));
         
     def sendAll(self, msg, exceptSelf=True):
-        for client in clients:
-            if(not exceptSelf or client!=self):
-                client.send(msg);
+        if(exceptSelf):
+            notifier.add(msg, self);
+        else:
+            notifier.add(msg, None);
         
     def run(self):
         try:
             global WORLD,CONFIG,clients;
             print("[THREAD] Client verbunden " + str(self.address) + " ID: " + self.clientId);
-            self.sendAll("PLAYER CONN " + self.clientId);
+            self.sendAll("P C " + self.clientId);
             while True:
                 command = self.connection.recv(32).decode('utf-8'); 
                 split = command.split(" ");
-                if(split[0]=='MAP'):
-                    if(split[1]=='GET'):
+                if(split[0]=='M'):
+                    if(split[1]=='G'):
                         print("[THREAD] Sending Map to " + str(self.address));
                         count = 0;
                         for each in WORLD.getAll():
@@ -50,18 +70,16 @@ class ClientThread(Thread):
                             count+=len(each);
                         print("Transferred " + str(int(count/1000)) + "kb"); 
                         self.send("MONEY " + str(self.player.money));
-                        for client in clients:
-                            if(client != self):
-                                self.send("PLAYER CONN " + client.clientId);
-                        self.send("MAP LOADED");
-                elif(split[0]=='POS'):
+                        self.sendAll("P C " + self.clientId);
+                        self.send("M L");
+                elif(split[0]=='P'):
                     print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);
-                    self.sendAll("PLAYER POS "  + self.clientId + " " + split[1] + " " + split[2]);
-                elif(split[0]=='TILE'):
-                    print("TILE UPDATE " + split[1] + " - " + split[2]);
+                    self.sendAll("P P "  + self.clientId + " " + split[1] + " " + split[2]);
+                elif(split[0]=='T'):
+                    print("[THREAD] Tile change " + split[1] + " - " + split[2]);
                     WORLD.data[int(split[1])][int(split[2])].tileType = int(split[3]);
                     WORLD.data[int(split[1])][int(split[2])].setRotation(int(split[4]));
-                    self.sendAll("TILE " + split[1] + " " + split[2] + " " + split[3] + " " + split[4]);
+                    self.sendAll("T " + split[1] + " " + split[2] + " " + split[3] + " " + split[4]);
         except BrokenPipeError:
             if(self in clients):
                 clients.remove(self);
@@ -274,8 +292,9 @@ with open('config.json') as file:
 log("Konfiguration: ");
 print(CONFIG);
 
-global WORLD,clients;
+global WORLD,clients,notifier;
 WORLD = World();
+notifier = NotifierThread();
 
 clients = list();
 

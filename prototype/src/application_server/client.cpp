@@ -6,9 +6,10 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene)
+Client::Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel)
 {
     scene = pScene;
+    dataModel = pDataModel;
     QStringList split = connectionInfo->split(":");
     QString iP = split[0];
     unsigned short int port =  quint16(split[1].toInt());
@@ -19,7 +20,7 @@ Client::Client(QString * connectionInfo, Scene * pScene)
     connect(scene, &Scene::tileUpdate, this, &Client::onTileChange);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
-    socket->write("MAP GET");
+    socket->write("M G");
 
     debug = true;
 
@@ -55,14 +56,14 @@ void Client::processCommand(QString cmd){
     QStringList split = cmd.split(" ");
     if(split[0].startsWith("T") && split.length()==5){
         emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
-    }else if(split[0].startsWith("PLAYER") && split.length()>=2){
-        if(split[1].startsWith("CONN") && split.length()==3){
+    }else if(split[0].startsWith("P") && split.length()>=2){
+        if(split[1].startsWith("C") && split.length()==3){
             emit playerConnect(split[2].toInt());
-        }else if(split[1].startsWith("POS") && split.length()==5){
+        }else if(split[1].startsWith("P") && split.length()==5){
             emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
         }
-    }else if(split[0].startsWith("MAP") && split.length()>=2){
-        if(split[1].startsWith("LOADED")){
+    }else if(split[0].startsWith("M") && split.length()>=2){
+        if(split[1].startsWith("L")){
             emit mapLoaded();
         }
     }
@@ -75,7 +76,7 @@ void Client::processCommand(QString cmd){
  * @param pY Der Y-Index.
  */
 void Client::onPositionChange(int pX, int pY){
-    socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
+    socket->write(QString::fromStdString("P " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
     socket->flush();
 }
 
@@ -87,6 +88,6 @@ void Client::onPositionChange(int pX, int pY){
  * @param pRotation Die Rotation.
  */
 void Client::onTileChange(int pX, int pY, int pType, int pRotation){
-    socket->write(QString::fromStdString("TILE " + std::to_string(pX) + " " + std::to_string(pY) + " " + std::to_string(pType) + " " + std::to_string(pRotation)).toLocal8Bit());
+    socket->write(QString::fromStdString("T " + std::to_string(pX) + " " + std::to_string(pY) + " " + std::to_string(pType) + " " + std::to_string(pRotation)).toLocal8Bit());
     socket->flush();
 }

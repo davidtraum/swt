@@ -6,8 +6,8 @@
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene) :
-    scene{pScene}
+MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel) :
+    scene{pScene}, dataModel{pDataModel}
 {
     QMenu * mainMenu = QMenuBar::addMenu("Spiel");
     QMenu * serverSelection = mainMenu->addMenu("Serververbindung");
@@ -30,7 +30,7 @@ void MenuBar::slotOpenConnection(){
                                          "traum.me:2000",
                                          &ok);
 
-    Client * client = new Client(&text, scene);
+    Client * client = new Client(&text, scene, dataModel);
 }
 
 /**

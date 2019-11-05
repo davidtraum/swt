@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene);
+    MenuBar * menuBar = new MenuBar(scene, dataModel);
     mainWindow->setMenuBar(menuBar);
     sidePanel = new SidePanel();
     sidePanel->setParent(mainWindow);
