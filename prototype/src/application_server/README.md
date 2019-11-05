@@ -13,7 +13,7 @@ Wenn man was geändert hat:
 1. >> git commit -m "Kurze Nachricht was man gemacht hat"
 2. >> git push origin master (Oder eigenen Branch angeben)
 
-##Changelog
+## Changelog
 
 Datum|Funktion
 -----|--------
@@ -21,3 +21,4 @@ Datum|Funktion
 28.10.|Animation beim Klick auf Städte
 28.10.|Übersichtskarte mit Taste O
 29.10.|Statuspanel hinzugefügt
+04.11.|Menübar hinzugefügt

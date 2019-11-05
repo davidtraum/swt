@@ -240,7 +240,7 @@ void View::fluidMovement(int pX, int pY){
 }
 
 /**
- * @brief View::enableAnimation Aktiviert animationen bis zum nächsten Event.
+ * @brief View::enableAnimation Aktiviert Animationen bis zum nächsten Event.
  */
 void View::enableAnimation(){
     doAnimations = true;
