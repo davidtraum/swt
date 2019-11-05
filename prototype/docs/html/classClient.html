@@ -80,14 +80,12 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für Client:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von Client:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -112,9 +110,9 @@ Signale</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a5bb9b3ee4f397eed771c9bfe56ca9740"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a5bb9b3ee4f397eed771c9bfe56ca9740">Client</a> (QString *connectionInfo, <a class="el" href="classScene.html">Scene</a> *pScene)</td></tr>
-<tr class="memdesc:a5bb9b3ee4f397eed771c9bfe56ca9740"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a5bb9b3ee4f397eed771c9bfe56ca9740" title="Client::Client Erzeugt einen neuen Client.">Client::Client</a> Erzeugt einen neuen <a class="el" href="classClient.html">Client</a>.  <a href="classClient.html#a5bb9b3ee4f397eed771c9bfe56ca9740">Mehr ...</a><br /></td></tr>
-<tr class="separator:a5bb9b3ee4f397eed771c9bfe56ca9740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b734c26350d028f5f2700a753ee673c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a3b734c26350d028f5f2700a753ee673c">Client</a> (QString *connectionInfo, <a class="el" href="classScene.html">Scene</a> *pScene, <a class="el" href="classDataModel.html">DataModel</a> *pDataModel)</td></tr>
+<tr class="memdesc:a3b734c26350d028f5f2700a753ee673c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a3b734c26350d028f5f2700a753ee673c" title="Client::Client Erzeugt einen neuen Client.">Client::Client</a> Erzeugt einen neuen <a class="el" href="classClient.html">Client</a>.  <a href="classClient.html#a3b734c26350d028f5f2700a753ee673c">Mehr ...</a><br /></td></tr>
+<tr class="separator:a3b734c26350d028f5f2700a753ee673c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2cfacbefea1e51e34c4697403fb82cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ad2cfacbefea1e51e34c4697403fb82cb">run</a> () override</td></tr>
 <tr class="memdesc:ad2cfacbefea1e51e34c4697403fb82cb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#ad2cfacbefea1e51e34c4697403fb82cb" title="Client::run Startet den Client-Thread.">Client::run</a> Startet den Client-Thread.  <a href="classClient.html#ad2cfacbefea1e51e34c4697403fb82cb">Mehr ...</a><br /></td></tr>
 <tr class="separator:ad2cfacbefea1e51e34c4697403fb82cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +135,8 @@ Private Attribute</h2></td></tr>
 <tr class="separator:a764f0d6601b0c32acc45ba1606b0c2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a id="a5bb9b3ee4f397eed771c9bfe56ca9740"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb9b3ee4f397eed771c9bfe56ca9740">&#9670;&nbsp;</a></span>Client()</h2>
+<a id="a3b734c26350d028f5f2700a753ee673c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b734c26350d028f5f2700a753ee673c">&#9670;&nbsp;</a></span>Client()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +151,13 @@ Private Attribute</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classScene.html">Scene</a> *&#160;</td>
-          <td class="paramname"><em>pScene</em>&#160;</td>
+          <td class="paramname"><em>pScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDataModel.html">DataModel</a> *&#160;</td>
+          <td class="paramname"><em>pDataModel</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -163,11 +167,11 @@ Private Attribute</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classClient.html#a5bb9b3ee4f397eed771c9bfe56ca9740" title="Client::Client Erzeugt einen neuen Client.">Client::Client</a> Erzeugt einen neuen <a class="el" href="classClient.html">Client</a>. </p>
+<p><a class="el" href="classClient.html#a3b734c26350d028f5f2700a753ee673c" title="Client::Client Erzeugt einen neuen Client.">Client::Client</a> Erzeugt einen neuen <a class="el" href="classClient.html">Client</a>. </p>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_a5bb9b3ee4f397eed771c9bfe56ca9740_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_a3b734c26350d028f5f2700a753ee673c_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -199,8 +203,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a7eb68233905bad7e20ed057bb67ab856_icgraph.svg" width="502" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a7eb68233905bad7e20ed057bb67ab856_icgraph.svg" width="502" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

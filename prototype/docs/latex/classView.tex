@@ -32,8 +32,8 @@ void \mbox{\hyperlink{classView_a1e1a3f29a5b539e3f8991cba46721e8f}{zoom\+In\+Ani
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$p\+Tool\+Tip)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a76d60435e43027b8497091d02acb77bd}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$event) override
@@ -81,19 +81,21 @@ int \mbox{\hyperlink{classView_aa5235bedb3f8c493400cd01f28c9c10b}{mouseY}}
 bool \mbox{\hyperlink{classView_a4ff44ed662bb14b094cc2e02522ad605}{mouse\+Down}}
 \item 
 bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animations}}
+\item 
+\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classView_af425358762e264a313ed536d15844d0d}\label{classView_af425358762e264a313ed536d15844d0d}} 
+\mbox{\Hypertarget{classView_a56e8bf94eecb24f3167c3a8c227425cc}\label{classView_a56e8bf94eecb24f3167c3a8c227425cc}} 
 \index{View@{View}!View@{View}}
 \index{View@{View}!View@{View}}
 \doxysubsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$}]{p\+Tool\+Tip }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classView_af425358762e264a313ed536d15844d0d}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. 
+\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. 
 
 
 \begin{DoxyParams}{Parameter}
@@ -113,8 +115,7 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 
 \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -193,8 +194,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em in} & Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -238,7 +238,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -275,7 +276,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em event} & Informationen über Position und Taste \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -319,6 +321,14 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Eventobjekt mit Infos. Wichtig\+: event-\/$>$delta()\+: Positiv oder negativ jenachdem in welche Richtung gedreht wurde. \\
 \hline
 \end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classView_a094f2fd748e2855fcd4ec42d171e5bbe_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classView_a1e1a3f29a5b539e3f8991cba46721e8f}\label{classView_a1e1a3f29a5b539e3f8991cba46721e8f}} 
 \index{View@{View}!zoomInAnimation@{zoomInAnimation}}
 \index{zoomInAnimation@{zoomInAnimation}!View@{View}}
@@ -329,8 +339,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classView_a1e1a3f29a5b539e3f8991cba46721e8f}{View\+::zoom\+In\+Animation}} Slot der nach dem Laden der Karte aufgerufen wird. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -405,6 +414,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \index{scene@{scene}!View@{View}}
 \doxysubsubsection{\texorpdfstring{scene}{scene}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}}$\ast$ View\+::scene}
+
+\mbox{\Hypertarget{classView_a4c161978de5538da22044a47befd2461}\label{classView_a4c161978de5538da22044a47befd2461}} 
+\index{View@{View}!tooltip@{tooltip}}
+\index{tooltip@{tooltip}!View@{View}}
+\doxysubsubsection{\texorpdfstring{tooltip}{tooltip}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}}$\ast$ View\+::tooltip\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
