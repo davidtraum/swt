@@ -83,7 +83,7 @@ void DataModel::updateCoordinates(int pX, int pY){
 }
 
 /**
- * @brief DataModel::getSystemMillis Gibt die Zahl der Millsekunden seit 1970 zurück.
+ * @brief DataModel::getSystemMillis Gibt die Zahl der Millisekunden seit 1970 zurück.
  * @return Die Zahl der Millisekunden.
  */
 long DataModel::getSystemMillis(){
