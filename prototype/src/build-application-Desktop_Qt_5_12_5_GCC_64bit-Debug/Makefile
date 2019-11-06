@@ -1928,22 +1928,6 @@ mainwindow.o: ../application_server/mainwindow.cpp ../application_server/mainwin
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qeventloop.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qguiapplication.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qinputmethod.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenuBar \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QStatusBar \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../application_server/mainwindow.cpp
 

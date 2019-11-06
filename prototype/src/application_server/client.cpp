@@ -20,7 +20,6 @@ Client::Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel)
     connect(scene, &Scene::tileUpdate, this, &Client::onTileChange);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
-    socket->write("M G");
 
     debug = true;
 
@@ -47,26 +46,36 @@ void Client::run() {
     }
 }
 
+void Client::requestMap(){
+    socket->write("M G");
+}
+
 /**
  * @brief Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus.
  * @param cmd Der Befehl als String.
  */
 void Client::processCommand(QString cmd){
     if(debug) qDebug() << "[CLIENT] Command: " + cmd;
-    QStringList split = cmd.split(" ");
-    if(split[0].startsWith("T") && split.length()==5){
-        emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
-    }else if(split[0].startsWith("P") && split.length()>=2){
-        if(split[1].startsWith("C") && split.length()==3){
-            emit playerConnect(split[2].toInt());
-        }else if(split[1].startsWith("P") && split.length()==5){
-            emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
+    try {
+        QStringList split = cmd.split(" ");
+        if(split[0].startsWith("T") && split.length()==5){
+            emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
+        }else if(split[0].startsWith("P") && split.length()>=3){
+            if(split[1].startsWith("C")){
+                qDebug() << "Player conn " << split[2];
+                emit playerConnect(split[2].toInt());
+            }else if(split[1].startsWith("P") && split.length()==5){
+                emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
+            }
+        }else if(split[0].startsWith("M") && split.length()>=2){
+            if(split[1].startsWith("L")){
+                emit mapLoaded();
+            }
         }
-    }else if(split[0].startsWith("M") && split.length()>=2){
-        if(split[1].startsWith("L")){
-            emit mapLoaded();
-        }
+    } catch (...) {
+        qDebug() << "Client error";
     }
+
 }
 
 

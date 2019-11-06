@@ -21,16 +21,23 @@ class NotifierThread(Thread):
         self.start();
 
     def add(self, msg, pExcept):
+        print("add to notifier");
         self.queue.append((msg, pExcept));
 
     def run(self):
         while True:
-            if(len(self.queue)>0):
-                msg = self.queue.pop();
-                print("[NOTIFIER] Sending " + str(msg[0]));
-                for client in clients:
-                    if(client != msg[1]):
-                        client.send(msg[0]);
+            try:
+                if(len(self.queue)>0):
+                    msg = self.queue.pop();
+                    print("[NOTIFIER] Sending " + str(msg[0]));
+                    for client in clients:
+                        if(client != msg[1]):
+                            try:
+                                client.send(msg[0]);
+                            except Exception:
+                                pass;
+            except Exception as e:
+                print("Notifier error " +  str(e));
 
 
 class ClientThread(Thread):
@@ -70,7 +77,9 @@ class ClientThread(Thread):
                             count+=len(each);
                         print("Transferred " + str(int(count/1000)) + "kb"); 
                         self.send("MONEY " + str(self.player.money));
-                        self.sendAll("P C " + self.clientId);
+                        for client in clients:
+                            if(client!=self):
+                                self.send("P C " + client.clientId);
                         self.send("M L");
                 elif(split[0]=='P'):
                     print("[THREAD] Position update from " + str(self.address) + ": " + split[1] + " / " + split[2]);

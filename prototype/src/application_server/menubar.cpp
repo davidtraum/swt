@@ -3,6 +3,7 @@
 #include "client.h"
 #include "datamodel.h"
 #include <QIcon>
+#include <QTimer>
 
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
@@ -33,7 +34,8 @@ void MenuBar::slotOpenConnection(){
 
     if(ok){
         Client * client = new Client(&text, scene, dataModel);
-          }
+        QTimer::singleShot(1000, [client]{client->requestMap();});
+    }
 }
 
 /**

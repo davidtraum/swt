@@ -16,6 +16,7 @@ class Client: public QThread
 public:
     Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel);
     void run() override;
+    void requestMap();
 
 private:
     QTcpSocket * socket;
