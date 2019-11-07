@@ -22,3 +22,4 @@ Datum|Funktion
 28.10.|Übersichtskarte mit Taste O
 29.10.|Statuspanel hinzugefügt
 04.11.|Menübar hinzugefügt
+05.11.|Tooltip-Widget hinzugefügt
