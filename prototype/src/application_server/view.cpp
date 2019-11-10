@@ -67,7 +67,7 @@ void View::mouseReleaseEvent(QMouseEvent *event)
 
                 case MapTile::CITY:
                     tooltip->showAt(event->x(), event->y());
-                    tooltip->setText("<h2>Haus</h2><p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
+                    tooltip->setText("<h2>Haus</h2> <p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
                     break;
                     doAnimations = true;
                     fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);
@@ -122,6 +122,13 @@ void View::mouseMoveEvent(QMouseEvent *event)
     }else{
         QGraphicsItem * hoverItem = QGraphicsView::itemAt(event->pos());
         dataModel->updateCoordinates(int(hoverItem->x()/64), int(hoverItem->y()/64));
+        MapTile * tile = scene->getTileAt(hoverItem->x(), hoverItem->y(), true);
+        if(tile->getType() == MapTile::CITY){
+            tooltip->setText("<h2>Haus</h2> <p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
+            tooltip->showAt(event->x(), event->y());
+        }else{
+            tooltip->hide();
+        }
         scene->setActiveTile(hoverItem);
     }
 }

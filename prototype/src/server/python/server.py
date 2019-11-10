@@ -94,7 +94,8 @@ class ClientThread(Thread):
                 clients.remove(self);
             print("[THREAD] Disconnected " + str(self.address));
             print("[THREAD] Players online: " + str(len(clients)));
-        
+            
+            
 class City:
     counter = 0;
     
