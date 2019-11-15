@@ -18,15 +18,12 @@ class ClientThread(Thread):
             command = data.decode('utf-8');
             args = command.split(" ");
             if(args[0] == 'MAP'):
-                
-                
 
 
 DEFAULT_CONFIG = {
     'port': 2000,
     'bind_ip': 'localhost',
-    'max_players': 5
-}
+    'max_players': 5};
 
 CONFIG_FILE = 'config.json';
 
@@ -51,6 +48,8 @@ clients = [];
 
 print("Server wird gestartet...");
 print(CONFIG);
+
+karte = [][];
 
 try:
     while True:
