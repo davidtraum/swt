@@ -2,6 +2,8 @@
 #define VIEW_H
 
 #include <QGraphicsView>
+#include <QMediaPlayer>
+#include <QGraphicsVideoItem>
 #include "main.h"
 #include "scene.h"
 #include "datamodel.h"
@@ -29,6 +31,8 @@ private:
     bool mouseDown;
     bool doAnimations;
     ToolTipMenu * tooltip;
+    QMediaPlayer * mediaPlayer;
+    QGraphicsVideoItem * videoItem;
 
 public slots:
     void zoomInAnimation();

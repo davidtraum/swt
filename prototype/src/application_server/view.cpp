@@ -10,6 +10,7 @@
 #include <QIcon>
 #include <QGraphicsItem>
 #include <QPalette>
+#include <QUrl>
 
 
 /**
@@ -27,6 +28,14 @@ View::View(Scene * pScene, ToolTipMenu * pToolTip) :
     doAnimations = false;
     mouseX = 0;
     mouseY = 0;
+
+    mediaPlayer = new QMediaPlayer(this);
+    videoItem = new QGraphicsVideoItem();
+    mediaPlayer->setVideoOutput(videoItem);
+    scene->addItem(videoItem);
+    videoItem->show();
+    mediaPlayer->setMedia(QUrl("https://traum.me/ameland/ameland_2019_low.mp4"));
+    mediaPlayer->play();
 }
 
 
