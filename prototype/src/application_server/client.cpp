@@ -24,6 +24,8 @@ Client::Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel)
     debug = true;
 
     start();
+
+    qDebug() << "[CLIENT] Thread Gestartet.";
 }
 
 /**
@@ -47,7 +49,7 @@ void Client::run() {
 }
 
 void Client::requestMap(){
-    socket->write("M G");
+    socket->write("MAP GET");
 }
 
 /**
@@ -58,7 +60,7 @@ void Client::processCommand(QString cmd){
     if(debug) qDebug() << "[CLIENT] Command: " + cmd;
     try {
         QStringList split = cmd.split(" ");
-        if(split[0].startsWith("T") && split.length()==5){
+        if(split[0].startsWith("TILE") && split.length()==5){
             emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
         }else if(split[0].startsWith("P") && split.length()>=3){
             if(split[1].startsWith("C")){
