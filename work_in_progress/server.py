@@ -143,35 +143,349 @@ class World:
 
     #--------Gleis-Logik
     def checkRailSurroundings(self, px, py):
-        self.railExistsUp, self.railExistsDown, self.railExistsRight, self.railExistsLeft = RailLogic._checkRails(self, px, py, self.data);
+        self.railExistsUp, self.railExistsDown, self.railExistsRight, self.railExistsLeft, self.railExistsUpRight, self.railExistsUpLeft, self.railExistsDownRight, self.railExistsDownLeft = RailLogic._checkRails(RailLogic, px, py, self.data);
 
     def setRail(self, px, py, rail):
-        self.railPlaced(px, py); 
-        if (railExistsUp + railExistsDown + railExistsRight + railExistsLeft == 0):
-            pass; #Hier Fehlerausgabe einfügen, denn jede Schiene muss an mindestens eine andere Schiene gebaut werden (wie in Original)
+        #self.railPlaced(px, py); Was ist das?
+        self.checkRailSurroundings(px, py)
+        railcounter = 0;
+        if(self.railExistsUp != 0):
+            railcounter+=1
+        if(self.railExistsDown != 0):
+            railcounter+=1
+        if(self.railExistsRight != 0):
+            railcounter+=1
+        if (self.railExistsLeft != 0):
+            railcounter+=1
+        if (railcounter == 0):
+            pass; #Hier Fehlerausgabe einfügen, denn jede Schiene muss an mindestens eine andere Schiene gebaut werden (wie im Original)
         
         #M
-        if (railExistsUp + railExistsDown + railExistsRight + railExistsLeft == 1):
+        if (railcounter == 1):
             #wenn nur eine andere Schiene braucht es maximal eine Kurve/max. 1 Maptile muss verändert werden
-            if (railExistsRight != 0 and self.direction == 0):  #keine Kurve
-                pass;
-            if (railExistsRight != 0  and self.direction == 1):  #rightUp
-                curve = CurveLogic
-                CurveLogic.curvedirection = CurveDirection.rightUp
-                self.data[px-1][py] = curve
-            if (railExistsLeft != 0 and self.direction == 0):  #keine Kurve
-                pass;
-            if (railExistsLeft != 0 and self.direction == 1):  #LeftUp
-                curve = CurveLogic
-                CurveLogic.curvedirection = CurveDirection.LeftUp
-                self.data[px+1][py] = curve
-            if (railExistsRight == 1 and self.direction == 0):  #
-                curve = CurveLogic
-                CurveLogic.curvedirection = CurveDirection.UpRight
-                self.data[px-1][py] = curve
+
+            #RechtsHorizontal:
+            
+            
+            if (self.railExistsRight != 9): 
+                self.data[px][py] = 'RAIL_H'
+                
+            #RechtsVertikal:
+                
+                
+            elif (self.railExistsRight != 10): 
+                if (self.railExistsUpRight == 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight == 0 and self.railExistsDownRight != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_LB'     
+                elif (self.railExistsUpRight != 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_LT'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #RechtsLB:
+                    
+                    
+            elif (self.railExistsRight != 11):
+                if (self.railExistsUpRight == 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight == 0 and self.railExistsDownRight != 0):
+                    self.data[px][py] = 'RAIL_H'
+                elif (self.railExistsUpRight != 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (True):
+                    self.data[px][py] = 'RAIL_H'
+
+            #RechtsLT:
+
+                    
+            elif (self.railExistsRight != 12): 
+                if (self.railExistsUpRight == 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight == 0 and self.railExistsDownRight != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight != 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                elif (True):
+                    self.data[px][py] = 'RAIL_H'
+
+            #RechtsRT
+
+                    
+            elif (self.railExistsRight != 13): 
+                if (self.railExistsUpRight == 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight == 0 and self.railExistsDownRight != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #RechtsRB
+
+
+            elif (self.railExistsRight != 14): 
+                if (self.railExistsUpRight == 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (self.railExistsUpRight != 0 and self.railExistsDownRight == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px+1][py] = 'RAIL_H'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #LinksHorizontal:
+            
+            
+            elif (self.railExistsLeft != 9): 
+                self.data[px][py] = 'RAIL_H'
+                
+            #LinksVertikal:
+                
+                
+            elif (self.railExistsLeft != 10): 
+                if (self.railExistsUpLeft == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_RB'     
+                elif (self.railExistsUpLeft != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_RT'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #LinksLB:
+                    
+                    
+            elif (self.railExistsLeft != 11): 
+                if (self.railExistsUpLeft == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #LinksLT:
+
+                    
+            elif (self.railExistsLeft != 12): 
+                if (self.railExistsUpLeft == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #LinksRT:
+
+                    
+                    
+            elif (self.railExistsLeft != 13):
+                if (self.railExistsUpLeft == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'                    
+                elif (True):
+                    self.data[px][py] = 'RAIL_H'
+
+            #LinksRB:
+
+            elif (self.railExistsLeft != 14):
+                if (self.railExistsUpLeft == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_H'
+                elif (self.railExistsUpLeft != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_H'
+                    self.data[px-1][py] = 'RAIL_H'
+                elif (True):
+                    self.data[px][py] = 'RAIL_H'
+
+            #ObenHorizontal:
+            
+            
+            elif (self.railExistsUp != 9): 
+                if (self.railExistsUpRight == 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight == 0 and self.railExistsUpLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_LB'     
+                elif (self.railExistsUpRight != 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_RB'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+                
+            #ObenVertikal:
+                
+                
+            elif (self.railExistsUp != 10): 
+                self.data[px][py] = 'RAIL_V'
+
+            #ObenLB:
+                    
+                    
+            elif (self.railExistsUp != 11):
+                if (self.railExistsUpRight == 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight == 0 and self.railExistsUpLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                elif (self.railExistsUpRight != 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (True):
+                    self.data[px][py] = 'RAIL_V'
+
+            #ObenLT:
+
+                    
+            elif (self.railExistsUp != 12): 
+                if (self.railExistsUpRight == 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight != 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #ObenRT:
+
+                    
+                    
+            elif (self.railExistsUp != 13): 
+                if (self.railExistsUpRight == 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight == 0 and self.railExistsUpLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #ObenRB:
+
+            elif (self.railExistsUp != 14):
+                if (self.railExistsUpRight == 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight == 0 and self.railExistsUpLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py-1] = 'RAIL_V'
+                elif (self.railExistsUpRight != 0 and self.railExistsUpLeft == 0):
+                    self.data[px][py] = 'RAIL_V'                    
+                elif (True):
+                    self.data[px][py] = 'RAIL_V'
+
+
+            #UntenHorizontal:
+            
+            
+            elif (self.railExistsDown != 9): 
+                if (self.railExistsDownRight == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (self.railExistsDowRight == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_LT'     
+                elif (self.railExistsDownRight != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_RT'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+                
+            #UntenVertikal:
+                
+                
+            if (self.railExistsRight != 10): 
+                self.data[px][py] = 'RAIL_V'
+
+            #UntenLB:
+                    
+                    
+            elif (self.railExistsDown != 11): 
+                if (self.railExistsUpDown == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (self.railExistsUpDown != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+
+            #UntenLT:
+
+                    
+            elif (self.railExistsDown != 12):
+                if (self.railExistsDownRight == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (self.railExistsDownRight == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                elif (self.railExistsDownRight != 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (True):
+                    self.data[px][py] = 'RAIL_V'
+
+            #UntenRT
+
+                    
+            elif (self.railExistsUp != 13): 
+                if (self.railExistsDownRight == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (self.railExistsDownRight == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px][py+1] = 'RAIL_V'
+                elif (self.railExistsDownRight != 0 and self.railExistsUpRight == 0):
+                    self.data[px][py] = 'RAIL_V'
+                elif (True):
+                    self.data[px][py] = 'RAIL_V'
+
+            #UntenRB
+
+
+            elif (self.railExistsRight != 14): 
+                if (self.railExistsDownRight == 0 and self.railExistsDownLeft == 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px+1][py] = 'RAIL_V'
+                elif (self.railExistsDownRight == 0 and self.railExistsDownLeft != 0):
+                    self.data[px][py] = 'RAIL_V'
+                    self.data[px+1][py] = 'RAIL_V'
+                elif (True):
+                    print("Schiene muss an ein bestehendes Schienennetz gebaut werden")
+            
+                
+                
+                    
+                     
+
+
 
         #J
-        if (railExistsUp + railExistsDown + railExistsRight + railExistsLeft == 2):
+        if (railcounter == 2):
             pass
     #-------------------
                 
@@ -234,7 +548,8 @@ print(CONFIG);
 #------------------------------------Testbereich Gleise
 
 rail1 = RailLogic(world,5,9,"RAIL_RB");
-world.railExistsUp, world.railExistsDown, world.railExistsRight, world.railExistsLeft = RailLogic._checkRails(world, 5, 8, world.data);
+world.setRail(6,9,"ka")
+# das funktioniert nicht world.railExistsUp, world.railExistsDown, world.railExistsRight, world.railExistsLeft, world.railExistsUpRight, world.railExistsUpLeft, world.railExistsDownRight, world.railExistsDownLeft = RailLogic._checkRails(RailLogic, 5, 8, world.data);
 print(world.railExistsUp);
 print(world.railExistsDown);
 print(world.railExistsRight);

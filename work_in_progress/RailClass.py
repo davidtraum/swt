@@ -1,5 +1,5 @@
 from GameLogicObject import GameLogicObject
-from enum import Enum
+
 
 class RailLogic(GameLogicObject):
 
@@ -17,6 +17,12 @@ class RailLogic(GameLogicObject):
         railExistsDown = 0;
         railExistsLeft = 0;
         railExistsRight = 0;
+        railExistsUpLeft = 0;
+        railExistsUpRight = 0;
+        railExistsDownLeft = 0;
+        railExistsDownRight = 0;
+
+
 
         #Rechts
         if (karte[x_Pos+1][y_Pos].getType() == 9):
@@ -47,9 +53,9 @@ class RailLogic(GameLogicObject):
             railExistsLeft = 14;
         
         #Oben
-        if (karte[x_Pos][y_Pos-1].getType() == "RAIL_H"):
+        if (karte[x_Pos][y_Pos-1].getType() == 9):
             railExistsUp = 9;
-        if (karte[x_Pos][y_Pos-1].getType() == "RAIL_V"):
+        if (karte[x_Pos][y_Pos-1].getType() == 10):
             railExistsUp = 10;
         if (karte[x_Pos][y_Pos-1].getType() == 11):
             railExistsUp = 11;
@@ -73,29 +79,71 @@ class RailLogic(GameLogicObject):
             railExistsDown = 13;
         if (karte[x_Pos][y_Pos+1].getType() == 14):
             railExistsDown = 14;
+
+        #ObenRechts
+
+        if (karte[x_Pos+1][y_Pos-1].getType() == 9):
+            railExistsUpRight = 9;
+        if (karte[x_Pos+1][y_Pos-1].getType() == 10):
+            railExistsUpRight = 10;
+        if (karte[x_Pos+1][y_Pos-1].getType() == 11):
+            railExistsUpRight = 11;
+        if (karte[x_Pos+1][y_Pos-1].getType() == 12):
+            railExistsUpRight = 12;
+        if (karte[x_Pos+1][y_Pos-1].getType() == 13):
+            railExistsUpRight = 13;
+        if (karte[x_Pos+1][y_Pos-1].getType() == 14):
+            railExistsUpRight = 14;
+
+        #ObenLinks
+
+        if (karte[x_Pos-1][y_Pos-1].getType() == 9):
+            railExistsUpLeft = 9;
+        if (karte[x_Pos-1][y_Pos-1].getType() == 10):
+            railExistsUpLeft = 10;
+        if (karte[x_Pos-1][y_Pos-1].getType() == 11):
+            railExistsUpLeft = 11;
+        if (karte[x_Pos-1][y_Pos-1].getType() == 12):
+            railExistsUpLeft = 12;
+        if (karte[x_Pos-1][y_Pos-1].getType() == 13):
+            railExistsUpLeft = 13;
+        if (karte[x_Pos-1][y_Pos-1].getType() == 14):
+            railExistsUpLeft = 14;
+
+        #UntenRechts
+
+        if (karte[x_Pos+1][y_Pos+1].getType() == 9):
+            railExistsDownRight = 9;
+        if (karte[x_Pos+1][y_Pos+1].getType() == 10):
+            railExistsDownRight = 10;
+        if (karte[x_Pos+1][y_Pos+1].getType() == 11):
+            railExistsDownRight = 11;
+        if (karte[x_Pos+1][y_Pos+1].getType() == 12):
+            railExistsDownRight = 12;
+        if (karte[x_Pos+1][y_Pos+1].getType() == 13):
+            railExistsDownRight = 13;
+        if (karte[x_Pos+1][y_Pos+1].getType() == 14):
+            railExistsDownRight = 14;
+
+        #UntenLinks
+
+        if (karte[x_Pos-1][y_Pos+1].getType() == 9):
+            railExistsDownLeft = 9;
+        if (karte[x_Pos-1][y_Pos+1].getType() == 10):
+            railExistsDownLeft = 10;
+        if (karte[x_Pos-1][y_Pos+1].getType() == 11):
+            railExistsDownLeft = 11;
+        if (karte[x_Pos-1][y_Pos+1].getType() == 12):
+            railExistsDownLeft = 12;
+        if (karte[x_Pos-1][y_Pos+1].getType() == 13):
+            railExistsDownLeft = 13;
+        if (karte[x_Pos-1][y_Pos+1].getType() == 14):
+            railExistsDownLeft = 14;            
                 
-        return railExistsUp, railExistsDown, railExistsRight, railExistsLeft;
+        return railExistsUp, railExistsDown, railExistsRight, railExistsLeft, railExistsUpRight, railExistsUpLeft, railExistsDownRight, railExistsDownLeft
 
 
-class CurveDirection(Enum):
-    topRight = 3
-    topLeft = 4
-    downRight = 5
-    downLeft = 6
-    rightUp = 7
-    rightDown = 8
-    leftUp = 9
-    leftDown = 10
-    unknown = 9
 
-    
-
-class CurveLogic(RailLogic):
-
-    def __init__(self, px_Pos, py_Pos):
-        self.x_Pos = px_Pos;
-        self.y_Pos = py_Pos;        
-        self.curveDirection = CurveDirection.unknown
 
         
         
