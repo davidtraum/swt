@@ -483,12 +483,7 @@ class World:
                      
 
 
-
-        #J
-        if (railcounter == 2):
-            pass
-    #-------------------
-                
+              
                 
 class ClientThread(Thread):
     
