@@ -172,7 +172,39 @@ class World:
 
         #J
         if (railExistsUp + railExistsDown + railExistsRight + railExistsLeft == 2):
-            pass
+            if (railExiststRight == 9 and railExistsLeft == 9):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 9 and railExistsLeft == 10):
+                pass; #Bauen nicht möglich
+            if (railExiststRight == 9 and railExistsLeft == 11):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 9 and railExistsLeft == 12):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 9 and railExistsLeft == 13):
+                pass; #Bauen nicht möglich
+            if (railExiststRight == 9 and railExistsLeft == 14):
+                pass; #Bauen nicht möglich
+            if (railExiststRight == 10 and railExistsLeft == 11):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 10 and railExistsLeft == 12):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 10 and railExistsLeft == 13):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 10 and railExistsLeft == 14):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 11 and railExistsLeft == 12):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 11 and railExistsLeft == 13):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 11 and railExistsLeft == 14):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 12 and railExistsLeft == 13):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 12 and railExistsLeft == 14):
+                RailLogic(world,px,py,"RAIL_H");
+            if (railExiststRight == 13 and railExistsLeft == 14):
+                RailLogic(world,px,py,"RAIL_H");
+            
     #-------------------
                 
                 
