@@ -69,7 +69,7 @@ class RailLogic(GameLogicObject):
     def build(x_pos,y_pos, pPlayer, karte):
 
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkconnectableRails(pPlayer,x_pos ,y_pos , karte)
-        print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)
+        print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)  #zum Testen
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
             print("Schienen können nur an bestehendes Schienennetz gebaut werden")        
         

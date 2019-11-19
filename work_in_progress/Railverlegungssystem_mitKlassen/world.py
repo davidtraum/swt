@@ -10,10 +10,11 @@ karte = World()
 print(karte.data[1][1])
 
 karte.data[10][20] = RailLogic(10, 20, 1)
+print(karte.data[10][20].getConnections())
 print(type(karte.data[10][20]))
 
 RailLogic.build(11, 20, 1, karte.data) #Schiene rechts gebaut
-RailLogic.build(10, 21, 1, karte.data) #Schiene oben gebaut
+RailLogic.build(10, 21, 1, karte.data) #Schiene unten gebaut
 print(karte.data[10][20].getConnections())
 print(karte.data[10][20].connectedUp)
 
