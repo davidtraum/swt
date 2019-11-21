@@ -4,6 +4,7 @@ import socket
 from threading import Thread
 import time
 import random
+from RailClass import RailLogic
 
 
 class MapTile:
@@ -18,27 +19,54 @@ class MapTile:
         'RIVER_LT': 6,
         'RIVER_RT': 7,
         'RIVER_RB': 8,
-        'RAIL_H': 9
+        'RAIL_H': 9,
+        'RAIL_V': 10,
+        'RAIL_LB': 11,
+        'RAIL_LT': 12,
+        'RAIL_RT': 13,
+        'RAIL_RB': 14
     }
     
-    def __init__(self, pX, pY, pType):
-        self.type = None;
-        self.rotation = 0;
-        self.x = pX;
-        self.y = pY;
-        self.setType(pType);
+    def __init__(self, pX, pY, pType, pLogic=None):
+        self.type = None 
+        self.rotation = 0 
+        self.x = pX 
+        self.y = pY 
+        self.setType(pType) 
+        self.logic = pLogic
+
+    def getPos(self):
+        return self.x, self.y
+
+    def getX(self):
+        return self.x
+    def getY(self):
+        return self.y
 
     def setType(self, pType):
-        self.type = MapTile.TYPES[pType];
+        self.type = MapTile.TYPES[pType] 
+    def getType(self):
+        return self.type
 
     def setRotation(self, pRotation):
-        self.rotation = pRotation;
+        self.rotation = pRotation 
         
     def isRiver(self):
-        return self.type>=3 and self.type<=8;
+        return self.type>=3 and self.type<=8 
+
+    def isRail(self):
+        return self.type>=9 and self.type<=11
 
     def getProtocolString(self):
-        return 'TILE ' + str(self.x) + ' ' + str(self.y) + ' ' + str(self.type) + ' ' + str(self.rotation);
+        return 'TILE ' + str(self.x) + ' ' + str(self.y) + ' ' + str(self.type) + ' ' + str(self.rotation) 
+
+    def isInGroup(self, types):
+        for type in types:
+            if(self.type == MapTile.TYPES[type]):
+                return True
+
+    def initLogic(self, pLogic):
+        self.logic = pLogic(self, None)
     
 class World:
 
@@ -46,159 +74,189 @@ class World:
         self.data = [[MapTile(i,j, 'GRASS') for i in range(300)] for j in range(300)]
 
     def randomPosition(self):
-        return (random.randint(0,299), random.randint(0,299));
+        return (random.randint(0,299), random.randint(0,299)) 
 
     def isValidPosition(self, posX, posY):
-        return posX>=0 and posY>=0 and posX<300 and posY<300;
+        return posX>=0 and posY>=0 and posX<300 and posY<300 
+
+    def canPlaceRail(self, posX, posY):
+        return self.data[posX][posY].isInGroup( ('GRASS', 'FOREST') )
+
+    def tileInteract(self, posX, posY):
+        print("Interact ", posX, " " , posY);
+        if(self.canPlaceRail(posX, posY)):
+            print("Placing rail...");
+            changed = RailLogic.build(posX, posY, None, self.data)
+            if(changed != None):
+                for tile in changed:
+                    pass
+        else:
+            print("Cant place rail " + str(self.data[posX][posY].getType()))
+
+
     
     def generateWorld(self):
-        print("Welt wird generiert...");
-        size = 300;
+        print("Welt wird generiert...") 
+        size = 300 
         for x in range(size):
             for y in range(size):
-                self.data[x][y].setRotation(random.randint(0,3));
+                self.data[x][y].setRotation(random.randint(0,3)) 
                 if(random.randint(0,100)<20):
-                     self.data[x][y].setType('FOREST');
+                     self.data[x][y].setType('FOREST') 
                      
 
         for townIndex in range(300):
-            px,py = self.randomPosition();
-            size = random.randint(3, 20);
+            px,py = self.randomPosition() 
+            size = random.randint(3, 20) 
             for houseIndex in range(size):
-                self.data[px][py].setType('CITY');
-                px += random.randint(-1,1);
-                py += random.randint(-1,1);
+                self.data[px][py].setType('CITY') 
+                px += random.randint(-1,1) 
+                py += random.randint(-1,1) 
                 
                 if(px < 0):
-                    px = 0;
+                    px = 0 
                 elif(px > 299):
-                    px = 299;
+                    px = 299 
 
                 if(py < 0):
-                    py = 0;
+                    py = 0 
                 elif(py > 299):
-                    py = 299;
+                    py = 299 
 
         for riverIndex in range(20):
-            px,py = self.randomPosition();
-            vx = 1;
-            vy = 0;
-            sinceCurve = 0;
-            typ = 'RIVER_H';
+            px,py = self.randomPosition() 
+            vx = 1 
+            vy = 0 
+            sinceCurve = 0 
+            typ = 'RIVER_H' 
             while True:
-                self.data[px][py].setType(typ);
-                self.data[px][py].setRotation(0);
-                px += vx;
-                py += vy;
-                sinceCurve+=1;
+                self.data[px][py].setType(typ) 
+                self.data[px][py].setRotation(0) 
+                px += vx 
+                py += vy 
+                sinceCurve+=1 
                 if(sinceCurve > random.randint(3,10)):
                     if(random.random()>0.5):
                         if(vy == -1):
-                            vy = 0;
-                            vx = 1;
-                            typ = 'RIVER_RB';
+                            vy = 0 
+                            vx = 1 
+                            typ = 'RIVER_RB' 
                         elif(vy == 0):
                             if(vx == -1):
-                                typ = 'RIVER_RT';
+                                typ = 'RIVER_RT' 
                             else:
-                                typ = 'RIVER_LT';
-                            vy = -1;
-                            vx = 0;
+                                typ = 'RIVER_LT' 
+                            vy = -1 
+                            vx = 0 
                         elif(vy == 1):
-                            vy = 0;
-                            vx = -1;
+                            vy = 0 
+                            vx = -1 
                     else:
                         if(vx == -1):
-                            vy = 1;
-                            vx = 0;
-                            typ = 'RIVER_RB';
+                            vy = 1 
+                            vx = 0 
+                            typ = 'RIVER_RB' 
                         elif(vx == 0):
                             if(vy == 1):
-                                typ = 'RIVER_LT';
+                                typ = 'RIVER_LT' 
                             else:
-                                typ = 'RIVER_LB';
-                            vy = 0;
-                            vy = -1;
+                                typ = 'RIVER_LB' 
+                            vy = 0 
+                            vy = -1 
                         elif(vx == 1):
-                            vy = -1;
-                            vx = 0;
-                            typ = 'RIVER_LT';
-                    sinceCurve = 0;
+                            vy = -1 
+                            vx = 0 
+                            typ = 'RIVER_LT' 
+                    sinceCurve = 0 
                 else:
                     if(vy == 0):
-                        typ = 'RIVER_H';
+                        typ = 'RIVER_H' 
                     else:
-                        typ = 'RIVER_V';
+                        typ = 'RIVER_V' 
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
-                    break;
+                    break 
+        self.data[5][5].setType('RAIL_H')
+        self.data[5][5].initLogic(RailLogic)
 
 
 class ClientThread(Thread):
     
     def __init__(self, pConnection):
-        Thread.__init__(self);
-        self.connection = pConnection;
+        Thread.__init__(self) 
+        self.connection = pConnection 
 
     def send(self, pText):
-        self.connection.sendall((pText + '~').encode('utf-8'));
+        self.connection.sendall((pText + '~').encode('utf-8')) 
         
     def run(self):
-        global world;
+        global world 
         while True:
-            data = self.connection.recv(32);
-            print("Received command: " + str(data));
-            command = data.decode('utf-8');
-            args = command.split(" ");
+            data = self.connection.recv(32) 
+            print("Received command: " + str(data)) 
+            command = data.decode('utf-8') 
+            args = command.split(" ") 
             if(args[0] == 'MAP'):
                 if(args[1] =='GET'):
                     #TILE X Y TYP ROTATION
                     for x in range(300):
                         for y in range(300):
-                            self.send(world.data[x][y].getProtocolString());
+                            self.send(world.data[x][y].getProtocolString()) 
+            elif(args[0] == 'TILE'):
+                if(args[1] == 'CLICK'):
+                    print("Setting tile...");
+                    posX = int(args[2])
+                    posY = int(args[3])
+                    world.tileInteract(posX, posY)
+
                             
 
 DEFAULT_CONFIG = {
     'port': 2000,
     'bind_ip': 'localhost',
-    'max_players': 5};
+    'max_players': 5} 
 
-CONFIG_FILE = 'config.json';
+CONFIG_FILE = 'config.json' 
 
 if not os.path.exists(CONFIG_FILE):
-    print("Die Konfigurationsdatei wird angelegt...");
+    print("Die Konfigurationsdatei wird angelegt...") 
     with open(CONFIG_FILE, 'w') as file:
-        json_string = json.dumps(DEFAULT_CONFIG, indent=4);
-        file.write( json_string );
-        file.flush();
+        json_string = json.dumps(DEFAULT_CONFIG, indent=4) 
+        file.write( json_string ) 
+        file.flush() 
 
 
-CONFIG = None;
+CONFIG = None 
 with open(CONFIG_FILE) as file:
-    CONFIG = json.loads( file.read() );
+    CONFIG = json.loads( file.read() ) 
 
-world = World();
-world.generateWorld();
+world = World() 
+world.generateWorld() 
 
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM);
-server.bind( (CONFIG['bind_ip'], CONFIG['port']) );
-server.listen();
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+server.bind( (CONFIG['bind_ip'], CONFIG['port']) ) 
+server.listen() 
 
-clients = [];
+clients = [] 
 
-print("Server wird gestartet...");
-print(CONFIG);
+print("Server wird gestartet...") 
+print(CONFIG) 
+
+def broadcast(pText):
+    global clients
+    for client in clients:
+        client.send(pText)
 
 try:
     while True:
-        connection, address = server.accept();
-        print("Verbindungsaufbau von " + str(address) + "...");
-        thread = ClientThread(connection);
-        thread.start();
-        clients.append(thread);
+        connection, address = server.accept() 
+        print("Verbindungsaufbau von " + str(address) + "...") 
+        thread = ClientThread(connection) 
+        thread.start() 
+        clients.append(thread) 
                 
 except KeyboardInterrupt:
-    print("Server beendet");
+    print("Server beendet") 
 
 
 
