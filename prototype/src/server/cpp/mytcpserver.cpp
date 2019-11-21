@@ -6,7 +6,7 @@ MyTcpServer::MyTcpServer(QObject *parent): QObject(parent)
 
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
 
-    if(!server->listen(QHostAddress::Any, 9999)){
+    if(!server->listen(QHostAddress::LocalHost, 9999)){
         qDebug()<<"Server kann nicht starten!"<<endl;
     }
     else{
