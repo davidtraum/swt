@@ -32,16 +32,16 @@ class RailLogic:
         #Rechts
         if(x_pos<299):                              #Wenn Rechts innerhalb der Karte liegt
             if(karte[x_pos+1][y_pos].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos+1][y_pos].player == player): #Wenn Schiene zum selben Spieler gehört
-                    #Wenn Schiene nicht vollständig verbunden ist.
+                if(karte[x_pos+1][y_pos].player == player): #Wenn Schiene zum selben Spieler gehoert
+                    #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_pos+1][y_pos].logic.connectedRight + karte[x_pos+1][y_pos].logic.connectedLeft + karte[x_pos+1][y_pos].logic.connectedUp + karte[x_pos+1][y_pos].logic.connectedUp != 2):
                         railConnectableRight = True; #dann liegt rechts eine verbindbare Schiene
 
         #Links
         if(x_pos>0):                                #Wenn Links innerhalb der Karte liegt
             if(karte[x_pos-1][y_pos].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos-1][y_pos].logic.player == player): #Wenn Schiene zum selben Spieler gehört
-                    #Wenn Schiene nicht vollständig verbunden ist.                    
+                if(karte[x_pos-1][y_pos].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
+                    #Wenn Schiene nicht vollstaendig verbunden ist.                    
                     if(karte[x_pos-1][y_pos].logic.connectedRight + karte[x_pos-1][y_pos].logic.connectedLeft + karte[x_pos-1][y_pos].logic.connectedUp + karte[x_pos-1][y_pos].logic.connectedUp != 2):
                         railConnectableLeft = True;     #Dann liegt links eine verbindbare Schiene
                         
@@ -49,16 +49,16 @@ class RailLogic:
         #Oben
         if(y_pos>0):                                #Wenn Oben innerhalb der Karte liegt
             if(karte[x_pos][y_pos-1].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos][y_pos-1].logic.player == player): #Wenn Schiene zum selben Spieler gehört
-                    #Wenn Schiene nicht vollständig verbunden ist.
+                if(karte[x_pos][y_pos-1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
+                    #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_pos][y_pos-1].logic.connectedRight + karte[x_pos][y_pos-1].logic.connectedLeft + karte[x_pos][y_pos-1].logic.connectedUp + karte[x_pos][y_pos-1].logic.connectedUp != 2):
                         railConnectableUp = True;            #Dann liegt Oben eine verbindbare Schiene
 
         #Unten
         if(y_pos<299):                              #Wenn Unten innerhalb der Karte liegt
             if(karte[x_pos][y_pos+1].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene zum selben Spieler gehört
-                    #Wenn Schiene nicht vollständig verbunden ist.
+                if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
+                    #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].connectedUp + karte[x_pos][y_pos+1].logic.connectedUp != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
 
@@ -72,7 +72,7 @@ class RailLogic:
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
         print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)  #zum Testen
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
-            print("Schienen können nur an bestehendes Schienennetz gebaut werden")        
+            print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         
         
         elif(1 <= railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft <= 2): #1-2 Schienen vebindbar Unten,Oben, Rechts oder Links
