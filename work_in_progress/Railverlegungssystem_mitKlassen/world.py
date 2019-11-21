@@ -16,7 +16,7 @@ print(type(karte.data[10][20]))
 RailLogic.build(11, 20, 1, karte.data) #Schiene rechts gebaut
 RailLogic.build(10, 21, 1, karte.data) #Schiene unten gebaut
 print(karte.data[10][20].getConnections())
-print(karte.data[10][20].connectedUp)
+print(karte.data[10][21].getConnections())
 
 #for i in range(0,299):
    # for j in range(0,299):

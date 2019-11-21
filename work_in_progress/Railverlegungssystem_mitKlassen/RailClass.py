@@ -76,7 +76,7 @@ class RailLogic(GameLogicObject):
         
         elif(1 <= railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft <= 2): #1-2 Schienen vebindbar Unten,Oben, Rechts oder Links
 
-            karte[x_pos][y_pos] = RailLogic #Schiene wird gebaut.
+            karte[x_pos][y_pos] = RailLogic(x_pos, y_pos, pPlayer) #Schiene wird gebaut.
             
             if(railConnectableRight == True):    #Schiene Rechts ist verbindbar                     
                 karte[x_pos][y_pos].connectedRight = True   #Schiene mit rechter Schiene verbinden
