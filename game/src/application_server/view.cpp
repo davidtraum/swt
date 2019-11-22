@@ -128,7 +128,7 @@ void View::mouseMoveEvent(QMouseEvent *event)
         QGraphicsView::centerOn(sceneCenter);
         View::dragPosX = event->x();
         View::dragPosY = event->y();
-        QGraphicsView::setCursor(QCursor(Qt::PointingHandCursor));
+        QGraphicsView::setCursor(QCursor(Qt::DragMoveCursor));
         doAnimations = false;
     }else{
         QGraphicsItem * hoverItem = QGraphicsView::itemAt(event->pos());
