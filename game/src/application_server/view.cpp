@@ -29,6 +29,7 @@ View::View(Scene * pScene, ToolTipMenu * pToolTip) :
     mouseX = 0;
     mouseY = 0;
 
+    /*
     mediaPlayer = new QMediaPlayer(this);
     videoItem = new QGraphicsVideoItem();
     mediaPlayer->setVideoOutput(videoItem);
@@ -36,6 +37,7 @@ View::View(Scene * pScene, ToolTipMenu * pToolTip) :
     videoItem->show();
     mediaPlayer->setMedia(QUrl("https://traum.me/ameland/ameland_2019_low.mp4"));
     mediaPlayer->play();
+   */
 }
 
 

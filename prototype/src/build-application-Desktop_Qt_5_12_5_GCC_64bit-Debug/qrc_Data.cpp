@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 static const unsigned char qt_resource_data[] = {
-  // /home/david/Development/Uni/swt/prototype/src/application_server/cities.json
+  // /home/david/Development/Uni/swt/game/src/application_server/cities.json
   0x0,0x0,0x22,0xe0,
   0x0,
   0x1,0x90,0x41,0x78,0x9c,0xd5,0x7d,0x6b,0x6f,0x1c,0x49,0x8e,0xed,0xf7,0xfd,0x15,
