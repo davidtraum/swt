@@ -72,9 +72,9 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setPixmap(graphicsManager->get("schiene_h"));
             pixmapItem->setToolTip("Schiene");
             break;
-        case MapTile::TYPE::RAIL_CURVE:
-            pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
-            pixmapItem->setToolTip("Schiene");
+        case MapTile::TYPE::WATER:
+            pixmapItem->setPixmap(graphicsManager->get("water"));
+            pixmapItem->setToolTip("Meer");
             break;
     }
     type = pType;

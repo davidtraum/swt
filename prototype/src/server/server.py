@@ -27,7 +27,8 @@ class MapTile:
         'RAIL_LB': 11,
         'RAIL_LT': 12,
         'RAIL_RT': 13,
-        'RAIL_RB': 14
+        'RAIL_RB': 14,
+        'WATER': 15
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -48,7 +49,9 @@ class MapTile:
         return self.y
 
     def setType(self, pType):
+        self.setRotation(0)
         self.type = MapTile.TYPES[pType]
+        broadcast(self.getProtocolString())
 
     def getType(self):
         return self.type
@@ -77,7 +80,7 @@ class MapTile:
 class World:
 
     def __init__(self):
-        self.data = [[MapTile(i, j, 'GRASS')
+        self.data = [[MapTile(j, i, 'GRASS')
                       for i in range(300)] for j in range(300)]
 
     def randomPosition(self):
@@ -160,14 +163,14 @@ class World:
                         if(vx == -1):
                             vy = 1
                             vx = 0
-                            typ = 'RIVER_RB'
+                            typ = 'RIVER_LB'
                         elif(vx == 0):
                             if(vy == 1):
                                 typ = 'RIVER_LT'
                             else:
                                 typ = 'RIVER_LB'
                             vy = 0
-                            vy = -1
+                            vx = -1
                         elif(vx == 1):
                             vy = -1
                             vx = 0
@@ -180,8 +183,27 @@ class World:
                         typ = 'RIVER_V'
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
                     break
-        self.data[5][5].setType('RAIL_H')
-        self.data[5][5].initLogic(RailLogic)
+
+        #Generierung von Meeren
+        if False: #Setze True zum aktivieren
+            for y in range(0, 40):
+                minX = 40-y-3 
+                if(minX < 0):
+                    minX = 0 
+                for x in range(random.randint(minX,40-y)):
+                    self.data[x][y].setType('WATER') 
+                for x in range(random.randint(minX,40-y)):
+                    self.data[299-x][y].setType('WATER')  
+            for y in range(150, 299):
+                minX = 150-y-3 
+                if(minX < 0):
+                    minX = 0 
+                for x in range(random.randint(minX,150-(y-150))):
+                    self.data[x][y].setType('WATER') 
+                for x in range(random.randint(minX,150-(y-150))):
+                    self.data[299-x][y].setType('WATER')         
+        self.data[150][150].setType('RAIL_H')
+        self.data[150][150].initLogic(RailLogic)
 
 
 class ClientThread(Thread):

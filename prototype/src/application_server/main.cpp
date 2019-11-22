@@ -65,7 +65,10 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->setDataModel(dataModel);
 
-    mainWindow->setCentralWidget(view);
+    QTimer::singleShot(2000, []{
+      mainWindow->setCentralWidget(view);
+    });
+
     tooltip->setParent(view);
     tooltip->show();
 
@@ -97,7 +100,9 @@ int main(int argc, char *argv[])
 
     timeTicker();    
 
-
+    QLabel * startscreen = new QLabel();
+    startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
+    mainWindow->setCentralWidget(startscreen);
 
     a.exec();
 }

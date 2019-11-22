@@ -8,7 +8,22 @@
 class MapTile
 {
 public:
-    enum TYPE{GRASS,FORREST,CITY, RIVER_H,RIVER_V,RIVER_LB,RIVER_LT,RIVER_RT,RIVER_RB, RAIL_H,RAIL_CURVE};
+    enum TYPE{GRASS,
+              FORREST,
+              CITY,
+              RIVER_H,
+              RIVER_V,
+              RIVER_LB,
+              RIVER_LT,
+              RIVER_RT,
+              RIVER_RB,
+              RAIL_H,
+              RAIL_V,
+              RAIL_LB,
+              RAIL_LT,
+              RAIL_RT,
+              RAIL_RB,
+              WATER};
     MapTile(GraphicsManager * pGraphicsManager);
     MapTile();
     void setType(TYPE pType);

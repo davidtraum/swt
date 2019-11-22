@@ -774,6 +774,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/grass.png \
 		../application_server/stadt.png \
 		../application_server/rathaus.png \
+		../application_server/water.png \
 		../application_server/fluss_kurve_links_unten.png \
 		../application_server/fluss_kurve_rechts_oben.png \
 		../application_server/fluss_kurve_rechts_unten.png \
@@ -782,6 +783,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/fluss_horizontal.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
+		../application_server/startscreen.jpg \
 		../application_server/verbindungsaufbau.svg \
 		../application_server/verbindungstrennung.svg \
 		../application_server/Nahrung.svg \
