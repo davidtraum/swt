@@ -155,6 +155,7 @@ class World:
                         elif(vy == 1):
                             vy = 0
                             vx = -1
+                            typ = 'RIVER_LT'
                     else:
                         if(vx == -1):
                             vy = 1
