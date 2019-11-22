@@ -87,8 +87,8 @@ int main(int argc, char *argv[])
     sidePanel->hookDataModel(dataModel);
 
     QDockWidget dockWidget;
-    dockWidget.setFeatures(QDockWidget::DockWidgetMovable);
     dockWidget.setWidget(sidePanel);
+    dockWidget.setFeatures(QDockWidget::NoDockWidgetFeatures);
     mainWindow->addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, &dockWidget);
 
 

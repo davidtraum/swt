@@ -38,7 +38,6 @@ class MapTile:
         self.y = pY
         self.setType(pType)
         self.logic = pLogic
-        self.height = 50
 
     def getPos(self):
         return self.x, self.y
