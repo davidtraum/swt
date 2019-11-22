@@ -23,3 +23,4 @@ Datum|Funktion
 29.10.|Statuspanel hinzugefügt
 04.11.|Menübar hinzugefügt
 05.11.|Tooltip-Widget hinzugefügt
+22.11.|Toolbar und Statusanzeige hinzugefügt

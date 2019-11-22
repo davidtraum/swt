@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_351',['TYPE',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5',1,'MapTile']]]
+  ['mode_376',['MODE',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12',1,'DataModel']]]
 ];
