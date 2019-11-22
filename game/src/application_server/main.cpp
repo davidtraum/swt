@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->setDataModel(dataModel);
 
-    QTimer::singleShot(2000, []{
+    QTimer::singleShot(0, []{
       mainWindow->setCentralWidget(view);
     });
 
