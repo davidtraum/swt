@@ -783,6 +783,7 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/fluss_horizontal.png \
 		../../../game/src/application_server/schiene_h.png \
 		../../../game/src/application_server/schiene_kurve.png \
+		../../../game/src/application_server/icon.png \
 		../../../game/src/application_server/startscreen.jpg \
 		../../../game/src/application_server/train.svg \
 		../../../game/src/application_server/bridge.svg \
@@ -800,6 +801,7 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/trainstation.svg \
 		../../../game/src/application_server/cash.svg \
 		../../../game/src/application_server/server.svg \
+		../../../game/src/application_server/mouse.svg \
 		../../../game/src/application_server/building_bridge.mp4
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Graphics ../../../game/src/application_server/Graphics.qrc -o qrc_Graphics.cpp
 

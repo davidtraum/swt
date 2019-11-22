@@ -24,6 +24,12 @@ public:
     void setGuiBalanceLabel(QLabel * label);
     void setGuiTimeLabel(QLabel * label);
     void setGuiPositionLabel(QLabel * label);
+    void setStatusDisplayLabel(QLabel * label);
+    enum MODE{DEFAULT,
+              TRAIN_STATION,
+              BRIDGE,
+              RAIL_PLACEMENT};
+    void setMode(MODE);
 
 private:
     int balance;
@@ -34,9 +40,16 @@ private:
     QLabel * balanceLabel;
     QLabel * timeLabel;
     QLabel * positionLabel;
+    QLabel * statusDisplay;
+    MODE mode{MODE::DEFAULT};
 
 signals:
     void positionChange(int,int);
+public slots:
+    void setDefaultMode();
+    void setTrainStationMode();
+    void setBridgeMode();
+    void setRailPlacementMode();
 };
 
 #endif // DATAMODEL_H

@@ -1,4 +1,5 @@
 #include "datamodel.h"
+#include <QDebug>
 
 /**
  * @brief DataModel::DataModel Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.B. den Kontostand.
@@ -149,4 +150,62 @@ void DataModel::setGuiTimeLabel(QLabel *label){
 void DataModel::setGuiPositionLabel(QLabel *label){
     positionLabel = label;
     updateCoordinates(coordinateX, coordinateY);
+}
+
+/**
+ * @brief DataModel::setStatusDisplayLabel Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird.
+ * @param label Ein Pointer auf ein QLabel Objekt.
+ */
+void DataModel::setStatusDisplayLabel(QLabel *label){
+    statusDisplay = label;
+}
+
+/**
+ * @brief DataModel::setMode Setzt den aktuellen Bearbeitungsmodus.
+ * @param pMode Bearbeitungsmodus.
+ */
+void DataModel::setMode(DataModel::MODE pMode){
+    mode = pMode;
+    switch(mode){
+        case DataModel::TRAIN_STATION:
+            statusDisplay->setText("<h2>Bahnhof bauen</h2>");
+            break;
+        case DataModel::BRIDGE:
+            statusDisplay->setText("<h2>Brücke bauen</h2>");
+            break;
+        case DataModel::RAIL_PLACEMENT:
+            statusDisplay->setText("<h2>Schienen platzieren</h2>");
+            break;
+        default:
+            statusDisplay->setText("");
+            break;
+    }
+}
+
+/**
+ * @brief DataModel::setDefaultMode Signal um in den Standard Bearbeitungsmodus zu wechseln.
+ */
+void DataModel::setDefaultMode(){
+    setMode(DataModel::MODE::DEFAULT);
+}
+
+/**
+ * @brief DataModel::setRailPlacementMode Signal um in den Bahnhofseditor zu wechseln.
+ */
+void DataModel::setTrainStationMode(){
+    setMode(DataModel::MODE::TRAIN_STATION);
+}
+
+/**
+ * @brief DataModel::setRailPlacementMode Signal um in den Brückeneditor zu wechseln.
+ */
+void DataModel::setBridgeMode(){
+    setMode(DataModel::MODE::BRIDGE);
+}
+
+/**
+ * @brief DataModel::setRailPlacementMode Signal um in den Gleiseditor zu wechseln.
+ */
+void DataModel::setRailPlacementMode(){
+    setMode(DataModel::MODE::RAIL_PLACEMENT);
 }
