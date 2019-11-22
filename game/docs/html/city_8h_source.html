@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application_server/city.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c6321f114837da3d6e2438c49f4e78f.html">application_server</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">city.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="city_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CITY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CITY_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classCity.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCity.html">City</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classCity.html#a1b1f549430f0a7ecd0ec7b1605415193">City</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY, <span class="keywordtype">int</span> pSize);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classCity.html#a1b1f549430f0a7ecd0ec7b1605415193">City</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb">getSize</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCity.html#a0543ff407447b87a952c40bb36f5eef1">getCenterX</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df">getCenterY</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::string <a class="code" href="classCity.html#adc7fe5313b3572973918cf6385e87fd5">getName</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCity.html#ac4ff08b2faa48f34b8ffbff37f4b0621">setSize</a>(<span class="keywordtype">int</span> pSize);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCity.html#aa386d95c7f928b239bc4973ce816106d">setCenter</a>(<span class="keywordtype">int</span> pX, <span class="keywordtype">int</span> pY);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCity.html#a198b26b45e0b52f27a18b3631db5070c">setName</a>(std::string pName);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classCity.html#a1cc339bec81e637cac312f339316d15c">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCity.html#a1cc339bec81e637cac312f339316d15c">size</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classCity.html#a4ee2ba9c306b7db8d59cc2f7773cca7f">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCity.html#afa36a1be71e64ee63788997e282cdd22">centerX</a>,<a class="code" href="classCity.html#a4ee2ba9c306b7db8d59cc2f7773cca7f">centerY</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classCity.html#afea8cd8800a8600fa54af37ac05bf177">   23</a></span>&#160;    std::string <a class="code" href="classCity.html#afea8cd8800a8600fa54af37ac05bf177">name</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // CITY_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassCity_html_adc7fe5313b3572973918cf6385e87fd5"><div class="ttname"><a href="classCity.html#adc7fe5313b3572973918cf6385e87fd5">City::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">City::getName Gibt den Namen der Stadt.</div><div class="ttdef"><b>Definition:</b> city.cpp:71</div></div>
+<div class="ttc" id="aclassCity_html_a0543ff407447b87a952c40bb36f5eef1"><div class="ttname"><a href="classCity.html#a0543ff407447b87a952c40bb36f5eef1">City::getCenterX</a></div><div class="ttdeci">int getCenterX()</div><div class="ttdoc">City::getCenterX Gibt den X-Index des Mittelpunktes.</div><div class="ttdef"><b>Definition:</b> city.cpp:37</div></div>
+<div class="ttc" id="aclassCity_html_a198b26b45e0b52f27a18b3631db5070c"><div class="ttname"><a href="classCity.html#a198b26b45e0b52f27a18b3631db5070c">City::setName</a></div><div class="ttdeci">void setName(std::string pName)</div><div class="ttdoc">City::setName Setzt den Namen der Stadt.</div><div class="ttdef"><b>Definition:</b> city.cpp:79</div></div>
+<div class="ttc" id="aclassCity_html_a99261799f5bec9256ef94c3e4ebda0df"><div class="ttname"><a href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df">City::getCenterY</a></div><div class="ttdeci">int getCenterY()</div><div class="ttdoc">City::getCenterX Gibt den Y-Index des Mittelpunktes.</div><div class="ttdef"><b>Definition:</b> city.cpp:45</div></div>
+<div class="ttc" id="aclassCity_html_a1cc339bec81e637cac312f339316d15c"><div class="ttname"><a href="classCity.html#a1cc339bec81e637cac312f339316d15c">City::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> city.h:21</div></div>
+<div class="ttc" id="aclassCity_html_afa36a1be71e64ee63788997e282cdd22"><div class="ttname"><a href="classCity.html#afa36a1be71e64ee63788997e282cdd22">City::centerX</a></div><div class="ttdeci">int centerX</div><div class="ttdef"><b>Definition:</b> city.h:22</div></div>
+<div class="ttc" id="aclassCity_html_ae2fad5199ff6b8f11a39fa7500757beb"><div class="ttname"><a href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb">City::getSize</a></div><div class="ttdeci">int getSize()</div><div class="ttdoc">City::getSize Gibt die Anzahl der Felder zurück die zur Stadt gehören.</div><div class="ttdef"><b>Definition:</b> city.cpp:29</div></div>
+<div class="ttc" id="aclassCity_html_aa386d95c7f928b239bc4973ce816106d"><div class="ttname"><a href="classCity.html#aa386d95c7f928b239bc4973ce816106d">City::setCenter</a></div><div class="ttdeci">void setCenter(int pX, int pY)</div><div class="ttdoc">City::setCenter Setzt den Mittelpunkt der Stadt.</div><div class="ttdef"><b>Definition:</b> city.cpp:62</div></div>
+<div class="ttc" id="aclassCity_html"><div class="ttname"><a href="classCity.html">City</a></div><div class="ttdef"><b>Definition:</b> city.h:7</div></div>
+<div class="ttc" id="aclassCity_html_ac4ff08b2faa48f34b8ffbff37f4b0621"><div class="ttname"><a href="classCity.html#ac4ff08b2faa48f34b8ffbff37f4b0621">City::setSize</a></div><div class="ttdeci">void setSize(int pSize)</div><div class="ttdoc">City::setSize Gibt die Größe der Stadt zurück (Anzahl der Gebäude)</div><div class="ttdef"><b>Definition:</b> city.cpp:53</div></div>
+<div class="ttc" id="aclassCity_html_a1b1f549430f0a7ecd0ec7b1605415193"><div class="ttname"><a href="classCity.html#a1b1f549430f0a7ecd0ec7b1605415193">City::City</a></div><div class="ttdeci">City()</div><div class="ttdoc">City::City Erzeugt eine leere Stadt.</div><div class="ttdef"><b>Definition:</b> city.cpp:21</div></div>
+<div class="ttc" id="acity_8h_html"><div class="ttname"><a href="city_8h.html">city.h</a></div></div>
+<div class="ttc" id="aclassCity_html_afea8cd8800a8600fa54af37ac05bf177"><div class="ttname"><a href="classCity.html#afea8cd8800a8600fa54af37ac05bf177">City::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> city.h:23</div></div>
+<div class="ttc" id="aclassCity_html_a4ee2ba9c306b7db8d59cc2f7773cca7f"><div class="ttname"><a href="classCity.html#a4ee2ba9c306b7db8d59cc2f7773cca7f">City::centerY</a></div><div class="ttdeci">int centerY</div><div class="ttdef"><b>Definition:</b> city.h:22</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

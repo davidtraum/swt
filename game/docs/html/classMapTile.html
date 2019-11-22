@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: MapTile Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="classMapTile-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">MapTile Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="maptile_8h_source.html">maptile.h</a>&gt;</code></p>
+<div class="dynheader">
+Zusammengehörigkeiten von MapTile:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classMapTile__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Öffentliche Typen</h2></td></tr>
+<tr class="memitem:addf1438faf6be80e9a1cd44a26483fb5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">TYPE</a> { <br />
+&#160;&#160;<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a49adde55b2b4430b1521033f112e28ba">GRASS</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ac7997c80717cd2a0026f2f72187df232">FORREST</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5abc43819dca78469ad63d50f287c5139f">CITY</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad1d2ac6f644f6be20c5f71ccd9bd24aa">RIVER_H</a>, 
+<br />
+&#160;&#160;<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a14eb02cd62504f63d91683381a356ee7">RIVER_V</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a553e37baae928c771ae1f026e63587bc">RIVER_LB</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a715b2add6cab2c7a87c73df50ddb3a41">RIVER_LT</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad20178d15a105107c386323271f8b0fb">RIVER_RT</a>, 
+<br />
+&#160;&#160;<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a13aa4c8960c42e37c1b6c10780acd639">RIVER_RB</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad60bdb8a464421773a5c7f510cbc627e">RAIL_H</a>, 
+<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a5aec4d72b384abdcb1042498483a3350">RAIL_CURVE</a>
+<br />
+ }</td></tr>
+<tr class="separator:addf1438faf6be80e9a1cd44a26483fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a6da7ca3dbcbb19d52a929064094c4070"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070">MapTile</a> (<a class="el" href="classGraphicsManager.html">GraphicsManager</a> *pGraphicsManager)</td></tr>
+<tr class="memdesc:a6da7ca3dbcbb19d52a929064094c4070"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070" title="MapTile::MapTile Konstruktor.">MapTile::MapTile</a> Konstruktor.  <a href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070">Mehr ...</a><br /></td></tr>
+<tr class="separator:a6da7ca3dbcbb19d52a929064094c4070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40647e6d567d577778e81a81b7047217"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a40647e6d567d577778e81a81b7047217">MapTile</a> ()</td></tr>
+<tr class="memdesc:a40647e6d567d577778e81a81b7047217"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070" title="MapTile::MapTile Konstruktor.">MapTile::MapTile</a> Konstruktor.  <a href="classMapTile.html#a40647e6d567d577778e81a81b7047217">Mehr ...</a><br /></td></tr>
+<tr class="separator:a40647e6d567d577778e81a81b7047217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6c6e03095e0f1ed503dd30f499793c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c">setType</a> (<a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">TYPE</a> pType)</td></tr>
+<tr class="memdesc:a6f6c6e03095e0f1ed503dd30f499793c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel.">MapTile::setType</a> Setzt den Typ der Kachel.  <a href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c">Mehr ...</a><br /></td></tr>
+<tr class="separator:a6f6c6e03095e0f1ed503dd30f499793c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67fb2b04970d5160e8bdacb05484bac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac">getType</a> ()</td></tr>
+<tr class="memdesc:af67fb2b04970d5160e8bdacb05484bac"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac" title="MapTile::getType Liefert den Typ des Quadranten.">MapTile::getType</a> Liefert den Typ des Quadranten.  <a href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac">Mehr ...</a><br /></td></tr>
+<tr class="separator:af67fb2b04970d5160e8bdacb05484bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b8310cfe045dc6a8e0c3c25fe9fc52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52">setRotation</a> (int pRotation)</td></tr>
+<tr class="memdesc:a57b8310cfe045dc6a8e0c3c25fe9fc52"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat.">MapTile::setRotation</a> Hilfsfunktion zur Rotation im Quadrat.  <a href="classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52">Mehr ...</a><br /></td></tr>
+<tr class="separator:a57b8310cfe045dc6a8e0c3c25fe9fc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194a81d5169fd52dc8ddda195eff4ca6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a194a81d5169fd52dc8ddda195eff4ca6">getRotation</a> ()</td></tr>
+<tr class="memdesc:a194a81d5169fd52dc8ddda195eff4ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a194a81d5169fd52dc8ddda195eff4ca6" title="MapTile::getRotation Liefert die aktuelle Rotation. (Himmelsrichtung)">MapTile::getRotation</a> Liefert die aktuelle Rotation. (Himmelsrichtung)  <a href="classMapTile.html#a194a81d5169fd52dc8ddda195eff4ca6">Mehr ...</a><br /></td></tr>
+<tr class="separator:a194a81d5169fd52dc8ddda195eff4ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954bfbd36f8055157616c38392a0ceef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a954bfbd36f8055157616c38392a0ceef">setPosition</a> (int posX, int posY)</td></tr>
+<tr class="memdesc:a954bfbd36f8055157616c38392a0ceef"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a954bfbd36f8055157616c38392a0ceef" title="MapTile::setPosition Setzt die Position der Kachel. (In Pixeln)">MapTile::setPosition</a> Setzt die Position der Kachel. (In Pixeln)  <a href="classMapTile.html#a954bfbd36f8055157616c38392a0ceef">Mehr ...</a><br /></td></tr>
+<tr class="separator:a954bfbd36f8055157616c38392a0ceef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1dc148431a17720f9254eae4034a49f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#af1dc148431a17720f9254eae4034a49f">isRiver</a> ()</td></tr>
+<tr class="memdesc:af1dc148431a17720f9254eae4034a49f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#af1dc148431a17720f9254eae4034a49f" title="MapTile::isRiver Checkt ob die Kachel ein Fluss ist.">MapTile::isRiver</a> Checkt ob die Kachel ein Fluss ist.  <a href="classMapTile.html#af1dc148431a17720f9254eae4034a49f">Mehr ...</a><br /></td></tr>
+<tr class="separator:af1dc148431a17720f9254eae4034a49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04adb2286fb76310bca5f3ecef200c0e"><td class="memItemLeft" align="right" valign="top">QGraphicsPixmapItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a04adb2286fb76310bca5f3ecef200c0e">getPixmapItem</a> ()</td></tr>
+<tr class="memdesc:a04adb2286fb76310bca5f3ecef200c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a04adb2286fb76310bca5f3ecef200c0e" title="MapTile::getPixmapItem Liefert das Pixmap Item.">MapTile::getPixmapItem</a> Liefert das Pixmap Item.  <a href="classMapTile.html#a04adb2286fb76310bca5f3ecef200c0e">Mehr ...</a><br /></td></tr>
+<tr class="separator:a04adb2286fb76310bca5f3ecef200c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5245ea56fde79ef7640ed93583a57fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCity.html">City</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd">getCity</a> ()</td></tr>
+<tr class="memdesc:ab5245ea56fde79ef7640ed93583a57fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" title="MapTile::getCity Die Informationen. Falls keine Stadt: null.">MapTile::getCity</a> Die Informationen. Falls keine Stadt: null.  <a href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd">Mehr ...</a><br /></td></tr>
+<tr class="separator:ab5245ea56fde79ef7640ed93583a57fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95eefbf7247ae6adef4aaee0a35eaa4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a95eefbf7247ae6adef4aaee0a35eaa4f">setCity</a> (<a class="el" href="classCity.html">City</a> *pCity)</td></tr>
+<tr class="memdesc:a95eefbf7247ae6adef4aaee0a35eaa4f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a95eefbf7247ae6adef4aaee0a35eaa4f" title="MapTile::setCity.">MapTile::setCity</a>.  <a href="classMapTile.html#a95eefbf7247ae6adef4aaee0a35eaa4f">Mehr ...</a><br /></td></tr>
+<tr class="separator:a95eefbf7247ae6adef4aaee0a35eaa4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee6fda415f2a6ff305f48d342a8a47b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b">getX</a> ()</td></tr>
+<tr class="memdesc:aaee6fda415f2a6ff305f48d342a8a47b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b" title="MapTile::getX.">MapTile::getX</a>.  <a href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b">Mehr ...</a><br /></td></tr>
+<tr class="separator:aaee6fda415f2a6ff305f48d342a8a47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27013c9d383c819e1af233e551f63bbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf">getY</a> ()</td></tr>
+<tr class="memdesc:a27013c9d383c819e1af233e551f63bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf" title="MapTile::getY.">MapTile::getY</a>.  <a href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf">Mehr ...</a><br /></td></tr>
+<tr class="separator:a27013c9d383c819e1af233e551f63bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f">attachGraphicsManager</a> (<a class="el" href="classGraphicsManager.html">GraphicsManager</a> *pGraphicsManager)</td></tr>
+<tr class="memdesc:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f" title="MapTile::attachGraphicsManager Setzte den GraphicsManager.">MapTile::attachGraphicsManager</a> Setzte den <a class="el" href="classGraphicsManager.html">GraphicsManager</a>.  <a href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f">Mehr ...</a><br /></td></tr>
+<tr class="separator:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a50841d679e9b804d98aaeddbf1b2c4ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a50841d679e9b804d98aaeddbf1b2c4ad">type</a></td></tr>
+<tr class="separator:a50841d679e9b804d98aaeddbf1b2c4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28ca49bfe916a3473388176fad8c8af"><td class="memItemLeft" align="right" valign="top">QGraphicsPixmapItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#ae28ca49bfe916a3473388176fad8c8af">pixmapItem</a></td></tr>
+<tr class="separator:ae28ca49bfe916a3473388176fad8c8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5008fe4f2e62b24dfc56a6366e68f4f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a5008fe4f2e62b24dfc56a6366e68f4f5">currentRotation</a></td></tr>
+<tr class="separator:a5008fe4f2e62b24dfc56a6366e68f4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd3b53d9c778fd340bf1b106f02a3e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCity.html">City</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#abbd3b53d9c778fd340bf1b106f02a3e6">city</a></td></tr>
+<tr class="separator:abbd3b53d9c778fd340bf1b106f02a3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64814e3d68fc9924a99c59074080b69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGraphicsManager.html">GraphicsManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#ab64814e3d68fc9924a99c59074080b69">graphicsManager</a></td></tr>
+<tr class="separator:ab64814e3d68fc9924a99c59074080b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a id="addf1438faf6be80e9a1cd44a26483fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf1438faf6be80e9a1cd44a26483fb5">&#9670;&nbsp;</a></span>TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">MapTile::TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a49adde55b2b4430b1521033f112e28ba"></a>GRASS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5ac7997c80717cd2a0026f2f72187df232"></a>FORREST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5abc43819dca78469ad63d50f287c5139f"></a>CITY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5ad1d2ac6f644f6be20c5f71ccd9bd24aa"></a>RIVER_H&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a14eb02cd62504f63d91683381a356ee7"></a>RIVER_V&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a553e37baae928c771ae1f026e63587bc"></a>RIVER_LB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a715b2add6cab2c7a87c73df50ddb3a41"></a>RIVER_LT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5ad20178d15a105107c386323271f8b0fb"></a>RIVER_RT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a13aa4c8960c42e37c1b6c10780acd639"></a>RIVER_RB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5ad60bdb8a464421773a5c7f510cbc627e"></a>RAIL_H&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="addf1438faf6be80e9a1cd44a26483fb5a5aec4d72b384abdcb1042498483a3350"></a>RAIL_CURVE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a id="a6da7ca3dbcbb19d52a929064094c4070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da7ca3dbcbb19d52a929064094c4070">&#9670;&nbsp;</a></span>MapTile() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MapTile::MapTile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraphicsManager.html">GraphicsManager</a> *&#160;</td>
+          <td class="paramname"><em>pGraphicsManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070" title="MapTile::MapTile Konstruktor.">MapTile::MapTile</a> Konstruktor. </p>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a6da7ca3dbcbb19d52a929064094c4070_cgraph.svg" width="142" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a6da7ca3dbcbb19d52a929064094c4070_icgraph.svg" width="142" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a40647e6d567d577778e81a81b7047217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40647e6d567d577778e81a81b7047217">&#9670;&nbsp;</a></span>MapTile() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MapTile::MapTile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070" title="MapTile::MapTile Konstruktor.">MapTile::MapTile</a> Konstruktor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="ab4bb0d1a5821e262be17c6d6fcd29f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4bb0d1a5821e262be17c6d6fcd29f6f">&#9670;&nbsp;</a></span>attachGraphicsManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::attachGraphicsManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraphicsManager.html">GraphicsManager</a> *&#160;</td>
+          <td class="paramname"><em>pGraphicsManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f" title="MapTile::attachGraphicsManager Setzte den GraphicsManager.">MapTile::attachGraphicsManager</a> Setzte den <a class="el" href="classGraphicsManager.html">GraphicsManager</a>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pGraphicsManager</td><td>Ein <a class="el" href="classGraphicsManager.html">GraphicsManager</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_ab4bb0d1a5821e262be17c6d6fcd29f6f_icgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab5245ea56fde79ef7640ed93583a57fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5245ea56fde79ef7640ed93583a57fd">&#9670;&nbsp;</a></span>getCity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCity.html">City</a> * MapTile::getCity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" title="MapTile::getCity Die Informationen. Falls keine Stadt: null.">MapTile::getCity</a> Die Informationen. Falls keine Stadt: null. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefert die Informationen über eine Stadt auf der Kachel. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_ab5245ea56fde79ef7640ed93583a57fd_icgraph.svg" width="546" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a04adb2286fb76310bca5f3ecef200c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04adb2286fb76310bca5f3ecef200c0e">&#9670;&nbsp;</a></span>getPixmapItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsPixmapItem * MapTile::getPixmapItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a04adb2286fb76310bca5f3ecef200c0e" title="MapTile::getPixmapItem Liefert das Pixmap Item.">MapTile::getPixmapItem</a> Liefert das Pixmap Item. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Das Pixmap Item. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a04adb2286fb76310bca5f3ecef200c0e_icgraph.svg" width="387" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a194a81d5169fd52dc8ddda195eff4ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a194a81d5169fd52dc8ddda195eff4ca6">&#9670;&nbsp;</a></span>getRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MapTile::getRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a194a81d5169fd52dc8ddda195eff4ca6" title="MapTile::getRotation Liefert die aktuelle Rotation. (Himmelsrichtung)">MapTile::getRotation</a> Liefert die aktuelle Rotation. (Himmelsrichtung) </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Die aktuelle Rotation (0-3) </dd></dl>
+
+</div>
+</div>
+<a id="af67fb2b04970d5160e8bdacb05484bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67fb2b04970d5160e8bdacb05484bac">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">MapTile::TYPE</a> MapTile::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#af67fb2b04970d5160e8bdacb05484bac" title="MapTile::getType Liefert den Typ des Quadranten.">MapTile::getType</a> Liefert den Typ des Quadranten. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Den Typ. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_af67fb2b04970d5160e8bdacb05484bac_icgraph.svg" width="554" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aaee6fda415f2a6ff305f48d342a8a47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee6fda415f2a6ff305f48d342a8a47b">&#9670;&nbsp;</a></span>getX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MapTile::getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b" title="MapTile::getX.">MapTile::getX</a>. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Der X Index des Quadranten. </dd></dl>
+
+</div>
+</div>
+<a id="a27013c9d383c819e1af233e551f63bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27013c9d383c819e1af233e551f63bbf">&#9670;&nbsp;</a></span>getY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MapTile::getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf" title="MapTile::getY.">MapTile::getY</a>. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Der Y Index des Quadranten. </dd></dl>
+
+</div>
+</div>
+<a id="af1dc148431a17720f9254eae4034a49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1dc148431a17720f9254eae4034a49f">&#9670;&nbsp;</a></span>isRiver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MapTile::isRiver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#af1dc148431a17720f9254eae4034a49f" title="MapTile::isRiver Checkt ob die Kachel ein Fluss ist.">MapTile::isRiver</a> Checkt ob die Kachel ein Fluss ist. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Ob die Kachel ein Fluss ist. </dd></dl>
+
+</div>
+</div>
+<a id="a95eefbf7247ae6adef4aaee0a35eaa4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95eefbf7247ae6adef4aaee0a35eaa4f">&#9670;&nbsp;</a></span>setCity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::setCity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCity.html">City</a> *&#160;</td>
+          <td class="paramname"><em>pCity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a95eefbf7247ae6adef4aaee0a35eaa4f" title="MapTile::setCity.">MapTile::setCity</a>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCity</td><td>Fügt dem Quadranten Daten über eine Stadt hinzu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f_icgraph.svg" width="339" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a954bfbd36f8055157616c38392a0ceef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954bfbd36f8055157616c38392a0ceef">&#9670;&nbsp;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a954bfbd36f8055157616c38392a0ceef" title="MapTile::setPosition Setzt die Position der Kachel. (In Pixeln)">MapTile::setPosition</a> Setzt die Position der Kachel. (In Pixeln) </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posX</td><td>Die X Koordinate. </td></tr>
+    <tr><td class="paramname">posY</td><td>Die Y Koordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a954bfbd36f8055157616c38392a0ceef_icgraph.svg" width="364" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a57b8310cfe045dc6a8e0c3c25fe9fc52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b8310cfe045dc6a8e0c3c25fe9fc52">&#9670;&nbsp;</a></span>setRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::setRotation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pRotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat.">MapTile::setRotation</a> Hilfsfunktion zur Rotation im Quadrat. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pRotation</td><td>0=Ursprung 1=90° Grad 2=180° Grad 3=270° </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classMapTile_a57b8310cfe045dc6a8e0c3c25fe9fc52_icgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6f6c6e03095e0f1ed503dd30f499793c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6c6e03095e0f1ed503dd30f499793c">&#9670;&nbsp;</a></span>setType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::setType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">MapTile::TYPE</a>&#160;</td>
+          <td class="paramname"><em>pType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel.">MapTile::setType</a> Setzt den Typ der Kachel. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pType</td><td>Der Typ. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_cgraph.svg" width="347" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile_a6f6c6e03095e0f1ed503dd30f499793c_icgraph.svg" width="495" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="abbd3b53d9c778fd340bf1b106f02a3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd3b53d9c778fd340bf1b106f02a3e6">&#9670;&nbsp;</a></span>city</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCity.html">City</a>* MapTile::city</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5008fe4f2e62b24dfc56a6366e68f4f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5008fe4f2e62b24dfc56a6366e68f4f5">&#9670;&nbsp;</a></span>currentRotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MapTile::currentRotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab64814e3d68fc9924a99c59074080b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64814e3d68fc9924a99c59074080b69">&#9670;&nbsp;</a></span>graphicsManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGraphicsManager.html">GraphicsManager</a>* MapTile::graphicsManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae28ca49bfe916a3473388176fad8c8af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28ca49bfe916a3473388176fad8c8af">&#9670;&nbsp;</a></span>pixmapItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsPixmapItem* MapTile::pixmapItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50841d679e9b804d98aaeddbf1b2c4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50841d679e9b804d98aaeddbf1b2c4ad">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5">TYPE</a> MapTile::type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>src/application_server/<a class="el" href="maptile_8h_source.html">maptile.h</a></li>
+<li>src/application_server/<a class="el" href="maptile_8cpp.html">maptile.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
