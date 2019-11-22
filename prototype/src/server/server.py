@@ -213,7 +213,7 @@ class ClientThread(Thread):
                     world.tileInteract(posX, posY)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     DEFAULT_CONFIG = {
         'port': 2000,
         'bind_ip': 'localhost',
