@@ -21,10 +21,12 @@ SOURCES += \
     datamodel.cpp \
     gameloop.cpp \
     graphicsmanager.cpp \
+    highlighter.cpp \
     main.cpp \
     mainwindow.cpp \
     maptile.cpp \
     menubar.cpp \
+    minimap.cpp \
     player.cpp \
     river.cpp \
     scene.cpp \
@@ -38,10 +40,12 @@ HEADERS += \
     datamodel.h \
     gameloop.h \
     graphicsmanager.h \
+    highlighter.h \
     main.h \
     mainwindow.h \
     maptile.h \
     menubar.h \
+    minimap.h \
     player.h \
     river.h \
     scene.h \

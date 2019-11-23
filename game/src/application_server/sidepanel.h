@@ -6,18 +6,20 @@
 #include <QLabel>
 
 #include "datamodel.h"
+#include "minimap.h"
 
 
 class SidePanel: public QWidget
 {
 public:
-    SidePanel();
+    SidePanel(Minimap *);
     void hookDataModel(DataModel * pModel);
 private:
     QGridLayout * layout;
     QLabel * moneyLabel;
     QLabel * timeLabel;
     QLabel * positionLabel;
+    Minimap * miniMap;
 };
 
 #endif // SIDEPANEL_H

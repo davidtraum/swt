@@ -18,6 +18,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(this, &Client::playerConnect, scene, &Scene::addPlayer);
     connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
+    connect(this, &Client::onPlacementAllowedChange, scene, &Scene::placementAllowedChange);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
@@ -69,9 +70,11 @@ void Client::processCommand(QString cmd){
             }else if(split[1].startsWith("P") && split.length()==5){
                 emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
             }
-        }else if(split[0].startsWith("M") && split.length()>=2){
-            if(split[1].startsWith("L")){
-                emit mapLoaded();
+        }else if(split[0].startsWith("BUILD")){
+            if(split[1].startsWith("ALLOW")){
+                emit onPlacementAllowedChange(true);
+            }else{
+                emit onPlacementAllowedChange(false);
             }
         }
     } catch (...) {
@@ -87,7 +90,7 @@ void Client::processCommand(QString cmd){
  * @param pY Der Y-Index.
  */
 void Client::onPositionChange(int pX, int pY){
-    socket->write(QString::fromStdString("P " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
+    socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
     socket->flush();
 }
 

@@ -48,6 +48,7 @@ private:
 
 signals:
     void positionChange(int,int);
+    void viewChange();
 public slots:
     void setDefaultMode();
     void setTrainStationMode();

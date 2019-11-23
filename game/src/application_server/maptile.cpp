@@ -78,7 +78,6 @@ void MapTile::setType(MapTile::TYPE pType){
             break;
     }
     type = pType;
-    setRotation(0);
 }
 
 /**

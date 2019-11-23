@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
     dataModel = new DataModel();
 
-    scene = new Scene(graphics);
+    scene = new Scene(graphics, dataModel);
 
 
     ToolTipMenu * tooltip = new ToolTipMenu();
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     MenuBar * menuBar = new MenuBar(scene, dataModel, view);
     mainWindow->setMenuBar(menuBar);
 
-    sidePanel = new SidePanel();
+    sidePanel = new SidePanel(new Minimap(300,300, scene, dataModel));
     sidePanel->setParent(mainWindow);
     sidePanel->hookDataModel(dataModel);
 
@@ -97,14 +97,14 @@ int main(int argc, char *argv[])
     view->resetMatrix();
     view->currentScale=0.05;
     view->scale(0.05, 0.05);
-    //view->enableAnimation();
-    //view->fluidZoom(1, true);
+    view->enableAnimation();
+    view->fluidZoom(1, true);
 
     mainWindow->show();
 
     timeTicker();    
 
-    QToolBar * toolbar = mainWindow->addToolBar("toolbar");
+    QToolBar * toolbar = mainWindow->addToolBar("Hauptmenü");
     toolbar->setMovable(false);
 
     QToolButton * resetModeButton = new QToolButton(mainWindow);

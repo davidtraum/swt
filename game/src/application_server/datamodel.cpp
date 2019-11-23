@@ -80,6 +80,7 @@ std::string DataModel::formatTime(long pTime){
 void DataModel::updateCoordinates(int pX, int pY){
     if(pX!=coordinateX || pY!=coordinateY){
         emit positionChange(pX,pY);
+        emit viewChange();
     }
     coordinateX = pX;
     coordinateY = pY;

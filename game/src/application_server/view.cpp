@@ -144,7 +144,7 @@ void View::mouseMoveEvent(QMouseEvent *event)
         MapTile * tile = scene->getTileAt(hoverItem->x(), hoverItem->y(), true);
         if(tile->getType() == MapTile::CITY){
             tooltip->setText("<h2>Haus</h2> <p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
-            tooltip->showAt(event->x(), event->y());
+            tooltip->showAt(event->x()+10, event->y()+10);
         }else{
             tooltip->hide();
         }

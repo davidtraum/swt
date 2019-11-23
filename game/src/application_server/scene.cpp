@@ -7,27 +7,15 @@
 /**
  * @brief Scene::Scene Konstruktor
  */
-Scene::Scene(GraphicsManager * pGraphicsManager)
+Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
 {
     graphicsManager = pGraphicsManager;
+    dataModel = pDataModel;
     QGraphicsScene::setSceneRect(0,0, MAP_SIZE*TILE_SIZE, MAP_SIZE*TILE_SIZE);
     activeTile = nullptr;
 
-    highlighter = new QGraphicsRectItem();
-    highlighter->setRect(0,0,TILE_SIZE,TILE_SIZE);
-    QPen * outline = new QPen();
-    outline->setColor(QColor(Qt::white));
-    outline->setWidth(2);
-    highlighter->setPen(*outline);
-    highlighter->setZValue(2);
+    highlighter = new Highlighter();
     QGraphicsScene::addItem(highlighter);
-
-    radiusHighlighter = new QGraphicsEllipseItem();
-    outline->setWidth(6);
-    outline->setColor(QColor(Qt::yellow));
-    radiusHighlighter->setPen(*outline);
-    radiusHighlighter->setZValue(1);
-    showRadius = false;
 
     textHint = new QGraphicsTextItem();
     textHint->setDefaultTextColor(QColor(Qt::white));
@@ -201,7 +189,12 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
         //Alten aktiven Quadrant zurücksetzen.
     }
     activeTile = &data[int(pItem->x()/TILE_SIZE)][int(pItem->y()/TILE_SIZE)];
-    highlighter->setPos(pItem->pos());
+    if(dataModel->getMode() != DataModel::DEFAULT){
+        if(!highlighter->isVisible())highlighter->setVisible(true);
+        highlighter->setPos(pItem->pos());
+    }else{
+        highlighter->setVisible(false);
+    }
     if(activeTile->getType()==MapTile::CITY && false){
         City * city = activeTile->getCity();
         radiusHighlighter->setX(city->getCenterX()*TILE_SIZE+32);
@@ -277,6 +270,9 @@ void Scene::tick()
  */
 void Scene::onSetTile(int pX, int pY, int pType, int pRotation){
     data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
+    if(pRotation>0){
+        qDebug() << "Has rotation " << pRotation;
+    }
     data[pX][pY].setRotation(pRotation);
 }
 
@@ -298,4 +294,17 @@ void Scene::addPlayer(int pId){
     Player * newPlayer = new Player(pId);
     QGraphicsScene::addItem(newPlayer->highlighter);
     players.insert(std::pair<int, Player *>(pId, newPlayer));
+}
+
+/**
+ * @brief Scene::placementAllowedChange Slot für die Änderung der Darstellung von rotem oder grünem Bauindikator.
+ */
+void Scene::placementAllowedChange(bool pStatus)
+{
+    qDebug() << "Placement " << pStatus;
+    if(pStatus){
+        highlighter->setColor(QColor(Qt::green));
+    }else{
+        highlighter->setColor(QColor(Qt::red));
+    }
 }

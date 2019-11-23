@@ -7,13 +7,15 @@
  * @brief SidePanel::SidePanel Erzeugt ein neues Side-Panel (Menü)
  * @param pParent Das Parent-Element
  */
-SidePanel::SidePanel()
+SidePanel::SidePanel(Minimap * pMiniMap):
+    miniMap{pMiniMap}
 {
-    setFixedWidth(80);
 
 
     layout = new QGridLayout(this);
     setLayout(layout);
+
+    layout->addWidget(miniMap);
 
     moneyLabel = new QLabel();
     layout->addWidget(moneyLabel);
