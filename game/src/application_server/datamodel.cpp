@@ -123,6 +123,7 @@ void DataModel::setConnectionInfo(QString pString){
     QStringList split = pString.split(":");
     ip = split[0];
     port = quint16(split[1].toInt());
+    connectionLabel->setText("<img height=\"12\" src=\":icons/server.svg\"> " + ip);
 }
 
 /**
@@ -177,6 +178,15 @@ void DataModel::setGuiPositionLabel(QLabel *label){
  */
 void DataModel::setStatusDisplayLabel(QLabel *label){
     statusDisplay = label;
+}
+
+/**
+ * @brief DataModel::setStatusDisplayLabel Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird.
+ * @param label Ein Pointer auf ein QLabel Objekt.
+ */
+void DataModel::setConnectionLabel(QLabel *label)
+{
+    connectionLabel = label;
 }
 
 /**

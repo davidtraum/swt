@@ -27,6 +27,7 @@ public:
     void setGuiTimeLabel(QLabel * label);
     void setGuiPositionLabel(QLabel * label);
     void setStatusDisplayLabel(QLabel * label);
+    void setConnectionLabel(QLabel * label);
     enum MODE{DEFAULT,
               TRAIN_STATION,
               BRIDGE,
@@ -44,6 +45,7 @@ private:
     QLabel * timeLabel;
     QLabel * positionLabel;
     QLabel * statusDisplay;
+    QLabel * connectionLabel;
     MODE mode{MODE::DEFAULT};
 
 signals:

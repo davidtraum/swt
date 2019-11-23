@@ -10,6 +10,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
 {
     scene = pScene;
     dataModel = pDataModel;
+    dataModel->setConnectionInfo(*connectionInfo);
     QStringList split = connectionInfo->split(":");
     QString iP = split[0];
     unsigned short int port =  quint16(split[1].toInt());

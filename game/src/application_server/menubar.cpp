@@ -17,6 +17,11 @@ MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     QAction * closeConnection = serverSelection->addAction(QIcon(":/icons/verbindungstrennung.svg"), "Verbindung trennen");
     connect(openConnection, &QAction::triggered, this, &MenuBar::slotOpenConnection);
     connect(closeConnection, &QAction::triggered, this, &MenuBar::slotCloseConnection);
+
+    QLabel * serverIp = new QLabel("Nicht verbunden");
+    QMenuBar::setCornerWidget(serverIp);
+    dataModel->setConnectionLabel(serverIp);
+
 }
 
 /**

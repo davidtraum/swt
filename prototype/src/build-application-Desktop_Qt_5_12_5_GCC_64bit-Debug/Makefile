@@ -801,23 +801,24 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/schiene_kurve.png \
 		../../../game/src/application_server/icon.png \
 		../../../game/src/application_server/startscreen.jpg \
-		../../../game/src/application_server/train.svg \
-		../../../game/src/application_server/bridge.svg \
-		../../../game/src/application_server/verbindungsaufbau.svg \
-		../../../game/src/application_server/verbindungstrennung.svg \
-		../../../game/src/application_server/Nahrung.svg \
-		../../../game/src/application_server/cog.svg \
-		../../../game/src/application_server/tools.svg \
 		../../../game/src/application_server/show_routes.svg \
-		../../../game/src/application_server/hammer.svg \
-		../../../game/src/application_server/rail.svg \
-		../../../game/src/application_server/clock.svg \
 		../../../game/src/application_server/location.svg \
-		../../../game/src/application_server/create_route.svg \
-		../../../game/src/application_server/trainstation.svg \
-		../../../game/src/application_server/cash.svg \
+		../../../game/src/application_server/hammer.svg \
+		../../../game/src/application_server/cog.svg \
 		../../../game/src/application_server/server.svg \
+		../../../game/src/application_server/clock.svg \
+		../../../game/src/application_server/verbindungsaufbau.svg \
+		../../../game/src/application_server/pin.svg \
 		../../../game/src/application_server/mouse.svg \
+		../../../game/src/application_server/Nahrung.svg \
+		../../../game/src/application_server/rail.svg \
+		../../../game/src/application_server/cash.svg \
+		../../../game/src/application_server/bridge.svg \
+		../../../game/src/application_server/verbindungstrennung.svg \
+		../../../game/src/application_server/trainstation.svg \
+		../../../game/src/application_server/train.svg \
+		../../../game/src/application_server/tools.svg \
+		../../../game/src/application_server/create_route.svg \
 		../../../game/src/application_server/building_bridge.mp4
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Graphics ../../../game/src/application_server/Graphics.qrc -o qrc_Graphics.cpp
 
@@ -1311,6 +1312,27 @@ moc_minimap.cpp: ../../../game/src/application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../game/src/application_server/scene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
+		../../../game/src/application_server/maptile.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../../../game/src/application_server/city.h \
+		../../../game/src/application_server/graphicsmanager.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		../../../game/src/application_server/datamodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../../../game/src/application_server/minimap.h -o moc_minimap.cpp
@@ -2395,8 +2417,8 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		../../../game/src/application_server/menubar.h \
 		../../../game/src/application_server/sidepanel.h \
-		../../../game/src/application_server/gameloop.h \
-		../../../game/src/application_server/minimap.h
+		../../../game/src/application_server/minimap.h \
+		../../../game/src/application_server/gameloop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../../game/src/application_server/main.cpp
 
 mainwindow.o: ../../../game/src/application_server/mainwindow.cpp ../../../game/src/application_server/mainwindow.h \
@@ -2899,7 +2921,34 @@ minimap.o: ../../../game/src/application_server/minimap.cpp ../../../game/src/ap
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../game/src/application_server/scene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
+		../../../game/src/application_server/maptile.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../../../game/src/application_server/city.h \
+		../../../game/src/application_server/graphicsmanager.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		../../../game/src/application_server/datamodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPaintEvent \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QRectF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../../../game/src/application_server/minimap.cpp
 
 player.o: ../../../game/src/application_server/player.cpp ../../../game/src/application_server/player.h \
@@ -3243,6 +3292,24 @@ sidepanel.o: ../../../game/src/application_server/sidepanel.cpp ../../../game/sr
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
 		../../../game/src/application_server/datamodel.h \
+		../../../game/src/application_server/minimap.h \
+		../../../game/src/application_server/scene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
+		../../../game/src/application_server/maptile.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../../../game/src/application_server/city.h \
+		../../../game/src/application_server/graphicsmanager.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \
