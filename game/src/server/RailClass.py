@@ -59,7 +59,7 @@ class RailLogic:
             if(karte[x_pos][y_pos+1].isRail()): #Wenn Schiene existiert
                 if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
                     #Wenn Schiene nicht vollstaendig verbunden ist.
-                    if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].connectedUp + karte[x_pos][y_pos+1].logic.connectedUp != 2):
+                    if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].logic.connectedUp + karte[x_pos][y_pos+1].logic.connectedUp != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
 
        

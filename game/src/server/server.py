@@ -13,7 +13,7 @@ def broadcast(pText):
     for client in clients:
         try:
             client.send(pText)
-            print("Sent to client: ", pText)
+            print("Broadcast: ", pText)
         except Exception:
             client.disconnect()
 
@@ -233,7 +233,7 @@ class ClientThread(Thread):
 
     def send(self, pText):
         print("Sending " + pText)
-        self.connection.send((pText + '~').encode('utf-8'))
+        self.connection.sendall((pText + '~').encode('utf-8'))
 
     def disconnect(self):
         global clients
@@ -269,6 +269,13 @@ class ClientThread(Thread):
                     posX = int(args[2])
                     posY = int(args[3])
                     world.tileInteract(posX, posY)
+            elif(args[0] == 'POS'):
+                posX = int(args[1])
+                posY = int(args[2])
+                if(True in RailLogic.checkConnectableRails(None, posX, posY, world.data)):
+                    self.send("BUILD ALLOW")
+                else:
+                    self.send("BUILD DENY")
 
 DEFAULT_CONFIG = {
     'port': 2000,
