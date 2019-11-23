@@ -1,0 +1,142 @@
+\hypertarget{classMinimap}{}\doxysection{Minimap Klassenreferenz}
+\label{classMinimap}\index{Minimap@{Minimap}}
+
+
+{\ttfamily \#include $<$minimap.\+h$>$}
+
+
+
+Klassendiagramm für Minimap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classMinimap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Zusammengehörigkeiten von Minimap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMinimap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Öffentliche Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{view\+Change}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{Minimap\+::view\+Change}} Slot der aufgerufen wird wenn die \mbox{\hyperlink{classMinimap}{Minimap}} komplett neu gezeichnet werden soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMinimap_a5209e90308ccfd4cd4e7c3432c39839f}{Minimap}} (int, int, \mbox{\hyperlink{classScene}{Scene}} $\ast$, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a5209e90308ccfd4cd4e7c3432c39839f}{Minimap\+::\+Minimap}} Erzeugt eine neue \mbox{\hyperlink{classMinimap}{Minimap}} Komponente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{paint\+Event}} (Q\+Paint\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{Minimap\+::paint\+Event}} Rendert die \mbox{\hyperlink{classMinimap}{Minimap}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classMinimap_a1eeb6510b1f684f600d7436e4de00d31}{width}}
+\item 
+int \mbox{\hyperlink{classMinimap_aace73399c5e1d14b639f8c2aebb9b18f}{height}}
+\item 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classMinimap_a299d20e2ab59f2d4b0a3f8d62b82dde5}{scene}}
+\item 
+\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classMinimap_ab7098181aac3298606cc6467c7a12711}{data\+Model}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classMinimap_a5209e90308ccfd4cd4e7c3432c39839f}\label{classMinimap_a5209e90308ccfd4cd4e7c3432c39839f}} 
+\index{Minimap@{Minimap}!Minimap@{Minimap}}
+\index{Minimap@{Minimap}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{Minimap()}{Minimap()}}
+{\footnotesize\ttfamily Minimap\+::\+Minimap (\begin{DoxyParamCaption}\item[{int}]{p\+Width,  }\item[{int}]{p\+Height,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Data\+Model }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMinimap_a5209e90308ccfd4cd4e7c3432c39839f}{Minimap\+::\+Minimap}} Erzeugt eine neue \mbox{\hyperlink{classMinimap}{Minimap}} Komponente. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Width} & Die Breite der \mbox{\hyperlink{classMinimap}{Minimap}} in Pixeln \\
+\hline
+{\em p\+Height} & Die Höhe der \mbox{\hyperlink{classMinimap}{Minimap}} in Pixeln \\
+\hline
+{\em p\+Scene} & Die Szene \\
+\hline
+{\em p\+Data\+Model} & Das \mbox{\hyperlink{classDataModel}{Data\+Model}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classMinimap_ae162eea6dd404a3e3644516567a28334}\label{classMinimap_ae162eea6dd404a3e3644516567a28334}} 
+\index{Minimap@{Minimap}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Minimap\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{Minimap\+::paint\+Event}} Rendert die \mbox{\hyperlink{classMinimap}{Minimap}}. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em event} & Das zugehörige Event. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classMinimap_ae162eea6dd404a3e3644516567a28334_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}\label{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}} 
+\index{Minimap@{Minimap}!viewChange@{viewChange}}
+\index{viewChange@{viewChange}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{viewChange}{viewChange}}
+{\footnotesize\ttfamily void Minimap\+::view\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{Minimap\+::view\+Change}} Slot der aufgerufen wird wenn die \mbox{\hyperlink{classMinimap}{Minimap}} komplett neu gezeichnet werden soll. 
+
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classMinimap_ab7098181aac3298606cc6467c7a12711}\label{classMinimap_ab7098181aac3298606cc6467c7a12711}} 
+\index{Minimap@{Minimap}!dataModel@{dataModel}}
+\index{dataModel@{dataModel}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{dataModel}{dataModel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataModel}{Data\+Model}}$\ast$ Minimap\+::data\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMinimap_aace73399c5e1d14b639f8c2aebb9b18f}\label{classMinimap_aace73399c5e1d14b639f8c2aebb9b18f}} 
+\index{Minimap@{Minimap}!height@{height}}
+\index{height@{height}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Minimap\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMinimap_a299d20e2ab59f2d4b0a3f8d62b82dde5}\label{classMinimap_a299d20e2ab59f2d4b0a3f8d62b82dde5}} 
+\index{Minimap@{Minimap}!scene@{scene}}
+\index{scene@{scene}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}}$\ast$ Minimap\+::scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMinimap_a1eeb6510b1f684f600d7436e4de00d31}\label{classMinimap_a1eeb6510b1f684f600d7436e4de00d31}} 
+\index{Minimap@{Minimap}!width@{width}}
+\index{width@{width}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Minimap\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/application\+\_\+server/\mbox{\hyperlink{minimap_8h}{minimap.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{minimap_8cpp}{minimap.\+cpp}}\end{DoxyCompactItemize}

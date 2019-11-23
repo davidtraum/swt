@@ -8,8 +8,9 @@ var searchData=
   ['client_11',['Client',['../classClient.html',1,'Client'],['../classClient.html#a31eda3a4d7b4780e159120aa055b1299',1,'Client::Client()'],['../main_8cpp.html#a0388c33353644129ea9403f0a5a8ed24',1,'client():&#160;main.cpp'],['../main_8h.html#a0388c33353644129ea9403f0a5a8ed24',1,'client():&#160;main.cpp']]],
   ['client_2ecpp_12',['client.cpp',['../client_8cpp.html',1,'']]],
   ['client_2eh_13',['client.h',['../client_8h.html',1,'']]],
-  ['coordinatex_14',['coordinateX',['../classDataModel.html#adddcc70d54445fd7e93ec7016c06ca66',1,'DataModel']]],
-  ['coordinatey_15',['coordinateY',['../classDataModel.html#a0dcb89a7fda479001ef8f92203c00d43',1,'DataModel']]],
-  ['currentrotation_16',['currentRotation',['../classMapTile.html#a5008fe4f2e62b24dfc56a6366e68f4f5',1,'MapTile']]],
-  ['currentscale_17',['currentScale',['../classView.html#a01cf6ac75c04e38bfb0b471c22b21697',1,'View']]]
+  ['connectionlabel_14',['connectionLabel',['../classDataModel.html#adb8796c6636e436c8a40095b1999a565',1,'DataModel']]],
+  ['coordinatex_15',['coordinateX',['../classDataModel.html#adddcc70d54445fd7e93ec7016c06ca66',1,'DataModel']]],
+  ['coordinatey_16',['coordinateY',['../classDataModel.html#a0dcb89a7fda479001ef8f92203c00d43',1,'DataModel']]],
+  ['currentrotation_17',['currentRotation',['../classMapTile.html#a5008fe4f2e62b24dfc56a6366e68f4f5',1,'MapTile']]],
+  ['currentscale_18',['currentScale',['../classView.html#a01cf6ac75c04e38bfb0b471c22b21697',1,'View']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tooltipmenu_208',['ToolTipMenu',['../classToolTipMenu.html',1,'']]]
+  ['scene_223',['Scene',['../classScene.html',1,'']]],
+  ['sidepanel_224',['SidePanel',['../classSidePanel.html',1,'']]]
 ];

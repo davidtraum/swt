@@ -21,32 +21,32 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classScene.html#ae8a55aad6bbbb0e66dd134558869cd27" target="_top" xlink:title="Scene::tick Asynchrone Tickfunktion. Wird alle 20ms aufgerufen.">
-<polygon fill="#ffffff" stroke="#000000" points="123,-38.5 123,-57.5 190,-57.5 190,-38.5 123,-38.5"/>
-<text text-anchor="middle" x="156.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::tick</text>
+<g id="a_node2"><a xlink:href="classView.html#af80936d320cde02988bda28aef4070e7" target="_top" xlink:title="View::tick Asynchroner Tick. Wird alle 20MS von GameLoop aufgerufen.">
+<polygon fill="#ffffff" stroke="#000000" points="126.5,-38.5 126.5,-57.5 186.5,-57.5 186.5,-38.5 126.5,-38.5"/>
+<text text-anchor="middle" x="156.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">View::tick</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#191970" d="M87.1888,-36.3459C95.5779,-37.7565 104.3648,-39.2339 112.7557,-40.6448"/>
-<polygon fill="#191970" stroke="#191970" points="112.299,-44.117 122.741,-42.3237 113.4598,-37.2139 112.299,-44.117"/>
+<path fill="none" stroke="#191970" d="M87.1888,-36.3459C96.7666,-37.9563 106.863,-39.654 116.2966,-41.2401"/>
+<polygon fill="#191970" stroke="#191970" points="115.775,-44.7015 126.2169,-42.9082 116.9357,-37.7984 115.775,-44.7015"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classView.html#af80936d320cde02988bda28aef4070e7" target="_top" xlink:title="View::tick Asynchroner Tick. Wird alle 20MS von GameLoop aufgerufen.">
-<polygon fill="#ffffff" stroke="#000000" points="126.5,-.5 126.5,-19.5 186.5,-19.5 186.5,-.5 126.5,-.5"/>
-<text text-anchor="middle" x="156.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">View::tick</text>
+<g id="a_node3"><a xlink:href="classScene.html#ae8a55aad6bbbb0e66dd134558869cd27" target="_top" xlink:title="Scene::tick Asynchrone Tickfunktion. Wird alle 20ms aufgerufen.">
+<polygon fill="#ffffff" stroke="#000000" points="123,-.5 123,-19.5 190,-19.5 190,-.5 123,-.5"/>
+<text text-anchor="middle" x="156.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::tick</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#191970" d="M87.1888,-21.6541C96.7666,-20.0437 106.863,-18.346 116.2966,-16.7599"/>
-<polygon fill="#191970" stroke="#191970" points="116.9357,-20.2016 126.2169,-15.0918 115.775,-13.2985 116.9357,-20.2016"/>
+<path fill="none" stroke="#191970" d="M87.1888,-21.6541C95.5779,-20.2435 104.3648,-18.7661 112.7557,-17.3552"/>
+<polygon fill="#191970" stroke="#191970" points="113.4598,-20.7861 122.741,-15.6763 112.299,-13.883 113.4598,-20.7861"/>
 </g>
 </g>
 </svg>

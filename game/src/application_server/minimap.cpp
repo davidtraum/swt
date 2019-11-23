@@ -4,6 +4,13 @@
 #include <QDebug>
 #include <QRectF>
 
+/**
+ * @brief Minimap::Minimap Erzeugt eine neue Minimap Komponente
+ * @param pWidth Die Breite der Minimap in Pixeln
+ * @param pHeight Die Höhe der Minimap in Pixeln
+ * @param pScene Die Szene
+ * @param pDataModel Das DataModel
+ */
 Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel):
     width{pWidth}, height{pHeight}, scene{pScene}, dataModel{pDataModel}
 {
@@ -12,6 +19,10 @@ Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel
     connect(dataModel, &DataModel::viewChange, this, &Minimap::viewChange);
 }
 
+/**
+ * @brief Minimap::paintEvent Rendert die Minimap.
+ * @param event Das zugehörige Event.
+ */
 void Minimap::paintEvent(QPaintEvent *event)
 {
     qDebug() << "Repaint";
@@ -42,6 +53,9 @@ void Minimap::paintEvent(QPaintEvent *event)
     painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), QImage(":/icons/pin.svg"));
 }
 
+/**
+ * @brief Minimap::viewChange Slot der aufgerufen wird wenn die Minimap komplett neu gezeichnet werden soll.
+ */
 void Minimap::viewChange(){
     repaint(0,0,width,height);
 }

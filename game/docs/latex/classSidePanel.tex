@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Side\+Panel\+:\nopagebreak
+Klassendiagramm für Side\+Panel\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,18 +16,19 @@ Klassendiagramm für Side\+Panel\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Side\+Panel\+:\nopagebreak
+Zusammengehörigkeiten von Side\+Panel\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=184pt]{classSidePanel__coll__graph}
+\includegraphics[height=550pt]{classSidePanel__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classSidePanel_adb97b292d8925f6c1c8da90aaf5d287b}{Side\+Panel}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSidePanel_adb97b292d8925f6c1c8da90aaf5d287b}{Side\+Panel\+::\+Side\+Panel}} Erzeugt ein neues Side-\/\+Panel (Menü) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSidePanel_a029f0adac9424d6bb937349f5f04c0fb}{Side\+Panel}} (\mbox{\hyperlink{classMinimap}{Minimap}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSidePanel_a029f0adac9424d6bb937349f5f04c0fb}{Side\+Panel\+::\+Side\+Panel}} Erzeugt ein neues Side-\/\+Panel (Menü) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSidePanel_a26f78ad7518003db89a4ec57d63da2e4}{hook\+Data\+Model}} (\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Model)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSidePanel_a26f78ad7518003db89a4ec57d63da2e4}{Side\+Panel\+::hook\+Data\+Model}} Verknüpft ein Datenmodell mit der Anzeige. Dadurch können dann Textfelder etc. aktualisiert werden. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
@@ -39,19 +41,21 @@ Q\+Label $\ast$ \mbox{\hyperlink{classSidePanel_aea340b0e19380288866985f561539f8
 Q\+Label $\ast$ \mbox{\hyperlink{classSidePanel_a624cbaa9f3c22bf692a7653518ff67fd}{time\+Label}}
 \item 
 Q\+Label $\ast$ \mbox{\hyperlink{classSidePanel_a6fbb33884ac2369f07bbe2734ec75596}{position\+Label}}
+\item 
+\mbox{\hyperlink{classMinimap}{Minimap}} $\ast$ \mbox{\hyperlink{classSidePanel_a609c20f197d779ac43edf3c666854f5e}{mini\+Map}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classSidePanel_adb97b292d8925f6c1c8da90aaf5d287b}\label{classSidePanel_adb97b292d8925f6c1c8da90aaf5d287b}} 
+\mbox{\Hypertarget{classSidePanel_a029f0adac9424d6bb937349f5f04c0fb}\label{classSidePanel_a029f0adac9424d6bb937349f5f04c0fb}} 
 \index{SidePanel@{SidePanel}!SidePanel@{SidePanel}}
 \index{SidePanel@{SidePanel}!SidePanel@{SidePanel}}
 \doxysubsubsection{\texorpdfstring{SidePanel()}{SidePanel()}}
-{\footnotesize\ttfamily Side\+Panel\+::\+Side\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Side\+Panel\+::\+Side\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMinimap}{Minimap}} $\ast$}]{p\+Mini\+Map }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classSidePanel_adb97b292d8925f6c1c8da90aaf5d287b}{Side\+Panel\+::\+Side\+Panel}} Erzeugt ein neues Side-\/\+Panel (Menü) 
+\mbox{\hyperlink{classSidePanel_a029f0adac9424d6bb937349f5f04c0fb}{Side\+Panel\+::\+Side\+Panel}} Erzeugt ein neues Side-\/\+Panel (Menü) 
 
 
 \begin{DoxyParams}{Parameter}
@@ -98,6 +102,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{layout@{layout}!SidePanel@{SidePanel}}
 \doxysubsubsection{\texorpdfstring{layout}{layout}}
 {\footnotesize\ttfamily Q\+Grid\+Layout$\ast$ Side\+Panel\+::layout\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSidePanel_a609c20f197d779ac43edf3c666854f5e}\label{classSidePanel_a609c20f197d779ac43edf3c666854f5e}} 
+\index{SidePanel@{SidePanel}!miniMap@{miniMap}}
+\index{miniMap@{miniMap}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{miniMap}{miniMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMinimap}{Minimap}}$\ast$ Side\+Panel\+::mini\+Map\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classSidePanel_aea340b0e19380288866985f561539f80}\label{classSidePanel_aea340b0e19380288866985f561539f80}} 
 \index{SidePanel@{SidePanel}!moneyLabel@{moneyLabel}}
