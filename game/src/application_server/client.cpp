@@ -6,7 +6,7 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel)
+Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel * pDataModel)
 {
     scene = pScene;
     dataModel = pDataModel;
@@ -17,7 +17,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel)
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(this, &Client::playerConnect, scene, &Scene::addPlayer);
-    connect(scene, &Scene::tileUpdate, this, &Client::onTileChange);
+    connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
@@ -98,7 +98,14 @@ void Client::onPositionChange(int pX, int pY){
  * @param pType Der Typ.
  * @param pRotation Die Rotation.
  */
-void Client::onTileChange(int pX, int pY, int pType, int pRotation){
-    socket->write(QString::fromStdString("T " + std::to_string(pX) + " " + std::to_string(pY) + " " + std::to_string(pType) + " " + std::to_string(pRotation)).toLocal8Bit());
+void Client::onLeftclick(){
+    switch(dataModel->getMode()){
+        case DataModel::RAIL_PLACEMENT:
+            if(debug){
+                qDebug() << "[BUILD] Anfrage für Rail";
+            }
+            socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY())).toLocal8Bit());
+            break;
+    }
     socket->flush();
 }

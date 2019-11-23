@@ -9,12 +9,13 @@
 #include "scene.h"
 #include "maptile.h"
 #include "datamodel.h"
+#include "view.h"
 
 class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(QString * connectionInfo, Scene * pScene, DataModel * pDataModel);
+    Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel * pDataModel);
     void run() override;
     void requestMap();
 
@@ -33,7 +34,7 @@ signals:
 
 public slots:
     void onPositionChange(int,int);
-    void onTileChange(int,int,int,int);
+    void onLeftclick();
 };
 
 #endif // CLIENT_H

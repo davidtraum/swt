@@ -261,6 +261,14 @@ void Scene::tileChanged(int pX, int pY){
 }
 
 /**
+ * @brief Scene::tick Asynchrone Tickfunktion. Wird alle 20ms aufgerufen.
+ */
+void Scene::tick()
+{
+
+}
+
+/**
  * @brief Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderungen.
  * @param pX Die X-Koordinate.
  * @param pY Die Y-Koordinate.

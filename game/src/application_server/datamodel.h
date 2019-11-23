@@ -17,6 +17,8 @@ public:
     long getTime();
     long getSystemMillis();
     void updateCoordinates(int pX, int pY);
+    int getHoverX();
+    int getHoverY();
     std::string formatTime(long pTime);
     void setConnectionInfo(QString pString);
     QString * getIP();
@@ -30,6 +32,7 @@ public:
               BRIDGE,
               RAIL_PLACEMENT};
     void setMode(MODE);
+    MODE getMode();
 
 private:
     int balance;

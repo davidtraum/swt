@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Documentation for myscript"""
-
 import json
 import os
 import socket
@@ -36,7 +32,7 @@ class MapTile:
         self.rotation = 0
         self.x = pX
         self.y = pY
-        self.setType(pType)
+        self.setType(pType, doBroadcast=False)
         self.logic = pLogic
 
     def getPos(self):
@@ -48,10 +44,11 @@ class MapTile:
     def getY(self):
         return self.y
 
-    def setType(self, pType):
+    def setType(self, pType, doBroadcast=True):
         self.setRotation(0)
         self.type = MapTile.TYPES[pType]
-        broadcast(self.getProtocolString())
+        if(doBroadcast):
+            broadcast(self.getProtocolString())
 
     def getType(self):
         return self.type
@@ -110,13 +107,13 @@ class World:
             for y in range(size):
                 self.data[x][y].setRotation(random.randint(0, 3))
                 if(random.randint(0, 100) < 20):
-                    self.data[x][y].setType('FOREST')
+                    self.data[x][y].setType('FOREST', doBroadcast=False)
 
         for townIndex in range(300):
             px, py = self.randomPosition()
             size = random.randint(3, 20)
             for houseIndex in range(size):
-                self.data[px][py].setType('CITY')
+                self.data[px][py].setType('CITY', doBroadcast=False)
                 px += random.randint(-1, 1)
                 py += random.randint(-1, 1)
 
@@ -137,7 +134,7 @@ class World:
             sinceCurve = 0
             typ = 'RIVER_H'
             while True:
-                self.data[px][py].setType(typ)
+                self.data[px][py].setType(typ, doBroadcast=False)
                 self.data[px][py].setRotation(0)
                 px += vx
                 py += vy
@@ -191,9 +188,9 @@ class World:
                 if(minX < 0):
                     minX = 0 
                 for x in range(random.randint(minX,40-y)):
-                    self.data[x][y].setType('WATER') 
+                    self.data[x][y].setType('WATER', doBroadcast=False) 
                 for x in range(random.randint(minX,40-y)):
-                    self.data[299-x][y].setType('WATER')  
+                    self.data[299-x][y].setType('WATER', doBroadcast=False)  
             for y in range(150, 299):
                 minX = 150-y-3 
                 if(minX < 0):

@@ -23,6 +23,7 @@ public:
     MapTile * getTileAt(int posX, int posY, bool isPixelCoordinate=false);
     void setTileAt(int,int,int,int);
     void tileChanged(int,int);
+    void tick();
 
 private:
     MapTile data[Scene::MAP_SIZE][Scene::MAP_SIZE];

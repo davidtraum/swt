@@ -8,8 +8,8 @@
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel) :
-    scene{pScene}, dataModel{pDataModel}
+MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
+    scene{pScene}, dataModel{pDataModel}, view{pView}
 {
     QMenu * mainMenu = QMenuBar::addMenu("Spiel");
     QMenu * serverSelection = mainMenu->addMenu(QIcon(":/icons/server.svg"), "Serververbindung");
@@ -33,7 +33,8 @@ void MenuBar::slotOpenConnection(){
                                          &ok);
 
     if(ok){
-        Client * client = new Client(&text, scene, dataModel);
+        Client * client = new Client(&text, scene, view, dataModel);
+
         QTimer::singleShot(1000, [client]{client->requestMap();});
     }
 }

@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Client_t {
     QByteArrayData data[8];
-    char stringdata0[95];
+    char stringdata0[94];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,12 +38,12 @@ QT_MOC_LITERAL(3, 18, 11), // "tileChanged"
 QT_MOC_LITERAL(4, 30, 13), // "playerConnect"
 QT_MOC_LITERAL(5, 44, 20), // "playerPositionChange"
 QT_MOC_LITERAL(6, 65, 16), // "onPositionChange"
-QT_MOC_LITERAL(7, 82, 12) // "onTileChange"
+QT_MOC_LITERAL(7, 82, 11) // "onLeftclick"
 
     },
     "Client\0mapLoaded\0\0tileChanged\0"
     "playerConnect\0playerPositionChange\0"
-    "onPositionChange\0onTileChange"
+    "onPositionChange\0onLeftclick"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +68,7 @@ static const uint qt_meta_data_Client[] = {
 
  // slots: name, argc, parameters, tag, flags
        6,    2,   64,    2, 0x0a /* Public */,
-       7,    4,   69,    2, 0x0a /* Public */,
+       7,    0,   69,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -78,7 +78,7 @@ static const uint qt_meta_data_Client[] = {
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -94,7 +94,7 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 2: _t->playerConnect((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->playerPositionChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 4: _t->onPositionChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 5: _t->onTileChange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 5: _t->onLeftclick(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

@@ -19,6 +19,7 @@ SOURCES += \
     city.cpp \
     client.cpp \
     datamodel.cpp \
+    gameloop.cpp \
     graphicsmanager.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     city.h \
     client.h \
     datamodel.h \
+    gameloop.h \
     graphicsmanager.h \
     main.h \
     mainwindow.h \

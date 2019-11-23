@@ -86,6 +86,24 @@ void DataModel::updateCoordinates(int pX, int pY){
     positionLabel->setText(QString::fromStdString("<img height=\"32\" src=\":/icons/location.svg\"></img><h2>X: " + std::to_string(pX) + "<br>Y: " + std::to_string(pY)));
 }
 
+/**
+ * @brief DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist.
+ * @return Eine Kachel-Koordinate.
+ */
+int DataModel::getHoverX()
+{
+    return coordinateX;
+}
+
+/**
+ * @brief DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist.
+ * @return Eine Kachel-Koordinate.
+ */
+int DataModel::getHoverY()
+{
+    return coordinateY;
+}
+
 
 /**
  * @brief DataModel::getSystemMillis Gibt die Zahl der Millsekunden seit 1970 zurück.
@@ -208,4 +226,12 @@ void DataModel::setBridgeMode(){
  */
 void DataModel::setRailPlacementMode(){
     setMode(DataModel::MODE::RAIL_PLACEMENT);
+}
+
+/**
+ * @brief DataModel::getMode Gibt den aktuellen Bearbeitungsmodus
+ * @return Der aktuelle Modus.
+ */
+DataModel::MODE DataModel::getMode(){
+    return mode;
 }

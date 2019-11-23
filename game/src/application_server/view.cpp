@@ -65,53 +65,61 @@ void View::mouseReleaseEvent(QMouseEvent *event)
     doAnimations = false;
     QGraphicsView::setCursor(QCursor(Qt::CrossCursor));
     if(View::dragOriginX==event->x() && View::dragOriginY==event->y()){ //Es wurde nur geklickt, nicht verschoben.
+
         QGraphicsItem * clickedItem = View::itemAt(event->pos());
         MapTile * clickedTile = scene->getTileAt(int(clickedItem->x()), int(clickedItem->y()), true); //Der Quadrant der angeklickt wurde.
         if(event->button() == Qt::LeftButton){ //Linksklick
-            switch(clickedTile->getType()){
-                case MapTile::GRASS:
-                    if(dataModel->takeBalance(50)){
-                        clickedTile->setType(MapTile::RAIL_H);
-                        scene->tileChanged(clickedTile->getX(), clickedTile->getY());
-                    }
-                    break;
-
-                case MapTile::CITY:
-                    tooltip->showAt(event->x(), event->y());
-                    tooltip->setText("<h2>Haus</h2> <p><img height=\"16\" src=\":/icons/Nahrung.svg\"></img> 100</p>");
-                    break;
-                    doAnimations = true;
-                    fluidMovement(clickedTile->getCity()->getCenterX()*64, clickedTile->getCity()->getCenterY()*64);
-                    fluidZoom(0.5, currentScale<0.5);
-                    break;
-
-                case MapTile::FORREST:
-                    if(dataModel->takeBalance(40)){
-                       clickedTile->setType(MapTile::GRASS);
-                       scene->tileChanged(clickedTile->getX(), clickedTile->getY());
-                    }
-                    break;
-
-                default:
-                    break;
-            }
             qDebug() << "[EVENT] Linksklick.";
+            leftclick(event, clickedTile);
         }else{ //Rechtsklick
-            if(clickedTile->getType()==MapTile::RAIL_H){
-                clickedTile->getPixmapItem()->setFlag(QGraphicsItem::ItemIsMovable);
-                int rotation = clickedTile->getRotation();
-                rotation++;
-                if(rotation>3)rotation=0;
-                clickedTile->setRotation(rotation);
-                scene->tileChanged(clickedTile->getX(), clickedTile->getY());
-            }
             qDebug() << "[EVENT] Rechtsklick.";
+            rightclick(event, clickedTile);
         }
 
     }else{
         qDebug() << "[EVENT] Karte verschoben";
     }
     mouseDown = false;
+}
+
+/**
+ * @brief View::leftclick Führt einen Linksklick aus.
+ */
+void View::leftclick(QMouseEvent * pEvent, MapTile * pTile)
+{
+    switch(dataModel->getMode()){
+        case DataModel::DEFAULT:
+            doAnimations = true;
+            fluidZoom(1, currentScale<1);
+            fluidMovement(pTile->getX()*64, pTile->getY()*64);
+            break;
+        default:
+            break;
+    }
+    emit onLeftclick();
+}
+
+/**
+ * @brief View::leftclick Führt einen Rechtsklick aus.
+ */
+void View::rightclick(QMouseEvent * pEvent, MapTile * pTile)
+{
+
+}
+
+/**
+ * @brief View::tick Asynchroner Tick. Wird alle 20MS von GameLoop aufgerufen.
+ */
+void View::tick(){
+    /*
+    QPointF sceneCenter = QGraphicsView::mapToScene( QGraphicsView::viewport()->rect().center() );
+    double vectorX = (dataModel->getHoverX()*64 - sceneCenter.x()) * 0.01;
+    double vectorY = (dataModel->getHoverY()*64 - sceneCenter.y()) * 0.01;
+    sceneCenter.setX(sceneCenter.x() + vectorX);
+    sceneCenter.setY(sceneCenter.y() + vectorY);
+    qDebug() << vectorY;
+    View::centerOn(sceneCenter);
+    */
 }
 
 /**
@@ -173,12 +181,14 @@ void View::keyPressEvent(QKeyEvent *event){
     qDebug() << "[EVENT] Tastatur gedrückt. ";
     switch(event->key()){
         case Qt::Key_F11:
+        /*
             if(mainWindow->isFullScreen()){
                 mainWindow->showNormal();
             }else{
                 mainWindow->showFullScreen();
             }
             break;
+            */
         case Qt::Key_O:
             if(currentScale>0.06){
                 doAnimations=true;
@@ -283,6 +293,7 @@ void View::enableAnimation(){
 void View::setDataModel(DataModel *pModel){
     dataModel = pModel;
 }
+
 
 /**
  * @brief View::zoomInAnimation Slot der nach dem Laden der Karte aufgerufen wird.

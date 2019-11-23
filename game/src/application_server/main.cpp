@@ -18,6 +18,7 @@
 #include "graphicsmanager.h"
 #include "sidepanel.h"
 #include "tooltipmenu.h"
+#include "gameloop.h"
 
 
 
@@ -79,7 +80,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene, dataModel);
+    MenuBar * menuBar = new MenuBar(scene, dataModel, view);
     mainWindow->setMenuBar(menuBar);
 
     sidePanel = new SidePanel();
@@ -158,6 +159,9 @@ int main(int argc, char *argv[])
     QLabel * startscreen = new QLabel();
     startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
     mainWindow->setCentralWidget(startscreen);
+
+    GameLoop * loop = new GameLoop(view,scene,dataModel);
+    loop->start();
 
     a.exec();
 }

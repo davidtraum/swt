@@ -15,7 +15,7 @@ class RailLogic:
     def getConnections(self):
         return (str(int(self.connectedRight)) + str(int(self.connectedLeft)) + str(int(self.connectedUp)) + str(int(self.connectedDown)))
         
-    def getRailType(self):
+    def getType(self):
         return 'RAIL_H'
 
     @staticmethod
@@ -68,7 +68,6 @@ class RailLogic:
 
     @staticmethod
     def build(x_pos,y_pos, pPlayer, karte):
-        changed = None
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
         print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)  #zum Testen
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
@@ -76,34 +75,30 @@ class RailLogic:
         
         
         elif(1 <= railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft <= 2): #1-2 Schienen vebindbar Unten,Oben, Rechts oder Links
-            changed = []
             karte[x_pos][y_pos].initLogic(RailLogic) #Schiene wird gebaut.
-            changed.append( karte[x_pos][y_pos] )
             if(railConnectableRight == True):    #Schiene Rechts ist verbindbar                     
                 karte[x_pos][y_pos].logic.connectedRight = True   #Schiene mit rechter Schiene verbinden
-                karte[x_pos+1][y_pos].logic.connectedLeft = True  #Rechte Schiene mit Schiene verbinden   
-                changed.append( karte[x_pos+1][y_pos] );                 
+                karte[x_pos+1][y_pos].logic.connectedLeft = True  #Rechte Schiene mit Schiene verbinden 
+                karte[x_pos+1][y_pos].logicUpdate()                 
 
 
             if(railConnectableLeft == True):    #Schiene Links ist verbindbar.
                 karte[x_pos][y_pos].logic.connectedLeft = True    #Schiene mit linker Schiene verbinden
                 karte[x_pos-1][y_pos].logic.connectedRight = True #Linke Schiene mit Schiene verbinden
-                changed.append( karte[x_pos-1][y_pos] ); 
+                karte[x_pos-1][y_pos].logicUpdate()  
 
             if(railConnectableUp == True):      #Schiene Oben verbindbar.
                 karte[x_pos][y_pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
                 karte[x_pos][y_pos-1].logic.connectedDown = True     #Obere Schiene mit unterer Schiene verbinden
-                changed.append( karte[x_pos][y_pos-1] ); 
+                karte[x_pos][y_pos-1].logicUpdate()  
 
             if(railConnectableDown == True):    #Schiene Unten verbindbar.
                 karte[x_pos][y_pos].logic.connectedDown = True    #Schiene mit unterer Schiene verbinden
                 karte[x_pos][y_pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
-                changed.append( karte[x_pos][y_pos+1] ); 
+                karte[x_pos][y_pos+1].logicUpdate()  
 
         else:
             print("Spielerabfrage") #z.B. mit vier Richtungen, die ersten beiden(anklickbaren) die geklickt werden bestimmen die Kurve
-
-        return changed;
                 
 
 

@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Documentation for myscript"""
-
 import json
 import os
 import socket
@@ -9,6 +5,17 @@ from threading import Thread
 import time
 import random
 from RailClass import RailLogic
+
+
+clients = []
+def broadcast(pText):
+    global clients
+    for client in clients:
+        try:
+            client.send(pText)
+            print("Sent to client")
+        except Exception:
+            client.disconnect()
 
 
 class MapTile:
@@ -36,7 +43,7 @@ class MapTile:
         self.rotation = 0
         self.x = pX
         self.y = pY
-        self.setType(pType)
+        self.setType(pType, share=False)
         self.logic = pLogic
 
     def getPos(self):
@@ -48,10 +55,12 @@ class MapTile:
     def getY(self):
         return self.y
 
-    def setType(self, pType):
+    def setType(self, pType, share=True):
         self.setRotation(0)
         self.type = MapTile.TYPES[pType]
-        broadcast(self.getProtocolString())
+        if(share):
+            broadcast(self.getProtocolString())
+            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type);
 
     def getType(self):
         return self.type
@@ -73,15 +82,25 @@ class MapTile:
             if(self.type == MapTile.TYPES[type]):
                 return True
 
+    def logicUpdate(self):
+        if(self.logic != None):
+            newType = self.logic.getType()
+            if(MapTile.TYPES[newType] != self.type):
+                self.setType(newType)
+
     def initLogic(self, pLogic):
         self.logic = pLogic(self, None)
+        self.logicUpdate()
 
 
 class World:
 
     def __init__(self):
-        self.data = [[MapTile(j, i, 'GRASS')
-                      for i in range(300)] for j in range(300)]
+        self.data = []
+        for x in  range(300):
+            self.data.append([])
+            for y in range(300):
+                self.data[x].append(MapTile(x,y,'GRASS'))
 
     def randomPosition(self):
         return (random.randint(0, 299), random.randint(0, 299))
@@ -96,10 +115,7 @@ class World:
         print("Interact ", posX, " ", posY)
         if(self.canPlaceRail(posX, posY)):
             print("Placing rail...")
-            changed = RailLogic.build(posX, posY, None, self.data)
-            if(changed != None):
-                for tile in changed:
-                    pass
+            RailLogic.build(posX, posY, None, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
@@ -215,12 +231,27 @@ class ClientThread(Thread):
     def send(self, pText):
         self.connection.sendall((pText + '~').encode('utf-8'))
 
+    def disconnect(self):
+        global clients
+        clients.remove(self)
+        print("Disconnected Client")
+        try:
+            self.connection.close()
+        except Exception:
+            pass
+
     def run(self):
         global world
         while True:
-            data = self.connection.recv(32)
+            try:
+                data = self.connection.recv(32)
+            except Exception:
+                self.disconnect()
+                break
             print("Received command: " + str(data))
             command = data.decode('utf-8')
+            if(len(command)==0):
+                self.disconnect()
             args = command.split(" ")
             if(args[0] == 'MAP'):
                 if(args[1] == 'GET'):
@@ -228,61 +259,53 @@ class ClientThread(Thread):
                     for x in range(300):
                         for y in range(300):
                             self.send(world.data[x][y].getProtocolString())
-            elif(args[0] == 'TILE'):
-                if(args[1] == 'CLICK'):
+            elif(args[0] == 'BUILD'):
+                if(args[1] == 'RAIL'):
                     print("Setting tile...")
                     posX = int(args[2])
                     posY = int(args[3])
                     world.tileInteract(posX, posY)
 
+DEFAULT_CONFIG = {
+    'port': 2000,
+    'bind_ip': 'localhost',
+    'max_players': 5}
 
-if __name__ == '__main__':
-    DEFAULT_CONFIG = {
-        'port': 2000,
-        'bind_ip': 'localhost',
-        'max_players': 5}
+CONFIG_FILE = 'config.json'
 
-    CONFIG_FILE = 'config.json'
-
-    if not os.path.exists(CONFIG_FILE):
-        print("Die Konfigurationsdatei wird angelegt...")
-        with open(CONFIG_FILE, 'w') as file:
-            json_string = json.dumps(DEFAULT_CONFIG, indent=4)
-            file.write(json_string)
-            file.flush()
+if not os.path.exists(CONFIG_FILE):
+    print("Die Konfigurationsdatei wird angelegt...")
+    with open(CONFIG_FILE, 'w') as file:
+        json_string = json.dumps(DEFAULT_CONFIG, indent=4)
+        file.write(json_string)
+        file.flush()
 
 
-    CONFIG = None
-    with open(CONFIG_FILE) as file:
-        CONFIG = json.loads(file.read())
+CONFIG = None
+with open(CONFIG_FILE) as file:
+    CONFIG = json.loads(file.read())
 
-    world = World()
-    world.generateWorld()
-
-
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind((CONFIG['bind_ip'], CONFIG['port']))
-    server.listen()
-
-    clients = []
-
-    print("Server wird gestartet...")
-    print(CONFIG)
+world = World()
+world.generateWorld()
 
 
-    def broadcast(pText):
-        global clients
-        for client in clients:
-            client.send(pText)
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((CONFIG['bind_ip'], CONFIG['port']))
+server.listen()
 
 
-    try:
-        while True:
-            connection, address = server.accept()
-            print("Verbindungsaufbau von " + str(address) + "...")
-            thread = ClientThread(connection)
-            thread.start()
-            clients.append(thread)
+print("Server wird gestartet...")
+print(CONFIG)
 
-    except KeyboardInterrupt:
-        print("Server beendet")
+
+try:
+    while True:
+        connection, address = server.accept()
+        print("Verbindungsaufbau von " + str(address) + "...")
+        thread = ClientThread(connection)
+        thread.start()
+        clients.append(thread)
+
+except KeyboardInterrupt:
+    print("Server beendet")
+
