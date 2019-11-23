@@ -13,7 +13,7 @@ def broadcast(pText):
     for client in clients:
         try:
             client.send(pText)
-            print("Sent to client")
+            print("Sent to client: ", pText)
         except Exception:
             client.disconnect()
 
@@ -84,11 +84,14 @@ class MapTile:
 
     def logicUpdate(self):
         if(self.logic != None):
+            print("MapTile @ LogicUpdate ", self.x, " " , self.y)
             newType = self.logic.getType()
             if(MapTile.TYPES[newType] != self.type):
+                print("MapTile @ LogicChanged ", newType)
                 self.setType(newType)
 
     def initLogic(self, pLogic):
+        print("Init logic @ ", self.x, " ", self.y)
         self.logic = pLogic(self, None)
         self.logicUpdate()
 
@@ -109,7 +112,7 @@ class World:
         return posX >= 0 and posY >= 0 and posX < 300 and posY < 300
 
     def canPlaceRail(self, posX, posY):
-        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST'))
+        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or True
 
     def tileInteract(self, posX, posY):
         print("Interact ", posX, " ", posY)
@@ -179,7 +182,7 @@ class World:
                         if(vx == -1):
                             vy = 1
                             vx = 0
-                            typ = 'RIVER_LB'
+                            typ = 'RIVER_RB'
                         elif(vx == 0):
                             if(vy == 1):
                                 typ = 'RIVER_LT'
@@ -229,11 +232,13 @@ class ClientThread(Thread):
         self.connection = pConnection
 
     def send(self, pText):
-        self.connection.sendall((pText + '~').encode('utf-8'))
+        print("Sending " + pText)
+        self.connection.send((pText + '~').encode('utf-8'))
 
     def disconnect(self):
         global clients
-        clients.remove(self)
+        if(self in clients):
+            clients.remove(self)
         print("Disconnected Client")
         try:
             self.connection.close()
@@ -248,7 +253,6 @@ class ClientThread(Thread):
             except Exception:
                 self.disconnect()
                 break
-            print("Received command: " + str(data))
             command = data.decode('utf-8')
             if(len(command)==0):
                 self.disconnect()
@@ -261,7 +265,7 @@ class ClientThread(Thread):
                             self.send(world.data[x][y].getProtocolString())
             elif(args[0] == 'BUILD'):
                 if(args[1] == 'RAIL'):
-                    print("Setting tile...")
+                    print("Build Rail Request at ", args[2], " ", args[3])
                     posX = int(args[2])
                     posY = int(args[3])
                     world.tileInteract(posX, posY)
@@ -307,5 +311,7 @@ try:
         clients.append(thread)
 
 except KeyboardInterrupt:
+    for client in clients:
+        client.disconnect()
     print("Server beendet")
 

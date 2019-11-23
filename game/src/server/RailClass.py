@@ -32,7 +32,7 @@ class RailLogic:
         #Rechts
         if(x_pos<299):                              #Wenn Rechts innerhalb der Karte liegt
             if(karte[x_pos+1][y_pos].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos+1][y_pos].player == player): #Wenn Schiene zum selben Spieler gehoert
+                if(karte[x_pos+1][y_pos].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
                     #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_pos+1][y_pos].logic.connectedRight + karte[x_pos+1][y_pos].logic.connectedLeft + karte[x_pos+1][y_pos].logic.connectedUp + karte[x_pos+1][y_pos].logic.connectedUp != 2):
                         railConnectableRight = True; #dann liegt rechts eine verbindbare Schiene
@@ -68,8 +68,10 @@ class RailLogic:
 
     @staticmethod
     def build(x_pos,y_pos, pPlayer, karte):
+        print("RailLogic.build @ start: ", x_pos, " ", y_pos);
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
-        print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)  #zum Testen
+        print("RailLogic.build @ checkConnectableRails: ", RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte))
+
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
             print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         

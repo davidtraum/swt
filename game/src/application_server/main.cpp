@@ -112,6 +112,7 @@ int main(int argc, char *argv[])
     resetModeButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/mouse.svg"))));
     resetModeButton->setCursor(QCursor(Qt::PointingHandCursor));
     resetModeButton->connect(resetModeButton, &QToolButton::clicked, dataModel, &DataModel::setDefaultMode);
+    resetModeButton->setShortcut(Qt::Key_Q);
     toolbar->addWidget(resetModeButton);
 
 
@@ -125,11 +126,14 @@ int main(int argc, char *argv[])
     QMenu *buildMenu=new QMenu(buildButton);
     QAction * trainStationEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Bahnhof bauen", mainWindow);
     trainStationEditor->connect(trainStationEditor, &QAction::triggered, dataModel, &DataModel::setTrainStationMode);
+    trainStationEditor->setShortcut(Qt::Key_1);
     buildMenu->addAction(trainStationEditor);
     QAction * bridgeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/bridge.svg"))),"Brücke bauen", mainWindow);
     bridgeEditor->connect(bridgeEditor, &QAction::triggered, dataModel, &DataModel::setBridgeMode);
+    bridgeEditor->setShortcut(Qt::Key_2);
     buildMenu->addAction(bridgeEditor);
     QAction * railEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/rail.svg"))),"Schienen verlegen", mainWindow);
+    railEditor->setShortcut(Qt::Key_3);
     railEditor->connect(railEditor, &QAction::triggered, dataModel, &DataModel::setRailPlacementMode);
     buildMenu->addAction(railEditor);
     buildButton->setMenu(buildMenu);

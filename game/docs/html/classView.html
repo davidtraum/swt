@@ -66,8 +66,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Öffentliche Slots</a> &#124;
+<a href="#signals">Signale</a> &#124;
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
 <a href="#pub-attribs">Öffentliche Attribute</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classView-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
@@ -79,12 +81,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für View:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView__inherit__graph.svg" width="178" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView__inherit__graph.svg" width="178" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von View:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classView__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classView__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -92,6 +96,11 @@ Zusammengehörigkeiten von View:</div>
 <tr class="memitem:a1e1a3f29a5b539e3f8991cba46721e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a1e1a3f29a5b539e3f8991cba46721e8f">zoomInAnimation</a> ()</td></tr>
 <tr class="memdesc:a1e1a3f29a5b539e3f8991cba46721e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a1e1a3f29a5b539e3f8991cba46721e8f" title="View::zoomInAnimation Slot der nach dem Laden der Karte aufgerufen wird.">View::zoomInAnimation</a> Slot der nach dem Laden der Karte aufgerufen wird.  <a href="classView.html#a1e1a3f29a5b539e3f8991cba46721e8f">Mehr ...</a><br /></td></tr>
 <tr class="separator:a1e1a3f29a5b539e3f8991cba46721e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signale</h2></td></tr>
+<tr class="memitem:a5b6bbb4efe3725d8ede1d190d1a1b3a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a5b6bbb4efe3725d8ede1d190d1a1b3a1">onLeftclick</a> ()</td></tr>
+<tr class="separator:a5b6bbb4efe3725d8ede1d190d1a1b3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
@@ -128,6 +137,9 @@ Zusammengehörigkeiten von View:</div>
 <tr class="memitem:a3753656c26f1f7472c5ed8edfe1a1c30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a3753656c26f1f7472c5ed8edfe1a1c30">setDataModel</a> (<a class="el" href="classDataModel.html">DataModel</a> *pModel)</td></tr>
 <tr class="memdesc:a3753656c26f1f7472c5ed8edfe1a1c30"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a3753656c26f1f7472c5ed8edfe1a1c30" title="View::setDataModel Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position we...">View::setDataModel</a> Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben.  <a href="classView.html#a3753656c26f1f7472c5ed8edfe1a1c30">Mehr ...</a><br /></td></tr>
 <tr class="separator:a3753656c26f1f7472c5ed8edfe1a1c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80936d320cde02988bda28aef4070e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#af80936d320cde02988bda28aef4070e7">tick</a> ()</td></tr>
+<tr class="memdesc:af80936d320cde02988bda28aef4070e7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#af80936d320cde02988bda28aef4070e7" title="View::tick Asynchroner Tick. Wird alle 20MS von GameLoop aufgerufen.">View::tick</a> Asynchroner Tick. Wird alle 20MS von <a class="el" href="classGameLoop.html">GameLoop</a> aufgerufen.  <a href="classView.html#af80936d320cde02988bda28aef4070e7">Mehr ...</a><br /></td></tr>
+<tr class="separator:af80936d320cde02988bda28aef4070e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Öffentliche Attribute</h2></td></tr>
@@ -135,6 +147,15 @@ Zusammengehörigkeiten von View:</div>
 <tr class="separator:a9b77fe3414a870fcbf3f174dc894ce38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a01cf6ac75c04e38bfb0b471c22b21697">currentScale</a> {1.0}</td></tr>
 <tr class="separator:a01cf6ac75c04e38bfb0b471c22b21697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:a8583722c800d6f301bbe52941cc0b824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a8583722c800d6f301bbe52941cc0b824">leftclick</a> (QMouseEvent *, <a class="el" href="classMapTile.html">MapTile</a> *)</td></tr>
+<tr class="memdesc:a8583722c800d6f301bbe52941cc0b824"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a8583722c800d6f301bbe52941cc0b824" title="View::leftclick Führt einen Linksklick aus.">View::leftclick</a> Führt einen Linksklick aus.  <a href="classView.html#a8583722c800d6f301bbe52941cc0b824">Mehr ...</a><br /></td></tr>
+<tr class="separator:a8583722c800d6f301bbe52941cc0b824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab0c50f3b6bf34a1aaa6f4a2b69f7ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#abab0c50f3b6bf34a1aaa6f4a2b69f7ea">rightclick</a> (QMouseEvent *, <a class="el" href="classMapTile.html">MapTile</a> *)</td></tr>
+<tr class="memdesc:abab0c50f3b6bf34a1aaa6f4a2b69f7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classView.html#a8583722c800d6f301bbe52941cc0b824" title="View::leftclick Führt einen Linksklick aus.">View::leftclick</a> Führt einen Rechtsklick aus.  <a href="classView.html#abab0c50f3b6bf34a1aaa6f4a2b69f7ea">Mehr ...</a><br /></td></tr>
+<tr class="separator:abab0c50f3b6bf34a1aaa6f4a2b69f7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -305,7 +326,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.svg" width="590" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a5b3625ec64bc9d2432cc09d33e6879f1_icgraph.svg" width="558" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -347,7 +369,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a33de978d43cde59ae344035ebcb60184_icgraph.svg" width="364" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a33de978d43cde59ae344035ebcb60184_icgraph.svg" width="575" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -387,6 +410,56 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph.svg" width="524" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a8583722c800d6f301bbe52941cc0b824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8583722c800d6f301bbe52941cc0b824">&#9670;&nbsp;</a></span>leftclick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::leftclick </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>pEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMapTile.html">MapTile</a> *&#160;</td>
+          <td class="paramname"><em>pTile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a8583722c800d6f301bbe52941cc0b824" title="View::leftclick Führt einen Linksklick aus.">View::leftclick</a> Führt einen Linksklick aus. </p>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a8583722c800d6f301bbe52941cc0b824_cgraph.svg" width="314" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a8583722c800d6f301bbe52941cc0b824_icgraph.svg" width="348" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -498,7 +571,83 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a76d60435e43027b8497091d02acb77bd_cgraph.svg" width="654" height="342"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a76d60435e43027b8497091d02acb77bd_cgraph.svg" width="567" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5b6bbb4efe3725d8ede1d190d1a1b3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6bbb4efe3725d8ede1d190d1a1b3a1">&#9670;&nbsp;</a></span>onLeftclick</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::onLeftclick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1_icgraph.svg" width="519" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abab0c50f3b6bf34a1aaa6f4a2b69f7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab0c50f3b6bf34a1aaa6f4a2b69f7ea">&#9670;&nbsp;</a></span>rightclick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::rightclick </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>pEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMapTile.html">MapTile</a> *&#160;</td>
+          <td class="paramname"><em>pTile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#a8583722c800d6f301bbe52941cc0b824" title="View::leftclick Führt einen Linksklick aus.">View::leftclick</a> Führt einen Rechtsklick aus. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea_icgraph.svg" width="356" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -530,6 +679,31 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classView_a3753656c26f1f7472c5ed8edfe1a1c30_icgraph.svg" width="255" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="af80936d320cde02988bda28aef4070e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80936d320cde02988bda28aef4070e7">&#9670;&nbsp;</a></span>tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classView.html#af80936d320cde02988bda28aef4070e7" title="View::tick Asynchroner Tick. Wird alle 20MS von GameLoop aufgerufen.">View::tick</a> Asynchroner Tick. Wird alle 20MS von <a class="el" href="classGameLoop.html">GameLoop</a> aufgerufen. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classView_af80936d320cde02988bda28aef4070e7_icgraph.svg" width="255" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

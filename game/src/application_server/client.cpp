@@ -102,7 +102,7 @@ void Client::onLeftclick(){
     switch(dataModel->getMode()){
         case DataModel::RAIL_PLACEMENT:
             if(debug){
-                qDebug() << "[BUILD] Anfrage für Rail";
+                qDebug() << "[BUILD] Anfrage für Rail " << dataModel->getHoverX() << " " << dataModel->getHoverY();
             }
             socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY())).toLocal8Bit());
             break;

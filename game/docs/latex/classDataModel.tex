@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Data\+Model\+:\nopagebreak
+Klassendiagramm für Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Data\+Model\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -66,6 +68,10 @@ long \mbox{\hyperlink{classDataModel_a8cf95a63afc8d4cd4384762077ba1ba1}{get\+Sys
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a8cf95a63afc8d4cd4384762077ba1ba1}{Data\+Model\+::get\+System\+Millis}} Gibt die Zahl der Millsekunden seit 1970 zurück. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a2dcc97fd7387151077bcb3794b1614af}{update\+Coordinates}} (int pX, int pY)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a2dcc97fd7387151077bcb3794b1614af}{Data\+Model\+::update\+Coordinates}} Aktualisiert die Koordinaten des fokussierten Quadrantens. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{get\+HoverX}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e}{get\+HoverY}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{format\+Time}} (long p\+Time)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{set\+Connection\+Info}} (Q\+String p\+String)
@@ -83,7 +89,9 @@ void \mbox{\hyperlink{classDataModel_aacb6a19e48624b83281db172ef01ef4f}{set\+Gui
 void \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{set\+Status\+Display\+Label}} (Q\+Label $\ast$label)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{Data\+Model\+::set\+Status\+Display\+Label}} Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{set\+Mode}} (\mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}})
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{Data\+Model\+::set\+Mode}} Setzt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{Data\+Model\+::set\+Mode}} Setzt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{Data\+Model\+::get\+Mode}} Gibt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -190,6 +198,48 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Kontostand. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_aa1d162f385c1d41293178156ed66f014}\label{classDataModel_aa1d162f385c1d41293178156ed66f014}} 
+\index{DataModel@{DataModel}!getHoverX@{getHoverX}}
+\index{getHoverX@{getHoverX}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getHoverX()}{getHoverX()}}
+{\footnotesize\ttfamily int Data\+Model\+::get\+HoverX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. 
+
+\begin{DoxyReturn}{Rückgabe}
+Eine Kachel-\/\+Koordinate. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_aa1d162f385c1d41293178156ed66f014_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e}\label{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e}} 
+\index{DataModel@{DataModel}!getHoverY@{getHoverY}}
+\index{getHoverY@{getHoverY}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getHoverY()}{getHoverY()}}
+{\footnotesize\ttfamily int Data\+Model\+::get\+HoverY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. 
+
+\begin{DoxyReturn}{Rückgabe}
+Eine Kachel-\/\+Koordinate. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}\label{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}} 
 \index{DataModel@{DataModel}!getIP@{getIP}}
 \index{getIP@{getIP}!DataModel@{DataModel}}
@@ -203,6 +253,27 @@ Der aktuelle Kontostand.
 \begin{DoxyReturn}{Rückgabe}
 Die IP Adresse als Q\+String 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_a083d84049b068cd355ce6aaa396e7c79}\label{classDataModel_a083d84049b068cd355ce6aaa396e7c79}} 
+\index{DataModel@{DataModel}!getMode@{getMode}}
+\index{getMode@{getMode}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{Data\+Model\+::\+M\+O\+DE}} Data\+Model\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{Data\+Model\+::get\+Mode}} Gibt den aktuellen Bearbeitungsmodus. 
+
+\begin{DoxyReturn}{Rückgabe}
+Der aktuelle Modus. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a083d84049b068cd355ce6aaa396e7c79_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}\label{classDataModel_a10ee5a8c9913a04f6385a101f4a9668b}} 
 \index{DataModel@{DataModel}!getPort@{getPort}}
 \index{getPort@{getPort}!DataModel@{DataModel}}
@@ -248,7 +319,8 @@ Der Timecode.
 \doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
 {\footnotesize\ttfamily void Data\+Model\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -522,13 +594,6 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classDataModel_a1fec3cdae29e15b34cbeb060cded8acd_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}\label{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}} 
 \index{DataModel@{DataModel}!timeTick@{timeTick}}
 \index{timeTick@{timeTick}!DataModel@{DataModel}}
@@ -568,7 +633,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Balance} & Der neue Kontostand. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für View\+:\nopagebreak
+Klassendiagramm für View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für View\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von View\+:\nopagebreak
+Zusammengehörigkeiten von View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,6 +29,11 @@ Zusammengehörigkeiten von View\+:\nopagebreak
 \item 
 void \mbox{\hyperlink{classView_a1e1a3f29a5b539e3f8991cba46721e8f}{zoom\+In\+Animation}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a1e1a3f29a5b539e3f8991cba46721e8f}{View\+::zoom\+In\+Animation}} Slot der nach dem Laden der Karte aufgerufen wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1}{on\+Leftclick}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,7 +58,9 @@ void \mbox{\hyperlink{classView_a5b3625ec64bc9d2432cc09d33e6879f1}{fluid\+Moveme
 void \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{enable\+Animation}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{set\+Data\+Model}} (\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Model)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{tick}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{View\+::tick}} Asynchroner Tick. Wird alle 20MS von \mbox{\hyperlink{classGameLoop}{Game\+Loop}} aufgerufen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +68,13 @@ void \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{set\+Data\+Mo
 \item 
 double \mbox{\hyperlink{classView_a01cf6ac75c04e38bfb0b471c22b21697}{current\+Scale}} \{1.\+0\}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classView_a8583722c800d6f301bbe52941cc0b824}{leftclick}} (Q\+Mouse\+Event $\ast$, \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a8583722c800d6f301bbe52941cc0b824}{View\+::leftclick}} Führt einen Linksklick aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}{rightclick}} (Q\+Mouse\+Event $\ast$, \mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a8583722c800d6f301bbe52941cc0b824}{View\+::leftclick}} Führt einen Rechtsklick aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -168,7 +184,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em pY} & Due Y-\/\+Koordinate. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -192,11 +209,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em in} & Ob vergrößert oder verkleindert werden soll. (true = reinzoomen, false=rauszoomen). \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=345pt]{classView_a33de978d43cde59ae344035ebcb60184_icgraph}
+\includegraphics[width=350pt]{classView_a33de978d43cde59ae344035ebcb60184_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classView_aca6faa6bfdfbaf8214f62ddced6d169c}\label{classView_aca6faa6bfdfbaf8214f62ddced6d169c}} 
@@ -219,6 +237,32 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classView_aca6faa6bfdfbaf8214f62ddced6d169c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classView_a8583722c800d6f301bbe52941cc0b824}\label{classView_a8583722c800d6f301bbe52941cc0b824}} 
+\index{View@{View}!leftclick@{leftclick}}
+\index{leftclick@{leftclick}!View@{View}}
+\doxysubsubsection{\texorpdfstring{leftclick()}{leftclick()}}
+{\footnotesize\ttfamily void View\+::leftclick (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{p\+Event,  }\item[{\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$}]{p\+Tile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classView_a8583722c800d6f301bbe52941cc0b824}{View\+::leftclick}} Führt einen Linksklick aus. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classView_a8583722c800d6f301bbe52941cc0b824_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classView_a8583722c800d6f301bbe52941cc0b824_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classView_aae14a814f17c825ce462509655e54ee4}\label{classView_aae14a814f17c825ce462509655e54ee4}} 
@@ -273,11 +317,44 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em event} & Informationen über Position und Taste \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classView_a76d60435e43027b8497091d02acb77bd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1}\label{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1}} 
+\index{View@{View}!onLeftclick@{onLeftclick}}
+\index{onLeftclick@{onLeftclick}!View@{View}}
+\doxysubsubsection{\texorpdfstring{onLeftclick}{onLeftclick}}
+{\footnotesize\ttfamily void View\+::on\+Leftclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}\label{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}} 
+\index{View@{View}!rightclick@{rightclick}}
+\index{rightclick@{rightclick}!View@{View}}
+\doxysubsubsection{\texorpdfstring{rightclick()}{rightclick()}}
+{\footnotesize\ttfamily void View\+::rightclick (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{p\+Event,  }\item[{\mbox{\hyperlink{classMapTile}{Map\+Tile}} $\ast$}]{p\+Tile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classView_a8583722c800d6f301bbe52941cc0b824}{View\+::leftclick}} Führt einen Rechtsklick aus. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classView_a3753656c26f1f7472c5ed8edfe1a1c30}\label{classView_a3753656c26f1f7472c5ed8edfe1a1c30}} 
@@ -300,6 +377,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=263pt]{classView_a3753656c26f1f7472c5ed8edfe1a1c30_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classView_af80936d320cde02988bda28aef4070e7}\label{classView_af80936d320cde02988bda28aef4070e7}} 
+\index{View@{View}!tick@{tick}}
+\index{tick@{tick}!View@{View}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void View\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{View\+::tick}} Asynchroner Tick. Wird alle 20MS von \mbox{\hyperlink{classGameLoop}{Game\+Loop}} aufgerufen. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{classView_af80936d320cde02988bda28aef4070e7_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classView_a094f2fd748e2855fcd4ec42d171e5bbe}\label{classView_a094f2fd748e2855fcd4ec42d171e5bbe}} 

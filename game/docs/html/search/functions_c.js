@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['requestmap_279',['requestMap',['../classClient.html#a88311ac4a5f132a2fd5dcee110cb98c3',1,'Client']]],
-  ['river_280',['River',['../classRiver.html#a305d3ec8496a5373328045da3b8d8362',1,'River']]],
-  ['run_281',['run',['../classClient.html#ad2cfacbefea1e51e34c4697403fb82cb',1,'Client']]]
+  ['player_291',['Player',['../classPlayer.html#adf009bf68fca91b90ffa8d5c999a75ec',1,'Player']]],
+  ['playerconnect_292',['playerConnect',['../classClient.html#a120115036fc4595c9343388d2b94c308',1,'Client']]],
+  ['playerpositionchange_293',['playerPositionChange',['../classClient.html#a731120106494c93f6cd7c12602328fac',1,'Client']]],
+  ['positionchange_294',['positionChange',['../classDataModel.html#a115caaefffb20dbd713276d3c9937541',1,'DataModel']]],
+  ['processcommand_295',['processCommand',['../classClient.html#a4cc6ded21fb38d6341fd91314156920e',1,'Client']]]
 ];

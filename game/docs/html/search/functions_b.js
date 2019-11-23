@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['player_274',['Player',['../classPlayer.html#adf009bf68fca91b90ffa8d5c999a75ec',1,'Player']]],
-  ['playerconnect_275',['playerConnect',['../classClient.html#a120115036fc4595c9343388d2b94c308',1,'Client']]],
-  ['playerpositionchange_276',['playerPositionChange',['../classClient.html#a731120106494c93f6cd7c12602328fac',1,'Client']]],
-  ['positionchange_277',['positionChange',['../classDataModel.html#a115caaefffb20dbd713276d3c9937541',1,'DataModel']]],
-  ['processcommand_278',['processCommand',['../classClient.html#a4cc6ded21fb38d6341fd91314156920e',1,'Client']]]
+  ['onleftclick_288',['onLeftclick',['../classClient.html#a1be75a3d041ef5b07d4f0f50d3f21e9c',1,'Client::onLeftclick()'],['../classView.html#a5b6bbb4efe3725d8ede1d190d1a1b3a1',1,'View::onLeftclick()']]],
+  ['onpositionchange_289',['onPositionChange',['../classClient.html#a660b8879b75b9dbfe82e88991e616fc3',1,'Client']]],
+  ['onsettile_290',['onSetTile',['../classScene.html#ad861f0bdfab5241fcec39c96f01105b0',1,'Scene']]]
 ];

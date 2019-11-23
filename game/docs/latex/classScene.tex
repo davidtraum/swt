@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Scene\+:\nopagebreak
+Klassendiagramm für Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Scene\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Scene\+:\nopagebreak
+Zusammengehörigkeiten von Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -50,7 +52,9 @@ void \mbox{\hyperlink{classScene_a4caee3e7069bad7901a4a12b19cd304c}{set\+Active\
 void \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{set\+Tile\+At}} (int, int, int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a38a79a03ba1fa403296646ee64ea8476}{Scene\+::set\+Tile\+At}} Setzt ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} anhand der Pixel-\/\+Koordinaten oder der Indezes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{tile\+Changed}} (int, int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{Scene\+::tile\+Changed}} Meldet das sich ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} geändert hat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a3491410b9db64ff1771c25dfa5130ac7}{Scene\+::tile\+Changed}} Meldet das sich ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} geändert hat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_ae8a55aad6bbbb0e66dd134558869cd27}{tick}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_ae8a55aad6bbbb0e66dd134558869cd27}{Scene\+::tick}} Asynchrone Tickfunktion. Wird alle 20ms aufgerufen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Statische öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -115,7 +119,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em p\+Id} & Die ID des Spielers. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -191,7 +196,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classScene_ad861f0bdfab5241fcec39c96f01105b0_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -253,6 +259,24 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classScene_a38a79a03ba1fa403296646ee64ea8476_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classScene_ae8a55aad6bbbb0e66dd134558869cd27}\label{classScene_ae8a55aad6bbbb0e66dd134558869cd27}} 
+\index{Scene@{Scene}!tick@{tick}}
+\index{tick@{tick}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Scene\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classScene_ae8a55aad6bbbb0e66dd134558869cd27}{Scene\+::tick}} Asynchrone Tickfunktion. Wird alle 20ms aufgerufen. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classScene_ae8a55aad6bbbb0e66dd134558869cd27_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classScene_a3491410b9db64ff1771c25dfa5130ac7}\label{classScene_a3491410b9db64ff1771c25dfa5130ac7}} 
 \index{Scene@{Scene}!tileChanged@{tileChanged}}
 \index{tileChanged@{tileChanged}!Scene@{Scene}}
@@ -270,24 +294,18 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em pY} & Die Y-\/\+Koordinate. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classScene_a3491410b9db64ff1771c25dfa5130ac7_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classScene_a9e71243ca5cd6d93a2401817d9e52452}\label{classScene_a9e71243ca5cd6d93a2401817d9e52452}} 
 \index{Scene@{Scene}!tileUpdate@{tileUpdate}}
 \index{tileUpdate@{tileUpdate}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{tileUpdate}{tileUpdate}}
 {\footnotesize\ttfamily void Scene\+::tile\+Update (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classScene_a9e71243ca5cd6d93a2401817d9e52452_icgraph}
+\includegraphics[width=320pt]{classScene_a9e71243ca5cd6d93a2401817d9e52452_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classScene_afd6f9b9c25c47cac93b93e70e43becdf}\label{classScene_afd6f9b9c25c47cac93b93e70e43becdf}} 
@@ -300,7 +318,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
