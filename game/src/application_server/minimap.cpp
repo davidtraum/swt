@@ -15,8 +15,11 @@ Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel
     width{pWidth}, height{pHeight}, scene{pScene}, dataModel{pDataModel}
 {
     QWidget::setFixedSize(width,height);
-    QWidget::setStyleSheet("background-color: white; border: 2px solid black;");
+    QWidget::setStyleSheet("border: 2px solid black;");
     connect(dataModel, &DataModel::viewChange, this, &Minimap::viewChange);
+
+    location = QImage(":/icons/pin.svg");
+    compass = QImage(":/images/highres/compass.png");
 }
 
 /**
@@ -51,6 +54,7 @@ void Minimap::paintEvent(QPaintEvent *event)
     }
     painter.setPen(Qt::red);
     painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), QImage(":/icons/pin.svg"));
+    painter.drawImage(QRectF(0,0,width,height), compass);
 }
 
 /**

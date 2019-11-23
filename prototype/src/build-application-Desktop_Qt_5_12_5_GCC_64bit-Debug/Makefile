@@ -801,6 +801,7 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/schiene_kurve.png \
 		../../../game/src/application_server/icon.png \
 		../../../game/src/application_server/startscreen.jpg \
+		../../../game/src/application_server/kompass.png \
 		../../../game/src/application_server/show_routes.svg \
 		../../../game/src/application_server/location.svg \
 		../../../game/src/application_server/hammer.svg \

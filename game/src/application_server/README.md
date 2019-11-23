@@ -24,3 +24,4 @@ Datum|Funktion
 04.11.|Menübar hinzugefügt
 05.11.|Tooltip-Widget hinzugefügt
 22.11.|Toolbar und Statusanzeige hinzugefügt
+24.11.|Minimap und Verbindungsanzeige hinzugefügt
