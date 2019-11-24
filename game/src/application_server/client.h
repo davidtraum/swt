@@ -31,7 +31,6 @@ signals:
     void tileChanged(int,int,int,int);
     void playerConnect(int);
     void playerPositionChange(int, int,int);
-    void onPlacementAllowedChange(bool);
 
 public slots:
     void onPositionChange(int,int);

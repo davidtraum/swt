@@ -23,6 +23,7 @@ public:
     void fluidMovement(int pX, int pY);
     void enableAnimation();
     void setDataModel(DataModel * pModel);
+    void paintEvent(QPaintEvent *event) override;
     void tick();
 private:
     DataModel * dataModel;

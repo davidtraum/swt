@@ -294,6 +294,17 @@ void View::setDataModel(DataModel *pModel){
     dataModel = pModel;
 }
 
+/**
+ * @brief View::paintEvent Überschreibt das PaintEvent des Views für eigene Zeichenanweisungen.
+ * @param event Das zugehörige QPaintEvent.
+ */
+void View::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(QGraphicsView::viewport());
+    //Hier zeichenanweisungen einfügen.
+    QGraphicsView::paintEvent(event);
+}
+
 
 /**
  * @brief View::zoomInAnimation Slot der nach dem Laden der Karte aufgerufen wird.

@@ -41,7 +41,6 @@ public slots:
     void onSetTile(int,int,int,int);
     void updatePlayerPosition(int, int,int);
     void addPlayer(int);
-    void placementAllowedChange(bool);
 
 signals:
     void tileUpdate(int,int,int,int);

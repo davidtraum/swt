@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für View\+:\nopagebreak
+Klassendiagramm für View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für View\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von View\+:\nopagebreak
+Zusammengehörigkeiten von View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -57,6 +59,8 @@ void \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{enable\+Anima
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a105b23bffbbea3af00bc47fc38a5e98c}{View\+::enable\+Animation}} Aktiviert animationen bis zum nächsten Event. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{set\+Data\+Model}} (\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Model)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}{paint\+Event}} (Q\+Paint\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}{View\+::paint\+Event}} Überschreibt das Paint\+Event des Views für eigene Zeichenanweisungen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{tick}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{View\+::tick}} Asynchroner Tick. Wird alle 20MS von \mbox{\hyperlink{classGameLoop}{Game\+Loop}} aufgerufen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
@@ -274,7 +278,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -331,6 +336,21 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}\label{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}} 
+\index{View@{View}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!View@{View}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void View\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}{View\+::paint\+Event}} Überschreibt das Paint\+Event des Views für eigene Zeichenanweisungen. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em event} & Das zugehörige Q\+Paint\+Event. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}\label{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}} 
 \index{View@{View}!rightclick@{rightclick}}
 \index{rightclick@{rightclick}!View@{View}}

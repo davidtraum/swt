@@ -32,6 +32,7 @@ public:
     int getRotation();
     void setPosition(int posX, int posY);
     bool isRiver();
+    bool isRail();
     QGraphicsPixmapItem * getPixmapItem();
     City * getCity();
     void setCity(City * pCity);

@@ -192,6 +192,17 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
     if(dataModel->getMode() != DataModel::DEFAULT){
         if(!highlighter->isVisible())highlighter->setVisible(true);
         highlighter->setPos(pItem->pos());
+        switch(dataModel->getMode()){
+            case DataModel::RAIL_PLACEMENT:
+                if(data[activeTile->getX()-1][activeTile->getY()].isRail() ||
+                        data[activeTile->getX()+1][activeTile->getY()].isRail() ||
+                        data[activeTile->getX()][activeTile->getY()+1].isRail() ||
+                        data[activeTile->getX()][activeTile->getY()-1].isRail()){
+                    highlighter->setColor(Qt::green);
+                }else{
+                    highlighter->setColor(Qt::white);
+                }
+        }
     }else{
         highlighter->setVisible(false);
     }
@@ -294,17 +305,4 @@ void Scene::addPlayer(int pId){
     Player * newPlayer = new Player(pId);
     QGraphicsScene::addItem(newPlayer->highlighter);
     players.insert(std::pair<int, Player *>(pId, newPlayer));
-}
-
-/**
- * @brief Scene::placementAllowedChange Slot für die Änderung der Darstellung von rotem oder grünem Bauindikator.
- */
-void Scene::placementAllowedChange(bool pStatus)
-{
-    qDebug() << "Placement " << pStatus;
-    if(pStatus){
-        highlighter->setColor(QColor(Qt::green));
-    }else{
-        highlighter->setColor(QColor(Qt::red));
-    }
 }

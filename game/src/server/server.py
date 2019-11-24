@@ -262,7 +262,8 @@ class ClientThread(Thread):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
                         for y in range(300):
-                            self.send(world.data[x][y].getProtocolString())
+                            if(world.data[x][y].getType() > 0):
+                                self.send(world.data[x][y].getProtocolString())
             elif(args[0] == 'BUILD'):
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
@@ -272,10 +273,6 @@ class ClientThread(Thread):
             elif(args[0] == 'POS'):
                 posX = int(args[1])
                 posY = int(args[2])
-                if(True in RailLogic.checkConnectableRails(None, posX, posY, world.data)):
-                    self.send("BUILD ALLOW")
-                else:
-                    self.send("BUILD DENY")
 
 DEFAULT_CONFIG = {
     'port': 2000,

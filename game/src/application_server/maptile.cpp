@@ -126,12 +126,26 @@ int MapTile::getRotation(){
  * @return Ob die Kachel ein Fluss ist.
  */
 bool MapTile::isRiver(){
-    return type!=MapTile::TYPE::RIVER_H
-            && type!=MapTile::TYPE::RIVER_V
-            && type!=MapTile::TYPE::RIVER_LB
-            && type!=MapTile::TYPE::RIVER_LT
-            && type!=MapTile::TYPE::RIVER_RB
-            && type!=MapTile::TYPE::RIVER_RT;
+    return type==MapTile::TYPE::RIVER_H
+            || type==MapTile::TYPE::RIVER_V
+            || type==MapTile::TYPE::RIVER_LB
+            || type==MapTile::TYPE::RIVER_LT
+            || type==MapTile::TYPE::RIVER_RB
+            || type==MapTile::TYPE::RIVER_RT;
+}
+
+/**
+ * @brief MapTile::isRail Checkt ob die Kachel eine Schiene ist.
+ * @return Ob die Kachel eine Schiene ist.
+ */
+bool MapTile::isRail()
+{
+    return type==MapTile::RAIL_H
+            || type==MapTile::RAIL_V
+            || type==MapTile::RAIL_LB
+            || type==MapTile::RAIL_LT
+            || type==MapTile::RAIL_RB
+            || type==MapTile::RAIL_RT;
 }
 
 /**

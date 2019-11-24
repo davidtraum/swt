@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->setDataModel(dataModel);
 
-    QTimer::singleShot(5000, []{
+    QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(view);
     });
 
@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 
     mainWindow->show();
 
-    timeTicker();    
+    timeTicker();
 
     QToolBar * toolbar = mainWindow->addToolBar("Hauptmenü");
     toolbar->setMovable(false);

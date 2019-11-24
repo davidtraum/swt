@@ -67,7 +67,7 @@ void DataModel::timeTick(){
  * @return Der Text.
  */
 std::string DataModel::formatTime(long pTime){
-    long hrs = (pTime / 1000) % 24;
+    long hrs = pTime / 1000;
     long mins = long(((pTime % 1000) / 1000.0)*60);
     return "Tag " + std::to_string((hrs/24)+1) + "<br>" + std::to_string(hrs) + ":" + (mins < 10 ? "0" + std::to_string(mins) : std::to_string(mins))  + "h";
 }
