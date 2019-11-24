@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Scene_t {
-    QByteArrayData data[6];
-    char stringdata0[59];
+    QByteArrayData data[7];
+    char stringdata0[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,11 +36,13 @@ QT_MOC_LITERAL(1, 6, 10), // "tileUpdate"
 QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 9), // "onSetTile"
 QT_MOC_LITERAL(4, 28, 20), // "updatePlayerPosition"
-QT_MOC_LITERAL(5, 49, 9) // "addPlayer"
+QT_MOC_LITERAL(5, 49, 9), // "addPlayer"
+QT_MOC_LITERAL(6, 59, 22) // "placementAllowedChange"
 
     },
     "Scene\0tileUpdate\0\0onSetTile\0"
-    "updatePlayerPosition\0addPlayer"
+    "updatePlayerPosition\0addPlayer\0"
+    "placementAllowedChange"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +52,7 @@ static const uint qt_meta_data_Scene[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,12 +60,13 @@ static const uint qt_meta_data_Scene[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    4,   34,    2, 0x06 /* Public */,
+       1,    4,   39,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    4,   43,    2, 0x0a /* Public */,
-       4,    3,   52,    2, 0x0a /* Public */,
-       5,    1,   59,    2, 0x0a /* Public */,
+       3,    4,   48,    2, 0x0a /* Public */,
+       4,    3,   57,    2, 0x0a /* Public */,
+       5,    1,   64,    2, 0x0a /* Public */,
+       6,    1,   67,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
@@ -72,6 +75,7 @@ static const uint qt_meta_data_Scene[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Bool,    2,
 
        0        // eod
 };
@@ -86,6 +90,7 @@ void Scene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 1: _t->onSetTile((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
         case 2: _t->updatePlayerPosition((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 3: _t->addPlayer((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->placementAllowedChange((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -129,13 +134,13 @@ int Scene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
