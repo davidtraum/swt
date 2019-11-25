@@ -36,11 +36,10 @@ private:
     MapTile * activeTile;
     DataModel * dataModel;
     GraphicsManager * graphicsManager;
-    std::map<int, Player *> players;
+    Player * secondPlayer;
 public slots:
     void onSetTile(int,int,int,int);
-    void updatePlayerPosition(int, int,int);
-    void addPlayer(int);
+    void updatePlayerPosition(int,int);
 
 signals:
     void tileUpdate(int,int,int,int);

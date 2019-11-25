@@ -29,10 +29,8 @@ Zusammengehörigkeiten von Scene\+:
 \item 
 void \mbox{\hyperlink{classScene_ad861f0bdfab5241fcec39c96f01105b0}{on\+Set\+Tile}} (int, int, int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_ad861f0bdfab5241fcec39c96f01105b0}{Scene\+::on\+Set\+Tile}} Ändert ein \mbox{\hyperlink{classMapTile}{Map\+Tile}} ohne ein Signal an den Server. Notwendig zum Empfangen von Änderungen. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{update\+Player\+Position}} (int, int, int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{add\+Player}} (int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{Scene\+::add\+Player}} Fügt einen Netzwerkspieler hinzu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classScene_a8b65091b3d6a4080f7fc668bac15b648}{update\+Player\+Position}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScene_a8b65091b3d6a4080f7fc668bac15b648}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,7 +82,7 @@ bool \mbox{\hyperlink{classScene_aecb59164e9feda75eda4f5e6f540ef18}{show\+Radius
 \item 
 \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{classScene_a8117d555b381577bc6d82a1c74e5eef7}{graphics\+Manager}}
 \item 
-std\+::map$<$ int, \mbox{\hyperlink{classPlayer}{Player}} $\ast$ $>$ \mbox{\hyperlink{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}{players}}
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classScene_ac3d40b2f1cd0855f7a411d799cb7ce98}{second\+Player}}
 \end{DoxyCompactItemize}
 
 
@@ -109,28 +107,6 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
-\mbox{\Hypertarget{classScene_a5d29491d77c0b68b00249ef76e16c33e}\label{classScene_a5d29491d77c0b68b00249ef76e16c33e}} 
-\index{Scene@{Scene}!addPlayer@{addPlayer}}
-\index{addPlayer@{addPlayer}!Scene@{Scene}}
-\doxysubsubsection{\texorpdfstring{addPlayer}{addPlayer}}
-{\footnotesize\ttfamily void Scene\+::add\+Player (\begin{DoxyParamCaption}\item[{int}]{p\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classScene_a5d29491d77c0b68b00249ef76e16c33e}{Scene\+::add\+Player}} Fügt einen Netzwerkspieler hinzu. 
-
-
-\begin{DoxyParams}{Parameter}
-{\em p\+Id} & Die ID des Spielers. \\
-\hline
-\end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=289pt]{classScene_a5d29491d77c0b68b00249ef76e16c33e_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classScene_a1ef1c0e0972913d4c477ead916cf06b0}\label{classScene_a1ef1c0e0972913d4c477ead916cf06b0}} 
 \index{Scene@{Scene}!generateWorld@{generateWorld}}
 \index{generateWorld@{generateWorld}!Scene@{Scene}}
@@ -222,8 +198,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Item} & Ein Grafikitem zu dem die Methode den zugehörigen Maptile bestimmt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -310,21 +285,30 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=320pt]{classScene_a9e71243ca5cd6d93a2401817d9e52452_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classScene_afd6f9b9c25c47cac93b93e70e43becdf}\label{classScene_afd6f9b9c25c47cac93b93e70e43becdf}} 
+\mbox{\Hypertarget{classScene_a8b65091b3d6a4080f7fc668bac15b648}\label{classScene_a8b65091b3d6a4080f7fc668bac15b648}} 
 \index{Scene@{Scene}!updatePlayerPosition@{updatePlayerPosition}}
 \index{updatePlayerPosition@{updatePlayerPosition}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{updatePlayerPosition}{updatePlayerPosition}}
-{\footnotesize\ttfamily void Scene\+::update\+Player\+Position (\begin{DoxyParamCaption}\item[{int}]{p\+Id,  }\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Scene\+::update\+Player\+Position (\begin{DoxyParamCaption}\item[{int}]{pX,  }\item[{int}]{pY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-\mbox{\hyperlink{classScene_afd6f9b9c25c47cac93b93e70e43becdf}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. 
+\mbox{\hyperlink{classScene_a8b65091b3d6a4080f7fc668bac15b648}{Scene\+::update\+Player\+Position}} Slot zum Updaten eines Spielers. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=338pt]{classScene_afd6f9b9c25c47cac93b93e70e43becdf_icgraph}
+\includegraphics[width=350pt]{classScene_a8b65091b3d6a4080f7fc668bac15b648_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classScene_a8b65091b3d6a4080f7fc668bac15b648_icgraph}
 \end{center}
 \end{figure}
 
@@ -366,17 +350,17 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{MAP\_SIZE}{MAP\_SIZE}}
 {\footnotesize\ttfamily const static int Scene\+::\+M\+A\+P\+\_\+\+S\+I\+ZE \{300\}\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}\label{classScene_a1440e5ff1dc8e8ef73b54a5abf144fe8}} 
-\index{Scene@{Scene}!players@{players}}
-\index{players@{players}!Scene@{Scene}}
-\doxysubsubsection{\texorpdfstring{players}{players}}
-{\footnotesize\ttfamily std\+::map$<$int, \mbox{\hyperlink{classPlayer}{Player}} $\ast$$>$ Scene\+::players\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{classScene_abb7ae69b9ac9c7965a7091536ccaae83}\label{classScene_abb7ae69b9ac9c7965a7091536ccaae83}} 
 \index{Scene@{Scene}!radiusHighlighter@{radiusHighlighter}}
 \index{radiusHighlighter@{radiusHighlighter}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{radiusHighlighter}{radiusHighlighter}}
 {\footnotesize\ttfamily Q\+Graphics\+Ellipse\+Item$\ast$ Scene\+::radius\+Highlighter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScene_ac3d40b2f1cd0855f7a411d799cb7ce98}\label{classScene_ac3d40b2f1cd0855f7a411d799cb7ce98}} 
+\index{Scene@{Scene}!secondPlayer@{secondPlayer}}
+\index{secondPlayer@{secondPlayer}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{secondPlayer}{secondPlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}}$\ast$ Scene\+::second\+Player\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classScene_aecb59164e9feda75eda4f5e6f540ef18}\label{classScene_aecb59164e9feda75eda4f5e6f540ef18}} 
 \index{Scene@{Scene}!showRadius@{showRadius}}

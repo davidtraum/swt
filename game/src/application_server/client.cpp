@@ -17,7 +17,6 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
     connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
-    connect(this, &Client::playerConnect, scene, &Scene::addPlayer);
     connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
@@ -63,13 +62,8 @@ void Client::processCommand(QString cmd){
         QStringList split = cmd.split(" ");
         if(split[0].startsWith("TILE") && split.length()==5){
             emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
-        }else if(split[0].startsWith("P") && split.length()>=3){
-            if(split[1].startsWith("C")){
-                qDebug() << "Player conn " << split[2];
-                emit playerConnect(split[2].toInt());
-            }else if(split[1].startsWith("P") && split.length()==5){
-                emit playerPositionChange(split[2].toInt(), split[3].toInt(), split[4].toInt());
-            }
+        }else if(split[0].startsWith("POS") && split.length()==3){
+            emit playerPositionChange(split[1].toInt(), split[2].toInt());
         }
     } catch (...) {
         qDebug() << "Client error";

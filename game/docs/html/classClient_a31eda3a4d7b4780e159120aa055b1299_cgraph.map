@@ -1,15 +1,15 @@
 <map id="Client::Client" name="Client::Client">
-<area shape="rect" id="node1" title="Client::Client Erzeugt einen neuen Client." alt="" coords="5,132,104,159"/>
-<area shape="rect" id="node2" href="$classScene.html#a5d29491d77c0b68b00249ef76e16c33e" title="Scene::addPlayer Fügt einen Netzwerkspieler hinzu." alt="" coords="188,5,320,32"/>
-<area shape="rect" id="node3" href="$classClient.html#a1be75a3d041ef5b07d4f0f50d3f21e9c" title="Client::onTileChange Slot für Ändern eines Tiles." alt="" coords="191,56,317,83"/>
-<area shape="rect" id="node7" href="$classClient.html#a660b8879b75b9dbfe82e88991e616fc3" title="Client::onPositionChange Slot für Ändern der Position." alt="" coords="167,107,341,133"/>
-<area shape="rect" id="node8" href="$classScene.html#ad861f0bdfab5241fcec39c96f01105b0" title="Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderu..." alt="" coords="190,157,318,184"/>
-<area shape="rect" id="node12" href="$classDataModel.html#a3bbffe568b3bc32a4da5ac21226dad42" title="DataModel::setConnectionInfo Setzt die Verbindungsinformation als String." alt="" coords="152,208,356,235"/>
-<area shape="rect" id="node13" href="$classScene.html#afd6f9b9c25c47cac93b93e70e43becdf" title="Scene::updatePlayerPosition Slot zum Updaten eines Spielers." alt="" coords="155,259,353,285"/>
-<area shape="rect" id="node4" href="$classDataModel.html#aa1d162f385c1d41293178156ed66f014" title="DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist." alt="" coords="404,5,565,32"/>
-<area shape="rect" id="node5" href="$classDataModel.html#aa9db6a6d8619c898e9ab369f6c49479e" title="DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist." alt="" coords="404,56,565,83"/>
-<area shape="rect" id="node6" href="$classDataModel.html#a083d84049b068cd355ce6aaa396e7c79" title="DataModel::getMode Gibt den aktuellen Bearbeitungsmodus." alt="" coords="409,107,560,133"/>
-<area shape="rect" id="node9" href="$classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat." alt="" coords="411,157,558,184"/>
-<area shape="rect" id="node10" href="$classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel." alt="" coords="419,208,550,235"/>
-<area shape="rect" id="node11" href="$classGraphicsManager.html#aa094318dfcf4d0d399296b323dd670c6" title="GraphicsManager::get Liefert eine Grafik mit einem bestimmten Namen." alt="" coords="613,208,771,235"/>
+<area shape="rect" id="node1" title="Client::Client Erzeugt einen neuen Client." alt="" coords="5,157,104,184"/>
+<area shape="rect" id="node2" href="$classClient.html#a1be75a3d041ef5b07d4f0f50d3f21e9c" title="Client::onTileChange Slot für Ändern eines Tiles." alt="" coords="191,56,317,83"/>
+<area shape="rect" id="node6" href="$classClient.html#a660b8879b75b9dbfe82e88991e616fc3" title="Client::onPositionChange Slot für Ändern der Position." alt="" coords="167,107,341,133"/>
+<area shape="rect" id="node7" href="$classScene.html#ad861f0bdfab5241fcec39c96f01105b0" title="Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderu..." alt="" coords="190,157,318,184"/>
+<area shape="rect" id="node11" href="$classDataModel.html#a3bbffe568b3bc32a4da5ac21226dad42" title="DataModel::setConnectionInfo Setzt die Verbindungsinformation als String." alt="" coords="152,208,356,235"/>
+<area shape="rect" id="node12" href="$classScene.html#a8b65091b3d6a4080f7fc668bac15b648" title="Scene::updatePlayerPosition Slot zum Updaten eines Spielers." alt="" coords="155,259,353,285"/>
+<area shape="rect" id="node3" href="$classDataModel.html#aa1d162f385c1d41293178156ed66f014" title="DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist." alt="" coords="404,5,565,32"/>
+<area shape="rect" id="node4" href="$classDataModel.html#aa9db6a6d8619c898e9ab369f6c49479e" title="DataModel::getHoverX Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist." alt="" coords="404,56,565,83"/>
+<area shape="rect" id="node5" href="$classDataModel.html#a083d84049b068cd355ce6aaa396e7c79" title="DataModel::getMode Gibt den aktuellen Bearbeitungsmodus." alt="" coords="409,107,560,133"/>
+<area shape="rect" id="node8" href="$classMapTile.html#a57b8310cfe045dc6a8e0c3c25fe9fc52" title="MapTile::setRotation Hilfsfunktion zur Rotation im Quadrat." alt="" coords="411,157,558,184"/>
+<area shape="rect" id="node9" href="$classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" title="MapTile::setType Setzt den Typ der Kachel." alt="" coords="419,208,550,235"/>
+<area shape="rect" id="node10" href="$classGraphicsManager.html#aa094318dfcf4d0d399296b323dd670c6" title="GraphicsManager::get Liefert eine Grafik mit einem bestimmten Namen." alt="" coords="613,208,771,235"/>
+<area shape="rect" id="node13" href="$classPlayer.html#a19f2f0ef1ef92640efedf411217217b4" title="Player::setPosition Updated die Position des Spielers." alt="" coords="417,259,552,285"/>
 </map>

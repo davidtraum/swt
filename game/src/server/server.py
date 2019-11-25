@@ -8,12 +8,12 @@ from RailClass import RailLogic
 
 
 clients = []
-def broadcast(pText):
+def broadcast(pText, exclude=None):
     global clients
     for client in clients:
         try:
-            client.send(pText)
-            print("Broadcast: ", pText)
+            if client != exclude:
+                client.send(pText)
         except Exception:
             client.disconnect()
 
@@ -273,6 +273,7 @@ class ClientThread(Thread):
             elif(args[0] == 'POS'):
                 posX = int(args[1])
                 posY = int(args[2])
+                broadcast(command, exclude=self)
 
 DEFAULT_CONFIG = {
     'port': 2000,

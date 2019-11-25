@@ -17,6 +17,9 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
     highlighter = new Highlighter();
     QGraphicsScene::addItem(highlighter);
 
+    secondPlayer = new Player();
+    QGraphicsScene::addItem(secondPlayer->highlighter);
+
     textHint = new QGraphicsTextItem();
     textHint->setDefaultTextColor(QColor(Qt::white));
     textHint->setScale(4);
@@ -192,6 +195,7 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
     if(dataModel->getMode() != DataModel::DEFAULT){
         if(!highlighter->isVisible())highlighter->setVisible(true);
         highlighter->setPos(pItem->pos());
+        qDebug() << "pos set";
         switch(dataModel->getMode()){
             case DataModel::RAIL_PLACEMENT:
                 if(data[activeTile->getX()-1][activeTile->getY()].isRail() ||
@@ -290,19 +294,7 @@ void Scene::onSetTile(int pX, int pY, int pType, int pRotation){
 /**
  * @brief Scene::updatePlayerPosition Slot zum Updaten eines Spielers.
  */
-void Scene::updatePlayerPosition(int pId, int pX, int pY)
+void Scene::updatePlayerPosition(int pX, int pY)
 {
-    qDebug() << "Pos update";
-    players[pId]->setPosition(pX,pY);
-}
-
-/**
- * @brief Scene::addPlayer Fügt einen Netzwerkspieler hinzu.
- * @param pId Die ID des Spielers.
- */
-void Scene::addPlayer(int pId){
-    qDebug() << "[MULTIPLAYER] New player connected.";
-    Player * newPlayer = new Player(pId);
-    QGraphicsScene::addItem(newPlayer->highlighter);
-    players.insert(std::pair<int, Player *>(pId, newPlayer));
+    secondPlayer->setPosition(pX,pY);
 }

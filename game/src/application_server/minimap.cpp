@@ -28,7 +28,6 @@ Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel
  */
 void Minimap::paintEvent(QPaintEvent *event)
 {
-    qDebug() << "Repaint";
     QPainter painter(this);
     for(int x = 0; x<300; x++){
         for(int y = 0; y<300; y++){

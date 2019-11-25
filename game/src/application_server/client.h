@@ -29,8 +29,7 @@ private:
 signals:
     void mapLoaded();
     void tileChanged(int,int,int,int);
-    void playerConnect(int);
-    void playerPositionChange(int, int,int);
+    void playerPositionChange(int,int);
 
 public slots:
     void onPositionChange(int,int);
