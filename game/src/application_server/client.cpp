@@ -38,12 +38,31 @@ void Client::run() {
     QStringList split;
     QString data;
     QString buffer = "";
+    QString overshoot = "";
     int length = 0;
     while(true){
         if(socket->bytesAvailable()>1){
-
-            qDebug() << socket->bytesAvailable();
-            data = socket->read(1);
+            data = socket->readAll();
+            split = data.split("~");
+            length = split.length();
+            for(int i = 0; i<length-1; i++){
+                if(length>1){
+                    if(i<length-2){
+                        processCommand(split[i]);
+                    }else{
+                        if(i==length-2){
+                            if(split[length-1].length() > 0){
+                                processCommand(split[i]);
+                                overshoot = split[length-1];
+                            }else{
+                                overshoot = split[i];
+                            }
+                        }
+                    }
+                }else{
+                    overshoot = data;
+                }
+            }
             if(data == "~"){
                 processCommand(buffer);
                 buffer = "";
