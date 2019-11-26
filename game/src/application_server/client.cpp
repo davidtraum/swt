@@ -8,6 +8,7 @@
  */
 Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel * pDataModel)
 {
+    tickcount=0;
     scene = pScene;
     dataModel = pDataModel;
     dataModel->setConnectionInfo(*connectionInfo);
@@ -23,6 +24,8 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
 
     debug = true;
 
+    socket->waitForConnected(3000);
+
     start();
 
     qDebug() << "[CLIENT] Thread Gestartet.";
@@ -32,24 +35,25 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
  * @brief Client::run Startet den Client-Thread.
  */
 void Client::run() {
-    QString data;
     QStringList split;
+    char * data;
     QString buffer = "";
+    int length = 0;
     while(true){
         if(socket->bytesAvailable()>1){
-            data = socket->read(1).data();
-            if(data[0]=='~'){
+            socket->read(data, 1);
+            qDebug() << *data;
+            if(*data == '~'){
                 processCommand(buffer);
-                buffer = "";
             }else{
-                buffer+=data;
+                buffer+=*data;
             }
         }
     }
 }
 
 void Client::requestMap(){
-    socket->write("MAP GET");
+    socket->write("MAP GET~");
 }
 
 /**
@@ -78,7 +82,7 @@ void Client::processCommand(QString cmd){
  * @param pY Der Y-Index.
  */
 void Client::onPositionChange(int pX, int pY){
-    socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY)).toLocal8Bit());
+    socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY) + "~").toLocal8Bit());
     socket->flush();
 }
 
@@ -100,3 +104,4 @@ void Client::onLeftclick(){
     }
     socket->flush();
 }
+

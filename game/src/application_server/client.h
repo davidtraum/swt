@@ -24,6 +24,7 @@ private:
     Scene * scene;
     DataModel * dataModel;
     bool debug;
+    int tickcount{0};
     void processCommand(QString command);
 
 signals:

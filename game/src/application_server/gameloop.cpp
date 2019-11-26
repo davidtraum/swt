@@ -1,7 +1,7 @@
 #include "gameloop.h"
 
-GameLoop::GameLoop(View * pView, Scene * pScene, DataModel * pModel):
-    view{pView},scene{pScene},dataModel{pModel}
+GameLoop::GameLoop(View * pView, Scene * pScene, DataModel * pModel, Client * pClient):
+    view{pView},scene{pScene},dataModel{pModel},client{pClient}
 {
 
 }

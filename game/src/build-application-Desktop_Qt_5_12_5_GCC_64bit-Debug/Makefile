@@ -801,6 +801,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/schiene_kurve.png \
 		../application_server/icon.png \
 		../application_server/startscreen.jpg \
+		../application_server/kompass.png \
 		../application_server/show_routes.svg \
 		../application_server/location.svg \
 		../application_server/hammer.svg \
@@ -2039,7 +2040,16 @@ gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h 
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../application_server/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QStringList \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameloop.o ../application_server/gameloop.cpp
 
 graphicsmanager.o: ../application_server/graphicsmanager.cpp /home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
@@ -2952,6 +2962,7 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h \
+		../application_server/highlighter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \

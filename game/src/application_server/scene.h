@@ -37,6 +37,7 @@ private:
     DataModel * dataModel;
     GraphicsManager * graphicsManager;
     Player * secondPlayer;
+    std::vector<Player> players;
 public slots:
     void onSetTile(int,int,int,int);
     void updatePlayerPosition(int,int);

@@ -230,9 +230,9 @@ class ClientThread(Thread):
     def __init__(self, pConnection):
         Thread.__init__(self)
         self.connection = pConnection
+        self.commandBuffer = ""
 
     def send(self, pText):
-        print("Sending " + pText)
         self.connection.sendall((pText + '~').encode('utf-8'))
 
     def disconnect(self):
@@ -245,15 +245,7 @@ class ClientThread(Thread):
         except Exception:
             pass
 
-    def run(self):
-        global world
-        while True:
-            try:
-                data = self.connection.recv(32)
-            except Exception:
-                self.disconnect()
-                break
-            command = data.decode('utf-8')
+    def processCommand(self,command):
             if(len(command)==0):
                 self.disconnect()
             args = command.split(" ")
@@ -271,9 +263,31 @@ class ClientThread(Thread):
                     posY = int(args[3])
                     world.tileInteract(posX, posY)
             elif(args[0] == 'POS'):
+                print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
                 broadcast(command, exclude=self)
+            elif(args[0] == 'G'):
+                if(len(self.sendQueue)>0):
+                    self.connection.sendall(self.sendQueue.pop())
+            else:
+                print("Unknown command " + command);
+
+    def run(self):
+        global world
+        while True:
+            try:
+                data = self.connection.recv(1)
+                if(data == b'~'):
+                    self.processCommand(self.commandBuffer)
+                    self.commandBuffer = ""
+                else:
+                    self.commandBuffer += data.decode('utf-8')
+            except Exception:
+                self.disconnect()
+                break
+            
+            
 
 DEFAULT_CONFIG = {
     'port': 2000,

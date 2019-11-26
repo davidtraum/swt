@@ -164,9 +164,9 @@ int main(int argc, char *argv[])
     startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
     mainWindow->setCentralWidget(startscreen);
 
-    GameLoop * loop = new GameLoop(view,scene,dataModel);
+
+    GameLoop * loop = new GameLoop(view,scene,dataModel,client);
     loop->start();
 
     a.exec();
 }
-
