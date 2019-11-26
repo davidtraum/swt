@@ -234,6 +234,7 @@ class ClientThread(Thread):
 
     def send(self, pText):
         self.connection.sendall((pText + '~').encode('utf-8'))
+        time.sleep(0.001)
 
     def disconnect(self):
         global clients
@@ -267,9 +268,6 @@ class ClientThread(Thread):
                 posX = int(args[1])
                 posY = int(args[2])
                 broadcast(command, exclude=self)
-            elif(args[0] == 'G'):
-                if(len(self.sendQueue)>0):
-                    self.connection.sendall(self.sendQueue.pop())
             else:
                 print("Unknown command " + command);
 

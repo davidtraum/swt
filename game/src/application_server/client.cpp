@@ -36,17 +36,19 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
  */
 void Client::run() {
     QStringList split;
-    char * data;
+    QString data;
     QString buffer = "";
     int length = 0;
     while(true){
         if(socket->bytesAvailable()>1){
-            socket->read(data, 1);
-            qDebug() << *data;
-            if(*data == '~'){
+
+            qDebug() << socket->bytesAvailable();
+            data = socket->read(1);
+            if(data == "~"){
                 processCommand(buffer);
+                buffer = "";
             }else{
-                buffer+=*data;
+                buffer+=data;
             }
         }
     }
