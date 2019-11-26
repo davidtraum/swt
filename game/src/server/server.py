@@ -234,7 +234,6 @@ class ClientThread(Thread):
 
     def send(self, pText):
         self.connection.sendall((pText + '~').encode('utf-8'))
-        time.sleep(0.001)
 
     def disconnect(self):
         global clients
