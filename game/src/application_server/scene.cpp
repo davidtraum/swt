@@ -17,8 +17,9 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
     highlighter = new Highlighter();
     QGraphicsScene::addItem(highlighter);
 
-    secondPlayer = new Player();
-    QGraphicsScene::addItem(secondPlayer->highlighter);
+    dataModel->secondPlayer = new Player();
+    dataModel->secondPlayer->highlighter->setColor(Qt::lightGray);
+    QGraphicsScene::addItem(dataModel->secondPlayer->highlighter);
 
     textHint = new QGraphicsTextItem();
     textHint->setDefaultTextColor(QColor(Qt::white));
@@ -295,5 +296,6 @@ void Scene::onSetTile(int pX, int pY, int pType, int pRotation){
  */
 void Scene::updatePlayerPosition(int pX, int pY)
 {
-    secondPlayer->setPosition(pX,pY);
+    dataModel->secondPlayer->setPosition(pX,pY);
+    emit dataModel->viewChange();
 }

@@ -19,6 +19,7 @@ Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel
     connect(dataModel, &DataModel::viewChange, this, &Minimap::viewChange);
 
     location = QImage(":/icons/pin.svg");
+    location_white = QImage(":/icons/pin_white.svg");
     compass = QImage(":/images/highres/compass.png");
 }
 
@@ -52,7 +53,8 @@ void Minimap::paintEvent(QPaintEvent *event)
         }
     }
     painter.setPen(Qt::red);
-    painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), QImage(":/icons/pin.svg"));
+    painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), location);
+    painter.drawImage(QRectF(dataModel->secondPlayer->posX-16, dataModel->secondPlayer->posY-28,32,32), location_white);
     painter.drawImage(QRectF(0,0,width,height), compass);
 }
 

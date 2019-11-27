@@ -5,6 +5,8 @@
 #include <QLabel>
 #include <QWidget>
 
+#include "player.h"
+
 class DataModel: public QObject
 {
     Q_OBJECT
@@ -34,6 +36,7 @@ public:
               RAIL_PLACEMENT};
     void setMode(MODE);
     MODE getMode();
+    Player * secondPlayer;
 
 private:
     int balance;

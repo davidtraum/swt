@@ -815,6 +815,7 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/rail.svg \
 		../../../game/src/application_server/cash.svg \
 		../../../game/src/application_server/bridge.svg \
+		../../../game/src/application_server/pin_white.svg \
 		../../../game/src/application_server/verbindungstrennung.svg \
 		../../../game/src/application_server/trainstation.svg \
 		../../../game/src/application_server/train.svg \
@@ -1093,6 +1094,10 @@ moc_datamodel.cpp: ../../../game/src/application_server/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/prototype/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../../../game/src/application_server/datamodel.h -o moc_datamodel.cpp
@@ -1896,6 +1901,10 @@ datamodel.o: ../../../game/src/application_server/datamodel.cpp ../../../game/sr
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamodel.o ../../../game/src/application_server/datamodel.cpp
 
@@ -2040,7 +2049,16 @@ gameloop.o: ../../../game/src/application_server/gameloop.cpp ../../../game/src/
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../game/src/application_server/client.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QStringList \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameloop.o ../../../game/src/application_server/gameloop.cpp
 
 graphicsmanager.o: ../../../game/src/application_server/graphicsmanager.cpp /home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
@@ -2381,6 +2399,10 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		../../../game/src/application_server/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../game/src/application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
@@ -2396,9 +2418,7 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
 		../../../game/src/application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
@@ -2406,8 +2426,6 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		../../../game/src/application_server/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
-		../../../game/src/application_server/player.h \
-		../../../game/src/application_server/highlighter.h \
 		../../../game/src/application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -2953,6 +2971,7 @@ minimap.o: ../../../game/src/application_server/minimap.cpp ../../../game/src/ap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../../../game/src/application_server/minimap.cpp
 
 player.o: ../../../game/src/application_server/player.cpp ../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -3293,15 +3312,17 @@ sidepanel.o: ../../../game/src/application_server/sidepanel.cpp ../../../game/sr
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
 		../../../game/src/application_server/datamodel.h \
+		../../../game/src/application_server/player.h \
+		../../../game/src/application_server/highlighter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../game/src/application_server/minimap.h \
 		../../../game/src/application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsItem \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
 		../../../game/src/application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
@@ -3309,8 +3330,6 @@ sidepanel.o: ../../../game/src/application_server/sidepanel.cpp ../../../game/sr
 		../../../game/src/application_server/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
-		../../../game/src/application_server/player.h \
-		../../../game/src/application_server/highlighter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \

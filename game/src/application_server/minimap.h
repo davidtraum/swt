@@ -16,7 +16,7 @@ private:
     int width,height;
     Scene * scene;
     DataModel * dataModel;
-    QImage location,compass;
+    QImage location,compass,location_white;
 
 public slots:
     void viewChange();

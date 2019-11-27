@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['mainwindow_220',['MainWindow',['../classMainWindow.html',1,'']]],
-  ['maptile_221',['MapTile',['../classMapTile.html',1,'']]],
-  ['menubar_222',['MenuBar',['../classMenuBar.html',1,'']]],
-  ['minimap_223',['Minimap',['../classMinimap.html',1,'']]]
+  ['mainwindow_221',['MainWindow',['../classMainWindow.html',1,'']]],
+  ['maptile_222',['MapTile',['../classMapTile.html',1,'']]],
+  ['menubar_223',['MenuBar',['../classMenuBar.html',1,'']]],
+  ['minimap_224',['Minimap',['../classMinimap.html',1,'']]]
 ];
