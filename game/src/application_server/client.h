@@ -36,6 +36,7 @@ signals:
 public slots:
     void onPositionChange(int,int);
     void onLeftclick();
+    void onRightclick();
 };
 
 #endif // CLIENT_H

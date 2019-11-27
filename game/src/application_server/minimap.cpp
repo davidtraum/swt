@@ -45,6 +45,14 @@ void Minimap::paintEvent(QPaintEvent *event)
                 case MapTile::RIVER_RT:
                     painter.setPen(Qt::blue);
                     break;
+                case MapTile::RAIL_H:
+                case MapTile::RAIL_V:
+                case MapTile::RAIL_LB:
+                case MapTile::RAIL_LT:
+                case MapTile::RAIL_RB:
+                case MapTile::RAIL_RT:
+                    painter.setPen(Qt::black);
+                    break;
                 default:
                     painter.setPen(Qt::green);
                     break;

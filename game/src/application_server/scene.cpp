@@ -31,6 +31,7 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
             data[x][y].attachGraphicsManager(graphicsManager);
             data[x][y].setType(MapTile::GRASS);
             data[x][y].setPosition(x*64,y*64);
+            data[x][y].setRotation(std::rand()%4);
             QGraphicsScene::addItem(data[x][y].getPixmapItem());
         }
     }

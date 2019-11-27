@@ -36,6 +36,7 @@ private:
 
 signals:
     void onLeftclick();
+    void onRightclick();
 
 public slots:
     void zoomInAnimation();

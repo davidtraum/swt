@@ -104,7 +104,7 @@ void View::leftclick(QMouseEvent * pEvent, MapTile * pTile)
  */
 void View::rightclick(QMouseEvent * pEvent, MapTile * pTile)
 {
-
+    emit onRightclick();
 }
 
 /**

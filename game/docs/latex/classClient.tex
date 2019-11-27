@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Client\+:\nopagebreak
+Klassendiagramm für Client\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,7 +30,9 @@ Zusammengehörigkeiten von Client\+:
 void \mbox{\hyperlink{classClient_a660b8879b75b9dbfe82e88991e616fc3}{on\+Position\+Change}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a660b8879b75b9dbfe82e88991e616fc3}{Client\+::on\+Position\+Change}} Slot für Ändern der Position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c}{on\+Leftclick}} ()
-\begin{DoxyCompactList}\small\item\em Client\+::on\+Tile\+Change Slot für Ändern eines Tiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c}{Client\+::on\+Leftclick}} Führt einen Linksclick durch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{on\+Rightclick}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{Client\+::on\+Rightclick}} Slot für Ändern eines Tiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -81,7 +84,8 @@ int \mbox{\hyperlink{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}{tickcount}} 
 
 \mbox{\hyperlink{classClient_a31eda3a4d7b4780e159120aa055b1299}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -105,27 +109,18 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 
 
-Client\+::on\+Tile\+Change Slot für Ändern eines Tiles. 
+\mbox{\hyperlink{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c}{Client\+::on\+Leftclick}} Führt einen Linksclick durch. 
 
-
-\begin{DoxyParams}{Parameter}
-{\em pX} & Der X-\/\+Index. \\
-\hline
-{\em pY} & Der Y-\/\+Index. \\
-\hline
-{\em p\+Type} & Der Typ. \\
-\hline
-{\em p\+Rotation} & Die Rotation. \\
-\hline
-\end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=332pt]{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -167,6 +162,32 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=321pt]{classClient_a660b8879b75b9dbfe82e88991e616fc3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClient_a423592967803355986a359fb34e268ad}\label{classClient_a423592967803355986a359fb34e268ad}} 
+\index{Client@{Client}!onRightclick@{onRightclick}}
+\index{onRightclick@{onRightclick}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{onRightclick}{onRightclick}}
+{\footnotesize\ttfamily void Client\+::on\+Rightclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{Client\+::on\+Rightclick}} Slot für Ändern eines Tiles. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classClient_a423592967803355986a359fb34e268ad_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classClient_a423592967803355986a359fb34e268ad_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}\label{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}} 

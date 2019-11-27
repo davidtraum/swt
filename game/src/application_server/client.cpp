@@ -19,6 +19,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
+    connect(pView, &View::onRightclick, this, &Client::onRightclick);
     connect(this, &Client::onMapLoaded, dataModel, &DataModel::setMapLoaded);
     emit onMapLoaded(false);
     socket = new QTcpSocket(this);
@@ -123,11 +124,7 @@ void Client::onPositionChange(int pX, int pY){
 }
 
 /**
- * @brief Client::onTileChange Slot für Ändern eines Tiles.
- * @param pX Der X-Index.
- * @param pY Der Y-Index.
- * @param pType Der Typ.
- * @param pRotation Die Rotation.
+ * @brief Client::onLeftclick Führt einen Linksclick durch.
  */
 void Client::onLeftclick(){
     qDebug() << "<olc";
@@ -139,4 +136,14 @@ void Client::onLeftclick(){
             break;
     }
 }
+
+/**
+ * @brief Client::onRightclick Slot für Ändern eines Tiles.
+ */
+void Client::onRightclick()
+{
+    socket->write(QString::fromStdString("BUILD INTERACT " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
+    socket->flush();
+}
+
 

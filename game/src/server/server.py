@@ -55,8 +55,9 @@ class MapTile:
     def getY(self):
         return self.y
 
-    def setType(self, pType, share=True):
-        self.setRotation(0)
+    def setType(self, pType, share=True, resetRotation=True):
+        if(resetRotation):
+            self.setRotation(0)
         self.type = MapTile.TYPES[pType]
         if(share):
             broadcast(self.getProtocolString())
@@ -67,6 +68,14 @@ class MapTile:
 
     def setRotation(self, pRotation):
         self.rotation = pRotation
+
+    def rotateClockwise(self, share=True):
+        self.rotation+=1
+        if(self.rotation>3):
+            self.rotation=0
+        if(share):
+            broadcast(self.getProtocolString())
+
 
     def isRiver(self):
         return self.type >= 3 and self.type <= 8
@@ -122,20 +131,27 @@ class World:
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
+    def tileRightclick(self, posX, posY):
+        if(self.data[posX][posY].isRail()):
+            self.data[posX][posY].rotateClockwise()
+        else:
+            self.data[posX][posY].setType('GRASS')
+        self.data[posX][posY]
+
     def generateWorld(self):
         print("Welt wird generiert...")
         size = 300
         for x in range(size):
             for y in range(size):
-                self.data[x][y].setRotation(random.randint(0, 3))
                 if(random.randint(0, 100) < 20):
                     self.data[x][y].setType('FOREST')
+                self.data[x][y].setRotation(random.randint(0, 3))
 
         for townIndex in range(300):
             px, py = self.randomPosition()
             size = random.randint(3, 20)
             for houseIndex in range(size):
-                self.data[px][py].setType('CITY')
+                self.data[px][py].setType('CITY', resetRotation=False)
                 px += random.randint(-1, 1)
                 py += random.randint(-1, 1)
 
@@ -258,12 +274,15 @@ class ClientThread(Thread):
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
             elif(args[0] == 'BUILD'):
+                posX = int(args[2])
+                posY = int(args[3])
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
-                    posX = int(args[2])
-                    posY = int(args[3])
                     world.data[posX][posY].setType('RAIL_H')
                     #world.tileInteract(posX, posY)
+                if(args[1] == 'INTERACT'):
+                    print("Build interact")
+                    world.tileRightclick(posX, posY)
             elif(args[0] == 'POS'):
                 print("got pos update " + command)
                 posX = int(args[1])
