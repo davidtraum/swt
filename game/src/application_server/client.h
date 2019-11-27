@@ -31,6 +31,7 @@ signals:
     void mapLoaded();
     void tileChanged(int,int,int,int);
     void playerPositionChange(int,int);
+    void onMapLoaded(bool);
 
 public slots:
     void onPositionChange(int,int);

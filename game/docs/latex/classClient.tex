@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Client\+:\nopagebreak
+Klassendiagramm für Client\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,6 +39,8 @@ void \mbox{\hyperlink{classClient_a7eb68233905bad7e20ed057bb67ab856}{map\+Loaded
 void \mbox{\hyperlink{classClient_abf75ead98e9700dd6e26539b0e1eb9af}{tile\+Changed}} (int, int, int, int)
 \item 
 void \mbox{\hyperlink{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}{player\+Position\+Change}} (int, int)
+\item 
+void \mbox{\hyperlink{classClient_a60cad535b42ae3555ae1f69b14902344}{on\+Map\+Loaded}} (bool)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
@@ -63,6 +66,8 @@ Q\+Tcp\+Socket $\ast$ \mbox{\hyperlink{classClient_acfb33719fbe6b0685ca7324c0ee8
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classClient_a3e54a1387070da225bfa114f364fb297}{data\+Model}}
 \item 
 bool \mbox{\hyperlink{classClient_a764f0d6601b0c32acc45ba1606b0c2c9}{debug}}
+\item 
+int \mbox{\hyperlink{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}{tickcount}} \{0\}
 \end{DoxyCompactItemize}
 
 
@@ -129,6 +134,20 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=285pt]{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classClient_a60cad535b42ae3555ae1f69b14902344}\label{classClient_a60cad535b42ae3555ae1f69b14902344}} 
+\index{Client@{Client}!onMapLoaded@{onMapLoaded}}
+\index{onMapLoaded@{onMapLoaded}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{onMapLoaded}{onMapLoaded}}
+{\footnotesize\ttfamily void Client\+::on\+Map\+Loaded (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClient_a60cad535b42ae3555ae1f69b14902344_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classClient_a660b8879b75b9dbfe82e88991e616fc3}\label{classClient_a660b8879b75b9dbfe82e88991e616fc3}} 
 \index{Client@{Client}!onPositionChange@{onPositionChange}}
 \index{onPositionChange@{onPositionChange}!Client@{Client}}
@@ -159,8 +178,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{playerPositionChange}{playerPositionChange}}
 {\footnotesize\ttfamily void Client\+::player\+Position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -258,6 +276,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{socket@{socket}!Client@{Client}}
 \doxysubsubsection{\texorpdfstring{socket}{socket}}
 {\footnotesize\ttfamily Q\+Tcp\+Socket$\ast$ Client\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}\label{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}} 
+\index{Client@{Client}!tickcount@{tickcount}}
+\index{tickcount@{tickcount}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{tickcount}{tickcount}}
+{\footnotesize\ttfamily int Client\+::tickcount \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['israil_297',['isRail',['../classMapTile.html#a1a098019e294631b4ddc34d82658d7b3',1,'MapTile']]],
-  ['isriver_298',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
+  ['israil_301',['isRail',['../classMapTile.html#a1a098019e294631b4ddc34d82658d7b3',1,'MapTile']]],
+  ['isriver_302',['isRiver',['../classMapTile.html#af1dc148431a17720f9254eae4034a49f',1,'MapTile']]]
 ];

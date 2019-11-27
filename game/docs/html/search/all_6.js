@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gameloop_36',['GameLoop',['../classGameLoop.html',1,'GameLoop'],['../classGameLoop.html#a99f483372fc4fb7fa168825570f5003c',1,'GameLoop::GameLoop()']]],
+  ['gameloop_36',['GameLoop',['../classGameLoop.html',1,'GameLoop'],['../classGameLoop.html#a8ee66307380dffbaa832b09b3df3d000',1,'GameLoop::GameLoop()']]],
   ['gameloop_2ecpp_37',['gameloop.cpp',['../gameloop_8cpp.html',1,'']]],
   ['gameloop_2eh_38',['gameloop.h',['../gameloop_8h.html',1,'']]],
   ['gamerunning_39',['gameRunning',['../main_8cpp.html#aaa52a27abaaf72231a84c99f2bfa4283',1,'gameRunning():&#160;main.cpp'],['../main_8h.html#aaa52a27abaaf72231a84c99f2bfa4283',1,'gameRunning():&#160;main.cpp']]],
@@ -26,7 +26,7 @@ var searchData=
   ['getx_59',['getX',['../classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b',1,'MapTile']]],
   ['gety_60',['getY',['../classMapTile.html#a27013c9d383c819e1af233e551f63bbf',1,'MapTile']]],
   ['graphics_61',['GRAPHICS',['../classGraphicsManager.html#a137c5ad6b72043918becb5dc74a8c5dd',1,'GraphicsManager::GRAPHICS()'],['../main_8cpp.html#aa07458f3555202507fc8025e8cae6126',1,'graphics():&#160;main.cpp']]],
-  ['graphicsmanager_62',['GraphicsManager',['../classGraphicsManager.html',1,'GraphicsManager'],['../classMapTile.html#ab64814e3d68fc9924a99c59074080b69',1,'MapTile::graphicsManager()'],['../classScene.html#a8117d555b381577bc6d82a1c74e5eef7',1,'Scene::graphicsManager()'],['../classGraphicsManager.html#a9adb32c8fef47eb09a0b66a512ff7684',1,'GraphicsManager::GraphicsManager()']]],
+  ['graphicsmanager_62',['GraphicsManager',['../classGraphicsManager.html',1,'GraphicsManager'],['../classGraphicsManager.html#a9adb32c8fef47eb09a0b66a512ff7684',1,'GraphicsManager::GraphicsManager()'],['../classMapTile.html#ab64814e3d68fc9924a99c59074080b69',1,'MapTile::graphicsManager()'],['../classScene.html#a8117d555b381577bc6d82a1c74e5eef7',1,'Scene::graphicsManager()']]],
   ['graphicsmanager_2ecpp_63',['graphicsmanager.cpp',['../graphicsmanager_8cpp.html',1,'']]],
   ['graphicsmanager_2eh_64',['graphicsmanager.h',['../graphicsmanager_8h.html',1,'']]],
   ['grass_65',['GRASS',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a49adde55b2b4430b1521033f112e28ba',1,'MapTile']]]

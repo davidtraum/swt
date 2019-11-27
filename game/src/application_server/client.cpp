@@ -19,6 +19,8 @@ Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
+    connect(this, &Client::onMapLoaded, dataModel, &DataModel::setMapLoaded);
+    emit onMapLoaded(false);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
@@ -41,36 +43,41 @@ void Client::run() {
     QString overshoot = "";
     int length = 0;
     while(true){
-        if(socket->bytesAvailable()>1){
-            data = socket->readAll();
-            split = data.split("~");
-            length = split.length();
-            for(int i = 0; i<length-1; i++){
-                if(length>1){
-                    if(i<length-2){
-                        processCommand(split[i]);
-                    }else{
-                        if(i==length-2){
-                            if(split[length-1].length() > 0){
-                                processCommand(split[i]);
-                                overshoot = split[length-1];
-                            }else{
-                                overshoot = split[i];
+        while(socket->bytesAvailable()>0){
+                /*
+                data = socket->readAll();
+                split = data.split("~");
+                length = split.length();
+                for(int i = 0; i<length-1; i++){
+                    if(length>2 && split[1].length()>0){
+                        if(i<length-2){
+                            processCommand(split[i]);
+                        }else{
+                            if(i==length-2){
+                                if(split[length-1].length() > 0){
+                                    processCommand(split[i]);
+                                    overshoot = split[length-1];
+                                }else{
+                                    overshoot = split[i];
+                                }
                             }
                         }
+                    }else{
+                        overshoot = data;
                     }
-                }else{
-                    overshoot = data;
                 }
-            }
-            if(data == "~"){
-                processCommand(buffer);
-                buffer = "";
-            }else{
-                buffer+=data;
-            }
+                */
+                data = socket->read(1);
+                if(data == "~"){
+                    processCommand(buffer);
+                    buffer = "";
+                }else{
+                    buffer += data;
+
+                }
         }
     }
+    socket->deleteLater();
 }
 
 void Client::requestMap(){
@@ -84,11 +91,18 @@ void Client::requestMap(){
 void Client::processCommand(QString cmd){
     if(debug) qDebug() << "[CLIENT] Command: " + cmd;
     try {
-        QStringList split = cmd.split(" ");
-        if(split[0].startsWith("TILE") && split.length()==5){
-            emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
-        }else if(split[0].startsWith("POS") && split.length()==3){
-            emit playerPositionChange(split[1].toInt(), split[2].toInt());
+        QStringList split = cmd.split("+");
+        if(split.length()>1){
+        if((split[1]=="TILE") && split.length()==6){
+            emit tileChanged(split[2].toInt(),split[3].toInt(), split[4].toInt(), split[5].toInt());
+        }else if(split[1]=="POS" && split.length()==4){
+            emit playerPositionChange(split[2].toInt(), split[3].toInt());
+        }else if(split[1]=="MAP"){
+            if(split[2]=="DONE"){
+                qDebug() << "Map loaded";
+                emit onMapLoaded(true);
+            }
+        }
         }
     } catch (...) {
         qDebug() << "Client error";
@@ -103,8 +117,9 @@ void Client::processCommand(QString cmd){
  * @param pY Der Y-Index.
  */
 void Client::onPositionChange(int pX, int pY){
+    //qDebug() << QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY) + "~").toLocal8Bit();
     socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY) + "~").toLocal8Bit());
-    socket->flush();
+    //socket->flush();
 }
 
 /**
@@ -115,14 +130,13 @@ void Client::onPositionChange(int pX, int pY){
  * @param pRotation Die Rotation.
  */
 void Client::onLeftclick(){
+    qDebug() << "<olc";
     switch(dataModel->getMode()){
         case DataModel::RAIL_PLACEMENT:
-            if(debug){
-                qDebug() << "[BUILD] Anfrage für Rail " << dataModel->getHoverX() << " " << dataModel->getHoverY();
-            }
-            socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY())).toLocal8Bit());
+            qDebug() << "[BUILD] Anfrage für Rail " << dataModel->getHoverX() << " " << dataModel->getHoverY();
+            socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
+            socket->flush();
             break;
     }
-    socket->flush();
 }
 

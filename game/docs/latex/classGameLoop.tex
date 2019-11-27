@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Game\+Loop\+:\nopagebreak
+Klassendiagramm für Game\+Loop\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,7 +27,7 @@ Zusammengehörigkeiten von Game\+Loop\+:
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGameLoop_a99f483372fc4fb7fa168825570f5003c}{Game\+Loop}} (\mbox{\hyperlink{classView}{View}} $\ast$, \mbox{\hyperlink{classScene}{Scene}} $\ast$, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$)
+\mbox{\hyperlink{classGameLoop_a8ee66307380dffbaa832b09b3df3d000}{Game\+Loop}} (\mbox{\hyperlink{classView}{View}} $\ast$, \mbox{\hyperlink{classScene}{Scene}} $\ast$, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$, \mbox{\hyperlink{classClient}{Client}} $\ast$)
 \item 
 void \mbox{\hyperlink{classGameLoop_a5da2c7037d537d4feeffade3666ad3a3}{run}} () override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classGameLoop_a5da2c7037d537d4feeffade3666ad3a3}{Game\+Loop\+::run}} Die Gameloop. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -38,15 +39,17 @@ void \mbox{\hyperlink{classGameLoop_a5da2c7037d537d4feeffade3666ad3a3}{run}} () 
 \mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classGameLoop_a4d92ab46e9390277c206fe7f1c22c804}{scene}}
 \item 
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classGameLoop_aa77e151e3ed2b9f77ad8599201c1d74a}{data\+Model}}
+\item 
+\mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{classGameLoop_a5dbe9353b126ceb41c7a3bd2ebfabede}{client}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classGameLoop_a99f483372fc4fb7fa168825570f5003c}\label{classGameLoop_a99f483372fc4fb7fa168825570f5003c}} 
+\mbox{\Hypertarget{classGameLoop_a8ee66307380dffbaa832b09b3df3d000}\label{classGameLoop_a8ee66307380dffbaa832b09b3df3d000}} 
 \index{GameLoop@{GameLoop}!GameLoop@{GameLoop}}
 \index{GameLoop@{GameLoop}!GameLoop@{GameLoop}}
 \doxysubsubsection{\texorpdfstring{GameLoop()}{GameLoop()}}
-{\footnotesize\ttfamily Game\+Loop\+::\+Game\+Loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classView}{View}} $\ast$}]{p\+View,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Model }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Game\+Loop\+::\+Game\+Loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classView}{View}} $\ast$}]{p\+View,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Model,  }\item[{\mbox{\hyperlink{classClient}{Client}} $\ast$}]{p\+Client }\end{DoxyParamCaption})}
 
 
 
@@ -71,6 +74,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classGameLoop_a5dbe9353b126ceb41c7a3bd2ebfabede}\label{classGameLoop_a5dbe9353b126ceb41c7a3bd2ebfabede}} 
+\index{GameLoop@{GameLoop}!client@{client}}
+\index{client@{client}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}}$\ast$ Game\+Loop\+::client\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classGameLoop_aa77e151e3ed2b9f77ad8599201c1d74a}\label{classGameLoop_aa77e151e3ed2b9f77ad8599201c1d74a}} 
 \index{GameLoop@{GameLoop}!dataModel@{dataModel}}
 \index{dataModel@{dataModel}!GameLoop@{GameLoop}}

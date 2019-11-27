@@ -60,7 +60,7 @@ class MapTile:
         self.type = MapTile.TYPES[pType]
         if(share):
             broadcast(self.getProtocolString())
-            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type);
+            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
 
     def getType(self):
         return self.type
@@ -75,7 +75,7 @@ class MapTile:
         return self.type >= 9 and self.type <= 11
 
     def getProtocolString(self):
-        return 'TILE ' + str(self.x) + ' ' + str(self.y) + ' ' + str(self.type) + ' ' + str(self.rotation)
+        return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
     def isInGroup(self, types):
         for type in types:
@@ -233,7 +233,7 @@ class ClientThread(Thread):
         self.commandBuffer = ""
 
     def send(self, pText):
-        self.connection.sendall((pText + '~').encode('utf-8'))
+        self.connection.sendall(('CMD+' + pText + '~').encode())
 
     def disconnect(self):
         global clients
@@ -246,6 +246,7 @@ class ClientThread(Thread):
             pass
 
     def processCommand(self,command):
+            print(command)
             args = command.split(" ")
             if(args[0] == 'MAP'):
                 if(args[1] == 'GET'):
@@ -255,7 +256,7 @@ class ClientThread(Thread):
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
                                 self.send(world.data[x][y].getProtocolString())
-                    self.send("MAP DONE")
+                    self.send("MAP+DONE")
             elif(args[0] == 'BUILD'):
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
@@ -267,9 +268,9 @@ class ClientThread(Thread):
                 print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
-                broadcast("POS " + str(posX) + " " + str(posY), exclude=self)
+                broadcast("POS+" + str(posX) + "+" + str(posY), exclude=self)
             else:
-                pass
+                print(command)
 
     def run(self):
         global world

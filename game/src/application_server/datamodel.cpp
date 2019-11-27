@@ -79,7 +79,9 @@ std::string DataModel::formatTime(long pTime){
  */
 void DataModel::updateCoordinates(int pX, int pY){
     if(pX!=coordinateX || pY!=coordinateY){
-        emit positionChange(pX,pY);
+        if(mapLoaded){
+            emit positionChange(pX,pY);
+        }
         emit viewChange();
     }
     coordinateX = pX;
@@ -237,6 +239,14 @@ void DataModel::setBridgeMode(){
  */
 void DataModel::setRailPlacementMode(){
     setMode(DataModel::MODE::RAIL_PLACEMENT);
+}
+
+/**
+ * @brief DataModel::setMapLoaded Setzt das die Karte geladen wurde.
+ */
+void DataModel::setMapLoaded(bool status)
+{
+    mapLoaded = status;
 }
 
 /**

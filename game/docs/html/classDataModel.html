@@ -80,12 +80,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für DataModel:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDataModel__inherit__graph.svg" width="194" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDataModel__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von DataModel:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDataModel__coll__graph.svg" width="194" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDataModel__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -111,6 +113,9 @@ Zusammengehörigkeiten von DataModel:</div>
 <tr class="memitem:aaee7745917372491973cdabc4d12bb1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#aaee7745917372491973cdabc4d12bb1b">setRailPlacementMode</a> ()</td></tr>
 <tr class="memdesc:aaee7745917372491973cdabc4d12bb1b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDataModel.html#aaee7745917372491973cdabc4d12bb1b" title="DataModel::setRailPlacementMode Signal um in den Gleiseditor zu wechseln.">DataModel::setRailPlacementMode</a> Signal um in den Gleiseditor zu wechseln.  <a href="classDataModel.html#aaee7745917372491973cdabc4d12bb1b">Mehr ...</a><br /></td></tr>
 <tr class="separator:aaee7745917372491973cdabc4d12bb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1f4f25f2cf78f62a0f29ace3dc11f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#ada1f4f25f2cf78f62a0f29ace3dc11f8">setMapLoaded</a> (bool)</td></tr>
+<tr class="memdesc:ada1f4f25f2cf78f62a0f29ace3dc11f8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDataModel.html#ada1f4f25f2cf78f62a0f29ace3dc11f8" title="DataModel::setMapLoaded Setzt das die Karte geladen wurde.">DataModel::setMapLoaded</a> Setzt das die Karte geladen wurde.  <a href="classDataModel.html#ada1f4f25f2cf78f62a0f29ace3dc11f8">Mehr ...</a><br /></td></tr>
+<tr class="separator:ada1f4f25f2cf78f62a0f29ace3dc11f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signale</h2></td></tr>
@@ -195,6 +200,8 @@ Private Attribute</h2></td></tr>
 <tr class="separator:adddcc70d54445fd7e93ec7016c06ca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcb89a7fda479001ef8f92203c00d43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#a0dcb89a7fda479001ef8f92203c00d43">coordinateY</a></td></tr>
 <tr class="separator:a0dcb89a7fda479001ef8f92203c00d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a582fa87078d51ea50bcae372efd4d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#a5a582fa87078d51ea50bcae372efd4d0">mapLoaded</a> {false}</td></tr>
+<tr class="separator:a5a582fa87078d51ea50bcae372efd4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32e94d7559dea5f25325d481ed30d513"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#a32e94d7559dea5f25325d481ed30d513">ip</a></td></tr>
 <tr class="separator:a32e94d7559dea5f25325d481ed30d513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0600b5b3c94ed79290f41102637abef"><td class="memItemLeft" align="right" valign="top">quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataModel.html#ad0600b5b3c94ed79290f41102637abef">port</a></td></tr>
@@ -741,6 +748,40 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 </div>
 </div>
+<a id="ada1f4f25f2cf78f62a0f29ace3dc11f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1f4f25f2cf78f62a0f29ace3dc11f8">&#9670;&nbsp;</a></span>setMapLoaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataModel::setMapLoaded </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classDataModel.html#ada1f4f25f2cf78f62a0f29ace3dc11f8" title="DataModel::setMapLoaded Setzt das die Karte geladen wurde.">DataModel::setMapLoaded</a> Setzt das die Karte geladen wurde. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classDataModel_ada1f4f25f2cf78f62a0f29ace3dc11f8_icgraph.svg" width="346" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a1f235aecefc009c138f6b97bb38f6f32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f235aecefc009c138f6b97bb38f6f32">&#9670;&nbsp;</a></span>setMode()</h2>
 
@@ -1163,6 +1204,28 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
       <table class="memname">
         <tr>
           <td class="memname">QString DataModel::ip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a582fa87078d51ea50bcae372efd4d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a582fa87078d51ea50bcae372efd4d0">&#9670;&nbsp;</a></span>mapLoaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataModel::mapLoaded {false}</td>
         </tr>
       </table>
   </td>

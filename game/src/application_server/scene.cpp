@@ -195,7 +195,6 @@ void Scene::setActiveTile(QGraphicsItem *pItem){
     if(dataModel->getMode() != DataModel::DEFAULT){
         if(!highlighter->isVisible())highlighter->setVisible(true);
         highlighter->setPos(pItem->pos());
-        qDebug() << "pos set";
         switch(dataModel->getMode()){
             case DataModel::RAIL_PLACEMENT:
                 if(data[activeTile->getX()-1][activeTile->getY()].isRail() ||

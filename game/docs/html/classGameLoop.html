@@ -77,7 +77,8 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für GameLoop:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGameLoop__inherit__graph.svg" width="122" height="258"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameLoop__inherit__graph.svg" width="122" height="272"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von GameLoop:</div>
@@ -88,8 +89,8 @@ Zusammengehörigkeiten von GameLoop:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a99f483372fc4fb7fa168825570f5003c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameLoop.html#a99f483372fc4fb7fa168825570f5003c">GameLoop</a> (<a class="el" href="classView.html">View</a> *, <a class="el" href="classScene.html">Scene</a> *, <a class="el" href="classDataModel.html">DataModel</a> *)</td></tr>
-<tr class="separator:a99f483372fc4fb7fa168825570f5003c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee66307380dffbaa832b09b3df3d000"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameLoop.html#a8ee66307380dffbaa832b09b3df3d000">GameLoop</a> (<a class="el" href="classView.html">View</a> *, <a class="el" href="classScene.html">Scene</a> *, <a class="el" href="classDataModel.html">DataModel</a> *, <a class="el" href="classClient.html">Client</a> *)</td></tr>
+<tr class="separator:a8ee66307380dffbaa832b09b3df3d000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5da2c7037d537d4feeffade3666ad3a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameLoop.html#a5da2c7037d537d4feeffade3666ad3a3">run</a> () override</td></tr>
 <tr class="memdesc:a5da2c7037d537d4feeffade3666ad3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classGameLoop.html#a5da2c7037d537d4feeffade3666ad3a3" title="GameLoop::run Die Gameloop.">GameLoop::run</a> Die Gameloop.  <a href="classGameLoop.html#a5da2c7037d537d4feeffade3666ad3a3">Mehr ...</a><br /></td></tr>
 <tr class="separator:a5da2c7037d537d4feeffade3666ad3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,10 +103,12 @@ Private Attribute</h2></td></tr>
 <tr class="separator:a4d92ab46e9390277c206fe7f1c22c804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77e151e3ed2b9f77ad8599201c1d74a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataModel.html">DataModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameLoop.html#aa77e151e3ed2b9f77ad8599201c1d74a">dataModel</a></td></tr>
 <tr class="separator:aa77e151e3ed2b9f77ad8599201c1d74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dbe9353b126ceb41c7a3bd2ebfabede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameLoop.html#a5dbe9353b126ceb41c7a3bd2ebfabede">client</a></td></tr>
+<tr class="separator:a5dbe9353b126ceb41c7a3bd2ebfabede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a id="a99f483372fc4fb7fa168825570f5003c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f483372fc4fb7fa168825570f5003c">&#9670;&nbsp;</a></span>GameLoop()</h2>
+<a id="a8ee66307380dffbaa832b09b3df3d000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee66307380dffbaa832b09b3df3d000">&#9670;&nbsp;</a></span>GameLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +129,13 @@ Private Attribute</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classDataModel.html">DataModel</a> *&#160;</td>
-          <td class="paramname"><em>pModel</em>&#160;</td>
+          <td class="paramname"><em>pModel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classClient.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>pClient</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -172,6 +181,28 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a5dbe9353b126ceb41c7a3bd2ebfabede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dbe9353b126ceb41c7a3bd2ebfabede">&#9670;&nbsp;</a></span>client</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html">Client</a>* GameLoop::client</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa77e151e3ed2b9f77ad8599201c1d74a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa77e151e3ed2b9f77ad8599201c1d74a">&#9670;&nbsp;</a></span>dataModel</h2>
 

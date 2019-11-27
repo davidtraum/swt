@@ -39,6 +39,7 @@ private:
     int balance;
     long time;
     int coordinateX,coordinateY;
+    bool mapLoaded{false};
     QString ip;
     quint16 port;
     QLabel * balanceLabel;
@@ -56,6 +57,7 @@ public slots:
     void setTrainStationMode();
     void setBridgeMode();
     void setRailPlacementMode();
+    void setMapLoaded(bool);
 };
 
 #endif // DATAMODEL_H
