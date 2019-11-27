@@ -272,16 +272,15 @@ class ClientThread(Thread):
 
     def run(self):
         global world
-        overshoot = ""
+        buffer = b""
         while True:
             try:
-                data = self.connection.recv(1024)
-                if(len(data)>0):
-                    print(data.decode('utf-8'))
-                    split = data.decode('utf-8').split("~")
-                    length = len(split)
-                    for cmd in split:
-                        self.processCommand(cmd)
+                data = self.connection.recv(1)
+                if(data == b'~'):
+                    self.processCommand(buffer.decode('utf-8'))
+                    buffer = b""
+                else:
+                    buffer += data
             except Exception as e:
                 print(e)
                 self.disconnect()
