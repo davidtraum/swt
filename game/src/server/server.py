@@ -261,7 +261,8 @@ class ClientThread(Thread):
                     print("Build Rail Request at ", args[2], " ", args[3])
                     posX = int(args[2])
                     posY = int(args[3])
-                    world.tileInteract(posX, posY)
+                    world.data[posX][posY].setType('RAIL_H')
+                    #world.tileInteract(posX, posY)
             elif(args[0] == 'POS'):
                 print("got pos update " + command)
                 posX = int(args[1])
