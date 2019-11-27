@@ -246,16 +246,16 @@ class ClientThread(Thread):
             pass
 
     def processCommand(self,command):
-            if(len(command)==0):
-                self.disconnect()
             args = command.split(" ")
             if(args[0] == 'MAP'):
                 if(args[1] == 'GET'):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
+                        time.sleep(0.001)
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
                                 self.send(world.data[x][y].getProtocolString())
+                    self.send("MAP DONE")
             elif(args[0] == 'BUILD'):
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
@@ -266,21 +266,24 @@ class ClientThread(Thread):
                 print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
-                broadcast(command, exclude=self)
+                broadcast("POS " + str(posX) + " " + str(posY), exclude=self)
             else:
-                print("Unknown command " + command);
+                pass
 
     def run(self):
         global world
+        overshoot = ""
         while True:
             try:
-                data = self.connection.recv(1)
-                if(data == b'~'):
-                    self.processCommand(self.commandBuffer)
-                    self.commandBuffer = ""
-                else:
-                    self.commandBuffer += data.decode('utf-8')
-            except Exception:
+                data = self.connection.recv(1024)
+                if(len(data)>0):
+                    print(data.decode('utf-8'))
+                    split = data.decode('utf-8').split("~")
+                    length = len(split)
+                    for cmd in split:
+                        self.processCommand(cmd)
+            except Exception as e:
+                print(e)
                 self.disconnect()
                 break
             
