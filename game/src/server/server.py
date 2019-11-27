@@ -237,8 +237,8 @@ class World:
                     self.data[x][y].setType('WATER') 
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[299-x][y].setType('WATER')         
-        self.data[150][150].setType('RAIL_H')
-        self.data[150][150].initLogic(RailLogic)
+        #self.data[150][150].setType('RAIL_H')
+        #self.data[150][150].initLogic(RailLogic)
 
 
 class ClientThread(Thread):

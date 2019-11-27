@@ -138,7 +138,7 @@ void Client::onLeftclick(){
 }
 
 /**
- * @brief Client::onRightclick Slot für Ändern eines Tiles.
+ * @brief Client::onRightclick Führt einen Rechtsklick durch
  */
 void Client::onRightclick()
 {

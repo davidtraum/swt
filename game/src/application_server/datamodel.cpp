@@ -247,6 +247,7 @@ void DataModel::setRailPlacementMode(){
 void DataModel::setMapLoaded(bool status)
 {
     mapLoaded = status;
+    emit viewChange();
 }
 
 /**

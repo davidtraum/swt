@@ -94,7 +94,6 @@ MapTile::TYPE MapTile::getType(){
  */
 void MapTile::setRotation(int pRotation){
     pixmapItem->setTransformOriginPoint(32,32);
-    qDebug() << "On rotate " << pRotation;
     switch(pRotation){
         case 1:
             pixmapItem->setRotation(90);
