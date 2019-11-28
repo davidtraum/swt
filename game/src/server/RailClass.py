@@ -5,7 +5,7 @@ class RailLogic:
     def __init__(self, pTile, pPlayer):
         self.x_Pos = pTile.getX()    
         self.y_Pos = pTile.getY()        
-        self.tile = pTile
+        self.tile = pTile.getType()
         self.connectedRight = False; #rechtsverbunden?
         self.connectedLeft = False #linksverbunden?
         self.connectedUp = False #obenverbunden?
@@ -15,26 +15,38 @@ class RailLogic:
     def getConnections(self):
         return (str(int(self.connectedRight)) + str(int(self.connectedLeft)) + str(int(self.connectedUp)) + str(int(self.connectedDown)))
         
-    def getType(self):
-        data = (self.connectedLeft, self.connectedRight, self.connectedUp, self.connectedDown)
-        if(self.connectedLeft):
-            if(self.connectedUp):
-                return 'RAIL_LT'
-            elif(self.connectedDown):
-                return 'RAIL_LB'
-            else:
-                return 'RAIL_H'
-        elif(self.connectedRight):
-            if(self.connectedUp):
-                return 'RAIL_RT'
-            elif(self.connectedDown):
-                return 'RAIL_RB'
-            else:
-                return 'RAIL_H'
-        elif(self.connectedUp or self.connectedDown):
-            return 'RAIL_V'
-        return 'RAIL_H'
+    def updateType(self):   #Aktualisiert den Schienentyp
+        if(self.connectedUp == True and self.connectedDown == True):
+            self.tile = 'RAIL_V'
+            return
+        elif(self.connectedRight == True and self.connectedLeft == True):
+            self.tile = 'RAIL_H'
+            return
+        elif(self.connectedLeft == True and self.connectedDown == True):
+            self.tile = 'RAIL_LB'
+            return
+        elif(self.connectedLeft == True and self.connectedUp == True):
+            self.tile = 'RAIL_LT'
+            return
+        elif(self.connectedRight == True and self.connectedUp == True):
+            self.tile = 'RAIL_RT'
+            return
+        elif(self.connectedRight == True and self.connectedDown == True):
+            self.tile = 'RAIL_RB'
+            return
+        elif(self.connectedUp == True or self.connectedDown == True):
+            self.tile = 'RAIL_V'
+            return
+        elif(self.connectedRight == True or self.connectedLeft == True):
+            self.tile = 'RAIL_H'
+            return
+        else:
+            self.tile = 'RAIL_H'
+            return
 
+    def getType(self):
+        return self.tile
+    
     @staticmethod
     def checkConnectableRails(player, x_pos, y_pos, karte):
         railConnectableRight = False;   #Schiene rechts ist verbindbar?
@@ -114,7 +126,7 @@ class RailLogic:
             if(railConnectableDown == True):    #Schiene Unten verbindbar.
                 karte[x_pos][y_pos].logic.connectedDown = True    #Schiene mit unterer Schiene verbinden
                 karte[x_pos][y_pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
-                karte[x_pos][y_pos+1].logicUpdate()  
+                karte[x_pos][y_pos+1].logicUpdate()
 
             karte[x_pos][y_pos].logicUpdate()
 
