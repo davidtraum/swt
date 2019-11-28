@@ -12,6 +12,7 @@
 #include <QToolButton>
 #include <QFontDatabase>
 #include <QImage>
+#include <QQuickStyle>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -21,7 +22,6 @@
 #include "sidepanel.h"
 #include "tooltipmenu.h"
 #include "gameloop.h"
-
 
 
 
@@ -166,6 +166,8 @@ int main(int argc, char *argv[])
     toolbar->addWidget(statusLabel);
     dataModel->setStatusDisplayLabel(statusLabel);
 
+
+    QQuickStyle::setStyle("Material");
 
     QLabel * startscreen = new QLabel();
     startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
