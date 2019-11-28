@@ -10,6 +10,8 @@
 #include <QInputDialog>
 #include <QToolBar>
 #include <QToolButton>
+#include <QFontDatabase>
+#include <QImage>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -49,7 +51,10 @@ int main(int argc, char *argv[])
 {
     qDebug() << "Spiel wird gestartet.";
     QApplication a(argc, argv);
+    qDebug() << QFontDatabase::addApplicationFont(":/fonts/mono.ttf");
     mainWindow = new MainWindow();
+    //mainWindow->setCursor(QCursor(QPixmap(":/images/highres/cursor.png"), 0,0));
+    a.setFont(QFont(QFontDatabase::applicationFontFamilies(0).at(0)));
 
     mainWindow->setWindowTitle("Railroad Tycoon");
     mainWindow->setWindowIcon(QIcon(":/images/highres/icon.png"));
@@ -81,6 +86,7 @@ int main(int argc, char *argv[])
     widget->setLayout(layout);
 
     MenuBar * menuBar = new MenuBar(scene, dataModel, view);
+    menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
     mainWindow->setMenuBar(menuBar);
 
     sidePanel = new SidePanel(new Minimap(300,300, scene, dataModel));
@@ -105,6 +111,7 @@ int main(int argc, char *argv[])
     timeTicker();
 
     QToolBar * toolbar = mainWindow->addToolBar("Hauptmenü");
+    toolbar->setStyleSheet("background-color: rgb(150,150,255);");
     toolbar->setMovable(false);
 
     QToolButton * resetModeButton = new QToolButton(mainWindow);

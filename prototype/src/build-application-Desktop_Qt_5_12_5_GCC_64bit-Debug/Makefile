@@ -781,7 +781,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
 qrc_Data.cpp: ../../../game/src/application_server/Data.qrc \
 		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
-		../../../game/src/application_server/cities.json
+		../../../game/src/application_server/cities.json \
+		../../../game/src/application_server/mono.ttf \
+		../../../game/src/application_server/raleway.ttf \
+		../../../game/src/application_server/minecraft.ttf
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Data ../../../game/src/application_server/Data.qrc -o qrc_Data.cpp
 
 qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
@@ -800,6 +803,7 @@ qrc_Graphics.cpp: ../../../game/src/application_server/Graphics.qrc \
 		../../../game/src/application_server/schiene_h.png \
 		../../../game/src/application_server/schiene_kurve.png \
 		../../../game/src/application_server/icon.png \
+		../../../game/src/application_server/cursor.png \
 		../../../game/src/application_server/startscreen.jpg \
 		../../../game/src/application_server/kompass.png \
 		../../../game/src/application_server/show_routes.svg \
@@ -2390,6 +2394,9 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolButton \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbutton.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QFontDatabase \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
 		../../../game/src/application_server/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -2425,7 +2432,6 @@ main.o: ../../../game/src/application_server/main.cpp /home/david/Qt/5.12.5/gcc_
 		../../../game/src/application_server/city.h \
 		../../../game/src/application_server/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
 		../../../game/src/application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \

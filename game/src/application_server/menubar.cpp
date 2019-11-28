@@ -11,12 +11,13 @@
 MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     scene{pScene}, dataModel{pDataModel}, view{pView}
 {
-    QMenu * mainMenu = QMenuBar::addMenu("Spiel");
-    QMenu * serverSelection = mainMenu->addMenu(QIcon(":/icons/server.svg"), "Serververbindung");
-    QAction * openConnection = serverSelection->addAction(QIcon(":/icons/verbindungsaufbau.svg"), "Verbindungsaufbau");
-    QAction * closeConnection = serverSelection->addAction(QIcon(":/icons/verbindungstrennung.svg"), "Verbindung trennen");
+    QMenu * mainMenu = QMenuBar::addMenu("Server");
+    QAction * openConnection = mainMenu->addAction(QIcon(":/icons/verbindungsaufbau.svg"), "Verbindungsaufbau");
+    QAction * closeConnection = mainMenu->addAction(QIcon(":/icons/verbindungstrennung.svg"), "Verbindung trennen");
     connect(openConnection, &QAction::triggered, this, &MenuBar::slotOpenConnection);
     connect(closeConnection, &QAction::triggered, this, &MenuBar::slotCloseConnection);
+
+    QMenu * settingsMenu = QMenuBar::addMenu("Einstellungen");
 
     QLabel * serverIp = new QLabel("Nicht verbunden");
     QMenuBar::setCornerWidget(serverIp);
