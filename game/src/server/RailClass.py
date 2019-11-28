@@ -128,8 +128,6 @@ class RailLogic:
                 karte[x_pos][y_pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
                 karte[x_pos][y_pos+1].logicUpdate()
 
-            karte[x_pos][y_pos].logicUpdate()
-
         else:
             print("Spielerabfrage") #z.B. mit vier Richtungen, die ersten beiden(anklickbaren) die geklickt werden bestimmen die Kurve
                 
