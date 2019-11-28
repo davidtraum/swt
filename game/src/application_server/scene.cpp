@@ -255,8 +255,8 @@ MapTile * Scene::getTileAt(int posX, int posY, bool isPixelCoordinate){
  * @param isPixelCoordinate
  */
 void Scene::setTileAt(int pX,int pY, int pType, int pRotation){
-    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
     data[pX][pY].setRotation(pRotation);
+    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
     emit tileUpdate(pX,pY,pType,pRotation);
 }
 
