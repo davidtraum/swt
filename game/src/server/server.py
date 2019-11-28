@@ -81,7 +81,7 @@ class MapTile:
         return self.type >= 3 and self.type <= 8
 
     def isRail(self):
-        return self.type >= 9 and self.type <= 11
+        return self.type >= 9 and self.type <= 14
 
     def getProtocolString(self):
         return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)

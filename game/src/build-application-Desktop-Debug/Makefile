@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../application_server -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../application_server -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -35,10 +35,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = application1.0.0
-DISTDIR = /home/matthias/Dokumente/Informatik/SWT\ Praktikum/Git/swt/prototype/src/build-application-Desktop-Debug/.tmp/application1.0.0
+DISTDIR = /home/matthias/Dokumente/Informatik/SWT\ Praktikum/Git/swt/game/src/build-application-Desktop-Debug/.tmp/application1.0.0
 LINK          = g++
-LFLAGS        = 
-LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lGL -lpthread 
+LFLAGS        = -Wl,-rpath-link,/usr/lib/x86_64-linux-gnu
+LIBS          = $(SUBLIBS) -lQt5MultimediaWidgets -lpulse-mainloop-glib -lpulse -lglib-2.0 -lQt5Multimedia -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -53,11 +53,14 @@ OBJECTS_DIR   = ./
 SOURCES       = ../application_server/city.cpp \
 		../application_server/client.cpp \
 		../application_server/datamodel.cpp \
+		../application_server/gameloop.cpp \
 		../application_server/graphicsmanager.cpp \
+		../application_server/highlighter.cpp \
 		../application_server/main.cpp \
 		../application_server/mainwindow.cpp \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
+		../application_server/minimap.cpp \
 		../application_server/player.cpp \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
@@ -68,15 +71,20 @@ SOURCES       = ../application_server/city.cpp \
 		moc_client.cpp \
 		moc_datamodel.cpp \
 		moc_mainwindow.cpp \
-		moc_scene.cpp
+		moc_minimap.cpp \
+		moc_scene.cpp \
+		moc_view.cpp
 OBJECTS       = city.o \
 		client.o \
 		datamodel.o \
+		gameloop.o \
 		graphicsmanager.o \
+		highlighter.o \
 		main.o \
 		mainwindow.o \
 		maptile.o \
 		menubar.o \
+		minimap.o \
 		player.o \
 		river.o \
 		scene.o \
@@ -88,7 +96,9 @@ OBJECTS       = city.o \
 		moc_client.o \
 		moc_datamodel.o \
 		moc_mainwindow.o \
-		moc_scene.o
+		moc_minimap.o \
+		moc_scene.o \
+		moc_view.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -119,6 +129,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -128,6 +140,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -167,11 +184,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/application.pro ../application_server/city.h \
 		../application_server/client.h \
 		../application_server/datamodel.h \
+		../application_server/gameloop.h \
 		../application_server/graphicsmanager.h \
+		../application_server/highlighter.h \
 		../application_server/main.h \
 		../application_server/mainwindow.h \
 		../application_server/maptile.h \
 		../application_server/menubar.h \
+		../application_server/minimap.h \
 		../application_server/player.h \
 		../application_server/river.h \
 		../application_server/scene.h \
@@ -180,11 +200,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/view.h ../application_server/city.cpp \
 		../application_server/client.cpp \
 		../application_server/datamodel.cpp \
+		../application_server/gameloop.cpp \
 		../application_server/graphicsmanager.cpp \
+		../application_server/highlighter.cpp \
 		../application_server/main.cpp \
 		../application_server/mainwindow.cpp \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
+		../application_server/minimap.cpp \
 		../application_server/player.cpp \
 		../application_server/river.cpp \
 		../application_server/scene.cpp \
@@ -232,6 +255,8 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -241,6 +266,11 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -280,6 +310,8 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 		../application_server/application.pro \
 		../application_server/Data.qrc \
 		../application_server/Graphics.qrc \
+		/usr/lib/x86_64-linux-gnu/libQt5MultimediaWidgets.prl \
+		/usr/lib/x86_64-linux-gnu/libQt5Multimedia.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Network.prl \
@@ -315,6 +347,8 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri:
@@ -324,6 +358,11 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickcontrols2.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
@@ -363,6 +402,8 @@ Makefile: ../application_server/application.pro /usr/lib/x86_64-linux-gnu/qt5/mk
 ../application_server/application.pro:
 ../application_server/Data.qrc:
 ../application_server/Graphics.qrc:
+/usr/lib/x86_64-linux-gnu/libQt5MultimediaWidgets.prl:
+/usr/lib/x86_64-linux-gnu/libQt5Multimedia.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Network.prl:
@@ -383,8 +424,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/graphicsmanager.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/graphicsmanager.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/player.h ../application_server/river.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/player.cpp ../application_server/river.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -414,7 +455,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
 qrc_Data.cpp: ../application_server/Data.qrc \
 		/usr/lib/qt5/bin/rcc \
-		../application_server/cities.json
+		../application_server/cities.json \
+		../application_server/mono.ttf \
+		../application_server/raleway.ttf \
+		../application_server/minecraft.ttf
 	/usr/lib/qt5/bin/rcc -name Data ../application_server/Data.qrc -o qrc_Data.cpp
 
 qrc_Graphics.cpp: ../application_server/Graphics.qrc \
@@ -423,6 +467,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/grass.png \
 		../application_server/stadt.png \
 		../application_server/rathaus.png \
+		../application_server/water.png \
 		../application_server/fluss_kurve_links_unten.png \
 		../application_server/fluss_kurve_rechts_oben.png \
 		../application_server/fluss_kurve_rechts_unten.png \
@@ -431,13 +476,30 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/fluss_horizontal.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
-		../application_server/verbindungsaufbau.svg \
-		../application_server/verbindungstrennung.svg \
-		../application_server/Nahrung.svg \
-		../application_server/clock.svg \
+		../application_server/icon.png \
+		../application_server/cursor.png \
+		../application_server/startscreen.jpg \
+		../application_server/kompass.png \
+		../application_server/show_routes.svg \
 		../application_server/location.svg \
+		../application_server/hammer.svg \
+		../application_server/cog.svg \
+		../application_server/server.svg \
+		../application_server/clock.svg \
+		../application_server/verbindungsaufbau.svg \
+		../application_server/pin.svg \
+		../application_server/mouse.svg \
+		../application_server/Nahrung.svg \
+		../application_server/rail.svg \
 		../application_server/cash.svg \
-		../application_server/server.svg
+		../application_server/bridge.svg \
+		../application_server/pin_white.svg \
+		../application_server/verbindungstrennung.svg \
+		../application_server/trainstation.svg \
+		../application_server/train.svg \
+		../application_server/tools.svg \
+		../application_server/create_route.svg \
+		../application_server/building_bridge.mp4
 	/usr/lib/qt5/bin/rcc -name Graphics ../application_server/Graphics.qrc -o qrc_Graphics.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -446,38 +508,70 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_client.cpp moc_datamodel.cpp moc_mainwindow.cpp moc_scene.cpp
+compiler_moc_header_make_all: moc_client.cpp moc_datamodel.cpp moc_mainwindow.cpp moc_minimap.cpp moc_scene.cpp moc_view.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_client.cpp moc_datamodel.cpp moc_mainwindow.cpp moc_scene.cpp
+	-$(DEL_FILE) moc_client.cpp moc_datamodel.cpp moc_mainwindow.cpp moc_minimap.cpp moc_scene.cpp moc_view.cpp
 moc_client.cpp: ../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
+		../application_server/highlighter.h \
 		../application_server/datamodel.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h \
 		../application_server/client.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/prototype/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/client.h -o moc_client.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/client.h -o moc_client.cpp
 
-moc_datamodel.cpp: ../application_server/datamodel.h \
+moc_datamodel.cpp: ../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/prototype/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/datamodel.h -o moc_datamodel.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/datamodel.h -o moc_datamodel.cpp
 
 moc_mainwindow.cpp: ../application_server/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/prototype/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/mainwindow.h -o moc_mainwindow.cpp
+
+moc_minimap.cpp: ../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
+		../application_server/minimap.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/minimap.h -o moc_minimap.cpp
 
 moc_scene.cpp: ../application_server/maptile.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
 		../application_server/scene.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/prototype/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/scene.h -o moc_scene.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/scene.h -o moc_scene.cpp
+
+moc_view.cpp: ../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
+		../application_server/tooltipmenu.h \
+		../application_server/view.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/view.h -o moc_view.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -507,28 +601,52 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
-		../application_server/datamodel.h
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../application_server/client.cpp
 
-datamodel.o: ../application_server/datamodel.cpp ../application_server/datamodel.h
+datamodel.o: ../application_server/datamodel.cpp ../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamodel.o ../application_server/datamodel.cpp
 
-graphicsmanager.o: ../application_server/graphicsmanager.cpp ../application_server/graphicsmanager.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graphicsmanager.o ../application_server/graphicsmanager.cpp
-
-main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
-		../application_server/main.h \
-		../application_server/datamodel.h \
-		../application_server/client.h \
+gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h \
+		../application_server/view.h \
 		../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
-		../application_server/menubar.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
+		../application_server/tooltipmenu.h \
+		../application_server/client.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameloop.o ../application_server/gameloop.cpp
+
+graphicsmanager.o: ../application_server/graphicsmanager.cpp ../application_server/graphicsmanager.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graphicsmanager.o ../application_server/graphicsmanager.cpp
+
+highlighter.o: ../application_server/highlighter.cpp ../application_server/highlighter.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o highlighter.o ../application_server/highlighter.cpp
+
+main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
+		../application_server/main.h \
+		../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/client.h \
+		../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
-		../application_server/sidepanel.h
+		../application_server/menubar.h \
+		../application_server/sidepanel.h \
+		../application_server/minimap.h \
+		../application_server/gameloop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
 mainwindow.o: ../application_server/mainwindow.cpp ../application_server/mainwindow.h \
@@ -546,11 +664,25 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
+		../application_server/highlighter.h \
 		../application_server/datamodel.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h \
 		../application_server/client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
-player.o: ../application_server/player.cpp ../application_server/player.h
+minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
+		../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
+
+player.o: ../application_server/player.cpp ../application_server/player.h \
+		../application_server/highlighter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../application_server/player.cpp
 
 river.o: ../application_server/river.cpp ../application_server/river.h
@@ -560,27 +692,33 @@ scene.o: ../application_server/scene.cpp ../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
-		../application_server/player.h
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o ../application_server/scene.cpp
 
 sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel.h \
-		../application_server/datamodel.h
+		../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/minimap.h \
+		../application_server/scene.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/graphicsmanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application_server/sidepanel.cpp
 
 tooltipmenu.o: ../application_server/tooltipmenu.cpp ../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tooltipmenu.o ../application_server/tooltipmenu.cpp
 
 view.o: ../application_server/view.cpp ../application_server/view.h \
-		../application_server/main.h \
-		../application_server/mainwindow.h \
-		../application_server/datamodel.h \
-		../application_server/client.h \
 		../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
-		../application_server/menubar.h \
+		../application_server/highlighter.h \
+		../application_server/datamodel.h \
 		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application_server/view.cpp
 
@@ -599,8 +737,14 @@ moc_datamodel.o: moc_datamodel.cpp
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
+moc_minimap.o: moc_minimap.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_minimap.o moc_minimap.cpp
+
 moc_scene.o: moc_scene.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_scene.o moc_scene.cpp
+
+moc_view.o: moc_view.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_view.o moc_view.cpp
 
 ####### Install
 

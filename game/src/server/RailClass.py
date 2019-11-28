@@ -45,30 +45,31 @@ class RailLogic:
         
 
 
-
+        print("Test")
         #Rechts
         if(x_pos<299):                              #Wenn Rechts innerhalb der Karte liegt
             if(karte[x_pos+1][y_pos].isRail()): #Wenn Schiene existiert
                 if(karte[x_pos+1][y_pos].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
                     #Wenn Schiene nicht vollstaendig verbunden ist.
-                    if(karte[x_pos+1][y_pos].logic.connectedRight + karte[x_pos+1][y_pos].logic.connectedLeft + karte[x_pos+1][y_pos].logic.connectedUp + karte[x_pos+1][y_pos].logic.connectedUp != 2):
+                    if(karte[x_pos+1][y_pos].logic.connectedRight + karte[x_pos+1][y_pos].logic.connectedLeft + karte[x_pos+1][y_pos].logic.connectedUp + karte[x_pos+1][y_pos].logic.connectedDown != 2):
                         railConnectableRight = True; #dann liegt rechts eine verbindbare Schiene
+                        
 
         #Links
         if(x_pos>0):                                #Wenn Links innerhalb der Karte liegt
             if(karte[x_pos-1][y_pos].isRail()): #Wenn Schiene existiert
                 if(karte[x_pos-1][y_pos].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
-                    #Wenn Schiene nicht vollstaendig verbunden ist.                    
-                    if(karte[x_pos-1][y_pos].logic.connectedRight + karte[x_pos-1][y_pos].logic.connectedLeft + karte[x_pos-1][y_pos].logic.connectedUp + karte[x_pos-1][y_pos].logic.connectedUp != 2):
+                    #Wenn Schiene nicht vollstaendig verbunden ist.
+                    if(karte[x_pos-1][y_pos].logic.connectedRight + karte[x_pos-1][y_pos].logic.connectedLeft + karte[x_pos-1][y_pos].logic.connectedUp + karte[x_pos-1][y_pos].logic.connectedDown != 2):
                         railConnectableLeft = True;     #Dann liegt links eine verbindbare Schiene
-                        
+
         
         #Oben
         if(y_pos>0):                                #Wenn Oben innerhalb der Karte liegt
             if(karte[x_pos][y_pos-1].isRail()): #Wenn Schiene existiert
-                if(karte[x_pos][y_pos-1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
+                if(karte[x_pos][y_pos-1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert 
                     #Wenn Schiene nicht vollstaendig verbunden ist.
-                    if(karte[x_pos][y_pos-1].logic.connectedRight + karte[x_pos][y_pos-1].logic.connectedLeft + karte[x_pos][y_pos-1].logic.connectedUp + karte[x_pos][y_pos-1].logic.connectedUp != 2):
+                    if(karte[x_pos][y_pos-1].logic.connectedRight + karte[x_pos][y_pos-1].logic.connectedLeft + karte[x_pos][y_pos-1].logic.connectedUp + karte[x_pos][y_pos-1].logic.connectedDown != 2):
                         railConnectableUp = True;            #Dann liegt Oben eine verbindbare Schiene
 
         #Unten
@@ -76,7 +77,7 @@ class RailLogic:
             if(karte[x_pos][y_pos+1].isRail()): #Wenn Schiene existiert
                 if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
                     #Wenn Schiene nicht vollstaendig verbunden ist.
-                    if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].logic.connectedUp + karte[x_pos][y_pos+1].logic.connectedUp != 2):
+                    if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].logic.connectedUp + karte[x_pos][y_pos+1].logic.connectedDown != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
 
        
@@ -98,23 +99,28 @@ class RailLogic:
             if(railConnectableRight == True):    #Schiene Rechts ist verbindbar                     
                 karte[x_pos][y_pos].logic.connectedRight = True   #Schiene mit rechter Schiene verbinden
                 karte[x_pos+1][y_pos].logic.connectedLeft = True  #Rechte Schiene mit Schiene verbinden 
-                karte[x_pos+1][y_pos].logicUpdate()                 
+                karte[x_pos+1][y_pos].logicUpdate()
+
 
 
             if(railConnectableLeft == True):    #Schiene Links ist verbindbar.
                 karte[x_pos][y_pos].logic.connectedLeft = True    #Schiene mit linker Schiene verbinden
                 karte[x_pos-1][y_pos].logic.connectedRight = True #Linke Schiene mit Schiene verbinden
-                karte[x_pos-1][y_pos].logicUpdate()  
+                karte[x_pos-1][y_pos].logicUpdate()
+
 
             if(railConnectableUp == True):      #Schiene Oben verbindbar.
                 karte[x_pos][y_pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
                 karte[x_pos][y_pos-1].logic.connectedDown = True     #Obere Schiene mit unterer Schiene verbinden
-                karte[x_pos][y_pos-1].logicUpdate()  
+                karte[x_pos][y_pos-1].logicUpdate()
+
 
             if(railConnectableDown == True):    #Schiene Unten verbindbar.
                 karte[x_pos][y_pos].logic.connectedDown = True    #Schiene mit unterer Schiene verbinden
                 karte[x_pos][y_pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
-                karte[x_pos][y_pos+1].logicUpdate()  
+                karte[x_pos][y_pos+1].logicUpdate()
+
+
 
             karte[x_pos][y_pos].logicUpdate()
 
