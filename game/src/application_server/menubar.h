@@ -1,12 +1,12 @@
 #ifndef MENUBAR_H
 #define MENUBAR_H
-#include <QMenuBar>
+#include <QToolBar>
 #include <QInputDialog>
 #include "scene.h"
 #include "datamodel.h"
 #include "view.h"
 
-class MenuBar: public QMenuBar
+class MenuBar: public QToolBar
 {
    // Q_OBJECT
 

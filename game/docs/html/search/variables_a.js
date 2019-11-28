@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outline_416',['outline',['../classHighlighter.html#ae590120925bf0bfdec70be2863fa91f6',1,'Highlighter']]]
+  ['outline_417',['outline',['../classHighlighter.html#ae590120925bf0bfdec70be2863fa91f6',1,'Highlighter']]]
 ];

@@ -12,14 +12,13 @@
 class SidePanel: public QWidget
 {
 public:
-    SidePanel(Minimap *);
+    SidePanel();
     void hookDataModel(DataModel * pModel);
 private:
     QGridLayout * layout;
     QLabel * moneyLabel;
     QLabel * timeLabel;
     QLabel * positionLabel;
-    Minimap * miniMap;
 };
 
 #endif // SIDEPANEL_H

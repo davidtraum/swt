@@ -4,6 +4,9 @@
 #include "datamodel.h"
 #include <QIcon>
 #include <QTimer>
+#include <QImage>
+#include <QToolButton>
+#include <QMenu>
 
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
@@ -11,17 +14,73 @@
 MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     scene{pScene}, dataModel{pDataModel}, view{pView}
 {
-    QMenu * mainMenu = QMenuBar::addMenu("Server");
-    QAction * openConnection = mainMenu->addAction(QIcon(":/icons/verbindungsaufbau.svg"), "Verbindungsaufbau");
-    QAction * closeConnection = mainMenu->addAction(QIcon(":/icons/verbindungstrennung.svg"), "Verbindung trennen");
+    this->setStyleSheet("background-color: rgb(150,150,255);");
+    this->setMovable(false);
+
+    QToolButton * resetModeButton = new QToolButton(this);
+    resetModeButton->setToolTip("Standardmodus");
+    resetModeButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/mouse.svg"))));
+    resetModeButton->setCursor(QCursor(Qt::PointingHandCursor));
+    resetModeButton->connect(resetModeButton, &QToolButton::clicked, dataModel, &DataModel::setDefaultMode);
+    resetModeButton->setShortcut(Qt::Key_Q);
+    this->addWidget(resetModeButton);
+
+
+    this->addSeparator();
+
+    QToolButton * buildButton = new QToolButton(this);
+    buildButton->setToolTip("Bauen");
+    buildButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/tools.svg"))));
+    buildButton->setPopupMode(QToolButton::InstantPopup);
+    buildButton->setCursor(QCursor(Qt::PointingHandCursor));
+    QMenu *buildMenu=new QMenu(buildButton);
+    QAction * trainStationEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Bahnhof bauen", this);
+    trainStationEditor->connect(trainStationEditor, &QAction::triggered, dataModel, &DataModel::setTrainStationMode);
+    trainStationEditor->setShortcut(Qt::Key_1);
+    buildMenu->addAction(trainStationEditor);
+    QAction * bridgeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/bridge.svg"))),"Brücke bauen", this);
+    bridgeEditor->connect(bridgeEditor, &QAction::triggered, dataModel, &DataModel::setBridgeMode);
+    bridgeEditor->setShortcut(Qt::Key_2);
+    buildMenu->addAction(bridgeEditor);
+    QAction * railEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/rail.svg"))),"Schienen verlegen", this);
+    railEditor->setShortcut(Qt::Key_3);
+    railEditor->connect(railEditor, &QAction::triggered, dataModel, &DataModel::setRailPlacementMode);
+    buildMenu->addAction(railEditor);
+    buildButton->setMenu(buildMenu);
+    this->addWidget(buildButton);
+
+    QToolButton * trainButton = new QToolButton(this);
+    trainButton->setToolTip("Zugsteuerung");
+    trainButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/train.svg"))));
+    trainButton->setPopupMode(QToolButton::InstantPopup);
+    trainButton->setCursor(QCursor(Qt::PointingHandCursor));
+    QMenu *trainMenu=new QMenu(trainButton);
+    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/create_route.svg"))),"Route erzeugen", this));
+    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/show_routes.svg"))),"Routen anzeigen", this));
+    trainButton->setMenu(trainMenu);
+    this->addWidget(trainButton);
+
+    QToolButton * serverButton = new QToolButton(this);
+    serverButton->setToolTip("Server");
+    serverButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/server.svg"))));
+    serverButton->setPopupMode(QToolButton::InstantPopup);
+    serverButton->setCursor(QCursor(Qt::PointingHandCursor));
+    QMenu *serverMenu=new QMenu(serverButton);
+    QAction *openConnection = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/verbindungsaufbau.svg"))),"Verbindung aufbauen", this);
     connect(openConnection, &QAction::triggered, this, &MenuBar::slotOpenConnection);
-    connect(closeConnection, &QAction::triggered, this, &MenuBar::slotCloseConnection);
+    serverMenu->addAction(openConnection);
+    serverButton->setMenu(serverMenu);
 
-    QMenu * settingsMenu = QMenuBar::addMenu("Einstellungen");
+    this->addWidget(serverButton);
 
-    QLabel * serverIp = new QLabel("Nicht verbunden");
-    QMenuBar::setCornerWidget(serverIp);
-    dataModel->setConnectionLabel(serverIp);
+    QWidget *spacer = new QWidget(this);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    this->addWidget(spacer);
+
+    QLabel * statusLabel = new QLabel();
+    statusLabel->setStyleSheet("margin-right: 75px;");
+    this->addWidget(statusLabel);
+    dataModel->setStatusDisplayLabel(statusLabel);
 
 }
 

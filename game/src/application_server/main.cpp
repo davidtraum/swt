@@ -12,6 +12,7 @@
 #include <QToolButton>
 #include <QFontDatabase>
 #include <QImage>
+#include <QGridLayout>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -86,17 +87,23 @@ int main(int argc, char *argv[])
     widget->setLayout(layout);
 
     MenuBar * menuBar = new MenuBar(scene, dataModel, view);
+    menuBar->setParent(mainWindow);
+    menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
-    mainWindow->setMenuBar(menuBar);
+    mainWindow->addToolBar(menuBar);
 
-    sidePanel = new SidePanel(new Minimap(300,300, scene, dataModel));
-    sidePanel->setParent(mainWindow);
-    sidePanel->hookDataModel(dataModel);
 
-    QDockWidget dockWidget;
-    dockWidget.setWidget(sidePanel);
-    dockWidget.setFeatures(QDockWidget::NoDockWidgetFeatures);
-    mainWindow->addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, &dockWidget);
+    Minimap * map = new Minimap(300,300, scene, view, dataModel);
+    QGridLayout * viewLayout = new QGridLayout();
+    map->setAttribute( Qt::WA_TransparentForMouseEvents );
+    QWidget *spacerWidget = new QWidget();
+    spacerWidget->setAttribute( Qt::WA_TransparentForMouseEvents );
+    spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    viewLayout->addWidget(spacerWidget,0,1);
+    viewLayout->addWidget(spacerWidget,1,0);
+    viewLayout->addWidget(map,0,2);
+
+    view->setLayout(viewLayout);
 
 
 
@@ -110,61 +117,6 @@ int main(int argc, char *argv[])
 
     timeTicker();
 
-    QToolBar * toolbar = mainWindow->addToolBar("Hauptmenü");
-    toolbar->setStyleSheet("background-color: rgb(150,150,255);");
-    toolbar->setMovable(false);
-
-    QToolButton * resetModeButton = new QToolButton(mainWindow);
-    resetModeButton->setToolTip("Standardmodus");
-    resetModeButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/mouse.svg"))));
-    resetModeButton->setCursor(QCursor(Qt::PointingHandCursor));
-    resetModeButton->connect(resetModeButton, &QToolButton::clicked, dataModel, &DataModel::setDefaultMode);
-    resetModeButton->setShortcut(Qt::Key_Q);
-    toolbar->addWidget(resetModeButton);
-
-
-    toolbar->addSeparator();
-
-    QToolButton * buildButton = new QToolButton(mainWindow);
-    buildButton->setToolTip("Bauen");
-    buildButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/tools.svg"))));
-    buildButton->setPopupMode(QToolButton::InstantPopup);
-    buildButton->setCursor(QCursor(Qt::PointingHandCursor));
-    QMenu *buildMenu=new QMenu(buildButton);
-    QAction * trainStationEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Bahnhof bauen", mainWindow);
-    trainStationEditor->connect(trainStationEditor, &QAction::triggered, dataModel, &DataModel::setTrainStationMode);
-    trainStationEditor->setShortcut(Qt::Key_1);
-    buildMenu->addAction(trainStationEditor);
-    QAction * bridgeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/bridge.svg"))),"Brücke bauen", mainWindow);
-    bridgeEditor->connect(bridgeEditor, &QAction::triggered, dataModel, &DataModel::setBridgeMode);
-    bridgeEditor->setShortcut(Qt::Key_2);
-    buildMenu->addAction(bridgeEditor);
-    QAction * railEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/rail.svg"))),"Schienen verlegen", mainWindow);
-    railEditor->setShortcut(Qt::Key_3);
-    railEditor->connect(railEditor, &QAction::triggered, dataModel, &DataModel::setRailPlacementMode);
-    buildMenu->addAction(railEditor);
-    buildButton->setMenu(buildMenu);
-    toolbar->addWidget(buildButton);
-
-    QToolButton * trainButton = new QToolButton(mainWindow);
-    trainButton->setToolTip("Zugsteuerung");
-    trainButton->setIcon(QIcon(QPixmap::fromImage(QImage(":/icons/train.svg"))));
-    trainButton->setPopupMode(QToolButton::InstantPopup);
-    trainButton->setCursor(QCursor(Qt::PointingHandCursor));
-    QMenu *trainMenu=new QMenu(trainButton);
-    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/create_route.svg"))),"Route erzeugen", mainWindow));
-    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/show_routes.svg"))),"Routen anzeigen", mainWindow));
-    trainButton->setMenu(trainMenu);
-    toolbar->addWidget(trainButton);
-
-    QWidget *spacerWidget = new QWidget(mainWindow);
-    spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    toolbar->addWidget(spacerWidget);
-
-    QLabel * statusLabel = new QLabel();
-    statusLabel->setStyleSheet("margin-right: 75px;");
-    toolbar->addWidget(statusLabel);
-    dataModel->setStatusDisplayLabel(statusLabel);
 
 
     QLabel * startscreen = new QLabel();

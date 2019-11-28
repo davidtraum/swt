@@ -11,16 +11,20 @@
  * @param pScene Die Szene
  * @param pDataModel Das DataModel
  */
-Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, DataModel * pDataModel):
-    width{pWidth}, height{pHeight}, scene{pScene}, dataModel{pDataModel}
+Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, View * pView, DataModel * pDataModel):
+    width{pWidth}, height{pHeight}, scene{pScene}, view{pView}, dataModel{pDataModel}
 {
+    setParent(view);
     QWidget::setFixedSize(width,height);
     QWidget::setStyleSheet("border: 2px solid black;");
     connect(dataModel, &DataModel::viewChange, this, &Minimap::viewChange);
 
     location = QImage(":/icons/pin.svg");
     location_white = QImage(":/icons/pin_white.svg");
-    compass = QImage(":/images/highres/compass.png");
+    compass = QImage(":/images/highres/kompass.png");
+    mapOverlay = QImage(":/images/highres/map_overlay.png");
+    setStyleSheet("border: 2px solid black");
+    show();
 }
 
 /**
@@ -63,7 +67,10 @@ void Minimap::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::red);
     painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), location);
     painter.drawImage(QRectF(dataModel->secondPlayer->posX-16, dataModel->secondPlayer->posY-28,32,32), location_white);
-    painter.drawImage(QRectF(0,0,width,height), compass);
+    painter.drawImage(QRectF(10,10, 280, 280), compass);
+    painter.drawImage(0,0,mapOverlay);
+    painter.drawRect(0,0,299,299);
+    QWidget::paintEvent(event);
 }
 
 /**

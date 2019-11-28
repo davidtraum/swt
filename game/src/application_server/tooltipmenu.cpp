@@ -11,7 +11,6 @@ ToolTipMenu::ToolTipMenu()
     QGridLayout * layout = new QGridLayout(this);
     QWidget::setLayout(layout);
     layout->addWidget(textlabel);
-
 }
 
 /**
