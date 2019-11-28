@@ -8,12 +8,12 @@ from RailClass import RailLogic
 
 
 clients = []
-def broadcast(pText):
+def broadcast(pText, exclude=None):
     global clients
     for client in clients:
         try:
-            client.send(pText)
-            print("Broadcast: ", pText)
+            if client != exclude:
+                client.send(pText)
         except Exception:
             client.disconnect()
 
@@ -55,18 +55,27 @@ class MapTile:
     def getY(self):
         return self.y
 
-    def setType(self, pType, share=True):
-        self.setRotation(0)
+    def setType(self, pType, share=True, resetRotation=True):
+        if(resetRotation):
+            self.setRotation(0)
         self.type = MapTile.TYPES[pType]
         if(share):
             broadcast(self.getProtocolString())
-            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type);
+            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
 
     def getType(self):
         return self.type
 
     def setRotation(self, pRotation):
         self.rotation = pRotation
+
+    def rotateClockwise(self, share=True):
+        self.rotation+=1
+        if(self.rotation>3):
+            self.rotation=0
+        if(share):
+            broadcast(self.getProtocolString())
+
 
     def isRiver(self):
         return self.type >= 3 and self.type <= 8
@@ -75,7 +84,7 @@ class MapTile:
         return self.type >= 9 and self.type <= 11
 
     def getProtocolString(self):
-        return 'TILE ' + str(self.x) + ' ' + str(self.y) + ' ' + str(self.type) + ' ' + str(self.rotation)
+        return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
     def isInGroup(self, types):
         for type in types:
@@ -85,7 +94,6 @@ class MapTile:
     def logicUpdate(self):
         if(self.logic != None):
             print("MapTile @ LogicUpdate ", self.x, " " , self.y)
-            self.logic.updateType()
             newType = self.logic.getType()
             if(MapTile.TYPES[newType] != self.type):
                 print("MapTile @ LogicChanged ", newType)
@@ -94,7 +102,6 @@ class MapTile:
     def initLogic(self, pLogic):
         print("Init logic @ ", self.x, " ", self.y)
         self.logic = pLogic(self, None)
-        print(self.logic)
         self.logicUpdate()
 
 
@@ -102,6 +109,7 @@ class World:
 
     def __init__(self):
         self.data = []
+        self.startTime = int(time.time() * 1000)
         for x in  range(300):
             self.data.append([])
             for y in range(300):
@@ -116,6 +124,11 @@ class World:
     def canPlaceRail(self, posX, posY):
         return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or True
 
+    def getGametime(self):
+        currentTime = int(time.time()*1000)
+        diff = currentTime - self.startTime
+        return int(diff/20)
+
     def tileInteract(self, posX, posY):
         print("Interact ", posX, " ", posY)
         if(self.canPlaceRail(posX, posY)):
@@ -124,20 +137,27 @@ class World:
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
+    def tileRightclick(self, posX, posY):
+        if(self.data[posX][posY].isRail()):
+            self.data[posX][posY].rotateClockwise()
+        else:
+            self.data[posX][posY].setType('GRASS')
+        self.data[posX][posY]
+
     def generateWorld(self):
         print("Welt wird generiert...")
         size = 300
         for x in range(size):
             for y in range(size):
-                self.data[x][y].setRotation(random.randint(0, 3))
                 if(random.randint(0, 100) < 20):
                     self.data[x][y].setType('FOREST')
+                self.data[x][y].setRotation(random.randint(0, 3))
 
         for townIndex in range(300):
             px, py = self.randomPosition()
             size = random.randint(3, 20)
             for houseIndex in range(size):
-                self.data[px][py].setType('CITY')
+                self.data[px][py].setType('CITY', resetRotation=False)
                 px += random.randint(-1, 1)
                 py += random.randint(-1, 1)
 
@@ -205,6 +225,7 @@ class World:
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
                     break
 
+        self.data[150][150].initLogic(RailLogic)
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):
@@ -223,8 +244,6 @@ class World:
                     self.data[x][y].setType('WATER') 
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[299-x][y].setType('WATER')         
-        self.data[150][150].setType('RAIL_H')
-        self.data[150][150].initLogic(RailLogic)
 
 
 class ClientThread(Thread):
@@ -232,10 +251,10 @@ class ClientThread(Thread):
     def __init__(self, pConnection):
         Thread.__init__(self)
         self.connection = pConnection
+        self.commandBuffer = ""
 
     def send(self, pText):
-        print("Sending " + pText)
-        self.connection.sendall((pText + '~').encode('utf-8'))
+        self.connection.sendall(('CMD+' + pText + '~').encode())
 
     def disconnect(self):
         global clients
@@ -247,34 +266,55 @@ class ClientThread(Thread):
         except Exception:
             pass
 
-    def run(self):
-        global world
-        while True:
-            try:
-                data = self.connection.recv(32)
-            except Exception:
-                self.disconnect()
-                break
-            command = data.decode('utf-8')
-            if(len(command)==0):
-                self.disconnect()
+    def processCommand(self,command):
+            global world
+            print(command)
             args = command.split(" ")
             if(args[0] == 'MAP'):
                 if(args[1] == 'GET'):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
+                        time.sleep(0.002)
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
                                 self.send(world.data[x][y].getProtocolString())
+                    self.send("MAP+DONE")
+                    self.send("TIME+" + str(world.getGametime()))
             elif(args[0] == 'BUILD'):
+                posX = int(args[2])
+                posY = int(args[3])
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
-                    posX = int(args[2])
-                    posY = int(args[3])
+                    #world.data[posX][posY].setType('RAIL_H')
                     world.tileInteract(posX, posY)
+                if(args[1] == 'INTERACT'):
+                    print("Build interact")
+                    world.tileRightclick(posX, posY)
             elif(args[0] == 'POS'):
+                print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
+                broadcast("POS+" + str(posX) + "+" + str(posY), exclude=self)
+            else:
+                print(command)
+
+    def run(self):
+        global world
+        buffer = b""
+        while True:
+            try:
+                data = self.connection.recv(1)
+                if(data == b'~'):
+                    self.processCommand(buffer.decode('utf-8'))
+                    buffer = b""
+                else:
+                    buffer += data
+            except Exception as e:
+                print(e)
+                self.disconnect()
+                break
+            
+            
 
 DEFAULT_CONFIG = {
     'port': 2000,
@@ -320,4 +360,3 @@ except KeyboardInterrupt:
     for client in clients:
         client.disconnect()
     print("Server beendet")
-
