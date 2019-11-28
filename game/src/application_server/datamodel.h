@@ -17,6 +17,7 @@ public:
     bool takeBalance(int pAmount);
     void timeTick();
     long getTime();
+    void setTime(long);
     long getSystemMillis();
     void updateCoordinates(int pX, int pY);
     int getHoverX();

@@ -103,6 +103,8 @@ void Client::processCommand(QString cmd){
                 qDebug() << "Map loaded";
                 emit onMapLoaded(true);
             }
+        }else if(split[1]=="TIME" && split.length()==3){
+            dataModel->setTime(split[2].toInt());
         }
         }
     } catch (...) {

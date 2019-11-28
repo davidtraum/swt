@@ -54,6 +54,14 @@ long DataModel::getTime(){
 }
 
 /**
+ * @brief DataModel::setTime Setzt den aktuellen Zeitstempel
+ */
+void DataModel::setTime(long pTime)
+{
+    time = pTime;
+}
+
+/**
  * @brief DataModel::timeTick Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode.
  */
 void DataModel::timeTick(){

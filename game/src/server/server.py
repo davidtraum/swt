@@ -109,6 +109,7 @@ class World:
 
     def __init__(self):
         self.data = []
+        self.startTime = int(time.time() * 1000)
         for x in  range(300):
             self.data.append([])
             for y in range(300):
@@ -122,6 +123,11 @@ class World:
 
     def canPlaceRail(self, posX, posY):
         return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or True
+
+    def getGametime(self):
+        currentTime = int(time.time()*1000)
+        diff = currentTime - self.startTime
+        return int(diff/20)
 
     def tileInteract(self, posX, posY):
         print("Interact ", posX, " ", posY)
@@ -219,6 +225,7 @@ class World:
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
                     break
 
+        self.data[150][150].initLogic(RailLogic)
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):
@@ -237,8 +244,6 @@ class World:
                     self.data[x][y].setType('WATER') 
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[299-x][y].setType('WATER')         
-        #self.data[150][150].setType('RAIL_H')
-        #self.data[150][150].initLogic(RailLogic)
 
 
 class ClientThread(Thread):
@@ -262,6 +267,7 @@ class ClientThread(Thread):
             pass
 
     def processCommand(self,command):
+            global world
             print(command)
             args = command.split(" ")
             if(args[0] == 'MAP'):
@@ -273,13 +279,14 @@ class ClientThread(Thread):
                             if(world.data[x][y].getType() > 0):
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
+                    self.send("TIME+" + str(world.getGametime()))
             elif(args[0] == 'BUILD'):
                 posX = int(args[2])
                 posY = int(args[3])
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
-                    world.data[posX][posY].setType('RAIL_H')
-                    #world.tileInteract(posX, posY)
+                    #world.data[posX][posY].setType('RAIL_H')
+                    world.tileInteract(posX, posY)
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
                     world.tileRightclick(posX, posY)

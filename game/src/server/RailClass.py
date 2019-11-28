@@ -16,6 +16,23 @@ class RailLogic:
         return (str(int(self.connectedRight)) + str(int(self.connectedLeft)) + str(int(self.connectedUp)) + str(int(self.connectedDown)))
         
     def getType(self):
+        data = (self.connectedLeft, self.connectedRight, self.connectedUp, self.connectedDown)
+        if(self.connectedLeft):
+            if(self.connectedUp):
+                return 'RAIL_LT'
+            elif(self.connectedDown):
+                return 'RAIL_LB'
+            else:
+                return 'RAIL_H'
+        elif(self.connectedRight):
+            if(self.connectedUp):
+                return 'RAIL_RT'
+            elif(self.connectedDown):
+                return 'RAIL_RB'
+            else:
+                return 'RAIL_H'
+        elif(self.connectedUp or self.connectedDown):
+            return 'RAIL_V'
         return 'RAIL_H'
 
     @staticmethod

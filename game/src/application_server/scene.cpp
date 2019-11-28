@@ -285,11 +285,8 @@ void Scene::tick()
  * @param pRotation Die Rotation.
  */
 void Scene::onSetTile(int pX, int pY, int pType, int pRotation){
-    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
-    if(pRotation>0){
-        qDebug() << "Has rotation " << pRotation;
-    }
     data[pX][pY].setRotation(pRotation);
+    data[pX][pY].setType(static_cast<MapTile::TYPE>(pType));
 }
 
 /**

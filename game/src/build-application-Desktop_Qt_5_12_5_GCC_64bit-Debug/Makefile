@@ -781,7 +781,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
 qrc_Data.cpp: ../application_server/Data.qrc \
 		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
-		../application_server/cities.json
+		../application_server/cities.json \
+		../application_server/mono.ttf \
+		../application_server/raleway.ttf \
+		../application_server/minecraft.ttf
 	/home/david/Qt/5.12.5/gcc_64/bin/rcc -name Data ../application_server/Data.qrc -o qrc_Data.cpp
 
 qrc_Graphics.cpp: ../application_server/Graphics.qrc \
@@ -800,6 +803,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
 		../application_server/icon.png \
+		../application_server/cursor.png \
 		../application_server/startscreen.jpg \
 		../application_server/kompass.png \
 		../application_server/show_routes.svg \
@@ -2390,6 +2394,9 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolButton \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbutton.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QFontDatabase \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
 		../application_server/mainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMainWindow \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -2425,7 +2432,6 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		../application_server/city.h \
 		../application_server/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \

@@ -72,6 +72,30 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setPixmap(graphicsManager->get("schiene_h"));
             pixmapItem->setToolTip("Schiene");
             break;
+        case MapTile::TYPE::RAIL_V:
+            pixmapItem->setPixmap(graphicsManager->get("schiene_h"));
+            pixmapItem->setToolTip("Schiene");
+            setRotation(1);
+            break;
+        case MapTile::TYPE::RAIL_LT:
+            pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
+            pixmapItem->setToolTip("Kurve");
+            break;
+        case MapTile::TYPE::RAIL_RT:
+            pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
+            pixmapItem->setToolTip("Kurve");
+            setRotation(1);
+            break;
+        case MapTile::TYPE::RAIL_RB:
+            pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
+            pixmapItem->setToolTip("Kurve");
+            setRotation(2);
+            break;
+        case MapTile::TYPE::RAIL_LB:
+            pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
+            pixmapItem->setToolTip("Kurve");
+            setRotation(3);
+            break;
         case MapTile::TYPE::WATER:
             pixmapItem->setPixmap(graphicsManager->get("water"));
             pixmapItem->setToolTip("Meer");
