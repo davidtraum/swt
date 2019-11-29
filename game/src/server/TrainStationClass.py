@@ -29,7 +29,7 @@ class TrainStationLogic:
         railConnectableUp = False;      #Schiene oben ist verbindbar?
         railConnectableDown = False;    #Schiene unten ist verbindbar?
 
-
+        print("Start checkConnectalbeRails")
         #Rechts
         if(x_pos<299):                              #Wenn Rechts innerhalb der Karte liegt
             if(karte[x_pos+1][y_pos].isRail()): #Wenn Schiene existiert
@@ -63,12 +63,12 @@ class TrainStationLogic:
                     #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].logic.connectedUp + karte[x_pos][y_pos+1].logic.connectedDown != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
-
+        print('Werte von Checkrails')
+        return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
     @staticmethod
-    def build(pTile, pPlayer, pRange, karte):
-        x_pos = pTile.getX()
-        y_pos = pTile.getY()
+    def build(x_pos, y_pos, pPlayer, pRange, karte):
+        
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
 
         if(TrainStationLogic.checkIfStationInRange(pPlayer, pTile, pRange, karte)):
@@ -105,3 +105,5 @@ class TrainStationLogic:
                     karte[x_pos][y_pos+1].connectedUp = True
             else:
                 print('Kann Bahnhof hier nicht bauen!')
+
+            print('die Tolle Build Funktion hat geklappt')

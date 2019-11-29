@@ -47,15 +47,19 @@ class RailLogic:
 
         #Rechts
         if(x_pos<299):                              #Wenn Rechts innerhalb der Karte liegt
-            if(karte[x_pos+1][y_pos].isRail() or karte[x_pos+1][y_pos].isTrainStation() and karte[x_pos+1][y_pos].checkRotationStationVertical() == False): #Wenn Schiene oder horizontaler Bahnhof existiert                
+            if(karte[x_pos+1][y_pos].isRail() or karte[x_pos+1][y_pos].isTrainStation() and karte[x_pos+1][y_pos].checkRotationStationVertical() == False): #Wenn Schiene oder horizontaler Bahnhof existiert
+                print('Wenn Schiene oder horizontaler Bahnhof existiert')
                 if(karte[x_pos+1][y_pos].logic.player == player): #Wenn Schiene oder Bahnhof zum selben Spieler gehoert
+                    print('Wenn Schiene oder Bahnhof zum selben Spieler gehoert')
                     #Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.
                     if(karte[x_pos+1][y_pos].logic.connectedRight + karte[x_pos+1][y_pos].logic.connectedLeft + karte[x_pos+1][y_pos].logic.connectedUp + karte[x_pos+1][y_pos].logic.connectedDown != 2):
+                        print('Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.')
                         railConnectableRight = True; #dann liegt rechts eine verbindbare Schiene
                         
 
         #Links
         if(x_pos>0):                                #Wenn Links innerhalb der Karte liegt
+            print("Wenn  links innerhalb der Karte liegt")
             if(karte[x_pos-1][y_pos].isRail() or karte[x_pos-1][y_pos].isTrainStation() and karte[x_pos-1][y_pos].checkRotationStationVertical() == False): #Wenn Schiene oder horizontaler Bahnhof existiert
                 if(karte[x_pos-1][y_pos].logic.player == player): #Wenn Schiene oder Bahnhof zum selben Spieler gehoert
                     #Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.
@@ -65,7 +69,9 @@ class RailLogic:
         
         #Oben
         if(y_pos>0):                                #Wenn Oben innerhalb der Karte liegt
-            if(karte[x_pos][y_pos-1].isRail or karte[x_pos][y_pos-1].isTrainStation() and karte[x_pos][y_pos-1].checkRotationStationVertical() == True): #Wenn Schiene oder vertikaler Bahnhof  existiert
+            print("Wenn oben innererhalb der Karte liegt")
+            if(karte[x_pos][y_pos-1].isRail() or karte[x_pos][y_pos-1].isTrainStation() and karte[x_pos][y_pos-1].checkRotationStationVertical() == True): #Wenn Schiene oder vertikaler Bahnhof  existiert
+                print("Wenn Schiene oder vertikaler Bahnhof  existiert")
                 if(karte[x_pos][y_pos-1].logic.player == player): #Wenn Schiene oder Bahnhof zum selben Spieler gehoert
                     #Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.
                     if(karte[x_pos][y_pos-1].logic.connectedRight + karte[x_pos][y_pos-1].logic.connectedLeft + karte[x_pos][y_pos-1].logic.connectedUp + karte[x_pos][y_pos-1].logic.connectedDown != 2):
@@ -73,14 +79,15 @@ class RailLogic:
 
         #Unten
         if(y_pos<299):                              #Wenn Unten innerhalb der Karte liegt
-            if(karte[x_pos][y_pos+1].isRail() or karte[x_pos][y_pos+1].isTrainstation() and karte[x_pos][y_pos+1].checkRotationStationVertical() == True):  #Wenn Schiene oder vertikaler Bahnhof existiert
+            print("Wenn Unten innerhalb der Karte liegt")
+            if(karte[x_pos][y_pos+1].isRail() or karte[x_pos][y_pos+1].isTrainStation() and karte[x_pos][y_pos+1].checkRotationStationVertical() == True):  #Wenn Schiene oder vertikaler Bahnhof existiert
                 if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene oder Bahnhof zum selben Spieler gehoert
                     #Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.
                     if(karte[x_pos][y_pos+1].logic.connectedRight + karte[x_pos][y_pos+1].logic.connectedLeft + karte[x_pos][y_pos+1].logic.connectedUp + karte[x_pos][y_pos+1].logic.connectedDown != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
 
        
-                
+        print("checkConnectableRailsklappt")        
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown  
 
     @staticmethod

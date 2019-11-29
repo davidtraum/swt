@@ -134,7 +134,7 @@ class World:
     def isValidPosition(self, posX, posY):
         return posX >= 0 and posY >= 0 and posX < 300 and posY < 300
 
-    def canPlaceRail(self, posX, posY):
+    def canPlaceObject(self, posX, posY):
         return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or False 
 
     def getGametime(self):
@@ -142,11 +142,14 @@ class World:
         diff = currentTime - self.startTime
         return int(diff/20)
 
-    def tileInteract(self, posX, posY):
-        print("Interact ", posX, " ", posY)
-        if(self.canPlaceRail(posX, posY)):
+    def tileInteract(self, posX, posY, pType):
+        print("Interact ", posX, " ", posY, " ", pType)
+        if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
             RailLogic.build(posX, posY, None, self.data)
+        elif(pType == 'TRAINSTATION' and self.canPlaceObject):
+            print("Placing trainstation...")
+            TrainStationLogic.build(posX, posY, None, 2, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
@@ -299,7 +302,10 @@ class ClientThread(Thread):
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
                     #world.data[posX][posY].setType('RAIL_H')
-                    world.tileInteract(posX, posY)
+                    world.tileInteract(posX, posY, 'RAIL')
+                elif(args[1] == 'TRAINSTATION'):
+                    print("Build Trainstation Request at ", args[2], " ", args[3])
+                    world.tileInteract(posX, posY, 'TRAINSTATION')
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
                     world.tileRightclick(posX, posY)
