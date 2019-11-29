@@ -5,6 +5,7 @@ from threading import Thread
 import time
 import random
 from RailClass import RailLogic
+from TrainStationClass import TrainStationLogic
 
 
 clients = []
@@ -35,7 +36,13 @@ class MapTile:
         'RAIL_LT': 12,
         'RAIL_RT': 13,
         'RAIL_RB': 14,
-        'WATER': 15
+        'WATER': 15,
+        'DEPOT_H': 16,
+        'DEPOT_V':  17,
+        'STATION_H' : 18,
+        'STATION_V' : 19,
+        'TERMINAL_H' : 20,
+        'TERMINAL_V' : 21
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -83,6 +90,12 @@ class MapTile:
     def isRail(self):
         return self.type >= 9 and self.type <= 14
 
+    def isTrainStation(self):
+        return self.type >= 16 and self.type <= 21
+
+    def checkRotationStationVertical(self):
+        return self.type == 17 or self.type == 19 or self.type == 21
+
     def getProtocolString(self):
         return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
@@ -122,7 +135,7 @@ class World:
         return posX >= 0 and posY >= 0 and posX < 300 and posY < 300
 
     def canPlaceRail(self, posX, posY):
-        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or True
+        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or False 
 
     def getGametime(self):
         currentTime = int(time.time()*1000)
