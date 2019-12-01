@@ -77,15 +77,20 @@ class TrainStationLogic:
                 if(railConnectableRight):                           #Verbindet mit rechter Schiene
                     karte[x_pos][y_pos].connectedRight = True
                     karte[x_pos+1][y_pos].connectedLeft = True
+                    karte[x_pos+1][y_pos].logicUpdate()
                 if(railConnectableLeft):                            #Verbindet mit linker Schiene
                     karte[x_pos][y_pos].connectedLeft = True
                     karte[x_pos-1][y_pos].connectedRight = True
+                    karte[x_pos-1][y_pos].logicUpdate()
                 if(railConnectableUp):                              #Verbindet mit oberer Schiene
                     karte[x_pos][y_pos].connectedUp = True
                     karte[x_pos][y_pos-1].connectedDown = True
+                    karte[x_pos][y_pos-1].logicUpdate()
                 if(railConnectableDown):                           #Verbindet mit unterer Schiene
                     karte[x_pos][y_pos].connectedDown = True
                     karte[x_pos][y_pos+1].connectedUp = True
+                    karte[x_pos][y_pos+1].logicUpdate()
+                karte[x_pos][y_pos].logicUpdate()                       #Logik Update Bahnhof
 
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 2):   #Zwei Schiene verbindbar.
                 karte[x_pos][y_pos].initLogic(TrainStationLogic)
@@ -94,12 +99,17 @@ class TrainStationLogic:
                     karte[x_pos+1][y_pos].connectedLeft = True
                     karte[x_pos][y_pos].connectedLeft = True
                     karte[x_pos-1][y_pos].connectedRight = True
+                    karte[x_pos+1][y_pos].logicUpdate()             #Logik Update Rechts
+                    karte[x_pos-1][y_pos].logicUpdate()             #Logik Update Links
 
                 if(railConnectableUp and railConnectableDown): #Verbindet mit oberer Schiene und unterer Schiene
                     karte[x_pos][y_pos].connectedUp = True
                     karte[x_pos][y_pos-1].connectedDown = True
                     karte[x_pos][y_pos].connectedDown = True
                     karte[x_pos][y_pos+1].connectedUp = True
+                    karte[x_pos][y_pos-1].logicUpdate()            #Logik Update Oben
+                    karte[x_pos][y_pos+1].logicUpdate()            #Logik Update Unten
+                karte[x_pos][y_pos].logicUpdate()                   #Logik Update Bahnhof
             else:
                 print('Kann Bahnhof hier nicht bauen!')
 
