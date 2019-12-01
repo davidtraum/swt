@@ -108,17 +108,19 @@ class MapTile:
         if(self.logic != None):
             print("MapTile @ LogicUpdate ", self.x, " " , self.y)
             newType = self.logic.getType()
+            print(self.type, newType)
             if(MapTile.TYPES[newType] != self.type):
                 print("MapTile @ LogicChanged ", newType)
                 self.setType(newType)
 
-    def initLogic(self, pLogic):
+    def initLogic(self, pLogic, pRange = 0):
         print("Init logic @ ", self.x, " ", self.y)
         if(pLogic == RailLogic):
             self.logic = pLogic(self, None)
-        else:
-            self.logic = pLogic(self, None, 2, 2)
-        self.logicUpdate()
+            self.logicUpdate()
+        if(pLogic == TrainStationLogic):
+            self.logic = pLogic(self, None, pRange, 2)
+        
 
 
 class World:
@@ -150,9 +152,15 @@ class World:
         if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
             RailLogic.build(posX, posY, None, self.data)
-        elif(pType == 'TRAINSTATION' and self.canPlaceObject):
-            print("Placing trainstation...")
+        elif(pType == 'DEPOT' and self.canPlaceObject):
+            print("Placing depot...")
             TrainStationLogic.build(posX, posY, None, 2, self.data)
+        elif(pType == 'STATION' and self.canPlaceObject):
+            print("Placing station...")
+            TrainStationLogic.build(posX, posY, None, 4, self.data)
+        elif(pType == 'TERMINAL' and self.canPlaceObject):
+            print("Placing terminal...")
+            TrainStationLogic.build(posX, posY, None, 6, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
@@ -306,9 +314,17 @@ class ClientThread(Thread):
                     print("Build Rail Request at ", args[2], " ", args[3])
                     #world.data[posX][posY].setType('RAIL_H')
                     world.tileInteract(posX, posY, 'RAIL')
-                elif(args[1] == 'TRAINSTATION'):
+                elif(args[1] == 'TRAINSTATION'):                    
                     print("Build Trainstation Request at ", args[2], " ", args[3])
-                    world.tileInteract(posX, posY, 'TRAINSTATION')
+                    if(args[4] == 'DEPOT'):    
+                        world.tileInteract(posX, posY, 'DEPOT')
+                        print("Build Depot Request at ", args[2], " ", args[3])
+                    if(args[4] == 'STATION'):    
+                        world.tileInteract(posX, posY, 'STATION')
+                        print("Build Station Request at ", args[2], " ", args[3])
+                    if(args[4] == 'TERMINAL'):    
+                        world.tileInteract(posX, posY, 'TERMINAL')
+                        print("Build Terminal Request at ", args[2], " ", args[3])
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
                     world.tileRightclick(posX, posY)
