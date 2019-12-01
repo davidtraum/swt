@@ -13,14 +13,12 @@ class TrainStationLogic:
 
 
     @staticmethod
-    def checkIfStationInRange(pPlayer, pTile, pRange, karte):
-        x_pos = pTile.getX()    
-        y_pos = pTile.getY()
+    def checkIfStationInRange(x_pos, y_pos, pPlayer, pRange, karte):
         sideLenght = 2*pRange+1             #Seitenlänge
         for column in range(pRange*2+1):    #Spalten    
             for row in range(pRange*2+1):   #Reihe
                 if(karte[x_pos][y_pos].isTrainStation()):
-                    pass
+                    return true
     
     @staticmethod
     def checkConnectableRails(player, x_pos, y_pos, karte):
@@ -67,11 +65,10 @@ class TrainStationLogic:
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
     @staticmethod
-    def build(x_pos, y_pos, pPlayer, pRange, karte):
-        
-        railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
+    def build(x_pos, y_pos, pPlayer, pRange, karte):        
+        railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = TrainStationLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
 
-        if(TrainStationLogic.checkIfStationInRange(pPlayer, pTile, pRange, karte)):
+        if(not TrainStationLogic.checkIfStationInRange(x_pos, y_pos, pPlayer, pRange, karte)):
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
                 print("Bahnhöfe koennen nur an bestehendes Schienennetz gebaut werden!")
 

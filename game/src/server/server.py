@@ -114,7 +114,10 @@ class MapTile:
 
     def initLogic(self, pLogic):
         print("Init logic @ ", self.x, " ", self.y)
-        self.logic = pLogic(self, None)
+        if(pLogic == RailLogic):
+            self.logic = pLogic(self, None)
+        else:
+            self.logic = pLogic(self, None, 2, 2)
         self.logicUpdate()
 
 
