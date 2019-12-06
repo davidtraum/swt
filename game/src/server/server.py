@@ -361,6 +361,7 @@ DEFAULT_CONFIG = {
 
 CONFIG_FILE = 'config.json'
 
+#Config-Datei
 if not os.path.exists(CONFIG_FILE):
     print("Die Konfigurationsdatei wird angelegt...")
     with open(CONFIG_FILE, 'w') as file:
@@ -372,10 +373,32 @@ if not os.path.exists(CONFIG_FILE):
 CONFIG = None
 with open(CONFIG_FILE) as file:
     CONFIG = json.loads(file.read())
+#Ende Config-Datei
 
+#Weltgenerierung    
 world = World()
 world.generateWorld()
 
+#Spieler Daten (Guthaben, usw.), aktuell ausgelegt für bis zu 4 Spielerkonten
+DEFAULT_PLAYERDATA = {
+    'p1_id': 0,
+    'p1_money': 1000,
+    'p2_id': 0,
+    'p2_money': 1000,
+    'p3_id': 0,
+    'p3_money': 1000,
+    'p4_id': 0,
+    'p4_money': 1000}
+
+PLAYER_DATA = 'playerData.json'
+
+if not os.path.exists(PLAYER_DATA):
+    print("Die Spielerdaten-Datei wird angelegt...")
+    with open(PLAYER_DATA, 'w') as file:
+        json_string = json.dumps(DEFAULT_PLAYERDATA, indent=4)
+        file.write(json_string)
+        file.flush()
+#Ende Spielerdaten-Abschnitt
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((CONFIG['bind_ip'], CONFIG['port']))
