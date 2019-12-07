@@ -6,6 +6,7 @@ import time
 import random
 from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
+from PlayerClass import Player
 
 
 clients = []
@@ -416,7 +417,7 @@ try:
         thread = ClientThread(connection)
         thread.start()
         clients.append(thread)
-
+        
 except KeyboardInterrupt:
     for client in clients:
         client.disconnect()

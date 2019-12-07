@@ -11,7 +11,13 @@ class Player:
         with open('playerData.json', 'r') as f:
             playerData =json.load(f);
             if (self.id == 1):
-                money = playerData['money'];    #Guthaben wird aus playerData-JSON ausgelesen
+                money = playerData['p1_money'];    #Guthaben wird aus playerData-JSON ausgelesen
+            if (self.id == 2):
+                money = playerData['p2_money'];    #Guthaben wird aus playerData-JSON ausgelesen
+            if (self.id == 3):
+                money = playerData['p3_money'];    #Guthaben wird aus playerData-JSON ausgelesen
+            if (self.id == 4):
+                money = playerData['p4_money'];    #Guthaben wird aus playerData-JSON ausgelesen
 
     def getMoney(self):
         return self.money;
