@@ -7,6 +7,7 @@ import random
 from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
 from PlayerClass import Player
+from BridgeClass import BridgeLogic
 
 
 clients = []
@@ -43,7 +44,9 @@ class MapTile:
         'STATION_H' : 18,
         'STATION_V' : 19,
         'TERMINAL_H' : 20,
-        'TERMINAL_V' : 21
+        'TERMINAL_V' : 21,
+        'BRIDGE_H': 22,
+        'BRIDGE_V': 23
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -89,7 +92,7 @@ class MapTile:
         return self.type >= 3 and self.type <= 8
 
     def isRail(self):
-        return self.type >= 9 and self.type <= 14
+        return self.type >= 9 and self.type <= 14 or self.type == 22 or self.type == 23
 
     def isTrainStation(self):
         return self.type >= 16 and self.type <= 21
@@ -98,6 +101,8 @@ class MapTile:
         return self.type == 17 or self.type == 19 or self.type == 21
 
     def getProtocolString(self):
+        print('der gesendete Typ ist:')
+        print(self.type)
         return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
     def isInGroup(self, types):
@@ -116,9 +121,8 @@ class MapTile:
 
     def initLogic(self, pLogic, pRange = 0):
         print("Init logic @ ", self.x, " ", self.y)
-        if(pLogic == RailLogic):
+        if(pLogic == RailLogic or pLogic == BridgeLogic):
             self.logic = pLogic(self, None)
-            self.logicUpdate()
         if(pLogic == TrainStationLogic):
             self.logic = pLogic(self, None, pRange, 2)
         
@@ -140,8 +144,12 @@ class World:
     def isValidPosition(self, posX, posY):
         return posX >= 0 and posY >= 0 and posX < 300 and posY < 300
 
-    def canPlaceObject(self, posX, posY):
-        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or False 
+    def canPlaceObject(self, posX, posY):       
+        return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or False
+
+        
+    def canPlaceRailOnRiver(self, posX, posY):
+        return self.data[posX][posY].isInGroup(('RIVER_H', 'RIVER_V')) or False
 
     def getGametime(self):
         currentTime = int(time.time()*1000)
@@ -153,6 +161,9 @@ class World:
         if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
             RailLogic.build(posX, posY, None, self.data)
+        elif(pType == 'RAIL' and self.canPlaceRailOnRiver(posX, posY)):
+            print("Placing bridge...")
+            BridgeLogic.build(posX, posY, None, self.data, self.data[posX][posY].getType())
         elif(pType == 'DEPOT' and self.canPlaceObject):
             print("Placing depot...")
             TrainStationLogic.build(posX, posY, None, 2, self.data)
@@ -254,6 +265,7 @@ class World:
                     break
 
         self.data[150][150].initLogic(RailLogic)
+        self.data[150][150].logicUpdate()
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):

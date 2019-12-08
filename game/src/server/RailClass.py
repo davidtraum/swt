@@ -79,7 +79,7 @@ class RailLogic:
 
         #Unten
         if(y_pos<299):                              #Wenn Unten innerhalb der Karte liegt
-            print("Wenn Unten innerhalb der Karte liegt")
+            print("Wenn Unten innerhalb der Karte liegt")            
             if(karte[x_pos][y_pos+1].isRail() or karte[x_pos][y_pos+1].isTrainStation() and karte[x_pos][y_pos+1].checkRotationStationVertical() == True):  #Wenn Schiene oder vertikaler Bahnhof existiert
                 if(karte[x_pos][y_pos+1].logic.player == player): #Wenn Schiene oder Bahnhof zum selben Spieler gehoert
                     #Wenn Schiene oder Bahnhof nicht vollstaendig verbunden ist.
@@ -100,7 +100,40 @@ class RailLogic:
             print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         
         
-        elif(1 <= railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft <= 2): #1-2 Schienen vebindbar Unten,Oben, Rechts oder Links
+        elif (railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1): #1 Schienen vebindbar Unten,Oben, Rechts oder Links
+            karte[x_pos][y_pos].initLogic(RailLogic) #Schiene wird gebaut.
+            if(railConnectableRight == True):    #Schiene Rechts ist verbindbar                     
+                karte[x_pos][y_pos].logic.connectedRight = True   #Schiene mit rechter Schiene verbinden
+                karte[x_pos+1][y_pos].logic.connectedLeft = True  #Rechte Schiene mit Schiene verbinden 
+                karte[x_pos+1][y_pos].logicUpdate()
+                #if(karte[x_pos+1][y_pos].isTrainStation()):
+                    #WayLogic.allWays.append(WayLogic)
+                    #WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_pos][y_pos]) 
+
+
+
+            if(railConnectableLeft == True):    #Schiene Links ist verbindbar.
+                karte[x_pos][y_pos].logic.connectedLeft = True    #Schiene mit linker Schiene verbinden
+                karte[x_pos-1][y_pos].logic.connectedRight = True #Linke Schiene mit Schiene verbinden
+                karte[x_pos-1][y_pos].logicUpdate()
+
+
+            if(railConnectableUp == True):      #Schiene Oben verbindbar.
+                karte[x_pos][y_pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
+                karte[x_pos][y_pos-1].logic.connectedDown = True     #Obere Schiene mit unterer Schiene verbinden
+                karte[x_pos][y_pos-1].logicUpdate()
+
+
+            if(railConnectableDown == True):    #Schiene Unten verbindbar.
+                karte[x_pos][y_pos].logic.connectedDown = True    #Schiene mit unterer Schiene verbinden
+                karte[x_pos][y_pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
+                karte[x_pos][y_pos+1].logicUpdate()
+
+
+
+            karte[x_pos][y_pos].logicUpdate()
+
+        elif(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 2): #2 Schienen vebindbar Unten,Oben, Rechts oder Links
             karte[x_pos][y_pos].initLogic(RailLogic) #Schiene wird gebaut.
             if(railConnectableRight == True):    #Schiene Rechts ist verbindbar                     
                 karte[x_pos][y_pos].logic.connectedRight = True   #Schiene mit rechter Schiene verbinden
@@ -116,9 +149,9 @@ class RailLogic:
 
 
             if(railConnectableUp == True):      #Schiene Oben verbindbar.
-                karte[x_pos][y_pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
-                karte[x_pos][y_pos-1].logic.connectedDown = True     #Obere Schiene mit unterer Schiene verbinden
-                karte[x_pos][y_pos-1].logicUpdate()
+                 karte[x_pos][y_pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
+                 karte[x_pos][y_pos-1].logic.connectedDown = True     #Obere Schiene mit unterer Schiene verbinden
+                 karte[x_pos][y_pos-1].logicUpdate()
 
 
             if(railConnectableDown == True):    #Schiene Unten verbindbar.
