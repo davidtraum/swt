@@ -33,6 +33,8 @@ public:
     void setConnectionLabel(QLabel * label);
     enum MODE{DEFAULT,
               TRAIN_STATION,
+              TRAIN_DEPOT,
+              TRAIN_TERMINAL,
               BRIDGE,
               RAIL_PLACEMENT};
     void setMode(MODE);
@@ -59,6 +61,8 @@ signals:
 public slots:
     void setDefaultMode();
     void setTrainStationMode();
+    void setDepotMode();
+    void setTerminalMode();
     void setBridgeMode();
     void setRailPlacementMode();
     void setMapLoaded(bool);

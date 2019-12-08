@@ -131,8 +131,19 @@ void Client::onPositionChange(int pX, int pY){
 void Client::onLeftclick(){
     qDebug() << "<olc";
     switch(dataModel->getMode()){
+        case DataModel::TRAIN_STATION:
+            socket->write(QString::fromStdString("BUILD STATION " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + " STATION~").toLocal8Bit());
+            socket->flush();
+            break;
+        case DataModel::TRAIN_DEPOT:
+            socket->write(QString::fromStdString("BUILD STATION " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + " DEPOT~").toLocal8Bit());
+            socket->flush();
+            break;
+        case DataModel::TRAIN_TERMINAL:
+            socket->write(QString::fromStdString("BUILD STATION " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + " TERMINAL~").toLocal8Bit());
+            socket->flush();
+            break;
         case DataModel::RAIL_PLACEMENT:
-            qDebug() << "[BUILD] Anfrage für Rail " << dataModel->getHoverX() << " " << dataModel->getHoverY();
             socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
             socket->flush();
             break;

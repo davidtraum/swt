@@ -23,7 +23,15 @@ public:
               RAIL_LT,
               RAIL_RT,
               RAIL_RB,
-              WATER};
+              WATER,
+              DEPOT_H,
+              DEPOT_V,
+              STATION_H,
+              STATION_V,
+              TERMINAL_H,
+              TERMINAL_V,
+              BRIDGE_H,
+              BRIDGE_V};
     MapTile(GraphicsManager * pGraphicsManager);
     MapTile();
     void setType(TYPE pType);

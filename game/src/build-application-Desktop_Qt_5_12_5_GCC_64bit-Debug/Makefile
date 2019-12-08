@@ -789,8 +789,10 @@ qrc_Data.cpp: ../application_server/Data.qrc \
 
 qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
+		../application_server/depot.png \
 		../application_server/wald.png \
 		../application_server/grass.png \
+		../application_server/trainstation.png \
 		../application_server/stadt.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
@@ -1343,6 +1345,21 @@ moc_minimap.cpp: ../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		../application_server/view.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../application_server/tooltipmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGridLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/minimap.h -o moc_minimap.cpp
@@ -2674,8 +2691,8 @@ maptile.o: ../application_server/maptile.cpp ../application_server/maptile.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maptile.o ../application_server/maptile.cpp
 
 menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenuBar \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolBar \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtguiglobal.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobal.h \
@@ -2701,23 +2718,24 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qversiontagging.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtgui-config.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qkeysequence.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstring.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qchar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearray.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qarraydata.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringliteral.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringalgorithms.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringview.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlist.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qalgorithms.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiterator.h \
@@ -2764,7 +2782,6 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontinfo.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qsizepolicy.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcursor.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qkeysequence.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qevent.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvariant.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmap.h \
@@ -2780,7 +2797,6 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qactiongroup.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QInputDialog \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qinputdialog.h \
@@ -2840,7 +2856,12 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QTimer \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtimer.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasictimer.h
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasictimer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolButton \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenu \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
 minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
@@ -2968,10 +2989,23 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPaintEvent \
-		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
+		../application_server/view.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../application_server/tooltipmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGridLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPaintEvent \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QRectF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
@@ -3336,6 +3370,14 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		../application_server/graphicsmanager.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPixmap \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QImage \
+		../application_server/view.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../application_server/tooltipmenu.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \

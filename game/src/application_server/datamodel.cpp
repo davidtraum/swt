@@ -209,6 +209,12 @@ void DataModel::setMode(DataModel::MODE pMode){
         case DataModel::TRAIN_STATION:
             statusDisplay->setText("<h2>Bahnhof bauen</h2>");
             break;
+        case DataModel::TRAIN_DEPOT:
+            statusDisplay->setText("<h2>Depot bauen</h2>");
+            break;
+        case DataModel::TRAIN_TERMINAL:
+            statusDisplay->setText("<h2>Terminal bauen</h2>");
+            break;
         case DataModel::BRIDGE:
             statusDisplay->setText("<h2>Brücke bauen</h2>");
             break;
@@ -234,6 +240,23 @@ void DataModel::setDefaultMode(){
 void DataModel::setTrainStationMode(){
     setMode(DataModel::MODE::TRAIN_STATION);
 }
+
+/**
+ * @brief DataModel::setRailPlacementMode Signal um in den Bahnhofseditor zu wechseln.
+ */
+void DataModel::setDepotMode(){
+    setMode(DataModel::MODE::TRAIN_DEPOT);
+}
+
+
+/**
+ * @brief DataModel::setRailPlacementMode Signal um in den Bahnhofseditor zu wechseln.
+ */
+void DataModel::setTerminalMode(){
+    qDebug() << "Terminal";
+    setMode(DataModel::MODE::TRAIN_TERMINAL);
+}
+
 
 /**
  * @brief DataModel::setRailPlacementMode Signal um in den Brückeneditor zu wechseln.

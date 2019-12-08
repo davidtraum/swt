@@ -100,6 +100,25 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setPixmap(graphicsManager->get("water"));
             pixmapItem->setToolTip("Meer");
             break;
+        case MapTile::TYPE::STATION_H:
+            pixmapItem->setPixmap(graphicsManager->get("bahnhof"));
+            pixmapItem->setToolTip("Bahnhof");
+            setRotation(1);
+            break;
+        case MapTile::TYPE::STATION_V:
+            pixmapItem->setPixmap(graphicsManager->get("bahnhof"));
+            pixmapItem->setToolTip("Bahnhof");
+            break;
+        case MapTile::TYPE::DEPOT_H:
+            pixmapItem->setPixmap(graphicsManager->get("depot"));
+            pixmapItem->setToolTip("Depot");
+            break;
+        case MapTile::TYPE::DEPOT_V:
+            pixmapItem->setPixmap(graphicsManager->get("depot"));
+            pixmapItem->setToolTip("Depot");
+            setRotation(1);
+            break;
+
     }
     type = pType;
 }

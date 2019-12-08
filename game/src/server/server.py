@@ -266,6 +266,7 @@ class World:
 
         self.data[150][150].initLogic(RailLogic)
         self.data[150][150].logicUpdate()
+        #self.data[150][150].setType('STATION_H')
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):
@@ -327,7 +328,7 @@ class ClientThread(Thread):
                     print("Build Rail Request at ", args[2], " ", args[3])
                     #world.data[posX][posY].setType('RAIL_H')
                     world.tileInteract(posX, posY, 'RAIL')
-                elif(args[1] == 'TRAINSTATION'):                    
+                elif(args[1] == 'STATION'):                    
                     print("Build Trainstation Request at ", args[2], " ", args[3])
                     if(args[4] == 'DEPOT'):    
                         world.tileInteract(posX, posY, 'DEPOT')
