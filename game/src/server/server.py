@@ -12,6 +12,7 @@ from WayClass import WayLogic
 
 
 clients = []
+clientCount = 0
 def broadcast(pText, exclude=None):
     global clients
     for client in clients:
@@ -299,6 +300,7 @@ class ClientThread(Thread):
         Thread.__init__(self)
         self.connection = pConnection
         self.commandBuffer = ""
+        self.player = Player(playerCount, client.getpeername());
 
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
@@ -310,6 +312,8 @@ class ClientThread(Thread):
         print("Disconnected Client")
         try:
             self.connection.close()
+            clientCount -= 1;
+            print("Anzahl verbundener Clients: " + clientCount);
         except Exception:
             pass
 
@@ -436,6 +440,9 @@ try:
         thread = ClientThread(connection)
         thread.start()
         clients.append(thread)
+        clientCount += 1;
+        print("Anzahl verbundener Clients: " + clientCount);
+        
         
 except KeyboardInterrupt:
     for client in clients:
