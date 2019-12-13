@@ -463,8 +463,10 @@ qrc_Data.cpp: ../application_server/Data.qrc \
 
 qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		/usr/lib/qt5/bin/rcc \
+		../application_server/depot.png \
 		../application_server/wald.png \
 		../application_server/grass.png \
+		../application_server/trainstation.png \
 		../application_server/stadt.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
@@ -544,6 +546,8 @@ moc_minimap.cpp: ../application_server/scene.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h \
 		../application_server/minimap.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -678,7 +682,9 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/datamodel.h
+		../application_server/datamodel.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h \
@@ -705,7 +711,9 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/graphicsmanager.h
+		../application_server/graphicsmanager.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application_server/sidepanel.cpp
 
 tooltipmenu.o: ../application_server/tooltipmenu.cpp ../application_server/tooltipmenu.h

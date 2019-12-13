@@ -8,6 +8,7 @@ from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
 from PlayerClass import Player
 from BridgeClass import BridgeLogic
+from WayClass import WayLogic
 
 
 clients = []
@@ -266,7 +267,12 @@ class World:
 
         self.data[150][150].initLogic(RailLogic)
         self.data[150][150].logicUpdate()
-        #self.data[150][150].setType('STATION_H')
+        WayLogic.allWays.append(WayLogic(None))
+        WayLogic.allWays[0].firstRail.append(self.data[150][150])
+        WayLogic.allWays[0].secondRail.append(None)
+        self.data[150][150].logic.way = WayLogic.allWays[0]
+        world.tileInteract(149, 150, 'DEPOT')
+        world.tileInteract(148, 150, 'RAIL')
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):
