@@ -118,6 +118,15 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Depot");
             setRotation(1);
             break;
+        case MapTile::TYPE::TERMINAL_H:
+            pixmapItem->setPixmap(graphicsManager->get("terminal"));
+            pixmapItem->setToolTip("Terminal");
+            break;
+        case MapTile::TYPE::TERMINAL_V:
+            pixmapItem->setPixmap(graphicsManager->get("terminal"));
+            pixmapItem->setToolTip("Terminal");
+            setRotation(1);
+            break;
 
     }
     type = pType;

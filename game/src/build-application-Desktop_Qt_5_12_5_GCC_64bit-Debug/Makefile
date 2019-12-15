@@ -793,6 +793,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/wald.png \
 		../application_server/grass.png \
 		../application_server/trainstation.png \
+		../application_server/terminal.png \
 		../application_server/stadt.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
