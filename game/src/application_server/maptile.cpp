@@ -127,6 +127,15 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Terminal");
             setRotation(1);
             break;
+        case MapTile::TYPE::BRIDGE_H:
+            pixmapItem->setPixmap(graphicsManager->get("bruecke"));
+            pixmapItem->setToolTip("Brücke");
+            break;
+        case MapTile::TYPE::BRIDGE_V:
+            pixmapItem->setPixmap(graphicsManager->get("bruecke"));
+            pixmapItem->setToolTip("Brücke");
+            setRotation(1);
+            break;
 
     }
     type = pType;

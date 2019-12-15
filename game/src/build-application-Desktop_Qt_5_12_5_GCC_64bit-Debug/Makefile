@@ -795,6 +795,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/trainstation.png \
 		../application_server/terminal.png \
 		../application_server/stadt.png \
+		../application_server/bruecke.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
 		../application_server/fluss_kurve_links_unten.png \

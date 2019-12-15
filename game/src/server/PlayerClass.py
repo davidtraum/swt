@@ -42,12 +42,13 @@ class Player:
 
 
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
-        with open('playerData.json', 'r+') as f:
-            playerData = json.load(f);
-            data['money'] = self.money; #Guthaben wird gesichert
-            f.seek(0);
-            json.dump(playerData, f, indent = 4)
-            f.truncate();
+        #with open('playerData.json', 'r+') as f:
+        #    playerData = json.load(f);
+        #    data['money'] = self.money; #Guthaben wird gesichert
+        #    f.seek(0);
+        #    json.dump(playerData, f, indent = 4)
+        #    f.truncate();
+        pass
             
             
 pTest = Player(1,1234);
