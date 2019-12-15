@@ -317,6 +317,7 @@ class ClientThread(Thread):
         try:
             self.connection.close()
             clientCount -= 1;
+            del self.player;
             print("Anzahl verbundener Clients: " + clientCount);
         except Exception:
             pass
