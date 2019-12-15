@@ -300,7 +300,11 @@ class ClientThread(Thread):
         Thread.__init__(self)
         self.connection = pConnection
         self.commandBuffer = ""
-        self.player = Player(playerCount, client.getpeername());
+        print("CLIENT THREAD WIRD GESTARTET");
+        time.sleep(3);
+        self.player = Player(clientCount, 1234); #"1234" muss durch IP ersetzt werden.
+        print("Client Thread gestartet.");
+        time.sleep(3);
 
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
@@ -437,10 +441,10 @@ try:
     while True:
         connection, address = server.accept()
         print("Verbindungsaufbau von " + str(address) + "...")
+        clientCount += 1;
         thread = ClientThread(connection)
         thread.start()
         clients.append(thread)
-        clientCount += 1;
         print("Anzahl verbundener Clients: " + clientCount);
         
         

@@ -245,6 +245,8 @@ Makefile: ../application_server/application.pro C:/Qt/5.12.2/mingw73_32/mkspecs/
 		C:/Qt/5.12.2/mingw73_32/mkspecs/features/yacc.prf \
 		C:/Qt/5.12.2/mingw73_32/mkspecs/features/lex.prf \
 		../application_server/application.pro \
+		C:/Qt/5.12.2/mingw73_32/lib/Qt5MultimediaWidgets.prl \
+		C:/Qt/5.12.2/mingw73_32/lib/Qt5Multimedia.prl \
 		C:/Qt/5.12.2/mingw73_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.12.2/mingw73_32/lib/Qt5Gui.prl \
 		C:/Qt/5.12.2/mingw73_32/lib/Qt5Network.prl \
@@ -433,6 +435,8 @@ C:/Qt/5.12.2/mingw73_32/mkspecs/features/exceptions.prf:
 C:/Qt/5.12.2/mingw73_32/mkspecs/features/yacc.prf:
 C:/Qt/5.12.2/mingw73_32/mkspecs/features/lex.prf:
 ../application_server/application.pro:
+C:/Qt/5.12.2/mingw73_32/lib/Qt5MultimediaWidgets.prl:
+C:/Qt/5.12.2/mingw73_32/lib/Qt5Multimedia.prl:
 C:/Qt/5.12.2/mingw73_32/lib/Qt5Widgets.prl:
 C:/Qt/5.12.2/mingw73_32/lib/Qt5Gui.prl:
 C:/Qt/5.12.2/mingw73_32/lib/Qt5Network.prl:
