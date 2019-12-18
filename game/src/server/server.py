@@ -376,7 +376,7 @@ class ClientThread(Thread):
             try:
                 data = self.connection.recv(1)
                 if(data == b'~'):
-                    self.processCommand(buffer.decode('utf-8'))
+                    self.processCommand(buffer.decode())
                     buffer = b""
                 else:
                     buffer += data
