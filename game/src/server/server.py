@@ -103,8 +103,8 @@ class MapTile:
         return self.type == 17 or self.type == 19 or self.type == 21
 
     def getProtocolString(self):
-        print('der gesendete Typ ist:')
-        print(self.type)
+        #print('der gesendete Typ ist:')
+        #print(self.type)
         return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
     def isInGroup(self, types):
@@ -320,7 +320,7 @@ class ClientThread(Thread):
             del self.player;
             print("Anzahl verbundener Clients: " + clientCount);
         except Exception:
-            pass
+            print("FEHLER BEIM DISCONNECT");
 
     def processCommand(self,command):
             global world
@@ -446,7 +446,7 @@ try:
         thread = ClientThread(connection)
         thread.start()
         clients.append(thread)
-        print("Anzahl verbundener Clients: " + clientCount);
+        print("Anzahl verbundener Clients: " + str(clientCount));
         
         
 except KeyboardInterrupt:
