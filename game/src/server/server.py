@@ -178,12 +178,12 @@ class World:
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
 
-    def tileRightclick(self, posX, posY):
-        if(self.data[posX][posY].isRail()):
-            self.data[posX][posY].rotateClockwise()
-        else:
-            self.data[posX][posY].setType('GRASS')
-        self.data[posX][posY]
+#    def tileRightclick(self, posX, posY):
+#        if(self.data[posX][posY].isRail()):
+#            self.data[posX][posY].rotateClockwise()
+#        else:
+#            self.data[posX][posY].setType('GRASS')
+#        self.data[posX][posY]
 
     def generateWorld(self):
         print("Welt wird generiert...")
