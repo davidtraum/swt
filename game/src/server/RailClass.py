@@ -86,6 +86,8 @@ class RailLogic:
 
     @staticmethod
     def build(x_pos,y_pos, pPlayer, karte):
+        print(len(WayLogic.allWays))
+        print('teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest')
         print("RailLogic.build @ start: ", x_pos, " ", y_pos);
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte)
         print("RailLogic.build @ checkConnectableRails: ", RailLogic.checkConnectableRails(pPlayer,x_pos ,y_pos , karte))
@@ -203,13 +205,11 @@ class RailLogic:
 
 
             karte[x_pos][y_pos].logicUpdate()
+        
 
         else:
             print("Spielerabfrage") #z.B. mit vier Richtungen, die ersten beiden(anklickbaren) die geklickt werden bestimmen die Kurve
-                
-
-
-
-
+        
+        
         
         

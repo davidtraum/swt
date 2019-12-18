@@ -357,6 +357,10 @@ class ClientThread(Thread):
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
                     world.tileRightclick(posX, posY)
+            if(args[0] == 'WAY'):
+                if(args[1] == 'GET'):
+                    broadcast(WayLogic.getProtocolString())
+
             elif(args[0] == 'POS'):
                 print("got pos update " + command)
                 posX = int(args[1])
