@@ -18,7 +18,7 @@ var searchData=
   ['minimap_99',['Minimap',['../classMinimap.html',1,'Minimap'],['../classMinimap.html#ab5fa35cbed78ec206118b31d1c3d5ab1',1,'Minimap::Minimap()']]],
   ['minimap_2ecpp_100',['minimap.cpp',['../minimap_8cpp.html',1,'']]],
   ['minimap_2eh_101',['minimap.h',['../minimap_8h.html',1,'']]],
-  ['mode_102',['MODE',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12',1,'DataModel::MODE()'],['../classDataModel.html#a3d22e7dd78eb5b3f918a6b0e78d670d6',1,'DataModel::mode()']]],
+  ['mode_102',['mode',['../classDataModel.html#a3d22e7dd78eb5b3f918a6b0e78d670d6',1,'DataModel::mode()'],['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12',1,'DataModel::MODE()']]],
   ['moneylabel_103',['moneyLabel',['../classSidePanel.html#aea340b0e19380288866985f561539f80',1,'SidePanel']]],
   ['mousedown_104',['mouseDown',['../classView.html#a4ff44ed662bb14b094cc2e02522ad605',1,'View']]],
   ['mousemoveevent_105',['mouseMoveEvent',['../classView.html#aae14a814f17c825ce462509655e54ee4',1,'View']]],

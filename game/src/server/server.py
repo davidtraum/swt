@@ -298,6 +298,24 @@ class World:
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[299-x][y].setType('WATER')         
 
+class GameLoopThread(Thread):
+
+    def __init__(self, tickspeed=20):
+        Thread.__init__(self)
+        self.tickspeed = tickspeed/1000.0
+        self.last_mach_was = 0
+        self.running = False
+
+    def do_loop(self):
+        if(time.time() - self.last_mach_was > 1.2):
+            print("1.2 sekunden sind um")
+            self.last_mach_was = time.time()
+
+    def run(self):
+        self.running = True
+        while self.running:
+            self.do_loop()
+            time.sleep(self.tickspeed)
 
 class ClientThread(Thread):
 
@@ -446,6 +464,9 @@ if not os.path.exists(PLAYER_DATA):
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((CONFIG['bind_ip'], CONFIG['port']))
 server.listen()
+
+gameloop = GameLoopThread(tickspeed=500)
+gameloop.start()
 
 
 print("Server wird gestartet...")

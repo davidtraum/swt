@@ -95,7 +95,16 @@ var menudata={children:[
 {text:"v",url:"functions_vars.html#index_v"},
 {text:"w",url:"functions_vars.html#index_w"}]},
 {text:"Aufzählungen",url:"functions_enum.html"},
-{text:"Aufzählungswerte",url:"functions_eval.html"}]}]},
+{text:"Aufzählungswerte",url:"functions_eval.html",children:[
+{text:"b",url:"functions_eval.html#index_b"},
+{text:"c",url:"functions_eval.html#index_c"},
+{text:"d",url:"functions_eval.html#index_d"},
+{text:"f",url:"functions_eval.html#index_f"},
+{text:"g",url:"functions_eval.html#index_g"},
+{text:"r",url:"functions_eval.html#index_r"},
+{text:"s",url:"functions_eval.html#index_s"},
+{text:"t",url:"functions_eval.html#index_t"},
+{text:"w",url:"functions_eval.html#index_w"}]}]}]},
 {text:"Dateien",url:"files.html",children:[
 {text:"Auflistung der Dateien",url:"files.html"},
 {text:"Datei-Elemente",url:"globals.html",children:[
