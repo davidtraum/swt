@@ -53,8 +53,14 @@ MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     railEditor->setShortcut(Qt::Key_3);
     railEditor->connect(railEditor, &QAction::triggered, dataModel, &DataModel::setRailPlacementMode);
     buildMenu->addAction(railEditor);
+    QAction * removeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/wrecking-ball.svg"))),"Entferne", this);
+    removeEditor->setShortcut(Qt::Key_4);
+    removeEditor->connect(removeEditor, &QAction::triggered, dataModel, &DataModel::setRemoveMode);
+    buildMenu->addAction(removeEditor);
+
     buildButton->setMenu(buildMenu);
     this->addWidget(buildButton);
+
 
     QToolButton * trainButton = new QToolButton(this);
     trainButton->setToolTip("Zugsteuerung");
@@ -77,8 +83,9 @@ MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     connect(openConnection, &QAction::triggered, this, &MenuBar::slotOpenConnection);
     serverMenu->addAction(openConnection);
     serverButton->setMenu(serverMenu);
-
     this->addWidget(serverButton);
+
+
 
     QWidget *spacer = new QWidget(this);
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);

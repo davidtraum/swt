@@ -467,7 +467,9 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/wald.png \
 		../application_server/grass.png \
 		../application_server/trainstation.png \
+		../application_server/terminal.png \
 		../application_server/stadt.png \
+		../application_server/bruecke.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
 		../application_server/fluss_kurve_links_unten.png \
@@ -487,6 +489,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/hammer.svg \
 		../application_server/cog.svg \
 		../application_server/server.svg \
+		../application_server/wrecking-ball.svg \
 		../application_server/clock.svg \
 		../application_server/verbindungsaufbau.svg \
 		../application_server/pin.svg \

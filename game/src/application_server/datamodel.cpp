@@ -221,6 +221,9 @@ void DataModel::setMode(DataModel::MODE pMode){
         case DataModel::RAIL_PLACEMENT:
             statusDisplay->setText("<h2>Schienen platzieren</h2>");
             break;
+        case DataModel::REMOVE:
+            statusDisplay->setText("<h2>Entferne</h2>");
+            break;
         default:
             statusDisplay->setText("");
             break;
@@ -271,7 +274,12 @@ void DataModel::setBridgeMode(){
 void DataModel::setRailPlacementMode(){
     setMode(DataModel::MODE::RAIL_PLACEMENT);
 }
-
+/**
+* @brief DataModel::setRailPlacementMode Signal um in den Removeeditor zu wechseln.
+*/
+void DataModel::setRemoveMode(){
+    setMode(DataModel::MODE::REMOVE);
+}
 /**
  * @brief DataModel::setMapLoaded Setzt das die Karte geladen wurde.
  */

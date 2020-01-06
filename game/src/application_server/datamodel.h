@@ -36,7 +36,8 @@ public:
               TRAIN_DEPOT,
               TRAIN_TERMINAL,
               BRIDGE,
-              RAIL_PLACEMENT};
+              RAIL_PLACEMENT,
+              REMOVE};
     void setMode(MODE);
     MODE getMode();
     Player * secondPlayer;
@@ -65,6 +66,7 @@ public slots:
     void setTerminalMode();
     void setBridgeMode();
     void setRailPlacementMode();
+    void setRemoveMode();
     void setMapLoaded(bool);
 };
 

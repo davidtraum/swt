@@ -151,6 +151,10 @@ void Client::onLeftclick(){
             socket->write(QString::fromStdString("BUILD RAIL " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
             socket->flush();
             break;
+        case DataModel::REMOVE:
+            socket->write(QString::fromStdString("REMOVE " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
+            socket->flush();
+            break;
     }
 }
 

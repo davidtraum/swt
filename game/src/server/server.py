@@ -177,6 +177,11 @@ class World:
             TrainStationLogic.build(posX, posY, None, 6, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
+    
+    def tileRemove(self, posX, posY):        
+        if(self.data[posX][posY].type >= 9 and self.data[posX][posY].type <= 14):
+            print("Remove Rail Request at ", posX, " ", posY)
+            self.data[posX][posY].logic.remove(posX, posY, None, self.data)
 
     def tileRightclick(self, posX, posY):
         if(self.data[posX][posY].isRail()):
@@ -360,6 +365,11 @@ class ClientThread(Thread):
             if(args[0] == 'WAY'):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getProtocolString())
+
+            if(args[0] == 'REMOVE'):
+                posX = int(args[1])
+                posY = int(args[2])
+                world.tileRemove(posX, posY)                
 
             elif(args[0] == 'POS'):
                 print("got pos update " + command)
