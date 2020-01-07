@@ -8,7 +8,7 @@ class TrainLogic:
         self.maxWagons = 10
         self.wagons = []
 
-    def addwagons(self, pWagon):
+    def addWagons(self, pWagon):
         if len(self.wagons) <= self.maxWagons: 
 
             self.wagons.append(pWagon)
@@ -17,7 +17,7 @@ class TrainLogic:
             print("Zu viele wagons!")
             return False
         
-    def removewagon(self, digit):
+    def removeWagon(self, digit):
         if digit < len(self.wagons):
             self.wagons.pop(digit)
             return True

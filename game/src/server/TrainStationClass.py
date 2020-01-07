@@ -220,7 +220,7 @@ class TrainStationLogic:
         else:
             print('Kann Bahnhof hier nicht bauen!')
 
-    def remove(x_Pos,y_Pos, pPlayer, karte): 
+    def remove(self, x_Pos,y_Pos, pPlayer, karte): 
         if(karte[x_Pos][y_Pos].player == pPlayer):
             if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 1):
                 karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt
