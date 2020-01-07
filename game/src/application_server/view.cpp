@@ -28,6 +28,7 @@ View::View(Scene * pScene, ToolTipMenu * pToolTip) :
     doAnimations = false;
     mouseX = 0;
     mouseY = 0;
+    codeCount=0;
 
     /*
     mediaPlayer = new QMediaPlayer(this);
@@ -198,16 +199,69 @@ void View::keyPressEvent(QKeyEvent *event){
 
         case Qt::Key_Left:
             fluidMove(-128,0);
+            if (codeCount == 4 || codeCount == 6)
+                codeCount++;
+            else
+                codeCount = 0;
             break;
         case Qt::Key_Right:
             fluidMove(128,0);
+            if (codeCount == 5 || codeCount == 7)
+                codeCount++;
+            else
+                codeCount = 0;
             break;
         case Qt::Key_Up:
             fluidMove(0,-128);
+            if (codeCount == 0 || codeCount == 1)
+                codeCount++;
+            else
+                codeCount = 0;
             break;
         case Qt::Key_Down:
             fluidMove(0,128);
+            if (codeCount == 2 || codeCount == 3)
+                codeCount++;
+            else
+                codeCount = 0;
             break;
+        case Qt::Key_B:
+            if (codeCount == 8)
+                codeCount++;
+            else
+                codeCount = 0;
+            break;
+        case Qt::Key_A:
+            if (codeCount == 9)
+                codeCount++;
+            else
+                codeCount = 0;
+            break;
+        default:
+            codeCount = 0;
+        break;
+
+    }
+
+    qDebug() << "codeCount " << QString::number(codeCount);
+
+    //Hier gibt es nichts zu sehen:
+    if (codeCount == 10) {
+        qDebug("KONAMI CODE");
+        QWidget* box = new QWidget();
+        box->setWindowModality(Qt::ApplicationModal);
+        box->setWindowTitle("Thomas And Friends");
+
+        QHBoxLayout* layout = new QHBoxLayout();
+        box->setLayout(layout);
+
+        QPixmap p(":/images/thomasAndFriends.png");
+        QLabel * image = new QLabel(this);
+        image->setPixmap(p.scaled(800, 800,Qt::KeepAspectRatio, Qt::FastTransformation));
+
+        layout->addWidget(image);
+        image->show();
+        box->show();
     }
 
     if(event->key() == Qt::Key_F11){
