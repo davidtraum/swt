@@ -1,11 +1,11 @@
-from WayLogicClass import *
+from WayClass import *
+from PlayerClass import *
 
-class routeLogic:
-    allRoutes = []
-
+class RouteLogic:
     def __init__(self, pPlayer):
-        self.player = pPlayer #Spieler        
-        
+        self.player = pPlayer
+        self.ways = [] 
 
-    def addWay(self):
-        pass
+    def addWay(self, pWay):
+        self.ways.append(pWay)
+
