@@ -20,6 +20,7 @@ class WayLogic:
                 s+= ' POSX ' +str(WayLogic.allWays[i].firstRail[j].getX()) + ' POSY ' + str(WayLogic.allWays[i].firstRail[j].getY())
             if(WayLogic.allWays[i].secondTrainStation != None):
                 s += ' SECONDSTATION ' + 'POSX ' + str(WayLogic.allWays[i].secondTrainStation.getX()) + ' POSY ' + str(WayLogic.allWays[i].secondTrainStation.getY())
+            s+= 'Laenge :' + str(len(WayLogic.allWays[i].firstRail))
             s+='\n'
-            s+= str(len(WayLogic.allWays[i].firstRail))
+        
         return s

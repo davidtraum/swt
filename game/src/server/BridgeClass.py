@@ -76,14 +76,12 @@ class BridgeLogic():
 
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
+   
     @staticmethod
-    def build(x_Pos,y_Pos, pPlayer, karte, riverType):
-        print("BridgeLogic.build @ start: ", x_Pos, " ", y_Pos);
-        railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = BridgeLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte, riverType)
-        print("BridgeLogic.build @ checkConnectableRails: ", RailLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte))
-
+    def build(x_Pos,y_Pos, pPlayer, karte, riverType):        
+        railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = BridgeLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte,riverType)
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
-            print("Brücken koennen nur an bestehendes Schienennetz gebaut werden")        
+            print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         
         
         elif (railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1): #1 Schienen vebindbar Unten,Oben, Rechts oder Links
@@ -94,14 +92,14 @@ class BridgeLogic():
                 karte[x_Pos+1][y_Pos].logicUpdate()
                 if(karte[x_Pos+1][y_Pos].isTrainStation()):                                             #wenn Rechts ein Bahnhof,
                     WayLogic.allWays.append(WayLogic(None))                                             #dann füge neue Strecke hinzu
-                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[len(WayLogic.allWays)-1]           #vermerke in Schiene zu welcher Strecke sie gehört
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos+1][y_Pos])   #1.Bahnhof wird Strecke hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
-                    print(WayLogic.allWays[len(WayLogic.allWays)-1].firstRail, WayLogic.allWays[len(WayLogic.allWays)-1].secondRail)
-                else:                                                                               #Wenn Rechts eine Schiene ist
-                                                                                                          #Wenn Rechts eine Schiene ist
+                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[-1]           #vermerke in Schiene zu welcher Strecke sie gehört
+                    WayLogic.allWays[-1].firstTrainStation = karte[x_Pos+1][y_Pos] #ersten Bahnhof als übergeben damit es übersichtlicher ist
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos+1][y_Pos])   #1.Bahnhof wird Strecke hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    
+                else:                                                                                       #Wenn Rechts eine Schiene ist
                     if(karte[x_Pos+1][y_Pos].logic.way.firstRail.index(karte[x_Pos+1][y_Pos]) != 0):         #Wenn schiene nicht die erste ist
                         karte[x_Pos+1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos+1][y_Pos].logic.way.secondRail.append(None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
@@ -110,8 +108,7 @@ class BridgeLogic():
                         karte[x_Pos+1][y_Pos].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos+1][y_Pos].logic.way.secondRail.insert(0, None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
                         karte[x_Pos][y_Pos].logic.way = karte[x_Pos+1][y_Pos].logic.way 
-
-
+                    
 
             if(railConnectableLeft == True):    #Schiene Links ist verbindbar.
                 karte[x_Pos][y_Pos].logic.connectedLeft = True    #Schiene mit linker Schiene verbinden
@@ -119,13 +116,14 @@ class BridgeLogic():
                 karte[x_Pos-1][y_Pos].logicUpdate()
                 if(karte[x_Pos-1][y_Pos].isTrainStation()):                                             #wenn Links ein Bahnhof,
                     WayLogic.allWays.append(WayLogic(None))                                             #dann füge neue Strecke hinzu
-                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[len(WayLogic.allWays)-1]           #vermerke in Schiene zu welcher Strecke sie gehört
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos-1][y_Pos])   #1.Bahnhof wird Strecke hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
-                    print(WayLogic.allWays[len(WayLogic.allWays)-1].firstRail, WayLogic.allWays[len(WayLogic.allWays)-1].secondRail)
-                else:                                                                                   #Wenn Links eine Schiene ist
+                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[-1]           #vermerke in Schiene zu welcher Strecke sie gehört
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos-1][y_Pos])   #1.Bahnhof wird Strecke hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    
+                else:                                                                                 #Wenn Links eine Schiene ist
+                    
                     if(karte[x_Pos-1][y_Pos].logic.way.firstRail.index(karte[x_Pos-1][y_Pos]) != 0):         #Wenn schiene nicht die erste ist
                         karte[x_Pos-1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos-1][y_Pos].logic.way.secondRail.append(None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
@@ -134,7 +132,8 @@ class BridgeLogic():
                         karte[x_Pos-1][y_Pos].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos-1][y_Pos].logic.way.secondRail.insert(0, None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
                         karte[x_Pos][y_Pos].logic.way = karte[x_Pos-1][y_Pos].logic.way                     #vermerke in Schiene, dass sie zurselben Strecke wie die rechte Schiene gehört
-
+                    
+                    
 
             if(railConnectableUp == True):      #Schiene Oben verbindbar.
                 karte[x_Pos][y_Pos].logic.connectedUp = True  #Schiene mit oberer Schiene verbinden
@@ -142,12 +141,12 @@ class BridgeLogic():
                 karte[x_Pos][y_Pos-1].logicUpdate()
                 if(karte[x_Pos][y_Pos-1].isTrainStation()):                                             #wenn Oben ein Bahnhof,
                     WayLogic.allWays.append(WayLogic(None))                                             #dann füge neue Strecke hinzu
-                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[len(WayLogic.allWays)-1]           #vermerke in Schiene zu welcher Strecke sie gehört
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos-1])   #1.Bahnhof wird Strecke hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
-                    print(WayLogic.allWays[len(WayLogic.allWays)-1].firstRail, WayLogic.allWays[len(WayLogic.allWays)-1].secondRail)
+                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[-1]           #vermerke in Schiene zu welcher Strecke sie gehört
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos-1])   #1.Bahnhof wird Strecke hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    
                 else:                                                                                   #Wenn Oben eine Schiene ist
                     if(karte[x_Pos][y_Pos-1].logic.way.firstRail.index(karte[x_Pos][y_Pos-1]) != 0):         #Wenn schiene nicht die erste ist
                         karte[x_Pos][y_Pos-1].logic.way.firstRail.append(karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
@@ -156,22 +155,21 @@ class BridgeLogic():
                     else:                    
                         karte[x_Pos][y_Pos-1].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos][y_Pos-1].logic.way.secondRail.insert(0, None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
-                        karte[x_Pos][y_Pos].logic.way = karte[x_Pos][y_Pos-1].logic.way 
-
-
-
+                        karte[x_Pos][y_Pos].logic.way = karte[x_Pos][y_Pos-1].logic.way                     #vermerke in Schiene, dass sie zurselben Strecke wie die rechte Schiene gehört
+                    
+                    
             if(railConnectableDown == True):    #Schiene Unten verbindbar.
                 karte[x_Pos][y_Pos].logic.connectedDown = True    #Schiene mit unterer Schiene verbinden
                 karte[x_Pos][y_Pos+1].logic.connectedUp = True      #Untere Schiene mit Schiene verbinden
                 karte[x_Pos][y_Pos+1].logicUpdate()
                 if(karte[x_Pos][y_Pos+1].isTrainStation()):                                             #wenn Unten ein Bahnhof,
                     WayLogic.allWays.append(WayLogic(None))                                             #dann füge neue Strecke hinzu
-                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[len(WayLogic.allWays)-1]           #vermerke in Schiene zu welcher Strecke sie gehört
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos+1])   #1.Bahnhof wird Strecke hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
-                    WayLogic.allWays[len(WayLogic.allWays)-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
-                    WayLogic.allWays[len(WayLogic.allWays)-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
-                    print(WayLogic.allWays[len(WayLogic.allWays)-1].firstRail, WayLogic.allWays[len(WayLogic.allWays)-1].secondRail)
+                    karte[x_Pos][y_Pos].logic.way = WayLogic.allWays[-1]           #vermerke in Schiene zu welcher Strecke sie gehört
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos+1])   #1.Bahnhof wird Strecke hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
+                    WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
+                    WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    
                 else:                                                                                   #Wenn Unten eine Schiene ist
                     if(karte[x_Pos][y_Pos+1].logic.way.firstRail.index(karte[x_Pos][y_Pos+1]) != 0):         #Wenn schiene nicht die erste ist
                         karte[x_Pos][y_Pos+1].logic.way.firstRail.append(karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
@@ -180,9 +178,9 @@ class BridgeLogic():
                     else:                    
                         karte[x_Pos][y_Pos+1].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos][y_Pos+1].logic.way.secondRail.insert(0, None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
-                        karte[x_Pos][y_Pos].logic.way = karte[x_Pos][y_Pos+1].logic.way 
-
-
+                        karte[x_Pos][y_Pos].logic.way = karte[x_Pos][y_Pos+1].logic.way                     #vermerke in Schiene, dass sie zurselben Strecke wie die rechte Schiene gehört
+                    
+                    
 
             karte[x_Pos][y_Pos].logicUpdate()
 
@@ -215,22 +213,117 @@ class BridgeLogic():
 
 
             karte[x_Pos][y_Pos].logicUpdate()
+        
 
-    def remove(x_Pos,y_Pos, pPlayer, karte): 
-        if(karte[x_Pos][y_Pos].player == pPlayer):
+        else:
+            print("Spielerabfrage") #z.B. mit vie
+    def remove(self, x_Pos,y_Pos,pPlayer,karte): 
+        print("removing Rail at: ",x_Pos," ", y_Pos)
+        if(karte[x_Pos][y_Pos].logic.player == pPlayer):
+            print(self.connectedRight , self.connectedLeft , self.connectedUp, self.connectedDown)        
+            karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt
             if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 1):
-                karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt
+                print('eine Verbindung')
                 if(self.connectedRight == True):        #entfernt Verbindungen von anderen Schienen
-                    karte[x_Pos+1][y_Pos].logic.connectedLeft = False
+                    karte[x_Pos+1][y_Pos].logic.connectedLeft = False                    
                 if(self.connectedLeft == True):
                     karte[x_Pos-1][y_Pos].logic.connectedRight = False
                 if(self.connectedUp == True):
                     karte[x_Pos][y_Pos-1].logic.connectedDown = False
                 if(self.connectedDown == True):
                     karte[x_Pos][y_Pos+1].logic.connectedUp = False                
-                tmp = karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])    #entfernt Gleis aus Strecke
-                del karte[x_Pos][y_Pos].logic.way.firstRail[tmp]            
-                del karte[x_Pos][y_Pos].logic.way.secondRail[tmp]                          
-                karte[x_Pos][y_Pos].logic = None        #setzt Logic Objekt auf None
-
-                            
+                
+            elif(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 2):
+                print('zweiVerbindungen')
+                print(self.connectedRight , self.connectedLeft , self.connectedUp, self.connectedDown)
+                print(len(karte[x_Pos][y_Pos].logic.way.firstRail))
+                tmp = None
+                if(self.connectedRight == True):        #entfernt Verbindungen von anderen Schienen
+                    karte[x_Pos+1][y_Pos].logic.connectedLeft = False
+                    tmp = 'rechts'
+                if(self.connectedLeft == True):
+                    karte[x_Pos-1][y_Pos].logic.connectedRight = False
+                    if (tmp == None):
+                        tmp = 'links'
+                    else:
+                        WayLogic.allWays.append(WayLogic(None))                  
+                        for i in range(karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1,len(karte[x_Pos][y_Pos].logic.way.firstRail)):
+                            WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
+                            WayLogic.allWays[-1].secondRail.append(karte[x_Pos][y_Pos].logic.way.secondRail[i])
+                            karte[x_Pos][y_Pos].logic.way.firstRail[i].logic.way = WayLogic.allWays[-1]
+                        if(WayLogic.allWays[-1].firstRail[-1].isTrainStation()):                            
+                            WayLogic.allWays[-1].firstTrainStation = WayLogic.allWays[-1].firstRail[-1]                         
+                        tmp2 = len(karte[x_Pos][y_Pos].logic.way.firstRail) - (karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1)
+                        for i in range(0 , tmp2):                            
+                            karte[x_Pos][y_Pos].logic.way.firstRail.pop()
+                            karte[x_Pos][y_Pos].logic.way.secondRail.pop() 
+                        if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation()):
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos].logic.way.firstRail[0]
+                        else:
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = None
+                        karte[x_Pos][y_Pos].logic.way.secondTrainStation = None                               
+                if(self.connectedUp == True):
+                    karte[x_Pos][y_Pos-1].logic.connectedDown = False
+                    if (tmp == None):
+                        tmp = 'oben'
+                    else:
+                        WayLogic.allWays.append(WayLogic(None))                  
+                        for i in range(karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1,len(karte[x_Pos][y_Pos].logic.way.firstRail)):
+                            WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
+                            WayLogic.allWays[-1].secondRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
+                            karte[x_Pos][y_Pos].logic.way.firstRail[i].way = WayLogic.allWays[-1]
+                        if(WayLogic.allWays[-1].firstRail[-1].isTrainStation()):
+                            WayLogic.allWays[-1].firstTrainStation = WayLogic.allWays[-1].firstRail[-1]
+                           
+                        
+                        tmp2 = len(karte[x_Pos][y_Pos].logic.way.firstRail) - (karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+2)
+                        for i in range(0 , tmp2):
+                            karte[x_Pos][y_Pos].logic.way.firstRail.pop()
+                            karte[x_Pos][y_Pos].logic.way.secondRail.pop() 
+                        if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation()):
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos].logic.way.firstRail[0]
+                        else:
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = None
+                        karte[x_Pos][y_Pos].logic.way.secondTrainStation = None
+                if(self.connectedDown == True):
+                    karte[x_Pos][y_Pos+1].logic.connectedUp = False
+                    if (tmp == None):
+                        tmp = 'unten'
+                    else:
+                        WayLogic.allWays.append(WayLogic(None))                  
+                        for i in range(karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1,len(karte[x_Pos][y_Pos].logic.way.firstRail)):
+                            WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
+                            WayLogic.allWays[-1].secondRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
+                            karte[x_Pos][y_Pos].logic.way.firstRail[i].way = WayLogic.allWays[-1]
+                        if(WayLogic.allWays[-1].firstRail[-1].isTrainStation()):
+                            WayLogic.allWays[-1].firstTrainStation = WayLogic.allWays[-1].firstRail[-1]
+                           
+                    
+                        tmp2 = len(karte[x_Pos][y_Pos].logic.way.firstRail) - (karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+2)
+                        for i in range(0 , tmp2):
+                            karte[x_Pos][y_Pos].logic.way.firstRail.pop()
+                            karte[x_Pos][y_Pos].logic.way.secondRail.pop() 
+                        if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation()):
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos].logic.way.firstRail[0]
+                        else:
+                            karte[x_Pos][y_Pos].logic.way.firstTrainStation = None
+                            karte[x_Pos][y_Pos].logic.way.secondTrainStation = None                     
+            tmp = karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])    #entfernt Gleis aus Strecke
+            del karte[x_Pos][y_Pos].logic.way.firstRail[tmp]            
+            del karte[x_Pos][y_Pos].logic.way.secondRail[tmp] 
+            tmp3 = WayLogic.allWays.index(karte[x_Pos][y_Pos].logic.way)                                 
+            if(len(karte[x_Pos][y_Pos].logic.way.firstRail) == 1):                          #falls in Strecke nur noch Bahnhöfe, lösche
+                if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation()):                    
+                    del WayLogic.allWays[tmp3]     
+                    del karte[x_Pos][y_Pos].logic.way
+                    karte[x_Pos][y_Pos].logic.way = None
+            elif(len(karte[x_Pos][y_Pos].logic.way.firstRail) == 2):                          #falls in Strecke nur noch Bahnhöfe, lösche
+                if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation() and karte[x_Pos][y_Pos].logic.way.firstRail[1].isTrainStation()):                    
+                    del WayLogic.allWays[tmp3]     
+                    del karte[x_Pos][y_Pos].logic.way
+                    karte[x_Pos][y_Pos].logic.way = None                           
+            karte[x_Pos][y_Pos].logic = None        #setzt Logic Objekt auf None
+            
+                
+        
+        

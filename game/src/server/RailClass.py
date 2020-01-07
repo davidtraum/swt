@@ -87,8 +87,6 @@ class RailLogic:
     @staticmethod
     def build(x_Pos,y_Pos, pPlayer, karte):        
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte)
-        print("RailLogic.build @ checkConnectableRails: ", RailLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte))
-
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
             print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         
@@ -131,7 +129,8 @@ class RailLogic:
                     WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
                     WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
                     
-                else:                                                                                   #Wenn Links eine Schiene ist
+                else:                                                                                 #Wenn Links eine Schiene ist
+                    
                     if(karte[x_Pos-1][y_Pos].logic.way.firstRail.index(karte[x_Pos-1][y_Pos]) != 0):         #Wenn schiene nicht die erste ist
                         karte[x_Pos-1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])               #erstem Gleis der Strecke wird Schiene hinzugefügt
                         karte[x_Pos-1][y_Pos].logic.way.secondRail.append(None)                             #zweitem Gleis der Strecke wird nichts hinzugefügt
@@ -224,12 +223,12 @@ class RailLogic:
         
 
         else:
-            print("Spielerabfrage") #z.B. mit vier Richtungen, die ersten beiden(anklickbaren) die geklickt werden bestimmen die Kurve
-
-    def remove(self,x_Pos,y_Pos,pPlayer,karte): 
+            print("Spielerabfrage") #z.B. mit vie
+    
+    def remove(self, x_Pos,y_Pos,pPlayer,karte): 
         print("removing Rail at: ",x_Pos," ", y_Pos)
-        if(karte[x_Pos][y_Pos].logic.player == pPlayer): 
-            print('player==player')  
+        if(karte[x_Pos][y_Pos].logic.player == pPlayer):         
+           
             print(self.connectedRight , self.connectedLeft , self.connectedUp, self.connectedDown)        
             karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt
             if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 1):
@@ -241,9 +240,9 @@ class RailLogic:
                 if(self.connectedUp == True):
                     karte[x_Pos][y_Pos-1].logic.connectedDown = False
                 if(self.connectedDown == True):
-                    karte[x_Pos][y_Pos+1].logic.connectedUp = False                
-                
-            if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 2):
+                    karte[x_Pos][y_Pos+1].logic.connectedUp = False             
+                 
+            elif(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 2):
                 print('zweiVerbindungen')
                 print(self.connectedRight , self.connectedLeft , self.connectedUp, self.connectedDown)
                 print(len(karte[x_Pos][y_Pos].logic.way.firstRail))
@@ -256,31 +255,22 @@ class RailLogic:
                     if (tmp == None):
                         tmp = 'links'
                     else:
-                        WayLogic.allWays.append(WayLogic(None)) 
-                        print('test')                 
+                        WayLogic.allWays.append(WayLogic(None))                  
                         for i in range(karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1,len(karte[x_Pos][y_Pos].logic.way.firstRail)):
-                            print('test')
-                            print(i)
                             WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos].logic.way.firstRail[i])
-                            print('1')
                             WayLogic.allWays[-1].secondRail.append(karte[x_Pos][y_Pos].logic.way.secondRail[i])
-                            print('2')
-                            karte[x_Pos][y_Pos].logic.way.firstRail[i].way = WayLogic.allWays[-1]
-                            print('3')
-                        if(WayLogic.allWays[-1].firstRail[-1].isTrainStation()):
-                            print('test2')
-                            WayLogic.allWays[-1].firstTrainStation = WayLogic.allWays[-1].firstRail[-1]
-                        print('4')  
-                        tmp2 = len(karte[x_Pos][y_Pos].logic.way.firstRail) - (karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+2)
-                        for i in range(0 , tmp2):
+                            karte[x_Pos][y_Pos].logic.way.firstRail[i].logic.way = WayLogic.allWays[-1]
+                        if(WayLogic.allWays[-1].firstRail[-1].isTrainStation()):                            
+                            WayLogic.allWays[-1].firstTrainStation = WayLogic.allWays[-1].firstRail[-1]                         
+                        tmp2 = len(karte[x_Pos][y_Pos].logic.way.firstRail) - (karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])+1)
+                        for i in range(0 , tmp2):                            
                             karte[x_Pos][y_Pos].logic.way.firstRail.pop()
                             karte[x_Pos][y_Pos].logic.way.secondRail.pop() 
                         if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation()):
                             karte[x_Pos][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos].logic.way.firstRail[0]
                         else:
                             karte[x_Pos][y_Pos].logic.way.firstTrainStation = None
-                        karte[x_Pos][y_Pos].logic.way.secondTrainStation = None
-                                
+                        karte[x_Pos][y_Pos].logic.way.secondTrainStation = None                               
                 if(self.connectedUp == True):
                     karte[x_Pos][y_Pos-1].logic.connectedDown = False
                     if (tmp == None):
@@ -326,8 +316,7 @@ class RailLogic:
                             karte[x_Pos][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos].logic.way.firstRail[0]
                         else:
                             karte[x_Pos][y_Pos].logic.way.firstTrainStation = None
-                            karte[x_Pos][y_Pos].logic.way.secondTrainStation = None
-                          
+                            karte[x_Pos][y_Pos].logic.way.secondTrainStation = None                     
             tmp = karte[x_Pos][y_Pos].logic.way.firstRail.index(karte[x_Pos][y_Pos])    #entfernt Gleis aus Strecke
             del karte[x_Pos][y_Pos].logic.way.firstRail[tmp]            
             del karte[x_Pos][y_Pos].logic.way.secondRail[tmp] 
@@ -341,9 +330,9 @@ class RailLogic:
                 if(karte[x_Pos][y_Pos].logic.way.firstRail[0].isTrainStation() and karte[x_Pos][y_Pos].logic.way.firstRail[1].isTrainStation()):                    
                     del WayLogic.allWays[tmp3]     
                     del karte[x_Pos][y_Pos].logic.way
-                    karte[x_Pos][y_Pos].logic.way = None
-            print(len(WayLogic.allWays))                        
+                    karte[x_Pos][y_Pos].logic.way = None                           
             karte[x_Pos][y_Pos].logic = None        #setzt Logic Objekt auf None
+            
                 
         
         

@@ -58,6 +58,7 @@ class MapTile:
         self.y = pY
         self.setType(pType, share=False)
         self.logic = pLogic
+        
 
     def getPos(self):
         return self.x, self.y
@@ -178,7 +179,7 @@ class World:
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
     
-    def tileRemove(self, posX, posY):        
+    def tileRemove(self, posX, posY):  
         if(self.data[posX][posY].type >= 9 and self.data[posX][posY].type <= 14):
             print("Remove Rail Request at ", posX, " ", posY)
             self.data[posX][posY].logic.remove(posX, posY, None, self.data)

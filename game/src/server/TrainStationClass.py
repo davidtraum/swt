@@ -110,49 +110,57 @@ class TrainStationLogic:
                     karte[x_Pos+1][y_Pos].logic.connectedLeft = True
                     karte[x_Pos+1][y_Pos].logicUpdate()
                     if(karte[x_Pos+1][y_Pos].logic.way.firstTrainStation == None):                   #hinzufügen des Bahnhofs zur Strecke
-                        karte[x_Pos+1][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos]                        
-                        karte[x_Pos+1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos+1][y_Pos].logic.way.secondRail.append(None)                        
+                        karte[x_Pos+1][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos]                                           
                     else:
                         karte[x_Pos+1][y_Pos].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
+                    if(karte[x_Pos+1][y_Pos].logic.way.firstRail[0].isTrainStation()):
                         karte[x_Pos+1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos+1][y_Pos].logic.way.secondRail.append(None)                        
+                        karte[x_Pos+1][y_Pos].logic.way.secondRail.append(None)
+                    else:
+                        karte[x_Pos+1][y_Pos].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])
+                        karte[x_Pos+1][y_Pos].logic.way.secondRail.insert(0, None)                       
                 if(railConnectableLeft):                            #Verbindet mit linker Schiene                    
                     karte[x_Pos][y_Pos].logic.connectedLeft = True
                     karte[x_Pos-1][y_Pos].logic.connectedRight = True
                     karte[x_Pos-1][y_Pos].logicUpdate()
                     if(karte[x_Pos-1][y_Pos].logic.way.firstTrainStation == None):                   #hinzufügen des Bahnhofs zur Strecke
                         karte[x_Pos-1][y_Pos].logic.way.firstTrainStation = karte[x_Pos][y_Pos]
+                    else:
+                        karte[x_Pos-1][y_Pos].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
+                    if(karte[x_Pos-1][y_Pos].logic.way.firstRail[0].isTrainStation()):
                         karte[x_Pos-1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])
                         karte[x_Pos-1][y_Pos].logic.way.secondRail.append(None)
                     else:
-                        karte[x_Pos-1][y_Pos].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
-                        karte[x_Pos-1][y_Pos].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos-1][y_Pos].logic.way.secondRail.append(None)
+                        karte[x_Pos-1][y_Pos].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])
+                        karte[x_Pos-1][y_Pos].logic.way.secondRail.insert(0, None)
                 if(railConnectableUp):                              #Verbindet mit oberer Schiene
                     karte[x_Pos][y_Pos].logic.connectedUp = True
                     karte[x_Pos][y_Pos-1].logic.connectedDown = True
                     karte[x_Pos][y_Pos-1].logicUpdate()
                     if(karte[x_Pos][y_Pos-1].logic.way.firstTrainStation == None):                   #hinzufügen des Bahnhofs zur Strecke
                         karte[x_Pos][y_Pos-1].logic.way.firstTrainStation = karte[x_Pos][y_Pos]
-                        karte[x_Pos][y_Pos-1].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos][y_Pos-1].logic.way.firstRail.append(None)
                     else:
                         karte[x_Pos][y_Pos-1].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
+                    if(karte[x_Pos][y_Pos-1].logic.way.firstRail[0].isTrainStation()):
                         karte[x_Pos][y_Pos-1].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos][y_Pos-1].logic.way.firstRail.append(None)
+                        karte[x_Pos][y_Pos-1].logic.way.secondRail.append(None)
+                    else:
+                        karte[x_Pos][y_Pos-1].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])
+                        karte[x_Pos][y_Pos-1].logic.way.secondRail.insert(0, None)
                 if(railConnectableDown):                           #Verbindet mit unterer Schiene
                     karte[x_Pos][y_Pos].logic.connectedDown = True
                     karte[x_Pos][y_Pos+1].logic.connectedUp = True
                     karte[x_Pos][y_Pos+1].logicUpdate()
                     if(karte[x_Pos][y_Pos+1].logic.way.firstTrainStation == None):                   #hinzufügen des Bahnhofs zur Strecke
                         karte[x_Pos][y_Pos+1].logic.way.firstTrainStation = karte[x_Pos][y_Pos]
+                    else:
+                        karte[x_Pos][y_Pos+1].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
+                    if(karte[x_Pos][y_Pos+1].logic.way.firstRail[0].isTrainStation()):
                         karte[x_Pos][y_Pos+1].logic.way.firstRail.append(karte[x_Pos][y_Pos])
                         karte[x_Pos][y_Pos+1].logic.way.secondRail.append(None)
                     else:
-                        karte[x_Pos][y_Pos+1].logic.way.secondTrainStation = karte[x_Pos][y_Pos]
-                        karte[x_Pos][y_Pos+1].logic.way.firstRail.append(karte[x_Pos][y_Pos])
-                        karte[x_Pos][y_Pos+1].logic.way.secondRail.append(None)
+                        karte[x_Pos][y_Pos+1].logic.way.firstRail.insert(0, karte[x_Pos][y_Pos])
+                        karte[x_Pos][y_Pos+1].logic.way.secondRail.insert(0, None)
                 karte[x_Pos][y_Pos].logicUpdate()                       #Logik Update Bahnhof
 
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 2):   #Zwei Schiene verbindbar.
