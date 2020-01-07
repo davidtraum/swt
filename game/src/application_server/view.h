@@ -30,6 +30,7 @@ private:
     int dragOriginX,dragOriginY,dragPosX,dragPosY,mouseX,mouseY;
     bool mouseDown;
     bool doAnimations;
+    int codeCount;
     ToolTipMenu * tooltip;
     void leftclick(QMouseEvent *, MapTile *);
     void rightclick(QMouseEvent *, MapTile *);
