@@ -8,4 +8,3 @@ class RouteLogic:
 
     def addWay(self, pWay):
         self.ways.append(pWay)
-
