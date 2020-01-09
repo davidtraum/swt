@@ -48,7 +48,9 @@ class MapTile:
         'TERMINAL_H' : 20,
         'TERMINAL_V' : 21,
         'BRIDGE_H': 22,
-        'BRIDGE_V': 23
+        'BRIDGE_V': 23,
+        'CORN': 24,
+        'COLE': 25
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -99,6 +101,9 @@ class MapTile:
 
     def isTrainStation(self):
         return self.type >= 16 and self.type <= 21
+    
+    def isProducingBuilding(self):
+        return self.type >= 24 and self.type <= 25
 
     def checkRotationStationVertical(self):
         return self.type == 17 or self.type == 19 or self.type == 21
@@ -122,12 +127,12 @@ class MapTile:
                 print("MapTile @ LogicChanged ", newType)
                 self.setType(newType)
 
-    def initLogic(self, pLogic, pRange = 0):
+    def initLogic(self, pLogic, karte = None, pRange = 0):
         print("Init logic @ ", self.x, " ", self.y)
         if(pLogic == RailLogic or pLogic == BridgeLogic):
             self.logic = pLogic(self, None)
         if(pLogic == TrainStationLogic):
-            self.logic = pLogic(self, None, pRange, 2)
+            self.logic = pLogic(self, None, pRange, 2, karte)
         
 
 
@@ -466,8 +471,8 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((CONFIG['bind_ip'], CONFIG['port']))
 server.listen()
 
-gameloop = GameLoopThread(tickspeed=500)
-gameloop.start()
+#gameloop = GameLoopThread(tickspeed=500)
+#gameloop.start()
 
 
 print("Server wird gestartet...")

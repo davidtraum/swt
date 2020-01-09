@@ -1,6 +1,33 @@
 from WayClass import WayLogic
+from multiprocessing import Process
+from threading import Thread
+import time
+
 class TrainStationLogic:
-    def __init__(self, pTile, pPlayer, pRange, pPrice):
+    
+    PRODUCING = {
+            'CORN': 100,
+            'COLE': 100
+            }
+    NEEDED_RESSOURCES = {
+            'CORN': 0,
+            'COLE': 0
+        }
+
+    def __init__(self, pTile, pPlayer, pRange, pPrice,karte, tickspeed = 20):
+        self. STORAGE = {
+            'CORN': 0,
+            'COLE': 0
+        }         
+
+        self.PRICES ={
+            'CORN': 100,
+            'COLE': 100
+        }
+        self.NUMBER_OF_PRODUCTION_BUILDINGS = {
+            'CORN': 0,
+            'COLE': 0
+        }
         self.range = pRange
         self.price = pPrice
         self.x_Pos = pTile.getX()    
@@ -10,9 +37,47 @@ class TrainStationLogic:
         self.connectedLeft = False #linksverbunden?
         self.connectedUp = False #obenverbunden?
         self.connectedDown = False #untenverbunden?
-        self.player = pPlayer # Spieler X
-        
+        self.player = pPlayer # Spieler X  
+        self.maxStorage = 2000  
+        Thread.__init__(self)
+        self.tickspeed = tickspeed/1000.0
+        self.last_mach_was = 0
+        self.running = False
+        self.getProducingBuildings(karte)
+        self.updatePrices()
 
+    def updateStorage(self, pType):
+        if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 
+                if(TrainStationLogic.NEEDED_RESSOURCES[pType] < self.STORAGE[pType]):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
+                    self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
+                    self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType]   #Ressourcen werden Verbraucht 
+                    if(self.STORAGE[pType] >= self.maxStorage):
+                        self.STORAGE[pType] = self.maxStorage            
+
+    def do_loop(self):
+        if(time.time() - self.last_mach_was > 1.2):
+            print("1.2 sekunden sind um")
+            for key in self.STORAGE:
+	            self.updateStorage(key)
+            self.last_mach_was = time.time()
+
+    def run(self):
+        self.running = True
+        while self.running:
+            self.do_loop()
+            time.sleep(self.tickspeed)        
+
+
+    def getProducingBuildings(self, karte):                    #fügt Produktionsgebäude hinzu
+        for i in range((-1*self.range), self.range):
+            for j in range((-1*self.range), self.range):
+                if(self.x_Pos - i >=0 and self.x_Pos <= 299 and self.y_Pos - i >=0 and self.y_Pos <= 299):
+                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):
+                        NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getType] += 1
+
+    def updatePrices(self):
+        for key in self.NUMBER_OF_PRODUCTION_BUILDINGS:
+            self.PRICES[key] += 50 * self.NUMBER_OF_PRODUCTION_BUILDINGS[key]  
 
     def getType(self):
         print(self.range)
@@ -104,7 +169,7 @@ class TrainStationLogic:
                 print("Bahnhöfe koennen nur an bestehendes Schienennetz gebaut werden!")
 
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1):   #Eine Schiene verbindbar.
-                karte[x_Pos][y_Pos].initLogic(TrainStationLogic, pRange)                
+                karte[x_Pos][y_Pos].initLogic(TrainStationLogic,  karte, pRange,)                
                 if(railConnectableRight):                           #Verbindet mit rechter Schiene
                     karte[x_Pos][y_Pos].logic.connectedRight = True
                     karte[x_Pos+1][y_Pos].logic.connectedLeft = True
@@ -164,7 +229,7 @@ class TrainStationLogic:
                 karte[x_Pos][y_Pos].logicUpdate()                       #Logik Update Bahnhof
 
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 2):   #Zwei Schiene verbindbar.
-                karte[x_Pos][y_Pos].initLogic(TrainStationLogic, pRange)
+                karte[x_Pos][y_Pos].initLogic(TrainStationLogic,  karte, pRange,)
                 if(railConnectableRight and railConnectableLeft): #Verbindet mit rechter Schiene und linker Schiene
                     karte[x_Pos][y_Pos].logic.connectedRight = True
                     karte[x_Pos+1][y_Pos].logic.connectedLeft = True

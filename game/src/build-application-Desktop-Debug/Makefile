@@ -466,6 +466,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/depot.png \
 		../application_server/wald.png \
 		../application_server/grass.png \
+		../application_server/thomasAndFriends.png \
 		../application_server/trainstation.png \
 		../application_server/terminal.png \
 		../application_server/stadt.png \
