@@ -14,7 +14,7 @@ class TrainLogic:
             self.wagons.append(pWagon)
             return True
         else:
-            print("Zu viele wagons!")
+            print("Zu viele Wagons!")
             return False
         
     def removeWagon(self, digit):
@@ -25,9 +25,5 @@ class TrainLogic:
             print("Keine Elemente ")
             return False
 
-
-    
-
-
-    
-
+    def loadTrain(self):
+        pass
