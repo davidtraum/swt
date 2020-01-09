@@ -50,7 +50,7 @@ class MapTile:
         'BRIDGE_H': 22,
         'BRIDGE_V': 23,
         'CORN': 24,
-        'COLE': 25
+        'COLE': 25        
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -103,7 +103,7 @@ class MapTile:
         return self.type >= 16 and self.type <= 21
     
     def isProducingBuilding(self):
-        return self.type >= 24 and self.type <= 25
+        return self.type >= 24 and self.type <= 25 and self.type == 2
 
     def checkRotationStationVertical(self):
         return self.type == 17 or self.type == 19 or self.type == 21

@@ -7,26 +7,31 @@ class TrainStationLogic:
     
     PRODUCING = {
             'CORN': 100,
-            'COLE': 100
+            'COLE': 100,
+            'CITY': 50
             }
     NEEDED_RESSOURCES = {
             'CORN': 0,
-            'COLE': 0
+            'COLE': 0,
+            'CITY': 50
         }
 
     def __init__(self, pTile, pPlayer, pRange, pPrice,karte, tickspeed = 20):
         self. STORAGE = {
             'CORN': 0,
-            'COLE': 0
+            'COLE': 0,
+            'CITY': 0
         }         
 
         self.PRICES ={
             'CORN': 100,
-            'COLE': 100
+            'COLE': 100,
+            'CITY': 100
         }
         self.NUMBER_OF_PRODUCTION_BUILDINGS = {
             'CORN': 0,
-            'COLE': 0
+            'COLE': 0,
+            'CITY': 0
         }
         self.range = pRange
         self.price = pPrice
@@ -43,6 +48,7 @@ class TrainStationLogic:
         self.tickspeed = tickspeed/1000.0
         self.last_mach_was = 0
         self.running = False
+        print('init')
         self.getProducingBuildings(karte)
         self.updatePrices()
 
@@ -69,25 +75,23 @@ class TrainStationLogic:
 
 
     def getProducingBuildings(self, karte):                    #fügt Produktionsgebäude hinzu
+        print('getPROBUI')
         for i in range((-1*self.range), self.range):
             for j in range((-1*self.range), self.range):
                 if(self.x_Pos - i >=0 and self.x_Pos <= 299 and self.y_Pos - i >=0 and self.y_Pos <= 299):
                     if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):
                         NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getType] += 1
+        print(self.NUMBER_OF_PRODUCTION_BUILDINGS['CITY'])
 
     def updatePrices(self):
         for key in self.NUMBER_OF_PRODUCTION_BUILDINGS:
             self.PRICES[key] += 50 * self.NUMBER_OF_PRODUCTION_BUILDINGS[key]  
 
-    def getType(self):
-        print(self.range)
-        if(self.range == 2):
-            print('if range == 2 hat funktioniert')
-            if(self.connectedRight == True or self.connectedLeft == True):
-                print('if Horizontal hat funktioniert')
+    def getType(self):        
+        if(self.range == 2):            
+            if(self.connectedRight == True or self.connectedLeft == True):                
                 return 'DEPOT_H'
-            if(self.connectedUp == True or self.connectedDown == True):
-                print('if Vertikal hat funktioniert')
+            if(self.connectedUp == True or self.connectedDown == True):                
                 return 'DEPOT_V'
 
         if(self.range == 4):
@@ -122,7 +126,7 @@ class TrainStationLogic:
         railConnectableUp = False;      #Schiene oben ist verbindbar?
         railConnectableDown = False;    #Schiene unten ist verbindbar?
 
-        print("Start checkConnectalbeRails")
+        
         #Rechts
         if(x_Pos<299):                              #Wenn Rechts innerhalb der Karte liegt
             if(karte[x_Pos+1][y_Pos].isRail()): #Wenn Schiene existiert
@@ -156,7 +160,7 @@ class TrainStationLogic:
                     #Wenn Schiene nicht vollstaendig verbunden ist.
                     if(karte[x_Pos][y_Pos+1].logic.connectedRight + karte[x_Pos][y_Pos+1].logic.connectedLeft + karte[x_Pos][y_Pos+1].logic.connectedUp + karte[x_Pos][y_Pos+1].logic.connectedDown != 2):
                         railConnectableDown = True                  #Dann liegt Unten eine verbindbare Schiene
-        print('Werte von Checkrails')
+        
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
     @staticmethod
@@ -278,10 +282,7 @@ class TrainStationLogic:
                         karte[x_Pos][y_Pos+1].logic.way.firstRail.append(karte[x_Pos][y_Pos])
                         karte[x_Pos][y_Pos+1].logic.way.secondRail.append(None)
                 karte[x_Pos][y_Pos].logicUpdate()                   #Logik Update Bahnhof
-            print(WayLogic.allWays[len(WayLogic.allWays)-1].firstRail)
-            print(WayLogic.allWays[len(WayLogic.allWays)-1].secondRail)
-            print(WayLogic.allWays[len(WayLogic.allWays)-1].firstTrainStation)
-            print(WayLogic.allWays[len(WayLogic.allWays)-1].secondTrainStation)
+            
         else:
             print('Kann Bahnhof hier nicht bauen!')
 
