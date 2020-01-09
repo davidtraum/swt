@@ -79,8 +79,14 @@ class MapTile:
             broadcast(self.getProtocolString())
             print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
 
-    def getType(self):
+    def getType(self):        
         return self.type
+    
+    def getStringType(self):
+        for key in MapTile.TYPES:
+            if(MapTile.TYPES[key]==self.type):
+                return key
+        
 
     def setRotation(self, pRotation):
         self.rotation = pRotation
@@ -103,7 +109,7 @@ class MapTile:
         return self.type >= 16 and self.type <= 21
     
     def isProducingBuilding(self):
-        return self.type >= 24 and self.type <= 25 and self.type == 2
+        return self.type >= 24 and self.type <= 25 or self.type == 2
 
     def checkRotationStationVertical(self):
         return self.type == 17 or self.type == 19 or self.type == 21

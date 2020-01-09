@@ -51,6 +51,7 @@ class TrainStationLogic:
         print('init')
         self.getProducingBuildings(karte)
         self.updatePrices()
+        self.run()
 
     def updateStorage(self, pType):
         if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 
@@ -68,20 +69,20 @@ class TrainStationLogic:
             self.last_mach_was = time.time()
 
     def run(self):
+        print('test')
         self.running = True
         while self.running:
             self.do_loop()
             time.sleep(self.tickspeed)        
 
 
-    def getProducingBuildings(self, karte):                    #fügt Produktionsgebäude hinzu
-        print('getPROBUI')
-        for i in range((-1*self.range), self.range):
-            for j in range((-1*self.range), self.range):
-                if(self.x_Pos - i >=0 and self.x_Pos <= 299 and self.y_Pos - i >=0 and self.y_Pos <= 299):
-                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):
-                        NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getType] += 1
-        print(self.NUMBER_OF_PRODUCTION_BUILDINGS['CITY'])
+    def getProducingBuildings(self, karte):                    #fügt Produktionsgebäude hinzu      
+        for i in range((-1*self.range), self.range+1):
+            for j in range((-1*self.range), self.range+1):                
+                if(self.x_Pos +i  >=0 and self.x_Pos + i <= 299 and self.y_Pos + j  >=0 and self.y_Pos +j <= 299):
+                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):                    
+                        self.NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getStringType()] += 1
+        
 
     def updatePrices(self):
         for key in self.NUMBER_OF_PRODUCTION_BUILDINGS:
