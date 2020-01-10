@@ -51,7 +51,7 @@ class TrainStationLogic:
         print('init')
         self.getProducingBuildings(karte)
         self.updatePrices()
-        self.run()
+        #self.run()
 
     def updateStorage(self, pType):
         if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 

@@ -13,6 +13,8 @@ from WayClass import WayLogic
 
 clients = []
 clientCount = 0
+tasks = []
+
 def broadcast(pText, exclude=None):
     global clients
     for client in clients:
@@ -139,6 +141,7 @@ class MapTile:
             self.logic = pLogic(self, None)
         if(pLogic == TrainStationLogic):
             self.logic = pLogic(self, None, pRange, 2, karte)
+            tasks.append(self.logic)
         
 
 
@@ -319,9 +322,8 @@ class GameLoopThread(Thread):
         self.running = False
 
     def do_loop(self):
-        if(time.time() - self.last_mach_was > 1.2):
-            print("1.2 sekunden sind um")
-            self.last_mach_was = time.time()
+        for task in tasks:
+            task.do_loop()
 
     def run(self):
         self.running = True
@@ -335,27 +337,28 @@ class ClientThread(Thread):
         Thread.__init__(self)
         self.connection = pConnection
         self.commandBuffer = ""
-        print("CLIENT THREAD WIRD GESTARTET");
-        time.sleep(3);
-        self.player = Player(clientCount, 1234); #"1234" muss durch IP ersetzt werden.
-        print("Client Thread gestartet.");
-        time.sleep(3);
+        print("CLIENT THREAD WIRD GESTARTET")
+        time.sleep(3)
+        self.player = Player(clientCount, 1234) #"1234" muss durch IP ersetzt werden.
+        print("Client Thread gestartet.")
+        time.sleep(3)
 
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
 
     def disconnect(self):
         global clients
+        global clientCount
         if(self in clients):
             clients.remove(self)
         print("Disconnected Client")
         try:
             self.connection.close()
-            clientCount -= 1;
-            del self.player;
-            print("Anzahl verbundener Clients: " + clientCount);
+            clientCount -= 1
+            del self.player
+            print("Anzahl verbundener Clients: " + clientCount)
         except Exception:
-            print("FEHLER BEIM DISCONNECT");
+            print("FEHLER BEIM DISCONNECT")
 
     def processCommand(self,command):
             global world
@@ -489,11 +492,11 @@ try:
     while True:
         connection, address = server.accept()
         print("Verbindungsaufbau von " + str(address) + "...")
-        clientCount += 1;
+        clientCount += 1
         thread = ClientThread(connection)
         thread.start()
         clients.append(thread)
-        print("Anzahl verbundener Clients: " + str(clientCount));
+        print("Anzahl verbundener Clients: " + str(clientCount))
         
         
 except KeyboardInterrupt:
