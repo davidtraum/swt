@@ -5,18 +5,20 @@
 #include "scene.h"
 #include "datamodel.h"
 #include "view.h"
+#include "routeinterface.h"
 
 class MenuBar: public QToolBar
 {
-   // Q_OBJECT
+   Q_OBJECT
 
 public:
-    MenuBar(Scene* pScene, DataModel * pDataModel, View * pView);
+    MenuBar(Scene* pScene, DataModel * pDataModel, View * pView, RouteInterface *);
 
 private:
     Scene* scene;
     DataModel * dataModel;
     View * view;
+    RouteInterface * routeInterface;
 
 private slots:
 

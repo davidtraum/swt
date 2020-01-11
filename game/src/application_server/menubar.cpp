@@ -11,8 +11,8 @@
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
-    scene{pScene}, dataModel{pDataModel}, view{pView}
+MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface) :
+    scene{pScene}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
     this->setMovable(false);
@@ -68,7 +68,9 @@ MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView) :
     trainButton->setPopupMode(QToolButton::InstantPopup);
     trainButton->setCursor(QCursor(Qt::PointingHandCursor));
     QMenu *trainMenu=new QMenu(trainButton);
-    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/create_route.svg"))),"Route erzeugen", this));
+    QAction * createRoute = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/create_route.svg"))),"Route erzeugen", this);
+    connect(createRoute, &QAction::triggered, routeInterface, &RouteInterface::toggle);
+    trainMenu->addAction(createRoute);
     trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/show_routes.svg"))),"Routen anzeigen", this));
     trainButton->setMenu(trainMenu);
     this->addWidget(trainButton);

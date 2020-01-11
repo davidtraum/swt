@@ -23,6 +23,7 @@
 #include "tooltipmenu.h"
 #include "gameloop.h"
 #include "animationmanager.h"
+#include "routeinterface.h"
 
 
 GraphicsManager * graphics;
@@ -70,6 +71,9 @@ int main(int argc, char *argv[])
     scene = new Scene(graphics, dataModel);
 
 
+    RouteInterface * routeInterface = new RouteInterface();
+    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
+
 
     ToolTipMenu * tooltip = new ToolTipMenu();
 
@@ -89,7 +93,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene, dataModel, view);
+    MenuBar * menuBar = new MenuBar(scene, dataModel, view, routeInterface);
     menuBar->setParent(mainWindow);
     menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");

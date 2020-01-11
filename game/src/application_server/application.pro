@@ -32,9 +32,11 @@ SOURCES += \
     player.cpp \
     point.cpp \
     river.cpp \
+    routeinterface.cpp \
     scene.cpp \
     sidepanel.cpp \
     tooltipmenu.cpp \
+    trainrenderer.cpp \
     view.cpp
 
 HEADERS += \
@@ -54,9 +56,11 @@ HEADERS += \
     player.h \
     point.h \
     river.h \
+    routeinterface.h \
     scene.h \
     sidepanel.h \
     tooltipmenu.h \
+    trainrenderer.h \
     view.h
 
 FORMS += \

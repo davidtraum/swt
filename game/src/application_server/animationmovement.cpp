@@ -32,6 +32,6 @@ void AnimationMovement::parsePath(QString data) {
 /**
  * @brief AnimationMovement::move Führt einen Schritt der Animation durch.
  */
-void AnimationMovement::move() {
-
+bool AnimationMovement::move() {
+    return true;
 }
