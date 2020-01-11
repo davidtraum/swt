@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application_server/routeinterface.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c6321f114837da3d6e2438c49f4e78f.html">application_server</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">routeinterface.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="routeinterface_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ROUTEINTERFACE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ROUTEINTERFACE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDockWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="trainrenderer_8h.html">trainrenderer.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphicsmanager_8h.html">graphicsmanager.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classRouteInterface.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRouteInterface.html">RouteInterface</a>: <span class="keyword">public</span> QDockWidget</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classRouteInterface.html#aa0299805373c0a5b6de4c6a855a3116e">RouteInterface</a>(<a class="code" href="classGraphicsManager.html">GraphicsManager</a> *);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRouteInterface.html#a95ee8f33e7eeff0bcc297dda140eaf85">   15</a></span>&#160;    <a class="code" href="classTrainRenderer.html">TrainRenderer</a> * <a class="code" href="classRouteInterface.html#a95ee8f33e7eeff0bcc297dda140eaf85">trainRenderer</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteInterface.html#a63e72ec945a33c516b82634874125337">toggle</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif // ROUTEINTERFACE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassTrainRenderer_html"><div class="ttname"><a href="classTrainRenderer.html">TrainRenderer</a></div><div class="ttdef"><b>Definition:</b> trainrenderer.h:8</div></div>
+<div class="ttc" id="aclassRouteInterface_html_aa0299805373c0a5b6de4c6a855a3116e"><div class="ttname"><a href="classRouteInterface.html#aa0299805373c0a5b6de4c6a855a3116e">RouteInterface::RouteInterface</a></div><div class="ttdeci">RouteInterface(GraphicsManager *)</div><div class="ttdoc">RouteInterface::RouteInterface Erzeugt das Routeninterface.</div><div class="ttdef"><b>Definition:</b> routeinterface.cpp:10</div></div>
+<div class="ttc" id="atrainrenderer_8h_html"><div class="ttname"><a href="trainrenderer_8h.html">trainrenderer.h</a></div></div>
+<div class="ttc" id="aclassRouteInterface_html_a95ee8f33e7eeff0bcc297dda140eaf85"><div class="ttname"><a href="classRouteInterface.html#a95ee8f33e7eeff0bcc297dda140eaf85">RouteInterface::trainRenderer</a></div><div class="ttdeci">TrainRenderer * trainRenderer</div><div class="ttdef"><b>Definition:</b> routeinterface.h:15</div></div>
+<div class="ttc" id="agraphicsmanager_8h_html"><div class="ttname"><a href="graphicsmanager_8h.html">graphicsmanager.h</a></div></div>
+<div class="ttc" id="aclassRouteInterface_html_a63e72ec945a33c516b82634874125337"><div class="ttname"><a href="classRouteInterface.html#a63e72ec945a33c516b82634874125337">RouteInterface::toggle</a></div><div class="ttdeci">void toggle()</div><div class="ttdoc">RouteInterface::toggle Wechselt die Sichtbarkeit des Widgets.</div><div class="ttdef"><b>Definition:</b> routeinterface.cpp:26</div></div>
+<div class="ttc" id="arouteinterface_8h_html"><div class="ttname"><a href="routeinterface_8h.html">routeinterface.h</a></div></div>
+<div class="ttc" id="aclassGraphicsManager_html"><div class="ttname"><a href="classGraphicsManager.html">GraphicsManager</a></div><div class="ttdef"><b>Definition:</b> graphicsmanager.h:8</div></div>
+<div class="ttc" id="aclassRouteInterface_html"><div class="ttname"><a href="classRouteInterface.html">RouteInterface</a></div><div class="ttdef"><b>Definition:</b> routeinterface.h:9</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

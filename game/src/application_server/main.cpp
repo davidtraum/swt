@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     scene = new Scene(graphics, dataModel);
 
 
-    RouteInterface * routeInterface = new RouteInterface();
+    RouteInterface * routeInterface = new RouteInterface(graphics);
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
 
 

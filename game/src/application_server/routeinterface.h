@@ -4,11 +4,12 @@
 #include <QDockWidget>
 
 #include "trainrenderer.h"
+#include "graphicsmanager.h"
 
 class RouteInterface: public QDockWidget
 {
 public:
-    RouteInterface();
+    RouteInterface(GraphicsManager *);
 
 private:
     TrainRenderer * trainRenderer;

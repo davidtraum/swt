@@ -7,17 +7,17 @@
 /**
  * @brief RouteInterface::RouteInterface Erzeugt das Routeninterface.
  */
-RouteInterface::RouteInterface()
+RouteInterface::RouteInterface(GraphicsManager * gm)
 {
     QDockWidget::setFeatures(nullptr);
     QDockWidget::setVisible(false);
 
     QHBoxLayout * layout = new QHBoxLayout();
 
-    trainRenderer = new TrainRenderer();
+    trainRenderer = new TrainRenderer(gm);
     layout->addWidget(trainRenderer);
 
-    QDockWidget::setLayout(layout);
+    QDockWidget::setWidget(trainRenderer);
 }
 
 /**
