@@ -110,7 +110,11 @@ void \mbox{\hyperlink{classDataModel_ab56663b4faa2051a7de2b22c937643f4}{set\+Con
 void \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{set\+Mode}} (\mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}})
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{Data\+Model\+::set\+Mode}} Setzt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{get\+Mode}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{Data\+Model\+::get\+Mode}} Gibt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{Data\+Model\+::get\+Mode}} Gibt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_af11ed19f3be93800fab9388558391911}{set\+Animation\+Manager}} (\mbox{\hyperlink{classAnimationManager}{Animation\+Manager}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_af11ed19f3be93800fab9388558391911}{Data\+Model\+::set\+Animation\+Manager}} Setzt den den Animation-\/\+Manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnimationManager}{Animation\+Manager}} $\ast$ \mbox{\hyperlink{classDataModel_af1f73f92f1e2de41a0d1d43992549c0e}{get\+Animation\+Manager}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -144,6 +148,8 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_afde9d11c991d9b458d3f2c260c9718f
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_adb8796c6636e436c8a40095b1999a565}{connection\+Label}}
 \item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}{mode}} \{M\+O\+D\+E\+::\+D\+E\+F\+A\+U\+LT\}
+\item 
+\mbox{\hyperlink{classAnimationManager}{Animation\+Manager}} $\ast$ \mbox{\hyperlink{classDataModel_a12b67b3748dd9acfba00769407fe9863}{animation\+Manager}}
 \end{DoxyCompactItemize}
 
 
@@ -218,6 +224,12 @@ R\+E\+M\+O\+VE&\\
 \begin{DoxyReturn}{Rückgabe}
 Der Text. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDataModel_af1f73f92f1e2de41a0d1d43992549c0e}\label{classDataModel_af1f73f92f1e2de41a0d1d43992549c0e}} 
+\index{DataModel@{DataModel}!getAnimationManager@{getAnimationManager}}
+\index{getAnimationManager@{getAnimationManager}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getAnimationManager()}{getAnimationManager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnimationManager}{Animation\+Manager}} $\ast$ Data\+Model\+::get\+Animation\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classDataModel_a0706aa63d7955b77be45afe44dfec440}\label{classDataModel_a0706aa63d7955b77be45afe44dfec440}} 
 \index{DataModel@{DataModel}!getBalance@{getBalance}}
 \index{getBalance@{getBalance}!DataModel@{DataModel}}
@@ -354,6 +366,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_a115caaefffb20dbd713276d3c9937541_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_af11ed19f3be93800fab9388558391911}\label{classDataModel_af11ed19f3be93800fab9388558391911}} 
+\index{DataModel@{DataModel}!setAnimationManager@{setAnimationManager}}
+\index{setAnimationManager@{setAnimationManager}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{setAnimationManager()}{setAnimationManager()}}
+{\footnotesize\ttfamily void Data\+Model\+::set\+Animation\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAnimationManager}{Animation\+Manager}} $\ast$}]{p\+Animation\+Manager }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_af11ed19f3be93800fab9388558391911}{Data\+Model\+::set\+Animation\+Manager}} Setzt den den Animation-\/\+Manager. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classDataModel_af11ed19f3be93800fab9388558391911_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classDataModel_a96a7ba01db03cd4c15e7e39e0fe87920}\label{classDataModel_a96a7ba01db03cd4c15e7e39e0fe87920}} 
@@ -563,8 +593,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Mode} & Bearbeitungsmodus. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -598,8 +627,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 \mbox{\hyperlink{classDataModel_aaee7745917372491973cdabc4d12bb1b}{Data\+Model\+::set\+Rail\+Placement\+Mode}} Signal um in den Removeeditor zu wechseln. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -776,6 +804,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classDataModel_a12b67b3748dd9acfba00769407fe9863}\label{classDataModel_a12b67b3748dd9acfba00769407fe9863}} 
+\index{DataModel@{DataModel}!animationManager@{animationManager}}
+\index{animationManager@{animationManager}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{animationManager}{animationManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnimationManager}{Animation\+Manager}}$\ast$ Data\+Model\+::animation\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}\label{classDataModel_aedc4085bdf09e5f11b896a7cc44a6072}} 
 \index{DataModel@{DataModel}!balance@{balance}}
 \index{balance@{balance}!DataModel@{DataModel}}

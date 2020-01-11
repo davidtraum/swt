@@ -1,0 +1,107 @@
+\hypertarget{classAnimationMovement}{}\doxysection{Animation\+Movement Klassenreferenz}
+\label{classAnimationMovement}\index{AnimationMovement@{AnimationMovement}}
+
+
+{\ttfamily \#include $<$animationmovement.\+h$>$}
+
+
+
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classAnimationMovement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement}} (Q\+Graphics\+Pixmap\+Item $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{parse\+Path}} (Q\+String \mbox{\hyperlink{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}{path}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{Animation\+Movement\+::parse\+Path}} Liest einen Animationspfad aus einem String ein. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAnimationMovement_a2dc716f3b33ef354f8abb21830e33234}{move}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a2dc716f3b33ef354f8abb21830e33234}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Graphics\+Pixmap\+Item $\ast$ \mbox{\hyperlink{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}{item}}
+\item 
+Q\+List$<$ \mbox{\hyperlink{classPoint}{Point}} $\ast$ $>$ \mbox{\hyperlink{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}{path}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}\label{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}} 
+\index{AnimationMovement@{AnimationMovement}!AnimationMovement@{AnimationMovement}}
+\index{AnimationMovement@{AnimationMovement}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{AnimationMovement()}{AnimationMovement()}}
+{\footnotesize\ttfamily Animation\+Movement\+::\+Animation\+Movement (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Pixmap\+Item $\ast$}]{p\+Item }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Item} & Das zu animierende Grafikitem. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classAnimationMovement_a2dc716f3b33ef354f8abb21830e33234}\label{classAnimationMovement_a2dc716f3b33ef354f8abb21830e33234}} 
+\index{AnimationMovement@{AnimationMovement}!move@{move}}
+\index{move@{move}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_a2dc716f3b33ef354f8abb21830e33234}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. 
+
+\mbox{\Hypertarget{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}\label{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}} 
+\index{AnimationMovement@{AnimationMovement}!parsePath@{parsePath}}
+\index{parsePath@{parsePath}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{parsePath()}{parsePath()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::parse\+Path (\begin{DoxyParamCaption}\item[{Q\+String}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{Animation\+Movement\+::parse\+Path}} Liest einen Animationspfad aus einem String ein. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}\label{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}} 
+\index{AnimationMovement@{AnimationMovement}!item@{item}}
+\index{item@{item}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{item}{item}}
+{\footnotesize\ttfamily Q\+Graphics\+Pixmap\+Item$\ast$ Animation\+Movement\+::item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}\label{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}} 
+\index{AnimationMovement@{AnimationMovement}!path@{path}}
+\index{path@{path}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classPoint}{Point}} $\ast$$>$ Animation\+Movement\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/application\+\_\+server/\mbox{\hyperlink{animationmovement_8h}{animationmovement.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{animationmovement_8cpp}{animationmovement.\+cpp}}\end{DoxyCompactItemize}

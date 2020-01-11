@@ -16,6 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    animationmanager.cpp \
+    animationmovement.cpp \
     city.cpp \
     client.cpp \
     datamodel.cpp \
@@ -28,6 +30,7 @@ SOURCES += \
     menubar.cpp \
     minimap.cpp \
     player.cpp \
+    point.cpp \
     river.cpp \
     scene.cpp \
     sidepanel.cpp \
@@ -35,6 +38,8 @@ SOURCES += \
     view.cpp
 
 HEADERS += \
+    animationmanager.h \
+    animationmovement.h \
     city.h \
     client.h \
     datamodel.h \
@@ -47,6 +52,7 @@ HEADERS += \
     menubar.h \
     minimap.h \
     player.h \
+    point.h \
     river.h \
     scene.h \
     sidepanel.h \

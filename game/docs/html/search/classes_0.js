@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['city_232',['City',['../classCity.html',1,'']]],
-  ['client_233',['Client',['../classClient.html',1,'']]]
+  ['animationmanager_252',['AnimationManager',['../classAnimationManager.html',1,'']]],
+  ['animationmovement_253',['AnimationMovement',['../classAnimationMovement.html',1,'']]]
 ];

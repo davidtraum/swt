@@ -35,6 +35,10 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
             QGraphicsScene::addItem(data[x][y].getPixmapItem());
         }
     }
+
+
+    QGraphicsPixmapItem * item = new QGraphicsPixmapItem(QPixmap::fromImage(QImage(":/images/terminal.png")));
+    item->setZValue(10);
 }
 
 /**
@@ -189,7 +193,7 @@ void Scene::generateWorld(){
  * @brief Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen.
  * @param pItem Ein Grafikitem zu dem die Methode den zugehörigen Maptile bestimmt.
  */
-void Scene::setActiveTile(QGraphicsItem *pItem){
+void Scene::setActiveTile(QGraphicsItem *pItem) {
     if(activeTile != nullptr){
         //Alten aktiven Quadrant zurücksetzen.
     }

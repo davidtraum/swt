@@ -1,0 +1,104 @@
+\hypertarget{classAnimationManager}{}\doxysection{Animation\+Manager Klassenreferenz}
+\label{classAnimationManager}\index{AnimationManager@{AnimationManager}}
+
+
+{\ttfamily \#include $<$animationmanager.\+h$>$}
+
+
+
+Zusammengehörigkeiten von Animation\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classAnimationManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnimationManager_a1a07273c87def56cab82a1795f29f2e4}{Animation\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationManager_a1a07273c87def56cab82a1795f29f2e4}{Animation\+Manager\+::\+Animation\+Manager}} Erzeugt einen leeren Animation Manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec}{tick}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec}{Animation\+Manager\+::tick}} Führt alle Animationen aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6}{animate\+Movement}} (Q\+Graphics\+Pixmap\+Item $\ast$, Q\+String)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6}{Animation\+Manager\+::animate\+Movement}} Startet eine Bewegungsanimation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+Q\+List$<$ \mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$ $>$ \mbox{\hyperlink{classAnimationManager_ae9634de4aa651f38738aca9bc55ed046}{movement\+Animations}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classAnimationManager_a1a07273c87def56cab82a1795f29f2e4}\label{classAnimationManager_a1a07273c87def56cab82a1795f29f2e4}} 
+\index{AnimationManager@{AnimationManager}!AnimationManager@{AnimationManager}}
+\index{AnimationManager@{AnimationManager}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{AnimationManager()}{AnimationManager()}}
+{\footnotesize\ttfamily Animation\+Manager\+::\+Animation\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationManager_a1a07273c87def56cab82a1795f29f2e4}{Animation\+Manager\+::\+Animation\+Manager}} Erzeugt einen leeren Animation Manager. 
+
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6}\label{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6}} 
+\index{AnimationManager@{AnimationManager}!animateMovement@{animateMovement}}
+\index{animateMovement@{animateMovement}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{animateMovement()}{animateMovement()}}
+{\footnotesize\ttfamily void Animation\+Manager\+::animate\+Movement (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Pixmap\+Item $\ast$}]{p\+Item,  }\item[{Q\+String}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6}{Animation\+Manager\+::animate\+Movement}} Startet eine Bewegungsanimation. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Item} & Ein Pixmap-\/\+Item. \\
+\hline
+{\em p\+Data} & Ein Pfad als String. Siehe \mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}}. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationManager_a04c3ed019c1a8662145011b98cfcd7b6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec}\label{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec}} 
+\index{AnimationManager@{AnimationManager}!tick@{tick}}
+\index{tick@{tick}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Animation\+Manager\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec}{Animation\+Manager\+::tick}} Führt alle Animationen aus. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classAnimationManager_a24ee84251815b0a9c85c10eb20ea50ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classAnimationManager_ae9634de4aa651f38738aca9bc55ed046}\label{classAnimationManager_ae9634de4aa651f38738aca9bc55ed046}} 
+\index{AnimationManager@{AnimationManager}!movementAnimations@{movementAnimations}}
+\index{movementAnimations@{movementAnimations}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{movementAnimations}{movementAnimations}}
+{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$$>$ Animation\+Manager\+::movement\+Animations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/application\+\_\+server/\mbox{\hyperlink{animationmanager_8h}{animationmanager.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{animationmanager_8cpp}{animationmanager.\+cpp}}\end{DoxyCompactItemize}

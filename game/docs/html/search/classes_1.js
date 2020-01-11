@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['datamodel_234',['DataModel',['../classDataModel.html',1,'']]]
+  ['city_254',['City',['../classCity.html',1,'']]],
+  ['client_255',['Client',['../classClient.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['river_243',['River',['../classRiver.html',1,'']]]
+  ['player_264',['Player',['../classPlayer.html',1,'']]],
+  ['point_265',['Point',['../classPoint.html',1,'']]]
 ];

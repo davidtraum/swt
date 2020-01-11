@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['highlighter_2ecpp_259',['highlighter.cpp',['../highlighter_8cpp.html',1,'']]],
-  ['highlighter_2eh_260',['highlighter.h',['../highlighter_8h.html',1,'']]]
+  ['gameloop_2ecpp_282',['gameloop.cpp',['../gameloop_8cpp.html',1,'']]],
+  ['gameloop_2eh_283',['gameloop.h',['../gameloop_8h.html',1,'']]],
+  ['graphicsmanager_2ecpp_284',['graphicsmanager.cpp',['../graphicsmanager_8cpp.html',1,'']]],
+  ['graphicsmanager_2eh_285',['graphicsmanager.h',['../graphicsmanager_8h.html',1,'']]]
 ];

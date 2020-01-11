@@ -22,8 +22,7 @@
 #include "sidepanel.h"
 #include "tooltipmenu.h"
 #include "gameloop.h"
-
-
+#include "animationmanager.h"
 
 
 GraphicsManager * graphics;
@@ -65,7 +64,11 @@ int main(int argc, char *argv[])
 
     dataModel = new DataModel();
 
+    AnimationManager * animationManager = new AnimationManager();
+    dataModel->setAnimationManager(animationManager);
+
     scene = new Scene(graphics, dataModel);
+
 
 
     ToolTipMenu * tooltip = new ToolTipMenu();
@@ -124,7 +127,7 @@ int main(int argc, char *argv[])
     mainWindow->setCentralWidget(startscreen);
 
 
-    GameLoop * loop = new GameLoop(view,scene,dataModel,client);
+    GameLoop * loop = new GameLoop(view,scene,dataModel,client,animationManager);
     loop->start();
 
     a.exec();
