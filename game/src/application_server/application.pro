@@ -22,6 +22,7 @@ SOURCES += \
     client.cpp \
     datamodel.cpp \
     gameloop.cpp \
+    goodselector.cpp \
     graphicsmanager.cpp \
     highlighter.cpp \
     main.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     client.h \
     datamodel.h \
     gameloop.h \
+    goodselector.h \
     graphicsmanager.h \
     highlighter.h \
     main.h \

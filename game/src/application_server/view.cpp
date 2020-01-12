@@ -98,7 +98,20 @@ void View::leftclick(QMouseEvent * pEvent, MapTile * pTile)
             break;
     }
     emit onLeftclick();
+    switch(pTile->getType()){
+        case MapTile::TERMINAL_H:
+        case MapTile::TERMINAL_V:
+        case MapTile::DEPOT_H:
+        case MapTile::DEPOT_V:
+        case MapTile::STATION_H:
+        case MapTile::STATION_V:
+            emit onTrainStationClick(pTile->getX(), pTile->getY());
+            break;
+    }
 }
+
+
+
 
 /**
  * @brief View::leftclick Führt einen Rechtsklick aus.

@@ -39,6 +39,8 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
 
     QGraphicsPixmapItem * item = new QGraphicsPixmapItem(QPixmap::fromImage(QImage(":/images/terminal.png")));
     item->setZValue(10);
+
+    data[150][150].setType(MapTile::TERMINAL_H);
 }
 
 /**

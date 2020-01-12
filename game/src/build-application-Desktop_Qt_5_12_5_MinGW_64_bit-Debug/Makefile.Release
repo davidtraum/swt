@@ -214,6 +214,10 @@ release/qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/bruecke.png \
 		../application_server/rathaus.png \
 		../application_server/water.png \
+		../application_server/wagon_wheat.png \
+		../application_server/train_sky.png \
+		../application_server/train_background.png \
+		../application_server/train.png \
 		../application_server/fluss_kurve_links_unten.png \
 		../application_server/fluss_kurve_rechts_oben.png \
 		../application_server/fluss_kurve_rechts_unten.png \
@@ -3069,6 +3073,9 @@ release/routeinterface.o: ../application_server/routeinterface.cpp ../applicatio
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qtouchdevice.h \
 		../application_server/trainrenderer.h \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QWidget \
+		../application_server/graphicsmanager.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QPixmap \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QImage \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/QDebug \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QHBoxLayout \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qboxlayout.h \
@@ -3582,7 +3589,15 @@ release/trainrenderer.o: ../application_server/trainrenderer.cpp ../application_
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/qfile.h \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qvector2d.h \
-		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qtouchdevice.h
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qtouchdevice.h \
+		../application_server/graphicsmanager.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QPixmap \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QImage \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QPainter \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qpainter.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qtextoption.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qpen.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\trainrenderer.o ..\application_server\trainrenderer.cpp
 
 release/view.o: ../application_server/view.cpp ../application_server/view.h \

@@ -71,9 +71,6 @@ int main(int argc, char *argv[])
     scene = new Scene(graphics, dataModel);
 
 
-    RouteInterface * routeInterface = new RouteInterface(graphics);
-    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
-
 
     ToolTipMenu * tooltip = new ToolTipMenu();
 
@@ -81,6 +78,10 @@ int main(int argc, char *argv[])
     view = new View(scene, tooltip);
     view->setScene(scene);
     view->setDataModel(dataModel);
+
+    RouteInterface * routeInterface = new RouteInterface(graphics);
+    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
+    QWidget::connect(view, &View::onTrainStationClick, routeInterface, &RouteInterface::trainStationSelected);
 
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(view);

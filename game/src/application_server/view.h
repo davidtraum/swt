@@ -38,6 +38,7 @@ private:
 signals:
     void onLeftclick();
     void onRightclick();
+    void onTrainStationClick(int,int);
 
 public slots:
     void zoomInAnimation();

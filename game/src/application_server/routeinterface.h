@@ -2,6 +2,7 @@
 #define ROUTEINTERFACE_H
 
 #include <QDockWidget>
+#include <QListWidget>
 
 #include "trainrenderer.h"
 #include "graphicsmanager.h"
@@ -13,9 +14,11 @@ public:
 
 private:
     TrainRenderer * trainRenderer;
+    QListWidget * trainstationList;
 
 public slots:
     void toggle();
+    void trainStationSelected(int,int);
 };
 
 #endif // ROUTEINTERFACE_H
