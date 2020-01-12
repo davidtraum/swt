@@ -13,7 +13,7 @@ public:
     void addWagon(std::string name);
 
 private:
-    QImage train,background,sky;
+    QImage train,background,sky,wagon;
     GraphicsManager * graphicsManager;
     std::map<std::string, int> wagons;
 

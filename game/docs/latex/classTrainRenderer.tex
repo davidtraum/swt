@@ -6,8 +6,7 @@
 
 
 
-Klassendiagramm für Train\+Renderer\+:
-\nopagebreak
+Klassendiagramm für Train\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,12 +15,11 @@ Klassendiagramm für Train\+Renderer\+:
 \end{figure}
 
 
-Zusammengehörigkeiten von Train\+Renderer\+:
-\nopagebreak
+Zusammengehörigkeiten von Train\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{classTrainRenderer__coll__graph}
+\includegraphics[width=276pt]{classTrainRenderer__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Öffentliche Methoden}
@@ -42,6 +40,12 @@ void \mbox{\hyperlink{classTrainRenderer_aa43f6865d1e76833261e3af413cc8485}{mous
 \begin{DoxyCompactItemize}
 \item 
 Q\+Image \mbox{\hyperlink{classTrainRenderer_a674df3085f3c4ad9f85e8151e7b80885}{train}}
+\item 
+Q\+Image \mbox{\hyperlink{classTrainRenderer_a0de23ebd05a9085f8379cd01960dd6b3}{background}}
+\item 
+Q\+Image \mbox{\hyperlink{classTrainRenderer_ac98142740fbe6bbe4e5827a490d1f72f}{sky}}
+\item 
+Q\+Image \mbox{\hyperlink{classTrainRenderer_ae6d6c74f90e6a293d945d54d8e9de007}{wagon}}
 \item 
 \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{classTrainRenderer_a2a89cee606980112abd485f417b4ae83}{graphics\+Manager}}
 \item 
@@ -65,8 +69,7 @@ std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classTrainRenderer_af041c6
 \doxysubsubsection{\texorpdfstring{addWagon()}{addWagon()}}
 {\footnotesize\ttfamily void Train\+Renderer\+::add\+Wagon (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -79,42 +82,44 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \doxysubsubsection{\texorpdfstring{mouseReleaseEvent}{mouseReleaseEvent}}
 {\footnotesize\ttfamily void Train\+Renderer\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [slot]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classTrainRenderer_aa43f6865d1e76833261e3af413cc8485_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classTrainRenderer_aefe51f58ca5a6b5095bd77d693db2642}\label{classTrainRenderer_aefe51f58ca5a6b5095bd77d693db2642}} 
 \index{TrainRenderer@{TrainRenderer}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!TrainRenderer@{TrainRenderer}}
 \doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
 {\footnotesize\ttfamily void Train\+Renderer\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classTrainRenderer_aefe51f58ca5a6b5095bd77d693db2642_cgraph}
-\end{center}
-\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classTrainRenderer_a0de23ebd05a9085f8379cd01960dd6b3}\label{classTrainRenderer_a0de23ebd05a9085f8379cd01960dd6b3}} 
+\index{TrainRenderer@{TrainRenderer}!background@{background}}
+\index{background@{background}!TrainRenderer@{TrainRenderer}}
+\doxysubsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily Q\+Image Train\+Renderer\+::background\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classTrainRenderer_a2a89cee606980112abd485f417b4ae83}\label{classTrainRenderer_a2a89cee606980112abd485f417b4ae83}} 
 \index{TrainRenderer@{TrainRenderer}!graphicsManager@{graphicsManager}}
 \index{graphicsManager@{graphicsManager}!TrainRenderer@{TrainRenderer}}
 \doxysubsubsection{\texorpdfstring{graphicsManager}{graphicsManager}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}}$\ast$ Train\+Renderer\+::graphics\+Manager\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classTrainRenderer_ac98142740fbe6bbe4e5827a490d1f72f}\label{classTrainRenderer_ac98142740fbe6bbe4e5827a490d1f72f}} 
+\index{TrainRenderer@{TrainRenderer}!sky@{sky}}
+\index{sky@{sky}!TrainRenderer@{TrainRenderer}}
+\doxysubsubsection{\texorpdfstring{sky}{sky}}
+{\footnotesize\ttfamily Q\+Image Train\+Renderer\+::sky\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classTrainRenderer_a674df3085f3c4ad9f85e8151e7b80885}\label{classTrainRenderer_a674df3085f3c4ad9f85e8151e7b80885}} 
 \index{TrainRenderer@{TrainRenderer}!train@{train}}
 \index{train@{train}!TrainRenderer@{TrainRenderer}}
 \doxysubsubsection{\texorpdfstring{train}{train}}
 {\footnotesize\ttfamily Q\+Image Train\+Renderer\+::train\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTrainRenderer_ae6d6c74f90e6a293d945d54d8e9de007}\label{classTrainRenderer_ae6d6c74f90e6a293d945d54d8e9de007}} 
+\index{TrainRenderer@{TrainRenderer}!wagon@{wagon}}
+\index{wagon@{wagon}!TrainRenderer@{TrainRenderer}}
+\doxysubsubsection{\texorpdfstring{wagon}{wagon}}
+{\footnotesize\ttfamily Q\+Image Train\+Renderer\+::wagon\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classTrainRenderer_af041c64a1bace1c2e59466e1ced0f09f}\label{classTrainRenderer_af041c64a1bace1c2e59466e1ced0f09f}} 
 \index{TrainRenderer@{TrainRenderer}!wagons@{wagons}}

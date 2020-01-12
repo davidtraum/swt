@@ -6,18 +6,16 @@
 
 
 
-Klassendiagramm für Route\+Interface\+:
-\nopagebreak
+Klassendiagramm für Route\+Interface\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=176pt]{classRouteInterface__inherit__graph}
+\includegraphics[width=202pt]{classRouteInterface__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Zusammengehörigkeiten von Route\+Interface\+:
-\nopagebreak
+Zusammengehörigkeiten von Route\+Interface\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,7 +26,11 @@ Zusammengehörigkeiten von Route\+Interface\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{toggle}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{Route\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{Route\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{train\+Station\+Selected}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{Route\+Interface\+::train\+Station\+Selected}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{add\+Wagon}} (Q\+String $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{Route\+Interface\+::add\+Wagon}} Slot zum hinzufügen eines Wagons zum aktuellen Renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,6 +40,10 @@ void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{tog
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTrainRenderer}{Train\+Renderer}} $\ast$ \mbox{\hyperlink{classRouteInterface_a95ee8f33e7eeff0bcc297dda140eaf85}{train\+Renderer}}
+\item 
+Q\+List\+Widget $\ast$ \mbox{\hyperlink{classRouteInterface_a10e1971bfee8d18e137d29413954986c}{trainstation\+List}}
+\item 
+\mbox{\hyperlink{classGoodSelector}{Good\+Selector}} $\ast$ \mbox{\hyperlink{classRouteInterface_a1e4e6a656141f8203506006aa2350947}{good\+Selector}}
 \end{DoxyCompactItemize}
 
 
@@ -52,9 +58,45 @@ void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{tog
 
 \mbox{\hyperlink{classRouteInterface_aa0299805373c0a5b6de4c6a855a3116e}{Route\+Interface\+::\+Route\+Interface}} Erzeugt das Routeninterface. 
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteInterface_aa0299805373c0a5b6de4c6a855a3116e_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classRouteInterface_a2ec102604fc234131a689879bcf025de}\label{classRouteInterface_a2ec102604fc234131a689879bcf025de}} 
+\index{RouteInterface@{RouteInterface}!addWagon@{addWagon}}
+\index{addWagon@{addWagon}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{addWagon}{addWagon}}
+{\footnotesize\ttfamily void Route\+Interface\+::add\+Wagon (\begin{DoxyParamCaption}\item[{Q\+String $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{Route\+Interface\+::add\+Wagon}} Slot zum hinzufügen eines Wagons zum aktuellen Renderer. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em name} & Der Name des Wagons. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteInterface_a2ec102604fc234131a689879bcf025de_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteInterface_a2ec102604fc234131a689879bcf025de_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classRouteInterface_a63e72ec945a33c516b82634874125337}\label{classRouteInterface_a63e72ec945a33c516b82634874125337}} 
 \index{RouteInterface@{RouteInterface}!toggle@{toggle}}
 \index{toggle@{toggle}!RouteInterface@{RouteInterface}}
@@ -65,14 +107,43 @@ void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{tog
 
 \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{Route\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. 
 
+\mbox{\Hypertarget{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}\label{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}} 
+\index{RouteInterface@{RouteInterface}!trainStationSelected@{trainStationSelected}}
+\index{trainStationSelected@{trainStationSelected}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{trainStationSelected}{trainStationSelected}}
+{\footnotesize\ttfamily void Route\+Interface\+::train\+Station\+Selected (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{Route\+Interface\+::train\+Station\+Selected}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classRouteInterface_a1e4e6a656141f8203506006aa2350947}\label{classRouteInterface_a1e4e6a656141f8203506006aa2350947}} 
+\index{RouteInterface@{RouteInterface}!goodSelector@{goodSelector}}
+\index{goodSelector@{goodSelector}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{goodSelector}{goodSelector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoodSelector}{Good\+Selector}}$\ast$ Route\+Interface\+::good\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classRouteInterface_a95ee8f33e7eeff0bcc297dda140eaf85}\label{classRouteInterface_a95ee8f33e7eeff0bcc297dda140eaf85}} 
 \index{RouteInterface@{RouteInterface}!trainRenderer@{trainRenderer}}
 \index{trainRenderer@{trainRenderer}!RouteInterface@{RouteInterface}}
 \doxysubsubsection{\texorpdfstring{trainRenderer}{trainRenderer}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classTrainRenderer}{Train\+Renderer}}$\ast$ Route\+Interface\+::train\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRouteInterface_a10e1971bfee8d18e137d29413954986c}\label{classRouteInterface_a10e1971bfee8d18e137d29413954986c}} 
+\index{RouteInterface@{RouteInterface}!trainstationList@{trainstationList}}
+\index{trainstationList@{trainstationList}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{trainstationList}{trainstationList}}
+{\footnotesize\ttfamily Q\+List\+Widget$\ast$ Route\+Interface\+::trainstation\+List\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

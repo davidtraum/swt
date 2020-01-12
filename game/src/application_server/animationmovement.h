@@ -16,6 +16,7 @@ public:
 private:
     QGraphicsPixmapItem * item;
     QList<Point *> path;
+    int pointIndex{0};
 
 };
 

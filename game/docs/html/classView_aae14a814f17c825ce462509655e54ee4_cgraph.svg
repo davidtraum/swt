@@ -13,8 +13,8 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="View::mouseMoveEvent QT Methode. Wird aufgerufen wenn die Maus bewegt wird.">
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-209.5 0,-228.5 126,-228.5 126,-209.5 0,-209.5"/>
-<text text-anchor="middle" x="63" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">View::mouseMoveEvent</text>
+<polygon fill="#bfbfbf" stroke="#000000" points="0,-228.5 0,-247.5 126,-247.5 126,-228.5 0,-228.5"/>
+<text text-anchor="middle" x="63" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">View::mouseMoveEvent</text>
 </a>
 </g>
 </g>
@@ -22,16 +22,16 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="classScene.html#a12826e995b183844f9415c9df77a9ac7" target="_top" xlink:title="Scene::getTileAt Liefert ein MapTile anhand der Pixel&#45;Koordinaten oder der Indizes.">
-<polygon fill="#ffffff" stroke="#000000" points="195,-323.5 195,-342.5 288,-342.5 288,-323.5 195,-323.5"/>
-<text text-anchor="middle" x="241.5" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::getTileAt</text>
+<polygon fill="#ffffff" stroke="#000000" points="195,-285.5 195,-304.5 288,-304.5 288,-285.5 195,-285.5"/>
+<text text-anchor="middle" x="241.5" y="-292.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::getTileAt</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#191970" d="M70.9494,-228.6538C86.5333,-246.9689 122.9954,-286.8999 162,-309 169.9221,-313.4887 178.774,-317.2234 187.6148,-320.3028"/>
-<polygon fill="#191970" stroke="#191970" points="186.5671,-323.6424 197.159,-323.3919 188.7227,-316.9826 186.5671,-323.6424"/>
+<path fill="none" stroke="#191970" d="M91.0945,-247.6024C110.8741,-254.3045 137.9981,-263.3785 162,-271 174.0235,-274.8179 187.1154,-278.8298 199.1407,-282.4569"/>
+<polygon fill="#191970" stroke="#191970" points="198.3602,-285.8768 208.9443,-285.4005 200.3732,-279.1725 198.3602,-285.8768"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -45,237 +45,192 @@
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#191970" d="M76.7755,-228.6563C95.3286,-241.2479 129.7493,-263.1748 162,-276 229.5142,-302.8485 261.91,-271.7226 321,-314 345.3681,-331.4348 333.4391,-352.4889 357,-371 359.2887,-372.7982 361.7565,-374.4306 364.3363,-375.9119"/>
-<polygon fill="#191970" stroke="#191970" points="362.9239,-379.1176 373.4423,-380.3878 366.0118,-372.8354 362.9239,-379.1176"/>
+<path fill="none" stroke="#191970" d="M126.2892,-240.101C192.8305,-243.5429 291.8513,-252.5535 321,-276 356.1827,-304.3001 324.4746,-339.6821 357,-371 358.6354,-372.5747 360.4054,-374.019 362.2749,-375.3437"/>
+<polygon fill="#191970" stroke="#191970" points="360.5967,-378.4166 371.0005,-380.4196 364.1166,-372.3659 360.5967,-378.4166"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classToolTipMenu.html#affc16846c5e7183bb3e1c5d9460354c8" target="_top" xlink:title="ToolTipMenu::hide Blendet das Menü aus.">
-<polygon fill="#ffffff" stroke="#000000" points="189.5,-247.5 189.5,-266.5 293.5,-266.5 293.5,-247.5 189.5,-247.5"/>
-<text text-anchor="middle" x="241.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ToolTipMenu::hide</text>
+<g id="a_node4"><a xlink:href="classScene.html#a4caee3e7069bad7901a4a12b19cd304c" target="_top" xlink:title="Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen.">
+<polygon fill="#ffffff" stroke="#000000" points="186,-209.5 186,-228.5 297,-228.5 297,-209.5 186,-209.5"/>
+<text text-anchor="middle" x="241.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::setActiveTile</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="#191970" d="M108.0431,-228.589C132.0225,-233.6939 161.6979,-240.0113 186.9721,-245.3918"/>
-<polygon fill="#191970" stroke="#191970" points="186.2712,-248.821 196.7808,-247.4799 187.7288,-241.9744 186.2712,-248.821"/>
+<path fill="none" stroke="#191970" d="M126.1836,-231.2746C142.144,-229.5757 159.3234,-227.7471 175.4221,-226.0335"/>
+<polygon fill="#191970" stroke="#191970" points="176.2482,-229.4654 185.8216,-224.9266 175.5073,-222.5047 176.2482,-229.4654"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="classDataModel.html#a2dcc97fd7387151077bcb3794b1614af" target="_top" xlink:title="DataModel::updateCoordinates Aktualisiert die Koordinaten des fokussierten Quadrantens.">
+<polygon fill="#ffffff" stroke="#000000" points="162,-171.5 162,-190.5 321,-190.5 321,-171.5 162,-171.5"/>
+<text text-anchor="middle" x="241.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DataModel::updateCoordinates</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node15 -->
+<g id="edge15" class="edge">
+<title>Node1&#45;&gt;Node15</title>
+<path fill="none" stroke="#191970" d="M85.5072,-228.3828C105.3813,-220.1274 135.2709,-208.2842 162,-200 170.0862,-197.4938 178.7209,-195.1239 187.2093,-192.9628"/>
+<polygon fill="#191970" stroke="#191970" points="188.1975,-196.324 197.0652,-190.5262 186.5174,-189.5286 188.1975,-196.324"/>
+</g>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge10" class="edge">
+<title>Node4&#45;&gt;Node3</title>
+<path fill="none" stroke="#191970" d="M297.2667,-227.9733C306.0813,-231.4712 314.4368,-236.3108 321,-243 362.388,-285.1827 316.2754,-328.1765 357,-371 358.3907,-372.4623 359.8973,-373.8121 361.4941,-375.0581"/>
+<polygon fill="#191970" stroke="#191970" points="359.7798,-378.1142 370.1112,-380.4621 363.4989,-372.1839 359.7798,-378.1142"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classScene.html#a4caee3e7069bad7901a4a12b19cd304c" target="_top" xlink:title="Scene::setActiveTile Setzt den MapTile über dem die Maus gerade ist. Wird von view aufgerufen.">
-<polygon fill="#ffffff" stroke="#000000" points="186,-209.5 186,-228.5 297,-228.5 297,-209.5 186,-209.5"/>
-<text text-anchor="middle" x="241.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::setActiveTile</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="#191970" d="M126.1836,-219C142.144,-219 159.3234,-219 175.4221,-219"/>
-<polygon fill="#191970" stroke="#191970" points="175.8216,-222.5001 185.8216,-219 175.8215,-215.5001 175.8216,-222.5001"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="classToolTipMenu.html#aa4a6c9633a69092416132f3780d97b9f" target="_top" xlink:title="ToolTipMenu::setText Setzt den Text. (HTML&#45;Fähig)">
-<polygon fill="#ffffff" stroke="#000000" points="182,-171.5 182,-190.5 301,-190.5 301,-171.5 182,-171.5"/>
-<text text-anchor="middle" x="241.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ToolTipMenu::setText</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge16" class="edge">
-<title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="#191970" d="M108.0431,-209.411C132.0225,-204.3061 161.6979,-197.9887 186.9721,-192.6082"/>
-<polygon fill="#191970" stroke="#191970" points="187.7288,-196.0256 196.7808,-190.5201 186.2712,-189.179 187.7288,-196.0256"/>
-</g>
-<!-- Node17 -->
-<g id="node17" class="node">
-<title>Node17</title>
-<g id="a_node17"><a xlink:href="classToolTipMenu.html#a8d76e087f23190420440a4f5c80b722e" target="_top" xlink:title="ToolTipMenu::showAt Blendet das Menü an einer bestimmten Stelle (relativ zum Parent) ein.">
-<polygon fill="#ffffff" stroke="#000000" points="183,-133.5 183,-152.5 300,-152.5 300,-133.5 183,-133.5"/>
-<text text-anchor="middle" x="241.5" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ToolTipMenu::showAt</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node17 -->
-<g id="edge17" class="edge">
-<title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="#191970" d="M76.7755,-209.3437C95.3286,-196.7521 129.7493,-174.8252 162,-162 168.2903,-159.4985 174.9968,-157.2696 181.7459,-155.2984"/>
-<polygon fill="#191970" stroke="#191970" points="182.9013,-158.6109 191.6213,-152.5932 181.0518,-151.8597 182.9013,-158.6109"/>
-</g>
-<!-- Node18 -->
-<g id="node18" class="node">
-<title>Node18</title>
-<g id="a_node18"><a xlink:href="classDataModel.html#a2dcc97fd7387151077bcb3794b1614af" target="_top" xlink:title="DataModel::updateCoordinates Aktualisiert die Koordinaten des fokussierten Quadrantens.">
-<polygon fill="#ffffff" stroke="#000000" points="162,-95.5 162,-114.5 321,-114.5 321,-95.5 162,-95.5"/>
-<text text-anchor="middle" x="241.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DataModel::updateCoordinates</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node18 -->
-<g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="#191970" d="M70.0122,-209.4773C84.7585,-190.1737 121.0197,-146.371 162,-124 166.2155,-121.6988 170.7058,-119.6739 175.3247,-117.8926"/>
-<polygon fill="#191970" stroke="#191970" points="176.6322,-121.1439 184.9391,-114.5677 174.3443,-114.5283 176.6322,-121.1439"/>
-</g>
-<!-- Node5&#45;&gt;Node3 -->
-<g id="edge11" class="edge">
-<title>Node5&#45;&gt;Node3</title>
-<path fill="none" stroke="#191970" d="M297.174,-224.2184C305.9985,-227.1884 314.3813,-231.5754 321,-238 364.9413,-280.6531 315.0177,-326.4174 357,-371 358.3835,-372.4692 359.884,-373.8247 361.4757,-375.0755"/>
-<polygon fill="#191970" stroke="#191970" points="359.7488,-378.1243 370.0746,-380.4968 363.482,-372.2028 359.7488,-378.1243"/>
-</g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="classCity.html#a0543ff407447b87a952c40bb36f5eef1" target="_top" xlink:title="City::getCenterX Gibt den X&#45;Index des Mittelpunktes.">
+<g id="a_node5"><a xlink:href="classCity.html#a0543ff407447b87a952c40bb36f5eef1" target="_top" xlink:title="City::getCenterX Gibt den X&#45;Index des Mittelpunktes.">
 <polygon fill="#ffffff" stroke="#000000" points="368,-342.5 368,-361.5 459,-361.5 459,-342.5 368,-342.5"/>
 <text text-anchor="middle" x="413.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">City::getCenterX</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#191970" d="M297.0719,-224.9073C305.8035,-227.8134 314.1815,-232.0006 321,-238 354.8985,-267.8263 324.4746,-301.6821 357,-333 358.6354,-334.5747 360.4054,-336.019 362.2749,-337.3437"/>
-<polygon fill="#191970" stroke="#191970" points="360.5967,-340.4166 371.0005,-342.4196 364.1166,-334.3659 360.5967,-340.4166"/>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="#191970" d="M296.6885,-228.5715C305.5647,-232.0058 314.0906,-236.6691 321,-243 352.7637,-272.1045 325.6945,-303.4033 357,-333 358.6803,-334.5885 360.4976,-336.0445 362.4154,-337.379"/>
+<polygon fill="#191970" stroke="#191970" points="360.9335,-340.5633 371.3524,-342.4859 364.4065,-334.4856 360.9335,-340.5633"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df" target="_top" xlink:title="City::getCenterX Gibt den Y&#45;Index des Mittelpunktes.">
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="classCity.html#a99261799f5bec9256ef94c3e4ebda0df" target="_top" xlink:title="City::getCenterX Gibt den Y&#45;Index des Mittelpunktes.">
 <polygon fill="#ffffff" stroke="#000000" points="368,-304.5 368,-323.5 459,-323.5 459,-304.5 368,-304.5"/>
 <text text-anchor="middle" x="413.5" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">City::getCenterY</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node5&#45;&gt;Node7</title>
-<path fill="none" stroke="#191970" d="M297.3554,-226.5102C305.7611,-229.2477 313.96,-232.963 321,-238 345.3681,-255.4348 333.4391,-276.4889 357,-295 359.2887,-296.7982 361.7565,-298.4306 364.3363,-299.9119"/>
-<polygon fill="#191970" stroke="#191970" points="362.9239,-303.1176 373.4423,-304.3878 366.0118,-296.8354 362.9239,-303.1176"/>
+<!-- Node4&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node4&#45;&gt;Node6</title>
+<path fill="none" stroke="#191970" d="M291.833,-228.6228C302.0927,-232.067 312.3744,-236.7213 321,-243 343.7259,-259.5426 334.5351,-278.1047 357,-295 359.4838,-296.868 362.1624,-298.5592 364.9559,-300.0894"/>
+<polygon fill="#191970" stroke="#191970" points="363.6349,-303.3363 374.1713,-304.4478 366.6277,-297.0083 363.6349,-303.3363"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" target="_top" xlink:title="MapTile::getCity Die Informationen. Falls keine Stadt: null.">
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="classMapTile.html#ab5245ea56fde79ef7640ed93583a57fd" target="_top" xlink:title="MapTile::getCity Die Informationen. Falls keine Stadt: null.">
 <polygon fill="#ffffff" stroke="#000000" points="367.5,-266.5 367.5,-285.5 459.5,-285.5 459.5,-266.5 367.5,-266.5"/>
 <text text-anchor="middle" x="413.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::getCity</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node5&#45;&gt;Node8</title>
-<path fill="none" stroke="#191970" d="M290.0104,-228.5442C300.3836,-231.151 311.1724,-234.2996 321,-238 337.9313,-244.3751 340.372,-249.8713 357,-257 361.9936,-259.1408 367.3152,-261.2026 372.6204,-263.1279"/>
-<polygon fill="#191970" stroke="#191970" points="371.4826,-266.4377 382.0774,-266.4332 373.7922,-259.8297 371.4826,-266.4377"/>
+<!-- Node4&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node4&#45;&gt;Node7</title>
+<path fill="none" stroke="#191970" d="M275.3398,-228.5851C289.5257,-232.7661 306.1435,-237.8774 321,-243 337.2296,-248.596 340.8597,-251.1513 357,-257 362.6721,-259.0554 368.6908,-261.1599 374.6042,-263.1847"/>
+<polygon fill="#191970" stroke="#191970" points="373.7823,-266.6015 384.3766,-266.4941 376.0276,-259.9714 373.7823,-266.6015"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="classDataModel.html#a083d84049b068cd355ce6aaa396e7c79" target="_top" xlink:title="DataModel::getMode Gibt den aktuellen Bearbeitungsmodus.">
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="classDataModel.html#a083d84049b068cd355ce6aaa396e7c79" target="_top" xlink:title="DataModel::getMode Gibt den aktuellen Bearbeitungsmodus.">
 <polygon fill="#ffffff" stroke="#000000" points="357,-228.5 357,-247.5 470,-247.5 470,-228.5 357,-228.5"/>
 <text text-anchor="middle" x="413.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DataModel::getMode</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node5&#45;&gt;Node9</title>
+<!-- Node4&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node4&#45;&gt;Node8</title>
 <path fill="none" stroke="#191970" d="M297.3435,-225.1688C313.1025,-226.9096 330.4084,-228.8213 346.7388,-230.6252"/>
 <polygon fill="#191970" stroke="#191970" points="346.4343,-234.1128 356.7581,-231.732 347.2029,-227.1551 346.4343,-234.1128"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="classCity.html#adc7fe5313b3572973918cf6385e87fd5" target="_top" xlink:title="City::getName Gibt den Namen der Stadt.">
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="classCity.html#adc7fe5313b3572973918cf6385e87fd5" target="_top" xlink:title="City::getName Gibt den Namen der Stadt.">
 <polygon fill="#ffffff" stroke="#000000" points="373,-190.5 373,-209.5 454,-209.5 454,-190.5 373,-190.5"/>
 <text text-anchor="middle" x="413.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">City::getName</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
-<title>Node5&#45;&gt;Node10</title>
+<!-- Node4&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node4&#45;&gt;Node9</title>
 <path fill="none" stroke="#191970" d="M297.3435,-212.8312C318.406,-210.5046 342.2316,-207.8727 362.7984,-205.6008"/>
 <polygon fill="#191970" stroke="#191970" points="363.3593,-209.0602 372.9145,-204.4833 362.5907,-202.1025 363.3593,-209.0602"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb" target="_top" xlink:title="City::getSize Gibt die Anzahl der Felder zurück die zur Stadt gehören.">
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="classCity.html#ae2fad5199ff6b8f11a39fa7500757beb" target="_top" xlink:title="City::getSize Gibt die Anzahl der Felder zurück die zur Stadt gehören.">
 <polygon fill="#ffffff" stroke="#000000" points="376.5,-152.5 376.5,-171.5 450.5,-171.5 450.5,-152.5 376.5,-152.5"/>
 <text text-anchor="middle" x="413.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">City::getSize</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node11 -->
-<g id="edge10" class="edge">
-<title>Node5&#45;&gt;Node11</title>
+<!-- Node4&#45;&gt;Node10 -->
+<g id="edge9" class="edge">
+<title>Node4&#45;&gt;Node10</title>
 <path fill="none" stroke="#191970" d="M290.0104,-209.4558C300.3836,-206.849 311.1724,-203.7004 321,-200 337.9313,-193.6249 340.372,-188.1287 357,-181 361.9936,-178.8592 367.3152,-176.7974 372.6204,-174.8721"/>
 <polygon fill="#191970" stroke="#191970" points="373.7922,-178.1703 382.0774,-171.5668 371.4826,-171.5623 373.7922,-178.1703"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b" target="_top" xlink:title="MapTile::getX.">
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b" target="_top" xlink:title="MapTile::getX.">
 <polygon fill="#ffffff" stroke="#000000" points="373,-114.5 373,-133.5 454,-133.5 454,-114.5 373,-114.5"/>
 <text text-anchor="middle" x="413.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::getX</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node12 -->
-<g id="edge12" class="edge">
-<title>Node5&#45;&gt;Node12</title>
+<!-- Node4&#45;&gt;Node11 -->
+<g id="edge11" class="edge">
+<title>Node4&#45;&gt;Node11</title>
 <path fill="none" stroke="#191970" d="M297.3554,-211.4898C305.7611,-208.7523 313.96,-205.037 321,-200 345.3681,-182.5652 333.4391,-161.5111 357,-143 359.2887,-141.2018 361.7565,-139.5694 364.3363,-138.0881"/>
 <polygon fill="#191970" stroke="#191970" points="366.0118,-141.1646 373.4423,-133.6122 362.9239,-134.8824 366.0118,-141.1646"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf" target="_top" xlink:title="MapTile::getY.">
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf" target="_top" xlink:title="MapTile::getY.">
 <polygon fill="#ffffff" stroke="#000000" points="373,-76.5 373,-95.5 454,-95.5 454,-76.5 373,-76.5"/>
 <text text-anchor="middle" x="413.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::getY</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node13 -->
-<g id="edge13" class="edge">
-<title>Node5&#45;&gt;Node13</title>
+<!-- Node4&#45;&gt;Node12 -->
+<g id="edge12" class="edge">
+<title>Node4&#45;&gt;Node12</title>
 <path fill="none" stroke="#191970" d="M297.0719,-213.0927C305.8035,-210.1866 314.1815,-205.9994 321,-200 354.8985,-170.1737 324.4746,-136.3179 357,-105 359.0967,-102.9812 361.4146,-101.1766 363.8798,-99.5636"/>
 <polygon fill="#191970" stroke="#191970" points="365.5889,-102.6184 372.7218,-94.7844 362.2604,-96.4604 365.5889,-102.6184"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="classMapTile.html#a1a098019e294631b4ddc34d82658d7b3" target="_top" xlink:title="MapTile::isRail Checkt ob die Kachel eine Schiene ist.">
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="classMapTile.html#a1a098019e294631b4ddc34d82658d7b3" target="_top" xlink:title="MapTile::isRail Checkt ob die Kachel eine Schiene ist.">
 <polygon fill="#ffffff" stroke="#000000" points="371,-38.5 371,-57.5 456,-57.5 456,-38.5 371,-38.5"/>
 <text text-anchor="middle" x="413.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::isRail</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node14 -->
-<g id="edge14" class="edge">
-<title>Node5&#45;&gt;Node14</title>
+<!-- Node4&#45;&gt;Node13 -->
+<g id="edge13" class="edge">
+<title>Node4&#45;&gt;Node13</title>
 <path fill="none" stroke="#191970" d="M297.174,-213.7816C305.9985,-210.8116 314.3813,-206.4246 321,-200 364.9413,-157.3469 315.0177,-111.5826 357,-67 358.5852,-65.3166 360.3241,-63.7823 362.1778,-62.3839"/>
 <polygon fill="#191970" stroke="#191970" points="364.1842,-65.2605 370.9197,-57.0823 360.5543,-59.2752 364.1842,-65.2605"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="classHighlighter.html#a7e6a88008cda8e908f644ecf071fde78" target="_top" xlink:title=" ">
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="classHighlighter.html#a7e6a88008cda8e908f644ecf071fde78" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="359.5,-.5 359.5,-19.5 467.5,-19.5 467.5,-.5 359.5,-.5"/>
 <text text-anchor="middle" x="413.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Highlighter::setColor</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node15 -->
-<g id="edge15" class="edge">
-<title>Node5&#45;&gt;Node15</title>
+<!-- Node4&#45;&gt;Node14 -->
+<g id="edge14" class="edge">
+<title>Node4&#45;&gt;Node14</title>
 <path fill="none" stroke="#191970" d="M297.0773,-214.2289C306.0194,-211.2257 314.4676,-206.7118 321,-200 375.169,-144.3429 305.384,-87.0326 357,-29 358.1821,-27.6709 359.4602,-26.4347 360.816,-25.2848"/>
 <polygon fill="#191970" stroke="#191970" points="362.9444,-28.0718 369.3042,-19.5981 359.0482,-22.2562 362.9444,-28.0718"/>
 </g>

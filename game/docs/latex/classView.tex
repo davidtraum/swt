@@ -33,11 +33,13 @@ void \mbox{\hyperlink{classView_a1e1a3f29a5b539e3f8991cba46721e8f}{zoom\+In\+Ani
 void \mbox{\hyperlink{classView_a5b6bbb4efe3725d8ede1d190d1a1b3a1}{on\+Leftclick}} ()
 \item 
 void \mbox{\hyperlink{classView_a23e51fd127541b97fc7b077bd2d2d0f9}{on\+Rightclick}} ()
+\item 
+void \mbox{\hyperlink{classView_a2c9279e2d22fce5fa0f76a2d9c2f696f}{on\+Train\+Station\+Click}} (int, int)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$p\+Tool\+Tip)
+\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, Tool\+Tip\+Menu $\ast$p\+Tool\+Tip)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. \end{DoxyCompactList}\item 
@@ -100,7 +102,7 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 \item 
 int \mbox{\hyperlink{classView_adab0206370d9dea97e296c852b7d020b}{code\+Count}}
 \item 
-\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
+Tool\+Tip\+Menu $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
 \end{DoxyCompactItemize}
 
 
@@ -109,7 +111,7 @@ int \mbox{\hyperlink{classView_adab0206370d9dea97e296c852b7d020b}{code\+Count}}
 \index{View@{View}!View@{View}}
 \index{View@{View}!View@{View}}
 \doxysubsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$}]{p\+Tool\+Tip }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{Tool\+Tip\+Menu $\ast$}]{p\+Tool\+Tip }\end{DoxyParamCaption})}
 
 
 
@@ -350,6 +352,19 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classView_a23e51fd127541b97fc7b077bd2d2d0f9_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classView_a2c9279e2d22fce5fa0f76a2d9c2f696f}\label{classView_a2c9279e2d22fce5fa0f76a2d9c2f696f}} 
+\index{View@{View}!onTrainStationClick@{onTrainStationClick}}
+\index{onTrainStationClick@{onTrainStationClick}!View@{View}}
+\doxysubsubsection{\texorpdfstring{onTrainStationClick}{onTrainStationClick}}
+{\footnotesize\ttfamily void View\+::on\+Train\+Station\+Click (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classView_a2c9279e2d22fce5fa0f76a2d9c2f696f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}\label{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}} 
 \index{View@{View}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!View@{View}}
@@ -436,13 +451,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Eventobjekt mit Infos. Wichtig\+: event-\/$>$delta()\+: Positiv oder negativ jenachdem in welche Richtung gedreht wurde. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=317pt]{classView_a094f2fd748e2855fcd4ec42d171e5bbe_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classView_a1e1a3f29a5b539e3f8991cba46721e8f}\label{classView_a1e1a3f29a5b539e3f8991cba46721e8f}} 
 \index{View@{View}!zoomInAnimation@{zoomInAnimation}}
 \index{zoomInAnimation@{zoomInAnimation}!View@{View}}
@@ -539,7 +547,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{View@{View}!tooltip@{tooltip}}
 \index{tooltip@{tooltip}!View@{View}}
 \doxysubsubsection{\texorpdfstring{tooltip}{tooltip}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}}$\ast$ View\+::tooltip\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Tool\+Tip\+Menu$\ast$ View\+::tooltip\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

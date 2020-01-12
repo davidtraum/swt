@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 
+
 /**
  * @brief RouteInterface::RouteInterface Erzeugt das Routeninterface.
  */
@@ -23,9 +24,14 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
 
     trainstationList = new QListWidget();
     trainstationList->setFixedWidth(200);
+    trainstationList->setMaximumHeight(600);
 
     QVBoxLayout *  vlayout = new QVBoxLayout(mainWidget);
     vlayout->addWidget(trainstationList);
+
+    goodSelector = new GoodSelector();
+    connect(goodSelector, &GoodSelector::addWagonClicked, this, &RouteInterface::addWagon);
+    vlayout->addWidget(goodSelector);
 
     QPushButton * confirmBtn = new QPushButton("Bestätigen");
     confirmBtn->setCursor(QCursor(Qt::PointingHandCursor));
@@ -57,5 +63,14 @@ void RouteInterface::trainStationSelected(int px, int py)
         QListWidgetItem *newItem = new QListWidgetItem(QIcon(":/images/depot.png"), "Bahnhof " + QString::number(px) + "/" + QString::number(py));
         this->trainstationList->addItem(newItem);
     }
+}
+
+/**
+ * @brief RouteInterface::addWagon Slot zum hinzufügen eines Wagons zum aktuellen Renderer.
+ * @param name Der Name des Wagons.
+ */
+void RouteInterface::addWagon(QString * name)
+{
+    trainRenderer->addWagon(name->toStdString());
 }
 
