@@ -62,6 +62,7 @@ HEADERS += \
     scene.h \
     sidepanel.h \
     tooltipmenu.h \
+    tooltipmenu.h \
     trainrenderer.h \
     view.h
 
