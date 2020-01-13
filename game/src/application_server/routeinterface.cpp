@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QGroupBox>
 
 
 /**
@@ -15,7 +16,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     QDockWidget::setFeatures(nullptr);
     QDockWidget::setVisible(false);
 
-    QWidget * mainWidget = new QWidget();
+    QGroupBox * mainWidget = new QGroupBox(" Route erzeugen");
 
     QHBoxLayout * layout = new QHBoxLayout(mainWidget);
 
@@ -23,7 +24,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     layout->addWidget(trainRenderer);
 
     trainstationList = new QListWidget();
-    trainstationList->setFixedWidth(200);
+    trainstationList->setFixedWidth(250);
     trainstationList->setMaximumHeight(600);
 
     QVBoxLayout *  vlayout = new QVBoxLayout(mainWidget);
@@ -33,17 +34,20 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     connect(goodSelector, &GoodSelector::addWagonClicked, this, &RouteInterface::addWagon);
     vlayout->addWidget(goodSelector);
 
+    QHBoxLayout * buttons = new QHBoxLayout(mainWidget);
     QPushButton * confirmBtn = new QPushButton("Bestätigen");
     confirmBtn->setCursor(QCursor(Qt::PointingHandCursor));
     confirmBtn->setIcon(QIcon(":/icons/checkmark.svg"));
-    vlayout->addWidget(confirmBtn);
+    buttons->addWidget(confirmBtn);
+
 
     QPushButton * cancelBtn = new QPushButton("Abbrechen");
     cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
     cancelBtn->setIcon(QIcon(":/icons/cross.svg"));
     connect(cancelBtn, SIGNAL (clicked()), this, SLOT (toggle())); //schließe RouteInterface
-    vlayout->addWidget(cancelBtn);
+    buttons->addWidget(cancelBtn);
 
+    vlayout->addLayout(buttons);
     layout->addLayout(vlayout);
 
     mainWidget->setLayout(layout);
