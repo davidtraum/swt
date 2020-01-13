@@ -37,6 +37,8 @@ public slots:
     void onPositionChange(int,int);
     void onLeftclick();
     void onRightclick();
+    void sendRoute(QString);
+
 };
 
 #endif // CLIENT_H

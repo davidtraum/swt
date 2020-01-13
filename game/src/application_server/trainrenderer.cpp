@@ -20,7 +20,7 @@ void TrainRenderer::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
 
-    painter.fillRect(0,0,this->width(), this->height(), QBrush(sky));
+    painter.fillRect(0,0,this->width(), this->height(), QBrush(background));
     painter.drawImage(0, this->height()-200,background);
     int width = 208;
     int wagonWidth = 255;

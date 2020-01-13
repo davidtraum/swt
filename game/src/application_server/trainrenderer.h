@@ -12,11 +12,11 @@ public:
     void paintEvent(QPaintEvent *event) override;
     void addWagon(std::string name);
     void deleteAllWagons();
+    std::map<std::string, int> wagons;
 
 private:
     QImage train,background,sky,wagon;
     GraphicsManager * graphicsManager;
-    std::map<std::string, int> wagons;
 
 private slots:
     void mouseReleaseEvent(QMouseEvent *event) override;

@@ -116,6 +116,8 @@ void MenuBar::slotOpenConnection(){
     if(ok){
         Client * client = new Client(&text, scene, view, dataModel);
 
+        QWidget::connect(routeInterface, &RouteInterface::sendConfirmRoute, client, &Client::sendRoute);
+
         QTimer::singleShot(1000, [client]{client->requestMap();});
     }
 }

@@ -85,6 +85,12 @@ void Client::requestMap(){
     socket->write("MAP GET~");
 }
 
+void Client::sendRoute(QString routeString){
+    socket->write(routeString.toLocal8Bit());
+    qDebug() << "An Socket: " + routeString;
+    //emit sendRoute(routeString);
+}
+
 /**
  * @brief Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus.
  * @param cmd Der Befehl als String.

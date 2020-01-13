@@ -136,4 +136,6 @@ int main(int argc, char *argv[])
     loop->start();
 
     a.exec();
+
+    return 0;
 }
