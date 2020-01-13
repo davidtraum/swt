@@ -15,7 +15,8 @@ Klassendiagramm für View\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von View\+:\nopagebreak
+Zusammengehörigkeiten von View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,7 +40,7 @@ void \mbox{\hyperlink{classView_a2c9279e2d22fce5fa0f76a2d9c2f696f}{on\+Train\+St
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, Tool\+Tip\+Menu $\ast$p\+Tool\+Tip)
+\mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$p\+Tool\+Tip)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a56e8bf94eecb24f3167c3a8c227425cc}{View\+::\+View}} Konstruktor. Versteckt u.\+a. die Scrollbars und aktiviert Mousetracking. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a30e2699528059a572a465211f266384e}{View\+::mouse\+Press\+Event}} QT Methode. Wird aufgerufen wenn die Maus gedrückt wurde. \end{DoxyCompactList}\item 
@@ -102,7 +103,7 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 \item 
 int \mbox{\hyperlink{classView_adab0206370d9dea97e296c852b7d020b}{code\+Count}}
 \item 
-Tool\+Tip\+Menu $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
+\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
 \end{DoxyCompactItemize}
 
 
@@ -111,7 +112,7 @@ Tool\+Tip\+Menu $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2
 \index{View@{View}!View@{View}}
 \index{View@{View}!View@{View}}
 \doxysubsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{Tool\+Tip\+Menu $\ast$}]{p\+Tool\+Tip }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily View\+::\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$}]{p\+Tool\+Tip }\end{DoxyParamCaption})}
 
 
 
@@ -282,7 +283,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -451,6 +453,13 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Eventobjekt mit Infos. Wichtig\+: event-\/$>$delta()\+: Positiv oder negativ jenachdem in welche Richtung gedreht wurde. \\
 \hline
 \end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classView_a094f2fd748e2855fcd4ec42d171e5bbe_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classView_a1e1a3f29a5b539e3f8991cba46721e8f}\label{classView_a1e1a3f29a5b539e3f8991cba46721e8f}} 
 \index{View@{View}!zoomInAnimation@{zoomInAnimation}}
 \index{zoomInAnimation@{zoomInAnimation}!View@{View}}
@@ -547,7 +556,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{View@{View}!tooltip@{tooltip}}
 \index{tooltip@{tooltip}!View@{View}}
 \doxysubsubsection{\texorpdfstring{tooltip}{tooltip}}
-{\footnotesize\ttfamily Tool\+Tip\+Menu$\ast$ View\+::tooltip\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}}$\ast$ View\+::tooltip\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

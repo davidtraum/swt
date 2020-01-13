@@ -6,11 +6,12 @@ var searchData=
   ['datamodel_2eh_35',['datamodel.h',['../datamodel_8h.html',1,'']]],
   ['debug_36',['debug',['../classClient.html#a764f0d6601b0c32acc45ba1606b0c2c9',1,'Client']]],
   ['default_37',['DEFAULT',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12aea8e985fae7e3769fdb139b23cd5411a',1,'DataModel']]],
-  ['depot_5fh_38',['DEPOT_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a275ceae7ee2577e0744fb0b8a1d0bd62',1,'MapTile']]],
-  ['depot_5fv_39',['DEPOT_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a8ba663e4bd99563526a03f2a19605cc1',1,'MapTile']]],
-  ['doanimations_40',['doAnimations',['../classView.html#a31d7cea2414022ff47f8289ea922deba',1,'View']]],
-  ['dragoriginx_41',['dragOriginX',['../classView.html#ab3cfbf1d3d6a68e312fdb10924a28de4',1,'View']]],
-  ['dragoriginy_42',['dragOriginY',['../classView.html#a21d0bdfad7b5743d73873e3255d35a13',1,'View']]],
-  ['dragposx_43',['dragPosX',['../classView.html#ac9c829cddcc063f5042778e3403b286d',1,'View']]],
-  ['dragposy_44',['dragPosY',['../classView.html#a701072d3ab33e65141484ecd71a6d99c',1,'View']]]
+  ['deleteallwagons_38',['deleteAllWagons',['../classTrainRenderer.html#ad06bf7433f9c79eedc698d088599db83',1,'TrainRenderer']]],
+  ['depot_5fh_39',['DEPOT_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a275ceae7ee2577e0744fb0b8a1d0bd62',1,'MapTile']]],
+  ['depot_5fv_40',['DEPOT_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a8ba663e4bd99563526a03f2a19605cc1',1,'MapTile']]],
+  ['doanimations_41',['doAnimations',['../classView.html#a31d7cea2414022ff47f8289ea922deba',1,'View']]],
+  ['dragoriginx_42',['dragOriginX',['../classView.html#ab3cfbf1d3d6a68e312fdb10924a28de4',1,'View']]],
+  ['dragoriginy_43',['dragOriginY',['../classView.html#a21d0bdfad7b5743d73873e3255d35a13',1,'View']]],
+  ['dragposx_44',['dragPosX',['../classView.html#ac9c829cddcc063f5042778e3403b286d',1,'View']]],
+  ['dragposy_45',['dragPosY',['../classView.html#a701072d3ab33e65141484ecd71a6d99c',1,'View']]]
 ];
