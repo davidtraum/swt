@@ -293,6 +293,10 @@ class World:
         WayLogic.allWays[0].secondRail.append(None)
         self.data[150][150].logic.way = WayLogic.allWays[0]
         world.tileInteract(149, 150, 'DEPOT')
+        self.data[150][150].logic.way.firstRail.insert(0, self.data[149][150])
+        self.data[150][150].logic.way.secondRail.insert(0, self.data[149][150])
+        self.data[150][150].logic.way.firstTrainStation = self.data[149][150]
+        print(self.data[150][150].logic.way.firstTrainStation.getX())
         world.tileInteract(148, 150, 'RAIL')
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
@@ -398,6 +402,9 @@ class ClientThread(Thread):
             if(args[0] == 'WAY'):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getProtocolString())
+            if(args[0] == 'TRAINSTATION'):
+                if(args[1] == 'GET'):
+                    broadcast(WayLogic.getTrainstationProtocolString(int(args[2]),int(args[3]),world.data))
 
             if(args[0] == 'REMOVE'):
                 posX = int(args[1])
