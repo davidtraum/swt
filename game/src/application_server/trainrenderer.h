@@ -11,6 +11,7 @@ public:
     TrainRenderer(GraphicsManager *);
     void paintEvent(QPaintEvent *event) override;
     void addWagon(std::string name);
+    void deleteAllWagons();
 
 private:
     QImage train,background,sky,wagon;

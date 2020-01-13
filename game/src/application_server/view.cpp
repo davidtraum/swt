@@ -90,6 +90,9 @@ void View::leftclick(QMouseEvent * pEvent, MapTile * pTile)
 {
     switch(dataModel->getMode()){
         case DataModel::DEFAULT:
+            //kein Zoom, wenn Bahnhof geklickt (RouteInterface)
+            if (pTile->getType() == MapTile::TERMINAL_H || pTile->getType() == MapTile::TERMINAL_V ||pTile->getType() == MapTile::DEPOT_H||pTile->getType() == MapTile::DEPOT_V||pTile->getType() == MapTile::STATION_H||pTile->getType() == MapTile::STATION_V)
+                break;
             doAnimations = true;
             fluidZoom(1, currentScale<1);
             fluidMovement(pTile->getX()*64, pTile->getY()*64);

@@ -56,6 +56,12 @@ void TrainRenderer::addWagon(std::string name)
     QWidget::repaint();
 }
 
+void TrainRenderer::deleteAllWagons()
+{
+    wagons.clear();
+    QWidget::repaint();
+}
+
 void TrainRenderer::mouseReleaseEvent(QMouseEvent *event)
 {
     int x = event->x();

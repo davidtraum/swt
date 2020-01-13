@@ -38,6 +38,12 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     confirmBtn->setIcon(QIcon(":/icons/checkmark.svg"));
     vlayout->addWidget(confirmBtn);
 
+    QPushButton * cancelBtn = new QPushButton("Abbrechen");
+    cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
+    cancelBtn->setIcon(QIcon(":/icons/cross.svg"));
+    connect(cancelBtn, SIGNAL (clicked()), this, SLOT (toggle())); //schließe RouteInterface
+    vlayout->addWidget(cancelBtn);
+
     layout->addLayout(vlayout);
 
     mainWidget->setLayout(layout);
@@ -49,6 +55,10 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
  * @brief RouteInterface::toggle Wechselt die Sichtbarkeit des Widgets.
  */
 void RouteInterface::toggle() {
+    if (this->isVisible()) {
+        //Entferne Waggons, wenn Interface geschlossen wird
+        trainRenderer->deleteAllWagons();
+    }
     QDockWidget::setVisible(!QDockWidget::isVisible());
     qDebug() << this->isVisible();
 }
@@ -73,4 +83,5 @@ void RouteInterface::addWagon(QString * name)
 {
     trainRenderer->addWagon(name->toStdString());
 }
+
 

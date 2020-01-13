@@ -10,6 +10,7 @@
 
 class RouteInterface: public QDockWidget
 {
+    Q_OBJECT
 public:
     RouteInterface(GraphicsManager *);
 
