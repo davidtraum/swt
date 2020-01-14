@@ -55,6 +55,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     mainWidget->setLayout(layout);
 
     QDockWidget::setWidget(mainWidget);
+    mainWidget->setStyleSheet("background-color:rgb(150, 163, 227)");
 
     wagonCount = 0;
 }

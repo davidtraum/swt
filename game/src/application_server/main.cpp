@@ -128,7 +128,8 @@ int main(int argc, char *argv[])
 
 
     QLabel * startscreen = new QLabel();
-    startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
+    startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/rrt_logo_grp5.png").scaled(1000,1500,Qt::KeepAspectRatio)));
+    startscreen->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     mainWindow->setCentralWidget(startscreen);
 
 

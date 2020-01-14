@@ -15,6 +15,7 @@ class RouteInterface: public QDockWidget
     Q_OBJECT
 public:
     RouteInterface(GraphicsManager *);
+    int wagonCount;
 
 
 private:
@@ -22,7 +23,6 @@ private:
     QListWidget * trainstationList;
     GoodSelector * goodSelector;
     QPushButton * confirmBtn;
-    int wagonCount;
 
 public slots:
     void toggle();
