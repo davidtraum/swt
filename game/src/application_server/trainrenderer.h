@@ -7,6 +7,7 @@
 
 class TrainRenderer: public QWidget
 {
+    Q_OBJECT
 public:
     TrainRenderer(GraphicsManager *);
     void paintEvent(QPaintEvent *event) override;
@@ -20,6 +21,8 @@ private:
 
 private slots:
     void mouseReleaseEvent(QMouseEvent *event) override;
+signals:
+    void triggerRemoveWagon();
 };
 
 #endif // TRAINRENDERER_H

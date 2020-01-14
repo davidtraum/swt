@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
     RouteInterface * routeInterface = new RouteInterface(graphics);
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
     QWidget::connect(view, &View::onTrainStationClick, routeInterface, &RouteInterface::trainStationSelected);
+    QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
 
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(view);
@@ -128,7 +129,8 @@ int main(int argc, char *argv[])
 
 
     QLabel * startscreen = new QLabel();
-    startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/startscreen.jpg")));
+    startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/rrt_logo_grp5.png").scaled(1000,1500,Qt::KeepAspectRatio)));
+    startscreen->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     mainWindow->setCentralWidget(startscreen);
 
 
