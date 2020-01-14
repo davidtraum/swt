@@ -80,6 +80,12 @@ void TrainRenderer::mouseReleaseEvent(QMouseEvent *event)
             paintY += 200;
         }
     }
+
+    triggerRemoveWagon();
+}
+
+void triggerRemoveWagon() {
+    emit triggerRemoveWagon();
 }
 
 

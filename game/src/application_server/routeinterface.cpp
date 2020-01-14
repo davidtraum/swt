@@ -55,6 +55,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     mainWidget->setLayout(layout);
 
     QDockWidget::setWidget(mainWidget);
+    mainWidget->setStyleSheet("background-color:rgb(150,150,255)");
 
     wagonCount = 0;
 }
@@ -112,4 +113,7 @@ void RouteInterface::confirmRoute()
     emit sendConfirmRoute(handOver);
 }
 
-
+void RouteInterface::removeWagon() {
+    wagonCount--;
+    qDebug() << "Waggon gelöscht - Anzahl: " << wagonCount;
+}

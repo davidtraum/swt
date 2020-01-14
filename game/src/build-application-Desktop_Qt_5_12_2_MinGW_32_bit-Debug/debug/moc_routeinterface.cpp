@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_RouteInterface_t {
-    QByteArrayData data[8];
-    char stringdata0[92];
+    QByteArrayData data[9];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,12 +38,13 @@ QT_MOC_LITERAL(3, 33, 6), // "toggle"
 QT_MOC_LITERAL(4, 40, 20), // "trainStationSelected"
 QT_MOC_LITERAL(5, 61, 8), // "addWagon"
 QT_MOC_LITERAL(6, 70, 8), // "QString*"
-QT_MOC_LITERAL(7, 79, 12) // "confirmRoute"
+QT_MOC_LITERAL(7, 79, 12), // "confirmRoute"
+QT_MOC_LITERAL(8, 92, 11) // "removeWagon"
 
     },
     "RouteInterface\0sendConfirmRoute\0\0"
     "toggle\0trainStationSelected\0addWagon\0"
-    "QString*\0confirmRoute"
+    "QString*\0confirmRoute\0removeWagon"
 };
 #undef QT_MOC_LITERAL
 
@@ -53,7 +54,7 @@ static const uint qt_meta_data_RouteInterface[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,13 +62,14 @@ static const uint qt_meta_data_RouteInterface[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x06 /* Public */,
+       1,    1,   44,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   42,    2, 0x0a /* Public */,
-       4,    2,   43,    2, 0x0a /* Public */,
-       5,    1,   48,    2, 0x0a /* Public */,
-       7,    0,   51,    2, 0x0a /* Public */,
+       3,    0,   47,    2, 0x0a /* Public */,
+       4,    2,   48,    2, 0x0a /* Public */,
+       5,    1,   53,    2, 0x0a /* Public */,
+       7,    0,   56,    2, 0x0a /* Public */,
+       8,    0,   57,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -76,6 +78,7 @@ static const uint qt_meta_data_RouteInterface[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, 0x80000000 | 6,    2,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -92,6 +95,7 @@ void RouteInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 2: _t->trainStationSelected((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 3: _t->addWagon((*reinterpret_cast< QString*(*)>(_a[1]))); break;
         case 4: _t->confirmRoute(); break;
+        case 5: _t->removeWagon(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -135,13 +139,13 @@ int RouteInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
