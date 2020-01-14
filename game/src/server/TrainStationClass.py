@@ -15,7 +15,8 @@ class TrainStationLogic:
             'PAPER': 100,
             'STEEL': 100,
             'PATROLEUM': 100,
-            'WOOD': 100
+            'WOOD': 100,
+            'FOOD': 100
             }
     NEEDED_RESSOURCES = {
             'CORN': 0,
@@ -27,7 +28,8 @@ class TrainStationLogic:
             'PAPER': 0,
             'STEEL': 0,
             'PATROLEUM': 0,
-            'WOOD': 0        }
+            'WOOD': 0,
+            'FOOD': 0        }
 
     def __init__(self, pTile, pPlayer, pRange, pPrice,karte, tickspeed = 20):
         self. STORAGE = {
@@ -40,7 +42,8 @@ class TrainStationLogic:
             'PAPER': 0,
             'STEEL': 0,
             'PATROLEUM': 0,
-            'WOOD': 0 
+            'WOOD': 0,
+            'FOOD': 0 
         }         
 
         self.PRICES ={
@@ -53,7 +56,8 @@ class TrainStationLogic:
             'PAPER': 100,
             'STEEL': 100,
             'PATROLEUM': 100,
-            'WOOD': 100
+            'WOOD': 100,
+            'FOOD': 100
 
         }
         self.NUMBER_OF_PRODUCTION_BUILDINGS = {
@@ -66,7 +70,8 @@ class TrainStationLogic:
             'PAPER': 0,
             'STEEL': 0,
             'PATROLEUM': 0,
-            'WOOD': 0
+            'WOOD': 0,
+            'FOOD': 0
             
         }
         self.range = pRange
