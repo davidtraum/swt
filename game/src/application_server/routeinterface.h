@@ -16,10 +16,10 @@ class RouteInterface: public QDockWidget
 public:
     RouteInterface(GraphicsManager *);
     int wagonCount;
+    TrainRenderer * trainRenderer;
 
 
 private:
-    TrainRenderer * trainRenderer;
     QListWidget * trainstationList;
     GoodSelector * goodSelector;
     QPushButton * confirmBtn;
@@ -29,6 +29,7 @@ public slots:
     void trainStationSelected(int,int);
     void addWagon(QString *);
     void confirmRoute();
+    void removeWagon();
 signals:
     void sendConfirmRoute(QString);
 };

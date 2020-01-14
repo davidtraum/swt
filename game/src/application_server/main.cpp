@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
     RouteInterface * routeInterface = new RouteInterface(graphics);
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
     QWidget::connect(view, &View::onTrainStationClick, routeInterface, &RouteInterface::trainStationSelected);
+    QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
 
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(view);

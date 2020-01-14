@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
     ui->statusbar->hide();
     this->resize(1600, 900);
+    this->setStyleSheet("QMainWindow {background: rgb(150,150,255);}");
 }
 
 /**
