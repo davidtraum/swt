@@ -84,8 +84,10 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     renderTime = clock() - beforeTime;
 
     if(showExpertDetails){
-        painter.drawText(10,20,"Render Time: " + QString::number(renderTime/1000) + "ms");
-        painter.drawText(10, 35, "FPS: " + QString::number(fps));
+        painter.drawText(10,20, "Render Details (F3)");
+        painter.drawText(10,35,"Render Time: " + QString::number(renderTime/1000) + "ms");
+        painter.drawText(10, 50, "Constant FPS: " + QString::number(fps));
+        painter.drawText(10, 65, "Possible FPS: " + QString::number(1000000/renderTime));
     }
 
     frameCount++;
