@@ -12,6 +12,7 @@
 
 class MapRenderer: public QWidget
 {
+    Q_OBJECT
 public:
     MapRenderer(GraphicsManager *, DataModel *);
 
@@ -56,6 +57,7 @@ public slots:
 
 signals:
     void tileClick(int,int,int);
+    void leftclick();
 };
 
 #endif // MAPRENDERER_H

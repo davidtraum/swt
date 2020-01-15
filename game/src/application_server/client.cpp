@@ -20,8 +20,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     connect(this, &Client::tileChanged, mapRenderer, &MapRenderer::onTileChange);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
-    connect(pView, &View::onLeftclick, this, &Client::onLeftclick);
-    connect(pView, &View::onRightclick, this, &Client::onRightclick);
+    connect(mapRenderer, &MapRenderer::leftclick, this, &Client::onLeftclick);
     connect(this, &Client::onMapLoaded, dataModel, &DataModel::setMapLoaded);
     emit onMapLoaded(false);
     socket = new QTcpSocket(this);

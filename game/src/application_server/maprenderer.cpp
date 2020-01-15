@@ -129,6 +129,7 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
     if(event->x() - dragOrigin.getX() == 0 && event->y() - dragOrigin.getY() == 0){
         Point pos = mapPosition(event->x(), event->y());
         emit onTileChange(pos.getX(), pos.getY(), data[pos.getX()][pos.getY()].getType());
+        emit leftclick();
     }
 }
 

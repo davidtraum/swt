@@ -26,6 +26,7 @@ SOURCES += \
     graphicsmanager.cpp \
     highlighter.cpp \
     main.cpp \
+    mainmenu.cpp \
     mainwindow.cpp \
     maprenderer.cpp \
     maptile.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     graphicsmanager.h \
     highlighter.h \
     main.h \
+    mainmenu.h \
     mainwindow.h \
     maprenderer.h \
     maptile.h \
