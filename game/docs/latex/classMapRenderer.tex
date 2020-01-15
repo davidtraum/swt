@@ -35,6 +35,8 @@ void \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{enable
 void \mbox{\hyperlink{classMapRenderer_afa767e16b404b7b7d05992916888a40b}{tile\+Click}} (int, int, int)
 \item 
 void \mbox{\hyperlink{classMapRenderer_a40bfbbd290c2f2621eea53b24e9452d6}{leftclick}} ()
+\item 
+void \mbox{\hyperlink{classMapRenderer_a82d507632fc2b25ba43961e4d9cd3057}{position\+Change}} (int, int)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
@@ -72,7 +74,7 @@ void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animat
 \item 
 \mbox{\hyperlink{classMapTile}{Map\+Tile}} \mbox{\hyperlink{classMapRenderer_a29304b9531410a321359c1bdf0cbd881}{data}} \mbox{[}300\mbox{]}\mbox{[}300\mbox{]}
 \item 
-\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMapRenderer_a0216ff41225540372f57dd79d30f2443}{offset}} \{0,0\}
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMapRenderer_a0216ff41225540372f57dd79d30f2443}{offset}} \{145$\ast$64,145$\ast$64\}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
@@ -231,8 +233,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{leftclick}{leftclick}}
 {\footnotesize\ttfamily void Map\+Renderer\+::leftclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -279,7 +280,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -305,7 +307,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -338,11 +341,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a_icgraph}
+\includegraphics[width=339pt]{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMapRenderer_afda821c83a4e0b63eb8325597f4fc6ef}\label{classMapRenderer_afda821c83a4e0b63eb8325597f4fc6ef}} 
@@ -367,6 +371,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_afda821c83a4e0b63eb8325597f4fc6ef_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a82d507632fc2b25ba43961e4d9cd3057}\label{classMapRenderer_a82d507632fc2b25ba43961e4d9cd3057}} 
+\index{MapRenderer@{MapRenderer}!positionChange@{positionChange}}
+\index{positionChange@{positionChange}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
+{\footnotesize\ttfamily void Map\+Renderer\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
 \mbox{\Hypertarget{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}\label{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}} 
 \index{MapRenderer@{MapRenderer}!tick@{tick}}
 \index{tick@{tick}!MapRenderer@{MapRenderer}}
@@ -474,7 +484,7 @@ if(event-\/$>$delta()$>$0)\{ scale-\/=0.\+1; \}else\{ scale+=0.\+1; \}
 \index{MapRenderer@{MapRenderer}!offset@{offset}}
 \index{offset@{offset}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{offset}{offset}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Map\+Renderer\+::offset \{0,0\}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Map\+Renderer\+::offset \{145$\ast$64,145$\ast$64\}}
 
 \mbox{\Hypertarget{classMapRenderer_ab55117260cb4997a87b8c109e27fc684}\label{classMapRenderer_ab55117260cb4997a87b8c109e27fc684}} 
 \index{MapRenderer@{MapRenderer}!rendering@{rendering}}

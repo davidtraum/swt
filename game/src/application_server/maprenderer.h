@@ -36,7 +36,7 @@ public:
     void animateMovement(QImage, QString, double);
 
     MapTile data[300][300];
-    Point offset{0,0};
+    Point offset{145*64,145*64};
 
 
 private:
@@ -58,6 +58,7 @@ public slots:
 signals:
     void tileClick(int,int,int);
     void leftclick();
+    void positionChange(int,int);
 };
 
 #endif // MAPRENDERER_H

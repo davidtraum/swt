@@ -20,23 +20,6 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
         }
     }
 
-
-
-
-    for(int y = 2; y<6; y++){
-        data[10][y].setType(MapTile::RAIL_V);
-        data[14][y].setType(MapTile::RAIL_V);
-    }
-    for(int x = 11; x<14; x++){
-        data[x][1].setType(MapTile::RAIL_H);
-        data[x][6].setType(MapTile::RAIL_H);
-    }
-
-    data[10][1].setType(MapTile::RAIL_RB);
-    data[14][1].setType(MapTile::RAIL_LB);
-    data[10][6].setType(MapTile::RAIL_RT);
-    data[14][6].setType(MapTile::RAIL_LT);
-
     QWidget::setMouseTracking(true);
 
     showHighlight = true;
@@ -103,7 +86,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
  * @return Der Punkt.
  */
 Point MapRenderer::mapPosition(int px, int py){
-    return Point(((offset.getX() + px) / 64) - 1, ((offset.getY() + py) / 64) - 1);
+    return Point(((offset.getX() + px) / 64), ((offset.getY() + py) / 64));
 }
 
 /**
@@ -112,7 +95,7 @@ Point MapRenderer::mapPosition(int px, int py){
  */
 Point MapRenderer::toScreenPosition(int px, int py)
 {
-    return Point((px*64 - offset.getX()) + 64, (py*64 - offset.getY()) + 64);
+    return Point((px*64 - offset.getX()), (py*64 - offset.getY()));
 }
 
 
@@ -127,8 +110,8 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
 {
     mouseDown = false;
     if(event->x() - dragOrigin.getX() == 0 && event->y() - dragOrigin.getY() == 0){
+        qDebug() << "lc";
         Point pos = mapPosition(event->x(), event->y());
-        emit onTileChange(pos.getX(), pos.getY(), data[pos.getX()][pos.getY()].getType());
         emit leftclick();
     }
 }
@@ -140,6 +123,7 @@ void MapRenderer::mouseMoveEvent(QMouseEvent *event)
         dragPosition.set(event->x(), event->y());
     }else{
         activeTile = mapPosition(event->x(), event->y());
+        dataModel->updateCoordinates(activeTile.getX(), activeTile.getY());
     }
 }
 

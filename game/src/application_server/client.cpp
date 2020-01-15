@@ -136,7 +136,7 @@ void Client::onPositionChange(int pX, int pY){
  * @brief Client::onLeftclick Führt einen Linksclick durch.
  */
 void Client::onLeftclick(){
-    qDebug() << "<olc";
+    qDebug() << "<olc" << " " << dataModel->getMode();
     switch(dataModel->getMode()){
         case DataModel::TRAIN_STATION:
             socket->write(QString::fromStdString("BUILD STATION " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + " STATION~").toLocal8Bit());
