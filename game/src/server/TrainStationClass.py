@@ -7,31 +7,72 @@ class TrainStationLogic:
     
     PRODUCING = {
             'CORN': 100,
-            'COLE': 100,
-            'CITY': 50
+            'COAL': 100,
+            'PASSENGERS': 25,
+            'MAIL' : 25,
+            'LIVESTOCK': 100,
+            'GOODS': 100,
+            'PAPER': 100,
+            'STEEL': 100,
+            'PATROLEUM': 100,
+            'WOOD': 100,
+            'FOOD': 100
             }
     NEEDED_RESSOURCES = {
             'CORN': 0,
-            'COLE': 0,
-            'CITY': 50
-        }
+            'COAL': 0,
+            'PASSENGERS': 0,
+            'MAIL' : 0,
+            'LIVESTOCK': 0,
+            'GOODS': 0,
+            'PAPER': 0,
+            'STEEL': 0,
+            'PATROLEUM': 0,
+            'WOOD': 0,
+            'FOOD': 0        }
 
     def __init__(self, pTile, pPlayer, pRange, pPrice,karte, tickspeed = 20):
         self. STORAGE = {
             'CORN': 0,
-            'COLE': 0,
-            'CITY': 0
+            'COAL': 0,
+            'PASSENGERS': 0,
+            'MAIL': 0,
+            'LIVESTOCK': 0,
+            'GOODS': 0,
+            'PAPER': 0,
+            'STEEL': 0,
+            'PATROLEUM': 0,
+            'WOOD': 0,
+            'FOOD': 0 
         }         
 
         self.PRICES ={
             'CORN': 100,
-            'COLE': 100,
-            'CITY': 100
+            'COAL': 100,
+            'PASSENGERS': 100,
+            'MAIL': 100,
+            'LIVESTOCK': 100,
+            'GOODS': 100,
+            'PAPER': 100,
+            'STEEL': 100,
+            'PATROLEUM': 100,
+            'WOOD': 100,
+            'FOOD': 100
+
         }
         self.NUMBER_OF_PRODUCTION_BUILDINGS = {
             'CORN': 0,
-            'COLE': 0,
-            'CITY': 0
+            'COAL': 0,
+            'PASSENGERS': 0,
+            'MAIL': 0,
+            'LIVESTOCK': 0,
+            'GOODS': 0,
+            'PAPER': 0,
+            'STEEL': 0,
+            'PATROLEUM': 0,
+            'WOOD': 0,
+            'FOOD': 0
+            
         }
         self.range = pRange
         self.price = pPrice
@@ -80,8 +121,13 @@ class TrainStationLogic:
         for i in range((-1*self.range), self.range+1):
             for j in range((-1*self.range), self.range+1):                
                 if(self.x_Pos +i  >=0 and self.x_Pos + i <= 299 and self.y_Pos + j  >=0 and self.y_Pos +j <= 299):
-                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):                    
-                        self.NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getStringType()] += 1
+                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):
+                        print(karte[self.x_Pos+i][self.y_Pos+j].getType())
+                        if(karte[self.x_Pos+i][self.y_Pos+j].getType() == 2):
+                            self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS'] += 1
+                            self.NUMBER_OF_PRODUCTION_BUILDINGS['MAIL'] += 1                        
+                        else:
+                            self.NUMBER_OF_PRODUCTION_BUILDINGS[karte[self.x_Pos+i][self.y_Pos+j].getStringType()] += 1
         
 
     def updatePrices(self):

@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QGroupBox>
+#include <QString>
 
 
 /**
@@ -38,6 +39,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     QPushButton * confirmBtn = new QPushButton("Bestätigen");
     confirmBtn->setCursor(QCursor(Qt::PointingHandCursor));
     confirmBtn->setIcon(QIcon(":/icons/checkmark.svg"));
+    connect(confirmBtn, &QPushButton::clicked, this, &RouteInterface::confirmRoute); //Bestätige Route
     buttons->addWidget(confirmBtn);
 
 
@@ -53,6 +55,10 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     mainWidget->setLayout(layout);
 
     QDockWidget::setWidget(mainWidget);
+    mainWidget->setStyleSheet("background-color:rgb(150,150,255)");
+
+    wagonCount = 0;
+    tsCount = 0;
 }
 
 /**
@@ -61,10 +67,13 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
 void RouteInterface::toggle() {
     if (this->isVisible()) {
         //Entferne Waggons, wenn Interface geschlossen wird
+        trainstationList->clear();
         trainRenderer->deleteAllWagons();
     }
     QDockWidget::setVisible(!QDockWidget::isVisible());
     qDebug() << this->isVisible();
+    wagonCount = 0;
+    tsCount = 0;
 }
 
 /**
@@ -74,6 +83,8 @@ void RouteInterface::trainStationSelected(int px, int py)
 {
     if(QWidget::isVisible()){
         qDebug() << "Selected " << px << " " << py;
+        tsCoords[tsCount] = QPoint(px,py);  //Koordinaten jeder Trainstation werden gespeichert
+        tsCount++;  //Anzahl Trainstations erhöht
         QListWidgetItem *newItem = new QListWidgetItem(QIcon(":/images/depot.png"), "Bahnhof " + QString::number(px) + "/" + QString::number(py));
         this->trainstationList->addItem(newItem);
     }
@@ -85,7 +96,35 @@ void RouteInterface::trainStationSelected(int px, int py)
  */
 void RouteInterface::addWagon(QString * name)
 {
-    trainRenderer->addWagon(name->toStdString());
+    if (wagonCount < 10) {
+            trainRenderer->addWagon(name->toStdString());
+            wagonCount++;
+        }
+        else {
+            qDebug() << "Zu viele Waggons! " << wagonCount;
+        }
 }
 
+void RouteInterface::confirmRoute()
+{
+    QString handOver = "ROUTE";
 
+    for (int i=0; i < tsCount; i++) {
+        handOver += " TS " + QString::number(tsCoords[i].x()) + " " + QString::number(tsCoords[i].y());  //TS ist das Stichwort für den Server um Trainstation Koordinaten zu empfangen
+    }
+
+    handOver += " WAGONS";  //WAGONS ist das Stichwort für den Server um die Waggons zu empfangen
+
+    for (std::pair<std::string, int> wagon : trainRenderer->wagons){
+        for(int i = 0; i<wagon.second; i++){
+            handOver += " " + QString::fromStdString(wagon.first);
+        }
+    }
+    handOver += "~";
+    emit sendConfirmRoute(handOver);
+}
+
+void RouteInterface::removeWagon() {
+    wagonCount--;
+    qDebug() << "Waggon gelöscht - Anzahl: " << wagonCount;
+}
