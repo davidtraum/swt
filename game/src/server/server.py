@@ -399,24 +399,55 @@ class ClientThread(Thread):
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
                     world.tileRightclick(posX, posY)
-            if(args[0] == 'WAY'):
+            elif(args[0] == 'WAY'):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getProtocolString())
-            if(args[0] == 'TRAINSTATION'):
+            elif(args[0] == 'TRAINSTATION'):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getTrainstationProtocolString(int(args[2]),int(args[3]),world.data))
 
-            if(args[0] == 'REMOVE'):
+            elif(args[0] == 'REMOVE'):
                 posX = int(args[1])
                 posY = int(args[2])
-                world.tileRemove(posX, posY)                
+                world.tileRemove(posX, posY)
+
+            elif(args[0] == 'ROUTE'):
+                tsStops = [[]]     #speichert Koordinaten der Haltestellen auf der Route
+                wagonTypes = []
+                i=0    #Damit Array in Schleife bei 0 beginnt
+                if(args[1] == "TS"):
+                    k = 0   #Start des tsStops-Arrays
+                    i = i-2
+                    while True:
+                        i = i+3     #Setzt Referenzpunkt wo gelesen werden soll
+                        if(args[i] == "TS"):
+                            tsStops.append([args[i+1],args[i+2]])      #Speichert Koordinaten in tsStops
+                            k = k+1
+                            print("Bin in TS Schleife")
+                        elif(args[i]== "WAGONS"):
+                            j = i+1   #Merke Start des "WAGONS"-Befehl, also erster Wagontyp (zb. coal)
+                            for j in range(len(args)):
+                                i = i+1
+                                wagonTypes.append(args[i-1])
+                                print("Bin in Wagons Schleife")
+                            break
+                else:
+                    print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
+                    
+                print("Routen-Befehl gespeichert: ")
+                print("TS Coords: ")
+                print(*tsStops, sep='_', end='\n')
+                print("Wagon Types: ")
+                print(*wagonTypes, sep='_', end='\n')
 
             elif(args[0] == 'POS'):
                 print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
                 broadcast("POS+" + str(posX) + "+" + str(posY), exclude=self)
+                
             else:
+                print("Befehl nicht verstanden: ")
                 print(command)
 
     def run(self):
