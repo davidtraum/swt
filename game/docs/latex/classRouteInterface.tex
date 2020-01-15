@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Route\+Interface\+:\nopagebreak
+Klassendiagramm für Route\+Interface\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,20 +32,40 @@ void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{tog
 void \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{train\+Station\+Selected}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{Route\+Interface\+::train\+Station\+Selected}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{add\+Wagon}} (Q\+String $\ast$)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{Route\+Interface\+::add\+Wagon}} Slot zum hinzufügen eines Wagons zum aktuellen Renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{Route\+Interface\+::add\+Wagon}} Slot zum hinzufügen eines Wagons zum aktuellen Renderer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRouteInterface_a8ed62f131137618a65696d43fbfec345}{confirm\+Route}} ()
+\item 
+void \mbox{\hyperlink{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1}{remove\+Wagon}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRouteInterface_a2fb14bfeac68528cfe67b5b2cc29987e}{send\+Confirm\+Route}} (Q\+String)
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classRouteInterface_aa0299805373c0a5b6de4c6a855a3116e}{Route\+Interface}} (\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_aa0299805373c0a5b6de4c6a855a3116e}{Route\+Interface\+::\+Route\+Interface}} Erzeugt das Routeninterface. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attribute}
+\doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{classRouteInterface_a1d26c8ff673e668c0934b5f3c424928d}{wagon\+Count}}
+\item 
 \mbox{\hyperlink{classTrainRenderer}{Train\+Renderer}} $\ast$ \mbox{\hyperlink{classRouteInterface_a95ee8f33e7eeff0bcc297dda140eaf85}{train\+Renderer}}
+\item 
+Q\+Point \mbox{\hyperlink{classRouteInterface_a281911c14f31e64f7c0af63080e1297b}{ts\+Coords}} \mbox{[}9\mbox{]}
+\item 
+int \mbox{\hyperlink{classRouteInterface_afdbd966d1c2fa00428303a202aeba3c0}{ts\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
 \item 
 Q\+List\+Widget $\ast$ \mbox{\hyperlink{classRouteInterface_a10e1971bfee8d18e137d29413954986c}{trainstation\+List}}
 \item 
 \mbox{\hyperlink{classGoodSelector}{Good\+Selector}} $\ast$ \mbox{\hyperlink{classRouteInterface_a1e4e6a656141f8203506006aa2350947}{good\+Selector}}
+\item 
+Q\+Push\+Button $\ast$ \mbox{\hyperlink{classRouteInterface_a0dd6fdda2184c0c6689cf7a0668aa964}{confirm\+Btn}}
 \end{DoxyCompactItemize}
 
 
@@ -99,6 +120,48 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classRouteInterface_a2ec102604fc234131a689879bcf025de_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classRouteInterface_a8ed62f131137618a65696d43fbfec345}\label{classRouteInterface_a8ed62f131137618a65696d43fbfec345}} 
+\index{RouteInterface@{RouteInterface}!confirmRoute@{confirmRoute}}
+\index{confirmRoute@{confirmRoute}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{confirmRoute}{confirmRoute}}
+{\footnotesize\ttfamily void Route\+Interface\+::confirm\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteInterface_a8ed62f131137618a65696d43fbfec345_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1}\label{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1}} 
+\index{RouteInterface@{RouteInterface}!removeWagon@{removeWagon}}
+\index{removeWagon@{removeWagon}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{removeWagon}{removeWagon}}
+{\footnotesize\ttfamily void Route\+Interface\+::remove\+Wagon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRouteInterface_a2fb14bfeac68528cfe67b5b2cc29987e}\label{classRouteInterface_a2fb14bfeac68528cfe67b5b2cc29987e}} 
+\index{RouteInterface@{RouteInterface}!sendConfirmRoute@{sendConfirmRoute}}
+\index{sendConfirmRoute@{sendConfirmRoute}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{sendConfirmRoute}{sendConfirmRoute}}
+{\footnotesize\ttfamily void Route\+Interface\+::send\+Confirm\+Route (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteInterface_a2fb14bfeac68528cfe67b5b2cc29987e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classRouteInterface_a63e72ec945a33c516b82634874125337}\label{classRouteInterface_a63e72ec945a33c516b82634874125337}} 
 \index{RouteInterface@{RouteInterface}!toggle@{toggle}}
 \index{toggle@{toggle}!RouteInterface@{RouteInterface}}
@@ -109,16 +172,14 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{Route\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classRouteInterface_a63e72ec945a33c516b82634874125337_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -145,6 +206,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classRouteInterface_a0dd6fdda2184c0c6689cf7a0668aa964}\label{classRouteInterface_a0dd6fdda2184c0c6689cf7a0668aa964}} 
+\index{RouteInterface@{RouteInterface}!confirmBtn@{confirmBtn}}
+\index{confirmBtn@{confirmBtn}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{confirmBtn}{confirmBtn}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ Route\+Interface\+::confirm\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classRouteInterface_a1e4e6a656141f8203506006aa2350947}\label{classRouteInterface_a1e4e6a656141f8203506006aa2350947}} 
 \index{RouteInterface@{RouteInterface}!goodSelector@{goodSelector}}
 \index{goodSelector@{goodSelector}!RouteInterface@{RouteInterface}}
@@ -155,13 +222,31 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{RouteInterface@{RouteInterface}!trainRenderer@{trainRenderer}}
 \index{trainRenderer@{trainRenderer}!RouteInterface@{RouteInterface}}
 \doxysubsubsection{\texorpdfstring{trainRenderer}{trainRenderer}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTrainRenderer}{Train\+Renderer}}$\ast$ Route\+Interface\+::train\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTrainRenderer}{Train\+Renderer}}$\ast$ Route\+Interface\+::train\+Renderer}
 
 \mbox{\Hypertarget{classRouteInterface_a10e1971bfee8d18e137d29413954986c}\label{classRouteInterface_a10e1971bfee8d18e137d29413954986c}} 
 \index{RouteInterface@{RouteInterface}!trainstationList@{trainstationList}}
 \index{trainstationList@{trainstationList}!RouteInterface@{RouteInterface}}
 \doxysubsubsection{\texorpdfstring{trainstationList}{trainstationList}}
 {\footnotesize\ttfamily Q\+List\+Widget$\ast$ Route\+Interface\+::trainstation\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRouteInterface_a281911c14f31e64f7c0af63080e1297b}\label{classRouteInterface_a281911c14f31e64f7c0af63080e1297b}} 
+\index{RouteInterface@{RouteInterface}!tsCoords@{tsCoords}}
+\index{tsCoords@{tsCoords}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{tsCoords}{tsCoords}}
+{\footnotesize\ttfamily Q\+Point Route\+Interface\+::ts\+Coords\mbox{[}9\mbox{]}}
+
+\mbox{\Hypertarget{classRouteInterface_afdbd966d1c2fa00428303a202aeba3c0}\label{classRouteInterface_afdbd966d1c2fa00428303a202aeba3c0}} 
+\index{RouteInterface@{RouteInterface}!tsCount@{tsCount}}
+\index{tsCount@{tsCount}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{tsCount}{tsCount}}
+{\footnotesize\ttfamily int Route\+Interface\+::ts\+Count}
+
+\mbox{\Hypertarget{classRouteInterface_a1d26c8ff673e668c0934b5f3c424928d}\label{classRouteInterface_a1d26c8ff673e668c0934b5f3c424928d}} 
+\index{RouteInterface@{RouteInterface}!wagonCount@{wagonCount}}
+\index{wagonCount@{wagonCount}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{wagonCount}{wagonCount}}
+{\footnotesize\ttfamily int Route\+Interface\+::wagon\+Count}
 
 
 

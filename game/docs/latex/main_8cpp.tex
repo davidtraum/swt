@@ -22,8 +22,8 @@
 {\ttfamily \#include \char`\"{}sidepanel.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}tooltipmenu.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}gameloop.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}animationmanager.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}routeinterface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}maprenderer.\+h\char`\"{}}\newline
 Include-\/\+Abhängigkeitsdiagramm für main.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -57,6 +57,8 @@ bool \mbox{\hyperlink{main_8cpp_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running
 \mbox{\hyperlink{classSidePanel}{Side\+Panel}} $\ast$ \mbox{\hyperlink{main_8cpp_af6557e0f5cda6d5bf4852ccb1fe3733d}{side\+Panel}}
 \item 
 \mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{main_8cpp_a0388c33353644129ea9403f0a5a8ed24}{client}}
+\item 
+\mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$ \mbox{\hyperlink{main_8cpp_a877249217ae7e02d950a53752a4eacb2}{map\+Renderer}}
 \end{DoxyCompactItemize}
 
 
@@ -81,7 +83,8 @@ main Startmethode.
 \begin{DoxyReturn}{Rückgabe}
 Exit-\/\+Code (0=Alles gut) 
 \end{DoxyReturn}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -140,6 +143,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{mainWindow@{mainWindow}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMainWindow}{Main\+Window}}$\ast$ main\+Window}
+
+\mbox{\Hypertarget{main_8cpp_a877249217ae7e02d950a53752a4eacb2}\label{main_8cpp_a877249217ae7e02d950a53752a4eacb2}} 
+\index{main.cpp@{main.cpp}!mapRenderer@{mapRenderer}}
+\index{mapRenderer@{mapRenderer}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mapRenderer}{mapRenderer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}}$\ast$ map\+Renderer}
 
 \mbox{\Hypertarget{main_8cpp_a6de66f9ad116ce1d596c7f4edc40c521}\label{main_8cpp_a6de66f9ad116ce1d596c7f4edc40c521}} 
 \index{main.cpp@{main.cpp}!scene@{scene}}

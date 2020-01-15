@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,33 +17,52 @@ Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement}} (Q\+Graphics\+Pixmap\+Item $\ast$)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnimationMovement_a7a2c35f550e4c4e3ff2c5bc568064cfa}{Animation\+Movement}} (\mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$, Q\+String)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a7a2c35f550e4c4e3ff2c5bc568064cfa}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{parse\+Path}} (Q\+String \mbox{\hyperlink{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}{path}})
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{Animation\+Movement\+::parse\+Path}} Liest einen Animationspfad aus einem String ein. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ \mbox{\hyperlink{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}{get\+Entity}} ()
+\item 
 bool \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{move}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{set\+Speed}} (double)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}{calculate\+Vector}} (\mbox{\hyperlink{classPoint}{Point}} origin, \mbox{\hyperlink{classPoint}{Point}} target)
+\item 
+void \mbox{\hyperlink{classAnimationMovement_a98614fc05b08f2cadc06b1bff199d6aa}{calculate\+Vector}} (int origin, int target)
+\item 
+double \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}{target\+Distance}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
-Q\+Graphics\+Pixmap\+Item $\ast$ \mbox{\hyperlink{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}{item}}
+double \mbox{\hyperlink{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}{speed}} \{1\}
+\item 
+\mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ \mbox{\hyperlink{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}{item}}
 \item 
 Q\+List$<$ \mbox{\hyperlink{classPoint}{Point}} $\ast$ $>$ \mbox{\hyperlink{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}{path}}
 \item 
-int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{point\+Index}} \{0\}
+double \mbox{\hyperlink{classAnimationMovement_ace3fa535c0c767a40469f6f58c684886}{vx}} \{0\}
+\item 
+double \mbox{\hyperlink{classAnimationMovement_a0b2ec7ec046c0947f8012ce5fcceef24}{vy}} \{0\}
+\item 
+int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{point\+Index}} \{-\/1\}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}\label{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}} 
+\mbox{\Hypertarget{classAnimationMovement_a7a2c35f550e4c4e3ff2c5bc568064cfa}\label{classAnimationMovement_a7a2c35f550e4c4e3ff2c5bc568064cfa}} 
 \index{AnimationMovement@{AnimationMovement}!AnimationMovement@{AnimationMovement}}
 \index{AnimationMovement@{AnimationMovement}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{AnimationMovement()}{AnimationMovement()}}
-{\footnotesize\ttfamily Animation\+Movement\+::\+Animation\+Movement (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Pixmap\+Item $\ast$}]{p\+Item }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Animation\+Movement\+::\+Animation\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$}]{p\+Item,  }\item[{Q\+String}]{p\+Path }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classAnimationMovement_a8857d642fbe3e6d9ac1cf8396cc614c1}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. 
+\mbox{\hyperlink{classAnimationMovement_a7a2c35f550e4c4e3ff2c5bc568064cfa}{Animation\+Movement\+::\+Animation\+Movement}} Erzeugt eine neue Bewegungsanimation. 
 
 
 \begin{DoxyParams}{Parameter}
@@ -52,6 +72,48 @@ int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{p
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classAnimationMovement_a98614fc05b08f2cadc06b1bff199d6aa}\label{classAnimationMovement_a98614fc05b08f2cadc06b1bff199d6aa}} 
+\index{AnimationMovement@{AnimationMovement}!calculateVector@{calculateVector}}
+\index{calculateVector@{calculateVector}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{calculateVector()}{calculateVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+Movement\+::calculate\+Vector (\begin{DoxyParamCaption}\item[{int}]{origin,  }\item[{int}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a98614fc05b08f2cadc06b1bff199d6aa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}\label{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}} 
+\index{AnimationMovement@{AnimationMovement}!calculateVector@{calculateVector}}
+\index{calculateVector@{calculateVector}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{calculateVector()}{calculateVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+Movement\+::calculate\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{origin,  }\item[{\mbox{\hyperlink{classPoint}{Point}}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}\label{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}} 
+\index{AnimationMovement@{AnimationMovement}!getEntity@{getEntity}}
+\index{getEntity@{getEntity}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ Animation\+Movement\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}\label{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}} 
 \index{AnimationMovement@{AnimationMovement}!move@{move}}
 \index{move@{move}!AnimationMovement@{AnimationMovement}}
@@ -62,6 +124,14 @@ int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{p
 
 \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. 
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}\label{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}} 
 \index{AnimationMovement@{AnimationMovement}!parsePath@{parsePath}}
 \index{parsePath@{parsePath}!AnimationMovement@{AnimationMovement}}
@@ -77,21 +147,59 @@ int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{p
 {\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\mbox{\Hypertarget{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}\label{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}} 
+\index{AnimationMovement@{AnimationMovement}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::set\+Speed (\begin{DoxyParamCaption}\item[{double}]{p\+Speed }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Speed} & Die Geschwindigkeit (1=normal, 2=doppelt...) \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc_icgraph}
+\includegraphics[width=350pt]{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}\label{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}} 
+\index{AnimationMovement@{AnimationMovement}!targetDistance@{targetDistance}}
+\index{targetDistance@{targetDistance}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{targetDistance()}{targetDistance()}}
+{\footnotesize\ttfamily double Animation\+Movement\+::target\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classAnimationMovement_a44ca067fe462153208cd2a23fa455313_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a44ca067fe462153208cd2a23fa455313_icgraph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
-\mbox{\Hypertarget{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}\label{classAnimationMovement_aeb2e90c974368ac1e508cbec1efd4a09}} 
+\mbox{\Hypertarget{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}\label{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}} 
 \index{AnimationMovement@{AnimationMovement}!item@{item}}
 \index{item@{item}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{item}{item}}
-{\footnotesize\ttfamily Q\+Graphics\+Pixmap\+Item$\ast$ Animation\+Movement\+::item\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}}$\ast$ Animation\+Movement\+::item\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}\label{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}} 
 \index{AnimationMovement@{AnimationMovement}!path@{path}}
@@ -103,7 +211,25 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{AnimationMovement@{AnimationMovement}!pointIndex@{pointIndex}}
 \index{pointIndex@{pointIndex}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{pointIndex}{pointIndex}}
-{\footnotesize\ttfamily int Animation\+Movement\+::point\+Index \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Animation\+Movement\+::point\+Index \{-\/1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}\label{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}} 
+\index{AnimationMovement@{AnimationMovement}!speed@{speed}}
+\index{speed@{speed}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily double Animation\+Movement\+::speed \{1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_ace3fa535c0c767a40469f6f58c684886}\label{classAnimationMovement_ace3fa535c0c767a40469f6f58c684886}} 
+\index{AnimationMovement@{AnimationMovement}!vx@{vx}}
+\index{vx@{vx}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{vx}{vx}}
+{\footnotesize\ttfamily double Animation\+Movement\+::vx \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_a0b2ec7ec046c0947f8012ce5fcceef24}\label{classAnimationMovement_a0b2ec7ec046c0947f8012ce5fcceef24}} 
+\index{AnimationMovement@{AnimationMovement}!vy@{vy}}
+\index{vy@{vy}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{vy}{vy}}
+{\footnotesize\ttfamily double Animation\+Movement\+::vy \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

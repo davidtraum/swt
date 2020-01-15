@@ -24,6 +24,11 @@ Zusammengehörigkeiten von Train\+Renderer\+:
 \includegraphics[width=277pt]{classTrainRenderer__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTrainRenderer_a9780f6db4ccccf0c5ee2155bcc373317}{trigger\+Remove\+Wagon}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +39,11 @@ void \mbox{\hyperlink{classTrainRenderer_aefe51f58ca5a6b5095bd77d693db2642}{pain
 void \mbox{\hyperlink{classTrainRenderer_abee5cf6d7e18138fba2a80999d623618}{add\+Wagon}} (std\+::string name)
 \item 
 void \mbox{\hyperlink{classTrainRenderer_ad06bf7433f9c79eedc698d088599db83}{delete\+All\+Wagons}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Öffentliche Attribute}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classTrainRenderer_af041c64a1bace1c2e59466e1ced0f09f}{wagons}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Slots}
 \begin{DoxyCompactItemize}
@@ -52,8 +62,6 @@ Q\+Image \mbox{\hyperlink{classTrainRenderer_ac98142740fbe6bbe4e5827a490d1f72f}{
 Q\+Image \mbox{\hyperlink{classTrainRenderer_ae6d6c74f90e6a293d945d54d8e9de007}{wagon}}
 \item 
 \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{classTrainRenderer_a2a89cee606980112abd485f417b4ae83}{graphics\+Manager}}
-\item 
-std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classTrainRenderer_af041c64a1bace1c2e59466e1ced0f09f}{wagons}}
 \end{DoxyCompactItemize}
 
 
@@ -86,8 +94,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{deleteAllWagons()}{deleteAllWagons()}}
 {\footnotesize\ttfamily void Train\+Renderer\+::delete\+All\+Wagons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,6 +113,20 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
 {\footnotesize\ttfamily void Train\+Renderer\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
+\mbox{\Hypertarget{classTrainRenderer_a9780f6db4ccccf0c5ee2155bcc373317}\label{classTrainRenderer_a9780f6db4ccccf0c5ee2155bcc373317}} 
+\index{TrainRenderer@{TrainRenderer}!triggerRemoveWagon@{triggerRemoveWagon}}
+\index{triggerRemoveWagon@{triggerRemoveWagon}!TrainRenderer@{TrainRenderer}}
+\doxysubsubsection{\texorpdfstring{triggerRemoveWagon}{triggerRemoveWagon}}
+{\footnotesize\ttfamily void Train\+Renderer\+::trigger\+Remove\+Wagon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrainRenderer_a9780f6db4ccccf0c5ee2155bcc373317_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
@@ -143,7 +164,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \index{TrainRenderer@{TrainRenderer}!wagons@{wagons}}
 \index{wagons@{wagons}!TrainRenderer@{TrainRenderer}}
 \doxysubsubsection{\texorpdfstring{wagons}{wagons}}
-{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Train\+Renderer\+::wagons\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Train\+Renderer\+::wagons}
 
 
 

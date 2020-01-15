@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wagon_549',['wagon',['../classTrainRenderer.html#ae6d6c74f90e6a293d945d54d8e9de007',1,'TrainRenderer']]],
-  ['wagons_550',['wagons',['../classTrainRenderer.html#af041c64a1bace1c2e59466e1ced0f09f',1,'TrainRenderer']]],
-  ['width_551',['width',['../classMinimap.html#a1eeb6510b1f684f600d7436e4de00d31',1,'Minimap']]]
+  ['view_634',['view',['../classGameLoop.html#a8258d60e90527b018d362e1f709f79eb',1,'GameLoop::view()'],['../classMenuBar.html#a67ca55410230ed1b470a235304279aff',1,'MenuBar::view()'],['../classMinimap.html#a99ccf3e801f9d23ad3bef7ca32b14437',1,'Minimap::view()'],['../main_8cpp.html#af2dd70d8b95c32fb670ac6f9cc8df201',1,'view():&#160;main.cpp']]],
+  ['vx_635',['vx',['../classAnimationMovement.html#ace3fa535c0c767a40469f6f58c684886',1,'AnimationMovement']]],
+  ['vy_636',['vy',['../classAnimationMovement.html#a0b2ec7ec046c0947f8012ce5fcceef24',1,'AnimationMovement']]]
 ];

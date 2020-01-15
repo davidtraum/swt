@@ -77,7 +77,8 @@ $(function() {
 <div class="dynheader">
 Zusammengehörigkeiten von Point:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint__coll__graph.svg" width="83" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint__coll__graph.svg" width="88" height="191"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -91,6 +92,18 @@ Zusammengehörigkeiten von Point:</div>
 <tr class="memitem:a3770f321c49dfe7ca463900fddc2e2bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a3770f321c49dfe7ca463900fddc2e2bc">getY</a> ()</td></tr>
 <tr class="memdesc:a3770f321c49dfe7ca463900fddc2e2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPoint.html#a0b82a4aa9614c11854abc507d89a70a9" title="Point::getX Gibt die X-Koordinate des Punktes.">Point::getX</a> Gibt die Y-Koordinate des Punktes.  <a href="classPoint.html#a3770f321c49dfe7ca463900fddc2e2bc">Mehr ...</a><br /></td></tr>
 <tr class="separator:a3770f321c49dfe7ca463900fddc2e2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d0e21cd7712e57da1dd28f24bc922a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a61d0e21cd7712e57da1dd28f24bc922a">add</a> (int, int)</td></tr>
+<tr class="memdesc:a61d0e21cd7712e57da1dd28f24bc922a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPoint.html#a61d0e21cd7712e57da1dd28f24bc922a" title="Point::add Addiert Werte auf den Punkt.">Point::add</a> Addiert Werte auf den Punkt.  <a href="classPoint.html#a61d0e21cd7712e57da1dd28f24bc922a">Mehr ...</a><br /></td></tr>
+<tr class="separator:a61d0e21cd7712e57da1dd28f24bc922a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773af172e76895550d05b081b15493fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a773af172e76895550d05b081b15493fb">set</a> (int, int)</td></tr>
+<tr class="memdesc:a773af172e76895550d05b081b15493fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPoint.html#a773af172e76895550d05b081b15493fb" title="Point::set Ändert die Koordinaten.">Point::set</a> Ändert die Koordinaten.  <a href="classPoint.html#a773af172e76895550d05b081b15493fb">Mehr ...</a><br /></td></tr>
+<tr class="separator:a773af172e76895550d05b081b15493fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe68f58cafb4cbc29f09de0978344fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a5fe68f58cafb4cbc29f09de0978344fd">move</a> (int, int)</td></tr>
+<tr class="memdesc:a5fe68f58cafb4cbc29f09de0978344fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPoint.html#a5fe68f58cafb4cbc29f09de0978344fd" title="Point::move Verschiebt den Punkt.">Point::move</a> Verschiebt den Punkt.  <a href="classPoint.html#a5fe68f58cafb4cbc29f09de0978344fd">Mehr ...</a><br /></td></tr>
+<tr class="separator:a5fe68f58cafb4cbc29f09de0978344fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ac49f599b4de5661b87af87dd6779f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a17ac49f599b4de5661b87af87dd6779f">toTile</a> ()</td></tr>
+<tr class="memdesc:a17ac49f599b4de5661b87af87dd6779f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPoint.html#a17ac49f599b4de5661b87af87dd6779f" title="Point::toTile Gibt den Punkt als Tile-Index zurück.">Point::toTile</a> Gibt den Punkt als Tile-Index zurück.  <a href="classPoint.html#a17ac49f599b4de5661b87af87dd6779f">Mehr ...</a><br /></td></tr>
+<tr class="separator:a17ac49f599b4de5661b87af87dd6779f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -134,10 +147,59 @@ Private Attribute</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classPoint_a7e2f39fba71990705aac9ffee1b389b4_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a61d0e21cd7712e57da1dd28f24bc922a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d0e21cd7712e57da1dd28f24bc922a">&#9670;&nbsp;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a> Point::add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPoint.html#a61d0e21cd7712e57da1dd28f24bc922a" title="Point::add Addiert Werte auf den Punkt.">Point::add</a> Addiert Werte auf den Punkt. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Ein neuer Punkt. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a61d0e21cd7712e57da1dd28f24bc922a_cgraph.svg" width="234" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a61d0e21cd7712e57da1dd28f24bc922a_icgraph.svg" width="546" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a0b82a4aa9614c11854abc507d89a70a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b82a4aa9614c11854abc507d89a70a9">&#9670;&nbsp;</a></span>getX()</h2>
 
@@ -155,6 +217,12 @@ Private Attribute</h2></td></tr>
 
 <p><a class="el" href="classPoint.html#a0b82a4aa9614c11854abc507d89a70a9" title="Point::getX Gibt die X-Koordinate des Punktes.">Point::getX</a> Gibt die X-Koordinate des Punktes. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Die X-Koordinate. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a0b82a4aa9614c11854abc507d89a70a9_icgraph.svg" width="630" height="372"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -175,6 +243,116 @@ Private Attribute</h2></td></tr>
 
 <p><a class="el" href="classPoint.html#a0b82a4aa9614c11854abc507d89a70a9" title="Point::getX Gibt die X-Koordinate des Punktes.">Point::getX</a> Gibt die Y-Koordinate des Punktes. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Die Y-Koordinate. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a3770f321c49dfe7ca463900fddc2e2bc_icgraph.svg" width="630" height="372"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5fe68f58cafb4cbc29f09de0978344fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe68f58cafb4cbc29f09de0978344fd">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Point::move </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>my</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPoint.html#a5fe68f58cafb4cbc29f09de0978344fd" title="Point::move Verschiebt den Punkt.">Point::move</a> Verschiebt den Punkt. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a5fe68f58cafb4cbc29f09de0978344fd_icgraph.svg" width="374" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a773af172e76895550d05b081b15493fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773af172e76895550d05b081b15493fb">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Point::set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ny</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPoint.html#a773af172e76895550d05b081b15493fb" title="Point::set Ändert die Koordinaten.">Point::set</a> Ändert die Koordinaten. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a773af172e76895550d05b081b15493fb_icgraph.svg" width="359" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a17ac49f599b4de5661b87af87dd6779f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ac49f599b4de5661b87af87dd6779f">&#9670;&nbsp;</a></span>toTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a> Point::toTile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPoint.html#a17ac49f599b4de5661b87af87dd6779f" title="Point::toTile Gibt den Punkt als Tile-Index zurück.">Point::toTile</a> Gibt den Punkt als Tile-Index zurück. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Ein neuer Punkt. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a17ac49f599b4de5661b87af87dd6779f_cgraph.svg" width="244" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPoint_a17ac49f599b4de5661b87af87dd6779f_icgraph.svg" width="327" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

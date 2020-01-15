@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ip_501',['ip',['../classDataModel.html#a32e94d7559dea5f25325d481ed30d513',1,'DataModel']]],
-  ['item_502',['item',['../classAnimationMovement.html#aeb2e90c974368ac1e508cbec1efd4a09',1,'AnimationMovement']]]
+  ['height_574',['height',['../classMinimap.html#aace73399c5e1d14b639f8c2aebb9b18f',1,'Minimap']]],
+  ['highlighter_575',['highlighter',['../classPlayer.html#a1b57c193b1bf279c13695bae20a33bea',1,'Player::highlighter()'],['../classScene.html#a77fceebbd039dcb574f4c86b13d0f6ee',1,'Scene::highlighter()']]]
 ];

@@ -6,11 +6,12 @@
 
 
 
-Zusammengehörigkeiten von Point\+:\nopagebreak
+Zusammengehörigkeiten von Point\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=134pt]{classPoint__coll__graph}
+\includegraphics[width=138pt]{classPoint__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Öffentliche Methoden}
@@ -21,7 +22,15 @@ Zusammengehörigkeiten von Point\+:\nopagebreak
 int \mbox{\hyperlink{classPoint_a0b82a4aa9614c11854abc507d89a70a9}{getX}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a0b82a4aa9614c11854abc507d89a70a9}{Point\+::getX}} Gibt die X-\/\+Koordinate des Punktes. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classPoint_a3770f321c49dfe7ca463900fddc2e2bc}{getY}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a0b82a4aa9614c11854abc507d89a70a9}{Point\+::getX}} Gibt die Y-\/\+Koordinate des Punktes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a0b82a4aa9614c11854abc507d89a70a9}{Point\+::getX}} Gibt die Y-\/\+Koordinate des Punktes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a61d0e21cd7712e57da1dd28f24bc922a}{add}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a61d0e21cd7712e57da1dd28f24bc922a}{Point\+::add}} Addiert Werte auf den Punkt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPoint_a773af172e76895550d05b081b15493fb}{set}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a773af172e76895550d05b081b15493fb}{Point\+::set}} Ändert die Koordinaten. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPoint_a5fe68f58cafb4cbc29f09de0978344fd}{move}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a5fe68f58cafb4cbc29f09de0978344fd}{Point\+::move}} Verschiebt den Punkt. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a17ac49f599b4de5661b87af87dd6779f}{to\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPoint_a17ac49f599b4de5661b87af87dd6779f}{Point\+::to\+Tile}} Gibt den Punkt als Tile-\/\+Index zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,9 +58,46 @@ int \mbox{\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}}
 {\em pY} & Die Y-\/\+Koordinate. \\
 \hline
 \end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a7e2f39fba71990705aac9ffee1b389b4_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classPoint_a61d0e21cd7712e57da1dd28f24bc922a}\label{classPoint_a61d0e21cd7712e57da1dd28f24bc922a}} 
+\index{Point@{Point}!add@{add}}
+\index{add@{add}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Point\+::add (\begin{DoxyParamCaption}\item[{int}]{ax,  }\item[{int}]{ay }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPoint_a61d0e21cd7712e57da1dd28f24bc922a}{Point\+::add}} Addiert Werte auf den Punkt. 
+
+\begin{DoxyReturn}{Rückgabe}
+Ein neuer Punkt. 
+\end{DoxyReturn}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classPoint_a61d0e21cd7712e57da1dd28f24bc922a_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a61d0e21cd7712e57da1dd28f24bc922a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classPoint_a0b82a4aa9614c11854abc507d89a70a9}\label{classPoint_a0b82a4aa9614c11854abc507d89a70a9}} 
 \index{Point@{Point}!getX@{getX}}
 \index{getX@{getX}!Point@{Point}}
@@ -65,6 +111,14 @@ int \mbox{\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}}
 \begin{DoxyReturn}{Rückgabe}
 Die X-\/\+Koordinate. 
 \end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a0b82a4aa9614c11854abc507d89a70a9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classPoint_a3770f321c49dfe7ca463900fddc2e2bc}\label{classPoint_a3770f321c49dfe7ca463900fddc2e2bc}} 
 \index{Point@{Point}!getY@{getY}}
 \index{getY@{getY}!Point@{Point}}
@@ -78,6 +132,79 @@ Die X-\/\+Koordinate.
 \begin{DoxyReturn}{Rückgabe}
 Die Y-\/\+Koordinate. 
 \end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a3770f321c49dfe7ca463900fddc2e2bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPoint_a5fe68f58cafb4cbc29f09de0978344fd}\label{classPoint_a5fe68f58cafb4cbc29f09de0978344fd}} 
+\index{Point@{Point}!move@{move}}
+\index{move@{move}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Point\+::move (\begin{DoxyParamCaption}\item[{int}]{mx,  }\item[{int}]{my }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPoint_a5fe68f58cafb4cbc29f09de0978344fd}{Point\+::move}} Verschiebt den Punkt. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a5fe68f58cafb4cbc29f09de0978344fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPoint_a773af172e76895550d05b081b15493fb}\label{classPoint_a773af172e76895550d05b081b15493fb}} 
+\index{Point@{Point}!set@{set}}
+\index{set@{set}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Point\+::set (\begin{DoxyParamCaption}\item[{int}]{nx,  }\item[{int}]{ny }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPoint_a773af172e76895550d05b081b15493fb}{Point\+::set}} Ändert die Koordinaten. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classPoint_a773af172e76895550d05b081b15493fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPoint_a17ac49f599b4de5661b87af87dd6779f}\label{classPoint_a17ac49f599b4de5661b87af87dd6779f}} 
+\index{Point@{Point}!toTile@{toTile}}
+\index{toTile@{toTile}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{toTile()}{toTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Point\+::to\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPoint_a17ac49f599b4de5661b87af87dd6779f}{Point\+::to\+Tile}} Gibt den Punkt als Tile-\/\+Index zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Ein neuer Punkt. 
+\end{DoxyReturn}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classPoint_a17ac49f599b4de5661b87af87dd6779f_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classPoint_a17ac49f599b4de5661b87af87dd6779f_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}

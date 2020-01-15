@@ -6,11 +6,12 @@
 
 
 
-Klassendiagramm für View\+:\nopagebreak
+Klassendiagramm für View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{classView__inherit__graph}
+\includegraphics[height=550pt]{classView__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -64,6 +65,8 @@ void \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{set\+Data\+Mo
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a3753656c26f1f7472c5ed8edfe1a1c30}{View\+::set\+Data\+Model}} Setzt das Datenmodell. An dieses wird dann kontinuierlich die aktuelle Position weitergegeben. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}{paint\+Event}} (Q\+Paint\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_a0532ffe6514e8d9a74a9f0f1c0d34ccd}{View\+::paint\+Event}} Überschreibt das Paint\+Event des Views für eigene Zeichenanweisungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classView_a58a8bec6aa8aa1e5db1cd1863950920d}{render}} ()
+\item 
 void \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{tick}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{View\+::tick}} Asynchroner Tick. Wird alle 20MS von \mbox{\hyperlink{classGameLoop}{Game\+Loop}} aufgerufen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
@@ -104,6 +107,8 @@ bool \mbox{\hyperlink{classView_a31d7cea2414022ff47f8289ea922deba}{do\+Animation
 int \mbox{\hyperlink{classView_adab0206370d9dea97e296c852b7d020b}{code\+Count}}
 \item 
 \mbox{\hyperlink{classToolTipMenu}{Tool\+Tip\+Menu}} $\ast$ \mbox{\hyperlink{classView_a4c161978de5538da22044a47befd2461}{tooltip}}
+\item 
+bool \mbox{\hyperlink{classView_ad4de1fecd74cd8d12608f16114241ed7}{do\+Paint}} \{false\}
 \end{DoxyCompactItemize}
 
 
@@ -283,8 +288,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Informationen über Position der Maus \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -334,7 +338,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{onLeftclick}{onLeftclick}}
 {\footnotesize\ttfamily void View\+::on\+Leftclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -347,7 +352,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{onRightclick}{onRightclick}}
 {\footnotesize\ttfamily void View\+::on\+Rightclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -382,6 +388,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Das zugehörige Q\+Paint\+Event. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classView_a58a8bec6aa8aa1e5db1cd1863950920d}\label{classView_a58a8bec6aa8aa1e5db1cd1863950920d}} 
+\index{View@{View}!render@{render}}
+\index{render@{render}!View@{View}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void View\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}\label{classView_abab0c50f3b6bf34a1aaa6f4a2b69f7ea}} 
 \index{View@{View}!rightclick@{rightclick}}
 \index{rightclick@{rightclick}!View@{View}}
@@ -431,13 +443,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classView_af80936d320cde02988bda28aef4070e7}{View\+::tick}} Asynchroner Tick. Wird alle 20MS von \mbox{\hyperlink{classGameLoop}{Game\+Loop}} aufgerufen. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=263pt]{classView_af80936d320cde02988bda28aef4070e7_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classView_a094f2fd748e2855fcd4ec42d171e5bbe}\label{classView_a094f2fd748e2855fcd4ec42d171e5bbe}} 
 \index{View@{View}!wheelEvent@{wheelEvent}}
 \index{wheelEvent@{wheelEvent}!View@{View}}
@@ -503,6 +508,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{doAnimations@{doAnimations}!View@{View}}
 \doxysubsubsection{\texorpdfstring{doAnimations}{doAnimations}}
 {\footnotesize\ttfamily bool View\+::do\+Animations\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classView_ad4de1fecd74cd8d12608f16114241ed7}\label{classView_ad4de1fecd74cd8d12608f16114241ed7}} 
+\index{View@{View}!doPaint@{doPaint}}
+\index{doPaint@{doPaint}!View@{View}}
+\doxysubsubsection{\texorpdfstring{doPaint}{doPaint}}
+{\footnotesize\ttfamily bool View\+::do\+Paint \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}\label{classView_ab3cfbf1d3d6a68e312fdb10924a28de4}} 
 \index{View@{View}!dragOriginX@{dragOriginX}}
