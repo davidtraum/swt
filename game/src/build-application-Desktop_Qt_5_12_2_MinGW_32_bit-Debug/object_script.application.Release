@@ -1,4 +1,4 @@
-release/animationmanager.o
+release/animationentity.o
 release/animationmovement.o
 release/city.o
 release/client.o
@@ -8,7 +8,9 @@ release/goodselector.o
 release/graphicsmanager.o
 release/highlighter.o
 release/main.o
+release/mainmenu.o
 release/mainwindow.o
+release/maprenderer.o
 release/maptile.o
 release/menubar.o
 release/minimap.o
@@ -25,8 +27,10 @@ release/qrc_Data.o
 release/qrc_Graphics.o
 release/moc_client.o
 release/moc_datamodel.o
+release/moc_gameloop.o
 release/moc_goodselector.o
 release/moc_mainwindow.o
+release/moc_maprenderer.o
 release/moc_menubar.o
 release/moc_minimap.o
 release/moc_routeinterface.o

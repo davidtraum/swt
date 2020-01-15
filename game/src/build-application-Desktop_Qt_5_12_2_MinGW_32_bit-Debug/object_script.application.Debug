@@ -1,4 +1,4 @@
-debug/animationmanager.o
+debug/animationentity.o
 debug/animationmovement.o
 debug/city.o
 debug/client.o
@@ -8,7 +8,9 @@ debug/goodselector.o
 debug/graphicsmanager.o
 debug/highlighter.o
 debug/main.o
+debug/mainmenu.o
 debug/mainwindow.o
+debug/maprenderer.o
 debug/maptile.o
 debug/menubar.o
 debug/minimap.o
@@ -25,8 +27,10 @@ debug/qrc_Data.o
 debug/qrc_Graphics.o
 debug/moc_client.o
 debug/moc_datamodel.o
+debug/moc_gameloop.o
 debug/moc_goodselector.o
 debug/moc_mainwindow.o
+debug/moc_maprenderer.o
 debug/moc_menubar.o
 debug/moc_minimap.o
 debug/moc_routeinterface.o

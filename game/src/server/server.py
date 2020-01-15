@@ -416,31 +416,31 @@ class ClientThread(Thread):
                 wagonTypes = []
                 i=0    #Damit Array in Schleife bei 0 beginnt
                 if(args[1] == "TS"):
-                    k = 0   #Start des tsStops-Arrays
                     i = i-2
                     while True:
-                        i = i+3     #Setzt Referenzpunkt wo gelesen werden soll
-                        if(args[i] == "TS"):
+                        if(args[i+3] == "TS"):
+                            i = i+3
                             tsStops.append([args[i+1],args[i+2]])      #Speichert Koordinaten in tsStops
-                            k = k+1
-                            print("Bin in TS Schleife")
-                        elif(args[i]== "WAGONS"):
-                            j = i+1   #Merke Start des "WAGONS"-Befehl, also erster Wagontyp (zb. coal)
-                            for j in range(len(args)):
-                                i = i+1
-                                wagonTypes.append(args[i-1])
-                                print("Bin in Wagons Schleife")
+                            print("Bin in TS Schleife ", i)
+                        elif(args[i+3]== "WAGONS"):
+                            print("Springe in Wagong rein ", i)
+                            print("i ist ", i)
+                            for j in range(i+4,len(args)):
+                                wagonTypes.append(args[j])
+                                print("Bin in Wagons Schleife ", j)
                             break
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
                     
+                
                 print("Routen-Befehl gespeichert: ")
                 print("TS Coords: ")
                 print(*tsStops, sep='_', end='\n')
                 print("Wagon Types: ")
                 print(*wagonTypes, sep='_', end='\n')
+                
 
-            elif(args[0] == 'POS'):
+            if(args[0] == 'POS'):
                 print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
