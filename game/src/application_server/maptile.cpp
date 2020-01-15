@@ -51,21 +51,27 @@ void MapTile::setType(MapTile::TYPE pType){
 
         case MapTile::TYPE::RIVER_H:
             pixmapItem->setPixmap(graphicsManager->get("fluss_h"));
+            setRotation(0);
             break;
         case MapTile::TYPE::RIVER_V:
             pixmapItem->setPixmap(graphicsManager->get("fluss_v"));
+            setRotation(0);
             break;
         case MapTile::TYPE::RIVER_LT:
             pixmapItem->setPixmap(graphicsManager->get("fluss_lt"));
+            setRotation(0);
             break;
         case MapTile::TYPE::RIVER_LB:
             pixmapItem->setPixmap(graphicsManager->get("fluss_lb"));
+            setRotation(0);
             break;
         case MapTile::TYPE::RIVER_RT:
             pixmapItem->setPixmap(graphicsManager->get("fluss_rt"));
+            setRotation(0);
             break;
         case MapTile::TYPE::RIVER_RB:
             pixmapItem->setPixmap(graphicsManager->get("fluss_rb"));
+            setRotation(0);
             break;
 
         case MapTile::TYPE::RAIL_H:
