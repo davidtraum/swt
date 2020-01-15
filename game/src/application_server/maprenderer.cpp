@@ -85,14 +85,17 @@ void MapRenderer::paintEvent(QPaintEvent *event)
 
     if(showExpertDetails){
         painter.drawText(10,20, "Render Details (F3)");
-        painter.drawText(10,35,"Render Time: " + QString::number(renderTime/1000) + "ms");
-        painter.drawText(10, 50, "Constant FPS: " + QString::number(fps));
-        painter.drawText(10, 65, "Possible FPS: " + QString::number(1000000/renderTime));
+        painter.drawText(10,40,"Render Time: " + QString::number(renderTime/1000) + "ms");
+        painter.drawText(10, 55, "Constant FPS: " + QString::number(fps));
+        painter.drawText(10, 70, "Possible FPS: " + QString::number(1000000/renderTime));
+        painter.drawText(10, 85, "Index Position: " + QString::number(activeTile.getX()) + "/" + QString::number(activeTile.getY()));
+        painter.drawText(10, 100, "Tiles drawn: " + QString::number((maxPos.getX() - minPos.getY()) * (maxPos.getY() - minPos.getY())));
+        painter.drawText(10, 115, "Active animations: " + QString::number(movementAnimations.length()));
     }
 
     frameCount++;
-    if((time(0) - lastFpsTake)>=1){
-        lastFpsTake = time(0);
+    if((time(nullptr) - lastFpsTake)>=1){
+        lastFpsTake = time(nullptr);
         fps = frameCount;
         frameCount = 0;
     }
