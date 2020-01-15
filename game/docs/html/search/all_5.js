@@ -5,5 +5,7 @@ var searchData=
   ['fluidzoom_59',['fluidZoom',['../classView.html#a33de978d43cde59ae344035ebcb60184',1,'View']]],
   ['formattime_60',['formatTime',['../classDataModel.html#a0f0049332a55bb6de5bd2d0d53f3b93f',1,'DataModel']]],
   ['forrest_61',['FORREST',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ac7997c80717cd2a0026f2f72187df232',1,'MapTile']]],
-  ['framedelay_62',['frameDelay',['../classGameLoop.html#a0cebbba5d955c3cd49e32a512f4ee9b6',1,'GameLoop']]]
+  ['fps_62',['fps',['../classMapRenderer.html#aa0ec851388918d4a13d329cf088b4c69',1,'MapRenderer']]],
+  ['framecount_63',['frameCount',['../classMapRenderer.html#af3d50b6c4d191b4cb119dacc1aeffb43',1,'MapRenderer']]],
+  ['framedelay_64',['frameDelay',['../classGameLoop.html#a0cebbba5d955c3cd49e32a512f4ee9b6',1,'GameLoop']]]
 ];

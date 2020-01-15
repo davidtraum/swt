@@ -22,6 +22,7 @@ public:
     void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
 
     void tick();
 
@@ -48,8 +49,13 @@ private:
     Point activeTile{0,0};
     bool showHighlight{false};
     bool rendering{false};
+    long renderTime{0};
     double scale{1};
+    bool showExpertDetails{false};
     QList<AnimationMovement *> movementAnimations;
+    long lastFpsTake{0};
+    int frameCount{0};
+    int fps{0};
 
 public slots:
     void onTileChange(int,int,int);

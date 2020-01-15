@@ -34,6 +34,7 @@ void MapTile::attachGraphicsManager(GraphicsManager *pGraphicsManager){
  * @param pType Der Typ.
  */
 void MapTile::setType(MapTile::TYPE pType){
+    setRotation(0);
     switch(pType){
         case MapTile::TYPE::GRASS:
             pixmapItem->setPixmap(graphicsManager->get("grass"));

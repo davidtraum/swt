@@ -2,6 +2,7 @@
 
 #include <QPainter>
 #include <QDebug>
+#include <ctime>
 
 /**
  * @brief MapRenderer::MapRenderer Erzeugt einen neuen MapRenderer
@@ -23,6 +24,8 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     data[150][150].setType(MapTile::DEPOT_H);
 
     QWidget::setMouseTracking(true);
+    QWidget::setFocusPolicy(Qt::FocusPolicy::StrongFocus);
+    QWidget::setFocus();
 
     showHighlight = true;
 }
@@ -34,6 +37,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
 void MapRenderer::paintEvent(QPaintEvent *event)
 {
     rendering = true;
+    long beforeTime = clock();
     QPainter painter(this);
 
     Point minPos = getMinPos().toTile();
@@ -75,7 +79,21 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         painter.drawRect(pos.getX(), pos.getY(), 64,64);
     }
 
+
     QWidget::paintEvent(event);
+    renderTime = clock() - beforeTime;
+
+    if(showExpertDetails){
+        painter.drawText(10,20,"Render Time: " + QString::number(renderTime/1000) + "ms");
+        painter.drawText(10, 35, "FPS: " + QString::number(fps));
+    }
+
+    frameCount++;
+    if((time(0) - lastFpsTake)>=1){
+        lastFpsTake = time(0);
+        fps = frameCount;
+        frameCount = 0;
+    }
     rendering = false;
 }
 
@@ -138,6 +156,15 @@ void MapRenderer::wheelEvent(QWheelEvent *event)
     }
     */
     repaint();
+}
+
+void MapRenderer::keyReleaseEvent(QKeyEvent *event)
+{
+    qDebug() << "Toggle";
+    if(event->key()==Qt::Key_F3){
+
+        showExpertDetails = !showExpertDetails;
+    }
 }
 
 void MapRenderer::tick()
