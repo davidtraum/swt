@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
 
     mapRenderer = new MapRenderer(graphics, dataModel);
-    QTimer::singleShot(20, []{
+    QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(mapRenderer);
     });
 
