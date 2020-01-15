@@ -17,7 +17,8 @@ public:
     RouteInterface(GraphicsManager *);
     int wagonCount;
     TrainRenderer * trainRenderer;
-
+    QPoint tsCoords[9];
+    int tsCount;
 
 private:
     QListWidget * trainstationList;
