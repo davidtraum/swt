@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QGroupBox>
 #include <QString>
+#include "maptile.h"
 
 
 /**
@@ -77,16 +78,25 @@ void RouteInterface::toggle() {
 }
 
 /**
- * @brief RouteInterface::trainStationSelected Wird ausgeführt wenn ein Bahnhof angeklickt wurde.
+ * @brief RouteInterface::onTileInteract Wird ausgeführt wenn ein Bahnhof angeklickt wurde.
  */
-void RouteInterface::trainStationSelected(int px, int py)
+void RouteInterface::onTileInteract(int px, int py, int type)
 {
     if(QWidget::isVisible()){
-        qDebug() << "Selected " << px << " " << py;
-        tsCoords[tsCount] = QPoint(px,py);  //Koordinaten jeder Trainstation werden gespeichert
-        tsCount++;  //Anzahl Trainstations erhöht
-        QListWidgetItem *newItem = new QListWidgetItem(QIcon(":/images/depot.png"), "Bahnhof " + QString::number(px) + "/" + QString::number(py));
-        this->trainstationList->addItem(newItem);
+        switch(type){
+            case MapTile::TERMINAL_H:
+            case MapTile::TERMINAL_V:
+            case MapTile::STATION_H:
+            case MapTile::STATION_V:
+            case MapTile::DEPOT_H:
+            case MapTile::DEPOT_V:
+                tsCoords[tsCount] = QPoint(px,py);  //Koordinaten jeder Trainstation werden gespeichert
+                tsCount++;  //Anzahl Trainstations erhöht
+                QListWidgetItem *newItem = new QListWidgetItem(QIcon(":/images/depot.png"), "Bahnhof " + QString::number(px) + "/" + QString::number(py));
+                this->trainstationList->addItem(newItem);
+                break;
+        }
+
     }
 }
 

@@ -6,5 +6,6 @@ var searchData=
   ['onrightclick_470',['onRightclick',['../classClient.html#a423592967803355986a359fb34e268ad',1,'Client::onRightclick()'],['../classView.html#a23e51fd127541b97fc7b077bd2d2d0f9',1,'View::onRightclick()']]],
   ['onsettile_471',['onSetTile',['../classScene.html#ad861f0bdfab5241fcec39c96f01105b0',1,'Scene']]],
   ['ontilechange_472',['onTileChange',['../classMapRenderer.html#a472525cfdf5cd4ab4ed226457ae6f55a',1,'MapRenderer']]],
-  ['ontrainstationclick_473',['onTrainStationClick',['../classView.html#a2c9279e2d22fce5fa0f76a2d9c2f696f',1,'View']]]
+  ['ontileinteract_473',['onTileInteract',['../classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f',1,'RouteInterface']]],
+  ['ontrainstationclick_474',['onTrainStationClick',['../classView.html#a2c9279e2d22fce5fa0f76a2d9c2f696f',1,'View']]]
 ];

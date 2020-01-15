@@ -80,12 +80,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für RouteInterface:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classRouteInterface__inherit__graph.svg" width="174" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classRouteInterface__inherit__graph.svg" width="143" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von RouteInterface:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classRouteInterface__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classRouteInterface__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -93,9 +95,9 @@ Zusammengehörigkeiten von RouteInterface:</div>
 <tr class="memitem:a63e72ec945a33c516b82634874125337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRouteInterface.html#a63e72ec945a33c516b82634874125337">toggle</a> ()</td></tr>
 <tr class="memdesc:a63e72ec945a33c516b82634874125337"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRouteInterface.html#a63e72ec945a33c516b82634874125337" title="RouteInterface::toggle Wechselt die Sichtbarkeit des Widgets.">RouteInterface::toggle</a> Wechselt die Sichtbarkeit des Widgets.  <a href="classRouteInterface.html#a63e72ec945a33c516b82634874125337">Mehr ...</a><br /></td></tr>
 <tr class="separator:a63e72ec945a33c516b82634874125337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa1ab9f1f728d5e0607ffe3ce24e70e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRouteInterface.html#afa1ab9f1f728d5e0607ffe3ce24e70e3">trainStationSelected</a> (int, int)</td></tr>
-<tr class="memdesc:afa1ab9f1f728d5e0607ffe3ce24e70e3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRouteInterface.html#afa1ab9f1f728d5e0607ffe3ce24e70e3" title="RouteInterface::trainStationSelected Wird ausgeführt wenn ein Bahnhof angeklickt wurde.">RouteInterface::trainStationSelected</a> Wird ausgeführt wenn ein Bahnhof angeklickt wurde.  <a href="classRouteInterface.html#afa1ab9f1f728d5e0607ffe3ce24e70e3">Mehr ...</a><br /></td></tr>
-<tr class="separator:afa1ab9f1f728d5e0607ffe3ce24e70e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55ce64321828214cb634e0b0e806e4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f">onTileInteract</a> (int, int, int)</td></tr>
+<tr class="memdesc:ac55ce64321828214cb634e0b0e806e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f" title="RouteInterface::onTileInteract Wird ausgeführt wenn ein Bahnhof angeklickt wurde.">RouteInterface::onTileInteract</a> Wird ausgeführt wenn ein Bahnhof angeklickt wurde.  <a href="classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f">Mehr ...</a><br /></td></tr>
+<tr class="separator:ac55ce64321828214cb634e0b0e806e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ec102604fc234131a689879bcf025de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRouteInterface.html#a2ec102604fc234131a689879bcf025de">addWagon</a> (QString *)</td></tr>
 <tr class="memdesc:a2ec102604fc234131a689879bcf025de"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRouteInterface.html#a2ec102604fc234131a689879bcf025de" title="RouteInterface::addWagon Slot zum hinzufügen eines Wagons zum aktuellen Renderer.">RouteInterface::addWagon</a> Slot zum hinzufügen eines Wagons zum aktuellen Renderer.  <a href="classRouteInterface.html#a2ec102604fc234131a689879bcf025de">Mehr ...</a><br /></td></tr>
 <tr class="separator:a2ec102604fc234131a689879bcf025de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,6 +238,56 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 </div>
 </div>
+<a id="ac55ce64321828214cb634e0b0e806e4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55ce64321828214cb634e0b0e806e4f">&#9670;&nbsp;</a></span>onTileInteract</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RouteInterface::onTileInteract </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f" title="RouteInterface::onTileInteract Wird ausgeführt wenn ein Bahnhof angeklickt wurde.">RouteInterface::onTileInteract</a> Wird ausgeführt wenn ein Bahnhof angeklickt wurde. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classRouteInterface_ac55ce64321828214cb634e0b0e806e4f_icgraph.svg" width="308" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a690e180be3ea61ba9c869e8329ef42e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a690e180be3ea61ba9c869e8329ef42e1">&#9670;&nbsp;</a></span>removeWagon</h2>
 
@@ -330,49 +382,6 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classRouteInterface_a63e72ec945a33c516b82634874125337_icgraph.svg" width="416" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="afa1ab9f1f728d5e0607ffe3ce24e70e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa1ab9f1f728d5e0607ffe3ce24e70e3">&#9670;&nbsp;</a></span>trainStationSelected</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RouteInterface::trainStationSelected </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>px</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>py</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classRouteInterface.html#afa1ab9f1f728d5e0607ffe3ce24e70e3" title="RouteInterface::trainStationSelected Wird ausgeführt wenn ein Bahnhof angeklickt wurde.">RouteInterface::trainStationSelected</a> Wird ausgeführt wenn ein Bahnhof angeklickt wurde. </p>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3_icgraph.svg" width="292" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

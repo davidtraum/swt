@@ -6,16 +6,18 @@
 
 
 
-Klassendiagramm für Route\+Interface\+:\nopagebreak
+Klassendiagramm für Route\+Interface\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{classRouteInterface__inherit__graph}
+\includegraphics[width=179pt]{classRouteInterface__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Zusammengehörigkeiten von Route\+Interface\+:\nopagebreak
+Zusammengehörigkeiten von Route\+Interface\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,8 +29,8 @@ Zusammengehörigkeiten von Route\+Interface\+:\nopagebreak
 \item 
 void \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{toggle}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a63e72ec945a33c516b82634874125337}{Route\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{train\+Station\+Selected}} (int, int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{Route\+Interface\+::train\+Station\+Selected}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f}{on\+Tile\+Interact}} (int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f}{Route\+Interface\+::on\+Tile\+Interact}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{add\+Wagon}} (Q\+String $\ast$)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteInterface_a2ec102604fc234131a689879bcf025de}{Route\+Interface\+::add\+Wagon}} Slot zum hinzufügen eines Wagons zum aktuellen Renderer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRouteInterface_a8ed62f131137618a65696d43fbfec345}{confirm\+Route}} ()
@@ -130,6 +132,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classRouteInterface_a8ed62f131137618a65696d43fbfec345_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f}\label{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f}} 
+\index{RouteInterface@{RouteInterface}!onTileInteract@{onTileInteract}}
+\index{onTileInteract@{onTileInteract}!RouteInterface@{RouteInterface}}
+\doxysubsubsection{\texorpdfstring{onTileInteract}{onTileInteract}}
+{\footnotesize\ttfamily void Route\+Interface\+::on\+Tile\+Interact (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py,  }\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f}{Route\+Interface\+::on\+Tile\+Interact}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classRouteInterface_ac55ce64321828214cb634e0b0e806e4f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1}\label{classRouteInterface_a690e180be3ea61ba9c869e8329ef42e1}} 
 \index{RouteInterface@{RouteInterface}!removeWagon@{removeWagon}}
 \index{removeWagon@{removeWagon}!RouteInterface@{RouteInterface}}
@@ -178,23 +198,6 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classRouteInterface_a63e72ec945a33c516b82634874125337_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}\label{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}} 
-\index{RouteInterface@{RouteInterface}!trainStationSelected@{trainStationSelected}}
-\index{trainStationSelected@{trainStationSelected}!RouteInterface@{RouteInterface}}
-\doxysubsubsection{\texorpdfstring{trainStationSelected}{trainStationSelected}}
-{\footnotesize\ttfamily void Route\+Interface\+::train\+Station\+Selected (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-\mbox{\hyperlink{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3}{Route\+Interface\+::train\+Station\+Selected}} Wird ausgeführt wenn ein Bahnhof angeklickt wurde. 
-
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=291pt]{classRouteInterface_afa1ab9f1f728d5e0607ffe3ce24e70e3_icgraph}
 \end{center}
 \end{figure}
 

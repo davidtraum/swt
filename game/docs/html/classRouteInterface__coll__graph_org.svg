@@ -13,21 +13,21 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="#000000" points="85,-.5 85,-156.5 207,-156.5 207,-.5 85,-.5"/>
+<polygon fill="#bfbfbf" stroke="#000000" points="96.5,-.5 96.5,-156.5 195.5,-156.5 195.5,-.5 96.5,-.5"/>
 <text text-anchor="middle" x="146" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RouteInterface</text>
-<polyline fill="none" stroke="#000000" points="85,-137.5 207,-137.5 "/>
-<text text-anchor="start" x="93" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ wagonCount</text>
-<text text-anchor="start" x="93" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ tsCoords</text>
-<text text-anchor="start" x="93" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ tsCount</text>
-<text text-anchor="start" x="93" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; trainstationList</text>
-<text text-anchor="start" x="93" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; confirmBtn</text>
-<polyline fill="none" stroke="#000000" points="85,-74.5 207,-74.5 "/>
-<text text-anchor="start" x="93" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ RouteInterface()</text>
-<text text-anchor="start" x="93" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ toggle()</text>
-<text text-anchor="start" x="93" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ trainStationSelected()</text>
-<text text-anchor="start" x="93" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ addWagon()</text>
-<text text-anchor="start" x="93" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ confirmRoute()</text>
-<text text-anchor="start" x="93" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ removeWagon()</text>
+<polyline fill="none" stroke="#000000" points="96.5,-137.5 195.5,-137.5 "/>
+<text text-anchor="start" x="104.5" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ wagonCount</text>
+<text text-anchor="start" x="104.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ tsCoords</text>
+<text text-anchor="start" x="104.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ tsCount</text>
+<text text-anchor="start" x="104.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; trainstationList</text>
+<text text-anchor="start" x="104.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&#45; confirmBtn</text>
+<polyline fill="none" stroke="#000000" points="96.5,-74.5 195.5,-74.5 "/>
+<text text-anchor="start" x="104.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ RouteInterface()</text>
+<text text-anchor="start" x="104.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ toggle()</text>
+<text text-anchor="start" x="104.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ onTileInteract()</text>
+<text text-anchor="start" x="104.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ addWagon()</text>
+<text text-anchor="start" x="104.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ confirmRoute()</text>
+<text text-anchor="start" x="104.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">+ removeWagon()</text>
 </a>
 </g>
 </g>
@@ -74,8 +74,8 @@
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M235.5299,-204.3548C229.8826,-194.3578 223.9504,-184.3292 218,-175 216.2428,-172.245 214.4317,-169.4666 212.5799,-166.678"/>
-<polygon fill="none" stroke="#404040" points="212.4538,-166.492 205.7761,-163.7704 205.72,-156.5595 212.3978,-159.2811 212.4538,-166.492"/>
+<path fill="none" stroke="#404040" d="M235.5299,-204.3548C229.8826,-194.3578 223.9504,-184.3292 218,-175 213.1934,-167.464 207.9836,-159.7531 202.6394,-152.1359"/>
+<polygon fill="none" stroke="#404040" points="202.5227,-151.972 195.7833,-149.4067 195.5593,-142.199 202.2986,-144.7644 202.5227,-151.972"/>
 <text text-anchor="middle" x="260" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000"> +trainRenderer</text>
 </g>
 <!-- Node4 -->

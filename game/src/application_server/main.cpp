@@ -77,15 +77,15 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->setDataModel(dataModel);
 
-    RouteInterface * routeInterface = new RouteInterface(graphics);
-    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
-    QWidget::connect(view, &View::onTrainStationClick, routeInterface, &RouteInterface::trainStationSelected);
-    QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
-
     mapRenderer = new MapRenderer(graphics, dataModel);
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(mapRenderer);
     });
+
+    RouteInterface * routeInterface = new RouteInterface(graphics);
+    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
+    QWidget::connect(mapRenderer, &MapRenderer::tileClick, routeInterface, &RouteInterface::onTileInteract);
+    QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
 
     tooltip->setParent(view);
     tooltip->show();

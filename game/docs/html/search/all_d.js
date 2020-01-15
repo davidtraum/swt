@@ -7,6 +7,7 @@ var searchData=
   ['onrightclick_159',['onRightclick',['../classClient.html#a423592967803355986a359fb34e268ad',1,'Client::onRightclick()'],['../classView.html#a23e51fd127541b97fc7b077bd2d2d0f9',1,'View::onRightclick()']]],
   ['onsettile_160',['onSetTile',['../classScene.html#ad861f0bdfab5241fcec39c96f01105b0',1,'Scene']]],
   ['ontilechange_161',['onTileChange',['../classMapRenderer.html#a472525cfdf5cd4ab4ed226457ae6f55a',1,'MapRenderer']]],
-  ['ontrainstationclick_162',['onTrainStationClick',['../classView.html#a2c9279e2d22fce5fa0f76a2d9c2f696f',1,'View']]],
-  ['outline_163',['outline',['../classHighlighter.html#ae590120925bf0bfdec70be2863fa91f6',1,'Highlighter']]]
+  ['ontileinteract_162',['onTileInteract',['../classRouteInterface.html#ac55ce64321828214cb634e0b0e806e4f',1,'RouteInterface']]],
+  ['ontrainstationclick_163',['onTrainStationClick',['../classView.html#a2c9279e2d22fce5fa0f76a2d9c2f696f',1,'View']]],
+  ['outline_164',['outline',['../classHighlighter.html#ae590120925bf0bfdec70be2863fa91f6',1,'Highlighter']]]
 ];

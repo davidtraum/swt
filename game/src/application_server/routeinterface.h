@@ -27,7 +27,7 @@ private:
 
 public slots:
     void toggle();
-    void trainStationSelected(int,int);
+    void onTileInteract(int,int,int);
     void addWagon(QString *);
     void confirmRoute();
     void removeWagon();

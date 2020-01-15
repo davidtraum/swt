@@ -20,11 +20,11 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
         }
     }
 
+    data[150][150].setType(MapTile::DEPOT_H);
+
     QWidget::setMouseTracking(true);
 
     showHighlight = true;
-
-    demo();
 }
 
 /**
@@ -113,6 +113,7 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
         qDebug() << "lc";
         Point pos = mapPosition(event->x(), event->y());
         emit leftclick();
+        emit tileClick(activeTile.getX(), activeTile.getY(), data[activeTile.getX()][activeTile.getY()].getType());
     }
 }
 
