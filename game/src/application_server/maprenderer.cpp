@@ -16,7 +16,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
             data[x][y].attachGraphicsManager(graphicsManager);
             data[x][y].setType(MapTile::GRASS);
             data[x][y].setPosition(x*64,y*64);
-            data[x][y].setRotation(random()%4);
+            data[x][y].setRotation(rand()%4);
         }
     }
 
