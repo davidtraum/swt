@@ -11,10 +11,9 @@
  * @param pScene Die Szene
  * @param pDataModel Das DataModel
  */
-Minimap::Minimap(int pWidth, int pHeight, Scene * pScene, View * pView, DataModel * pDataModel):
-    width{pWidth}, height{pHeight}, scene{pScene}, view{pView}, dataModel{pDataModel}
+Minimap::Minimap(int pWidth, int pHeight, MapRenderer  * pScene, DataModel * pDataModel):
+    width{pWidth}, height{pHeight}, scene{pScene}, dataModel{pDataModel}
 {
-    setParent(view);
     QWidget::setFixedSize(width,height);
     QWidget::setStyleSheet("border: 2px solid black;");
     connect(dataModel, &DataModel::viewChange, this, &Minimap::viewChange);

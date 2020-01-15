@@ -8,7 +8,7 @@ var searchData=
   ['maprenderer_466',['MapRenderer',['../classMapRenderer.html#a81a7b9260e9b62105777007b38510619',1,'MapRenderer']]],
   ['maptile_467',['MapTile',['../classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070',1,'MapTile::MapTile(GraphicsManager *pGraphicsManager)'],['../classMapTile.html#a40647e6d567d577778e81a81b7047217',1,'MapTile::MapTile()']]],
   ['menubar_468',['MenuBar',['../classMenuBar.html#a7e5aaba92694aae7eee0f75d41a718c5',1,'MenuBar']]],
-  ['minimap_469',['Minimap',['../classMinimap.html#ab5fa35cbed78ec206118b31d1c3d5ab1',1,'Minimap']]],
+  ['minimap_469',['Minimap',['../classMinimap.html#a4cf153454dc7dcc8feb3d3a0c5d326fd',1,'Minimap']]],
   ['mousemoveevent_470',['mouseMoveEvent',['../classMapRenderer.html#aa2f3c7d428114b22544682da3997efd9',1,'MapRenderer::mouseMoveEvent()'],['../classView.html#aae14a814f17c825ce462509655e54ee4',1,'View::mouseMoveEvent()']]],
   ['mousepressevent_471',['mousePressEvent',['../classMapRenderer.html#a2a8f6ec1b3a089ff1779e0a5aca9da46',1,'MapRenderer::mousePressEvent()'],['../classView.html#a30e2699528059a572a465211f266384e',1,'View::mousePressEvent()']]],
   ['mousereleaseevent_472',['mouseReleaseEvent',['../classMapRenderer.html#ac6c85d76a8de58f740066f02745d2e79',1,'MapRenderer::mouseReleaseEvent()'],['../classTrainRenderer.html#aa43f6865d1e76833261e3af413cc8485',1,'TrainRenderer::mouseReleaseEvent()'],['../classView.html#a76d60435e43027b8497091d02acb77bd',1,'View::mouseReleaseEvent()']]],

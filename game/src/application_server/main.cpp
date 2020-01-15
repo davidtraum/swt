@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     mainWindow->addToolBar(menuBar);
 
 
-    Minimap * map = new Minimap(300,300, scene, view, dataModel);
+    Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
     QGridLayout * viewLayout = new QGridLayout();
     map->setAttribute( Qt::WA_TransparentForMouseEvents );
     QWidget *spacerWidget = new QWidget();
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
     viewLayout->addWidget(spacerWidget,1,0);
     viewLayout->addWidget(map,0,2);
 
-    view->setLayout(viewLayout);
+    mapRenderer->setLayout(viewLayout);
 
 
 
