@@ -6,16 +6,18 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel * pDataModel)
+Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, View * pView, DataModel * pDataModel)
 {
     tickcount=0;
     scene = pScene;
+    mapRenderer = pMapRenderer;
     dataModel = pDataModel;
     dataModel->setConnectionInfo(*connectionInfo);
     QStringList split = connectionInfo->split(":");
     QString iP = split[0];
     unsigned short int port =  quint16(split[1].toInt());
-    connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
+    //connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
+    connect(this, &Client::tileChanged, mapRenderer, &MapRenderer::onTileChange);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(pView, &View::onLeftclick, this, &Client::onLeftclick);

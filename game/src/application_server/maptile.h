@@ -38,6 +38,7 @@ public:
     TYPE getType();
     void setRotation(int pRotation);
     int getRotation();
+    int getRotationDeg();
     void setPosition(int posX, int posY);
     bool isRiver();
     bool isRail();
@@ -51,7 +52,7 @@ public:
 private:
     TYPE type;
     QGraphicsPixmapItem * pixmapItem;
-    int currentRotation;
+    int currentRotation{0};
     City * city;
     GraphicsManager * graphicsManager;
 };

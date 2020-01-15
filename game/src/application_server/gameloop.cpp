@@ -1,10 +1,14 @@
 #include "gameloop.h"
 #include <iostream>
 
+#include <ctime>
+
+#include <QDebug>
+
 using namespace std;
 
-GameLoop::GameLoop(View * pView, Scene * pScene, DataModel * pModel, Client * pClient, AnimationManager * pAnimManager):
-    view{pView},scene{pScene},dataModel{pModel},client{pClient},animationManager{pAnimManager}
+GameLoop::GameLoop(MapRenderer * pView, Scene * pScene, DataModel * pModel, Client * pClient):
+    view{pView},scene{pScene},dataModel{pModel},client{pClient}
 {
 
 }
@@ -15,9 +19,7 @@ GameLoop::GameLoop(View * pView, Scene * pScene, DataModel * pModel, Client * pC
 void GameLoop::run()
 {
     while(true){
-        QThread::msleep(20);
+        QThread::msleep(1);
         view->tick();
-        scene->tick();
-        animationManager->tick();
     }
 }

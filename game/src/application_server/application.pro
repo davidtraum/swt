@@ -16,7 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    animationmanager.cpp \
+    animationentity.cpp \
     animationmovement.cpp \
     city.cpp \
     client.cpp \
@@ -27,6 +27,7 @@ SOURCES += \
     highlighter.cpp \
     main.cpp \
     mainwindow.cpp \
+    maprenderer.cpp \
     maptile.cpp \
     menubar.cpp \
     minimap.cpp \
@@ -41,7 +42,7 @@ SOURCES += \
     view.cpp
 
 HEADERS += \
-    animationmanager.h \
+    animationentity.h \
     animationmovement.h \
     city.h \
     client.h \
@@ -52,6 +53,7 @@ HEADERS += \
     highlighter.h \
     main.h \
     mainwindow.h \
+    maprenderer.h \
     maptile.h \
     menubar.h \
     minimap.h \

@@ -8,7 +8,10 @@ public:
     Point(int,int);
     int getX();
     int getY();
-
+    Point add(int,int);
+    void set(int,int);
+    void move(int,int);
+    Point toTile();
 private:
     int x,y;
 };

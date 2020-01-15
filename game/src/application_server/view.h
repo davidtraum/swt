@@ -24,6 +24,7 @@ public:
     void enableAnimation();
     void setDataModel(DataModel * pModel);
     void paintEvent(QPaintEvent *event) override;
+    void render();
     void tick();
 private:
     DataModel * dataModel;
@@ -34,6 +35,7 @@ private:
     ToolTipMenu * tooltip;
     void leftclick(QMouseEvent *, MapTile *);
     void rightclick(QMouseEvent *, MapTile *);
+    bool doPaint{false};
 
 signals:
     void onLeftclick();

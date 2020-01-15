@@ -71,6 +71,7 @@ void MapTile::setType(MapTile::TYPE pType){
         case MapTile::TYPE::RAIL_H:
             pixmapItem->setPixmap(graphicsManager->get("schiene_h"));
             pixmapItem->setToolTip("Schiene");
+            setRotation(0);
             break;
         case MapTile::TYPE::RAIL_V:
             pixmapItem->setPixmap(graphicsManager->get("schiene_h"));
@@ -80,6 +81,7 @@ void MapTile::setType(MapTile::TYPE pType){
         case MapTile::TYPE::RAIL_LT:
             pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
             pixmapItem->setToolTip("Kurve");
+            setRotation(0);
             break;
         case MapTile::TYPE::RAIL_RT:
             pixmapItem->setPixmap(graphicsManager->get("schiene_kurve"));
@@ -178,6 +180,20 @@ void MapTile::setRotation(int pRotation){
  */
 int MapTile::getRotation(){
     return currentRotation;
+}
+
+int MapTile::getRotationDeg()
+{
+    switch(currentRotation){
+        case 0:
+            return 0;
+        case 1:
+            return 90;
+        case 2:
+            return 180;
+        default:
+            return 270;
+    }
 }
 
 

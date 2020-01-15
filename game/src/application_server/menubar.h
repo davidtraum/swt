@@ -6,17 +6,19 @@
 #include "datamodel.h"
 #include "view.h"
 #include "routeinterface.h"
+#include "maprenderer.h"
 
 class MenuBar: public QToolBar
 {
    Q_OBJECT
 
 public:
-    MenuBar(Scene* pScene, DataModel * pDataModel, View * pView, RouteInterface *);
+    MenuBar(Scene* pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface *);
 
 private:
     Scene* scene;
     DataModel * dataModel;
+    MapRenderer * mapRenderer;
     View * view;
     RouteInterface * routeInterface;
 

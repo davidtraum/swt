@@ -37,10 +37,13 @@ Scene::Scene(GraphicsManager * pGraphicsManager, DataModel * pDataModel)
     }
 
 
-    QGraphicsPixmapItem * item = new QGraphicsPixmapItem(QPixmap::fromImage(QImage(":/images/terminal.png")));
+    QGraphicsPixmapItem * item = new QGraphicsPixmapItem(graphicsManager->get("zug"));
+    item->setPos(150*64, 150*64);
     item->setZValue(10);
+    this->addItem(item);
 
     data[150][150].setType(MapTile::TERMINAL_H);
+
 }
 
 /**

@@ -11,8 +11,8 @@
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface) :
-    scene{pScene}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}
+MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface) :
+    scene{pScene}, mapRenderer{pRenderer}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
     this->setMovable(false);
@@ -114,7 +114,7 @@ void MenuBar::slotOpenConnection(){
                                          &ok);
 
     if(ok){
-        Client * client = new Client(&text, scene, view, dataModel);
+        Client * client = new Client(&text, scene, mapRenderer, view, dataModel);
 
         QTimer::singleShot(1000, [client]{client->requestMap();});
     }

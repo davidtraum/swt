@@ -3,24 +3,25 @@
 
 #include <QThread>
 
-#include "view.h"
+#include "maprenderer.h"
 #include "scene.h"
 #include "datamodel.h"
 #include "client.h"
-#include "animationmanager.h"
 
 class GameLoop: public QThread
 {
+    Q_OBJECT
 public:
-    GameLoop(View *, Scene *, DataModel *, Client *, AnimationManager *);
+    GameLoop(MapRenderer *, Scene *, DataModel *, Client *);
     void run() override;
 
 private:
-    View * view;
+    MapRenderer * view;
     Scene * scene;
     DataModel * dataModel;
     Client * client;
-    AnimationManager * animationManager;
+    long lastRender = 0;
+    int frameDelay = 500;
 };
 
 #endif // GAMELOOP_H

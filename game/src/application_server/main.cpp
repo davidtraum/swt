@@ -22,8 +22,8 @@
 #include "sidepanel.h"
 #include "tooltipmenu.h"
 #include "gameloop.h"
-#include "animationmanager.h"
 #include "routeinterface.h"
+#include "maprenderer.h"
 
 
 GraphicsManager * graphics;
@@ -34,6 +34,7 @@ View * view;
 Scene * scene;
 SidePanel * sidePanel;
 Client * client;
+MapRenderer * mapRenderer;
 
 
 
@@ -65,9 +66,6 @@ int main(int argc, char *argv[])
 
     dataModel = new DataModel();
 
-    AnimationManager * animationManager = new AnimationManager();
-    dataModel->setAnimationManager(animationManager);
-
     scene = new Scene(graphics, dataModel);
 
 
@@ -83,8 +81,9 @@ int main(int argc, char *argv[])
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeInterface);
     QWidget::connect(view, &View::onTrainStationClick, routeInterface, &RouteInterface::trainStationSelected);
 
-    QTimer::singleShot(2000, []{
-      mainWindow->setCentralWidget(view);
+    mapRenderer = new MapRenderer(graphics, dataModel);
+    QTimer::singleShot(20, []{
+      mainWindow->setCentralWidget(mapRenderer);
     });
 
     tooltip->setParent(view);
@@ -94,7 +93,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene, dataModel, view, routeInterface);
+    MenuBar * menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface);
     menuBar->setParent(mainWindow);
     menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
@@ -132,7 +131,7 @@ int main(int argc, char *argv[])
     mainWindow->setCentralWidget(startscreen);
 
 
-    GameLoop * loop = new GameLoop(view,scene,dataModel,client,animationManager);
+    GameLoop * loop = new GameLoop(mapRenderer,scene,dataModel,client);
     loop->start();
 
     a.exec();

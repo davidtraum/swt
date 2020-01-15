@@ -10,12 +10,13 @@
 #include "maptile.h"
 #include "datamodel.h"
 #include "view.h"
+#include "maprenderer.h"
 
 class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(QString * connectionInfo, Scene * pScene, View * pView, DataModel * pDataModel);
+    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, View * pView, DataModel * pDataModel);
     void run() override;
     void requestMap();
 
@@ -23,6 +24,7 @@ private:
     QTcpSocket * socket;
     Scene * scene;
     DataModel * dataModel;
+    MapRenderer * mapRenderer;
     bool debug;
     int tickcount{0};
     void processCommand(QString command);

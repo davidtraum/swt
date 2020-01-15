@@ -297,14 +297,3 @@ DataModel::MODE DataModel::getMode(){
     return mode;
 }
 
-/**
- * @brief DataModel::setAnimationManager Setzt den den Animation-Manager.
- */
-void DataModel::setAnimationManager(AnimationManager * pAnimationManager)
-{
-    animationManager = pAnimationManager;
-}
-
-AnimationManager * DataModel::getAnimationManager() {
-    return animationManager;
-}

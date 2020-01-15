@@ -6,7 +6,6 @@
 #include <QWidget>
 
 #include "player.h"
-#include "animationmanager.h"
 
 class DataModel: public QObject
 {
@@ -42,8 +41,6 @@ public:
     void setMode(MODE);
     MODE getMode();
     Player * secondPlayer;
-    void setAnimationManager(AnimationManager *);
-    AnimationManager * getAnimationManager();
 
 private:
     int balance;
@@ -58,7 +55,6 @@ private:
     QLabel * statusDisplay;
     QLabel * connectionLabel;
     MODE mode{MODE::DEFAULT};
-    AnimationManager * animationManager;
 
 signals:
     void positionChange(int,int);
