@@ -19,7 +19,7 @@ GameLoop::GameLoop(MapRenderer * pView, Scene * pScene, DataModel * pModel, Clie
 void GameLoop::run()
 {
     while(true){
-        QThread::msleep(1);
+        QThread::msleep(20);
         view->tick();
     }
 }
