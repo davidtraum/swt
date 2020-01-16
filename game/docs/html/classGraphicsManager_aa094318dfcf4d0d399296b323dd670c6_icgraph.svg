@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 645;
+var viewWidth = 555;
 var viewHeight = 218;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,13 +54,13 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>GraphicsManager::get</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-214 641,-214 641,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-214 551,-214 551,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="GraphicsManager::get Liefert eine Grafik mit einem bestimmten Namen.">
-<polygon fill="#bfbfbf" stroke="#000000" points="519,-133.5 519,-152.5 637,-152.5 637,-133.5 519,-133.5"/>
-<text text-anchor="middle" x="578" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GraphicsManager::get</text>
+<polygon fill="#bfbfbf" stroke="#000000" points="429,-133.5 429,-152.5 547,-152.5 547,-133.5 429,-133.5"/>
+<text text-anchor="middle" x="488" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GraphicsManager::get</text>
 </a>
 </g>
 </g>
@@ -68,142 +68,127 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="classScene.html#ad22fc5010d69665d13f8ccef2cb094b0" target="_top" xlink:title="Scene::Scene Konstruktor.">
-<polygon fill="#ffffff" stroke="#000000" points="234,-190.5 234,-209.5 315,-209.5 315,-190.5 234,-190.5"/>
-<text text-anchor="middle" x="274.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::Scene</text>
+<polygon fill="#ffffff" stroke="#000000" points="144,-190.5 144,-209.5 225,-209.5 225,-190.5 144,-190.5"/>
+<text text-anchor="middle" x="184.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::Scene</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#191970" d="M517.1005,-154.4375C457.0911,-165.7078 367.0841,-182.6119 315.2406,-192.3486"/>
-<polygon fill="#191970" stroke="#191970" points="518.0188,-157.8263 527.2009,-152.5405 516.7267,-150.9466 518.0188,-157.8263"/>
+<path fill="none" stroke="#191970" d="M427.1005,-154.4375C367.0911,-165.7078 277.0841,-182.6119 225.2406,-192.3486"/>
+<polygon fill="#191970" stroke="#191970" points="428.0188,-157.8263 437.2009,-152.5405 426.7267,-150.9466 428.0188,-157.8263"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classMapTile.html#a6f6c6e03095e0f1ed503dd30f499793c" target="_top" xlink:title="MapTile::setType Setzt den Typ der Kachel.">
-<polygon fill="#ffffff" stroke="#000000" points="385,-114.5 385,-133.5 483,-133.5 483,-114.5 385,-114.5"/>
-<text text-anchor="middle" x="434" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::setType</text>
+<polygon fill="#ffffff" stroke="#000000" points="295,-114.5 295,-133.5 393,-133.5 393,-114.5 295,-114.5"/>
+<text text-anchor="middle" x="344" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapTile::setType</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#191970" d="M508.5814,-133.8406C500.0045,-132.7089 491.3787,-131.5708 483.1916,-130.4906"/>
-<polygon fill="#191970" stroke="#191970" points="508.2264,-137.324 518.5983,-135.1623 509.1421,-130.3842 508.2264,-137.324"/>
+<path fill="none" stroke="#191970" d="M418.5814,-133.8406C410.0045,-132.7089 401.3787,-131.5708 393.1916,-130.4906"/>
+<polygon fill="#191970" stroke="#191970" points="418.2264,-137.324 428.5983,-135.1623 419.1421,-130.3842 418.2264,-137.324"/>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
-<g id="edge9" class="edge">
+<g id="edge8" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="#191970" d="M414.0836,-140.2357C397.5522,-152.9782 372.9529,-170.2972 349,-181 338.3975,-185.7375 326.3971,-189.4493 315.1735,-192.2855"/>
-<polygon fill="#191970" stroke="#191970" points="416.6927,-142.636 422.3824,-133.6985 412.3611,-137.1371 416.6927,-142.636"/>
+<path fill="none" stroke="#191970" d="M324.0836,-140.2357C307.5522,-152.9782 282.9529,-170.2972 259,-181 248.3975,-185.7375 236.3971,-189.4493 225.1735,-192.2855"/>
+<polygon fill="#191970" stroke="#191970" points="326.6927,-142.636 332.3824,-133.6985 322.3611,-137.1371 326.6927,-142.636"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="classMapRenderer.html#a6b690a49223b2006a4816b706a4b156e" target="_top" xlink:title="MapRenderer::demo Zeigt eine Demo&#45;Visualisierung.">
-<polygon fill="#ffffff" stroke="#000000" points="219.5,-152.5 219.5,-171.5 329.5,-171.5 329.5,-152.5 219.5,-152.5"/>
-<text text-anchor="middle" x="274.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapRenderer::demo</text>
+<polygon fill="#ffffff" stroke="#000000" points="129.5,-152.5 129.5,-171.5 239.5,-171.5 239.5,-152.5 129.5,-152.5"/>
+<text text-anchor="middle" x="184.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapRenderer::demo</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="#191970" d="M383.766,-135.968C361.4145,-141.2931 335.4617,-147.4762 314.4592,-152.4799"/>
-<polygon fill="#191970" stroke="#191970" points="384.8349,-139.3114 393.7514,-133.589 383.2125,-132.502 384.8349,-139.3114"/>
+<path fill="none" stroke="#191970" d="M293.766,-135.968C271.4145,-141.2931 245.4617,-147.4762 224.4592,-152.4799"/>
+<polygon fill="#191970" stroke="#191970" points="294.8349,-139.3114 303.7514,-133.589 293.2125,-132.502 294.8349,-139.3114"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="classScene.html#a1ef1c0e0972913d4c477ead916cf06b0" target="_top" xlink:title="Scene::generateWorld Diese Methode generiert eine neue Welt.">
+<polygon fill="#ffffff" stroke="#000000" points="125,-114.5 125,-133.5 244,-133.5 244,-114.5 125,-114.5"/>
+<text text-anchor="middle" x="184.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::generateWorld</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node3&#45;&gt;Node5</title>
+<path fill="none" stroke="#191970" d="M284.4776,-124C271.3044,-124 257.3428,-124 244.1639,-124"/>
+<polygon fill="#191970" stroke="#191970" points="284.8433,-127.5001 294.8433,-124 284.8432,-120.5001 284.8433,-127.5001"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classScene.html#a1ef1c0e0972913d4c477ead916cf06b0" target="_top" xlink:title="Scene::generateWorld Diese Methode generiert eine neue Welt.">
-<polygon fill="#ffffff" stroke="#000000" points="215,-114.5 215,-133.5 334,-133.5 334,-114.5 215,-114.5"/>
-<text text-anchor="middle" x="274.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::generateWorld</text>
+<g id="a_node6"><a xlink:href="classScene.html#ad861f0bdfab5241fcec39c96f01105b0" target="_top" xlink:title="Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderu...">
+<polygon fill="#ffffff" stroke="#000000" points="136.5,-76.5 136.5,-95.5 232.5,-95.5 232.5,-76.5 136.5,-76.5"/>
+<text text-anchor="middle" x="184.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::onSetTile</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node3&#45;&gt;Node6</title>
-<path fill="none" stroke="#191970" d="M374.4776,-124C361.3044,-124 347.3428,-124 334.1639,-124"/>
-<polygon fill="#191970" stroke="#191970" points="374.8433,-127.5001 384.8433,-124 374.8432,-120.5001 374.8433,-127.5001"/>
+<path fill="none" stroke="#191970" d="M293.766,-112.032C271.4145,-106.7069 245.4617,-100.5238 224.4592,-95.5201"/>
+<polygon fill="#191970" stroke="#191970" points="293.2125,-115.498 303.7514,-114.411 294.8349,-108.6886 293.2125,-115.498"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classScene.html#ad861f0bdfab5241fcec39c96f01105b0" target="_top" xlink:title="Scene::onSetTile Ändert ein MapTile ohne ein Signal an den Server. Notwendig zum Empfangen von Änderu...">
-<polygon fill="#ffffff" stroke="#000000" points="226.5,-76.5 226.5,-95.5 322.5,-95.5 322.5,-76.5 226.5,-76.5"/>
-<text text-anchor="middle" x="274.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::onSetTile</text>
+<g id="a_node7"><a xlink:href="classMapRenderer.html#a472525cfdf5cd4ab4ed226457ae6f55a" target="_top" xlink:title="MapRenderer::onTileChange Wird aufgerufen wenn sich eine Kachel ändert.">
+<polygon fill="#ffffff" stroke="#000000" points="110,-38.5 110,-57.5 259,-57.5 259,-38.5 110,-38.5"/>
+<text text-anchor="middle" x="184.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapRenderer::onTileChange</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node3&#45;&gt;Node7</title>
-<path fill="none" stroke="#191970" d="M383.766,-112.032C361.4145,-106.7069 335.4617,-100.5238 314.4592,-95.5201"/>
-<polygon fill="#191970" stroke="#191970" points="383.2125,-115.498 393.7514,-114.411 384.8349,-108.6886 383.2125,-115.498"/>
-</g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="classMapRenderer.html#a472525cfdf5cd4ab4ed226457ae6f55a" target="_top" xlink:title="MapRenderer::onTileChange Wird aufgerufen wenn sich eine Kachel ändert.">
-<polygon fill="#ffffff" stroke="#000000" points="200,-38.5 200,-57.5 349,-57.5 349,-38.5 200,-38.5"/>
-<text text-anchor="middle" x="274.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapRenderer::onTileChange</text>
-</a>
-</g>
-</g>
-<!-- Node3&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node3&#45;&gt;Node8</title>
-<path fill="none" stroke="#191970" d="M414.0836,-107.7643C397.5522,-95.0218 372.9529,-77.7028 349,-67 340.5911,-63.2427 331.3029,-60.1305 322.2203,-57.5887"/>
-<polygon fill="#191970" stroke="#191970" points="412.3611,-110.8629 422.3824,-114.3015 416.6927,-105.364 412.3611,-110.8629"/>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="classScene.html#a38a79a03ba1fa403296646ee64ea8476" target="_top" xlink:title="Scene::setTileAt Setzt ein MapTile anhand der Pixel&#45;Koordinaten oder der Indezes.">
-<polygon fill="#ffffff" stroke="#000000" points="228.5,-.5 228.5,-19.5 320.5,-19.5 320.5,-.5 228.5,-.5"/>
-<text text-anchor="middle" x="274.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::setTileAt</text>
-</a>
-</g>
-</g>
-<!-- Node3&#45;&gt;Node10 -->
-<g id="edge10" class="edge">
-<title>Node3&#45;&gt;Node10</title>
-<path fill="none" stroke="#191970" d="M422.7443,-105.9263C408.3276,-84.311 381.3055,-48.5985 349,-29 340.4409,-23.8075 330.5025,-20.0267 320.7276,-17.2761"/>
-<polygon fill="#191970" stroke="#191970" points="419.9207,-108.0052 428.2927,-114.4983 425.7971,-104.2016 419.9207,-108.0052"/>
-</g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="classMapRenderer.html#a9f43e4b3db6a2cda8ea7cabf1bc6f805" target="_top" xlink:title=" ">
-<polygon fill="#ffffff" stroke="#000000" points="0,-152.5 0,-171.5 164,-171.5 164,-152.5 0,-152.5"/>
-<text text-anchor="middle" x="82" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MapRenderer::keyReleaseEvent</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="#191970" d="M209.0213,-162C194.5738,-162 179.0924,-162 164.0812,-162"/>
-<polygon fill="#191970" stroke="#191970" points="209.3373,-165.5001 219.3372,-162 209.3372,-158.5001 209.3373,-165.5001"/>
+<path fill="none" stroke="#191970" d="M324.0836,-107.7643C307.5522,-95.0218 282.9529,-77.7028 259,-67 250.5911,-63.2427 241.3029,-60.1305 232.2203,-57.5887"/>
+<polygon fill="#191970" stroke="#191970" points="322.3611,-110.8629 332.3824,-114.3015 326.6927,-105.364 322.3611,-110.8629"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classClient.html#a16ec13dd45e134c3d1ec31dd26e1a119" target="_top" xlink:title="Client::Client Erzeugt einen neuen Client.">
-<polygon fill="#ffffff" stroke="#000000" points="45,-38.5 45,-57.5 119,-57.5 119,-38.5 45,-38.5"/>
-<text text-anchor="middle" x="82" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Client::Client</text>
+<g id="a_node9"><a xlink:href="classScene.html#a38a79a03ba1fa403296646ee64ea8476" target="_top" xlink:title="Scene::setTileAt Setzt ein MapTile anhand der Pixel&#45;Koordinaten oder der Indezes.">
+<polygon fill="#ffffff" stroke="#000000" points="138.5,-.5 138.5,-19.5 230.5,-19.5 230.5,-.5 138.5,-.5"/>
+<text text-anchor="middle" x="184.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Scene::setTileAt</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="#191970" d="M189.647,-48C164.9034,-48 139.1407,-48 119.0242,-48"/>
-<polygon fill="#191970" stroke="#191970" points="189.799,-51.5001 199.799,-48 189.7989,-44.5001 189.799,-51.5001"/>
+<!-- Node3&#45;&gt;Node9 -->
+<g id="edge9" class="edge">
+<title>Node3&#45;&gt;Node9</title>
+<path fill="none" stroke="#191970" d="M332.7443,-105.9263C318.3276,-84.311 291.3055,-48.5985 259,-29 250.4409,-23.8075 240.5025,-20.0267 230.7276,-17.2761"/>
+<polygon fill="#191970" stroke="#191970" points="329.9207,-108.0052 338.2927,-114.4983 335.7971,-104.2016 329.9207,-108.0052"/>
+</g>
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="classClient.html#a16ec13dd45e134c3d1ec31dd26e1a119" target="_top" xlink:title="Client::Client Erzeugt einen neuen Client.">
+<polygon fill="#ffffff" stroke="#000000" points="0,-38.5 0,-57.5 74,-57.5 74,-38.5 0,-38.5"/>
+<text text-anchor="middle" x="37" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Client::Client</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node7&#45;&gt;Node8</title>
+<path fill="none" stroke="#191970" d="M99.723,-48C90.7794,-48 82.0572,-48 74.0985,-48"/>
+<polygon fill="#191970" stroke="#191970" points="99.8858,-51.5001 109.8858,-48 99.8857,-44.5001 99.8858,-51.5001"/>
 </g>
 </g>
 </svg>
