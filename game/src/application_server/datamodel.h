@@ -5,13 +5,14 @@
 #include <QLabel>
 #include <QWidget>
 
+#include "mainwindow.h"
 #include "player.h"
 
 class DataModel: public QObject
 {
     Q_OBJECT
 public:
-    DataModel();
+    DataModel(MainWindow *);
     int getBalance();
     void updateBalance(int pBalance);
     bool takeBalance(int pAmount);
@@ -22,6 +23,7 @@ public:
     void updateCoordinates(int pX, int pY);
     int getHoverX();
     int getHoverY();
+    void toggleFullscreen();
     std::string formatTime(long pTime);
     void setConnectionInfo(QString pString);
     QString * getIP();
@@ -54,7 +56,10 @@ private:
     QLabel * positionLabel;
     QLabel * statusDisplay;
     QLabel * connectionLabel;
+
     MODE mode{MODE::DEFAULT};
+
+    MainWindow * mainWindow;
 
 signals:
     void positionChange(int,int);

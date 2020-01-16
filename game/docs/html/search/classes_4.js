@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['highlighter_344',['Highlighter',['../classHighlighter.html',1,'']]]
+  ['highlighter_355',['Highlighter',['../classHighlighter.html',1,'']]]
 ];

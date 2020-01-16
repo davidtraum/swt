@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['fps_600',['fps',['../classMapRenderer.html#aa0ec851388918d4a13d329cf088b4c69',1,'MapRenderer']]],
-  ['framecount_601',['frameCount',['../classMapRenderer.html#af3d50b6c4d191b4cb119dacc1aeffb43',1,'MapRenderer']]],
-  ['framedelay_602',['frameDelay',['../classGameLoop.html#a0cebbba5d955c3cd49e32a512f4ee9b6',1,'GameLoop']]]
+  ['ea1c_615',['ea1c',['../classMapRenderer.html#a968a84cb8d342b22c2996ec5f83e216f',1,'MapRenderer']]]
 ];

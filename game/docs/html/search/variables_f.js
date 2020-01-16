@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['texthint_659',['textHint',['../classScene.html#a03320edcd924b9ff8453026e03d41f6e',1,'Scene']]],
-  ['textlabel_660',['textlabel',['../classToolTipMenu.html#a52eff572d382433f3ecc2eed8b5d39e2',1,'ToolTipMenu']]],
-  ['tickcount_661',['tickcount',['../classClient.html#a9ff09ca2e2b0f3c448d8ac8bc0940c6d',1,'Client']]],
-  ['tile_5fsize_662',['TILE_SIZE',['../classScene.html#a0bf17eb78a573f6717516aabe19402f3',1,'Scene']]],
-  ['time_663',['time',['../classDataModel.html#a317b1b09cd4bbc946c625e0dcfd89132',1,'DataModel']]],
-  ['timelabel_664',['timeLabel',['../classDataModel.html#a061c37f6be5ba1da4361f23487fab5ba',1,'DataModel::timeLabel()'],['../classSidePanel.html#a624cbaa9f3c22bf692a7653518ff67fd',1,'SidePanel::timeLabel()']]],
-  ['tooltip_665',['tooltip',['../classView.html#a4c161978de5538da22044a47befd2461',1,'View']]],
-  ['train_666',['train',['../classTrainRenderer.html#a674df3085f3c4ad9f85e8151e7b80885',1,'TrainRenderer']]],
-  ['trainrenderer_667',['trainRenderer',['../classRouteInterface.html#a95ee8f33e7eeff0bcc297dda140eaf85',1,'RouteInterface']]],
-  ['trainstationlist_668',['trainstationList',['../classRouteInterface.html#a10e1971bfee8d18e137d29413954986c',1,'RouteInterface']]],
-  ['tscoords_669',['tsCoords',['../classRouteInterface.html#a281911c14f31e64f7c0af63080e1297b',1,'RouteInterface']]],
-  ['tscount_670',['tsCount',['../classRouteInterface.html#afdbd966d1c2fa00428303a202aeba3c0',1,'RouteInterface']]],
-  ['type_671',['type',['../classMapTile.html#a50841d679e9b804d98aaeddbf1b2c4ad',1,'MapTile']]]
+  ['scale_668',['scale',['../classMapRenderer.html#a8ba34d6a402ea3c5e7173d768f2943b9',1,'MapRenderer']]],
+  ['scene_669',['scene',['../classClient.html#ab6e2c17f09b8386de4d7af70a809df75',1,'Client::scene()'],['../classGameLoop.html#a4d92ab46e9390277c206fe7f1c22c804',1,'GameLoop::scene()'],['../classMenuBar.html#a9cb9b56d70909f63c4f490170825dfdc',1,'MenuBar::scene()'],['../classMinimap.html#a7f675f3adf82d385b4179b5329003d02',1,'Minimap::scene()'],['../classView.html#a9b77fe3414a870fcbf3f174dc894ce38',1,'View::scene()'],['../main_8cpp.html#a6de66f9ad116ce1d596c7f4edc40c521',1,'scene():&#160;main.cpp'],['../main_8h.html#a6de66f9ad116ce1d596c7f4edc40c521',1,'scene():&#160;main.cpp']]],
+  ['secondplayer_670',['secondPlayer',['../classDataModel.html#a5641210f99ef2a3267f1185b458ed5a5',1,'DataModel::secondPlayer()'],['../classScene.html#ac3d40b2f1cd0855f7a411d799cb7ce98',1,'Scene::secondPlayer()']]],
+  ['showexpertdetails_671',['showExpertDetails',['../classMapRenderer.html#ab180758afa832266b33d8aca5029f10a',1,'MapRenderer']]],
+  ['showhighlight_672',['showHighlight',['../classMapRenderer.html#a8a6409cd0888ee6007df0a1c8f71cc3a',1,'MapRenderer']]],
+  ['showradius_673',['showRadius',['../classScene.html#aecb59164e9feda75eda4f5e6f540ef18',1,'Scene']]],
+  ['sidepanel_674',['sidePanel',['../main_8cpp.html#af6557e0f5cda6d5bf4852ccb1fe3733d',1,'sidePanel():&#160;main.cpp'],['../main_8h.html#af6557e0f5cda6d5bf4852ccb1fe3733d',1,'sidePanel():&#160;main.cpp']]],
+  ['size_675',['size',['../classCity.html#a1cc339bec81e637cac312f339316d15c',1,'City']]],
+  ['sky_676',['sky',['../classTrainRenderer.html#ac98142740fbe6bbe4e5827a490d1f72f',1,'TrainRenderer']]],
+  ['socket_677',['socket',['../classClient.html#acfb33719fbe6b0685ca7324c0ee893c5',1,'Client']]],
+  ['speed_678',['speed',['../classAnimationMovement.html#a891d3c87763b524ed60f1005ea25c1d5',1,'AnimationMovement']]],
+  ['statusdisplay_679',['statusDisplay',['../classDataModel.html#afde9d11c991d9b458d3f2c260c9718fd',1,'DataModel']]]
 ];
