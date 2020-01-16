@@ -121,8 +121,7 @@ class TrainStationLogic:
         for i in range((-1*self.range), self.range+1):
             for j in range((-1*self.range), self.range+1):                
                 if(self.x_Pos +i  >=0 and self.x_Pos + i <= 299 and self.y_Pos + j  >=0 and self.y_Pos +j <= 299):
-                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):
-                        print(karte[self.x_Pos+i][self.y_Pos+j].getType())
+                    if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):                        
                         if(karte[self.x_Pos+i][self.y_Pos+j].getType() == 2):
                             self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS'] += 1
                             self.NUMBER_OF_PRODUCTION_BUILDINGS['MAIL'] += 1                        
@@ -172,13 +171,19 @@ class TrainStationLogic:
         railConnectableLeft = False;    #Schiene links ist verbindbar?
         railConnectableUp = False;      #Schiene oben ist verbindbar?
         railConnectableDown = False;    #Schiene unten ist verbindbar?
-
+        print("start: ", x_Pos)
         
         #Rechts
         if(x_Pos<299):                              #Wenn Rechts innerhalb der Karte liegt
+            print(karte[x_Pos+1][y_Pos].getType())
+            print(karte[x_Pos+1][y_Pos].isRail())
             if(karte[x_Pos+1][y_Pos].isRail()): #Wenn Schiene existiert
+                'Schiene existiert'
                 if(karte[x_Pos+1][y_Pos].logic.player == player): #Wenn Schiene zum selben Spieler gehoert
                     #Wenn Schiene nicht vollstaendig verbunden ist.
+                    print("gleicher Spieler")
+                    'Schiene nicht vollstänig verbundn'
+                    print(karte[x_Pos+1][y_Pos].logic.connectedRight + karte[x_Pos+1][y_Pos].logic.connectedLeft + karte[x_Pos+1][y_Pos].logic.connectedUp + karte[x_Pos+1][y_Pos].logic.connectedDown)
                     if(karte[x_Pos+1][y_Pos].logic.connectedRight + karte[x_Pos+1][y_Pos].logic.connectedLeft + karte[x_Pos+1][y_Pos].logic.connectedUp + karte[x_Pos+1][y_Pos].logic.connectedDown != 2):
                         railConnectableRight = True; #dann liegt rechts eine verbindbare Schiene
                         

@@ -1,4 +1,5 @@
 from RailClass import RailLogic
+from WayClass import WayLogic
 
 class BridgeLogic():
 

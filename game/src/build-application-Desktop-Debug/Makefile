@@ -50,7 +50,7 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../application_server/animationmanager.cpp \
+SOURCES       = ../application_server/animationentity.cpp \
 		../application_server/animationmovement.cpp \
 		../application_server/city.cpp \
 		../application_server/client.cpp \
@@ -60,7 +60,9 @@ SOURCES       = ../application_server/animationmanager.cpp \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
 		../application_server/main.cpp \
+		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
+		../application_server/maprenderer.cpp \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
 		../application_server/minimap.cpp \
@@ -76,14 +78,17 @@ SOURCES       = ../application_server/animationmanager.cpp \
 		qrc_Graphics.cpp \
 		moc_client.cpp \
 		moc_datamodel.cpp \
+		moc_gameloop.cpp \
 		moc_goodselector.cpp \
 		moc_mainwindow.cpp \
+		moc_maprenderer.cpp \
 		moc_menubar.cpp \
 		moc_minimap.cpp \
 		moc_routeinterface.cpp \
 		moc_scene.cpp \
+		moc_trainrenderer.cpp \
 		moc_view.cpp
-OBJECTS       = animationmanager.o \
+OBJECTS       = animationentity.o \
 		animationmovement.o \
 		city.o \
 		client.o \
@@ -93,7 +98,9 @@ OBJECTS       = animationmanager.o \
 		graphicsmanager.o \
 		highlighter.o \
 		main.o \
+		mainmenu.o \
 		mainwindow.o \
+		maprenderer.o \
 		maptile.o \
 		menubar.o \
 		minimap.o \
@@ -110,12 +117,15 @@ OBJECTS       = animationmanager.o \
 		qrc_Graphics.o \
 		moc_client.o \
 		moc_datamodel.o \
+		moc_gameloop.o \
 		moc_goodselector.o \
 		moc_mainwindow.o \
+		moc_maprenderer.o \
 		moc_menubar.o \
 		moc_minimap.o \
 		moc_routeinterface.o \
 		moc_scene.o \
+		moc_trainrenderer.o \
 		moc_view.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -199,7 +209,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../application_server/application.pro ../application_server/animationmanager.h \
+		../application_server/application.pro ../application_server/animationentity.h \
 		../application_server/animationmovement.h \
 		../application_server/city.h \
 		../application_server/client.h \
@@ -209,7 +219,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/graphicsmanager.h \
 		../application_server/highlighter.h \
 		../application_server/main.h \
+		../application_server/mainmenu.h \
 		../application_server/mainwindow.h \
+		../application_server/maprenderer.h \
 		../application_server/maptile.h \
 		../application_server/menubar.h \
 		../application_server/minimap.h \
@@ -222,7 +234,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/tooltipmenu.h \
 		../application_server/tooltipmenu.h \
 		../application_server/trainrenderer.h \
-		../application_server/view.h ../application_server/animationmanager.cpp \
+		../application_server/view.h ../application_server/animationentity.cpp \
 		../application_server/animationmovement.cpp \
 		../application_server/city.cpp \
 		../application_server/client.cpp \
@@ -232,7 +244,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
 		../application_server/main.cpp \
+		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
+		../application_server/maprenderer.cpp \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
 		../application_server/minimap.cpp \
@@ -455,8 +469,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationmanager.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/main.h ../application_server/mainwindow.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/player.h ../application_server/point.h ../application_server/river.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationmanager.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/main.cpp ../application_server/mainwindow.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/player.h ../application_server/point.h ../application_server/river.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -498,6 +512,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/wald.png \
 		../application_server/grass.png \
 		../application_server/thomasAndFriends.png \
+		../application_server/train_top.png \
 		../application_server/trainstation.png \
 		../application_server/terminal.png \
 		../application_server/stadt.png \
@@ -514,6 +529,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/fluss_kurve_links_oben.png \
 		../application_server/fluss_vertikal.png \
 		../application_server/fluss_horizontal.png \
+		../application_server/schiene_v.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
 		../application_server/icon.png \
@@ -560,9 +576,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_client.cpp moc_datamodel.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_scene.cpp moc_view.cpp
+compiler_moc_header_make_all: moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_view.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_client.cpp moc_datamodel.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_scene.cpp moc_view.cpp
+	-$(DEL_FILE) moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_view.cpp
 moc_client.cpp: ../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
@@ -570,11 +586,12 @@ moc_client.cpp: ../application_server/scene.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
 		../application_server/client.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -582,13 +599,29 @@ moc_client.cpp: ../application_server/scene.h \
 
 moc_datamodel.cpp: ../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/datamodel.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/datamodel.h -o moc_datamodel.cpp
+
+moc_gameloop.cpp: ../application_server/maprenderer.h \
+		../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
+		../application_server/scene.h \
+		../application_server/client.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h \
+		../application_server/gameloop.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/gameloop.h -o moc_gameloop.cpp
 
 moc_goodselector.cpp: ../application_server/goodselector.h \
 		moc_predefs.h \
@@ -600,6 +633,20 @@ moc_mainwindow.cpp: ../application_server/mainwindow.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/mainwindow.h -o moc_mainwindow.cpp
 
+moc_maprenderer.cpp: ../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
+		../application_server/maprenderer.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/maprenderer.h -o moc_maprenderer.cpp
+
 moc_menubar.cpp: ../application_server/scene.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
@@ -607,32 +654,31 @@ moc_menubar.cpp: ../application_server/scene.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/routeinterface.h \
 		../application_server/trainrenderer.h \
 		../application_server/goodselector.h \
 		../application_server/client.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
 		../application_server/menubar.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/menubar.h -o moc_menubar.cpp
 
-moc_minimap.cpp: ../application_server/scene.h \
-		../application_server/maptile.h \
-		../application_server/city.h \
+moc_minimap.cpp: ../application_server/maprenderer.h \
 		../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
 		../application_server/point.h \
-		../application_server/view.h \
-		../application_server/tooltipmenu.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
 		../application_server/minimap.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -648,11 +694,12 @@ moc_routeinterface.cpp: ../application_server/trainrenderer.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
 		../application_server/routeinterface.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -664,13 +711,16 @@ moc_scene.cpp: ../application_server/maptile.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/scene.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/scene.h -o moc_scene.cpp
+
+moc_trainrenderer.cpp: ../application_server/graphicsmanager.h \
+		../application_server/trainrenderer.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/trainrenderer.h -o moc_trainrenderer.cpp
 
 moc_view.cpp: ../application_server/scene.h \
 		../application_server/maptile.h \
@@ -679,9 +729,6 @@ moc_view.cpp: ../application_server/scene.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/tooltipmenu.h \
 		../application_server/view.h \
 		moc_predefs.h \
@@ -707,13 +754,13 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-animationmanager.o: ../application_server/animationmanager.cpp ../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
+animationentity.o: ../application_server/animationentity.cpp ../application_server/animationentity.h \
 		../application_server/point.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animationmanager.o ../application_server/animationmanager.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animationentity.o ../application_server/animationentity.cpp
 
 animationmovement.o: ../application_server/animationmovement.cpp ../application_server/animationmovement.h \
-		../application_server/point.h
+		../application_server/point.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animationmovement.o ../application_server/animationmovement.cpp
 
 city.o: ../application_server/city.cpp ../application_server/city.h
@@ -727,35 +774,34 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
-		../application_server/tooltipmenu.h
+		../application_server/tooltipmenu.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../application_server/client.cpp
 
 datamodel.o: ../application_server/datamodel.cpp ../application_server/datamodel.h \
 		../application_server/player.h \
-		../application_server/highlighter.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h
+		../application_server/highlighter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamodel.o ../application_server/datamodel.cpp
 
 gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h \
-		../application_server/view.h \
-		../application_server/scene.h \
-		../application_server/maptile.h \
-		../application_server/city.h \
+		../application_server/maprenderer.h \
 		../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
 		../application_server/point.h \
-		../application_server/tooltipmenu.h \
-		../application_server/client.h
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
+		../application_server/scene.h \
+		../application_server/client.h \
+		../application_server/view.h \
+		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameloop.o ../application_server/gameloop.cpp
 
 goodselector.o: ../application_server/goodselector.cpp ../application_server/goodselector.h
@@ -772,9 +818,6 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/datamodel.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/client.h \
 		../application_server/scene.h \
 		../application_server/maptile.h \
@@ -782,6 +825,10 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/graphicsmanager.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h \
 		../application_server/menubar.h \
 		../application_server/routeinterface.h \
 		../application_server/trainrenderer.h \
@@ -791,9 +838,24 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/gameloop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
+mainmenu.o: ../application_server/mainmenu.cpp ../application_server/mainmenu.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainmenu.o ../application_server/mainmenu.cpp
+
 mainwindow.o: ../application_server/mainwindow.cpp ../application_server/mainwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../application_server/mainwindow.cpp
+
+maprenderer.o: ../application_server/maprenderer.cpp ../application_server/maprenderer.h \
+		../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
+		../application_server/player.h \
+		../application_server/highlighter.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maprenderer.o ../application_server/maprenderer.cpp
 
 maptile.o: ../application_server/maptile.cpp ../application_server/maptile.h \
 		../application_server/city.h \
@@ -808,30 +870,29 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/routeinterface.h \
 		../application_server/trainrenderer.h \
 		../application_server/goodselector.h \
-		../application_server/client.h
+		../application_server/client.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
 minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
-		../application_server/scene.h \
-		../application_server/maptile.h \
-		../application_server/city.h \
+		../application_server/maprenderer.h \
 		../application_server/graphicsmanager.h \
+		../application_server/datamodel.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
+		../application_server/maptile.h \
+		../application_server/city.h \
 		../application_server/point.h \
-		../application_server/view.h \
-		../application_server/tooltipmenu.h
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h \
@@ -855,11 +916,12 @@ routeinterface.o: ../application_server/routeinterface.cpp ../application_server
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/view.h \
-		../application_server/tooltipmenu.h
+		../application_server/tooltipmenu.h \
+		../application_server/maprenderer.h \
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o routeinterface.o ../application_server/routeinterface.cpp
 
 scene.o: ../application_server/scene.cpp ../application_server/scene.h \
@@ -868,26 +930,21 @@ scene.o: ../application_server/scene.cpp ../application_server/scene.h \
 		../application_server/graphicsmanager.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h
+		../application_server/datamodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o ../application_server/scene.cpp
 
 sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel.h \
 		../application_server/datamodel.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/minimap.h \
-		../application_server/scene.h \
+		../application_server/maprenderer.h \
+		../application_server/graphicsmanager.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/graphicsmanager.h \
-		../application_server/view.h \
-		../application_server/tooltipmenu.h
+		../application_server/point.h \
+		../application_server/animationmovement.h \
+		../application_server/animationentity.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sidepanel.o ../application_server/sidepanel.cpp
 
 tooltipmenu.o: ../application_server/tooltipmenu.cpp ../application_server/tooltipmenu.h
@@ -905,9 +962,6 @@ view.o: ../application_server/view.cpp ../application_server/view.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
-		../application_server/animationmanager.h \
-		../application_server/animationmovement.h \
-		../application_server/point.h \
 		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application_server/view.cpp
 
@@ -923,11 +977,17 @@ moc_client.o: moc_client.cpp
 moc_datamodel.o: moc_datamodel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_datamodel.o moc_datamodel.cpp
 
+moc_gameloop.o: moc_gameloop.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gameloop.o moc_gameloop.cpp
+
 moc_goodselector.o: moc_goodselector.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_goodselector.o moc_goodselector.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_maprenderer.o: moc_maprenderer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maprenderer.o moc_maprenderer.cpp
 
 moc_menubar.o: moc_menubar.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_menubar.o moc_menubar.cpp
@@ -940,6 +1000,9 @@ moc_routeinterface.o: moc_routeinterface.cpp
 
 moc_scene.o: moc_scene.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_scene.o moc_scene.cpp
+
+moc_trainrenderer.o: moc_trainrenderer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_trainrenderer.o moc_trainrenderer.cpp
 
 moc_view.o: moc_view.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_view.o moc_view.cpp

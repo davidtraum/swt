@@ -9,14 +9,69 @@ class WayLogic:
         self.secondRail = []
         self.waySections = []
 
+
+    @staticmethod
+    def wayLasttoFirstStation( karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):
+        if(wayTmp == None):
+            wayTmp = []
+        found = False
+        isHorizontal = False        
+        if(isHorizontal or karte[pXL][pYL].getType() == 16 or karte[pXL][pYL].getType() == 18 or karte[pXL][pYL].getType() == 20):
+                if(karte[pXL-1][pYL].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Links
+                    isHorizontal=True
+                    pX -=1
+                    wayTmp.append(karte[pXL][pYL])
+                    if(pXL == pXS and pYL == pXS):
+                        return wayTmp
+                    else:
+                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
+                elif(karte[pXL+1][pYL].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Rechts
+                    isHorizontal=True
+                    pX +=1
+                    wayTmp.append(karte[pXL][pYL])
+                    if(pXL == pXS and pYL == pXS):
+                        return wayTmp
+                    else:
+                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
+                elif(karte[pXL][pYL-1].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Oben
+                    isHorizontal=True
+                    pY -=1
+                    wayTmp.append(karte[pXL][pYL])
+                    if(pXL == pXS and pYL == pXS):
+                        return wayTmp
+                    else:
+                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
+                if(karte[pXL][pYL+1].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Unten
+                    isHorizontal=True
+                    pY +=1
+                    wayTmp.append(karte[pXL][pYL])
+                    if(pXL == pXS and pYL == pXS):
+                        return wayTmp
+                    else:
+                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
+                else:
+                    wayTmp = None
+                    
+    
+    @staticmethod
+    def getLength(pTrainStationA, pTrainStationB):
+        print(pTrainStationA)
+        print(pTrainStationB)
+        for i in range(0, len(WayLogic.allWays)):
+            if(WayLogic.allWays[i].firstTrainStation==pTrainStationA or WayLogic.allWays[i].secondTrainStation == pTrainStationA):
+                if(WayLogic.allWays[i].firstTrainStation ==pTrainStationB or WayLogic.allWays[i].secondTrainStation == pTrainStationB):
+                    s = len(WayLogic.allWays[i].firstRail)
+                    print(s)
+                    return s
+
     @staticmethod
     def getProtocolString():
         s = ''
-        for i in range(None, (len(WayLogic.allWays))):
+        for i in range(0, (len(WayLogic.allWays))):
             print(i)
-            if(WayLogic.allWays[i].firstTrainStation != None):
+            if(WayLogic.allWays[i].firstTrainStation != None):                
                 s += 'WAY ' + str(i+1) + ' FIRSTSTATION ' + 'POSX ' + str(WayLogic.allWays[i].firstTrainStation.getX()) + ' POSY ' + str(WayLogic.allWays[i].firstTrainStation.getY())
-            for j in range(None, len(WayLogic.allWays[i].firstRail)):
+            for j in range(0, len(WayLogic.allWays[i].firstRail)):
                 s+= ' POSX ' +str(WayLogic.allWays[i].firstRail[j].getX()) + ' POSY ' + str(WayLogic.allWays[i].firstRail[j].getY())
             if(WayLogic.allWays[i].secondTrainStation != None):
                 s += ' SECONDSTATION ' + 'POSX ' + str(WayLogic.allWays[i].secondTrainStation.getX()) + ' POSY ' + str(WayLogic.allWays[i].secondTrainStation.getY())

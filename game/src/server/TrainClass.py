@@ -1,4 +1,4 @@
-from RouteClass import RouteLogic
+
 from WagonClass import WagonLogic
 
 class TrainLogic:
@@ -8,9 +8,9 @@ class TrainLogic:
         self.maxWagons = 10
         self.wagons = []
 
-    def addWagons(self, pWagon, pStartTrainstation, pEndTrainstation, pType):
+    def addWagons(self, pStartTrainstation, pEndTrainstation, pType):
         for i in range(len(pType)):        
-            self.wagons.append(pWagon(pStartTrainstation, pEndTrainstation, pType[i]))
+            self.wagons.append(WagonLogic(pStartTrainstation, pEndTrainstation, pType[i]))
             self.wagons[i].loadWagon()
         return True
         

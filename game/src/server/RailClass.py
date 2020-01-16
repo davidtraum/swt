@@ -87,6 +87,7 @@ class RailLogic:
     @staticmethod
     def build(x_Pos,y_Pos, pPlayer, karte):        
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = RailLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte)
+        print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
             print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
         

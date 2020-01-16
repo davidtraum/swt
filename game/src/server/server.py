@@ -9,6 +9,7 @@ from TrainStationClass import TrainStationLogic
 from PlayerClass import Player
 from BridgeClass import BridgeLogic
 from WayClass import WayLogic
+from RouteClass import RouteLogic
 
 
 clients = []
@@ -52,7 +53,7 @@ class MapTile:
         'BRIDGE_H': 22,
         'BRIDGE_V': 23,
         'CORN': 24,
-        'COLE': 25        
+        'COAL': 25        
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -128,20 +129,20 @@ class MapTile:
 
     def logicUpdate(self):
         if(self.logic != None):
-            print("MapTile @ LogicUpdate ", self.x, " " , self.y)
+            print("MapTile @ LogicUpdate ", self.x, " " , self.y)            
             newType = self.logic.getType()
-            print(self.type, newType)
+            print(self.type, newType)            
             if(MapTile.TYPES[newType] != self.type):
                 print("MapTile @ LogicChanged ", newType)
                 self.setType(newType)
 
-    def initLogic(self, pLogic, karte = None, pRange = 0):
+    def initLogic(self, pLogic, karte = None, pRange = 2):
         print("Init logic @ ", self.x, " ", self.y)
         if(pLogic == RailLogic or pLogic == BridgeLogic):
             self.logic = pLogic(self, None)
         if(pLogic == TrainStationLogic):
             self.logic = pLogic(self, None, pRange, 2, karte)
-            tasks.append(self.logic)
+            #tasks.append(self.logic)
         
 
 
@@ -285,19 +286,63 @@ class World:
                         typ = 'RIVER_V'
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
                     break
-
-        self.data[150][150].initLogic(RailLogic)
-        self.data[150][150].logicUpdate()
-        WayLogic.allWays.append(WayLogic(None))
-        WayLogic.allWays[0].firstRail.append(self.data[150][150])
-        WayLogic.allWays[0].secondRail.append(None)
-        self.data[150][150].logic.way = WayLogic.allWays[0]
-        world.tileInteract(149, 150, 'DEPOT')
-        self.data[150][150].logic.way.firstRail.insert(0, self.data[149][150])
-        self.data[150][150].logic.way.secondRail.insert(0, self.data[149][150])
-        self.data[150][150].logic.way.firstTrainStation = self.data[149][150]
-        print(self.data[150][150].logic.way.firstTrainStation.getX())
-        world.tileInteract(148, 150, 'RAIL')
+        testStrecke = True
+        Richtung = "links"                
+        if(testStrecke == True):
+            testTrainstations = []
+            if(Richtung == 'links'):
+                self.data[150][150].initLogic(TrainStationLogic, self.data)
+                self.data[150][150].type = 16
+                testTrainstations.append(self.data[150][150])
+                print(self.data[150][150].getType())         
+                for i in range(0,10):
+                    if(i != 9):
+                        world.tileInteract(149-i, 150, 'RAIL')
+                    else:
+                        world.tileInteract(149-i, 150, 'TERMINAL')
+                        testTrainstations.append(self.data[149-i][150])                        
+            elif(Richtung == 'rechts'):
+                self.data[150][150].initLogic(TrainStationLogic, self.data)
+                self.data[150][150].type = 16
+                testTrainstations.append(self.data[150][150].logic)
+                print(self.data[150][150].getType())         
+                for i in range(0,10):
+                    if(i != 9):
+                        world.tileInteract(149+i, 150, 'RAIL')
+                    else:                   
+                        world.tileInteract(149+i, 150, 'TERMINAL')
+                        testTrainstations.append(self.data[149+i][150])                       
+            elif(Richtung == 'oben'):
+                self.data[150][150].initLogic(TrainStationLogic, self.data)
+                self.data[150][150].type = 17
+                testTrainstations.append(self.data[150][150].logic)
+                print(self.data[150][150].getType())         
+                for i in range(0,10):
+                    if(i != 9):
+                        world.tileInteract(150, 149-1, 'RAIL')
+                    else:                    
+                        world.tileInteract(150, 149-1, 'TERMINAL')
+                        testTrainstations.append(self.data[150][149-i])                       
+            elif(Richtung == 'unten'):
+                self.data[150][150].initLogic(TrainStationLogic, self.data)
+                self.data[150][150].type = 17
+                testTrainstations.append(self.data[150][150].logic)
+                print(self.data[150][150].getType())         
+                for i in range(0,10):
+                    if(i != 9):
+                        world.tileInteract(150, 149+i, 'RAIL')
+                    else:
+                        world.tileInteract(150, 149+i, 'TERMINAL') 
+                        testTrainstations.append(self.data[150][149+i])          
+            testWagons=[]
+            for j in range(7):
+                testWagons.append("CORN")
+            RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons))
+            tasks.append(RouteLogic.allRoutes[-1])
+           
+                        
+        
+            
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
             for y in range(0, 40):
@@ -315,7 +360,8 @@ class World:
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[x][y].setType('WATER') 
                 for x in range(random.randint(minX,150-(y-150))):
-                    self.data[299-x][y].setType('WATER')         
+                    self.data[299-x][y].setType('WATER')
+                     
 
 class GameLoopThread(Thread):
 
@@ -516,8 +562,8 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((CONFIG['bind_ip'], CONFIG['port']))
 server.listen()
 
-#gameloop = GameLoopThread(tickspeed=500)
-#gameloop.start()
+gameloop = GameLoopThread(tickspeed=500)
+gameloop.start()
 
 
 print("Server wird gestartet...")
