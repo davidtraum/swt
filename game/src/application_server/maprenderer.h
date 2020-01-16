@@ -63,6 +63,9 @@ private:
     int fps{0};
     double vx{0},vy{0};
     int moveStepsLeft{0};
+    int tileSize{64};
+    int originTileSize{64};
+    int halfSize{tileSize/2};
 
 public slots:
     void onTileChange(int,int,int);
