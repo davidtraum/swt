@@ -24,7 +24,8 @@ class RouteLogic:
             print(self.trainstations[i+1])            
             self.timeNeeded.append(WayLogic.getLength(self.trainstations[i], self.trainstations[i+1]))   
         tmp = WayLogic.wayStationAToB(self.karte, self.trainstations[-1].getX(), self.trainstations[-1].getY(), self.trainstations[0].getX(), self.trainstations[0].getY())
-        print(len(tmp))
+        self.timeNeeded.append(len(tmp))
+        print (self.timeNeeded)
 
         
             
