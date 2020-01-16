@@ -16,7 +16,7 @@ clients = []
 clientCount = 0
 tasks = []
 
-def broadcast(pText, exclude=None):
+def broadcast(pText, exclude=None):     #Ein Broadcast geht an alle verbundenen Clients raus
     global clients
     for client in clients:
         try:
@@ -174,7 +174,7 @@ class World:
         diff = currentTime - self.startTime
         return int(diff/20)
 
-    def tileInteract(self, posX, posY, pType):
+    def tileInteract(self, posX, posY, pType):  #Funktion zur Unterscheidung welche Interaktion mit einem MapTile durchgeführt wurde.
         print("Interact ", posX, " ", posY, " ", pType)
         if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
@@ -194,7 +194,7 @@ class World:
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
     
-    def tileRemove(self, posX, posY):  
+    def tileRemove(self, posX, posY):  #entferne ein Maptile (wird zu Flachland/Gras)
         if(self.data[posX][posY].type >= 9 and self.data[posX][posY].type <= 14):
             print("Remove Rail Request at ", posX, " ", posY)
             self.data[posX][posY].logic.remove(posX, posY, None, self.data)
@@ -206,7 +206,7 @@ class World:
             self.data[posX][posY].setType('GRASS')
         self.data[posX][posY]
 
-    def generateWorld(self):
+    def generateWorld(self):    #Weltgenerierung nach Start des Servers
         print("Welt wird generiert...")
         size = 300
         for x in range(size):
@@ -215,7 +215,7 @@ class World:
                     self.data[x][y].setType('FOREST')
                 self.data[x][y].setRotation(random.randint(0, 3))
 
-        for townIndex in range(300):
+        for townIndex in range(300):    #generiere Städte
             px, py = self.randomPosition()
             size = random.randint(3, 20)
             for houseIndex in range(size):
@@ -233,7 +233,7 @@ class World:
                 elif(py > 299):
                     py = 299
 
-        for riverIndex in range(20):
+        for riverIndex in range(20):    #generiere Flüsse
             px, py = self.randomPosition()
             vx = 1
             vy = 0
@@ -286,9 +286,10 @@ class World:
                         typ = 'RIVER_V'
                 if(not (self.isValidPosition(px+vx, py+vy) and not self.data[px+vx][py+vy].isRiver())):
                     break
+                
         testStrecke = True
         Richtung = "links"                
-        if(testStrecke == True):
+        if(testStrecke == True):    #generiert Teststrecke
             testTrainstations = []
             if(Richtung == 'links'):
                 self.data[150][150].initLogic(TrainStationLogic, self.data)
@@ -339,9 +340,6 @@ class World:
                 testWagons.append("CORN")
             RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons, self.data))
             tasks.append(RouteLogic.allRoutes[-1])
-           
-                        
-        
             
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
@@ -363,7 +361,7 @@ class World:
                     self.data[299-x][y].setType('WATER')
                      
 
-class GameLoopThread(Thread):
+class GameLoopThread(Thread):   #GameLoop lässt die Zeit im Spiel weiterlaufen
 
     def __init__(self, tickspeed=20):
         Thread.__init__(self)
@@ -381,7 +379,7 @@ class GameLoopThread(Thread):
             self.do_loop()
             time.sleep(self.tickspeed)
 
-class ClientThread(Thread):
+class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
 
     def __init__(self, pConnection):
         Thread.__init__(self)
@@ -394,7 +392,7 @@ class ClientThread(Thread):
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
 
-    def disconnect(self):
+    def disconnect(self):   #Disconnectet einen Client
         global clients
         global clientCount
         if(self in clients):
@@ -408,11 +406,13 @@ class ClientThread(Thread):
         except Exception:
             print("FEHLER BEIM DISCONNECT")
 
-    def processCommand(self,command):
+    def processCommand(self,command):   #Befehlsverarbeitung
             global world
             print(command)
             args = command.split(" ")
-            if(args[0] == 'MAP'):
+
+            
+            if(args[0] == 'MAP'):   #Befehlsverarbeitung MAP
                 if(args[1] == 'GET'):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
@@ -422,7 +422,8 @@ class ClientThread(Thread):
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))
-            elif(args[0] == 'BUILD'):
+                    
+            elif(args[0] == 'BUILD'):   #Befehlsverarbeitung BUILD
                 posX = int(args[2])
                 posY = int(args[3])
                 if(args[1] == 'RAIL'):
@@ -450,12 +451,12 @@ class ClientThread(Thread):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getTrainstationProtocolString(int(args[2]),int(args[3]),world.data))
 
-            elif(args[0] == 'REMOVE'):
+            elif(args[0] == 'REMOVE'):  #Befehlsverarbeitung REMOVE
                 posX = int(args[1])
                 posY = int(args[2])
                 world.tileRemove(posX, posY)
 
-            elif(args[0] == 'ROUTE'):
+            elif(args[0] == 'ROUTE'):   #Befehlsverarbeitung ROUTE
                 tsStops = [[]]     #speichert Koordinaten der Haltestellen auf der Route
                 wagonTypes = []
                 i=0    #Damit Array in Schleife bei 0 beginnt
@@ -477,15 +478,15 @@ class ClientThread(Thread):
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
                     
                 
-                print("Routen-Befehl gespeichert: ")
+                print("Routen-Befehl gespeichert: ")    #Testausgabe für Routen (Erstes Listenelement ist leer -> Fehler suchen?
                 print("TS Coords: ")
                 print(*tsStops, sep='_', end='\n')
                 print("Wagon Types: ")
                 print(*wagonTypes, sep='_', end='\n')
                 
 
-            if(args[0] == 'POS'):
-                print("got pos update " + command)
+            if(args[0] == 'POS'):   #Befehlsverarbeitung POS
+                #print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
                 broadcast("POS+" + str(posX) + "+" + str(posY), exclude=self)
@@ -494,7 +495,7 @@ class ClientThread(Thread):
                 print("Befehl nicht verstanden: ")
                 print(command)
 
-    def run(self):
+    def run(self):  #Server wartet im Thread auf Befehle des Clients bis dieser die Verbindung trennt
         global world
         buffer = b""
         while True:

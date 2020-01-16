@@ -18,7 +18,7 @@ class RouteLogic:
         self.calculateTime()
         self.train.addWagons(self.trainstations[0], self.trainstations[1], self.wagons) #erste Strecke
 
-    def calculateTime(self):
+    def calculateTime(self):    #Berechnet die benötigte Zeit, die die Route in Anspruch nimmt
         for i in range(len(self.trainstations)-1):
             print(self.trainstations[i])
             print(self.trainstations[i+1])            
@@ -31,7 +31,7 @@ class RouteLogic:
             
             
         
-    def do_loop(self):                       
+    def do_loop(self):  #Der Loop, der die Züge in der Logik die Route abfahren lässt                      
         if(time.time() - self.last_mach_was > float(self.timeNeeded[self.stationCounter]) * 0.5):
             print("Bahnhof ",self.stationCounter," erreicht")
             self.train.removeWagon(self.wagons)            

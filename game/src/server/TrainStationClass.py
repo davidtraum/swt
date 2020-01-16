@@ -133,7 +133,7 @@ class TrainStationLogic:
         for key in self.NUMBER_OF_PRODUCTION_BUILDINGS:
             self.PRICES[key] += 50 * self.NUMBER_OF_PRODUCTION_BUILDINGS[key]  
 
-    def getType(self):        
+    def getType(self):  #gibt Typ des Bahnhofs zurück        
         if(self.range == 2):            
             if(self.connectedRight == True or self.connectedLeft == True):                
                 return 'DEPOT_H'
@@ -156,7 +156,7 @@ class TrainStationLogic:
 
 
     @staticmethod
-    def checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte):
+    def checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte):    #Prüft ob eine Kachel in Reichweite zur Trainstation ist
         sideLenght = 2*pRange+1             #Seitenlänge
         for column in range(pRange*2+1):    #Spalten    
             for row in range(pRange*2+1):   #Reihe
@@ -166,7 +166,7 @@ class TrainStationLogic:
                     return False
     
     @staticmethod
-    def checkConnectableRails(player, x_Pos, y_Pos, karte):
+    def checkConnectableRails(player, x_Pos, y_Pos, karte):     #Schienen dürfen nur gelegt werden, wenn andere Schiene oder Bahnhof in der Nähe ist
         railConnectableRight = False;   #Schiene rechts ist verbindbar?
         railConnectableLeft = False;    #Schiene links ist verbindbar?
         railConnectableUp = False;      #Schiene oben ist verbindbar?
@@ -216,7 +216,7 @@ class TrainStationLogic:
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
     @staticmethod
-    def build(x_Pos, y_Pos, pPlayer, pRange, karte):        
+    def build(x_Pos, y_Pos, pPlayer, pRange, karte):        #Diese Funktion ermöglicht den Bau von Schienen + Kurvenlogik
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = TrainStationLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte)
         print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)
         if(not TrainStationLogic.checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte)):
@@ -338,7 +338,7 @@ class TrainStationLogic:
         else:
             print('Kann Bahnhof hier nicht bauen!')
 
-    def remove(self, x_Pos,y_Pos, pPlayer, karte): 
+    def remove(self, x_Pos,y_Pos, pPlayer, karte):      #Entferne Das Maptile und setze es auf Gras zurück
         if(karte[x_Pos][y_Pos].player == pPlayer):
             if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 1):
                 karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt

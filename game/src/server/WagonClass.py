@@ -1,6 +1,6 @@
 from TrainStationClass import TrainStationLogic
 
-class WagonLogic:
+class WagonLogic:   #Waggons werden an Züge angehängt
     def __init__(self, pStartTrainstation, pEndTrainstation, pType):
         self.capacity = 50
         self.type = pType
@@ -8,7 +8,7 @@ class WagonLogic:
         self.startTrainstation = pStartTrainstation
         self.endTrainstation = pEndTrainstation
 
-    def loadWagon(self):
+    def loadWagon(self):    #Belädt Waggon mit Gütern
         maxGood = self.startTrainstation.logic.STORAGE[self.type]
         if self.capacity <= maxGood :
             self.amount += self.capacity #füllt Wagon komplett
@@ -19,7 +19,7 @@ class WagonLogic:
             self.startTrainstation.logic.STORAGE[self.type] -= self.capacity
             return True
       
-    def unloadWagon(self):
+    def unloadWagon(self):  #Entlädt Waggon
         trainstationGood = self.endTrainstation.logic.STORAGE[self.type]
         if self.amount + trainstationGood <= self.endTrainstation.logic.maxStorage:
             self.endTrainstation.logic.STORAGE[self.type] += self.amount

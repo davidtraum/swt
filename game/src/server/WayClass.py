@@ -11,7 +11,7 @@ class WayLogic:
 
 
     @staticmethod
-    def wayStationAToB(karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):       
+    def wayStationAToB(karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):   #Rekursive Funktion zur Wegfindung des Zugs (Streckenlogik)       
         if(wayTmp == None):            
             wayTmp = []
             wayTmp.append(karte[pXL][pYL])   
@@ -51,7 +51,7 @@ class WayLogic:
                     
     
     @staticmethod
-    def getLength(pTrainStationA, pTrainStationB):
+    def getLength(pTrainStationA, pTrainStationB):  #Gibt die Länge der Strecke zurück
         print(pTrainStationA)
         print(pTrainStationB)
         for i in range(0, len(WayLogic.allWays)):
