@@ -32,6 +32,9 @@ public:
     Point toScreenPosition(int,int);
     Point getMinPos();
     Point getMaxPos();
+    Point getTileCenter();
+
+    void animateMovementToTilePosition(int,int);
 
     void setViewportTilePosition(int,int);
 
@@ -58,6 +61,8 @@ private:
     long lastFpsTake{0};
     int frameCount{0};
     int fps{0};
+    double vx{0},vy{0};
+    int moveStepsLeft{0};
 
 public slots:
     void onTileChange(int,int,int);

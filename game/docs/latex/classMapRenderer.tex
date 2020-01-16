@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Map\+Renderer\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -67,6 +69,10 @@ void \mbox{\hyperlink{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}{demo}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a6987b7277c79c4b06e4e5dd7e666477e}{Map\+Renderer\+::get\+Min\+Pos}} Gibt die minimale Position des Viewports zurück. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMapRenderer_ae68fe923734619c5a0e44586ca3281dd}{get\+Max\+Pos}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a6987b7277c79c4b06e4e5dd7e666477e}{Map\+Renderer\+::get\+Min\+Pos}} Gibt die maximale Position des Viewports zurück. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMapRenderer_a16e18fbc2209227f9c891349b49079e4}{get\+Tile\+Center}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a16e18fbc2209227f9c891349b49079e4}{Map\+Renderer\+::get\+Tile\+Center}} Liefert die Koordinate der zentralen Kachel zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_a15bd2845914440803193a2209b1a9230}{animate\+Movement\+To\+Tile\+Position}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a15bd2845914440803193a2209b1a9230}{Map\+Renderer\+::animate\+Movement\+To\+Tile\+Position}} Führt eine Bewegungsanimation zu einer Kachelkoordinate durch. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{set\+Viewport\+Tile\+Position}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{Map\+Renderer\+::set\+Viewport\+Tile\+Position}} Verschiebt den Viewport zu einer Tile-\/\+Koordinate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}{animate\+Movement}} (Q\+Image, Q\+String)
@@ -112,6 +118,12 @@ long \mbox{\hyperlink{classMapRenderer_ab9fd15b49ae3ceb4e72556fe391a6099}{last\+
 int \mbox{\hyperlink{classMapRenderer_af3d50b6c4d191b4cb119dacc1aeffb43}{frame\+Count}} \{0\}
 \item 
 int \mbox{\hyperlink{classMapRenderer_aa0ec851388918d4a13d329cf088b4c69}{fps}} \{0\}
+\item 
+double \mbox{\hyperlink{classMapRenderer_a157332ede504131e45f7482d7b6c7118}{vx}} \{0\}
+\item 
+double \mbox{\hyperlink{classMapRenderer_a7b477713511c8e7d7c8dc6cf01e61e35}{vy}} \{0\}
+\item 
+int \mbox{\hyperlink{classMapRenderer_abfe2d195e80d51af49234c124cb37b20}{move\+Steps\+Left}} \{0\}
 \end{DoxyCompactItemize}
 
 
@@ -160,6 +172,32 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMapRenderer_a919be325b2604b720ed0fa2eb5676592_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMapRenderer_a15bd2845914440803193a2209b1a9230}\label{classMapRenderer_a15bd2845914440803193a2209b1a9230}} 
+\index{MapRenderer@{MapRenderer}!animateMovementToTilePosition@{animateMovementToTilePosition}}
+\index{animateMovementToTilePosition@{animateMovementToTilePosition}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{animateMovementToTilePosition()}{animateMovementToTilePosition()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::animate\+Movement\+To\+Tile\+Position (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a15bd2845914440803193a2209b1a9230}{Map\+Renderer\+::animate\+Movement\+To\+Tile\+Position}} Führt eine Bewegungsanimation zu einer Kachelkoordinate durch. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classMapRenderer_a15bd2845914440803193a2209b1a9230_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a15bd2845914440803193a2209b1a9230_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}\label{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}} 
@@ -239,6 +277,27 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMapRenderer_a6987b7277c79c4b06e4e5dd7e666477e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMapRenderer_a16e18fbc2209227f9c891349b49079e4}\label{classMapRenderer_a16e18fbc2209227f9c891349b49079e4}} 
+\index{MapRenderer@{MapRenderer}!getTileCenter@{getTileCenter}}
+\index{getTileCenter@{getTileCenter}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{getTileCenter()}{getTileCenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Map\+Renderer\+::get\+Tile\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a16e18fbc2209227f9c891349b49079e4}{Map\+Renderer\+::get\+Tile\+Center}} Liefert die Koordinate der zentralen Kachel zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Ein Punkt. 
+\end{DoxyReturn}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classMapRenderer_a16e18fbc2209227f9c891349b49079e4_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMapRenderer_a9f43e4b3db6a2cda8ea7cabf1bc6f805}\label{classMapRenderer_a9f43e4b3db6a2cda8ea7cabf1bc6f805}} 
@@ -381,7 +440,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Ein Q\+Paint\+Event. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -554,6 +614,12 @@ if(event-\/$>$delta()$>$0)\{ scale-\/=0.\+1; \}else\{ scale+=0.\+1; \}
 \doxysubsubsection{\texorpdfstring{movementAnimations}{movementAnimations}}
 {\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$$>$ Map\+Renderer\+::movement\+Animations\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMapRenderer_abfe2d195e80d51af49234c124cb37b20}\label{classMapRenderer_abfe2d195e80d51af49234c124cb37b20}} 
+\index{MapRenderer@{MapRenderer}!moveStepsLeft@{moveStepsLeft}}
+\index{moveStepsLeft@{moveStepsLeft}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{moveStepsLeft}{moveStepsLeft}}
+{\footnotesize\ttfamily int Map\+Renderer\+::move\+Steps\+Left \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classMapRenderer_a0216ff41225540372f57dd79d30f2443}\label{classMapRenderer_a0216ff41225540372f57dd79d30f2443}} 
 \index{MapRenderer@{MapRenderer}!offset@{offset}}
 \index{offset@{offset}!MapRenderer@{MapRenderer}}
@@ -589,6 +655,18 @@ if(event-\/$>$delta()$>$0)\{ scale-\/=0.\+1; \}else\{ scale+=0.\+1; \}
 \index{showHighlight@{showHighlight}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{showHighlight}{showHighlight}}
 {\footnotesize\ttfamily bool Map\+Renderer\+::show\+Highlight \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_a157332ede504131e45f7482d7b6c7118}\label{classMapRenderer_a157332ede504131e45f7482d7b6c7118}} 
+\index{MapRenderer@{MapRenderer}!vx@{vx}}
+\index{vx@{vx}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{vx}{vx}}
+{\footnotesize\ttfamily double Map\+Renderer\+::vx \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_a7b477713511c8e7d7c8dc6cf01e61e35}\label{classMapRenderer_a7b477713511c8e7d7c8dc6cf01e61e35}} 
+\index{MapRenderer@{MapRenderer}!vy@{vy}}
+\index{vy@{vy}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{vy}{vy}}
+{\footnotesize\ttfamily double Map\+Renderer\+::vy \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

@@ -40,6 +40,12 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     long beforeTime = clock();
     QPainter painter(this);
 
+    if(moveStepsLeft>0){
+        offset.move(int(vx),int(vy));
+        dataModel->updateCoordinates(offset.getX()/64, offset.getY()/64);
+        moveStepsLeft--;
+    }
+
     Point minPos = getMinPos().toTile();
     Point maxPos = getMaxPos().toTile();
     for(int x = minPos.getX(); x<maxPos.getX(); x++){
@@ -373,6 +379,28 @@ Point MapRenderer::getMinPos(){
  */
 Point MapRenderer::getMaxPos(){
     return offset.add(this->width()+64, this->height()+64);
+}
+
+/**
+ * @brief MapRenderer::getTileCenter Liefert die Koordinate der zentralen Kachel zurück.
+ * @return Ein Punkt.
+ */
+Point MapRenderer::getTileCenter()
+{
+    return Point(int((offset.getX()+this->width()*0.5) / 64), int((offset.getY()+this->height()) / 64));
+}
+
+/**
+ * @brief MapRenderer::animateMovementToTilePosition Führt eine Bewegungsanimation zu einer Kachelkoordinate durch.
+ */
+void MapRenderer::animateMovementToTilePosition(int px, int py)
+{
+    Point center(offset.getX() / 64, offset.getY() / 64);
+    vx = px*64-center.getX()*64;
+    vy = py*64-center.getY()*64;
+    vx/=20;
+    vy/=20;
+    moveStepsLeft=20;
 }
 
 /**

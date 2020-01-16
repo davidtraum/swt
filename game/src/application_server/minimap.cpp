@@ -61,7 +61,7 @@ void Minimap::paintEvent(QPaintEvent *event)
 void Minimap::mouseReleaseEvent(QMouseEvent *event)
 {
     mouseDown = false;
-    scene->setViewportTilePosition(event->x(), event->y());
+    scene->animateMovementToTilePosition(event->x(), event->y());
 }
 
 void Minimap::mousePressEvent(QMouseEvent *event)
