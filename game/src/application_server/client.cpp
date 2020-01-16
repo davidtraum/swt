@@ -26,7 +26,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
-    debug = true;
+    debug = false;
 
     socket->waitForConnected(3000);
 

@@ -13,10 +13,11 @@ public:
     void paintEvent(QPaintEvent *event) override;
 
 private:
+    void renderMap();
     int width,height;
     MapRenderer * scene;
     DataModel * dataModel;
-    QImage location,compass,location_white,mapOverlay;
+    QImage location,compass,location_white,mapOverlay,map;
 
 public slots:
     void viewChange();

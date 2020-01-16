@@ -23,6 +23,9 @@ Minimap::Minimap(int pWidth, int pHeight, MapRenderer  * pScene, DataModel * pDa
     compass = QImage(":/images/highres/kompass.png");
     mapOverlay = QImage(":/images/highres/map_overlay.png");
     setStyleSheet("border: 2px solid black");
+
+    renderMap();
+
     show();
 }
 
@@ -33,6 +36,26 @@ Minimap::Minimap(int pWidth, int pHeight, MapRenderer  * pScene, DataModel * pDa
 void Minimap::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
+
+    painter.drawImage(0,0,map);
+
+    painter.setPen(Qt::red);
+    painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), location);
+    painter.drawImage(QRectF(dataModel->secondPlayer->posX-16, dataModel->secondPlayer->posY-28,32,32), location_white);
+    painter.drawImage(QRectF(10,10, 280, 280), compass);
+    painter.drawImage(0,0,mapOverlay);
+    painter.drawRect(0,0,299,299);
+    QWidget::paintEvent(event);
+}
+
+/**
+ * @brief Minimap::renderMap Erzeugt das Bild von der aktuellen Karte.
+ */
+void Minimap::renderMap()
+{
+    QPixmap * pixmap = new QPixmap(300,300);
+    QPainter painter(pixmap);
+
     for(int x = 0; x<300; x++){
         for(int y = 0; y<300; y++){
             MapTile::TYPE type = scene->data[x][y].getType();
@@ -63,18 +86,15 @@ void Minimap::paintEvent(QPaintEvent *event)
             painter.drawPoint(x,y);
         }
     }
-    painter.setPen(Qt::red);
-    painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), location);
-    painter.drawImage(QRectF(dataModel->secondPlayer->posX-16, dataModel->secondPlayer->posY-28,32,32), location_white);
-    painter.drawImage(QRectF(10,10, 280, 280), compass);
-    painter.drawImage(0,0,mapOverlay);
-    painter.drawRect(0,0,299,299);
-    QWidget::paintEvent(event);
+
+    painter.end();
+    map = pixmap->toImage();
+    delete pixmap;
 }
 
 /**
  * @brief Minimap::viewChange Slot der aufgerufen wird wenn die Minimap komplett neu gezeichnet werden soll.
  */
 void Minimap::viewChange(){
-    repaint(0,0,width,height);
+    renderMap();
 }

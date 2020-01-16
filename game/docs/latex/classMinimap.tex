@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Minimap\+:\nopagebreak
+Klassendiagramm für Minimap\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Minimap\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Minimap\+:\nopagebreak
+Zusammengehörigkeiten von Minimap\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,6 +36,11 @@ void \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{view\+Chan
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a4cf153454dc7dcc8feb3d3a0c5d326fd}{Minimap\+::\+Minimap}} Erzeugt eine neue \mbox{\hyperlink{classMinimap}{Minimap}} Komponente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{paint\+Event}} (Q\+Paint\+Event $\ast$event) override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{Minimap\+::paint\+Event}} Rendert die \mbox{\hyperlink{classMinimap}{Minimap}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Methoden}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMinimap_a67a4094a2f2936cb333827551e1d272a}{render\+Map}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a67a4094a2f2936cb333827551e1d272a}{Minimap\+::render\+Map}} Erzeugt das Bild von der aktuellen Karte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,6 +59,8 @@ Q\+Image \mbox{\hyperlink{classMinimap_a1d11162c46d744ea5ed2fd961b9e7185}{compas
 Q\+Image \mbox{\hyperlink{classMinimap_a5d2f1698a48109a74a1a95eec7e02b0b}{location\+\_\+white}}
 \item 
 Q\+Image \mbox{\hyperlink{classMinimap_a77c59ffc177d71d88b0ad26901d00792}{map\+Overlay}}
+\item 
+Q\+Image \mbox{\hyperlink{classMinimap_ad3dce57065db14af7e66b560e834c920}{map}}
 \end{DoxyCompactItemize}
 
 
@@ -95,11 +104,38 @@ Q\+Image \mbox{\hyperlink{classMinimap_a77c59ffc177d71d88b0ad26901d00792}{map\+O
 {\em event} & Das zugehörige Event. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=343pt]{classMinimap_ae162eea6dd404a3e3644516567a28334_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMinimap_a67a4094a2f2936cb333827551e1d272a}\label{classMinimap_a67a4094a2f2936cb333827551e1d272a}} 
+\index{Minimap@{Minimap}!renderMap@{renderMap}}
+\index{renderMap@{renderMap}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{renderMap()}{renderMap()}}
+{\footnotesize\ttfamily void Minimap\+::render\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classMinimap_a67a4094a2f2936cb333827551e1d272a}{Minimap\+::render\+Map}} Erzeugt das Bild von der aktuellen Karte. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classMinimap_a67a4094a2f2936cb333827551e1d272a_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classMinimap_a67a4094a2f2936cb333827551e1d272a_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}\label{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}} 
@@ -112,6 +148,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{Minimap\+::view\+Change}} Slot der aufgerufen wird wenn die \mbox{\hyperlink{classMinimap}{Minimap}} komplett neu gezeichnet werden soll. 
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
@@ -144,6 +188,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{location\_white@{location\_white}!Minimap@{Minimap}}
 \doxysubsubsection{\texorpdfstring{location\_white}{location\_white}}
 {\footnotesize\ttfamily Q\+Image Minimap\+::location\+\_\+white\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMinimap_ad3dce57065db14af7e66b560e834c920}\label{classMinimap_ad3dce57065db14af7e66b560e834c920}} 
+\index{Minimap@{Minimap}!map@{map}}
+\index{map@{map}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily Q\+Image Minimap\+::map\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMinimap_a77c59ffc177d71d88b0ad26901d00792}\label{classMinimap_a77c59ffc177d71d88b0ad26901d00792}} 
 \index{Minimap@{Minimap}!mapOverlay@{mapOverlay}}

@@ -342,10 +342,8 @@ class ClientThread(Thread):
         self.connection = pConnection
         self.commandBuffer = ""
         print("CLIENT THREAD WIRD GESTARTET")
-        time.sleep(3)
         self.player = Player(clientCount, 1234) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
-        time.sleep(3)
 
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
@@ -372,9 +370,9 @@ class ClientThread(Thread):
                 if(args[1] == 'GET'):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
-                        time.sleep(0.002)
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
+                                time.sleep(0.001)
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))

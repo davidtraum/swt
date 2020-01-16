@@ -67,6 +67,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-slots">Öffentliche Slots</a> &#124;
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classMinimap-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
@@ -78,12 +79,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für Minimap:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap__inherit__graph.svg" width="130" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap__inherit__graph.svg" width="130" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von Minimap:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classMinimap__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classMinimap__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -100,6 +103,12 @@ Zusammengehörigkeiten von Minimap:</div>
 <tr class="memitem:ae162eea6dd404a3e3644516567a28334"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMinimap.html#ae162eea6dd404a3e3644516567a28334">paintEvent</a> (QPaintEvent *event) override</td></tr>
 <tr class="memdesc:ae162eea6dd404a3e3644516567a28334"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMinimap.html#ae162eea6dd404a3e3644516567a28334" title="Minimap::paintEvent Rendert die Minimap.">Minimap::paintEvent</a> Rendert die <a class="el" href="classMinimap.html">Minimap</a>.  <a href="classMinimap.html#ae162eea6dd404a3e3644516567a28334">Mehr ...</a><br /></td></tr>
 <tr class="separator:ae162eea6dd404a3e3644516567a28334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:a67a4094a2f2936cb333827551e1d272a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMinimap.html#a67a4094a2f2936cb333827551e1d272a">renderMap</a> ()</td></tr>
+<tr class="memdesc:a67a4094a2f2936cb333827551e1d272a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMinimap.html#a67a4094a2f2936cb333827551e1d272a" title="Minimap::renderMap Erzeugt das Bild von der aktuellen Karte.">Minimap::renderMap</a> Erzeugt das Bild von der aktuellen Karte.  <a href="classMinimap.html#a67a4094a2f2936cb333827551e1d272a">Mehr ...</a><br /></td></tr>
+<tr class="separator:a67a4094a2f2936cb333827551e1d272a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -119,6 +128,8 @@ Private Attribute</h2></td></tr>
 <tr class="separator:a5d2f1698a48109a74a1a95eec7e02b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77c59ffc177d71d88b0ad26901d00792"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMinimap.html#a77c59ffc177d71d88b0ad26901d00792">mapOverlay</a></td></tr>
 <tr class="separator:a77c59ffc177d71d88b0ad26901d00792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3dce57065db14af7e66b560e834c920"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMinimap.html#ad3dce57065db14af7e66b560e834c920">map</a></td></tr>
+<tr class="separator:ad3dce57065db14af7e66b560e834c920"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="a4cf153454dc7dcc8feb3d3a0c5d326fd"></a>
@@ -207,7 +218,47 @@ Private Attribute</h2></td></tr>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap_ae162eea6dd404a3e3644516567a28334_cgraph.svg" width="362" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap_ae162eea6dd404a3e3644516567a28334_cgraph.svg" width="362" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a67a4094a2f2936cb333827551e1d272a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a4094a2f2936cb333827551e1d272a">&#9670;&nbsp;</a></span>renderMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Minimap::renderMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMinimap.html#a67a4094a2f2936cb333827551e1d272a" title="Minimap::renderMap Erzeugt das Bild von der aktuellen Karte.">Minimap::renderMap</a> Erzeugt das Bild von der aktuellen Karte. </p>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap_a67a4094a2f2936cb333827551e1d272a_cgraph.svg" width="335" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap_a67a4094a2f2936cb333827551e1d272a_icgraph.svg" width="360" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -236,6 +287,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classMinimap.html#a9284cfc19a8a8db5e53c65d1251c370b" title="Minimap::viewChange Slot der aufgerufen wird wenn die Minimap komplett neu gezeichnet werden soll.">Minimap::viewChange</a> Slot der aufgerufen wird wenn die <a class="el" href="classMinimap.html">Minimap</a> komplett neu gezeichnet werden soll. </p>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMinimap_a9284cfc19a8a8db5e53c65d1251c370b_cgraph.svg" width="539" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -339,6 +396,28 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
       <table class="memname">
         <tr>
           <td class="memname">QImage Minimap::location_white</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3dce57065db14af7e66b560e834c920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3dce57065db14af7e66b560e834c920">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QImage Minimap::map</td>
         </tr>
       </table>
   </td>

@@ -90,7 +90,6 @@ void DataModel::updateCoordinates(int pX, int pY){
         if(mapLoaded){
             emit positionChange(pX,pY);
         }
-        emit viewChange();
     }
     coordinateX = pX;
     coordinateY = pY;
