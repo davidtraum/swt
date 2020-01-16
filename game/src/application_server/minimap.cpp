@@ -24,9 +24,6 @@ Minimap::Minimap(int pWidth, int pHeight, MapRenderer  * pScene, DataModel * pDa
     mapOverlay = QImage(":/images/highres/map_overlay.png");
     setStyleSheet("border: 2px solid black");
 
-    QWidget::setCursor(QCursor(Qt::CrossCursor));
-    QWidget::setMouseTracking(true);
-
     renderMap();
 
     show();
@@ -48,40 +45,7 @@ void Minimap::paintEvent(QPaintEvent *event)
     painter.drawImage(QRectF(10,10, 280, 280), compass);
     painter.drawImage(0,0,mapOverlay);
     painter.drawRect(0,0,299,299);
-
-    if(renderCoordinates > 0) {
-        painter.setPen(Qt::blue);
-        painter.drawText(10,280, "X: " + QString::number(hoverCoords.getX()) + " Y: " + QString::number(hoverCoords.getY()));
-        renderCoordinates--;
-    }
-
     QWidget::paintEvent(event);
-}
-
-void Minimap::mouseReleaseEvent(QMouseEvent *event)
-{
-    mouseDown = false;
-    scene->animateMovementToTilePosition(event->x(), event->y());
-    QWidget::setCursor(QCursor(Qt::CrossCursor));
-}
-
-void Minimap::mousePressEvent(QMouseEvent *event)
-{
-    mouseDown = true;
-    QWidget::setCursor(QCursor(Qt::BlankCursor));
-}
-
-/**
- * @brief Minimap::mouseMoveEvent Wird aufgerufen wenn die Maus bewegt wurde. Erwirkt Vorschau der Koordinaten.
- * @param event Ein QMouseEvent.
- */
-void Minimap::mouseMoveEvent(QMouseEvent *event)
-{
-    renderCoordinates = 10;
-    hoverCoords.set(event->x(), event->y());
-    if(mouseDown){
-        scene->setViewportTilePosition(event->x(), event->y());
-    }
 }
 
 /**

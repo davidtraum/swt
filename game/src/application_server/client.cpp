@@ -86,10 +86,14 @@ void Client::requestMap(){
     socket->write("MAP GET~");
 }
 
+void Client::requestRoutes() {
+    socket->write("ROUTE GET~");
+    qDebug() << "ROUTE GET~ an Server gesendet";
+}
+
 void Client::sendRoute(QString routeString){
-    socket->write(routeString.toLocal8Bit());
     qDebug() << "An Socket: " + routeString;
-    //emit sendRoute(routeString);
+    socket->write(routeString.toLocal8Bit());
 }
 
 /**

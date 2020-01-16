@@ -6,10 +6,16 @@
 #include <QLabel>
 #include <client.h>
 #include "menubar.h"
+#include "sidepanel.h"
 
 extern MainWindow * mainWindow;
 extern bool gameRunning;
 extern DataModel * dataModel;
 extern Client * client;
+extern View * view;
+extern Scene * scene;
+extern SidePanel * sidePanel;
+extern MapRenderer * mapRenderer;
+extern GraphicsManager * graphics;
 
 #endif // MAIN_H

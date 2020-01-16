@@ -32,11 +32,6 @@ public:
     Point toScreenPosition(int,int);
     Point getMinPos();
     Point getMaxPos();
-    Point getTileCenter();
-
-    void animateMovementToTilePosition(int,int);
-
-    void setViewportTilePosition(int,int);
 
     void animateMovement(QImage, QString);
     void animateMovement(QImage, QString, double);
@@ -61,12 +56,6 @@ private:
     long lastFpsTake{0};
     int frameCount{0};
     int fps{0};
-    double vx{0},vy{0};
-    int moveStepsLeft{0};
-    int tileSize{64};
-    int originTileSize{64};
-    int ea1c{0};
-    int halfSize{tileSize/2};
 
 public slots:
     void onTileChange(int,int,int);

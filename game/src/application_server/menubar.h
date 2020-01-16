@@ -7,13 +7,14 @@
 #include "view.h"
 #include "routeinterface.h"
 #include "maprenderer.h"
+#include "routeListInterface.h"
 
 class MenuBar: public QToolBar
 {
    Q_OBJECT
 
 public:
-    MenuBar(Scene* pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface *);
+    MenuBar(Scene* pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface *, RouteListInterface *);
 
 private:
     Scene* scene;
@@ -21,6 +22,7 @@ private:
     MapRenderer * mapRenderer;
     View * view;
     RouteInterface * routeInterface;
+    RouteListInterface * routeListInterface;
 
 private slots:
 

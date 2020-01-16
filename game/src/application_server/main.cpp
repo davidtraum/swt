@@ -23,6 +23,7 @@
 #include "tooltipmenu.h"
 #include "gameloop.h"
 #include "routeinterface.h"
+#include "routeListInterface.h"
 #include "maprenderer.h"
 
 
@@ -64,7 +65,7 @@ int main(int argc, char *argv[])
     graphics = new GraphicsManager();
 
 
-    dataModel = new DataModel(mainWindow);
+    dataModel = new DataModel();
 
     scene = new Scene(graphics, dataModel);
 
@@ -87,6 +88,9 @@ int main(int argc, char *argv[])
     QWidget::connect(mapRenderer, &MapRenderer::tileClick, routeInterface, &RouteInterface::onTileInteract);
     QWidget::connect(routeInterface->trainRenderer, &TrainRenderer::triggerRemoveWagon, routeInterface, &RouteInterface::removeWagon);
 
+    RouteListInterface * routeListInterface = new RouteListInterface();
+    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeListInterface);
+
     tooltip->setParent(view);
     tooltip->show();
 
@@ -94,7 +98,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface);
+    MenuBar * menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface);
     menuBar->setParent(mainWindow);
     menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
@@ -103,6 +107,7 @@ int main(int argc, char *argv[])
 
     Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
     QGridLayout * viewLayout = new QGridLayout();
+    map->setAttribute( Qt::WA_TransparentForMouseEvents );
     QWidget *spacerWidget = new QWidget();
     spacerWidget->setAttribute( Qt::WA_TransparentForMouseEvents );
     spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);

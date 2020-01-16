@@ -4,8 +4,7 @@
 /**
  * @brief DataModel::DataModel Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.B. den Kontostand.
  */
-DataModel::DataModel(MainWindow * pMainWindow):
-    mainWindow{pMainWindow}
+DataModel::DataModel()
 {
     balance = 2000;
     time = 0;
@@ -113,18 +112,6 @@ int DataModel::getHoverX()
 int DataModel::getHoverY()
 {
     return coordinateY;
-}
-
-/**
- * @brief DataModel::toggleFullscreen Toggled den Vollbildmodus.
- */
-void DataModel::toggleFullscreen()
-{
-    if(mainWindow->isFullScreen()){
-        mainWindow->showNormal();
-    }else{
-        mainWindow->showFullScreen();
-    }
 }
 
 

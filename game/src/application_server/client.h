@@ -40,6 +40,7 @@ public slots:
     void onLeftclick();
     void onRightclick();
     void sendRoute(QString);
+    void requestRoutes();
 
 };
 
