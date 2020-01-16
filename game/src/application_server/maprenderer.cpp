@@ -375,6 +375,17 @@ Point MapRenderer::getMaxPos(){
     return offset.add(this->width()+64, this->height()+64);
 }
 
+/**
+ * @brief MapRenderer::setViewportTilePosition Verschiebt den Viewport zu einer Tile-Koordinate.
+ * @param px Die X-Koordinate.
+ * @param py Die Y-Koordinate.
+ */
+void MapRenderer::setViewportTilePosition(int px, int py)
+{
+    offset.set(px*64, py*64);
+    dataModel->updateCoordinates(px,py);
+}
+
 void MapRenderer::animateMovement(QImage img, QString path)
 {
     AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img)), path);

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['height_593',['height',['../classMinimap.html#aace73399c5e1d14b639f8c2aebb9b18f',1,'Minimap']]],
-  ['highlighter_594',['highlighter',['../classPlayer.html#a1b57c193b1bf279c13695bae20a33bea',1,'Player::highlighter()'],['../classScene.html#a77fceebbd039dcb574f4c86b13d0f6ee',1,'Scene::highlighter()']]]
+  ['height_597',['height',['../classMinimap.html#aace73399c5e1d14b639f8c2aebb9b18f',1,'Minimap']]],
+  ['highlighter_598',['highlighter',['../classPlayer.html#a1b57c193b1bf279c13695bae20a33bea',1,'Player::highlighter()'],['../classScene.html#a77fceebbd039dcb574f4c86b13d0f6ee',1,'Scene::highlighter()']]],
+  ['hovercoords_599',['hoverCoords',['../classMinimap.html#a92064824d4c9b62b9630df4ef04a8449',1,'Minimap']]]
 ];

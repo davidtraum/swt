@@ -33,6 +33,8 @@ public:
     Point getMinPos();
     Point getMaxPos();
 
+    void setViewportTilePosition(int,int);
+
     void animateMovement(QImage, QString);
     void animateMovement(QImage, QString, double);
 

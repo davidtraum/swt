@@ -197,295 +197,300 @@
 \contentsline {subsubsection}{\numberline {7.12.2.13}onTileChange}{81}{subsubsection.7.12.2.13}
 \contentsline {subsubsection}{\numberline {7.12.2.14}paintEvent()}{82}{subsubsection.7.12.2.14}
 \contentsline {subsubsection}{\numberline {7.12.2.15}positionChange}{82}{subsubsection.7.12.2.15}
-\contentsline {subsubsection}{\numberline {7.12.2.16}tick()}{83}{subsubsection.7.12.2.16}
-\contentsline {subsubsection}{\numberline {7.12.2.17}tileClick}{83}{subsubsection.7.12.2.17}
-\contentsline {subsubsection}{\numberline {7.12.2.18}toScreenPosition()}{84}{subsubsection.7.12.2.18}
-\contentsline {subsubsection}{\numberline {7.12.2.19}wheelEvent()}{84}{subsubsection.7.12.2.19}
-\contentsline {subsection}{\numberline {7.12.3}Dokumentation der Datenelemente}{84}{subsection.7.12.3}
+\contentsline {subsubsection}{\numberline {7.12.2.16}setViewportTilePosition()}{83}{subsubsection.7.12.2.16}
+\contentsline {subsubsection}{\numberline {7.12.2.17}tick()}{83}{subsubsection.7.12.2.17}
+\contentsline {subsubsection}{\numberline {7.12.2.18}tileClick}{84}{subsubsection.7.12.2.18}
+\contentsline {subsubsection}{\numberline {7.12.2.19}toScreenPosition()}{84}{subsubsection.7.12.2.19}
+\contentsline {subsubsection}{\numberline {7.12.2.20}wheelEvent()}{85}{subsubsection.7.12.2.20}
+\contentsline {subsection}{\numberline {7.12.3}Dokumentation der Datenelemente}{85}{subsection.7.12.3}
 \contentsline {subsubsection}{\numberline {7.12.3.1}activeTile}{85}{subsubsection.7.12.3.1}
-\contentsline {subsubsection}{\numberline {7.12.3.2}data}{85}{subsubsection.7.12.3.2}
-\contentsline {subsubsection}{\numberline {7.12.3.3}dataModel}{85}{subsubsection.7.12.3.3}
-\contentsline {subsubsection}{\numberline {7.12.3.4}dragOrigin}{85}{subsubsection.7.12.3.4}
-\contentsline {subsubsection}{\numberline {7.12.3.5}dragPosition}{85}{subsubsection.7.12.3.5}
-\contentsline {subsubsection}{\numberline {7.12.3.6}fps}{85}{subsubsection.7.12.3.6}
-\contentsline {subsubsection}{\numberline {7.12.3.7}frameCount}{85}{subsubsection.7.12.3.7}
-\contentsline {subsubsection}{\numberline {7.12.3.8}graphicsManager}{85}{subsubsection.7.12.3.8}
+\contentsline {subsubsection}{\numberline {7.12.3.2}data}{86}{subsubsection.7.12.3.2}
+\contentsline {subsubsection}{\numberline {7.12.3.3}dataModel}{86}{subsubsection.7.12.3.3}
+\contentsline {subsubsection}{\numberline {7.12.3.4}dragOrigin}{86}{subsubsection.7.12.3.4}
+\contentsline {subsubsection}{\numberline {7.12.3.5}dragPosition}{86}{subsubsection.7.12.3.5}
+\contentsline {subsubsection}{\numberline {7.12.3.6}fps}{86}{subsubsection.7.12.3.6}
+\contentsline {subsubsection}{\numberline {7.12.3.7}frameCount}{86}{subsubsection.7.12.3.7}
+\contentsline {subsubsection}{\numberline {7.12.3.8}graphicsManager}{86}{subsubsection.7.12.3.8}
 \contentsline {subsubsection}{\numberline {7.12.3.9}lastFpsTake}{86}{subsubsection.7.12.3.9}
-\contentsline {subsubsection}{\numberline {7.12.3.10}mouseDown}{86}{subsubsection.7.12.3.10}
-\contentsline {subsubsection}{\numberline {7.12.3.11}movementAnimations}{86}{subsubsection.7.12.3.11}
-\contentsline {subsubsection}{\numberline {7.12.3.12}offset}{86}{subsubsection.7.12.3.12}
-\contentsline {subsubsection}{\numberline {7.12.3.13}rendering}{86}{subsubsection.7.12.3.13}
-\contentsline {subsubsection}{\numberline {7.12.3.14}renderTime}{86}{subsubsection.7.12.3.14}
-\contentsline {subsubsection}{\numberline {7.12.3.15}scale}{86}{subsubsection.7.12.3.15}
-\contentsline {subsubsection}{\numberline {7.12.3.16}showExpertDetails}{86}{subsubsection.7.12.3.16}
-\contentsline {subsubsection}{\numberline {7.12.3.17}showHighlight}{87}{subsubsection.7.12.3.17}
-\contentsline {section}{\numberline {7.13}Map\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tile Klassenreferenz}{87}{section.7.13}
-\contentsline {subsection}{\numberline {7.13.1}Dokumentation der Aufz\IeC {\"a}hlungstypen}{89}{subsection.7.13.1}
-\contentsline {subsubsection}{\numberline {7.13.1.1}TYPE}{89}{subsubsection.7.13.1.1}
-\contentsline {subsection}{\numberline {7.13.2}Beschreibung der Konstruktoren und Destruktoren}{89}{subsection.7.13.2}
-\contentsline {subsubsection}{\numberline {7.13.2.1}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{89}{subsubsection.7.13.2.1}
-\contentsline {subsubsection}{\numberline {7.13.2.2}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{90}{subsubsection.7.13.2.2}
-\contentsline {subsection}{\numberline {7.13.3}Dokumentation der Elementfunktionen}{90}{subsection.7.13.3}
-\contentsline {subsubsection}{\numberline {7.13.3.1}attachGraphicsManager()}{90}{subsubsection.7.13.3.1}
-\contentsline {subsubsection}{\numberline {7.13.3.2}getCity()}{91}{subsubsection.7.13.3.2}
-\contentsline {subsubsection}{\numberline {7.13.3.3}getPixmapItem()}{91}{subsubsection.7.13.3.3}
-\contentsline {subsubsection}{\numberline {7.13.3.4}getRotation()}{92}{subsubsection.7.13.3.4}
-\contentsline {subsubsection}{\numberline {7.13.3.5}getRotationDeg()}{92}{subsubsection.7.13.3.5}
-\contentsline {subsubsection}{\numberline {7.13.3.6}getType()}{92}{subsubsection.7.13.3.6}
-\contentsline {subsubsection}{\numberline {7.13.3.7}getX()}{93}{subsubsection.7.13.3.7}
-\contentsline {subsubsection}{\numberline {7.13.3.8}getY()}{94}{subsubsection.7.13.3.8}
-\contentsline {subsubsection}{\numberline {7.13.3.9}isRail()}{94}{subsubsection.7.13.3.9}
-\contentsline {subsubsection}{\numberline {7.13.3.10}isRiver()}{95}{subsubsection.7.13.3.10}
-\contentsline {subsubsection}{\numberline {7.13.3.11}setCity()}{95}{subsubsection.7.13.3.11}
-\contentsline {subsubsection}{\numberline {7.13.3.12}setPosition()}{95}{subsubsection.7.13.3.12}
-\contentsline {subsubsection}{\numberline {7.13.3.13}setRotation()}{96}{subsubsection.7.13.3.13}
-\contentsline {subsubsection}{\numberline {7.13.3.14}setType()}{97}{subsubsection.7.13.3.14}
-\contentsline {subsection}{\numberline {7.13.4}Dokumentation der Datenelemente}{97}{subsection.7.13.4}
-\contentsline {subsubsection}{\numberline {7.13.4.1}city}{98}{subsubsection.7.13.4.1}
-\contentsline {subsubsection}{\numberline {7.13.4.2}currentRotation}{98}{subsubsection.7.13.4.2}
-\contentsline {subsubsection}{\numberline {7.13.4.3}graphicsManager}{98}{subsubsection.7.13.4.3}
-\contentsline {subsubsection}{\numberline {7.13.4.4}pixmapItem}{98}{subsubsection.7.13.4.4}
-\contentsline {subsubsection}{\numberline {7.13.4.5}type}{98}{subsubsection.7.13.4.5}
-\contentsline {section}{\numberline {7.14}Menu\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar Klassenreferenz}{99}{section.7.14}
-\contentsline {subsection}{\numberline {7.14.1}Beschreibung der Konstruktoren und Destruktoren}{101}{subsection.7.14.1}
-\contentsline {subsubsection}{\numberline {7.14.1.1}MenuBar()}{101}{subsubsection.7.14.1.1}
-\contentsline {subsection}{\numberline {7.14.2}Dokumentation der Elementfunktionen}{101}{subsection.7.14.2}
-\contentsline {subsubsection}{\numberline {7.14.2.1}slotCloseConnection}{101}{subsubsection.7.14.2.1}
-\contentsline {subsubsection}{\numberline {7.14.2.2}slotOpenConnection}{101}{subsubsection.7.14.2.2}
-\contentsline {subsection}{\numberline {7.14.3}Dokumentation der Datenelemente}{102}{subsection.7.14.3}
-\contentsline {subsubsection}{\numberline {7.14.3.1}dataModel}{102}{subsubsection.7.14.3.1}
-\contentsline {subsubsection}{\numberline {7.14.3.2}mapRenderer}{102}{subsubsection.7.14.3.2}
-\contentsline {subsubsection}{\numberline {7.14.3.3}routeInterface}{102}{subsubsection.7.14.3.3}
-\contentsline {subsubsection}{\numberline {7.14.3.4}scene}{102}{subsubsection.7.14.3.4}
-\contentsline {subsubsection}{\numberline {7.14.3.5}view}{102}{subsubsection.7.14.3.5}
-\contentsline {section}{\numberline {7.15}Minimap Klassenreferenz}{103}{section.7.15}
-\contentsline {subsection}{\numberline {7.15.1}Beschreibung der Konstruktoren und Destruktoren}{105}{subsection.7.15.1}
-\contentsline {subsubsection}{\numberline {7.15.1.1}Minimap()}{105}{subsubsection.7.15.1.1}
-\contentsline {subsection}{\numberline {7.15.2}Dokumentation der Elementfunktionen}{106}{subsection.7.15.2}
-\contentsline {subsubsection}{\numberline {7.15.2.1}paintEvent()}{106}{subsubsection.7.15.2.1}
-\contentsline {subsubsection}{\numberline {7.15.2.2}renderMap()}{106}{subsubsection.7.15.2.2}
-\contentsline {subsubsection}{\numberline {7.15.2.3}viewChange}{107}{subsubsection.7.15.2.3}
-\contentsline {subsection}{\numberline {7.15.3}Dokumentation der Datenelemente}{107}{subsection.7.15.3}
-\contentsline {subsubsection}{\numberline {7.15.3.1}compass}{107}{subsubsection.7.15.3.1}
-\contentsline {subsubsection}{\numberline {7.15.3.2}dataModel}{107}{subsubsection.7.15.3.2}
-\contentsline {subsubsection}{\numberline {7.15.3.3}height}{108}{subsubsection.7.15.3.3}
-\contentsline {subsubsection}{\numberline {7.15.3.4}location}{108}{subsubsection.7.15.3.4}
-\contentsline {subsubsection}{\numberline {7.15.3.5}location\_white}{108}{subsubsection.7.15.3.5}
-\contentsline {subsubsection}{\numberline {7.15.3.6}map}{108}{subsubsection.7.15.3.6}
-\contentsline {subsubsection}{\numberline {7.15.3.7}mapOverlay}{108}{subsubsection.7.15.3.7}
-\contentsline {subsubsection}{\numberline {7.15.3.8}scene}{108}{subsubsection.7.15.3.8}
-\contentsline {subsubsection}{\numberline {7.15.3.9}width}{108}{subsubsection.7.15.3.9}
-\contentsline {section}{\numberline {7.16}Player Klassenreferenz}{109}{section.7.16}
-\contentsline {subsection}{\numberline {7.16.1}Beschreibung der Konstruktoren und Destruktoren}{109}{subsection.7.16.1}
-\contentsline {subsubsection}{\numberline {7.16.1.1}Player()}{110}{subsubsection.7.16.1.1}
-\contentsline {subsection}{\numberline {7.16.2}Dokumentation der Elementfunktionen}{110}{subsection.7.16.2}
-\contentsline {subsubsection}{\numberline {7.16.2.1}setPosition()}{110}{subsubsection.7.16.2.1}
-\contentsline {subsection}{\numberline {7.16.3}Dokumentation der Datenelemente}{110}{subsection.7.16.3}
-\contentsline {subsubsection}{\numberline {7.16.3.1}highlighter}{110}{subsubsection.7.16.3.1}
-\contentsline {subsubsection}{\numberline {7.16.3.2}posX}{110}{subsubsection.7.16.3.2}
-\contentsline {subsubsection}{\numberline {7.16.3.3}posY}{111}{subsubsection.7.16.3.3}
-\contentsline {section}{\numberline {7.17}Point Klassenreferenz}{111}{section.7.17}
-\contentsline {subsection}{\numberline {7.17.1}Beschreibung der Konstruktoren und Destruktoren}{112}{subsection.7.17.1}
-\contentsline {subsubsection}{\numberline {7.17.1.1}Point()}{112}{subsubsection.7.17.1.1}
-\contentsline {subsection}{\numberline {7.17.2}Dokumentation der Elementfunktionen}{112}{subsection.7.17.2}
-\contentsline {subsubsection}{\numberline {7.17.2.1}add()}{112}{subsubsection.7.17.2.1}
-\contentsline {subsubsection}{\numberline {7.17.2.2}getX()}{113}{subsubsection.7.17.2.2}
-\contentsline {subsubsection}{\numberline {7.17.2.3}getY()}{114}{subsubsection.7.17.2.3}
-\contentsline {subsubsection}{\numberline {7.17.2.4}move()}{114}{subsubsection.7.17.2.4}
-\contentsline {subsubsection}{\numberline {7.17.2.5}set()}{115}{subsubsection.7.17.2.5}
-\contentsline {subsubsection}{\numberline {7.17.2.6}toTile()}{115}{subsubsection.7.17.2.6}
-\contentsline {subsection}{\numberline {7.17.3}Dokumentation der Datenelemente}{116}{subsection.7.17.3}
-\contentsline {subsubsection}{\numberline {7.17.3.1}x}{116}{subsubsection.7.17.3.1}
-\contentsline {subsubsection}{\numberline {7.17.3.2}y}{116}{subsubsection.7.17.3.2}
-\contentsline {section}{\numberline {7.18}River Klassenreferenz}{116}{section.7.18}
-\contentsline {subsection}{\numberline {7.18.1}Beschreibung der Konstruktoren und Destruktoren}{117}{subsection.7.18.1}
-\contentsline {subsubsection}{\numberline {7.18.1.1}River()}{117}{subsubsection.7.18.1.1}
-\contentsline {section}{\numberline {7.19}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{117}{section.7.19}
-\contentsline {subsection}{\numberline {7.19.1}Beschreibung der Konstruktoren und Destruktoren}{119}{subsection.7.19.1}
-\contentsline {subsubsection}{\numberline {7.19.1.1}RouteInterface()}{119}{subsubsection.7.19.1.1}
-\contentsline {subsection}{\numberline {7.19.2}Dokumentation der Elementfunktionen}{119}{subsection.7.19.2}
-\contentsline {subsubsection}{\numberline {7.19.2.1}addWagon}{119}{subsubsection.7.19.2.1}
-\contentsline {subsubsection}{\numberline {7.19.2.2}confirmRoute}{120}{subsubsection.7.19.2.2}
-\contentsline {subsubsection}{\numberline {7.19.2.3}onTileInteract}{121}{subsubsection.7.19.2.3}
-\contentsline {subsubsection}{\numberline {7.19.2.4}removeWagon}{121}{subsubsection.7.19.2.4}
-\contentsline {subsubsection}{\numberline {7.19.2.5}sendConfirmRoute}{121}{subsubsection.7.19.2.5}
-\contentsline {subsubsection}{\numberline {7.19.2.6}toggle}{122}{subsubsection.7.19.2.6}
-\contentsline {subsection}{\numberline {7.19.3}Dokumentation der Datenelemente}{122}{subsection.7.19.3}
-\contentsline {subsubsection}{\numberline {7.19.3.1}confirmBtn}{122}{subsubsection.7.19.3.1}
-\contentsline {subsubsection}{\numberline {7.19.3.2}goodSelector}{122}{subsubsection.7.19.3.2}
-\contentsline {subsubsection}{\numberline {7.19.3.3}trainRenderer}{122}{subsubsection.7.19.3.3}
-\contentsline {subsubsection}{\numberline {7.19.3.4}trainstationList}{123}{subsubsection.7.19.3.4}
-\contentsline {subsubsection}{\numberline {7.19.3.5}tsCoords}{123}{subsubsection.7.19.3.5}
-\contentsline {subsubsection}{\numberline {7.19.3.6}tsCount}{123}{subsubsection.7.19.3.6}
-\contentsline {subsubsection}{\numberline {7.19.3.7}wagonCount}{123}{subsubsection.7.19.3.7}
-\contentsline {section}{\numberline {7.20}Scene Klassenreferenz}{123}{section.7.20}
-\contentsline {subsection}{\numberline {7.20.1}Beschreibung der Konstruktoren und Destruktoren}{126}{subsection.7.20.1}
-\contentsline {subsubsection}{\numberline {7.20.1.1}Scene()}{127}{subsubsection.7.20.1.1}
-\contentsline {subsection}{\numberline {7.20.2}Dokumentation der Elementfunktionen}{127}{subsection.7.20.2}
-\contentsline {subsubsection}{\numberline {7.20.2.1}generateWorld()}{127}{subsubsection.7.20.2.1}
-\contentsline {subsubsection}{\numberline {7.20.2.2}getTileAt()}{128}{subsubsection.7.20.2.2}
-\contentsline {subsubsection}{\numberline {7.20.2.3}onSetTile}{129}{subsubsection.7.20.2.3}
-\contentsline {subsubsection}{\numberline {7.20.2.4}setActiveTile()}{129}{subsubsection.7.20.2.4}
-\contentsline {subsubsection}{\numberline {7.20.2.5}setTileAt()}{131}{subsubsection.7.20.2.5}
-\contentsline {subsubsection}{\numberline {7.20.2.6}tick()}{131}{subsubsection.7.20.2.6}
-\contentsline {subsubsection}{\numberline {7.20.2.7}tileChanged()}{132}{subsubsection.7.20.2.7}
-\contentsline {subsubsection}{\numberline {7.20.2.8}tileUpdate}{132}{subsubsection.7.20.2.8}
-\contentsline {subsubsection}{\numberline {7.20.2.9}updatePlayerPosition}{132}{subsubsection.7.20.2.9}
-\contentsline {subsection}{\numberline {7.20.3}Dokumentation der Datenelemente}{133}{subsection.7.20.3}
-\contentsline {subsubsection}{\numberline {7.20.3.1}activeTile}{133}{subsubsection.7.20.3.1}
-\contentsline {subsubsection}{\numberline {7.20.3.2}data}{133}{subsubsection.7.20.3.2}
-\contentsline {subsubsection}{\numberline {7.20.3.3}dataModel}{133}{subsubsection.7.20.3.3}
-\contentsline {subsubsection}{\numberline {7.20.3.4}graphicsManager}{134}{subsubsection.7.20.3.4}
-\contentsline {subsubsection}{\numberline {7.20.3.5}highlighter}{134}{subsubsection.7.20.3.5}
-\contentsline {subsubsection}{\numberline {7.20.3.6}MAP\_SIZE}{134}{subsubsection.7.20.3.6}
-\contentsline {subsubsection}{\numberline {7.20.3.7}players}{134}{subsubsection.7.20.3.7}
-\contentsline {subsubsection}{\numberline {7.20.3.8}radiusHighlighter}{134}{subsubsection.7.20.3.8}
-\contentsline {subsubsection}{\numberline {7.20.3.9}secondPlayer}{134}{subsubsection.7.20.3.9}
-\contentsline {subsubsection}{\numberline {7.20.3.10}showRadius}{134}{subsubsection.7.20.3.10}
-\contentsline {subsubsection}{\numberline {7.20.3.11}textHint}{134}{subsubsection.7.20.3.11}
-\contentsline {subsubsection}{\numberline {7.20.3.12}TILE\_SIZE}{135}{subsubsection.7.20.3.12}
-\contentsline {section}{\numberline {7.21}Side\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Panel Klassenreferenz}{135}{section.7.21}
-\contentsline {subsection}{\numberline {7.21.1}Beschreibung der Konstruktoren und Destruktoren}{136}{subsection.7.21.1}
-\contentsline {subsubsection}{\numberline {7.21.1.1}SidePanel()}{136}{subsubsection.7.21.1.1}
-\contentsline {subsection}{\numberline {7.21.2}Dokumentation der Elementfunktionen}{137}{subsection.7.21.2}
-\contentsline {subsubsection}{\numberline {7.21.2.1}hookDataModel()}{137}{subsubsection.7.21.2.1}
-\contentsline {subsection}{\numberline {7.21.3}Dokumentation der Datenelemente}{137}{subsection.7.21.3}
-\contentsline {subsubsection}{\numberline {7.21.3.1}layout}{137}{subsubsection.7.21.3.1}
-\contentsline {subsubsection}{\numberline {7.21.3.2}moneyLabel}{137}{subsubsection.7.21.3.2}
-\contentsline {subsubsection}{\numberline {7.21.3.3}positionLabel}{138}{subsubsection.7.21.3.3}
-\contentsline {subsubsection}{\numberline {7.21.3.4}timeLabel}{138}{subsubsection.7.21.3.4}
-\contentsline {section}{\numberline {7.22}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tip\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Menu Klassenreferenz}{138}{section.7.22}
-\contentsline {subsection}{\numberline {7.22.1}Beschreibung der Konstruktoren und Destruktoren}{139}{subsection.7.22.1}
-\contentsline {subsubsection}{\numberline {7.22.1.1}ToolTipMenu()}{140}{subsubsection.7.22.1.1}
-\contentsline {subsection}{\numberline {7.22.2}Dokumentation der Elementfunktionen}{140}{subsection.7.22.2}
-\contentsline {subsubsection}{\numberline {7.22.2.1}hide()}{140}{subsubsection.7.22.2.1}
-\contentsline {subsubsection}{\numberline {7.22.2.2}setText()}{140}{subsubsection.7.22.2.2}
-\contentsline {subsubsection}{\numberline {7.22.2.3}showAt()}{141}{subsubsection.7.22.2.3}
-\contentsline {subsection}{\numberline {7.22.3}Dokumentation der Datenelemente}{141}{subsection.7.22.3}
-\contentsline {subsubsection}{\numberline {7.22.3.1}textlabel}{142}{subsubsection.7.22.3.1}
-\contentsline {section}{\numberline {7.23}Train\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Renderer Klassenreferenz}{142}{section.7.23}
-\contentsline {subsection}{\numberline {7.23.1}Beschreibung der Konstruktoren und Destruktoren}{144}{subsection.7.23.1}
-\contentsline {subsubsection}{\numberline {7.23.1.1}TrainRenderer()}{144}{subsubsection.7.23.1.1}
-\contentsline {subsection}{\numberline {7.23.2}Dokumentation der Elementfunktionen}{144}{subsection.7.23.2}
-\contentsline {subsubsection}{\numberline {7.23.2.1}addWagon()}{144}{subsubsection.7.23.2.1}
-\contentsline {subsubsection}{\numberline {7.23.2.2}deleteAllWagons()}{144}{subsubsection.7.23.2.2}
-\contentsline {subsubsection}{\numberline {7.23.2.3}mouseReleaseEvent}{145}{subsubsection.7.23.2.3}
-\contentsline {subsubsection}{\numberline {7.23.2.4}paintEvent()}{145}{subsubsection.7.23.2.4}
-\contentsline {subsubsection}{\numberline {7.23.2.5}triggerRemoveWagon}{145}{subsubsection.7.23.2.5}
-\contentsline {subsection}{\numberline {7.23.3}Dokumentation der Datenelemente}{145}{subsection.7.23.3}
-\contentsline {subsubsection}{\numberline {7.23.3.1}background}{145}{subsubsection.7.23.3.1}
-\contentsline {subsubsection}{\numberline {7.23.3.2}graphicsManager}{145}{subsubsection.7.23.3.2}
-\contentsline {subsubsection}{\numberline {7.23.3.3}sky}{146}{subsubsection.7.23.3.3}
-\contentsline {subsubsection}{\numberline {7.23.3.4}train}{146}{subsubsection.7.23.3.4}
-\contentsline {subsubsection}{\numberline {7.23.3.5}wagon}{146}{subsubsection.7.23.3.5}
-\contentsline {subsubsection}{\numberline {7.23.3.6}wagons}{146}{subsubsection.7.23.3.6}
-\contentsline {section}{\numberline {7.24}View Klassenreferenz}{146}{section.7.24}
-\contentsline {subsection}{\numberline {7.24.1}Beschreibung der Konstruktoren und Destruktoren}{150}{subsection.7.24.1}
-\contentsline {subsubsection}{\numberline {7.24.1.1}View()}{150}{subsubsection.7.24.1.1}
-\contentsline {subsection}{\numberline {7.24.2}Dokumentation der Elementfunktionen}{150}{subsection.7.24.2}
-\contentsline {subsubsection}{\numberline {7.24.2.1}enableAnimation()}{150}{subsubsection.7.24.2.1}
-\contentsline {subsubsection}{\numberline {7.24.2.2}fluidMove()}{151}{subsubsection.7.24.2.2}
-\contentsline {subsubsection}{\numberline {7.24.2.3}fluidMovement()}{152}{subsubsection.7.24.2.3}
-\contentsline {subsubsection}{\numberline {7.24.2.4}fluidZoom()}{152}{subsubsection.7.24.2.4}
-\contentsline {subsubsection}{\numberline {7.24.2.5}keyPressEvent()}{153}{subsubsection.7.24.2.5}
-\contentsline {subsubsection}{\numberline {7.24.2.6}leftclick()}{153}{subsubsection.7.24.2.6}
-\contentsline {subsubsection}{\numberline {7.24.2.7}mouseMoveEvent()}{154}{subsubsection.7.24.2.7}
-\contentsline {subsubsection}{\numberline {7.24.2.8}mousePressEvent()}{155}{subsubsection.7.24.2.8}
-\contentsline {subsubsection}{\numberline {7.24.2.9}mouseReleaseEvent()}{155}{subsubsection.7.24.2.9}
-\contentsline {subsubsection}{\numberline {7.24.2.10}onLeftclick}{156}{subsubsection.7.24.2.10}
-\contentsline {subsubsection}{\numberline {7.24.2.11}onRightclick}{156}{subsubsection.7.24.2.11}
-\contentsline {subsubsection}{\numberline {7.24.2.12}onTrainStationClick}{157}{subsubsection.7.24.2.12}
-\contentsline {subsubsection}{\numberline {7.24.2.13}paintEvent()}{157}{subsubsection.7.24.2.13}
-\contentsline {subsubsection}{\numberline {7.24.2.14}render()}{157}{subsubsection.7.24.2.14}
-\contentsline {subsubsection}{\numberline {7.24.2.15}rightclick()}{158}{subsubsection.7.24.2.15}
-\contentsline {subsubsection}{\numberline {7.24.2.16}setDataModel()}{158}{subsubsection.7.24.2.16}
-\contentsline {subsubsection}{\numberline {7.24.2.17}tick()}{158}{subsubsection.7.24.2.17}
-\contentsline {subsubsection}{\numberline {7.24.2.18}wheelEvent()}{159}{subsubsection.7.24.2.18}
-\contentsline {subsubsection}{\numberline {7.24.2.19}zoomInAnimation}{159}{subsubsection.7.24.2.19}
-\contentsline {subsection}{\numberline {7.24.3}Dokumentation der Datenelemente}{159}{subsection.7.24.3}
-\contentsline {subsubsection}{\numberline {7.24.3.1}codeCount}{160}{subsubsection.7.24.3.1}
-\contentsline {subsubsection}{\numberline {7.24.3.2}currentScale}{160}{subsubsection.7.24.3.2}
-\contentsline {subsubsection}{\numberline {7.24.3.3}dataModel}{160}{subsubsection.7.24.3.3}
-\contentsline {subsubsection}{\numberline {7.24.3.4}doAnimations}{160}{subsubsection.7.24.3.4}
-\contentsline {subsubsection}{\numberline {7.24.3.5}doPaint}{160}{subsubsection.7.24.3.5}
-\contentsline {subsubsection}{\numberline {7.24.3.6}dragOriginX}{160}{subsubsection.7.24.3.6}
-\contentsline {subsubsection}{\numberline {7.24.3.7}dragOriginY}{160}{subsubsection.7.24.3.7}
-\contentsline {subsubsection}{\numberline {7.24.3.8}dragPosX}{160}{subsubsection.7.24.3.8}
-\contentsline {subsubsection}{\numberline {7.24.3.9}dragPosY}{161}{subsubsection.7.24.3.9}
-\contentsline {subsubsection}{\numberline {7.24.3.10}mouseDown}{161}{subsubsection.7.24.3.10}
-\contentsline {subsubsection}{\numberline {7.24.3.11}mouseX}{161}{subsubsection.7.24.3.11}
-\contentsline {subsubsection}{\numberline {7.24.3.12}mouseY}{161}{subsubsection.7.24.3.12}
-\contentsline {subsubsection}{\numberline {7.24.3.13}scene}{161}{subsubsection.7.24.3.13}
-\contentsline {subsubsection}{\numberline {7.24.3.14}tooltip}{161}{subsubsection.7.24.3.14}
-\contentsline {chapter}{\numberline {8}Datei-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{163}{chapter.8}
-\contentsline {section}{\numberline {8.1}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{163}{section.8.1}
-\contentsline {section}{\numberline {8.2}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{163}{section.8.2}
-\contentsline {section}{\numberline {8.3}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationmovement.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{164}{section.8.3}
-\contentsline {section}{\numberline {8.4}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationmovement.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{165}{section.8.4}
-\contentsline {section}{\numberline {8.5}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/city.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{166}{section.8.5}
-\contentsline {section}{\numberline {8.6}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/city.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{167}{section.8.6}
-\contentsline {section}{\numberline {8.7}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/client.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{167}{section.8.7}
-\contentsline {section}{\numberline {8.8}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/client.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{168}{section.8.8}
-\contentsline {section}{\numberline {8.9}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/datamodel.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{169}{section.8.9}
-\contentsline {section}{\numberline {8.10}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/datamodel.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{170}{section.8.10}
-\contentsline {section}{\numberline {8.11}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/gameloop.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{171}{section.8.11}
-\contentsline {section}{\numberline {8.12}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/gameloop.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{172}{section.8.12}
-\contentsline {section}{\numberline {8.13}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/goodselector.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{173}{section.8.13}
-\contentsline {section}{\numberline {8.14}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/goodselector.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{173}{section.8.14}
-\contentsline {section}{\numberline {8.15}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/graphicsmanager.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{174}{section.8.15}
-\contentsline {section}{\numberline {8.16}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/graphicsmanager.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{175}{section.8.16}
-\contentsline {section}{\numberline {8.17}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/highlighter.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{175}{section.8.17}
-\contentsline {section}{\numberline {8.18}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/highlighter.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{176}{section.8.18}
-\contentsline {section}{\numberline {8.19}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/main.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{177}{section.8.19}
-\contentsline {subsection}{\numberline {8.19.1}Dokumentation der Funktionen}{178}{subsection.8.19.1}
-\contentsline {subsubsection}{\numberline {8.19.1.1}main()}{178}{subsubsection.8.19.1.1}
-\contentsline {subsubsection}{\numberline {8.19.1.2}timeTicker()}{179}{subsubsection.8.19.1.2}
-\contentsline {subsection}{\numberline {8.19.2}Variablen-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{180}{subsection.8.19.2}
-\contentsline {subsubsection}{\numberline {8.19.2.1}client}{180}{subsubsection.8.19.2.1}
-\contentsline {subsubsection}{\numberline {8.19.2.2}dataModel}{180}{subsubsection.8.19.2.2}
-\contentsline {subsubsection}{\numberline {8.19.2.3}gameRunning}{180}{subsubsection.8.19.2.3}
-\contentsline {subsubsection}{\numberline {8.19.2.4}graphics}{180}{subsubsection.8.19.2.4}
-\contentsline {subsubsection}{\numberline {8.19.2.5}mainWindow}{180}{subsubsection.8.19.2.5}
-\contentsline {subsubsection}{\numberline {8.19.2.6}mapRenderer}{180}{subsubsection.8.19.2.6}
-\contentsline {subsubsection}{\numberline {8.19.2.7}scene}{180}{subsubsection.8.19.2.7}
-\contentsline {subsubsection}{\numberline {8.19.2.8}sidePanel}{181}{subsubsection.8.19.2.8}
-\contentsline {subsubsection}{\numberline {8.19.2.9}view}{181}{subsubsection.8.19.2.9}
-\contentsline {section}{\numberline {8.20}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/main.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{181}{section.8.20}
-\contentsline {subsection}{\numberline {8.20.1}Variablen-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{182}{subsection.8.20.1}
-\contentsline {subsubsection}{\numberline {8.20.1.1}client}{182}{subsubsection.8.20.1.1}
-\contentsline {subsubsection}{\numberline {8.20.1.2}dataModel}{182}{subsubsection.8.20.1.2}
-\contentsline {subsubsection}{\numberline {8.20.1.3}gameRunning}{182}{subsubsection.8.20.1.3}
-\contentsline {subsubsection}{\numberline {8.20.1.4}mainWindow}{182}{subsubsection.8.20.1.4}
-\contentsline {section}{\numberline {8.21}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainmenu.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{182}{section.8.21}
-\contentsline {section}{\numberline {8.22}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainmenu.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{183}{section.8.22}
-\contentsline {section}{\numberline {8.23}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainwindow.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{183}{section.8.23}
-\contentsline {section}{\numberline {8.24}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainwindow.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{184}{section.8.24}
-\contentsline {section}{\numberline {8.25}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maprenderer.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{185}{section.8.25}
-\contentsline {section}{\numberline {8.26}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maprenderer.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{185}{section.8.26}
-\contentsline {section}{\numberline {8.27}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maptile.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{186}{section.8.27}
-\contentsline {section}{\numberline {8.28}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maptile.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{187}{section.8.28}
-\contentsline {section}{\numberline {8.29}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/menubar.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{187}{section.8.29}
-\contentsline {section}{\numberline {8.30}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/menubar.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{188}{section.8.30}
-\contentsline {section}{\numberline {8.31}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/minimap.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{189}{section.8.31}
-\contentsline {section}{\numberline {8.32}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/minimap.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{190}{section.8.32}
-\contentsline {section}{\numberline {8.33}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/player.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{190}{section.8.33}
-\contentsline {section}{\numberline {8.34}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/player.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{191}{section.8.34}
-\contentsline {section}{\numberline {8.35}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/point.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{192}{section.8.35}
-\contentsline {section}{\numberline {8.36}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/point.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{193}{section.8.36}
-\contentsline {section}{\numberline {8.37}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME.md-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{193}{section.8.37}
-\contentsline {section}{\numberline {8.38}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/river.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{193}{section.8.38}
-\contentsline {section}{\numberline {8.39}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/river.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{194}{section.8.39}
-\contentsline {section}{\numberline {8.40}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/routeinterface.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{194}{section.8.40}
-\contentsline {section}{\numberline {8.41}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/routeinterface.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{195}{section.8.41}
-\contentsline {section}{\numberline {8.42}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/scene.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{195}{section.8.42}
-\contentsline {section}{\numberline {8.43}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/scene.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{196}{section.8.43}
-\contentsline {section}{\numberline {8.44}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/sidepanel.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{197}{section.8.44}
-\contentsline {section}{\numberline {8.45}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/sidepanel.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{198}{section.8.45}
-\contentsline {section}{\numberline {8.46}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/tooltipmenu.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{198}{section.8.46}
-\contentsline {section}{\numberline {8.47}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/tooltipmenu.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{199}{section.8.47}
-\contentsline {section}{\numberline {8.48}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/trainrenderer.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{200}{section.8.48}
-\contentsline {subsection}{\numberline {8.48.1}Dokumentation der Funktionen}{201}{subsection.8.48.1}
-\contentsline {subsubsection}{\numberline {8.48.1.1}triggerRemoveWagon()}{201}{subsubsection.8.48.1.1}
-\contentsline {section}{\numberline {8.49}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/trainrenderer.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{201}{section.8.49}
-\contentsline {section}{\numberline {8.50}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/view.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{202}{section.8.50}
-\contentsline {section}{\numberline {8.51}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/view.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{203}{section.8.51}
+\contentsline {subsubsection}{\numberline {7.12.3.10}mouseDown}{87}{subsubsection.7.12.3.10}
+\contentsline {subsubsection}{\numberline {7.12.3.11}movementAnimations}{87}{subsubsection.7.12.3.11}
+\contentsline {subsubsection}{\numberline {7.12.3.12}offset}{87}{subsubsection.7.12.3.12}
+\contentsline {subsubsection}{\numberline {7.12.3.13}rendering}{87}{subsubsection.7.12.3.13}
+\contentsline {subsubsection}{\numberline {7.12.3.14}renderTime}{87}{subsubsection.7.12.3.14}
+\contentsline {subsubsection}{\numberline {7.12.3.15}scale}{87}{subsubsection.7.12.3.15}
+\contentsline {subsubsection}{\numberline {7.12.3.16}showExpertDetails}{87}{subsubsection.7.12.3.16}
+\contentsline {subsubsection}{\numberline {7.12.3.17}showHighlight}{88}{subsubsection.7.12.3.17}
+\contentsline {section}{\numberline {7.13}Map\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tile Klassenreferenz}{88}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Dokumentation der Aufz\IeC {\"a}hlungstypen}{90}{subsection.7.13.1}
+\contentsline {subsubsection}{\numberline {7.13.1.1}TYPE}{90}{subsubsection.7.13.1.1}
+\contentsline {subsection}{\numberline {7.13.2}Beschreibung der Konstruktoren und Destruktoren}{90}{subsection.7.13.2}
+\contentsline {subsubsection}{\numberline {7.13.2.1}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{90}{subsubsection.7.13.2.1}
+\contentsline {subsubsection}{\numberline {7.13.2.2}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{91}{subsubsection.7.13.2.2}
+\contentsline {subsection}{\numberline {7.13.3}Dokumentation der Elementfunktionen}{91}{subsection.7.13.3}
+\contentsline {subsubsection}{\numberline {7.13.3.1}attachGraphicsManager()}{91}{subsubsection.7.13.3.1}
+\contentsline {subsubsection}{\numberline {7.13.3.2}getCity()}{92}{subsubsection.7.13.3.2}
+\contentsline {subsubsection}{\numberline {7.13.3.3}getPixmapItem()}{92}{subsubsection.7.13.3.3}
+\contentsline {subsubsection}{\numberline {7.13.3.4}getRotation()}{93}{subsubsection.7.13.3.4}
+\contentsline {subsubsection}{\numberline {7.13.3.5}getRotationDeg()}{93}{subsubsection.7.13.3.5}
+\contentsline {subsubsection}{\numberline {7.13.3.6}getType()}{93}{subsubsection.7.13.3.6}
+\contentsline {subsubsection}{\numberline {7.13.3.7}getX()}{94}{subsubsection.7.13.3.7}
+\contentsline {subsubsection}{\numberline {7.13.3.8}getY()}{95}{subsubsection.7.13.3.8}
+\contentsline {subsubsection}{\numberline {7.13.3.9}isRail()}{95}{subsubsection.7.13.3.9}
+\contentsline {subsubsection}{\numberline {7.13.3.10}isRiver()}{96}{subsubsection.7.13.3.10}
+\contentsline {subsubsection}{\numberline {7.13.3.11}setCity()}{96}{subsubsection.7.13.3.11}
+\contentsline {subsubsection}{\numberline {7.13.3.12}setPosition()}{96}{subsubsection.7.13.3.12}
+\contentsline {subsubsection}{\numberline {7.13.3.13}setRotation()}{97}{subsubsection.7.13.3.13}
+\contentsline {subsubsection}{\numberline {7.13.3.14}setType()}{98}{subsubsection.7.13.3.14}
+\contentsline {subsection}{\numberline {7.13.4}Dokumentation der Datenelemente}{98}{subsection.7.13.4}
+\contentsline {subsubsection}{\numberline {7.13.4.1}city}{99}{subsubsection.7.13.4.1}
+\contentsline {subsubsection}{\numberline {7.13.4.2}currentRotation}{99}{subsubsection.7.13.4.2}
+\contentsline {subsubsection}{\numberline {7.13.4.3}graphicsManager}{99}{subsubsection.7.13.4.3}
+\contentsline {subsubsection}{\numberline {7.13.4.4}pixmapItem}{99}{subsubsection.7.13.4.4}
+\contentsline {subsubsection}{\numberline {7.13.4.5}type}{99}{subsubsection.7.13.4.5}
+\contentsline {section}{\numberline {7.14}Menu\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar Klassenreferenz}{100}{section.7.14}
+\contentsline {subsection}{\numberline {7.14.1}Beschreibung der Konstruktoren und Destruktoren}{102}{subsection.7.14.1}
+\contentsline {subsubsection}{\numberline {7.14.1.1}MenuBar()}{102}{subsubsection.7.14.1.1}
+\contentsline {subsection}{\numberline {7.14.2}Dokumentation der Elementfunktionen}{102}{subsection.7.14.2}
+\contentsline {subsubsection}{\numberline {7.14.2.1}slotCloseConnection}{102}{subsubsection.7.14.2.1}
+\contentsline {subsubsection}{\numberline {7.14.2.2}slotOpenConnection}{102}{subsubsection.7.14.2.2}
+\contentsline {subsection}{\numberline {7.14.3}Dokumentation der Datenelemente}{103}{subsection.7.14.3}
+\contentsline {subsubsection}{\numberline {7.14.3.1}dataModel}{103}{subsubsection.7.14.3.1}
+\contentsline {subsubsection}{\numberline {7.14.3.2}mapRenderer}{103}{subsubsection.7.14.3.2}
+\contentsline {subsubsection}{\numberline {7.14.3.3}routeInterface}{103}{subsubsection.7.14.3.3}
+\contentsline {subsubsection}{\numberline {7.14.3.4}scene}{103}{subsubsection.7.14.3.4}
+\contentsline {subsubsection}{\numberline {7.14.3.5}view}{103}{subsubsection.7.14.3.5}
+\contentsline {section}{\numberline {7.15}Minimap Klassenreferenz}{104}{section.7.15}
+\contentsline {subsection}{\numberline {7.15.1}Beschreibung der Konstruktoren und Destruktoren}{106}{subsection.7.15.1}
+\contentsline {subsubsection}{\numberline {7.15.1.1}Minimap()}{106}{subsubsection.7.15.1.1}
+\contentsline {subsection}{\numberline {7.15.2}Dokumentation der Elementfunktionen}{107}{subsection.7.15.2}
+\contentsline {subsubsection}{\numberline {7.15.2.1}mouseMoveEvent()}{107}{subsubsection.7.15.2.1}
+\contentsline {subsubsection}{\numberline {7.15.2.2}mouseReleaseEvent()}{107}{subsubsection.7.15.2.2}
+\contentsline {subsubsection}{\numberline {7.15.2.3}paintEvent()}{107}{subsubsection.7.15.2.3}
+\contentsline {subsubsection}{\numberline {7.15.2.4}renderMap()}{108}{subsubsection.7.15.2.4}
+\contentsline {subsubsection}{\numberline {7.15.2.5}viewChange}{109}{subsubsection.7.15.2.5}
+\contentsline {subsection}{\numberline {7.15.3}Dokumentation der Datenelemente}{109}{subsection.7.15.3}
+\contentsline {subsubsection}{\numberline {7.15.3.1}compass}{109}{subsubsection.7.15.3.1}
+\contentsline {subsubsection}{\numberline {7.15.3.2}dataModel}{109}{subsubsection.7.15.3.2}
+\contentsline {subsubsection}{\numberline {7.15.3.3}height}{109}{subsubsection.7.15.3.3}
+\contentsline {subsubsection}{\numberline {7.15.3.4}hoverCoords}{109}{subsubsection.7.15.3.4}
+\contentsline {subsubsection}{\numberline {7.15.3.5}location}{110}{subsubsection.7.15.3.5}
+\contentsline {subsubsection}{\numberline {7.15.3.6}location\_white}{110}{subsubsection.7.15.3.6}
+\contentsline {subsubsection}{\numberline {7.15.3.7}map}{110}{subsubsection.7.15.3.7}
+\contentsline {subsubsection}{\numberline {7.15.3.8}mapOverlay}{110}{subsubsection.7.15.3.8}
+\contentsline {subsubsection}{\numberline {7.15.3.9}renderCoordinates}{110}{subsubsection.7.15.3.9}
+\contentsline {subsubsection}{\numberline {7.15.3.10}scene}{110}{subsubsection.7.15.3.10}
+\contentsline {subsubsection}{\numberline {7.15.3.11}width}{110}{subsubsection.7.15.3.11}
+\contentsline {section}{\numberline {7.16}Player Klassenreferenz}{111}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Beschreibung der Konstruktoren und Destruktoren}{111}{subsection.7.16.1}
+\contentsline {subsubsection}{\numberline {7.16.1.1}Player()}{112}{subsubsection.7.16.1.1}
+\contentsline {subsection}{\numberline {7.16.2}Dokumentation der Elementfunktionen}{112}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}setPosition()}{112}{subsubsection.7.16.2.1}
+\contentsline {subsection}{\numberline {7.16.3}Dokumentation der Datenelemente}{112}{subsection.7.16.3}
+\contentsline {subsubsection}{\numberline {7.16.3.1}highlighter}{112}{subsubsection.7.16.3.1}
+\contentsline {subsubsection}{\numberline {7.16.3.2}posX}{112}{subsubsection.7.16.3.2}
+\contentsline {subsubsection}{\numberline {7.16.3.3}posY}{113}{subsubsection.7.16.3.3}
+\contentsline {section}{\numberline {7.17}Point Klassenreferenz}{113}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Beschreibung der Konstruktoren und Destruktoren}{114}{subsection.7.17.1}
+\contentsline {subsubsection}{\numberline {7.17.1.1}Point()}{114}{subsubsection.7.17.1.1}
+\contentsline {subsection}{\numberline {7.17.2}Dokumentation der Elementfunktionen}{114}{subsection.7.17.2}
+\contentsline {subsubsection}{\numberline {7.17.2.1}add()}{114}{subsubsection.7.17.2.1}
+\contentsline {subsubsection}{\numberline {7.17.2.2}getX()}{115}{subsubsection.7.17.2.2}
+\contentsline {subsubsection}{\numberline {7.17.2.3}getY()}{116}{subsubsection.7.17.2.3}
+\contentsline {subsubsection}{\numberline {7.17.2.4}move()}{117}{subsubsection.7.17.2.4}
+\contentsline {subsubsection}{\numberline {7.17.2.5}set()}{118}{subsubsection.7.17.2.5}
+\contentsline {subsubsection}{\numberline {7.17.2.6}toTile()}{118}{subsubsection.7.17.2.6}
+\contentsline {subsection}{\numberline {7.17.3}Dokumentation der Datenelemente}{119}{subsection.7.17.3}
+\contentsline {subsubsection}{\numberline {7.17.3.1}x}{119}{subsubsection.7.17.3.1}
+\contentsline {subsubsection}{\numberline {7.17.3.2}y}{119}{subsubsection.7.17.3.2}
+\contentsline {section}{\numberline {7.18}River Klassenreferenz}{119}{section.7.18}
+\contentsline {subsection}{\numberline {7.18.1}Beschreibung der Konstruktoren und Destruktoren}{120}{subsection.7.18.1}
+\contentsline {subsubsection}{\numberline {7.18.1.1}River()}{120}{subsubsection.7.18.1.1}
+\contentsline {section}{\numberline {7.19}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{120}{section.7.19}
+\contentsline {subsection}{\numberline {7.19.1}Beschreibung der Konstruktoren und Destruktoren}{122}{subsection.7.19.1}
+\contentsline {subsubsection}{\numberline {7.19.1.1}RouteInterface()}{122}{subsubsection.7.19.1.1}
+\contentsline {subsection}{\numberline {7.19.2}Dokumentation der Elementfunktionen}{122}{subsection.7.19.2}
+\contentsline {subsubsection}{\numberline {7.19.2.1}addWagon}{122}{subsubsection.7.19.2.1}
+\contentsline {subsubsection}{\numberline {7.19.2.2}confirmRoute}{123}{subsubsection.7.19.2.2}
+\contentsline {subsubsection}{\numberline {7.19.2.3}onTileInteract}{124}{subsubsection.7.19.2.3}
+\contentsline {subsubsection}{\numberline {7.19.2.4}removeWagon}{124}{subsubsection.7.19.2.4}
+\contentsline {subsubsection}{\numberline {7.19.2.5}sendConfirmRoute}{124}{subsubsection.7.19.2.5}
+\contentsline {subsubsection}{\numberline {7.19.2.6}toggle}{125}{subsubsection.7.19.2.6}
+\contentsline {subsection}{\numberline {7.19.3}Dokumentation der Datenelemente}{125}{subsection.7.19.3}
+\contentsline {subsubsection}{\numberline {7.19.3.1}confirmBtn}{125}{subsubsection.7.19.3.1}
+\contentsline {subsubsection}{\numberline {7.19.3.2}goodSelector}{125}{subsubsection.7.19.3.2}
+\contentsline {subsubsection}{\numberline {7.19.3.3}trainRenderer}{125}{subsubsection.7.19.3.3}
+\contentsline {subsubsection}{\numberline {7.19.3.4}trainstationList}{126}{subsubsection.7.19.3.4}
+\contentsline {subsubsection}{\numberline {7.19.3.5}tsCoords}{126}{subsubsection.7.19.3.5}
+\contentsline {subsubsection}{\numberline {7.19.3.6}tsCount}{126}{subsubsection.7.19.3.6}
+\contentsline {subsubsection}{\numberline {7.19.3.7}wagonCount}{126}{subsubsection.7.19.3.7}
+\contentsline {section}{\numberline {7.20}Scene Klassenreferenz}{126}{section.7.20}
+\contentsline {subsection}{\numberline {7.20.1}Beschreibung der Konstruktoren und Destruktoren}{129}{subsection.7.20.1}
+\contentsline {subsubsection}{\numberline {7.20.1.1}Scene()}{130}{subsubsection.7.20.1.1}
+\contentsline {subsection}{\numberline {7.20.2}Dokumentation der Elementfunktionen}{130}{subsection.7.20.2}
+\contentsline {subsubsection}{\numberline {7.20.2.1}generateWorld()}{130}{subsubsection.7.20.2.1}
+\contentsline {subsubsection}{\numberline {7.20.2.2}getTileAt()}{131}{subsubsection.7.20.2.2}
+\contentsline {subsubsection}{\numberline {7.20.2.3}onSetTile}{132}{subsubsection.7.20.2.3}
+\contentsline {subsubsection}{\numberline {7.20.2.4}setActiveTile()}{132}{subsubsection.7.20.2.4}
+\contentsline {subsubsection}{\numberline {7.20.2.5}setTileAt()}{134}{subsubsection.7.20.2.5}
+\contentsline {subsubsection}{\numberline {7.20.2.6}tick()}{134}{subsubsection.7.20.2.6}
+\contentsline {subsubsection}{\numberline {7.20.2.7}tileChanged()}{135}{subsubsection.7.20.2.7}
+\contentsline {subsubsection}{\numberline {7.20.2.8}tileUpdate}{135}{subsubsection.7.20.2.8}
+\contentsline {subsubsection}{\numberline {7.20.2.9}updatePlayerPosition}{135}{subsubsection.7.20.2.9}
+\contentsline {subsection}{\numberline {7.20.3}Dokumentation der Datenelemente}{136}{subsection.7.20.3}
+\contentsline {subsubsection}{\numberline {7.20.3.1}activeTile}{136}{subsubsection.7.20.3.1}
+\contentsline {subsubsection}{\numberline {7.20.3.2}data}{136}{subsubsection.7.20.3.2}
+\contentsline {subsubsection}{\numberline {7.20.3.3}dataModel}{136}{subsubsection.7.20.3.3}
+\contentsline {subsubsection}{\numberline {7.20.3.4}graphicsManager}{137}{subsubsection.7.20.3.4}
+\contentsline {subsubsection}{\numberline {7.20.3.5}highlighter}{137}{subsubsection.7.20.3.5}
+\contentsline {subsubsection}{\numberline {7.20.3.6}MAP\_SIZE}{137}{subsubsection.7.20.3.6}
+\contentsline {subsubsection}{\numberline {7.20.3.7}players}{137}{subsubsection.7.20.3.7}
+\contentsline {subsubsection}{\numberline {7.20.3.8}radiusHighlighter}{137}{subsubsection.7.20.3.8}
+\contentsline {subsubsection}{\numberline {7.20.3.9}secondPlayer}{137}{subsubsection.7.20.3.9}
+\contentsline {subsubsection}{\numberline {7.20.3.10}showRadius}{137}{subsubsection.7.20.3.10}
+\contentsline {subsubsection}{\numberline {7.20.3.11}textHint}{137}{subsubsection.7.20.3.11}
+\contentsline {subsubsection}{\numberline {7.20.3.12}TILE\_SIZE}{138}{subsubsection.7.20.3.12}
+\contentsline {section}{\numberline {7.21}Side\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Panel Klassenreferenz}{138}{section.7.21}
+\contentsline {subsection}{\numberline {7.21.1}Beschreibung der Konstruktoren und Destruktoren}{139}{subsection.7.21.1}
+\contentsline {subsubsection}{\numberline {7.21.1.1}SidePanel()}{139}{subsubsection.7.21.1.1}
+\contentsline {subsection}{\numberline {7.21.2}Dokumentation der Elementfunktionen}{140}{subsection.7.21.2}
+\contentsline {subsubsection}{\numberline {7.21.2.1}hookDataModel()}{140}{subsubsection.7.21.2.1}
+\contentsline {subsection}{\numberline {7.21.3}Dokumentation der Datenelemente}{140}{subsection.7.21.3}
+\contentsline {subsubsection}{\numberline {7.21.3.1}layout}{140}{subsubsection.7.21.3.1}
+\contentsline {subsubsection}{\numberline {7.21.3.2}moneyLabel}{140}{subsubsection.7.21.3.2}
+\contentsline {subsubsection}{\numberline {7.21.3.3}positionLabel}{141}{subsubsection.7.21.3.3}
+\contentsline {subsubsection}{\numberline {7.21.3.4}timeLabel}{141}{subsubsection.7.21.3.4}
+\contentsline {section}{\numberline {7.22}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tip\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Menu Klassenreferenz}{141}{section.7.22}
+\contentsline {subsection}{\numberline {7.22.1}Beschreibung der Konstruktoren und Destruktoren}{142}{subsection.7.22.1}
+\contentsline {subsubsection}{\numberline {7.22.1.1}ToolTipMenu()}{143}{subsubsection.7.22.1.1}
+\contentsline {subsection}{\numberline {7.22.2}Dokumentation der Elementfunktionen}{143}{subsection.7.22.2}
+\contentsline {subsubsection}{\numberline {7.22.2.1}hide()}{143}{subsubsection.7.22.2.1}
+\contentsline {subsubsection}{\numberline {7.22.2.2}setText()}{143}{subsubsection.7.22.2.2}
+\contentsline {subsubsection}{\numberline {7.22.2.3}showAt()}{144}{subsubsection.7.22.2.3}
+\contentsline {subsection}{\numberline {7.22.3}Dokumentation der Datenelemente}{144}{subsection.7.22.3}
+\contentsline {subsubsection}{\numberline {7.22.3.1}textlabel}{145}{subsubsection.7.22.3.1}
+\contentsline {section}{\numberline {7.23}Train\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Renderer Klassenreferenz}{145}{section.7.23}
+\contentsline {subsection}{\numberline {7.23.1}Beschreibung der Konstruktoren und Destruktoren}{147}{subsection.7.23.1}
+\contentsline {subsubsection}{\numberline {7.23.1.1}TrainRenderer()}{147}{subsubsection.7.23.1.1}
+\contentsline {subsection}{\numberline {7.23.2}Dokumentation der Elementfunktionen}{147}{subsection.7.23.2}
+\contentsline {subsubsection}{\numberline {7.23.2.1}addWagon()}{147}{subsubsection.7.23.2.1}
+\contentsline {subsubsection}{\numberline {7.23.2.2}deleteAllWagons()}{147}{subsubsection.7.23.2.2}
+\contentsline {subsubsection}{\numberline {7.23.2.3}mouseReleaseEvent}{148}{subsubsection.7.23.2.3}
+\contentsline {subsubsection}{\numberline {7.23.2.4}paintEvent()}{148}{subsubsection.7.23.2.4}
+\contentsline {subsubsection}{\numberline {7.23.2.5}triggerRemoveWagon}{148}{subsubsection.7.23.2.5}
+\contentsline {subsection}{\numberline {7.23.3}Dokumentation der Datenelemente}{148}{subsection.7.23.3}
+\contentsline {subsubsection}{\numberline {7.23.3.1}background}{148}{subsubsection.7.23.3.1}
+\contentsline {subsubsection}{\numberline {7.23.3.2}graphicsManager}{148}{subsubsection.7.23.3.2}
+\contentsline {subsubsection}{\numberline {7.23.3.3}sky}{149}{subsubsection.7.23.3.3}
+\contentsline {subsubsection}{\numberline {7.23.3.4}train}{149}{subsubsection.7.23.3.4}
+\contentsline {subsubsection}{\numberline {7.23.3.5}wagon}{149}{subsubsection.7.23.3.5}
+\contentsline {subsubsection}{\numberline {7.23.3.6}wagons}{149}{subsubsection.7.23.3.6}
+\contentsline {section}{\numberline {7.24}View Klassenreferenz}{149}{section.7.24}
+\contentsline {subsection}{\numberline {7.24.1}Beschreibung der Konstruktoren und Destruktoren}{153}{subsection.7.24.1}
+\contentsline {subsubsection}{\numberline {7.24.1.1}View()}{153}{subsubsection.7.24.1.1}
+\contentsline {subsection}{\numberline {7.24.2}Dokumentation der Elementfunktionen}{153}{subsection.7.24.2}
+\contentsline {subsubsection}{\numberline {7.24.2.1}enableAnimation()}{153}{subsubsection.7.24.2.1}
+\contentsline {subsubsection}{\numberline {7.24.2.2}fluidMove()}{154}{subsubsection.7.24.2.2}
+\contentsline {subsubsection}{\numberline {7.24.2.3}fluidMovement()}{155}{subsubsection.7.24.2.3}
+\contentsline {subsubsection}{\numberline {7.24.2.4}fluidZoom()}{155}{subsubsection.7.24.2.4}
+\contentsline {subsubsection}{\numberline {7.24.2.5}keyPressEvent()}{156}{subsubsection.7.24.2.5}
+\contentsline {subsubsection}{\numberline {7.24.2.6}leftclick()}{156}{subsubsection.7.24.2.6}
+\contentsline {subsubsection}{\numberline {7.24.2.7}mouseMoveEvent()}{157}{subsubsection.7.24.2.7}
+\contentsline {subsubsection}{\numberline {7.24.2.8}mousePressEvent()}{158}{subsubsection.7.24.2.8}
+\contentsline {subsubsection}{\numberline {7.24.2.9}mouseReleaseEvent()}{158}{subsubsection.7.24.2.9}
+\contentsline {subsubsection}{\numberline {7.24.2.10}onLeftclick}{159}{subsubsection.7.24.2.10}
+\contentsline {subsubsection}{\numberline {7.24.2.11}onRightclick}{159}{subsubsection.7.24.2.11}
+\contentsline {subsubsection}{\numberline {7.24.2.12}onTrainStationClick}{160}{subsubsection.7.24.2.12}
+\contentsline {subsubsection}{\numberline {7.24.2.13}paintEvent()}{160}{subsubsection.7.24.2.13}
+\contentsline {subsubsection}{\numberline {7.24.2.14}render()}{160}{subsubsection.7.24.2.14}
+\contentsline {subsubsection}{\numberline {7.24.2.15}rightclick()}{161}{subsubsection.7.24.2.15}
+\contentsline {subsubsection}{\numberline {7.24.2.16}setDataModel()}{161}{subsubsection.7.24.2.16}
+\contentsline {subsubsection}{\numberline {7.24.2.17}tick()}{161}{subsubsection.7.24.2.17}
+\contentsline {subsubsection}{\numberline {7.24.2.18}wheelEvent()}{162}{subsubsection.7.24.2.18}
+\contentsline {subsubsection}{\numberline {7.24.2.19}zoomInAnimation}{162}{subsubsection.7.24.2.19}
+\contentsline {subsection}{\numberline {7.24.3}Dokumentation der Datenelemente}{162}{subsection.7.24.3}
+\contentsline {subsubsection}{\numberline {7.24.3.1}codeCount}{163}{subsubsection.7.24.3.1}
+\contentsline {subsubsection}{\numberline {7.24.3.2}currentScale}{163}{subsubsection.7.24.3.2}
+\contentsline {subsubsection}{\numberline {7.24.3.3}dataModel}{163}{subsubsection.7.24.3.3}
+\contentsline {subsubsection}{\numberline {7.24.3.4}doAnimations}{163}{subsubsection.7.24.3.4}
+\contentsline {subsubsection}{\numberline {7.24.3.5}doPaint}{163}{subsubsection.7.24.3.5}
+\contentsline {subsubsection}{\numberline {7.24.3.6}dragOriginX}{163}{subsubsection.7.24.3.6}
+\contentsline {subsubsection}{\numberline {7.24.3.7}dragOriginY}{163}{subsubsection.7.24.3.7}
+\contentsline {subsubsection}{\numberline {7.24.3.8}dragPosX}{163}{subsubsection.7.24.3.8}
+\contentsline {subsubsection}{\numberline {7.24.3.9}dragPosY}{164}{subsubsection.7.24.3.9}
+\contentsline {subsubsection}{\numberline {7.24.3.10}mouseDown}{164}{subsubsection.7.24.3.10}
+\contentsline {subsubsection}{\numberline {7.24.3.11}mouseX}{164}{subsubsection.7.24.3.11}
+\contentsline {subsubsection}{\numberline {7.24.3.12}mouseY}{164}{subsubsection.7.24.3.12}
+\contentsline {subsubsection}{\numberline {7.24.3.13}scene}{164}{subsubsection.7.24.3.13}
+\contentsline {subsubsection}{\numberline {7.24.3.14}tooltip}{164}{subsubsection.7.24.3.14}
+\contentsline {chapter}{\numberline {8}Datei-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{165}{chapter.8}
+\contentsline {section}{\numberline {8.1}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{165}{section.8.1}
+\contentsline {section}{\numberline {8.2}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{165}{section.8.2}
+\contentsline {section}{\numberline {8.3}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationmovement.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{166}{section.8.3}
+\contentsline {section}{\numberline {8.4}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationmovement.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{167}{section.8.4}
+\contentsline {section}{\numberline {8.5}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/city.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{168}{section.8.5}
+\contentsline {section}{\numberline {8.6}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/city.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{169}{section.8.6}
+\contentsline {section}{\numberline {8.7}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/client.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{169}{section.8.7}
+\contentsline {section}{\numberline {8.8}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/client.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{170}{section.8.8}
+\contentsline {section}{\numberline {8.9}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/datamodel.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{171}{section.8.9}
+\contentsline {section}{\numberline {8.10}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/datamodel.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{172}{section.8.10}
+\contentsline {section}{\numberline {8.11}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/gameloop.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{173}{section.8.11}
+\contentsline {section}{\numberline {8.12}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/gameloop.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{174}{section.8.12}
+\contentsline {section}{\numberline {8.13}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/goodselector.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{175}{section.8.13}
+\contentsline {section}{\numberline {8.14}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/goodselector.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{175}{section.8.14}
+\contentsline {section}{\numberline {8.15}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/graphicsmanager.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{176}{section.8.15}
+\contentsline {section}{\numberline {8.16}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/graphicsmanager.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{177}{section.8.16}
+\contentsline {section}{\numberline {8.17}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/highlighter.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{177}{section.8.17}
+\contentsline {section}{\numberline {8.18}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/highlighter.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{178}{section.8.18}
+\contentsline {section}{\numberline {8.19}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/main.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{179}{section.8.19}
+\contentsline {subsection}{\numberline {8.19.1}Dokumentation der Funktionen}{180}{subsection.8.19.1}
+\contentsline {subsubsection}{\numberline {8.19.1.1}main()}{180}{subsubsection.8.19.1.1}
+\contentsline {subsubsection}{\numberline {8.19.1.2}timeTicker()}{181}{subsubsection.8.19.1.2}
+\contentsline {subsection}{\numberline {8.19.2}Variablen-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{182}{subsection.8.19.2}
+\contentsline {subsubsection}{\numberline {8.19.2.1}client}{182}{subsubsection.8.19.2.1}
+\contentsline {subsubsection}{\numberline {8.19.2.2}dataModel}{182}{subsubsection.8.19.2.2}
+\contentsline {subsubsection}{\numberline {8.19.2.3}gameRunning}{182}{subsubsection.8.19.2.3}
+\contentsline {subsubsection}{\numberline {8.19.2.4}graphics}{182}{subsubsection.8.19.2.4}
+\contentsline {subsubsection}{\numberline {8.19.2.5}mainWindow}{182}{subsubsection.8.19.2.5}
+\contentsline {subsubsection}{\numberline {8.19.2.6}mapRenderer}{182}{subsubsection.8.19.2.6}
+\contentsline {subsubsection}{\numberline {8.19.2.7}scene}{182}{subsubsection.8.19.2.7}
+\contentsline {subsubsection}{\numberline {8.19.2.8}sidePanel}{183}{subsubsection.8.19.2.8}
+\contentsline {subsubsection}{\numberline {8.19.2.9}view}{183}{subsubsection.8.19.2.9}
+\contentsline {section}{\numberline {8.20}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/main.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{183}{section.8.20}
+\contentsline {subsection}{\numberline {8.20.1}Variablen-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{184}{subsection.8.20.1}
+\contentsline {subsubsection}{\numberline {8.20.1.1}client}{184}{subsubsection.8.20.1.1}
+\contentsline {subsubsection}{\numberline {8.20.1.2}dataModel}{184}{subsubsection.8.20.1.2}
+\contentsline {subsubsection}{\numberline {8.20.1.3}gameRunning}{184}{subsubsection.8.20.1.3}
+\contentsline {subsubsection}{\numberline {8.20.1.4}mainWindow}{184}{subsubsection.8.20.1.4}
+\contentsline {section}{\numberline {8.21}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainmenu.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{184}{section.8.21}
+\contentsline {section}{\numberline {8.22}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainmenu.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{185}{section.8.22}
+\contentsline {section}{\numberline {8.23}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainwindow.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{185}{section.8.23}
+\contentsline {section}{\numberline {8.24}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/mainwindow.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{186}{section.8.24}
+\contentsline {section}{\numberline {8.25}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maprenderer.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{187}{section.8.25}
+\contentsline {section}{\numberline {8.26}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maprenderer.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{187}{section.8.26}
+\contentsline {section}{\numberline {8.27}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maptile.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{188}{section.8.27}
+\contentsline {section}{\numberline {8.28}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/maptile.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{189}{section.8.28}
+\contentsline {section}{\numberline {8.29}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/menubar.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{189}{section.8.29}
+\contentsline {section}{\numberline {8.30}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/menubar.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{190}{section.8.30}
+\contentsline {section}{\numberline {8.31}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/minimap.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{191}{section.8.31}
+\contentsline {section}{\numberline {8.32}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/minimap.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{192}{section.8.32}
+\contentsline {section}{\numberline {8.33}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/player.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{192}{section.8.33}
+\contentsline {section}{\numberline {8.34}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/player.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{193}{section.8.34}
+\contentsline {section}{\numberline {8.35}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/point.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{194}{section.8.35}
+\contentsline {section}{\numberline {8.36}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/point.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{195}{section.8.36}
+\contentsline {section}{\numberline {8.37}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME.md-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{195}{section.8.37}
+\contentsline {section}{\numberline {8.38}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/river.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{195}{section.8.38}
+\contentsline {section}{\numberline {8.39}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/river.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{196}{section.8.39}
+\contentsline {section}{\numberline {8.40}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/routeinterface.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{196}{section.8.40}
+\contentsline {section}{\numberline {8.41}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/routeinterface.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{197}{section.8.41}
+\contentsline {section}{\numberline {8.42}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/scene.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{197}{section.8.42}
+\contentsline {section}{\numberline {8.43}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/scene.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{198}{section.8.43}
+\contentsline {section}{\numberline {8.44}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/sidepanel.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{199}{section.8.44}
+\contentsline {section}{\numberline {8.45}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/sidepanel.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{200}{section.8.45}
+\contentsline {section}{\numberline {8.46}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/tooltipmenu.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{200}{section.8.46}
+\contentsline {section}{\numberline {8.47}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/tooltipmenu.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{201}{section.8.47}
+\contentsline {section}{\numberline {8.48}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/trainrenderer.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{202}{section.8.48}
+\contentsline {subsection}{\numberline {8.48.1}Dokumentation der Funktionen}{203}{subsection.8.48.1}
+\contentsline {subsubsection}{\numberline {8.48.1.1}triggerRemoveWagon()}{203}{subsubsection.8.48.1.1}
+\contentsline {section}{\numberline {8.49}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/trainrenderer.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{203}{section.8.49}
+\contentsline {section}{\numberline {8.50}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/view.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{204}{section.8.50}
+\contentsline {section}{\numberline {8.51}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/view.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{205}{section.8.51}

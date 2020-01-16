@@ -6,16 +6,18 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{classMapRenderer__inherit__graph}
+\includegraphics[width=205pt]{classMapRenderer__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -67,6 +69,8 @@ void \mbox{\hyperlink{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}{demo}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a6987b7277c79c4b06e4e5dd7e666477e}{Map\+Renderer\+::get\+Min\+Pos}} Gibt die minimale Position des Viewports zurück. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMapRenderer_ae68fe923734619c5a0e44586ca3281dd}{get\+Max\+Pos}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a6987b7277c79c4b06e4e5dd7e666477e}{Map\+Renderer\+::get\+Min\+Pos}} Gibt die maximale Position des Viewports zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{set\+Viewport\+Tile\+Position}} (int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{Map\+Renderer\+::set\+Viewport\+Tile\+Position}} Verschiebt den Viewport zu einer Tile-\/\+Koordinate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}{animate\+Movement}} (Q\+Image, Q\+String)
 \item 
 void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animate\+Movement}} (Q\+Image, Q\+String, double)
@@ -392,6 +396,39 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
 {\footnotesize\ttfamily void Map\+Renderer\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
+\mbox{\Hypertarget{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}\label{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}} 
+\index{MapRenderer@{MapRenderer}!setViewportTilePosition@{setViewportTilePosition}}
+\index{setViewportTilePosition@{setViewportTilePosition}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{setViewportTilePosition()}{setViewportTilePosition()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::set\+Viewport\+Tile\+Position (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{Map\+Renderer\+::set\+Viewport\+Tile\+Position}} Verschiebt den Viewport zu einer Tile-\/\+Koordinate. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em px} & Die X-\/\+Koordinate. \\
+\hline
+{\em py} & Die Y-\/\+Koordinate. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}\label{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}} 
 \index{MapRenderer@{MapRenderer}!tick@{tick}}
 \index{tick@{tick}!MapRenderer@{MapRenderer}}

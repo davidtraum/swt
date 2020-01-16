@@ -11,7 +11,7 @@ Klassendiagramm für Minimap\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=169pt]{classMinimap__inherit__graph}
+\includegraphics[width=205pt]{classMinimap__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -35,7 +35,11 @@ void \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{view\+Chan
 \mbox{\hyperlink{classMinimap_a4cf153454dc7dcc8feb3d3a0c5d326fd}{Minimap}} (int, int, \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a4cf153454dc7dcc8feb3d3a0c5d326fd}{Minimap\+::\+Minimap}} Erzeugt eine neue \mbox{\hyperlink{classMinimap}{Minimap}} Komponente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{paint\+Event}} (Q\+Paint\+Event $\ast$event) override
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{Minimap\+::paint\+Event}} Rendert die \mbox{\hyperlink{classMinimap}{Minimap}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_ae162eea6dd404a3e3644516567a28334}{Minimap\+::paint\+Event}} Rendert die \mbox{\hyperlink{classMinimap}{Minimap}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMinimap_a802a1ec9586aa8f6e7b76aa55ae18374}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classMinimap_a22c0d911f1bef44c8ff05e9980572c23}{mouse\+Move\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMinimap_a22c0d911f1bef44c8ff05e9980572c23}{Minimap\+::mouse\+Move\+Event}} Wird aufgerufen wenn die Maus bewegt wurde. Erwirkt Vorschau der Koordinaten. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,6 +53,10 @@ int \mbox{\hyperlink{classMinimap_a1eeb6510b1f684f600d7436e4de00d31}{width}}
 int \mbox{\hyperlink{classMinimap_aace73399c5e1d14b639f8c2aebb9b18f}{height}}
 \item 
 \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$ \mbox{\hyperlink{classMinimap_a7f675f3adf82d385b4179b5329003d02}{scene}}
+\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMinimap_a92064824d4c9b62b9630df4ef04a8449}{hover\+Coords}} \{0,0\}
+\item 
+int \mbox{\hyperlink{classMinimap_a92785b21ba78c8946df9f2ec0e1a8600}{render\+Coordinates}} \{0\}
 \item 
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{classMinimap_ab7098181aac3298606cc6467c7a12711}{data\+Model}}
 \item 
@@ -89,6 +97,43 @@ Q\+Image \mbox{\hyperlink{classMinimap_ad3dce57065db14af7e66b560e834c920}{map}}
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classMinimap_a22c0d911f1bef44c8ff05e9980572c23}\label{classMinimap_a22c0d911f1bef44c8ff05e9980572c23}} 
+\index{Minimap@{Minimap}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void Minimap\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\mbox{\hyperlink{classMinimap_a22c0d911f1bef44c8ff05e9980572c23}{Minimap\+::mouse\+Move\+Event}} Wird aufgerufen wenn die Maus bewegt wurde. Erwirkt Vorschau der Koordinaten. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em event} & Ein Q\+Mouse\+Event. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classMinimap_a22c0d911f1bef44c8ff05e9980572c23_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMinimap_a802a1ec9586aa8f6e7b76aa55ae18374}\label{classMinimap_a802a1ec9586aa8f6e7b76aa55ae18374}} 
+\index{Minimap@{Minimap}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Minimap\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMinimap_a802a1ec9586aa8f6e7b76aa55ae18374_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMinimap_ae162eea6dd404a3e3644516567a28334}\label{classMinimap_ae162eea6dd404a3e3644516567a28334}} 
 \index{Minimap@{Minimap}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!Minimap@{Minimap}}
@@ -122,16 +167,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 
 \mbox{\hyperlink{classMinimap_a67a4094a2f2936cb333827551e1d272a}{Minimap\+::render\+Map}} Erzeugt das Bild von der aktuellen Karte. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=323pt]{classMinimap_a67a4094a2f2936cb333827551e1d272a_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -148,8 +191,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 
 \mbox{\hyperlink{classMinimap_a9284cfc19a8a8db5e53c65d1251c370b}{Minimap\+::view\+Change}} Slot der aufgerufen wird wenn die \mbox{\hyperlink{classMinimap}{Minimap}} komplett neu gezeichnet werden soll. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -177,6 +219,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \doxysubsubsection{\texorpdfstring{height}{height}}
 {\footnotesize\ttfamily int Minimap\+::height\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMinimap_a92064824d4c9b62b9630df4ef04a8449}\label{classMinimap_a92064824d4c9b62b9630df4ef04a8449}} 
+\index{Minimap@{Minimap}!hoverCoords@{hoverCoords}}
+\index{hoverCoords@{hoverCoords}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{hoverCoords}{hoverCoords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Minimap\+::hover\+Coords \{0,0\}\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classMinimap_a48b2aabdd946352c8aaa49428b1147f6}\label{classMinimap_a48b2aabdd946352c8aaa49428b1147f6}} 
 \index{Minimap@{Minimap}!location@{location}}
 \index{location@{location}!Minimap@{Minimap}}
@@ -200,6 +248,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 \index{mapOverlay@{mapOverlay}!Minimap@{Minimap}}
 \doxysubsubsection{\texorpdfstring{mapOverlay}{mapOverlay}}
 {\footnotesize\ttfamily Q\+Image Minimap\+::map\+Overlay\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMinimap_a92785b21ba78c8946df9f2ec0e1a8600}\label{classMinimap_a92785b21ba78c8946df9f2ec0e1a8600}} 
+\index{Minimap@{Minimap}!renderCoordinates@{renderCoordinates}}
+\index{renderCoordinates@{renderCoordinates}!Minimap@{Minimap}}
+\doxysubsubsection{\texorpdfstring{renderCoordinates}{renderCoordinates}}
+{\footnotesize\ttfamily int Minimap\+::render\+Coordinates \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMinimap_a7f675f3adf82d385b4179b5329003d02}\label{classMinimap_a7f675f3adf82d385b4179b5329003d02}} 
 \index{Minimap@{Minimap}!scene@{scene}}

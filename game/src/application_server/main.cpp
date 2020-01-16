@@ -103,7 +103,6 @@ int main(int argc, char *argv[])
 
     Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
     QGridLayout * viewLayout = new QGridLayout();
-    map->setAttribute( Qt::WA_TransparentForMouseEvents );
     QWidget *spacerWidget = new QWidget();
     spacerWidget->setAttribute( Qt::WA_TransparentForMouseEvents );
     spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
