@@ -11,46 +11,43 @@ class WayLogic:
 
 
     @staticmethod
-    def wayLasttoFirstStation( karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):
-        if(wayTmp == None):
+    def wayStationAToB(karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):       
+        if(wayTmp == None):            
             wayTmp = []
-        found = False
-        isHorizontal = False        
-        if(isHorizontal or karte[pXL][pYL].getType() == 16 or karte[pXL][pYL].getType() == 18 or karte[pXL][pYL].getType() == 20):
-                if(karte[pXL-1][pYL].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Links
-                    isHorizontal=True
-                    pX -=1
-                    wayTmp.append(karte[pXL][pYL])
-                    if(pXL == pXS and pYL == pXS):
-                        return wayTmp
-                    else:
-                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
-                elif(karte[pXL+1][pYL].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Rechts
-                    isHorizontal=True
-                    pX +=1
-                    wayTmp.append(karte[pXL][pYL])
-                    if(pXL == pXS and pYL == pXS):
-                        return wayTmp
-                    else:
-                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
-                elif(karte[pXL][pYL-1].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Oben
-                    isHorizontal=True
-                    pY -=1
-                    wayTmp.append(karte[pXL][pYL])
-                    if(pXL == pXS and pYL == pXS):
-                        return wayTmp
-                    else:
-                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
-                if(karte[pXL][pYL+1].isRail() or karte[pXL-1][pYL].isTrainstation()):   #Unten
-                    isHorizontal=True
-                    pY +=1
-                    wayTmp.append(karte[pXL][pYL])
-                    if(pXL == pXS and pYL == pXS):
-                        return wayTmp
-                    else:
-                        wayLasttoFirstStation(karte, pXL, pYL, pXS, pYS, wayTmp, returnWay)
-                else:
-                    wayTmp = None
+            wayTmp.append(karte[pXL][pYL])   
+        if(not (karte[pXL-1][pYL] in wayTmp) and (karte[pXL-1][pYL].isRail() or karte[pXL-1][pYL].isTrainStation())):   #Links            
+            wayTmp.append(karte[pXL][pYL])
+            pXL -=1
+            if(pXL-1 == pXS and pYL == pYS):                
+                return wayTmp
+            else:
+                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
+        elif(not(karte[pXL+1][pYL] in wayTmp) and (karte[pXL+1][pYL].isRail() or karte[pXL+1][pYL].isTrainStation())):   #Rechts            
+            wayTmp.append(karte[pXL][pYL])
+            pXL +=1
+            print(pXL, pXS)
+            if(pXL == pXS and pYL == pYS):                
+                return wayTmp
+            else:
+                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
+        elif(not(karte[pXL][pYL-1] in wayTmp) and (karte[pXL][pYL-1].isRail() or karte[pXL][pYL-1].isTrainStation())):   #Oben
+            wayTmp.append(karte[pXL][pYL])
+            pYL -=1
+            if(pXL == pXS and pYL-1 == pYS):
+                return wayTmp
+            else:
+                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
+        if(not(karte[pXL][pYL+1] in wayTmp) and (karte[pXL][pYL+1].isRail() or karte[pXL][pYL+1].isTrainStation())):   #Unten
+            wayTmp.append(karte[pXL][pYL])
+            pYL +=1
+            if(pXL == pXS and pYL+1 == pYS):
+                return wayTmp
+            else:
+                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
+        else:
+            wayTmp = None
+            
+
                     
     
     @staticmethod

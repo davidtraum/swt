@@ -6,8 +6,9 @@ import time
 
 class RouteLogic:
     allRoutes = []
-    def __init__(self, pPlayer, pTrainstations, pWagons, pTrainName = 'testtrain'):
+    def __init__(self, pPlayer, pTrainstations, pWagons, pKarte, pTrainName = 'testtrain'):
         self.player = pPlayer
+        self.karte = pKarte
         self.trainstations = pTrainstations
         self.wagons = pWagons
         self.train = TrainLogic(pTrainName)  #neuer Zug
@@ -20,8 +21,11 @@ class RouteLogic:
     def calculateTime(self):
         for i in range(len(self.trainstations)-1):
             print(self.trainstations[i])
-            print(self.trainstations[i+1])
-            self.timeNeeded.append(WayLogic.getLength(self.trainstations[i], self.trainstations[i+1]))
+            print(self.trainstations[i+1])            
+            self.timeNeeded.append(WayLogic.getLength(self.trainstations[i], self.trainstations[i+1]))   
+        tmp = WayLogic.wayStationAToB(self.karte, self.trainstations[-1].getX(), self.trainstations[-1].getY(), self.trainstations[0].getX(), self.trainstations[0].getY())
+        print(len(tmp))
+
         
             
             

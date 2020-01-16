@@ -337,7 +337,7 @@ class World:
             testWagons=[]
             for j in range(7):
                 testWagons.append("CORN")
-            RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons))
+            RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons, self.data))
             tasks.append(RouteLogic.allRoutes[-1])
            
                         
