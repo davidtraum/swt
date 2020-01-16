@@ -60,8 +60,13 @@ void Minimap::paintEvent(QPaintEvent *event)
 
 void Minimap::mouseReleaseEvent(QMouseEvent *event)
 {
+    mouseDown = false;
     scene->setViewportTilePosition(event->x(), event->y());
-    update();
+}
+
+void Minimap::mousePressEvent(QMouseEvent *event)
+{
+    mouseDown = true;
 }
 
 /**
@@ -72,6 +77,9 @@ void Minimap::mouseMoveEvent(QMouseEvent *event)
 {
     renderCoordinates = 10;
     hoverCoords.set(event->x(), event->y());
+    if(mouseDown){
+        scene->setViewportTilePosition(event->x(), event->y());
+    }
 }
 
 /**

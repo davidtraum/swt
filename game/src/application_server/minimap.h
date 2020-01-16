@@ -13,6 +13,7 @@ public:
     Minimap(int,int, MapRenderer *, DataModel *);
     void paintEvent(QPaintEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
 
 private:
@@ -20,6 +21,7 @@ private:
     int width,height;
     MapRenderer * scene;
     Point hoverCoords{0,0};
+    bool mouseDown{false};
     int renderCoordinates{0};
     DataModel * dataModel;
     QImage location,compass,location_white,mapOverlay,map;
