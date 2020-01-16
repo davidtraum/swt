@@ -53,13 +53,13 @@ void MapRenderer::paintEvent(QPaintEvent *event)
             if(x > 0 && y > 0 && x < 300 && y < 300){
                 if(data[x][y].getRotationDeg()>0){
                     painter.save();
-                    painter.translate(x*(64*scale)-offset.getX()+32,y*(64*scale)-offset.getY()+32);
+                    painter.translate(x*(64)-offset.getX()+32,y*(64)-offset.getY()+32);
                     painter.rotate(data[x][y].getRotationDeg());
                     painter.drawImage(-32,-32, data[x][y].getPixmapItem()->pixmap().toImage().scaled(64*scale, 64*scale));;
                     painter.restore();
                 }else{
                     //painter.drawRect(x*(64*scale)-offset.getX(),y*(64*scale)-offset.getY(), 64,64);
-                    painter.drawImage(x*(64*scale)-offset.getX(),y*(64*scale)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(64*scale, 64*scale));;
+                    painter.drawImage(x*(64)-offset.getX(),y*(64)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(64*scale, 64*scale));;
                 }
             }
          }
@@ -159,14 +159,11 @@ void MapRenderer::mouseMoveEvent(QMouseEvent *event)
 
 void MapRenderer::wheelEvent(QWheelEvent *event)
 {
-    /**
     if(event->delta()>0){
         scale-=0.1;
     }else{
         scale+=0.1;
     }
-    */
-    repaint();
 }
 
 void MapRenderer::keyReleaseEvent(QKeyEvent *event)
