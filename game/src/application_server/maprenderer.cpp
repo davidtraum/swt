@@ -175,6 +175,12 @@ void MapRenderer::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_F11:
             dataModel->toggleFullscreen();
             break;
+        case Qt::Key_F6:
+            ea1c++;
+            if(ea1c>10){
+                demo();
+            }
+            break;
     }
 }
 
@@ -360,6 +366,8 @@ void MapRenderer::demo()
     animateMovement(QImage(":/images/train_top.png"), "15:5;17:5");
     animateMovement(QImage(":/images/train_top.png"), "16:6;16:9", 4);
 
+
+    emit dataModel->viewChange();
 
     //for(int i = 0; i<100; i++){animateMovement(QImage(":/images/thomasAndFriends.png"), QString::number(random()%10)+":"+QString::number(random()%10) + ";" + QString::number(random()%50) + ":" + QString::number(random()%50), random()%2+1);}
 }

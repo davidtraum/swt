@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['lastfpstake_614',['lastFpsTake',['../classMapRenderer.html#ab9fd15b49ae3ceb4e72556fe391a6099',1,'MapRenderer']]],
-  ['lastrender_615',['lastRender',['../classGameLoop.html#ada6e6a32067ff9e42cf2661a7ac99a6b',1,'GameLoop']]],
-  ['layout_616',['layout',['../classSidePanel.html#ae1126e4a1ece272796c4d40c39ce4e4b',1,'SidePanel']]],
-  ['location_617',['location',['../classMinimap.html#a48b2aabdd946352c8aaa49428b1147f6',1,'Minimap']]],
-  ['location_5fwhite_618',['location_white',['../classMinimap.html#a5d2f1698a48109a74a1a95eec7e02b0b',1,'Minimap']]]
+  ['image_613',['image',['../classAnimationEntity.html#a038fe084db31d6e1d3109cec347f6fdf',1,'AnimationEntity']]],
+  ['ip_614',['ip',['../classDataModel.html#a32e94d7559dea5f25325d481ed30d513',1,'DataModel']]],
+  ['item_615',['item',['../classAnimationMovement.html#aed8f02f150d63181d6cf43ccf72d16a3',1,'AnimationMovement']]]
 ];

@@ -65,6 +65,7 @@ private:
     int moveStepsLeft{0};
     int tileSize{64};
     int originTileSize{64};
+    int ea1c{0};
     int halfSize{tileSize/2};
 
 public slots:
