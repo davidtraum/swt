@@ -168,10 +168,13 @@ void MapRenderer::wheelEvent(QWheelEvent *event)
 
 void MapRenderer::keyReleaseEvent(QKeyEvent *event)
 {
-    qDebug() << "Toggle";
-    if(event->key()==Qt::Key_F3){
-
-        showExpertDetails = !showExpertDetails;
+    switch(event->key()){
+        case Qt::Key_F3:
+            showExpertDetails = !showExpertDetails;
+            break;
+        case Qt::Key_F11:
+            dataModel->toggleFullscreen();
+            break;
     }
 }
 
@@ -375,7 +378,7 @@ Point MapRenderer::getMinPos(){
  * @return Ein Point.
  */
 Point MapRenderer::getMaxPos(){
-    return offset.add(this->width()+tileSize+(originTileSize-tileSize), this->height()+tileSize+(originTileSize-tileSize));
+    return offset.add(this->width()+tileSize, this->height()+tileSize);
 }
 
 /**

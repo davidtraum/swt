@@ -62,11 +62,13 @@ void Minimap::mouseReleaseEvent(QMouseEvent *event)
 {
     mouseDown = false;
     scene->animateMovementToTilePosition(event->x(), event->y());
+    QWidget::setCursor(QCursor(Qt::CrossCursor));
 }
 
 void Minimap::mousePressEvent(QMouseEvent *event)
 {
     mouseDown = true;
+    QWidget::setCursor(QCursor(Qt::BlankCursor));
 }
 
 /**

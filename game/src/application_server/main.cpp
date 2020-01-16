@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     graphics = new GraphicsManager();
 
 
-    dataModel = new DataModel();
+    dataModel = new DataModel(mainWindow);
 
     scene = new Scene(graphics, dataModel);
 
