@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Data\+Model\+:\nopagebreak
+Klassendiagramm für Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Data\+Model\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -65,8 +67,8 @@ void \mbox{\hyperlink{classDataModel_a4988155f432d0c6051d7f6ebe3e4b66c}{view\+Ch
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDataModel_a70f95987bad406f81676ceb31dca34fe}{Data\+Model}} (\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a70f95987bad406f81676ceb31dca34fe}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{get\+Balance}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0706aa63d7955b77be45afe44dfec440}{Data\+Model\+::get\+Balance}} Liefert den aktuellen Kontostand zurück. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_abc9c6c796348870e45fda933739585d5}{update\+Balance}} (int p\+Balance)
@@ -87,6 +89,8 @@ int \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{get\+Hove
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e}{get\+HoverY}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}{toggle\+Fullscreen}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}{Data\+Model\+::toggle\+Fullscreen}} Toggled den Vollbildmodus. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{format\+Time}} (long p\+Time)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{set\+Connection\+Info}} (Q\+String p\+String)
@@ -142,6 +146,8 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_afde9d11c991d9b458d3f2c260c9718f
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_adb8796c6636e436c8a40095b1999a565}{connection\+Label}}
 \item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}{mode}} \{M\+O\+D\+E\+::\+D\+E\+F\+A\+U\+LT\}
+\item 
+\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{classDataModel_a46d499723f55697cd3c5d64aa9179f42}{main\+Window}}
 \end{DoxyCompactItemize}
 
 
@@ -185,15 +191,15 @@ R\+E\+M\+O\+VE&\\
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classDataModel_abff03aef2cb531142a35781bb87c3365}\label{classDataModel_abff03aef2cb531142a35781bb87c3365}} 
+\mbox{\Hypertarget{classDataModel_a70f95987bad406f81676ceb31dca34fe}\label{classDataModel_a70f95987bad406f81676ceb31dca34fe}} 
 \index{DataModel@{DataModel}!DataModel@{DataModel}}
 \index{DataModel@{DataModel}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{DataModel()}{DataModel()}}
-{\footnotesize\ttfamily Data\+Model\+::\+Data\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Data\+Model\+::\+Data\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$}]{p\+Main\+Window }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classDataModel_abff03aef2cb531142a35781bb87c3365}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. 
+\mbox{\hyperlink{classDataModel_a70f95987bad406f81676ceb31dca34fe}{Data\+Model\+::\+Data\+Model}} Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.\+B. den Kontostand. 
 
 
 
@@ -347,7 +353,8 @@ Der Timecode.
 \doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
 {\footnotesize\ttfamily void Data\+Model\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -710,6 +717,23 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classDataModel_a0c605d45cde1e17a0611c004732ac6ee_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}\label{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}} 
+\index{DataModel@{DataModel}!toggleFullscreen@{toggleFullscreen}}
+\index{toggleFullscreen@{toggleFullscreen}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{toggleFullscreen()}{toggleFullscreen()}}
+{\footnotesize\ttfamily void Data\+Model\+::toggle\+Fullscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}{Data\+Model\+::toggle\+Fullscreen}} Toggled den Vollbildmodus. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_abc9c6c796348870e45fda933739585d5}\label{classDataModel_abc9c6c796348870e45fda933739585d5}} 
 \index{DataModel@{DataModel}!updateBalance@{updateBalance}}
 \index{updateBalance@{updateBalance}!DataModel@{DataModel}}
@@ -749,7 +773,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em pY} & Die Y Koordinate. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -808,6 +833,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \index{ip@{ip}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{ip}{ip}}
 {\footnotesize\ttfamily Q\+String Data\+Model\+::ip\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_a46d499723f55697cd3c5d64aa9179f42}\label{classDataModel_a46d499723f55697cd3c5d64aa9179f42}} 
+\index{DataModel@{DataModel}!mainWindow@{mainWindow}}
+\index{mainWindow@{mainWindow}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMainWindow}{Main\+Window}}$\ast$ Data\+Model\+::main\+Window\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}\label{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}} 
 \index{DataModel@{DataModel}!mapLoaded@{mapLoaded}}

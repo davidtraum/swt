@@ -16,7 +16,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
         for(int y = 0; y<300; y++){
             data[x][y].attachGraphicsManager(graphicsManager);
             data[x][y].setType(MapTile::GRASS);
-            data[x][y].setPosition(x*64,y*64);
+            data[x][y].setPosition(x*tileSize,y*tileSize);
             data[x][y].setRotation(rand()%4);
         }
     }
@@ -40,6 +40,12 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     long beforeTime = clock();
     QPainter painter(this);
 
+    if(moveStepsLeft>0){
+        offset.move(int(vx),int(vy));
+        dataModel->updateCoordinates(offset.getX()/tileSize, offset.getY()/tileSize);
+        moveStepsLeft--;
+    }
+
     Point minPos = getMinPos().toTile();
     Point maxPos = getMaxPos().toTile();
     for(int x = minPos.getX(); x<maxPos.getX(); x++){
@@ -47,13 +53,13 @@ void MapRenderer::paintEvent(QPaintEvent *event)
             if(x > 0 && y > 0 && x < 300 && y < 300){
                 if(data[x][y].getRotationDeg()>0){
                     painter.save();
-                    painter.translate(x*(64*scale)-offset.getX()+32,y*(64*scale)-offset.getY()+32);
+                    painter.translate(x*(tileSize)-offset.getX()+halfSize,y*(tileSize)-offset.getY()+halfSize);
                     painter.rotate(data[x][y].getRotationDeg());
-                    painter.drawImage(-32,-32, data[x][y].getPixmapItem()->pixmap().toImage().scaled(64*scale, 64*scale));;
+                    painter.drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));;
                     painter.restore();
                 }else{
-                    //painter.drawRect(x*(64*scale)-offset.getX(),y*(64*scale)-offset.getY(), 64,64);
-                    painter.drawImage(x*(64*scale)-offset.getX(),y*(64*scale)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(64*scale, 64*scale));;
+                    //painter.drawRect(x*(tileSize*scale)-offset.getX(),y*(tileSize*scale)-offset.getY(), tileSize,tileSize);
+                    painter.drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));;
                 }
             }
          }
@@ -65,9 +71,9 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
         if(anim->getEntity()->rotation>0){
             painter.save();
-            painter.translate(pos.getX()+32, pos.getY()+32);
+            painter.translate(pos.getX()+halfSize, pos.getY()+halfSize);
             painter.rotate(anim->getEntity()->rotation);
-            painter.drawImage(-32,-32, *anim->getEntity()->getImage());
+            painter.drawImage(-halfSize,-halfSize, *anim->getEntity()->getImage());
             painter.restore();
         }else{
             painter.drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
@@ -76,7 +82,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
 
     if(showHighlight){
         Point pos = toScreenPosition(activeTile.getX(), activeTile.getY());
-        painter.drawRect(pos.getX(), pos.getY(), 64,64);
+        painter.drawRect(pos.getX(), pos.getY(), tileSize,tileSize);
     }
 
 
@@ -109,7 +115,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
  * @return Der Punkt.
  */
 Point MapRenderer::mapPosition(int px, int py){
-    return Point(((offset.getX() + px) / 64), ((offset.getY() + py) / 64));
+    return Point(((offset.getX() + px) / tileSize), ((offset.getY() + py) / tileSize));
 }
 
 /**
@@ -118,7 +124,7 @@ Point MapRenderer::mapPosition(int px, int py){
  */
 Point MapRenderer::toScreenPosition(int px, int py)
 {
-    return Point((px*64 - offset.getX()), (py*64 - offset.getY()));
+    return Point((px*tileSize - offset.getX()), (py*tileSize - offset.getY()));
 }
 
 
@@ -153,22 +159,28 @@ void MapRenderer::mouseMoveEvent(QMouseEvent *event)
 
 void MapRenderer::wheelEvent(QWheelEvent *event)
 {
-    /**
     if(event->delta()>0){
-        scale-=0.1;
+        tileSize++;
     }else{
-        scale+=0.1;
+        tileSize--;
     }
-    */
-    repaint();
 }
 
 void MapRenderer::keyReleaseEvent(QKeyEvent *event)
 {
-    qDebug() << "Toggle";
-    if(event->key()==Qt::Key_F3){
-
-        showExpertDetails = !showExpertDetails;
+    switch(event->key()){
+        case Qt::Key_F3:
+            showExpertDetails = !showExpertDetails;
+            break;
+        case Qt::Key_F11:
+            dataModel->toggleFullscreen();
+            break;
+        case Qt::Key_F6:
+            ea1c++;
+            if(ea1c>10){
+                demo();
+            }
+            break;
     }
 }
 
@@ -355,6 +367,8 @@ void MapRenderer::demo()
     animateMovement(QImage(":/images/train_top.png"), "16:6;16:9", 4);
 
 
+    emit dataModel->viewChange();
+
     //for(int i = 0; i<100; i++){animateMovement(QImage(":/images/thomasAndFriends.png"), QString::number(random()%10)+":"+QString::number(random()%10) + ";" + QString::number(random()%50) + ":" + QString::number(random()%50), random()%2+1);}
 }
 
@@ -372,7 +386,40 @@ Point MapRenderer::getMinPos(){
  * @return Ein Point.
  */
 Point MapRenderer::getMaxPos(){
-    return offset.add(this->width()+64, this->height()+64);
+    return offset.add(this->width()+tileSize, this->height()+tileSize);
+}
+
+/**
+ * @brief MapRenderer::getTileCenter Liefert die Koordinate der zentralen Kachel zurück.
+ * @return Ein Punkt.
+ */
+Point MapRenderer::getTileCenter()
+{
+    return Point(int((offset.getX()+this->width()*0.5) / tileSize), int((offset.getY()+this->height()) / tileSize));
+}
+
+/**
+ * @brief MapRenderer::animateMovementToTilePosition Führt eine Bewegungsanimation zu einer Kachelkoordinate durch.
+ */
+void MapRenderer::animateMovementToTilePosition(int px, int py)
+{
+    Point center(offset.getX() / tileSize, offset.getY() / tileSize);
+    vx = px*tileSize-center.getX()*tileSize;
+    vy = py*tileSize-center.getY()*tileSize;
+    vx/=20;
+    vy/=20;
+    moveStepsLeft=20;
+}
+
+/**
+ * @brief MapRenderer::setViewportTilePosition Verschiebt den Viewport zu einer Tile-Koordinate.
+ * @param px Die X-Koordinate.
+ * @param py Die Y-Koordinate.
+ */
+void MapRenderer::setViewportTilePosition(int px, int py)
+{
+    offset.set(px*tileSize, py*tileSize);
+    dataModel->updateCoordinates(px,py);
 }
 
 void MapRenderer::animateMovement(QImage img, QString path)

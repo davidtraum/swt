@@ -11,8 +11,8 @@
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface) :
-    scene{pScene}, mapRenderer{pRenderer}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}
+MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface) :
+    scene{pScene}, mapRenderer{pRenderer}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
     this->setMovable(false);
@@ -68,10 +68,15 @@ MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel
     trainButton->setPopupMode(QToolButton::InstantPopup);
     trainButton->setCursor(QCursor(Qt::PointingHandCursor));
     QMenu *trainMenu=new QMenu(trainButton);
+
     QAction * createRoute = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/create_route.svg"))),"Route erzeugen", this);
     connect(createRoute, &QAction::triggered, routeInterface, &RouteInterface::toggle);
     trainMenu->addAction(createRoute);
-    trainMenu->addAction(new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/show_routes.svg"))),"Routen anzeigen", this));
+
+    QAction * showRouteList = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/show_routes.svg"))),"Routen anzeigen", this);
+    connect(showRouteList, &QAction::triggered, routeListInterface, &RouteListInterface::toggle);
+    trainMenu->addAction(showRouteList);
+
     trainButton->setMenu(trainMenu);
     this->addWidget(trainButton);
 
@@ -117,6 +122,8 @@ void MenuBar::slotOpenConnection(){
         Client * client = new Client(&text, scene, mapRenderer, view, dataModel);
 
         QWidget::connect(routeInterface, &RouteInterface::sendConfirmRoute, client, &Client::sendRoute);
+
+        QWidget::connect(routeListInterface, &RouteListInterface::sendRequestRoutes, client, &Client::requestRoutes);
 
         QTimer::singleShot(1000, [client]{client->requestMap();});
     }

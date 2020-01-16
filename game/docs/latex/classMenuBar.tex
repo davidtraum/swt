@@ -15,7 +15,8 @@ Klassendiagramm für Menu\+Bar\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Menu\+Bar\+:\nopagebreak
+Zusammengehörigkeiten von Menu\+Bar\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,8 +26,8 @@ Zusammengehörigkeiten von Menu\+Bar\+:\nopagebreak
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMenuBar_a7e5aaba92694aae7eee0f75d41a718c5}{Menu\+Bar}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$p\+Renderer, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Data\+Model, \mbox{\hyperlink{classView}{View}} $\ast$p\+View, \mbox{\hyperlink{classRouteInterface}{Route\+Interface}} $\ast$)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMenuBar_a7e5aaba92694aae7eee0f75d41a718c5}{Menu\+Bar\+::\+Menu\+Bar}} Erzeugt Menüstruktur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classMenuBar_ad253c2117bb1b5d2728a7b5d0a73828c}{Menu\+Bar}} (\mbox{\hyperlink{classScene}{Scene}} $\ast$p\+Scene, \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$p\+Renderer, \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$p\+Data\+Model, \mbox{\hyperlink{classView}{View}} $\ast$p\+View, \mbox{\hyperlink{classRouteInterface}{Route\+Interface}} $\ast$, \mbox{\hyperlink{classRouteListInterface}{Route\+List\+Interface}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMenuBar_ad253c2117bb1b5d2728a7b5d0a73828c}{Menu\+Bar\+::\+Menu\+Bar}} Erzeugt Menüstruktur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Slots}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,19 +47,21 @@ void \mbox{\hyperlink{classMenuBar_a5e8c1514db69e715ec939d9faa2988d6}{slot\+Clos
 \mbox{\hyperlink{classView}{View}} $\ast$ \mbox{\hyperlink{classMenuBar_a67ca55410230ed1b470a235304279aff}{view}}
 \item 
 \mbox{\hyperlink{classRouteInterface}{Route\+Interface}} $\ast$ \mbox{\hyperlink{classMenuBar_a14aa03c798eb90f53577808f849f3e35}{route\+Interface}}
+\item 
+\mbox{\hyperlink{classRouteListInterface}{Route\+List\+Interface}} $\ast$ \mbox{\hyperlink{classMenuBar_acadc4671e29eb31bd2430ee875aa8a5d}{route\+List\+Interface}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
-\mbox{\Hypertarget{classMenuBar_a7e5aaba92694aae7eee0f75d41a718c5}\label{classMenuBar_a7e5aaba92694aae7eee0f75d41a718c5}} 
+\mbox{\Hypertarget{classMenuBar_ad253c2117bb1b5d2728a7b5d0a73828c}\label{classMenuBar_ad253c2117bb1b5d2728a7b5d0a73828c}} 
 \index{MenuBar@{MenuBar}!MenuBar@{MenuBar}}
 \index{MenuBar@{MenuBar}!MenuBar@{MenuBar}}
 \doxysubsubsection{\texorpdfstring{MenuBar()}{MenuBar()}}
-{\footnotesize\ttfamily Menu\+Bar\+::\+Menu\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$}]{p\+Renderer,  }\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Data\+Model,  }\item[{\mbox{\hyperlink{classView}{View}} $\ast$}]{p\+View,  }\item[{\mbox{\hyperlink{classRouteInterface}{Route\+Interface}} $\ast$}]{p\+Route\+Interface }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Menu\+Bar\+::\+Menu\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$}]{p\+Renderer,  }\item[{\mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$}]{p\+Data\+Model,  }\item[{\mbox{\hyperlink{classView}{View}} $\ast$}]{p\+View,  }\item[{\mbox{\hyperlink{classRouteInterface}{Route\+Interface}} $\ast$}]{p\+Route\+Interface,  }\item[{\mbox{\hyperlink{classRouteListInterface}{Route\+List\+Interface}} $\ast$}]{p\+Route\+List\+Interface }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classMenuBar_a7e5aaba92694aae7eee0f75d41a718c5}{Menu\+Bar\+::\+Menu\+Bar}} Erzeugt Menüstruktur. 
+\mbox{\hyperlink{classMenuBar_ad253c2117bb1b5d2728a7b5d0a73828c}{Menu\+Bar\+::\+Menu\+Bar}} Erzeugt Menüstruktur. 
 
 
 
@@ -110,6 +113,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \index{routeInterface@{routeInterface}!MenuBar@{MenuBar}}
 \doxysubsubsection{\texorpdfstring{routeInterface}{routeInterface}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRouteInterface}{Route\+Interface}}$\ast$ Menu\+Bar\+::route\+Interface\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMenuBar_acadc4671e29eb31bd2430ee875aa8a5d}\label{classMenuBar_acadc4671e29eb31bd2430ee875aa8a5d}} 
+\index{MenuBar@{MenuBar}!routeListInterface@{routeListInterface}}
+\index{routeListInterface@{routeListInterface}!MenuBar@{MenuBar}}
+\doxysubsubsection{\texorpdfstring{routeListInterface}{routeListInterface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRouteListInterface}{Route\+List\+Interface}}$\ast$ Menu\+Bar\+::route\+List\+Interface\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMenuBar_a9cb9b56d70909f63c4f490170825dfdc}\label{classMenuBar_a9cb9b56d70909f63c4f490170825dfdc}} 
 \index{MenuBar@{MenuBar}!scene@{scene}}

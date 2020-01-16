@@ -5,7 +5,9 @@
 {\ttfamily \#include $<$Q\+Label$>$}\newline
 {\ttfamily \#include $<$client.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}menubar.\+h\char`\"{}}\newline
-Include-\/\+Abhängigkeitsdiagramm für main.\+h\+:\nopagebreak
+{\ttfamily \#include \char`\"{}sidepanel.\+h\char`\"{}}\newline
+Include-\/\+Abhängigkeitsdiagramm für main.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,6 +31,16 @@ bool \mbox{\hyperlink{main_8h_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running}}
 \mbox{\hyperlink{classDataModel}{Data\+Model}} $\ast$ \mbox{\hyperlink{main_8h_aac0b33719c4cd854b069613f9f0b360d}{data\+Model}}
 \item 
 \mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{main_8h_a0388c33353644129ea9403f0a5a8ed24}{client}}
+\item 
+\mbox{\hyperlink{classView}{View}} $\ast$ \mbox{\hyperlink{main_8h_af2dd70d8b95c32fb670ac6f9cc8df201}{view}}
+\item 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{main_8h_a6de66f9ad116ce1d596c7f4edc40c521}{scene}}
+\item 
+\mbox{\hyperlink{classSidePanel}{Side\+Panel}} $\ast$ \mbox{\hyperlink{main_8h_af6557e0f5cda6d5bf4852ccb1fe3733d}{side\+Panel}}
+\item 
+\mbox{\hyperlink{classMapRenderer}{Map\+Renderer}} $\ast$ \mbox{\hyperlink{main_8h_a877249217ae7e02d950a53752a4eacb2}{map\+Renderer}}
+\item 
+\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$ \mbox{\hyperlink{main_8h_aa07458f3555202507fc8025e8cae6126}{graphics}}
 \end{DoxyCompactItemize}
 
 
@@ -51,9 +63,39 @@ bool \mbox{\hyperlink{main_8h_aaa52a27abaaf72231a84c99f2bfa4283}{game\+Running}}
 \doxysubsubsection{\texorpdfstring{gameRunning}{gameRunning}}
 {\footnotesize\ttfamily bool game\+Running}
 
+\mbox{\Hypertarget{main_8h_aa07458f3555202507fc8025e8cae6126}\label{main_8h_aa07458f3555202507fc8025e8cae6126}} 
+\index{main.h@{main.h}!graphics@{graphics}}
+\index{graphics@{graphics}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{graphics}{graphics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}}$\ast$ graphics}
+
 \mbox{\Hypertarget{main_8h_ab6705fab832298411ae13ace059dd583}\label{main_8h_ab6705fab832298411ae13ace059dd583}} 
 \index{main.h@{main.h}!mainWindow@{mainWindow}}
 \index{mainWindow@{mainWindow}!main.h@{main.h}}
 \doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMainWindow}{Main\+Window}}$\ast$ main\+Window}
+
+\mbox{\Hypertarget{main_8h_a877249217ae7e02d950a53752a4eacb2}\label{main_8h_a877249217ae7e02d950a53752a4eacb2}} 
+\index{main.h@{main.h}!mapRenderer@{mapRenderer}}
+\index{mapRenderer@{mapRenderer}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{mapRenderer}{mapRenderer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapRenderer}{Map\+Renderer}}$\ast$ map\+Renderer}
+
+\mbox{\Hypertarget{main_8h_a6de66f9ad116ce1d596c7f4edc40c521}\label{main_8h_a6de66f9ad116ce1d596c7f4edc40c521}} 
+\index{main.h@{main.h}!scene@{scene}}
+\index{scene@{scene}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}}$\ast$ scene}
+
+\mbox{\Hypertarget{main_8h_af6557e0f5cda6d5bf4852ccb1fe3733d}\label{main_8h_af6557e0f5cda6d5bf4852ccb1fe3733d}} 
+\index{main.h@{main.h}!sidePanel@{sidePanel}}
+\index{sidePanel@{sidePanel}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{sidePanel}{sidePanel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSidePanel}{Side\+Panel}}$\ast$ side\+Panel}
+
+\mbox{\Hypertarget{main_8h_af2dd70d8b95c32fb670ac6f9cc8df201}\label{main_8h_af2dd70d8b95c32fb670ac6f9cc8df201}} 
+\index{main.h@{main.h}!view@{view}}
+\index{view@{view}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classView}{View}}$\ast$ view}
 

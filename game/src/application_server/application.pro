@@ -36,6 +36,7 @@ SOURCES += \
     point.cpp \
     river.cpp \
     routeinterface.cpp \
+    routelistinterface.cpp \
     scene.cpp \
     sidepanel.cpp \
     tooltipmenu.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     player.h \
     point.h \
     river.h \
+    routeListInterface.h \
     routeinterface.h \
     scene.h \
     sidepanel.h \
