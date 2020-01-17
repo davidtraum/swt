@@ -15,6 +15,7 @@ RouteListInterface::RouteListInterface()
     QVBoxLayout * layout = new QVBoxLayout(mainWidget);
 
     QListWidget * routeList = new QListWidget;
+    routeList->setSelectionMode(QAbstractItemView::ExtendedSelection);  //mehrere Elemente der Liste gleichzeitig anwählbar mit STRG
 
     routeList->setMaximumHeight(600);
     routeList->addItem("Beispielroute 1: Vom Ring bis an die Wolga, 8 Stationen -- Angehängte Waggons: Kohle, Kohle, Weizen, Passagiere");
@@ -59,7 +60,7 @@ void RouteListInterface::deleteRoute() {
 
     qDebug() << "Items werden gelöscht...";
 
-    qDeleteAll(routeList->selectedItems()); //Stürzt hier ab
+    delete routeList->currentItem(); //Stürzt hier ab
 
     qDebug() << "WURDE GELÖSCHT";
 
