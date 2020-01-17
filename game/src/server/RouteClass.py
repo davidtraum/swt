@@ -1,5 +1,4 @@
 from WayClass import *
-from PlayerClass import *
 from TrainClass import TrainLogic
 import time
 

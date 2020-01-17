@@ -338,8 +338,8 @@ class World:
             testWagons=[]
             for j in range(7):
                 testWagons.append("CORN")
-            RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons, self.data))
-            tasks.append(RouteLogic.allRoutes[-1])
+            #RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons, self.data))
+            #tasks.append(RouteLogic.allRoutes[-1])
             
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
@@ -386,7 +386,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
         self.connection = pConnection
         self.commandBuffer = ""
         print("CLIENT THREAD WIRD GESTARTET")
-        self.player = Player(clientCount, 1234) #"1234" muss durch IP ersetzt werden.
+        self.player = Player(clientCount, 1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
 
     def send(self, pText):

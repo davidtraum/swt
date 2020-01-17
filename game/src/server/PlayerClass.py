@@ -2,12 +2,15 @@ import json
 from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
 from WayClass import WayLogic
+from RouteClass import RouteLogic
 
 class Player:
 
-    def __init__(self, pId, pIp):
+    def __init__(self, pId, pIp, pTasks, pKarte):
         self.id = pId
         self.ip = pIp
+        self.tasks = pTasks
+        self.karte = pKarte
         self.routes = []
         #Beim Laden von Speicherdaten muss das Spielerobjekt mit gespeichertem Guthaben neu erstellt werden
         with open('playerData.json', 'r') as f:
@@ -46,13 +49,18 @@ class Player:
         self.routes.append((pRoute, pWagons))
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
-
-        self.startRoute(self.routes[-1])
+        
+        self.startRoute(self.routes[-1][0], self.routes[-1][1])
         print("Neue Route wurde gestartet.")
 
-    def startRoute(pRoute):     #Startet die übergebene Route
-        pass
-    
+    def startRoute(self, pStations, pWagons):     #Startet die übergebene Route
+        tsTmp = []
+        print("Test1")
+        for i in range(len(pStations)):
+            tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
+            print("Test2")
+        self.tasks.append(RouteLogic(None, tsTmp, pWagons, self.karte))
+        
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
         #with open('playerData.json', 'r+') as f:
         #    playerData = json.load(f)
@@ -64,6 +72,4 @@ class Player:
 
     
             
-            
-pTest = Player(1,1234)
-print(pTest.money)
+   
