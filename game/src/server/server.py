@@ -391,6 +391,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
 
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
+        print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
 
     def disconnect(self):   #Disconnectet einen Client
         global clients
@@ -418,7 +419,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     for x in range(300):
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
-                                time.sleep(0.001)
+                                time.sleep(0.0001)
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))
@@ -460,7 +461,8 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 tsStops = [[]]     #speichert Koordinaten der Haltestellen auf der Route
                 wagonTypes = []
                 i=0    #Damit Array in Schleife bei 0 beginnt
-                if(args[1] == "TS"):
+                
+                if(args[1] == "TS"):    #Client schickt Route mit Zwischenstops
                     i = i-2
                     while True:
                         if(args[i+3] == "TS"):
@@ -474,18 +476,23 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                                 wagonTypes.append(args[j])
                                 print("Bin in Wagons Schleife ", j)
                             break
+                    
+                    tsStops.pop(0)     #Lösche erstes Listenelement, da immer leer (Bugfix-Workaround)
+                    print("Routen-Befehl gespeichert: ")    
+                    print("TS Coords: ")
+                    print(*tsStops, sep='_', end='\n')
+                    print("Wagon Types: ")
+                    print(*wagonTypes, sep='_', end='\n')
+
+                    self.player.addRoute(tsStops, wagonTypes)
+
+                elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
+                    self.send("ROUTE GET angefragt")
+                
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
-                    
                 
-                print("Routen-Befehl gespeichert: ")    #Testausgabe für Routen (Erstes Listenelement ist leer -> Fehler suchen?
-                print("TS Coords: ")
-                print(*tsStops, sep='_', end='\n')
-                print("Wagon Types: ")
-                print(*wagonTypes, sep='_', end='\n')
-                
-
-            if(args[0] == 'POS'):   #Befehlsverarbeitung POS
+            elif(args[0] == 'POS'):   #Befehlsverarbeitung POS
                 #print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])

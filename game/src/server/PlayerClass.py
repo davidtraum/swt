@@ -7,6 +7,7 @@ class Player:
     def __init__(self, pId, pIp):
         self.id = pId
         self.ip = pIp
+        self.routes = []
         #Beim Laden von Speicherdaten muss das Spielerobjekt mit gespeichertem Guthaben neu erstellt werden
         with open('playerData.json', 'r') as f:
             playerData =json.load(f)
@@ -40,6 +41,10 @@ class Player:
     def addValue(self, amount): #fügt Guthaben zum Konto des Spielers hinzu (negativer Wert: Abzug)
         self.money += amount
 
+    def addRoute(self, pRoute, pWagons):
+        self.routes.append((pRoute, pWagons))
+        print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
+        print(self.routes)
 
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
         #with open('playerData.json', 'r+') as f:
