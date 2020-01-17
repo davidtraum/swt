@@ -1,6 +1,7 @@
 import json
 from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
+from WayClass import WayLogic
 
 class Player:
 
@@ -41,11 +42,17 @@ class Player:
     def addValue(self, amount): #fügt Guthaben zum Konto des Spielers hinzu (negativer Wert: Abzug)
         self.money += amount
 
-    def addRoute(self, pRoute, pWagons):
+    def addRoute(self, pRoute, pWagons):    #Füge eine Route zur Liste aller Routen des Spielers hinzu
         self.routes.append((pRoute, pWagons))
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
 
+        self.startRoute(self.routes[-1])
+        print("Neue Route wurde gestartet.")
+
+    def startRoute(pRoute):     #Startet die übergebene Route
+        pass
+    
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
         #with open('playerData.json', 'r+') as f:
         #    playerData = json.load(f)
