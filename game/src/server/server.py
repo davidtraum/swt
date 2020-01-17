@@ -487,7 +487,12 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     self.player.addRoute(tsStops, wagonTypes)
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
-                    self.send("ROUTE GET angefragt")
+                    handOver = "ROUTES+"
+                    #for i in range(len(self.player.routes)):   DAT HIER MUSS LAUFEN GEFÄLLIGST
+                      #  for j in range(len(self.player.routes[i])):
+                      #      handOver = handOver + self.player.routes[i][0][j] + "+"
+                      #      handOver = handOver + self.player.routes[i][1][j] + "+"
+                    self.send(handOver)
                 
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
