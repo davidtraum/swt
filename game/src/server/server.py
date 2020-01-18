@@ -419,7 +419,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     for x in range(300):
                         for y in range(300):
                             if(world.data[x][y].getType() > 0):
-                                time.sleep(0.0001)
+                                #time.sleep(0.0001)
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))
