@@ -34,6 +34,14 @@ GraphicsManager::GraphicsManager(){
 
     //Produktionsgebäude:
     GRAPHICS.insert(std::pair<std::string, QPixmap>("kohlemine", QPixmap::fromImage(QImage(":/images/coalmine.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("gueter", QPixmap::fromImage(QImage(":/images/factorygoods.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("getreide", QPixmap::fromImage(QImage(":/images/gain.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("essen", QPixmap::fromImage(QImage(":/images/foodproc.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("petrolium", QPixmap::fromImage(QImage(":/images/oilwell.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("papier", QPixmap::fromImage(QImage(":/images/papermill.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("vieh", QPixmap::fromImage(QImage(":/images/ranchlivestock.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("holz", QPixmap::fromImage(QImage(":/images/wood.png"))));
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("stahl", QPixmap::fromImage(QImage(":/images/ranchlivestock.png"))));
 }
 
 /**
