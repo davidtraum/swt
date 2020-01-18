@@ -107,6 +107,8 @@ var menudata={children:[
 {text:"d",url:"functions_eval.html#index_d"},
 {text:"f",url:"functions_eval.html#index_f"},
 {text:"g",url:"functions_eval.html#index_g"},
+{text:"l",url:"functions_eval.html#index_l"},
+{text:"p",url:"functions_eval.html#index_p"},
 {text:"r",url:"functions_eval.html#index_r"},
 {text:"s",url:"functions_eval.html#index_s"},
 {text:"t",url:"functions_eval.html#index_t"},

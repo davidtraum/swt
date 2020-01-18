@@ -233,30 +233,39 @@ release/qrc_Data.cpp: ../application_server/Data.qrc \
 
 release/qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		D:/Programme/Qt/5.12.5/mingw73_64/bin/rcc.exe \
-		../application_server/depot.png \
+		../application_server/farmgrain.png \
+		../application_server/coalmine.png \
 		../application_server/wald.png \
-		../application_server/grass.png \
-		../application_server/thomasAndFriends.png \
-		../application_server/train_top.png \
-		../application_server/trainstation.png \
-		../application_server/terminal.png \
-		../application_server/stadt.png \
-		../application_server/bruecke.png \
-		../application_server/rathaus.png \
+		../application_server/oilwell.png \
 		../application_server/water.png \
+		../application_server/trainstation.png \
+		../application_server/train_top.png \
+		../application_server/factorygoods.png \
+		../application_server/thomasAndFriends.png \
+		../application_server/rathaus.png \
+		../application_server/bruecke.png \
+		../application_server/grain.png \
+		../application_server/papermill.png \
+		../application_server/ranchlivestock.png \
+		../application_server/foodproc.png \
+		../application_server/stadt.png \
+		../application_server/wood.png \
+		../application_server/depot.png \
+		../application_server/grass.png \
+		../application_server/terminal.png \
 		../application_server/wagon.png \
 		../application_server/train_sky.png \
 		../application_server/train_background.png \
 		../application_server/train.png \
+		../application_server/schiene_v.png \
+		../application_server/schiene_h.png \
+		../application_server/schiene_kurve.png \
 		../application_server/fluss_kurve_links_unten.png \
 		../application_server/fluss_kurve_rechts_oben.png \
 		../application_server/fluss_kurve_rechts_unten.png \
 		../application_server/fluss_kurve_links_oben.png \
 		../application_server/fluss_vertikal.png \
 		../application_server/fluss_horizontal.png \
-		../application_server/schiene_v.png \
-		../application_server/schiene_h.png \
-		../application_server/schiene_kurve.png \
 		../application_server/icon.png \
 		../application_server/rrt_logo_grp5.png \
 		../application_server/cursor.png \
@@ -3460,6 +3469,22 @@ release/mainwindow.o: ../application_server/mainwindow.cpp ../application_server
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qicon.h \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/QVariant \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QApplication \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qapplication.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/qcoreapplication.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/qeventloop.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qguiapplication.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtGui/qinputmethod.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QMenuBar \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qmenubar.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qmenu.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qaction.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qactiongroup.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QStatusBar \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/qstatusbar.h \
+		D:/Programme/Qt/5.12.5/mingw73_64/include/QtWidgets/QWidget \
 		D:/Programme/Qt/5.12.5/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\application_server\mainwindow.cpp
 
