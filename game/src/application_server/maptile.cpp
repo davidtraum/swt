@@ -145,9 +145,42 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Brücke");
             setRotation(1);
             break;
+
+        case MapTile::CORN:
+            pixmapItem->setPixmap(graphicsManager->get("getreide"));
+            pixmapItem->setToolTip("getreide");
+            break;
         case MapTile::COAL:
             pixmapItem->setPixmap(graphicsManager->get("kohlemine"));
             pixmapItem->setToolTip("Kohlemine");
+            break;
+        case MapTile::WOOD:
+            pixmapItem->setPixmap(graphicsManager->get("holz"));
+            pixmapItem->setToolTip("holz");
+            break;
+        case MapTile::FOOD:
+            pixmapItem->setPixmap(graphicsManager->get("essen"));
+            pixmapItem->setToolTip("essen");
+            break;
+        case MapTile::LIVESTOCK:
+            pixmapItem->setPixmap(graphicsManager->get("vieh"));
+            pixmapItem->setToolTip("vieh");
+            break;
+        case MapTile::GOODS:
+            pixmapItem->setPixmap(graphicsManager->get("gueter"));
+            pixmapItem->setToolTip("gueter");
+            break;
+        case MapTile::PETROLEUM:
+            pixmapItem->setPixmap(graphicsManager->get("petrolium"));
+            pixmapItem->setToolTip("petrolium");
+            break;
+        case MapTile::PAPER:
+            pixmapItem->setPixmap(graphicsManager->get("papier"));
+            pixmapItem->setToolTip("papier");
+            break;
+        case MapTile::STEEL:
+            pixmapItem->setPixmap(graphicsManager->get("stahl"));
+            pixmapItem->setToolTip("stahl");
             break;
 
     }

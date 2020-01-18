@@ -233,7 +233,6 @@ release/qrc_Data.cpp: ../application_server/Data.qrc \
 
 release/qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		D:/Programme/Qt/5.12.5/mingw73_64/bin/rcc.exe \
-		../application_server/farmgrain.png \
 		../application_server/coalmine.png \
 		../application_server/wald.png \
 		../application_server/oilwell.png \
@@ -246,6 +245,7 @@ release/qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/bruecke.png \
 		../application_server/grain.png \
 		../application_server/papermill.png \
+		../application_server/steel_factory.png \
 		../application_server/ranchlivestock.png \
 		../application_server/foodproc.png \
 		../application_server/stadt.png \
