@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['station_5fh_729',['STATION_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a3f8f6a93a708b7c4106ad2689f5916c1',1,'MapTile']]],
-  ['station_5fv_730',['STATION_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a57091930431d11eec01f83baf5bdb6f7',1,'MapTile']]]
+  ['paper_729',['PAPER',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a326d8175a73e6225833524f7e609cbc4',1,'MapTile']]],
+  ['petroleum_730',['PETROLEUM',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a2fd04e59c1aac55994af8c4323a21a6c',1,'MapTile']]]
 ];
