@@ -223,8 +223,11 @@ class World:
                 if(random.randint(0, 100) < 20):
                     self.data[x][y].setType('FOREST')
                 self.data[x][y].setRotation(random.randint(0, 3))
-                if(random.randint(0, 100) < 0.5):
-                     self.data[x][y].setType('COAL')
+                for z in range(24,32):
+                    if(random.randint(0, 100) < 1.3):
+                         for key in MapTile.TYPES:
+                             if(MapTile.TYPES[key] == z):
+                                self.data[x][y].setType(key)
 
         for townIndex in range(300):    #generiere Städte
             px, py = self.randomPosition()

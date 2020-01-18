@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Client_t {
-    QByteArrayData data[10];
-    char stringdata0[115];
+    QByteArrayData data[11];
+    char stringdata0[129];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,14 @@ QT_MOC_LITERAL(5, 51, 11), // "onMapLoaded"
 QT_MOC_LITERAL(6, 63, 16), // "onPositionChange"
 QT_MOC_LITERAL(7, 80, 11), // "onLeftclick"
 QT_MOC_LITERAL(8, 92, 12), // "onRightclick"
-QT_MOC_LITERAL(9, 105, 9) // "sendRoute"
+QT_MOC_LITERAL(9, 105, 9), // "sendRoute"
+QT_MOC_LITERAL(10, 115, 13) // "requestRoutes"
 
     },
     "Client\0mapLoaded\0\0tileChanged\0"
     "playerPositionChange\0onMapLoaded\0"
     "onPositionChange\0onLeftclick\0onRightclick\0"
-    "sendRoute"
+    "sendRoute\0requestRoutes"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +57,7 @@ static const uint qt_meta_data_Client[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,16 +65,17 @@ static const uint qt_meta_data_Client[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x06 /* Public */,
-       3,    4,   55,    2, 0x06 /* Public */,
-       4,    2,   64,    2, 0x06 /* Public */,
-       5,    1,   69,    2, 0x06 /* Public */,
+       1,    0,   59,    2, 0x06 /* Public */,
+       3,    4,   60,    2, 0x06 /* Public */,
+       4,    2,   69,    2, 0x06 /* Public */,
+       5,    1,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    2,   72,    2, 0x0a /* Public */,
-       7,    0,   77,    2, 0x0a /* Public */,
-       8,    0,   78,    2, 0x0a /* Public */,
-       9,    1,   79,    2, 0x0a /* Public */,
+       6,    2,   77,    2, 0x0a /* Public */,
+       7,    0,   82,    2, 0x0a /* Public */,
+       8,    0,   83,    2, 0x0a /* Public */,
+       9,    1,   84,    2, 0x0a /* Public */,
+      10,    0,   87,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -86,6 +88,7 @@ static const uint qt_meta_data_Client[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -104,6 +107,7 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 5: _t->onLeftclick(); break;
         case 6: _t->onRightclick(); break;
         case 7: _t->sendRoute((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->requestRoutes(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -164,13 +168,13 @@ int Client::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }
