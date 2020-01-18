@@ -31,7 +31,16 @@ public:
               TERMINAL_H,
               TERMINAL_V,
               BRIDGE_H,
-              BRIDGE_V};
+              BRIDGE_V,
+              CORN,
+              COAL,
+              WOOD,
+              FOOD,
+              LIVESTOCK,
+              GOODS,
+              PETROLEUM,
+              PAPER,
+              STEEL};
     MapTile(GraphicsManager * pGraphicsManager);
     MapTile();
     void setType(TYPE pType);

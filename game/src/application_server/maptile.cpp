@@ -145,6 +145,10 @@ void MapTile::setType(MapTile::TYPE pType){
             pixmapItem->setToolTip("Brücke");
             setRotation(1);
             break;
+        case MapTile::COAL:
+            pixmapItem->setPixmap(graphicsManager->get("kohlemine"));
+            pixmapItem->setToolTip("Kohlemine");
+            break;
 
     }
     type = pType;

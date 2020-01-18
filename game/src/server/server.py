@@ -53,7 +53,16 @@ class MapTile:
         'BRIDGE_H': 22,
         'BRIDGE_V': 23,
         'CORN': 24,
-        'COAL': 25        
+        'COAL': 25, 
+        'WOOD': 26,
+        'FOOD': 27,
+        'LIVESTOCK': 28,
+        'GOODS': 29,
+        'PETROLEUM': 30,
+        'PAPER': 31,
+        'STEEL': 32
+ 
+                
     }
 
     def __init__(self, pX, pY, pType, pLogic=None):
@@ -214,6 +223,8 @@ class World:
                 if(random.randint(0, 100) < 20):
                     self.data[x][y].setType('FOREST')
                 self.data[x][y].setRotation(random.randint(0, 3))
+                if(random.randint(0, 100) < 0.5):
+                     self.data[x][y].setType('COAL')
 
         for townIndex in range(300):    #generiere Städte
             px, py = self.randomPosition()

@@ -31,6 +31,9 @@ GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("bruecke", QPixmap::fromImage(QImage(":/images/bruecke.png"))));
 
     GRAPHICS.insert(std::pair<std::string, QPixmap>("zug", QPixmap::fromImage(QImage(":/images/train_top.png"))));
+
+    //Produktionsgebäude:
+    GRAPHICS.insert(std::pair<std::string, QPixmap>("kohlemine", QPixmap::fromImage(QImage(":/images/coalmine.png"))));
 }
 
 /**
