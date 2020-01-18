@@ -223,7 +223,7 @@ class World:
                 if(random.randint(0, 100) < 20):
                     self.data[x][y].setType('FOREST')
                 self.data[x][y].setRotation(random.randint(0, 3))
-                if(random.randint(0, 100) < 0.5):
+                if(random.randint(0, 100) < 0.25):
                      self.data[x][y].setType('COAL')
 
         for townIndex in range(300):    #generiere Städte
