@@ -1,8 +1,17 @@
 var searchData=
 [
-  ['terminal_5fh_731',['TERMINAL_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a327746ac5239277fd577968d7b16dde6',1,'MapTile']]],
-  ['terminal_5fv_732',['TERMINAL_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a99f75f8bee95ca5e9c3ad8f696e95e03',1,'MapTile']]],
-  ['train_5fdepot_733',['TRAIN_DEPOT',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12a8f521b108b719fb8b14c2956077e01ae',1,'DataModel']]],
-  ['train_5fstation_734',['TRAIN_STATION',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12aa853336e84c08f8c56b4342ce3d2c0cd',1,'DataModel']]],
-  ['train_5fterminal_735',['TRAIN_TERMINAL',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12a6de8b734ce983a222e872720f262e836',1,'DataModel']]]
+  ['rail_5fh_731',['RAIL_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad60bdb8a464421773a5c7f510cbc627e',1,'MapTile']]],
+  ['rail_5flb_732',['RAIL_LB',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad29a456a6c0d011806e8188b590c7605',1,'MapTile']]],
+  ['rail_5flt_733',['RAIL_LT',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a4e3049cd1d9b04513bdfca41640d749c',1,'MapTile']]],
+  ['rail_5fplacement_734',['RAIL_PLACEMENT',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12ae3625a1f1b71b12a98c6a7da6b4ac9ce',1,'DataModel']]],
+  ['rail_5frb_735',['RAIL_RB',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a9e6e025612d120bee08a2d12de29b570',1,'MapTile']]],
+  ['rail_5frt_736',['RAIL_RT',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a10aadb17d2063469ae09591d7419f146',1,'MapTile']]],
+  ['rail_5fv_737',['RAIL_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a85c1886695760eae8ac5558c8034fad2',1,'MapTile']]],
+  ['remove_738',['REMOVE',['../classDataModel.html#a59651530f7b7d568f6d86b0e6a7d1a12a07ed1d4482c387986b0e5becc08f7abf',1,'DataModel']]],
+  ['river_5fh_739',['RIVER_H',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad1d2ac6f644f6be20c5f71ccd9bd24aa',1,'MapTile']]],
+  ['river_5flb_740',['RIVER_LB',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a553e37baae928c771ae1f026e63587bc',1,'MapTile']]],
+  ['river_5flt_741',['RIVER_LT',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a715b2add6cab2c7a87c73df50ddb3a41',1,'MapTile']]],
+  ['river_5frb_742',['RIVER_RB',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a13aa4c8960c42e37c1b6c10780acd639',1,'MapTile']]],
+  ['river_5frt_743',['RIVER_RT',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5ad20178d15a105107c386323271f8b0fb',1,'MapTile']]],
+  ['river_5fv_744',['RIVER_V',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5a14eb02cd62504f63d91683381a356ee7',1,'MapTile']]]
 ];
