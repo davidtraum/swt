@@ -41,7 +41,7 @@ GraphicsManager::GraphicsManager(){
     GRAPHICS.insert(std::pair<std::string, QPixmap>("papier", QPixmap::fromImage(QImage(":/images/papermill.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("vieh", QPixmap::fromImage(QImage(":/images/ranchlivestock.png"))));
     GRAPHICS.insert(std::pair<std::string, QPixmap>("holz", QPixmap::fromImage(QImage(":/images/wood.png"))));
-    GRAPHICS.insert(std::pair<std::string, QPixmap>("stahl", QPixmap::fromImage(QImage(":/images/ranchlivestock.png"))));
+    ///GRAPHICS.insert(std::pair<std::string, QPixmap>("stahl", QPixmap::fromImage(QImage(":/images/.png"))));
 }
 
 /**
