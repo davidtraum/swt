@@ -213,7 +213,7 @@ class World:
             self.data[posX][posY].rotateClockwise()
         else:
             self.data[posX][posY].setType('GRASS')
-        self.data[posX][posY]
+        #self.data[posX][posY]
 
     def generateWorld(self):    #Weltgenerierung nach Start des Servers
         print("Welt wird generiert...")
@@ -305,7 +305,7 @@ class World:
                     break
                 
         testStrecke = True
-        Richtung = "links"                
+        Richtung = "rechts"                
         if(testStrecke == True):    #generiert Teststrecke
             testTrainstations = []
             if(Richtung == 'links'):

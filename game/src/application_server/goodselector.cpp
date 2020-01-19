@@ -7,7 +7,7 @@
 
 GoodSelector::GoodSelector()
 {
-    QString list[] = {"CORN", "COAL", "MAIL", "PASSENGERS", "FOOD", "LIFESTOCK", "GOODS"};
+    QString list[] = {"CORN", "COAL", "MAIL", "PASSENGERS", "FOOD", "LIVESTOCK", "GOODS"};
     QString names[] = {"Weizen", "Kohle", "Post", "Passagiere", "Essen", "Tiere", "Pakete"};
 
     QGridLayout * layout = new QGridLayout();

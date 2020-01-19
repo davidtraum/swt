@@ -10,44 +10,41 @@ class WayLogic:
         self.waySections = []
 
 
-    @staticmethod
-    def wayStationAToB(karte, pXL=0, pYL=0, pXS = 0, pYS = 0, wayTmp = None):   #Rekursive Funktion zur Wegfindung des Zugs (Streckenlogik)       
-        if(wayTmp == None):            
-            wayTmp = []
-            wayTmp.append(karte[pXL][pYL])   
-        if(not (karte[pXL-1][pYL] in wayTmp) and (karte[pXL-1][pYL].isRail() or karte[pXL-1][pYL].isTrainStation())):   #Links            
-            wayTmp.append(karte[pXL][pYL])
-            pXL -=1
-            if(pXL-1 == pXS and pYL == pYS):                
-                return wayTmp
-            else:
-                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
-        elif(not(karte[pXL+1][pYL] in wayTmp) and (karte[pXL+1][pYL].isRail() or karte[pXL+1][pYL].isTrainStation())):   #Rechts            
-            wayTmp.append(karte[pXL][pYL])
-            pXL +=1
-            print(pXL, pXS)
-            if(pXL == pXS and pYL == pYS):                
-                return wayTmp
-            else:
-                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
-        elif(not(karte[pXL][pYL-1] in wayTmp) and (karte[pXL][pYL-1].isRail() or karte[pXL][pYL-1].isTrainStation())):   #Oben
-            wayTmp.append(karte[pXL][pYL])
-            pYL -=1
-            if(pXL == pXS and pYL-1 == pYS):
-                return wayTmp
-            else:
-                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
-        if(not(karte[pXL][pYL+1] in wayTmp) and (karte[pXL][pYL+1].isRail() or karte[pXL][pYL+1].isTrainStation())):   #Unten
-            wayTmp.append(karte[pXL][pYL])
-            pYL +=1
-            if(pXL == pXS and pYL+1 == pYS):
-                return wayTmp
-            else:
-                return WayLogic.wayStationAToB(karte, pXL, pYL, pXS, pYS, wayTmp)
-        else:
-            wayTmp = None
-            
 
+    #gibt Länge von Bahnhof A nach B    
+    def wayStationAToB(karte, pXA=0, pYA=0, pXB = 0, pYB = 0):
+        wayTmp = []
+        wayTmp.append(karte[pXA][pYA])
+        while(True):
+            #rechts
+            if(not(karte[pXA+1][pYA] in wayTmp) and (karte[pXA+1][pYA].isRail() or karte[pXA+1][pYA].isTrainStation())):
+                wayTmp.append(karte[pXA+1][pYA])
+                pXA += 1    #einen nach rechts gehen
+                if(pXA == pXB and pYA == pYB):
+                    return wayTmp
+            #links
+            if(not(karte[pXA-1][pYA] in wayTmp) and (karte[pXA-1][pYA].isRail() or karte[pXA-1][pYA].isTrainStation())):
+                wayTmp.append(karte[pXA-1][pYA])
+                pXA -= 1    #einen nach links gehen
+                if(pXA == pXB and pYA == pYB):
+                    return wayTmp
+            #unten
+            if(not(karte[pXA][pYA+1] in wayTmp) and (karte[pXA][pYA+1].isRail() or karte[pXA][pYA+1].isTrainStation())):
+                wayTmp.append(karte[pXA][pYA+1])
+                pYA += 1    #einen nach unten gehen
+                if(pXA == pXB and pYA == pYB):
+                    return wayTmp
+
+            #oben
+            if(not(karte[pXA][pYA-1] in wayTmp) and (karte[pXA][pYA-1].isRail() or karte[pXA][pYA-1].isTrainStation())):
+                wayTmp.append(karte[pXA][pYA-1])
+                pYA -= 1    #einen nach unten gehen
+                if(pXA == pXB and pYA == pYB):
+                    return wayTmp
+            
+            
+                
+                
                     
     
     @staticmethod
@@ -58,7 +55,7 @@ class WayLogic:
             if(WayLogic.allWays[i].firstTrainStation==pTrainStationA or WayLogic.allWays[i].secondTrainStation == pTrainStationA):
                 if(WayLogic.allWays[i].firstTrainStation ==pTrainStationB or WayLogic.allWays[i].secondTrainStation == pTrainStationB):
                     s = len(WayLogic.allWays[i].firstRail)
-                    print(s)
+                    print("benötigte Zeit/Länge:", s)
                     return s
 
     @staticmethod

@@ -514,31 +514,39 @@ qrc_Data.cpp: ../application_server/Data.qrc \
 
 qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		/usr/lib/qt5/bin/rcc \
-		../application_server/depot.png \
-		../application_server/wald.png \
-		../application_server/grass.png \
-		../application_server/thomasAndFriends.png \
-		../application_server/train_top.png \
-		../application_server/trainstation.png \
-		../application_server/terminal.png \
-		../application_server/stadt.png \
-		../application_server/bruecke.png \
 		../application_server/coalmine.png \
-		../application_server/rathaus.png \
+		../application_server/wald.png \
+		../application_server/oilwell.png \
 		../application_server/water.png \
+		../application_server/trainstation.png \
+		../application_server/train_top.png \
+		../application_server/factorygoods.png \
+		../application_server/thomasAndFriends.png \
+		../application_server/rathaus.png \
+		../application_server/bruecke.png \
+		../application_server/grain.png \
+		../application_server/papermill.png \
+		../application_server/steel_factory.png \
+		../application_server/ranchlivestock.png \
+		../application_server/foodproc.png \
+		../application_server/stadt.png \
+		../application_server/wood.png \
+		../application_server/depot.png \
+		../application_server/grass.png \
+		../application_server/terminal.png \
 		../application_server/wagon.png \
 		../application_server/train_sky.png \
 		../application_server/train_background.png \
 		../application_server/train.png \
+		../application_server/schiene_v.png \
+		../application_server/schiene_h.png \
+		../application_server/schiene_kurve.png \
 		../application_server/fluss_kurve_links_unten.png \
 		../application_server/fluss_kurve_rechts_oben.png \
 		../application_server/fluss_kurve_rechts_unten.png \
 		../application_server/fluss_kurve_links_oben.png \
 		../application_server/fluss_vertikal.png \
 		../application_server/fluss_horizontal.png \
-		../application_server/schiene_v.png \
-		../application_server/schiene_h.png \
-		../application_server/schiene_kurve.png \
 		../application_server/icon.png \
 		../application_server/rrt_logo_grp5.png \
 		../application_server/cursor.png \
@@ -557,7 +565,6 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/clock.svg \
 		../application_server/verbindungsaufbau.svg \
 		../application_server/pin.svg \
-		../application_server/icon_LIFESTOCK.png \
 		../application_server/mouse.svg \
 		../application_server/Nahrung.svg \
 		../application_server/rail.svg \
@@ -565,6 +572,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/icon_MAIL.png \
 		../application_server/cross.svg \
 		../application_server/bridge.svg \
+		../application_server/icon_LIVESTOCK.png \
 		../application_server/pin_white.svg \
 		../application_server/verbindungstrennung.svg \
 		../application_server/trainstation.svg \

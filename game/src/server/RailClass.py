@@ -106,6 +106,7 @@ class RailLogic:
                     WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
                     WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
                     WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    WayLogic.allWays[-1].firstTrainStation = karte[x_Pos+1][y_Pos]
                     
                 else:                                                                                       #Wenn Rechts eine Schiene ist
                     if(karte[x_Pos+1][y_Pos].logic.way.firstRail.index(karte[x_Pos+1][y_Pos]) != 0):         #Wenn schiene nicht die erste ist
@@ -129,7 +130,7 @@ class RailLogic:
                     WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
                     WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
                     WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
-                    
+                    WayLogic.allWays[-1].firstTrainStation = karte[x_Pos-1][y_Pos]
                 else:                                                                                 #Wenn Links eine Schiene ist
                     
                     if(karte[x_Pos-1][y_Pos].logic.way.firstRail.index(karte[x_Pos-1][y_Pos]) != 0):         #Wenn schiene nicht die erste ist
@@ -154,6 +155,7 @@ class RailLogic:
                     WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
                     WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
                     WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    WayLogic.allWays[-1].firstTrainStation = karte[x_Pos][y_Pos-1]
                     
                 else:                                                                                   #Wenn Oben eine Schiene ist
                     if(karte[x_Pos][y_Pos-1].logic.way.firstRail.index(karte[x_Pos][y_Pos-1]) != 0):         #Wenn schiene nicht die erste ist
@@ -177,6 +179,7 @@ class RailLogic:
                     WayLogic.allWays[-1].secondRail.append(None)                   #2. Gleis des Bahnhofs wird Strecke hinzugefügt(bis jetzt immer None)
                     WayLogic.allWays[-1].firstRail.append(karte[x_Pos][y_Pos])     #erstem Gleis der Strecke wird Schiene hinzugefügt
                     WayLogic.allWays[-1].secondRail.append(None)                   #zweitem Gleis der Strecke wird nichts hinzugefügt
+                    WayLogic.allWays[-1].firstTrainStation = karte[x_Pos][y_Pos+1]
                     
                 else:                                                                                   #Wenn Unten eine Schiene ist
                     if(karte[x_Pos][y_Pos+1].logic.way.firstRail.index(karte[x_Pos][y_Pos+1]) != 0):         #Wenn schiene nicht die erste ist

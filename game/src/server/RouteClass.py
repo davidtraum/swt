@@ -36,7 +36,7 @@ class RouteLogic:
             self.train.removeWagon(self.wagons)            
             print(len(self.trainstations))
             if(self.stationCounter == len(self.trainstations)-1):
-                self.train.addWagons(self.trainstations[self.stationCounter], self.trainstations[self.stationCounter-1], self.wagons) 
+                self.train.addWagons(self.trainstations[self.stationCounter], self.trainstations[-1], self.wagons) 
                 self.stationCounter = 0
             else:
                 self.train.addWagons(self.trainstations[self.stationCounter], self.trainstations[self.stationCounter+1], self.wagons)           
