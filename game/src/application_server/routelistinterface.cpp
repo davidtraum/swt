@@ -14,7 +14,7 @@ RouteListInterface::RouteListInterface()
 
     QVBoxLayout * layout = new QVBoxLayout(mainWidget);
 
-    QListWidget * routeList = new QListWidget;
+    routeList = new QListWidget();
     routeList->setSelectionMode(QAbstractItemView::ExtendedSelection);  //mehrere Elemente der Liste gleichzeitig anwählbar mit STRG
 
     routeList->setMaximumHeight(600);
@@ -60,8 +60,8 @@ void RouteListInterface::deleteRoute() {
 
     qDebug() << "Items werden gelöscht...";
 
-    delete routeList->currentItem(); //Stürzt hier ab
-
+    qDebug() << routeList;
+    delete routeList->takeItem(routeList->currentRow());
     qDebug() << "WURDE GELÖSCHT";
 
 }

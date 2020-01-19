@@ -135,7 +135,10 @@ int main(int argc, char *argv[])
     startscreen->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     mainWindow->setCentralWidget(startscreen);
 
-
+    /*QMediaPlayer * player = new QMediaPlayer;
+    player->setMedia(QUrl("qrc:/data/Track.mp3"));
+    player->play();
+    */
     GameLoop * loop = new GameLoop(mapRenderer,scene,dataModel,client);
     loop->start();
 
