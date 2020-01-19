@@ -506,6 +506,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
 qrc_Data.cpp: ../application_server/Data.qrc \
 		/usr/lib/qt5/bin/rcc \
+		../application_server/Track.mp3 \
 		../application_server/cities.json \
 		../application_server/mono.ttf \
 		../application_server/raleway.ttf \
