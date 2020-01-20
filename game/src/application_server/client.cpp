@@ -46,8 +46,9 @@ void Client::run() {
     int length = 0;
     while(true){
         if (socket->bytesAvailable()>0){
-                /*
-                data = socket->readAll();
+                /**
+                socket->waitForReadyRead();
+                data = socket->read(1);
                 split = data.split("~");
                 length = split.length();
                 for(int i = 0; i<length-1; i++){
@@ -68,23 +69,25 @@ void Client::run() {
                         overshoot = data;
                     }
                 }
+
                 */
 
+            data = socket->read(1);
+            qDebug() << data;
 
-            data = socket->readAll();
-
-                if(data.contains("~")) {    //Falls zu viel auf einmal gesendet wird splitte bei Befehlende, so "verhaspelt" sich der socket nicht
-                    qDebug() << "Länge der gelesenen Daten (Socket): " + QString::number(buffer.length());
-                    QStringList strList = data.split("~");
-                    processCommand(strList[0]);
-                    buffer = strList[1];
+                if(data.contains("~")) {
+                    //qDebug() << "Länge der gelesenen Daten (Socket): " + QString::number(buffer.length());
+                    //QStringList strList = data.split("~");
+                    processCommand(buffer);
+                    buffer = "";
                 }
                 else {
 
                     buffer += data;
-                    //qDebug() << buffer;
+                    qDebug() << buffer;
                 }
-            socket->flush();
+
+            //socket->flush();
 
         }
     }

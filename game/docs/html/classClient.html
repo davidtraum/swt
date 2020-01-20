@@ -538,6 +538,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classClient.html#ad2cfacbefea1e51e34c4697403fb82cb" title="Client::run Startet den Client-Thread.">Client::run</a> Startet den Client-Thread. </p>
+<p>socket-&gt;waitForReadyRead(); data = socket-&gt;read(1); split = data.split("~"); length = split.length(); for(int i = 0; i&lt;length-1; i++){ if(length&gt;2 &amp;&amp; split[1].length()&gt;0){ if(i&lt;length-2){ processCommand(split[i]); }else{ if(i==length-2){ if(split[length-1].length() &gt; 0){ processCommand(split[i]); overshoot = split[length-1]; }else{ overshoot = split[i]; } } } }else{ overshoot = data; } }</p>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
