@@ -225,8 +225,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Data.cpp release\qrc_Graphics.cpp
 release/qrc_Data.cpp: ../application_server/Data.qrc \
 		C:/Qt/5.12.2/mingw73_32/bin/rcc.exe \
-		../application_server/Track.mp3 \
 		../application_server/cities.json \
+		../application_server/Sweden.mp3 \
+		../application_server/ThomasAndFriendsTitle.mp3 \
 		../application_server/mono.ttf \
 		../application_server/raleway.ttf \
 		../application_server/minecraft.ttf
@@ -3301,6 +3302,9 @@ release/main.o: ../application_server/main.cpp C:/Qt/5.12.2/mingw73_32/include/Q
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qaudio.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtNetwork/qnetworkconfiguration.h \
+		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/QMediaPlaylist \
+		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediaplaylist.h \
+		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediabindableinterface.h \
 		../application_server/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qmainwindow.h \

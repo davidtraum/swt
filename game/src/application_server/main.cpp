@@ -14,6 +14,7 @@
 #include <QImage>
 #include <QGridLayout>
 #include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -136,8 +137,16 @@ int main(int argc, char *argv[])
     startscreen->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     mainWindow->setCentralWidget(startscreen);
 
+    //Musik-Playlist: Song hinzufügen mit addMedia()
     QMediaPlayer * player = new QMediaPlayer;
-    player->setMedia(QUrl("qrc:/data/Track.mp3"));
+    QMediaPlaylist * playlist = new QMediaPlaylist;
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+
+    playlist->addMedia(QUrl("qrc:/data/Sweden.mp3"));
+    playlist->addMedia(QUrl("qrc:/data/ThomasAndFriendsTitle.mp3"));
+
+    playlist->setCurrentIndex(1);
+    player->setPlaylist(playlist);
     player->play();
 
     GameLoop * loop = new GameLoop(mapRenderer,scene,dataModel,client);
