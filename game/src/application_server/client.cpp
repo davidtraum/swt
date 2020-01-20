@@ -73,7 +73,6 @@ void Client::run() {
                 */
 
             data = socket->read(1);
-            qDebug() << data;
 
                 if(data.contains("~")) {
                     //qDebug() << "Länge der gelesenen Daten (Socket): " + QString::number(buffer.length());
