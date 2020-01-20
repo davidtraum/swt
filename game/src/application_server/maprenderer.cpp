@@ -68,17 +68,21 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     }
 
     for(AnimationMovement * anim : movementAnimations){
-        anim->move();
-        Point pos = anim->getEntity()->getPosition();
-        pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
-        if(anim->getEntity()->rotation>0){
-            painter.save();
-            painter.translate(pos.getX()+halfSize, pos.getY()+halfSize);
-            painter.rotate(anim->getEntity()->rotation);
-            painter.drawImage(-halfSize,-halfSize, *anim->getEntity()->getImage());
-            painter.restore();
+        if(anim->move()){
+            movementAnimations.removeOne(anim);
+            delete anim;
         }else{
-            painter.drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
+            Point pos = anim->getEntity()->getPosition();
+            pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
+            if(anim->getEntity()->rotation>0){
+                painter.save();
+                painter.translate(pos.getX()+halfSize, pos.getY()+halfSize);
+                painter.rotate(anim->getEntity()->rotation);
+                painter.drawImage(-halfSize,-halfSize, *anim->getEntity()->getImage());
+                painter.restore();
+            }else{
+                painter.drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
+            }
         }
     }
 

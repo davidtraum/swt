@@ -50,6 +50,9 @@ bool AnimationMovement::move() {
             pointIndex++;
             if(pointIndex>=path.length()){
                 pointIndex = 0;
+                if(!repeat){
+                    return true;
+                }
             }
             calculateVector(before, pointIndex);
         }
