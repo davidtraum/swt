@@ -45,7 +45,7 @@ void Client::run() {
     QString overshoot = "";
     int length = 0;
     while(true){
-        while(socket->bytesAvailable()>0){
+        if (socket->bytesAvailable()>0){
                 /*
                 data = socket->readAll();
                 split = data.split("~");
@@ -69,17 +69,26 @@ void Client::run() {
                     }
                 }
                 */
-                data = socket->read(1);
-                if(data == "~"){
-                    processCommand(buffer);
-                    buffer = "";
-                }else{
-                    buffer += data;
 
+
+            data = socket->readAll();
+
+                if(data.contains("~")) {    //Falls zu viel auf einmal gesendet wird splitte bei Befehlende, so "verhaspelt" sich der socket nicht
+                    qDebug() << "Länge der gelesenen Daten (Socket): " + QString::number(buffer.length());
+                    QStringList strList = data.split("~");
+                    processCommand(strList[0]);
+                    buffer = strList[1];
                 }
+                else {
+
+                    buffer += data;
+                    //qDebug() << buffer;
+                }
+            socket->flush();
+
         }
     }
-    socket->deleteLater();
+    //socket->deleteLater();
 }
 
 void Client::requestMap(){
@@ -101,9 +110,18 @@ void Client::sendRoute(QString routeString){
  * @param cmd Der Befehl als String.
  */
 void Client::processCommand(QString cmd){
-    if(debug) qDebug() << "[CLIENT] Command: " + cmd;
+    if(debug) {
+        qDebug() << "[CLIENT] Command: " + cmd;
+    }
+
+    if (cmd.trimmed().isEmpty() || cmd.isEmpty()) {
+        return;
+    }
+
     try {
+
         QStringList split = cmd.split("+");
+
         if(split.length()>1){
         if((split[1]=="TILE") && split.length()==6){
             emit tileChanged(split[2].toInt(),split[3].toInt(), split[4].toInt(), split[5].toInt());
@@ -112,12 +130,16 @@ void Client::processCommand(QString cmd){
         }else if(split[1]=="MAP"){
             if(split[2]=="DONE"){
                 qDebug() << "Map loaded";
+                sleep(100);
                 emit onMapLoaded(true);
             }
         }else if(split[1]=="TIME" && split.length()==3){
             dataModel->setTime(split[2].toInt());
         }
         }
+
+
+
     } catch (...) {
         qDebug() << "Client error";
     }

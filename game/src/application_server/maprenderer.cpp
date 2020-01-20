@@ -57,11 +57,11 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                     painter.save();
                     painter.translate(x*(tileSize)-offset.getX()+halfSize,y*(tileSize)-offset.getY()+halfSize);
                     painter.rotate(data[x][y].getRotationDeg());
-                    painter.drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));;
+                    painter.drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));
                     painter.restore();
                 }else{
                     //painter.drawRect(x*(tileSize*scale)-offset.getX(),y*(tileSize*scale)-offset.getY(), tileSize,tileSize);
-                    painter.drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));;
+                    painter.drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));
                 }
             }
          }
