@@ -468,7 +468,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
             elif(args[0] == 'TRAINSTATION'):
                 if(args[1] == 'GET'):
                     broadcast(WayLogic.getTrainstationProtocolString(int(args[2]),int(args[3]),world.data))
-
+            elif(args[0] == 'CURVES'):  #gibt Eckpunkte
+                if(args[1] == 'GET'):
+                    broadcast(WayLogic.getCurves(world.data, args[2], args[3], args[4], args[5]))
             elif(args[0] == 'REMOVE'):  #Befehlsverarbeitung REMOVE
                 posX = int(args[1])
                 posY = int(args[2])
