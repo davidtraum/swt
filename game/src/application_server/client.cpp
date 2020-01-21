@@ -88,6 +88,7 @@ void Client::run() {
 
                     buffer += data;
                     qDebug() << buffer;     //Wenn man das hier rausnimmt stürzt das Programm ab
+
                 }
 
             //socket->flush();
@@ -152,7 +153,8 @@ void Client::processCommand(QString cmd){
             }
             else if(split[1]=="TIME" && split.length()==3){
                 dataModel->setTime(split[2].toInt());
-            }else if(split[1] == "ROUTE" && split.length()==5){
+            }
+            else if(split[1] == "ROUTE" && split.length()==5){
                 mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[4]);
             }
 

@@ -22,6 +22,7 @@ private:
     void calculateVector(int origin, int target);
     double targetDistance();
     bool repeat{true};
+    int direction{1};
     double speed{1};
     AnimationEntity * item;
     QList<Point *> path;

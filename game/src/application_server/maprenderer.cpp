@@ -394,7 +394,7 @@ void MapRenderer::demo()
         data[4][y].setType(MapTile::RAIL_V);
     }
     animateMovement(QImage(":/images/train_top.png"), "3:5;5:5", 0.5);
-    animateMovement(QImage(":/images/train_top.png"), "4:6;4:9");
+    //animateMovement(QImage(":/images/train_top.png"), "4:6;4:9");
 
     for(int x = 7; x<=9; x++){
         data[x][5].setType(MapTile::RAIL_H);
@@ -407,7 +407,7 @@ void MapRenderer::demo()
     data[7][5].setType(MapTile::RAIL_RB);
     data[7][9].setType(MapTile::RAIL_RT);
     animateMovement(QImage(":/images/train_top.png"), "9:5;7:5;7:9;9:9;7:9;7:5", 10);
-    animateMovement(QImage(":/images/train_top.png"), "8:7;9:7");
+    //animateMovement(QImage(":/images/train_top.png"), "8:7;9:7");
 
     for(int x = 11; x<=13; x++){
         data[x][5].setType(MapTile::RAIL_H);
@@ -429,7 +429,7 @@ void MapRenderer::demo()
     for(int y = 6; y<=9; y++){
         data[16][y].setType(MapTile::RAIL_V);
     }
-    animateMovement(QImage(":/images/train_top.png"), "15:5;17:5");
+    //animateMovement(QImage(":/images/train_top.png"), "15:5;17:5");
     animateMovement(QImage(":/images/train_top.png"), "16:6;16:9", 4);
 
 
