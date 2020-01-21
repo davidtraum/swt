@@ -11,12 +11,13 @@
 #include "datamodel.h"
 #include "view.h"
 #include "maprenderer.h"
+#include "routeListInterface.h"
 
 class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, View * pView, DataModel * pDataModel);
+    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, View * pView, DataModel * pDataModel, RouteListInterface *);
     void run() override;
     void requestMap();
     QString * tmpRoutes;
@@ -27,6 +28,7 @@ private:
     DataModel * dataModel;
     MapRenderer * mapRenderer;
     bool debug;
+    RouteListInterface * routeListInterface;
     int tickcount{0};
     void processCommand(QString command);
 

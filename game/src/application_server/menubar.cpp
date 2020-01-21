@@ -119,7 +119,7 @@ void MenuBar::slotOpenConnection(){
                                          &ok);
 
     if(ok){
-        Client * client = new Client(&text, scene, mapRenderer, view, dataModel);
+        Client * client = new Client(&text, scene, mapRenderer, view, dataModel, routeListInterface);
 
         QWidget::connect(routeInterface, &RouteInterface::sendConfirmRoute, client, &Client::sendRoute);
 

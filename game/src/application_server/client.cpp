@@ -1,6 +1,6 @@
 #include "client.h"
 #include "main.h"
-#include "main.h"
+#include "routeListInterface.h"
 #include <QTimer>
 #include <QDebug>
 #include <QObject>
@@ -8,11 +8,12 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, View * pView, DataModel * pDataModel)
+Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, View * pView, DataModel * pDataModel, RouteListInterface * pRouteListInterface)
 {
     tickcount=0;
     scene = pScene;
     mapRenderer = pMapRenderer;
+    routeListInterface = pRouteListInterface;
     dataModel = pDataModel;
     dataModel->setConnectionInfo(*connectionInfo);
     QStringList split = connectionInfo->split(":");
