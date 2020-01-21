@@ -507,8 +507,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
                     handOver = "ROUTES+"
-                    #handOver = dict(self.player.routes) + "+"
-                    #handOver = handOver + "END"
+                    for i in self.player.routes:    #Absturz hier
+                        print("Durchlauf " + i)
+                        #print(*self.player.routes)
                     print("HandOver:" + handOver)
                     self.send(handOver)
                 

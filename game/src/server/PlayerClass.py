@@ -46,7 +46,8 @@ class Player:
         self.money += amount
 
     def addRoute(self, pRoute, pWagons):    #Füge eine Route zur Liste aller Routen des Spielers hinzu
-        self.routes.append((pRoute, pWagons))
+        
+        self.routes.append([pRoute, pWagons])
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
         
