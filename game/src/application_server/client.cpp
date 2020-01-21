@@ -83,7 +83,7 @@ void Client::run() {
                 else {
 
                     buffer += data;
-                    qDebug() << buffer;
+                    qDebug() << buffer;     //Wenn man das hier rausnimmt stürzt das Programm ab
                 }
 
             //socket->flush();

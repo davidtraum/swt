@@ -52,9 +52,7 @@ class WayLogic:
                     if(pXA == pXB and pYA == pYB):
                         return wayTmp
                 
-                case = 1    #Wenn eine Richtung Sackgasse, dann prüfe andere Richtung
-
-            if(case == 1):
+            elif(case == 1):
                 #links
                 if(not(karte[pXA-1][pYA] in wayTmp) and karte[pXA][pYA].logic.connectedLeft == True):
                     print('links')
@@ -83,6 +81,9 @@ class WayLogic:
                     pYA += 1    #einen nach unten gehen
                     if(pXA == pXB and pYA == pYB):
                         return wayTmp
+
+            else:
+                case = 1    #Wenn eine Richtung Sackgasse, dann prüfe andere Richtung
             
                 
     @staticmethod

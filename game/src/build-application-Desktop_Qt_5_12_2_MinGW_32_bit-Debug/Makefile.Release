@@ -3490,22 +3490,6 @@ release/mainwindow.o: ../application_server/mainwindow.cpp ../application_server
 		C:/Qt/5.12.2/mingw73_32/include/QtGui/qicon.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/QVariant \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QApplication \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QWidget \
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\application_server\mainwindow.cpp
 
