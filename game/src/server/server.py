@@ -89,7 +89,7 @@ class MapTile:
         self.type = MapTile.TYPES[pType]
         if(share):
             broadcast(self.getProtocolString())
-            print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
+            #print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
 
     def getType(self):        
         return self.type

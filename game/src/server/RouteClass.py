@@ -17,6 +17,14 @@ class RouteLogic:
         self.calculateTime()
         self.train.addWagons(self.trainstations[0], self.trainstations[1], self.wagons) #erste Strecke
 
+    def sendProtocolString(self):
+        x1 =self.trainstations[0].getX(),self.trainstations[0].getY(), self.trainstations[-1].getX(),self.trainstations[-1].getY()
+        y1 = self.trainstations[0].getY()
+        x2 = self.trainstations[-1].getX()
+        y2 = self.trainstations[-1].getY()        
+        return x1 "+" y1 "+" x2 + "+" +y2 "+" WayLogic.getCurves(self.karte, x1, y1, x2, y2)
+
+    
     def calculateTime(self):    #Berechnet die benötigte Zeit, die die Route in Anspruch nimmt
         for i in range(len(self.trainstations)-1):
             print(self.trainstations[i])

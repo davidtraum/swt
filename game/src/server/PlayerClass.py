@@ -49,9 +49,8 @@ class Player:
         self.routes.append([pRoute, pWagons])
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
-        
-        self.startRoute(self.routes[-1][0], self.routes[-1][1])
-        print("Neue Route wurde gestartet.")
+        print("Neue Route wird gestartet.")
+        return self.startRoute(self.routes[-1][0], self.routes[-1][1])
 
     def startRoute(self, pStations, pWagons):     #Startet die übergebene Route
         tsTmp = []
@@ -59,7 +58,10 @@ class Player:
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
             print("Test2")
-        self.tasks.append(RouteLogic(None, tsTmp, pWagons, self.karte))
+        routeTmp = RouteLogic(None, tsTmp, pWagons, self.karte)
+        handOver = routeTmp.sendProtocolString()
+        self.tasks.append(routeTmp)
+        return handOver
         
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
         #with open('playerData.json', 'r+') as f:

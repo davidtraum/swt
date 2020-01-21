@@ -81,9 +81,8 @@ class WayLogic:
                     pYA += 1    #einen nach unten gehen
                     if(pXA == pXB and pYA == pYB):
                         return wayTmp
-
-            else:
-                case = 1    #Wenn eine Richtung Sackgasse, dann prüfe andere Richtung
+           
+            case = 1    #Wenn eine Richtung Sackgasse, dann prüfe andere Richtung
             
                 
     @staticmethod
@@ -91,12 +90,12 @@ class WayLogic:
         print('vorStationAtoB')
         wayTmp = WayLogic.wayStationAToB(karte, int(pXA), int(pYA), int(pXB), int(pYB))
         print(wayTmp)
-        returnTmp = 'CURVES'
+        returnTmp = ''
         for i in range(len(wayTmp)):
             print(wayTmp[i].getType())
             if(wayTmp[i].getType() != 9 and wayTmp[i].getType() != 10 and not (wayTmp[i].getType() >= 16 and wayTmp[i].getType() <= 23)):
-                returnTmp += "+" + str(i)
-        return returnTmp
+                returnTmp += str(wayTmp[i].getX()) + ":" + str(wayTmp[i].getY()) + ";" 
+        return returnTmp[:-1]
                     
     
     @staticmethod
