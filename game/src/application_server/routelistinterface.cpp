@@ -65,3 +65,4 @@ void RouteListInterface::deleteRoute() {
     qDebug() << "WURDE GELÖSCHT";
 
 }
+

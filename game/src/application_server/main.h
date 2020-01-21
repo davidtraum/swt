@@ -17,5 +17,6 @@ extern Scene * scene;
 extern SidePanel * sidePanel;
 extern MapRenderer * mapRenderer;
 extern GraphicsManager * graphics;
+extern MenuBar * menuBar;
 
 #endif // MAIN_H

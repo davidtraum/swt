@@ -38,6 +38,7 @@ Scene * scene;
 SidePanel * sidePanel;
 Client * client;
 MapRenderer * mapRenderer;
+MenuBar * menuBar;
 
 
 
@@ -100,7 +101,7 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    MenuBar * menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface);
+    menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface);
     menuBar->setParent(mainWindow);
     menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");

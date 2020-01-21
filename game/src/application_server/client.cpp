@@ -1,4 +1,6 @@
 #include "client.h"
+#include "main.h"
+#include "main.h"
 #include <QTimer>
 #include <QDebug>
 #include <QObject>
@@ -31,6 +33,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket->waitForConnected(3000);
 
     start();
+    QString * tmpRoutes;
 
     qDebug() << "[CLIENT] Thread Gestartet.";
 }
@@ -125,19 +128,30 @@ void Client::processCommand(QString cmd){
         QStringList split = cmd.split("+");
 
         if(split.length()>1){
-        if((split[1]=="TILE") && split.length()==6){
-            emit tileChanged(split[2].toInt(),split[3].toInt(), split[4].toInt(), split[5].toInt());
-        }else if(split[1]=="POS" && split.length()==4){
-            emit playerPositionChange(split[2].toInt(), split[3].toInt());
-        }else if(split[1]=="MAP"){
-            if(split[2]=="DONE"){
-                qDebug() << "Map loaded";
-                sleep(100);
-                emit onMapLoaded(true);
+            if((split[1]=="TILE") && split.length()==6){
+                emit tileChanged(split[2].toInt(),split[3].toInt(), split[4].toInt(), split[5].toInt());
             }
-        }else if(split[1]=="TIME" && split.length()==3){
-            dataModel->setTime(split[2].toInt());
-        }
+            else if(split[1]=="POS" && split.length()==4){
+                emit playerPositionChange(split[2].toInt(), split[3].toInt());
+            }
+            else if(split[1]=="MAP"){
+                if(split[2]=="DONE"){
+                    qDebug() << "Map loaded";
+                    sleep(100);
+                    emit onMapLoaded(true);
+                }
+            }
+            else if (split[1]=="ROUTES") {
+                for (int i= 0; i < split.length(); i++) {
+
+                    //tmpRoutes[i] = split[i+2];
+                    //qDebug() << "Empfangen: " + tmpRoutes[i];
+                }
+
+            }
+            else if(split[1]=="TIME" && split.length()==3){
+                dataModel->setTime(split[2].toInt());
+            }
         }
 
 

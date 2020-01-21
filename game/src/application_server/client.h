@@ -19,6 +19,7 @@ public:
     Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, View * pView, DataModel * pDataModel);
     void run() override;
     void requestMap();
+    QString * tmpRoutes;
 
 private:
     QTcpSocket * socket;
