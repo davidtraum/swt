@@ -152,7 +152,10 @@ void Client::processCommand(QString cmd){
             }
             else if(split[1]=="TIME" && split.length()==3){
                 dataModel->setTime(split[2].toInt());
+            }else if(split[1] == "ROUTE" && split.length()==5){
+                mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[4]);
             }
+
         }
 
 
