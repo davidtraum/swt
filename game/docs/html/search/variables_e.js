@@ -8,5 +8,5 @@ var searchData=
   ['rotation_679',['rotation',['../classAnimationEntity.html#a1f5ece9d289b64ade3039f17e01fc5f0',1,'AnimationEntity']]],
   ['routeinterface_680',['routeInterface',['../classMenuBar.html#a14aa03c798eb90f53577808f849f3e35',1,'MenuBar']]],
   ['routelist_681',['routeList',['../classRouteListInterface.html#a19d727baffe9a3b0db85f0bf954c035d',1,'RouteListInterface']]],
-  ['routelistinterface_682',['routeListInterface',['../classMenuBar.html#acadc4671e29eb31bd2430ee875aa8a5d',1,'MenuBar']]]
+  ['routelistinterface_682',['routeListInterface',['../classClient.html#a295774ea94eb86ce3a5391225309f232',1,'Client::routeListInterface()'],['../classMenuBar.html#acadc4671e29eb31bd2430ee875aa8a5d',1,'MenuBar::routeListInterface()']]]
 ];
