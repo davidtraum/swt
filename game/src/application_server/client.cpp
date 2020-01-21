@@ -33,7 +33,6 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket->waitForConnected(3000);
 
     start();
-    QString * tmpRoutes;
 
     qDebug() << "[CLIENT] Thread Gestartet.";
 }
@@ -48,6 +47,7 @@ void Client::run() {
     QString overshoot = "";
     int length = 0;
     while(true){
+        //socket->waitForReadyRead();
         if (socket->bytesAvailable()>0){
                 /**
                 socket->waitForReadyRead();

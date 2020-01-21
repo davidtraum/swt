@@ -406,6 +406,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
         self.player = Player(clientCount, 1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
 
+    #send('ROUTE+PLAY+' + unserKoordinatenString);
     def send(self, pText):
         self.connection.sendall(('CMD+' + pText + '~').encode())
         print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe

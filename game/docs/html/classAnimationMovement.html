@@ -78,7 +78,8 @@ $(function() {
 <div class="dynheader">
 Zusammengehörigkeiten von AnimationMovement:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAnimationMovement__coll__graph.svg" width="175" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classAnimationMovement__coll__graph.svg" width="175" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -94,6 +95,9 @@ Zusammengehörigkeiten von AnimationMovement:</div>
 <tr class="memitem:a9cdb7ef489af5bb1a09c94747c73a213"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#a9cdb7ef489af5bb1a09c94747c73a213">move</a> ()</td></tr>
 <tr class="memdesc:a9cdb7ef489af5bb1a09c94747c73a213"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimationMovement.html#a9cdb7ef489af5bb1a09c94747c73a213" title="AnimationMovement::move Führt einen Schritt der Animation durch.">AnimationMovement::move</a> Führt einen Schritt der Animation durch.  <a href="classAnimationMovement.html#a9cdb7ef489af5bb1a09c94747c73a213">Mehr ...</a><br /></td></tr>
 <tr class="separator:a9cdb7ef489af5bb1a09c94747c73a213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d0ce22ed161fcf03cc6f5106c58526"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#a80d0ce22ed161fcf03cc6f5106c58526">setRepeat</a> (bool)</td></tr>
+<tr class="memdesc:a80d0ce22ed161fcf03cc6f5106c58526"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimationMovement.html#a80d0ce22ed161fcf03cc6f5106c58526" title="AnimationMovement::setRepeat Setzt ob die Animation in Endlosschleife läuft.">AnimationMovement::setRepeat</a> Setzt ob die Animation in Endlosschleife läuft.  <a href="classAnimationMovement.html#a80d0ce22ed161fcf03cc6f5106c58526">Mehr ...</a><br /></td></tr>
+<tr class="separator:a80d0ce22ed161fcf03cc6f5106c58526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee6a37d2f482a521120d528c2bc84dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#abee6a37d2f482a521120d528c2bc84dc">setSpeed</a> (double)</td></tr>
 <tr class="memdesc:abee6a37d2f482a521120d528c2bc84dc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnimationMovement.html#abee6a37d2f482a521120d528c2bc84dc" title="AnimationMovement::setSpeed Setzt die Geschwindigkeit der Animation.">AnimationMovement::setSpeed</a> Setzt die Geschwindigkeit der Animation.  <a href="classAnimationMovement.html#abee6a37d2f482a521120d528c2bc84dc">Mehr ...</a><br /></td></tr>
 <tr class="separator:abee6a37d2f482a521120d528c2bc84dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,7 +113,7 @@ Private Methoden</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
-<tr class="memitem:a1941cd9536bfd7765344a2c871061bc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#a1941cd9536bfd7765344a2c871061bc5">repeat</a> {false}</td></tr>
+<tr class="memitem:a1941cd9536bfd7765344a2c871061bc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#a1941cd9536bfd7765344a2c871061bc5">repeat</a> {true}</td></tr>
 <tr class="separator:a1941cd9536bfd7765344a2c871061bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a891d3c87763b524ed60f1005ea25c1d5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationMovement.html#a891d3c87763b524ed60f1005ea25c1d5">speed</a> {1}</td></tr>
 <tr class="separator:a891d3c87763b524ed60f1005ea25c1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,6 +320,32 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 
 </div>
 </div>
+<a id="a80d0ce22ed161fcf03cc6f5106c58526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d0ce22ed161fcf03cc6f5106c58526">&#9670;&nbsp;</a></span>setRepeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationMovement::setRepeat </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pStatus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnimationMovement.html#a80d0ce22ed161fcf03cc6f5106c58526" title="AnimationMovement::setRepeat Setzt ob die Animation in Endlosschleife läuft.">AnimationMovement::setRepeat</a> Setzt ob die Animation in Endlosschleife läuft. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pStatus</td><td>true = endlos, false = einmalig </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abee6a37d2f482a521120d528c2bc84dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abee6a37d2f482a521120d528c2bc84dc">&#9670;&nbsp;</a></span>setSpeed()</h2>
 
@@ -459,7 +489,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool AnimationMovement::repeat {false}</td>
+          <td class="memname">bool AnimationMovement::repeat {true}</td>
         </tr>
       </table>
   </td>

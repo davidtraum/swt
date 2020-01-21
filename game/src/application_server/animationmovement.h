@@ -14,13 +14,14 @@ public:
     void parsePath(QString path);
     AnimationEntity * getEntity();
     bool move();
+    void setRepeat(bool);
     void setSpeed(double);
 
 private:
     void calculateVector(Point origin, Point target);
     void calculateVector(int origin, int target);
     double targetDistance();
-    bool repeat{false};
+    bool repeat{true};
     double speed{1};
     AnimationEntity * item;
     QList<Point *> path;

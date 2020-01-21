@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,6 +25,8 @@ void \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{
 \item 
 bool \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{move}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{set\+Repeat}} (bool)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{Animation\+Movement\+::set\+Repeat}} Setzt ob die Animation in Endlosschleife läuft. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{set\+Speed}} (double)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
@@ -38,7 +41,7 @@ double \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classAnimationMovement_a1941cd9536bfd7765344a2c871061bc5}{repeat}} \{false\}
+bool \mbox{\hyperlink{classAnimationMovement_a1941cd9536bfd7765344a2c871061bc5}{repeat}} \{true\}
 \item 
 double \mbox{\hyperlink{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}{speed}} \{1\}
 \item 
@@ -144,6 +147,21 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}\label{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}} 
+\index{AnimationMovement@{AnimationMovement}!setRepeat@{setRepeat}}
+\index{setRepeat@{setRepeat}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{setRepeat()}{setRepeat()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::set\+Repeat (\begin{DoxyParamCaption}\item[{bool}]{p\+Status }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{Animation\+Movement\+::set\+Repeat}} Setzt ob die Animation in Endlosschleife läuft. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Status} & true = endlos, false = einmalig \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}\label{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}} 
 \index{AnimationMovement@{AnimationMovement}!setSpeed@{setSpeed}}
 \index{setSpeed@{setSpeed}!AnimationMovement@{AnimationMovement}}
@@ -211,7 +229,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{AnimationMovement@{AnimationMovement}!repeat@{repeat}}
 \index{repeat@{repeat}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{repeat}{repeat}}
-{\footnotesize\ttfamily bool Animation\+Movement\+::repeat \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Animation\+Movement\+::repeat \{true\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}\label{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}} 
 \index{AnimationMovement@{AnimationMovement}!speed@{speed}}

@@ -61,6 +61,15 @@ bool AnimationMovement::move() {
 }
 
 /**
+ * @brief AnimationMovement::setRepeat Setzt ob die Animation in Endlosschleife läuft.
+ * @param pStatus true = endlos, false = einmalig
+ */
+void AnimationMovement::setRepeat(bool pStatus)
+{
+    repeat = pStatus;
+}
+
+/**
  * @brief AnimationMovement::setSpeed Setzt die Geschwindigkeit der Animation.
  * @param pSpeed Die Geschwindigkeit (1=normal, 2=doppelt...)
  */
