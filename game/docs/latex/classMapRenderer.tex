@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Map\+Renderer\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -76,7 +78,9 @@ void \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{set\+V
 void \mbox{\hyperlink{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}{animate\+Movement}} (Q\+Image, Q\+String)
 \item 
 void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animate\+Movement}} (Q\+Image, Q\+String, double)
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{cloud\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolken-\/\+Animation aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,6 +136,8 @@ int \mbox{\hyperlink{classMapRenderer_a2caec4c1518775fc48e8e458f9cf31c2}{origin\
 int \mbox{\hyperlink{classMapRenderer_a968a84cb8d342b22c2996ec5f83e216f}{ea1c}} \{0\}
 \item 
 int \mbox{\hyperlink{classMapRenderer_a733fa3b45a42e8600a8504f9fad8f2af}{half\+Size}} \{\mbox{\hyperlink{classMapRenderer_ae87488b2b2aec44b5ae36e8cda4ed393}{tile\+Size}}/2\}
+\item 
+Q\+Pixmap $\ast$ \mbox{\hyperlink{classMapRenderer_a3e922266a37368f5d30ed73bb0d25390}{buffer}}
 \end{DoxyCompactItemize}
 
 
@@ -162,7 +168,8 @@ int \mbox{\hyperlink{classMapRenderer_a733fa3b45a42e8600a8504f9fad8f2af}{half\+S
 \doxysubsubsection{\texorpdfstring{animateMovement()}{animateMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Map\+Renderer\+::animate\+Movement (\begin{DoxyParamCaption}\item[{Q\+Image}]{img,  }\item[{Q\+String}]{path }\end{DoxyParamCaption})}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -204,6 +211,32 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMapRenderer_a15bd2845914440803193a2209b1a9230_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}\label{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}} 
+\index{MapRenderer@{MapRenderer}!cloudAnimation@{cloudAnimation}}
+\index{cloudAnimation@{cloudAnimation}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{cloudAnimation()}{cloudAnimation()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::cloud\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolken-\/\+Animation aus. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}\label{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}} 
@@ -318,7 +351,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -331,8 +365,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{leftclick}{leftclick}}
 {\footnotesize\ttfamily void Map\+Renderer\+::leftclick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -438,8 +471,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -572,6 +604,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{activeTile@{activeTile}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{activeTile}{activeTile}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Map\+Renderer\+::active\+Tile \{0,0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_a3e922266a37368f5d30ed73bb0d25390}\label{classMapRenderer_a3e922266a37368f5d30ed73bb0d25390}} 
+\index{MapRenderer@{MapRenderer}!buffer@{buffer}}
+\index{buffer@{buffer}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily Q\+Pixmap$\ast$ Map\+Renderer\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_affd16d6371faa316bffe22e3b3f1e4a4}\label{classMapRenderer_affd16d6371faa316bffe22e3b3f1e4a4}} 
 \index{MapRenderer@{MapRenderer}!codeCount@{codeCount}}

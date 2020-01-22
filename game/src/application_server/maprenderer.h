@@ -41,6 +41,8 @@ public:
     void animateMovement(QImage, QString);
     void animateMovement(QImage, QString, double);
 
+    void cloudAnimation();
+
     MapTile data[300][300];
     Point offset{145*64,145*64};
     int codeCount;
@@ -67,6 +69,7 @@ private:
     int originTileSize{64};
     int ea1c{0};
     int halfSize{tileSize/2};
+    QPixmap * buffer;
 
 public slots:
     void onTileChange(int,int,int);

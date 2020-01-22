@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
     mapRenderer = new MapRenderer(graphics, dataModel);
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(mapRenderer);
+      mapRenderer->cloudAnimation();
     });
 
     RouteInterface * routeInterface = new RouteInterface(graphics);

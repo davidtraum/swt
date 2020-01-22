@@ -28,6 +28,8 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     QWidget::setFocusPolicy(Qt::FocusPolicy::StrongFocus);
     QWidget::setFocus();
 
+    buffer = new QPixmap(this->width(), this->height());
+
     showHighlight = true;
     codeCount = 0;
 }
@@ -40,7 +42,15 @@ void MapRenderer::paintEvent(QPaintEvent *event)
 {
     rendering = true;
     long beforeTime = clock();
-    QPainter painter(this);
+    QPainter * painter;
+    if(scale<1 || scale>1){
+        delete buffer;
+        buffer = new QPixmap(int(this->width()*(1/scale)), int(this->height()*(1/scale)));
+        painter = new QPainter(buffer);
+    }else{
+        painter = new  QPainter(this);
+    }
+
 
     if(moveStepsLeft>0){
         offset.move(int(vx),int(vy));
@@ -54,14 +64,14 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         for(int y = minPos.getY(); y<maxPos.getY(); y++){
             if(x > 0 && y > 0 && x < 300 && y < 300){
                 if(data[x][y].getRotationDeg()>0){
-                    painter.save();
-                    painter.translate(x*(tileSize)-offset.getX()+halfSize,y*(tileSize)-offset.getY()+halfSize);
-                    painter.rotate(data[x][y].getRotationDeg());
-                    painter.drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));
-                    painter.restore();
+                    painter->save();
+                    painter->translate(x*(tileSize)-(offset.getX())+halfSize,y*(tileSize)-offset.getY()+halfSize);
+                    painter->rotate(data[x][y].getRotationDeg());
+                    painter->drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize, tileSize));
+                    painter->restore();
                 }else{
                     //painter.drawRect(x*(tileSize*scale)-offset.getX(),y*(tileSize*scale)-offset.getY(), tileSize,tileSize);
-                    painter.drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize*scale, tileSize*scale));
+                    painter->drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize, tileSize));
                 }
             }
          }
@@ -75,35 +85,43 @@ void MapRenderer::paintEvent(QPaintEvent *event)
             Point pos = anim->getEntity()->getPosition();
             pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
             if(anim->getEntity()->rotation>0){
-                painter.save();
-                painter.translate(pos.getX()+halfSize, pos.getY()+halfSize);
-                painter.rotate(anim->getEntity()->rotation);
-                painter.drawImage(-halfSize,-halfSize, *anim->getEntity()->getImage());
-                painter.restore();
+                painter->save();
+                painter->translate(pos.getX()+halfSize, pos.getY()+halfSize);
+                painter->rotate(anim->getEntity()->rotation);
+                painter->drawImage(-halfSize,-halfSize, *anim->getEntity()->getImage());
+                painter->restore();
             }else{
-                painter.drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
+                painter->drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
             }
         }
     }
 
     if(showHighlight){
         Point pos = toScreenPosition(activeTile.getX(), activeTile.getY());
-        painter.drawRect(pos.getX(), pos.getY(), tileSize,tileSize);
+        painter->drawRect(pos.getX(), pos.getY(), tileSize,tileSize);
     }
 
 
     QWidget::paintEvent(event);
     renderTime = clock() - beforeTime;
 
-    if(showExpertDetails){
-        painter.drawText(10,20, "Render Details (F3)");
-        painter.drawText(10,40,"Render Time: " + QString::number(renderTime/1000) + "ms");
-        painter.drawText(10, 55, "Constant FPS: " + QString::number(fps));
-        painter.drawText(10, 70, "Possible FPS: " + QString::number(1000000/renderTime));
-        painter.drawText(10, 85, "Index Position: " + QString::number(activeTile.getX()) + "/" + QString::number(activeTile.getY()));
-        painter.drawText(10, 100, "Tiles drawn: " + QString::number((maxPos.getX() - minPos.getY()) * (maxPos.getY() - minPos.getY())));
-        painter.drawText(10, 115, "Active animations: " + QString::number(movementAnimations.length()));
+    QPainter painterReal(this);
+    if(scale < 1 || scale > 1){
+        painterReal.drawImage(0,0,buffer->toImage().scaled(buffer->width()*scale, buffer->height()*scale));
     }
+
+    if(showExpertDetails){
+        painterReal.drawText(10,20, "Render Details (F3)");
+        painterReal.drawText(10,40,"Render Time: " + QString::number(renderTime/1000) + "ms");
+        painterReal.drawText(10, 55, "Constant FPS: " + QString::number(fps));
+        painterReal.drawText(10, 70, "Possible FPS: " + QString::number(1000000/renderTime));
+        painterReal.drawText(10, 85, "Index Position: " + QString::number(activeTile.getX()) + "/" + QString::number(activeTile.getY()));
+        painterReal.drawText(10, 100, "Tiles drawn: " + QString::number((maxPos.getX() - minPos.getY()) * (maxPos.getY() - minPos.getY())));
+        painterReal.drawText(10, 115, "Active animations: " + QString::number(movementAnimations.length()));
+        painterReal.drawText(10, 130, "Scale: " + QString::number(scale) + "x");
+    }
+
+    delete painter;
 
     frameCount++;
     if((time(nullptr) - lastFpsTake)>=1){
@@ -121,7 +139,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
  * @return Der Punkt.
  */
 Point MapRenderer::mapPosition(int px, int py){
-    return Point(((offset.getX() + px) / tileSize), ((offset.getY() + py) / tileSize));
+    return Point(int((offset.getX()*(scale) + px) / tileSize*(1/scale)), int((offset.getY()*(scale) + py) / tileSize*(1/scale)));
 }
 
 /**
@@ -155,7 +173,7 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
 void MapRenderer::mouseMoveEvent(QMouseEvent *event)
 {
     if(mouseDown){
-        offset.move(dragPosition.getX() - event->x(), dragPosition.getY() - event->y());
+        offset.move((dragPosition.getX() - event->x()) * (1/scale), (dragPosition.getY() - event->y())*(1/scale));
         dragPosition.set(event->x(), event->y());
     }else{
         activeTile = mapPosition(event->x(), event->y());
@@ -165,10 +183,14 @@ void MapRenderer::mouseMoveEvent(QMouseEvent *event)
 
 void MapRenderer::wheelEvent(QWheelEvent *event)
 {
-    if(event->delta()>0){
-        tileSize++;
+    if(event->delta() > 0){
+        if(scale<5){
+            scale += 0.1;
+        }
     }else{
-        tileSize--;
+        if(scale > 0.6){
+            scale -= 0.1;
+        }
     }
 }
 
@@ -186,6 +208,9 @@ void MapRenderer::keyReleaseEvent(QKeyEvent *event)
             if(ea1c>10){
                 demo();
             }
+            break;
+        case Qt::Key_F4:
+            cloudAnimation();
             break;
         case Qt::Key_Left:
             if (codeCount == 4 || codeCount == 6)
@@ -452,7 +477,7 @@ Point MapRenderer::getMinPos(){
  * @return Ein Point.
  */
 Point MapRenderer::getMaxPos(){
-    return offset.add(this->width()+tileSize, this->height()+tileSize);
+    return offset.add(int((this->width()+(tileSize*scale))*(1/scale)), int((this->height()+tileSize*scale)*(1/scale)));
 }
 
 /**
@@ -499,6 +524,27 @@ void MapRenderer::animateMovement(QImage img, QString path, double speed)
     AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img)), path);
     anim->setSpeed(speed);
     movementAnimations.push_back(anim);
+}
+
+/**
+ * @brief MapRenderer::cloudAnimation Führt eine Wolken-Animation aus
+ */
+void MapRenderer::cloudAnimation()
+{
+    QImage img(":/images/cloud/cloud0.png");
+    img = img.scaled(img.width()*3, img.height()*3);
+    QString paths[] = {
+        "140:140;100:100",
+        "160:140;200:100",
+        "160:160;200:200",
+        "160:160;200:100"
+    };
+    for(QString path : paths){
+        AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img)), path);
+        anim->setSpeed(15);
+        anim->setRepeat(false);
+        movementAnimations.push_back(anim);
+    }
 }
 
 /**

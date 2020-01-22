@@ -866,6 +866,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/train_sky.png \
 		../application_server/train_background.png \
 		../application_server/train.png \
+		../application_server/cloud0.png \
 		../application_server/schiene_v.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
@@ -1083,6 +1084,28 @@ moc_client.cpp: ../application_server/client.h \
 		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
+		../application_server/routeListInterface.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/client.h -o moc_client.cpp
@@ -1370,6 +1393,28 @@ moc_gameloop.cpp: ../application_server/gameloop.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../application_server/routeListInterface.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/gameloop.h -o moc_gameloop.cpp
@@ -2382,6 +2427,7 @@ moc_routeinterface.cpp: ../application_server/routeinterface.h \
 		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
+		../application_server/routeListInterface.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/routeinterface.h -o moc_routeinterface.cpp
@@ -3148,6 +3194,45 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
+		../application_server/routeListInterface.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../application_server/main.h \
+		../application_server/menubar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolBar \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QInputDialog \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qinputdialog.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextcursor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextformat.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
+		../application_server/routeinterface.h \
+		../application_server/trainrenderer.h \
+		../application_server/goodselector.h \
+		../application_server/sidepanel.h \
+		../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QTimer \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtimer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasictimer.h \
@@ -3436,6 +3521,28 @@ gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h 
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../application_server/routeListInterface.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameloop.o ../application_server/gameloop.cpp
 
@@ -3955,8 +4062,7 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
-		../application_server/menubar.h \
-		../application_server/routeinterface.h \
+		../application_server/routeListInterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistview.h \
@@ -3975,9 +4081,10 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qrubberband.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QPushButton \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		../application_server/menubar.h \
+		../application_server/routeinterface.h \
 		../application_server/trainrenderer.h \
 		../application_server/goodselector.h \
-		../application_server/routeListInterface.h \
 		../application_server/sidepanel.h \
 		../application_server/minimap.h \
 		../application_server/gameloop.h
@@ -4987,6 +5094,7 @@ routeinterface.o: ../application_server/routeinterface.cpp ../application_server
 		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
+		../application_server/routeListInterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QCursor \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QHBoxLayout \
