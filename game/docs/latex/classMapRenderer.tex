@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Map\+Renderer\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -78,7 +80,9 @@ void \mbox{\hyperlink{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}{animat
 void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animate\+Movement}} (Q\+Image, Q\+String, double)
 \item 
 void \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{cloud\+Animation}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolken-\/\+Animation aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolkp\+Scaleen-\/\+Animation aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{animate\+Scale}} (double)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{Map\+Renderer\+::animate\+Scale}} Animiert die Skalierung. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -126,6 +130,10 @@ double \mbox{\hyperlink{classMapRenderer_a157332ede504131e45f7482d7b6c7118}{vx}}
 double \mbox{\hyperlink{classMapRenderer_a7b477713511c8e7d7c8dc6cf01e61e35}{vy}} \{0\}
 \item 
 int \mbox{\hyperlink{classMapRenderer_abfe2d195e80d51af49234c124cb37b20}{move\+Steps\+Left}} \{0\}
+\item 
+int \mbox{\hyperlink{classMapRenderer_ab9552161f6c5a6bbfc65f8e1232ca43e}{scale\+Steps\+Left}} \{0\}
+\item 
+double \mbox{\hyperlink{classMapRenderer_a6982092659db5c50301c82898854d904}{scale\+Vector}}
 \item 
 int \mbox{\hyperlink{classMapRenderer_ae87488b2b2aec44b5ae36e8cda4ed393}{tile\+Size}} \{64\}
 \item 
@@ -210,6 +218,29 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a15bd2845914440803193a2209b1a9230_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}\label{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}} 
+\index{MapRenderer@{MapRenderer}!animateScale@{animateScale}}
+\index{animateScale@{animateScale}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{animateScale()}{animateScale()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::animate\+Scale (\begin{DoxyParamCaption}\item[{double}]{p\+Scale }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{Map\+Renderer\+::animate\+Scale}} Animiert die Skalierung. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Scale} & Die neue Skalierung. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_af09cc87016da102e1874f9c4a42fd963_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}\label{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}} 
 \index{MapRenderer@{MapRenderer}!cloudAnimation@{cloudAnimation}}
 \index{cloudAnimation@{cloudAnimation}!MapRenderer@{MapRenderer}}
@@ -218,16 +249,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 
-\mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolken-\/\+Animation aus. 
+\mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolkp\+Scaleen-\/\+Animation aus. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -346,7 +379,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -524,7 +558,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -718,6 +753,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{scale@{scale}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{scale}{scale}}
 {\footnotesize\ttfamily double Map\+Renderer\+::scale \{1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_ab9552161f6c5a6bbfc65f8e1232ca43e}\label{classMapRenderer_ab9552161f6c5a6bbfc65f8e1232ca43e}} 
+\index{MapRenderer@{MapRenderer}!scaleStepsLeft@{scaleStepsLeft}}
+\index{scaleStepsLeft@{scaleStepsLeft}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{scaleStepsLeft}{scaleStepsLeft}}
+{\footnotesize\ttfamily int Map\+Renderer\+::scale\+Steps\+Left \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_a6982092659db5c50301c82898854d904}\label{classMapRenderer_a6982092659db5c50301c82898854d904}} 
+\index{MapRenderer@{MapRenderer}!scaleVector@{scaleVector}}
+\index{scaleVector@{scaleVector}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{scaleVector}{scaleVector}}
+{\footnotesize\ttfamily double Map\+Renderer\+::scale\+Vector\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_ab180758afa832266b33d8aca5029f10a}\label{classMapRenderer_ab180758afa832266b33d8aca5029f10a}} 
 \index{MapRenderer@{MapRenderer}!showExpertDetails@{showExpertDetails}}
