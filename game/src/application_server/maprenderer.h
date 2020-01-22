@@ -43,6 +43,8 @@ public:
 
     void cloudAnimation();
 
+    void animateScale(double);
+
     MapTile data[300][300];
     Point offset{145*64,145*64};
     int codeCount;
@@ -65,6 +67,8 @@ private:
     int fps{0};
     double vx{0},vy{0};
     int moveStepsLeft{0};
+    int scaleStepsLeft{0};
+    double scaleVector;
     int tileSize{64};
     int originTileSize{64};
     int ea1c{0};

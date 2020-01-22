@@ -58,6 +58,11 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         moveStepsLeft--;
     }
 
+    if(scaleStepsLeft>0){
+        scale += scaleVector;
+        scaleStepsLeft--;
+    }
+
     Point minPos = getMinPos().toTile();
     Point maxPos = getMaxPos().toTile();
     for(int x = minPos.getX(); x<maxPos.getX(); x++){
@@ -527,17 +532,22 @@ void MapRenderer::animateMovement(QImage img, QString path, double speed)
 }
 
 /**
- * @brief MapRenderer::cloudAnimation Führt eine Wolken-Animation aus
+ * @brief MapRenderer::cloudAnimation Führt eine WolkpScaleen-Animation aus
  */
 void MapRenderer::cloudAnimation()
 {
     QImage img(":/images/cloud/cloud0.png");
-    img = img.scaled(img.width()*3, img.height()*3);
+    img = img.scaled(img.width()*4, img.height()*4);
+    setViewportTilePosition(130,140);
     QString paths[] = {
         "140:140;100:100",
-        "160:150;200:100",
+        "160:140;200:100",
         "160:160;200:200",
-        "160:160;200:100"
+        "140:160;100:200"
+        "130:130;90:120",
+        "170:150;210:900",
+        "150:150;220:210",
+        "145:165;150:250"
     };
     for(QString path : paths){
         AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img)), path);
@@ -545,6 +555,18 @@ void MapRenderer::cloudAnimation()
         anim->setRepeat(false);
         movementAnimations.push_back(anim);
     }
+    scale = 0.5;
+    animateScale(1);
+}
+
+/**
+ * @brief MapRenderer::animateScale Animiert die Skalierung.
+ * @param pScale Die neue Skalierung.
+ */
+void MapRenderer::animateScale(double pScale)
+{
+    scaleVector = (pScale - scale) / 100;
+    scaleStepsLeft = 100;
 }
 
 /**

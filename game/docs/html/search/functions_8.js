@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keypressevent_500',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]],
-  ['keyreleaseevent_501',['keyReleaseEvent',['../classMapRenderer.html#a9f43e4b3db6a2cda8ea7cabf1bc6f805',1,'MapRenderer']]]
+  ['keypressevent_504',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]],
+  ['keyreleaseevent_505',['keyReleaseEvent',['../classMapRenderer.html#a9f43e4b3db6a2cda8ea7cabf1bc6f805',1,'MapRenderer']]]
 ];
