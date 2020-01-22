@@ -7,11 +7,12 @@
 #include <QImage>
 #include <QToolButton>
 #include <QMenu>
+#include <QSlider>
 
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface) :
+MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface, QMediaPlayer * musicPlayer) :
     scene{pScene}, mapRenderer{pRenderer}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
@@ -92,7 +93,13 @@ MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel
     serverButton->setMenu(serverMenu);
     this->addWidget(serverButton);
 
-
+    QSlider * volumeSlider = new QSlider();
+    volumeSlider->setFixedWidth(100);
+    volumeSlider->setOrientation(Qt::Horizontal);
+    volumeSlider->setRange(0,100);
+    volumeSlider->setValue(50);
+    connect(volumeSlider, &QSlider::valueChanged, musicPlayer, &QMediaPlayer::setVolume);
+    this->addWidget(volumeSlider);
 
     QWidget *spacer = new QWidget(this);
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);

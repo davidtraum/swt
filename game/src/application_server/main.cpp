@@ -102,7 +102,21 @@ int main(int argc, char *argv[])
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
 
-    menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface);
+
+    //Musik-Playlist: Song hinzufügen mit addMedia()
+    QMediaPlayer * player = new QMediaPlayer;
+    QMediaPlaylist * playlist = new QMediaPlaylist;
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+
+    playlist->addMedia(QUrl("qrc:/data/Sweden.mp3"));
+    playlist->addMedia(QUrl("qrc:/data/ThomasAndFriendsTitle.mp3"));
+
+    playlist->setCurrentIndex(1);
+    player->setPlaylist(playlist);
+    player->play();
+
+
+    menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface, player);
     menuBar->setParent(mainWindow);
     menuBar->show();
     menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
@@ -138,18 +152,6 @@ int main(int argc, char *argv[])
     startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/rrt_logo_grp5.png").scaled(1000,1500,Qt::KeepAspectRatio)));
     startscreen->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     mainWindow->setCentralWidget(startscreen);
-
-    //Musik-Playlist: Song hinzufügen mit addMedia()
-    QMediaPlayer * player = new QMediaPlayer;
-    QMediaPlaylist * playlist = new QMediaPlaylist;
-    playlist->setPlaybackMode(QMediaPlaylist::Loop);
-
-    playlist->addMedia(QUrl("qrc:/data/Sweden.mp3"));
-    playlist->addMedia(QUrl("qrc:/data/ThomasAndFriendsTitle.mp3"));
-
-    playlist->setCurrentIndex(1);
-    player->setPlaylist(playlist);
-    player->play();
 
     GameLoop * loop = new GameLoop(mapRenderer,scene,dataModel,client);
     loop->start();

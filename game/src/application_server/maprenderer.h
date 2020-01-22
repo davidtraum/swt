@@ -56,6 +56,7 @@ private:
     Point dragPosition{0,0};
     Point dragOrigin{0,0};
     Point activeTile{0,0};
+    double offsetTargetX{145*64},offsetTargetY{145*64};
     bool showHighlight{false};
     bool rendering{false};
     long renderTime{0};
