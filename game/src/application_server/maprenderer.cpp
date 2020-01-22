@@ -133,6 +133,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         lastFpsTake = time(nullptr);
         fps = frameCount;
         frameCount = 0;
+        timeToRender = renderTime/1000;
     }
     rendering = false;
 }
@@ -282,8 +283,13 @@ void MapRenderer::keyReleaseEvent(QKeyEvent *event)
 
 void MapRenderer::tick()
 {
-    if(!rendering)
-        update();
+    if(ticksSkipped>=framerateDelay-timeToRender){
+        if(!rendering)
+            update();
+        ticksSkipped = 0;
+
+    }
+    ticksSkipped++;
 }
 
 /**

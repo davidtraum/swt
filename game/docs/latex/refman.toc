@@ -189,15 +189,15 @@
 \contentsline {section}{\numberline {7.12}Map\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Renderer Klassenreferenz}{75}{section.7.12}
 \contentsline {subsection}{\numberline {7.12.1}Beschreibung der Konstruktoren und Destruktoren}{78}{subsection.7.12.1}
 \contentsline {subsubsection}{\numberline {7.12.1.1}MapRenderer()}{78}{subsubsection.7.12.1.1}
-\contentsline {subsection}{\numberline {7.12.2}Dokumentation der Elementfunktionen}{78}{subsection.7.12.2}
+\contentsline {subsection}{\numberline {7.12.2}Dokumentation der Elementfunktionen}{79}{subsection.7.12.2}
 \contentsline {subsubsection}{\numberline {7.12.2.1}animateMovement()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{79}{subsubsection.7.12.2.1}
 \contentsline {subsubsection}{\numberline {7.12.2.2}animateMovement()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{79}{subsubsection.7.12.2.2}
-\contentsline {subsubsection}{\numberline {7.12.2.3}animateMovementToTilePosition()}{79}{subsubsection.7.12.2.3}
+\contentsline {subsubsection}{\numberline {7.12.2.3}animateMovementToTilePosition()}{80}{subsubsection.7.12.2.3}
 \contentsline {subsubsection}{\numberline {7.12.2.4}animateScale()}{80}{subsubsection.7.12.2.4}
 \contentsline {subsubsection}{\numberline {7.12.2.5}cloudAnimation()}{81}{subsubsection.7.12.2.5}
-\contentsline {subsubsection}{\numberline {7.12.2.6}demo()}{81}{subsubsection.7.12.2.6}
+\contentsline {subsubsection}{\numberline {7.12.2.6}demo()}{82}{subsubsection.7.12.2.6}
 \contentsline {subsubsection}{\numberline {7.12.2.7}enableHighlight}{82}{subsubsection.7.12.2.7}
-\contentsline {subsubsection}{\numberline {7.12.2.8}getMaxPos()}{82}{subsubsection.7.12.2.8}
+\contentsline {subsubsection}{\numberline {7.12.2.8}getMaxPos()}{83}{subsubsection.7.12.2.8}
 \contentsline {subsubsection}{\numberline {7.12.2.9}getMinPos()}{83}{subsubsection.7.12.2.9}
 \contentsline {subsubsection}{\numberline {7.12.2.10}getTileCenter()}{84}{subsubsection.7.12.2.10}
 \contentsline {subsubsection}{\numberline {7.12.2.11}keyReleaseEvent()}{84}{subsubsection.7.12.2.11}
@@ -225,240 +225,243 @@
 \contentsline {subsubsection}{\numberline {7.12.3.8}ea1c}{93}{subsubsection.7.12.3.8}
 \contentsline {subsubsection}{\numberline {7.12.3.9}fps}{93}{subsubsection.7.12.3.9}
 \contentsline {subsubsection}{\numberline {7.12.3.10}frameCount}{93}{subsubsection.7.12.3.10}
-\contentsline {subsubsection}{\numberline {7.12.3.11}graphicsManager}{93}{subsubsection.7.12.3.11}
-\contentsline {subsubsection}{\numberline {7.12.3.12}halfSize}{93}{subsubsection.7.12.3.12}
-\contentsline {subsubsection}{\numberline {7.12.3.13}lastFpsTake}{93}{subsubsection.7.12.3.13}
-\contentsline {subsubsection}{\numberline {7.12.3.14}mouseDown}{93}{subsubsection.7.12.3.14}
-\contentsline {subsubsection}{\numberline {7.12.3.15}movementAnimations}{94}{subsubsection.7.12.3.15}
-\contentsline {subsubsection}{\numberline {7.12.3.16}moveStepsLeft}{94}{subsubsection.7.12.3.16}
-\contentsline {subsubsection}{\numberline {7.12.3.17}offset}{94}{subsubsection.7.12.3.17}
-\contentsline {subsubsection}{\numberline {7.12.3.18}offsetTargetX}{94}{subsubsection.7.12.3.18}
-\contentsline {subsubsection}{\numberline {7.12.3.19}offsetTargetY}{94}{subsubsection.7.12.3.19}
-\contentsline {subsubsection}{\numberline {7.12.3.20}originTileSize}{94}{subsubsection.7.12.3.20}
-\contentsline {subsubsection}{\numberline {7.12.3.21}rendering}{94}{subsubsection.7.12.3.21}
-\contentsline {subsubsection}{\numberline {7.12.3.22}renderTime}{94}{subsubsection.7.12.3.22}
-\contentsline {subsubsection}{\numberline {7.12.3.23}scale}{95}{subsubsection.7.12.3.23}
-\contentsline {subsubsection}{\numberline {7.12.3.24}scaleStepsLeft}{95}{subsubsection.7.12.3.24}
-\contentsline {subsubsection}{\numberline {7.12.3.25}scaleVector}{95}{subsubsection.7.12.3.25}
-\contentsline {subsubsection}{\numberline {7.12.3.26}showExpertDetails}{95}{subsubsection.7.12.3.26}
-\contentsline {subsubsection}{\numberline {7.12.3.27}showHighlight}{95}{subsubsection.7.12.3.27}
-\contentsline {subsubsection}{\numberline {7.12.3.28}tileSize}{95}{subsubsection.7.12.3.28}
-\contentsline {subsubsection}{\numberline {7.12.3.29}vx}{95}{subsubsection.7.12.3.29}
-\contentsline {subsubsection}{\numberline {7.12.3.30}vy}{96}{subsubsection.7.12.3.30}
+\contentsline {subsubsection}{\numberline {7.12.3.11}framerateDelay}{93}{subsubsection.7.12.3.11}
+\contentsline {subsubsection}{\numberline {7.12.3.12}graphicsManager}{93}{subsubsection.7.12.3.12}
+\contentsline {subsubsection}{\numberline {7.12.3.13}halfSize}{93}{subsubsection.7.12.3.13}
+\contentsline {subsubsection}{\numberline {7.12.3.14}lastFpsTake}{93}{subsubsection.7.12.3.14}
+\contentsline {subsubsection}{\numberline {7.12.3.15}mouseDown}{94}{subsubsection.7.12.3.15}
+\contentsline {subsubsection}{\numberline {7.12.3.16}movementAnimations}{94}{subsubsection.7.12.3.16}
+\contentsline {subsubsection}{\numberline {7.12.3.17}moveStepsLeft}{94}{subsubsection.7.12.3.17}
+\contentsline {subsubsection}{\numberline {7.12.3.18}offset}{94}{subsubsection.7.12.3.18}
+\contentsline {subsubsection}{\numberline {7.12.3.19}offsetTargetX}{94}{subsubsection.7.12.3.19}
+\contentsline {subsubsection}{\numberline {7.12.3.20}offsetTargetY}{94}{subsubsection.7.12.3.20}
+\contentsline {subsubsection}{\numberline {7.12.3.21}originTileSize}{94}{subsubsection.7.12.3.21}
+\contentsline {subsubsection}{\numberline {7.12.3.22}rendering}{94}{subsubsection.7.12.3.22}
+\contentsline {subsubsection}{\numberline {7.12.3.23}renderTime}{95}{subsubsection.7.12.3.23}
+\contentsline {subsubsection}{\numberline {7.12.3.24}scale}{95}{subsubsection.7.12.3.24}
+\contentsline {subsubsection}{\numberline {7.12.3.25}scaleStepsLeft}{95}{subsubsection.7.12.3.25}
+\contentsline {subsubsection}{\numberline {7.12.3.26}scaleVector}{95}{subsubsection.7.12.3.26}
+\contentsline {subsubsection}{\numberline {7.12.3.27}showExpertDetails}{95}{subsubsection.7.12.3.27}
+\contentsline {subsubsection}{\numberline {7.12.3.28}showHighlight}{95}{subsubsection.7.12.3.28}
+\contentsline {subsubsection}{\numberline {7.12.3.29}ticksSkipped}{95}{subsubsection.7.12.3.29}
+\contentsline {subsubsection}{\numberline {7.12.3.30}tileSize}{95}{subsubsection.7.12.3.30}
+\contentsline {subsubsection}{\numberline {7.12.3.31}timeToRender}{96}{subsubsection.7.12.3.31}
+\contentsline {subsubsection}{\numberline {7.12.3.32}vx}{96}{subsubsection.7.12.3.32}
+\contentsline {subsubsection}{\numberline {7.12.3.33}vy}{96}{subsubsection.7.12.3.33}
 \contentsline {section}{\numberline {7.13}Map\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tile Klassenreferenz}{96}{section.7.13}
 \contentsline {subsection}{\numberline {7.13.1}Dokumentation der Aufz\IeC {\"a}hlungstypen}{98}{subsection.7.13.1}
 \contentsline {subsubsection}{\numberline {7.13.1.1}TYPE}{98}{subsubsection.7.13.1.1}
-\contentsline {subsection}{\numberline {7.13.2}Beschreibung der Konstruktoren und Destruktoren}{98}{subsection.7.13.2}
+\contentsline {subsection}{\numberline {7.13.2}Beschreibung der Konstruktoren und Destruktoren}{99}{subsection.7.13.2}
 \contentsline {subsubsection}{\numberline {7.13.2.1}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{99}{subsubsection.7.13.2.1}
-\contentsline {subsubsection}{\numberline {7.13.2.2}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{99}{subsubsection.7.13.2.2}
-\contentsline {subsection}{\numberline {7.13.3}Dokumentation der Elementfunktionen}{99}{subsection.7.13.3}
-\contentsline {subsubsection}{\numberline {7.13.3.1}attachGraphicsManager()}{99}{subsubsection.7.13.3.1}
-\contentsline {subsubsection}{\numberline {7.13.3.2}getCity()}{100}{subsubsection.7.13.3.2}
-\contentsline {subsubsection}{\numberline {7.13.3.3}getPixmapItem()}{100}{subsubsection.7.13.3.3}
-\contentsline {subsubsection}{\numberline {7.13.3.4}getRotation()}{101}{subsubsection.7.13.3.4}
-\contentsline {subsubsection}{\numberline {7.13.3.5}getRotationDeg()}{101}{subsubsection.7.13.3.5}
-\contentsline {subsubsection}{\numberline {7.13.3.6}getType()}{101}{subsubsection.7.13.3.6}
-\contentsline {subsubsection}{\numberline {7.13.3.7}getX()}{102}{subsubsection.7.13.3.7}
-\contentsline {subsubsection}{\numberline {7.13.3.8}getY()}{103}{subsubsection.7.13.3.8}
-\contentsline {subsubsection}{\numberline {7.13.3.9}isRail()}{103}{subsubsection.7.13.3.9}
-\contentsline {subsubsection}{\numberline {7.13.3.10}isRiver()}{104}{subsubsection.7.13.3.10}
-\contentsline {subsubsection}{\numberline {7.13.3.11}setCity()}{104}{subsubsection.7.13.3.11}
-\contentsline {subsubsection}{\numberline {7.13.3.12}setPosition()}{104}{subsubsection.7.13.3.12}
-\contentsline {subsubsection}{\numberline {7.13.3.13}setRotation()}{105}{subsubsection.7.13.3.13}
-\contentsline {subsubsection}{\numberline {7.13.3.14}setType()}{105}{subsubsection.7.13.3.14}
-\contentsline {subsection}{\numberline {7.13.4}Dokumentation der Datenelemente}{106}{subsection.7.13.4}
-\contentsline {subsubsection}{\numberline {7.13.4.1}city}{106}{subsubsection.7.13.4.1}
-\contentsline {subsubsection}{\numberline {7.13.4.2}currentRotation}{106}{subsubsection.7.13.4.2}
-\contentsline {subsubsection}{\numberline {7.13.4.3}graphicsManager}{107}{subsubsection.7.13.4.3}
-\contentsline {subsubsection}{\numberline {7.13.4.4}pixmapItem}{107}{subsubsection.7.13.4.4}
-\contentsline {subsubsection}{\numberline {7.13.4.5}type}{107}{subsubsection.7.13.4.5}
-\contentsline {section}{\numberline {7.14}Menu\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar Klassenreferenz}{107}{section.7.14}
-\contentsline {subsection}{\numberline {7.14.1}Beschreibung der Konstruktoren und Destruktoren}{109}{subsection.7.14.1}
-\contentsline {subsubsection}{\numberline {7.14.1.1}MenuBar()}{109}{subsubsection.7.14.1.1}
-\contentsline {subsection}{\numberline {7.14.2}Dokumentation der Elementfunktionen}{109}{subsection.7.14.2}
-\contentsline {subsubsection}{\numberline {7.14.2.1}slotCloseConnection}{109}{subsubsection.7.14.2.1}
-\contentsline {subsubsection}{\numberline {7.14.2.2}slotOpenConnection}{110}{subsubsection.7.14.2.2}
-\contentsline {subsection}{\numberline {7.14.3}Dokumentation der Datenelemente}{110}{subsection.7.14.3}
-\contentsline {subsubsection}{\numberline {7.14.3.1}dataModel}{110}{subsubsection.7.14.3.1}
-\contentsline {subsubsection}{\numberline {7.14.3.2}mapRenderer}{110}{subsubsection.7.14.3.2}
-\contentsline {subsubsection}{\numberline {7.14.3.3}routeInterface}{110}{subsubsection.7.14.3.3}
-\contentsline {subsubsection}{\numberline {7.14.3.4}routeListInterface}{110}{subsubsection.7.14.3.4}
-\contentsline {subsubsection}{\numberline {7.14.3.5}scene}{111}{subsubsection.7.14.3.5}
-\contentsline {subsubsection}{\numberline {7.14.3.6}view}{111}{subsubsection.7.14.3.6}
-\contentsline {section}{\numberline {7.15}Minimap Klassenreferenz}{111}{section.7.15}
-\contentsline {subsection}{\numberline {7.15.1}Beschreibung der Konstruktoren und Destruktoren}{113}{subsection.7.15.1}
-\contentsline {subsubsection}{\numberline {7.15.1.1}Minimap()}{113}{subsubsection.7.15.1.1}
-\contentsline {subsection}{\numberline {7.15.2}Dokumentation der Elementfunktionen}{114}{subsection.7.15.2}
-\contentsline {subsubsection}{\numberline {7.15.2.1}mouseMoveEvent()}{114}{subsubsection.7.15.2.1}
-\contentsline {subsubsection}{\numberline {7.15.2.2}mousePressEvent()}{114}{subsubsection.7.15.2.2}
-\contentsline {subsubsection}{\numberline {7.15.2.3}mouseReleaseEvent()}{115}{subsubsection.7.15.2.3}
-\contentsline {subsubsection}{\numberline {7.15.2.4}paintEvent()}{115}{subsubsection.7.15.2.4}
-\contentsline {subsubsection}{\numberline {7.15.2.5}renderMap()}{116}{subsubsection.7.15.2.5}
-\contentsline {subsubsection}{\numberline {7.15.2.6}viewChange}{116}{subsubsection.7.15.2.6}
-\contentsline {subsection}{\numberline {7.15.3}Dokumentation der Datenelemente}{116}{subsection.7.15.3}
-\contentsline {subsubsection}{\numberline {7.15.3.1}compass}{117}{subsubsection.7.15.3.1}
-\contentsline {subsubsection}{\numberline {7.15.3.2}dataModel}{117}{subsubsection.7.15.3.2}
-\contentsline {subsubsection}{\numberline {7.15.3.3}height}{117}{subsubsection.7.15.3.3}
-\contentsline {subsubsection}{\numberline {7.15.3.4}hoverCoords}{117}{subsubsection.7.15.3.4}
-\contentsline {subsubsection}{\numberline {7.15.3.5}location}{117}{subsubsection.7.15.3.5}
-\contentsline {subsubsection}{\numberline {7.15.3.6}location\_white}{117}{subsubsection.7.15.3.6}
-\contentsline {subsubsection}{\numberline {7.15.3.7}map}{117}{subsubsection.7.15.3.7}
-\contentsline {subsubsection}{\numberline {7.15.3.8}mapOverlay}{117}{subsubsection.7.15.3.8}
-\contentsline {subsubsection}{\numberline {7.15.3.9}mouseDown}{118}{subsubsection.7.15.3.9}
-\contentsline {subsubsection}{\numberline {7.15.3.10}renderCoordinates}{118}{subsubsection.7.15.3.10}
-\contentsline {subsubsection}{\numberline {7.15.3.11}scene}{118}{subsubsection.7.15.3.11}
-\contentsline {subsubsection}{\numberline {7.15.3.12}width}{118}{subsubsection.7.15.3.12}
-\contentsline {section}{\numberline {7.16}Player Klassenreferenz}{118}{section.7.16}
-\contentsline {subsection}{\numberline {7.16.1}Beschreibung der Konstruktoren und Destruktoren}{119}{subsection.7.16.1}
-\contentsline {subsubsection}{\numberline {7.16.1.1}Player()}{120}{subsubsection.7.16.1.1}
-\contentsline {subsection}{\numberline {7.16.2}Dokumentation der Elementfunktionen}{120}{subsection.7.16.2}
-\contentsline {subsubsection}{\numberline {7.16.2.1}setPosition()}{120}{subsubsection.7.16.2.1}
-\contentsline {subsection}{\numberline {7.16.3}Dokumentation der Datenelemente}{120}{subsection.7.16.3}
-\contentsline {subsubsection}{\numberline {7.16.3.1}highlighter}{120}{subsubsection.7.16.3.1}
-\contentsline {subsubsection}{\numberline {7.16.3.2}posX}{120}{subsubsection.7.16.3.2}
-\contentsline {subsubsection}{\numberline {7.16.3.3}posY}{121}{subsubsection.7.16.3.3}
-\contentsline {section}{\numberline {7.17}Point Klassenreferenz}{121}{section.7.17}
-\contentsline {subsection}{\numberline {7.17.1}Beschreibung der Konstruktoren und Destruktoren}{122}{subsection.7.17.1}
-\contentsline {subsubsection}{\numberline {7.17.1.1}Point()}{122}{subsubsection.7.17.1.1}
-\contentsline {subsection}{\numberline {7.17.2}Dokumentation der Elementfunktionen}{122}{subsection.7.17.2}
-\contentsline {subsubsection}{\numberline {7.17.2.1}add()}{122}{subsubsection.7.17.2.1}
-\contentsline {subsubsection}{\numberline {7.17.2.2}getX()}{123}{subsubsection.7.17.2.2}
-\contentsline {subsubsection}{\numberline {7.17.2.3}getY()}{124}{subsubsection.7.17.2.3}
-\contentsline {subsubsection}{\numberline {7.17.2.4}move()}{125}{subsubsection.7.17.2.4}
-\contentsline {subsubsection}{\numberline {7.17.2.5}set()}{126}{subsubsection.7.17.2.5}
-\contentsline {subsubsection}{\numberline {7.17.2.6}toTile()}{126}{subsubsection.7.17.2.6}
-\contentsline {subsection}{\numberline {7.17.3}Dokumentation der Datenelemente}{127}{subsection.7.17.3}
-\contentsline {subsubsection}{\numberline {7.17.3.1}x}{127}{subsubsection.7.17.3.1}
-\contentsline {subsubsection}{\numberline {7.17.3.2}y}{127}{subsubsection.7.17.3.2}
-\contentsline {section}{\numberline {7.18}River Klassenreferenz}{127}{section.7.18}
-\contentsline {subsection}{\numberline {7.18.1}Beschreibung der Konstruktoren und Destruktoren}{127}{subsection.7.18.1}
-\contentsline {subsubsection}{\numberline {7.18.1.1}River()}{128}{subsubsection.7.18.1.1}
-\contentsline {section}{\numberline {7.19}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{128}{section.7.19}
-\contentsline {subsection}{\numberline {7.19.1}Beschreibung der Konstruktoren und Destruktoren}{130}{subsection.7.19.1}
-\contentsline {subsubsection}{\numberline {7.19.1.1}RouteInterface()}{130}{subsubsection.7.19.1.1}
-\contentsline {subsection}{\numberline {7.19.2}Dokumentation der Elementfunktionen}{130}{subsection.7.19.2}
-\contentsline {subsubsection}{\numberline {7.19.2.1}addWagon}{130}{subsubsection.7.19.2.1}
-\contentsline {subsubsection}{\numberline {7.19.2.2}confirmRoute}{131}{subsubsection.7.19.2.2}
-\contentsline {subsubsection}{\numberline {7.19.2.3}onTileInteract}{132}{subsubsection.7.19.2.3}
-\contentsline {subsubsection}{\numberline {7.19.2.4}removeWagon}{132}{subsubsection.7.19.2.4}
-\contentsline {subsubsection}{\numberline {7.19.2.5}sendConfirmRoute}{132}{subsubsection.7.19.2.5}
-\contentsline {subsubsection}{\numberline {7.19.2.6}toggle}{133}{subsubsection.7.19.2.6}
-\contentsline {subsection}{\numberline {7.19.3}Dokumentation der Datenelemente}{133}{subsection.7.19.3}
-\contentsline {subsubsection}{\numberline {7.19.3.1}confirmBtn}{133}{subsubsection.7.19.3.1}
-\contentsline {subsubsection}{\numberline {7.19.3.2}goodSelector}{133}{subsubsection.7.19.3.2}
-\contentsline {subsubsection}{\numberline {7.19.3.3}trainRenderer}{133}{subsubsection.7.19.3.3}
-\contentsline {subsubsection}{\numberline {7.19.3.4}trainstationList}{134}{subsubsection.7.19.3.4}
-\contentsline {subsubsection}{\numberline {7.19.3.5}tsCoords}{134}{subsubsection.7.19.3.5}
-\contentsline {subsubsection}{\numberline {7.19.3.6}tsCount}{134}{subsubsection.7.19.3.6}
-\contentsline {subsubsection}{\numberline {7.19.3.7}wagonCount}{134}{subsubsection.7.19.3.7}
-\contentsline {section}{\numberline {7.20}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}List\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{134}{section.7.20}
-\contentsline {subsection}{\numberline {7.20.1}Beschreibung der Konstruktoren und Destruktoren}{135}{subsection.7.20.1}
-\contentsline {subsubsection}{\numberline {7.20.1.1}RouteListInterface()}{136}{subsubsection.7.20.1.1}
-\contentsline {subsection}{\numberline {7.20.2}Dokumentation der Elementfunktionen}{136}{subsection.7.20.2}
-\contentsline {subsubsection}{\numberline {7.20.2.1}deleteRoute}{136}{subsubsection.7.20.2.1}
-\contentsline {subsubsection}{\numberline {7.20.2.2}sendRequestRoutes}{137}{subsubsection.7.20.2.2}
-\contentsline {subsubsection}{\numberline {7.20.2.3}toggle}{137}{subsubsection.7.20.2.3}
-\contentsline {subsection}{\numberline {7.20.3}Dokumentation der Datenelemente}{137}{subsection.7.20.3}
-\contentsline {subsubsection}{\numberline {7.20.3.1}routeList}{137}{subsubsection.7.20.3.1}
-\contentsline {section}{\numberline {7.21}Scene Klassenreferenz}{138}{section.7.21}
-\contentsline {subsection}{\numberline {7.21.1}Beschreibung der Konstruktoren und Destruktoren}{140}{subsection.7.21.1}
-\contentsline {subsubsection}{\numberline {7.21.1.1}Scene()}{141}{subsubsection.7.21.1.1}
-\contentsline {subsection}{\numberline {7.21.2}Dokumentation der Elementfunktionen}{141}{subsection.7.21.2}
-\contentsline {subsubsection}{\numberline {7.21.2.1}generateWorld()}{141}{subsubsection.7.21.2.1}
-\contentsline {subsubsection}{\numberline {7.21.2.2}getTileAt()}{142}{subsubsection.7.21.2.2}
-\contentsline {subsubsection}{\numberline {7.21.2.3}onSetTile}{143}{subsubsection.7.21.2.3}
-\contentsline {subsubsection}{\numberline {7.21.2.4}setActiveTile()}{143}{subsubsection.7.21.2.4}
-\contentsline {subsubsection}{\numberline {7.21.2.5}setTileAt()}{145}{subsubsection.7.21.2.5}
-\contentsline {subsubsection}{\numberline {7.21.2.6}tick()}{145}{subsubsection.7.21.2.6}
-\contentsline {subsubsection}{\numberline {7.21.2.7}tileChanged()}{146}{subsubsection.7.21.2.7}
-\contentsline {subsubsection}{\numberline {7.21.2.8}tileUpdate}{146}{subsubsection.7.21.2.8}
-\contentsline {subsubsection}{\numberline {7.21.2.9}updatePlayerPosition}{146}{subsubsection.7.21.2.9}
-\contentsline {subsection}{\numberline {7.21.3}Dokumentation der Datenelemente}{147}{subsection.7.21.3}
-\contentsline {subsubsection}{\numberline {7.21.3.1}activeTile}{147}{subsubsection.7.21.3.1}
-\contentsline {subsubsection}{\numberline {7.21.3.2}data}{147}{subsubsection.7.21.3.2}
-\contentsline {subsubsection}{\numberline {7.21.3.3}dataModel}{147}{subsubsection.7.21.3.3}
-\contentsline {subsubsection}{\numberline {7.21.3.4}graphicsManager}{148}{subsubsection.7.21.3.4}
-\contentsline {subsubsection}{\numberline {7.21.3.5}highlighter}{148}{subsubsection.7.21.3.5}
-\contentsline {subsubsection}{\numberline {7.21.3.6}MAP\_SIZE}{148}{subsubsection.7.21.3.6}
-\contentsline {subsubsection}{\numberline {7.21.3.7}players}{148}{subsubsection.7.21.3.7}
-\contentsline {subsubsection}{\numberline {7.21.3.8}radiusHighlighter}{148}{subsubsection.7.21.3.8}
-\contentsline {subsubsection}{\numberline {7.21.3.9}secondPlayer}{148}{subsubsection.7.21.3.9}
-\contentsline {subsubsection}{\numberline {7.21.3.10}showRadius}{148}{subsubsection.7.21.3.10}
-\contentsline {subsubsection}{\numberline {7.21.3.11}textHint}{148}{subsubsection.7.21.3.11}
-\contentsline {subsubsection}{\numberline {7.21.3.12}TILE\_SIZE}{149}{subsubsection.7.21.3.12}
-\contentsline {section}{\numberline {7.22}Side\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Panel Klassenreferenz}{149}{section.7.22}
-\contentsline {subsection}{\numberline {7.22.1}Beschreibung der Konstruktoren und Destruktoren}{150}{subsection.7.22.1}
-\contentsline {subsubsection}{\numberline {7.22.1.1}SidePanel()}{150}{subsubsection.7.22.1.1}
-\contentsline {subsection}{\numberline {7.22.2}Dokumentation der Elementfunktionen}{151}{subsection.7.22.2}
-\contentsline {subsubsection}{\numberline {7.22.2.1}hookDataModel()}{151}{subsubsection.7.22.2.1}
-\contentsline {subsection}{\numberline {7.22.3}Dokumentation der Datenelemente}{151}{subsection.7.22.3}
-\contentsline {subsubsection}{\numberline {7.22.3.1}layout}{151}{subsubsection.7.22.3.1}
-\contentsline {subsubsection}{\numberline {7.22.3.2}moneyLabel}{151}{subsubsection.7.22.3.2}
-\contentsline {subsubsection}{\numberline {7.22.3.3}positionLabel}{152}{subsubsection.7.22.3.3}
-\contentsline {subsubsection}{\numberline {7.22.3.4}timeLabel}{152}{subsubsection.7.22.3.4}
-\contentsline {section}{\numberline {7.23}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tip\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Menu Klassenreferenz}{152}{section.7.23}
-\contentsline {subsection}{\numberline {7.23.1}Beschreibung der Konstruktoren und Destruktoren}{153}{subsection.7.23.1}
-\contentsline {subsubsection}{\numberline {7.23.1.1}ToolTipMenu()}{154}{subsubsection.7.23.1.1}
-\contentsline {subsection}{\numberline {7.23.2}Dokumentation der Elementfunktionen}{154}{subsection.7.23.2}
-\contentsline {subsubsection}{\numberline {7.23.2.1}hide()}{154}{subsubsection.7.23.2.1}
-\contentsline {subsubsection}{\numberline {7.23.2.2}setText()}{154}{subsubsection.7.23.2.2}
-\contentsline {subsubsection}{\numberline {7.23.2.3}showAt()}{155}{subsubsection.7.23.2.3}
-\contentsline {subsection}{\numberline {7.23.3}Dokumentation der Datenelemente}{155}{subsection.7.23.3}
-\contentsline {subsubsection}{\numberline {7.23.3.1}textlabel}{156}{subsubsection.7.23.3.1}
-\contentsline {section}{\numberline {7.24}Train\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Renderer Klassenreferenz}{156}{section.7.24}
-\contentsline {subsection}{\numberline {7.24.1}Beschreibung der Konstruktoren und Destruktoren}{158}{subsection.7.24.1}
-\contentsline {subsubsection}{\numberline {7.24.1.1}TrainRenderer()}{158}{subsubsection.7.24.1.1}
-\contentsline {subsection}{\numberline {7.24.2}Dokumentation der Elementfunktionen}{158}{subsection.7.24.2}
-\contentsline {subsubsection}{\numberline {7.24.2.1}addWagon()}{158}{subsubsection.7.24.2.1}
-\contentsline {subsubsection}{\numberline {7.24.2.2}deleteAllWagons()}{158}{subsubsection.7.24.2.2}
-\contentsline {subsubsection}{\numberline {7.24.2.3}mouseReleaseEvent}{159}{subsubsection.7.24.2.3}
-\contentsline {subsubsection}{\numberline {7.24.2.4}paintEvent()}{159}{subsubsection.7.24.2.4}
-\contentsline {subsubsection}{\numberline {7.24.2.5}triggerRemoveWagon}{159}{subsubsection.7.24.2.5}
-\contentsline {subsection}{\numberline {7.24.3}Dokumentation der Datenelemente}{159}{subsection.7.24.3}
-\contentsline {subsubsection}{\numberline {7.24.3.1}background}{159}{subsubsection.7.24.3.1}
-\contentsline {subsubsection}{\numberline {7.24.3.2}graphicsManager}{159}{subsubsection.7.24.3.2}
-\contentsline {subsubsection}{\numberline {7.24.3.3}sky}{160}{subsubsection.7.24.3.3}
-\contentsline {subsubsection}{\numberline {7.24.3.4}train}{160}{subsubsection.7.24.3.4}
-\contentsline {subsubsection}{\numberline {7.24.3.5}wagon}{160}{subsubsection.7.24.3.5}
-\contentsline {subsubsection}{\numberline {7.24.3.6}wagons}{160}{subsubsection.7.24.3.6}
-\contentsline {section}{\numberline {7.25}View Klassenreferenz}{160}{section.7.25}
-\contentsline {subsection}{\numberline {7.25.1}Beschreibung der Konstruktoren und Destruktoren}{164}{subsection.7.25.1}
-\contentsline {subsubsection}{\numberline {7.25.1.1}View()}{164}{subsubsection.7.25.1.1}
-\contentsline {subsection}{\numberline {7.25.2}Dokumentation der Elementfunktionen}{164}{subsection.7.25.2}
-\contentsline {subsubsection}{\numberline {7.25.2.1}enableAnimation()}{164}{subsubsection.7.25.2.1}
-\contentsline {subsubsection}{\numberline {7.25.2.2}fluidMove()}{165}{subsubsection.7.25.2.2}
-\contentsline {subsubsection}{\numberline {7.25.2.3}fluidMovement()}{166}{subsubsection.7.25.2.3}
-\contentsline {subsubsection}{\numberline {7.25.2.4}fluidZoom()}{166}{subsubsection.7.25.2.4}
-\contentsline {subsubsection}{\numberline {7.25.2.5}keyPressEvent()}{167}{subsubsection.7.25.2.5}
-\contentsline {subsubsection}{\numberline {7.25.2.6}leftclick()}{167}{subsubsection.7.25.2.6}
-\contentsline {subsubsection}{\numberline {7.25.2.7}mouseMoveEvent()}{168}{subsubsection.7.25.2.7}
-\contentsline {subsubsection}{\numberline {7.25.2.8}mousePressEvent()}{169}{subsubsection.7.25.2.8}
-\contentsline {subsubsection}{\numberline {7.25.2.9}mouseReleaseEvent()}{169}{subsubsection.7.25.2.9}
-\contentsline {subsubsection}{\numberline {7.25.2.10}onLeftclick}{170}{subsubsection.7.25.2.10}
-\contentsline {subsubsection}{\numberline {7.25.2.11}onRightclick}{170}{subsubsection.7.25.2.11}
-\contentsline {subsubsection}{\numberline {7.25.2.12}onTrainStationClick}{171}{subsubsection.7.25.2.12}
-\contentsline {subsubsection}{\numberline {7.25.2.13}paintEvent()}{171}{subsubsection.7.25.2.13}
-\contentsline {subsubsection}{\numberline {7.25.2.14}render()}{171}{subsubsection.7.25.2.14}
-\contentsline {subsubsection}{\numberline {7.25.2.15}rightclick()}{172}{subsubsection.7.25.2.15}
-\contentsline {subsubsection}{\numberline {7.25.2.16}setDataModel()}{172}{subsubsection.7.25.2.16}
-\contentsline {subsubsection}{\numberline {7.25.2.17}tick()}{172}{subsubsection.7.25.2.17}
-\contentsline {subsubsection}{\numberline {7.25.2.18}wheelEvent()}{173}{subsubsection.7.25.2.18}
-\contentsline {subsubsection}{\numberline {7.25.2.19}zoomInAnimation}{173}{subsubsection.7.25.2.19}
-\contentsline {subsection}{\numberline {7.25.3}Dokumentation der Datenelemente}{173}{subsection.7.25.3}
-\contentsline {subsubsection}{\numberline {7.25.3.1}codeCount}{174}{subsubsection.7.25.3.1}
-\contentsline {subsubsection}{\numberline {7.25.3.2}currentScale}{174}{subsubsection.7.25.3.2}
-\contentsline {subsubsection}{\numberline {7.25.3.3}dataModel}{174}{subsubsection.7.25.3.3}
-\contentsline {subsubsection}{\numberline {7.25.3.4}doAnimations}{174}{subsubsection.7.25.3.4}
-\contentsline {subsubsection}{\numberline {7.25.3.5}doPaint}{174}{subsubsection.7.25.3.5}
-\contentsline {subsubsection}{\numberline {7.25.3.6}dragOriginX}{174}{subsubsection.7.25.3.6}
-\contentsline {subsubsection}{\numberline {7.25.3.7}dragOriginY}{174}{subsubsection.7.25.3.7}
-\contentsline {subsubsection}{\numberline {7.25.3.8}dragPosX}{174}{subsubsection.7.25.3.8}
-\contentsline {subsubsection}{\numberline {7.25.3.9}dragPosY}{175}{subsubsection.7.25.3.9}
-\contentsline {subsubsection}{\numberline {7.25.3.10}mouseDown}{175}{subsubsection.7.25.3.10}
-\contentsline {subsubsection}{\numberline {7.25.3.11}mouseX}{175}{subsubsection.7.25.3.11}
-\contentsline {subsubsection}{\numberline {7.25.3.12}mouseY}{175}{subsubsection.7.25.3.12}
-\contentsline {subsubsection}{\numberline {7.25.3.13}scene}{175}{subsubsection.7.25.3.13}
-\contentsline {subsubsection}{\numberline {7.25.3.14}tooltip}{175}{subsubsection.7.25.3.14}
+\contentsline {subsubsection}{\numberline {7.13.2.2}MapTile()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{100}{subsubsection.7.13.2.2}
+\contentsline {subsection}{\numberline {7.13.3}Dokumentation der Elementfunktionen}{100}{subsection.7.13.3}
+\contentsline {subsubsection}{\numberline {7.13.3.1}attachGraphicsManager()}{100}{subsubsection.7.13.3.1}
+\contentsline {subsubsection}{\numberline {7.13.3.2}getCity()}{101}{subsubsection.7.13.3.2}
+\contentsline {subsubsection}{\numberline {7.13.3.3}getPixmapItem()}{101}{subsubsection.7.13.3.3}
+\contentsline {subsubsection}{\numberline {7.13.3.4}getRotation()}{102}{subsubsection.7.13.3.4}
+\contentsline {subsubsection}{\numberline {7.13.3.5}getRotationDeg()}{102}{subsubsection.7.13.3.5}
+\contentsline {subsubsection}{\numberline {7.13.3.6}getType()}{102}{subsubsection.7.13.3.6}
+\contentsline {subsubsection}{\numberline {7.13.3.7}getX()}{103}{subsubsection.7.13.3.7}
+\contentsline {subsubsection}{\numberline {7.13.3.8}getY()}{104}{subsubsection.7.13.3.8}
+\contentsline {subsubsection}{\numberline {7.13.3.9}isRail()}{104}{subsubsection.7.13.3.9}
+\contentsline {subsubsection}{\numberline {7.13.3.10}isRiver()}{105}{subsubsection.7.13.3.10}
+\contentsline {subsubsection}{\numberline {7.13.3.11}setCity()}{105}{subsubsection.7.13.3.11}
+\contentsline {subsubsection}{\numberline {7.13.3.12}setPosition()}{105}{subsubsection.7.13.3.12}
+\contentsline {subsubsection}{\numberline {7.13.3.13}setRotation()}{106}{subsubsection.7.13.3.13}
+\contentsline {subsubsection}{\numberline {7.13.3.14}setType()}{106}{subsubsection.7.13.3.14}
+\contentsline {subsection}{\numberline {7.13.4}Dokumentation der Datenelemente}{107}{subsection.7.13.4}
+\contentsline {subsubsection}{\numberline {7.13.4.1}city}{107}{subsubsection.7.13.4.1}
+\contentsline {subsubsection}{\numberline {7.13.4.2}currentRotation}{107}{subsubsection.7.13.4.2}
+\contentsline {subsubsection}{\numberline {7.13.4.3}graphicsManager}{108}{subsubsection.7.13.4.3}
+\contentsline {subsubsection}{\numberline {7.13.4.4}pixmapItem}{108}{subsubsection.7.13.4.4}
+\contentsline {subsubsection}{\numberline {7.13.4.5}type}{108}{subsubsection.7.13.4.5}
+\contentsline {section}{\numberline {7.14}Menu\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Bar Klassenreferenz}{108}{section.7.14}
+\contentsline {subsection}{\numberline {7.14.1}Beschreibung der Konstruktoren und Destruktoren}{110}{subsection.7.14.1}
+\contentsline {subsubsection}{\numberline {7.14.1.1}MenuBar()}{110}{subsubsection.7.14.1.1}
+\contentsline {subsection}{\numberline {7.14.2}Dokumentation der Elementfunktionen}{110}{subsection.7.14.2}
+\contentsline {subsubsection}{\numberline {7.14.2.1}slotCloseConnection}{110}{subsubsection.7.14.2.1}
+\contentsline {subsubsection}{\numberline {7.14.2.2}slotOpenConnection}{111}{subsubsection.7.14.2.2}
+\contentsline {subsection}{\numberline {7.14.3}Dokumentation der Datenelemente}{111}{subsection.7.14.3}
+\contentsline {subsubsection}{\numberline {7.14.3.1}dataModel}{111}{subsubsection.7.14.3.1}
+\contentsline {subsubsection}{\numberline {7.14.3.2}mapRenderer}{111}{subsubsection.7.14.3.2}
+\contentsline {subsubsection}{\numberline {7.14.3.3}routeInterface}{111}{subsubsection.7.14.3.3}
+\contentsline {subsubsection}{\numberline {7.14.3.4}routeListInterface}{111}{subsubsection.7.14.3.4}
+\contentsline {subsubsection}{\numberline {7.14.3.5}scene}{112}{subsubsection.7.14.3.5}
+\contentsline {subsubsection}{\numberline {7.14.3.6}view}{112}{subsubsection.7.14.3.6}
+\contentsline {section}{\numberline {7.15}Minimap Klassenreferenz}{112}{section.7.15}
+\contentsline {subsection}{\numberline {7.15.1}Beschreibung der Konstruktoren und Destruktoren}{114}{subsection.7.15.1}
+\contentsline {subsubsection}{\numberline {7.15.1.1}Minimap()}{114}{subsubsection.7.15.1.1}
+\contentsline {subsection}{\numberline {7.15.2}Dokumentation der Elementfunktionen}{115}{subsection.7.15.2}
+\contentsline {subsubsection}{\numberline {7.15.2.1}mouseMoveEvent()}{115}{subsubsection.7.15.2.1}
+\contentsline {subsubsection}{\numberline {7.15.2.2}mousePressEvent()}{115}{subsubsection.7.15.2.2}
+\contentsline {subsubsection}{\numberline {7.15.2.3}mouseReleaseEvent()}{116}{subsubsection.7.15.2.3}
+\contentsline {subsubsection}{\numberline {7.15.2.4}paintEvent()}{116}{subsubsection.7.15.2.4}
+\contentsline {subsubsection}{\numberline {7.15.2.5}renderMap()}{117}{subsubsection.7.15.2.5}
+\contentsline {subsubsection}{\numberline {7.15.2.6}viewChange}{117}{subsubsection.7.15.2.6}
+\contentsline {subsection}{\numberline {7.15.3}Dokumentation der Datenelemente}{117}{subsection.7.15.3}
+\contentsline {subsubsection}{\numberline {7.15.3.1}compass}{118}{subsubsection.7.15.3.1}
+\contentsline {subsubsection}{\numberline {7.15.3.2}dataModel}{118}{subsubsection.7.15.3.2}
+\contentsline {subsubsection}{\numberline {7.15.3.3}height}{118}{subsubsection.7.15.3.3}
+\contentsline {subsubsection}{\numberline {7.15.3.4}hoverCoords}{118}{subsubsection.7.15.3.4}
+\contentsline {subsubsection}{\numberline {7.15.3.5}location}{118}{subsubsection.7.15.3.5}
+\contentsline {subsubsection}{\numberline {7.15.3.6}location\_white}{118}{subsubsection.7.15.3.6}
+\contentsline {subsubsection}{\numberline {7.15.3.7}map}{118}{subsubsection.7.15.3.7}
+\contentsline {subsubsection}{\numberline {7.15.3.8}mapOverlay}{118}{subsubsection.7.15.3.8}
+\contentsline {subsubsection}{\numberline {7.15.3.9}mouseDown}{119}{subsubsection.7.15.3.9}
+\contentsline {subsubsection}{\numberline {7.15.3.10}renderCoordinates}{119}{subsubsection.7.15.3.10}
+\contentsline {subsubsection}{\numberline {7.15.3.11}scene}{119}{subsubsection.7.15.3.11}
+\contentsline {subsubsection}{\numberline {7.15.3.12}width}{119}{subsubsection.7.15.3.12}
+\contentsline {section}{\numberline {7.16}Player Klassenreferenz}{119}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Beschreibung der Konstruktoren und Destruktoren}{120}{subsection.7.16.1}
+\contentsline {subsubsection}{\numberline {7.16.1.1}Player()}{121}{subsubsection.7.16.1.1}
+\contentsline {subsection}{\numberline {7.16.2}Dokumentation der Elementfunktionen}{121}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}setPosition()}{121}{subsubsection.7.16.2.1}
+\contentsline {subsection}{\numberline {7.16.3}Dokumentation der Datenelemente}{121}{subsection.7.16.3}
+\contentsline {subsubsection}{\numberline {7.16.3.1}highlighter}{121}{subsubsection.7.16.3.1}
+\contentsline {subsubsection}{\numberline {7.16.3.2}posX}{121}{subsubsection.7.16.3.2}
+\contentsline {subsubsection}{\numberline {7.16.3.3}posY}{122}{subsubsection.7.16.3.3}
+\contentsline {section}{\numberline {7.17}Point Klassenreferenz}{122}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Beschreibung der Konstruktoren und Destruktoren}{123}{subsection.7.17.1}
+\contentsline {subsubsection}{\numberline {7.17.1.1}Point()}{123}{subsubsection.7.17.1.1}
+\contentsline {subsection}{\numberline {7.17.2}Dokumentation der Elementfunktionen}{123}{subsection.7.17.2}
+\contentsline {subsubsection}{\numberline {7.17.2.1}add()}{123}{subsubsection.7.17.2.1}
+\contentsline {subsubsection}{\numberline {7.17.2.2}getX()}{124}{subsubsection.7.17.2.2}
+\contentsline {subsubsection}{\numberline {7.17.2.3}getY()}{125}{subsubsection.7.17.2.3}
+\contentsline {subsubsection}{\numberline {7.17.2.4}move()}{126}{subsubsection.7.17.2.4}
+\contentsline {subsubsection}{\numberline {7.17.2.5}set()}{127}{subsubsection.7.17.2.5}
+\contentsline {subsubsection}{\numberline {7.17.2.6}toTile()}{127}{subsubsection.7.17.2.6}
+\contentsline {subsection}{\numberline {7.17.3}Dokumentation der Datenelemente}{128}{subsection.7.17.3}
+\contentsline {subsubsection}{\numberline {7.17.3.1}x}{128}{subsubsection.7.17.3.1}
+\contentsline {subsubsection}{\numberline {7.17.3.2}y}{128}{subsubsection.7.17.3.2}
+\contentsline {section}{\numberline {7.18}River Klassenreferenz}{128}{section.7.18}
+\contentsline {subsection}{\numberline {7.18.1}Beschreibung der Konstruktoren und Destruktoren}{128}{subsection.7.18.1}
+\contentsline {subsubsection}{\numberline {7.18.1.1}River()}{129}{subsubsection.7.18.1.1}
+\contentsline {section}{\numberline {7.19}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{129}{section.7.19}
+\contentsline {subsection}{\numberline {7.19.1}Beschreibung der Konstruktoren und Destruktoren}{131}{subsection.7.19.1}
+\contentsline {subsubsection}{\numberline {7.19.1.1}RouteInterface()}{131}{subsubsection.7.19.1.1}
+\contentsline {subsection}{\numberline {7.19.2}Dokumentation der Elementfunktionen}{131}{subsection.7.19.2}
+\contentsline {subsubsection}{\numberline {7.19.2.1}addWagon}{131}{subsubsection.7.19.2.1}
+\contentsline {subsubsection}{\numberline {7.19.2.2}confirmRoute}{132}{subsubsection.7.19.2.2}
+\contentsline {subsubsection}{\numberline {7.19.2.3}onTileInteract}{133}{subsubsection.7.19.2.3}
+\contentsline {subsubsection}{\numberline {7.19.2.4}removeWagon}{133}{subsubsection.7.19.2.4}
+\contentsline {subsubsection}{\numberline {7.19.2.5}sendConfirmRoute}{133}{subsubsection.7.19.2.5}
+\contentsline {subsubsection}{\numberline {7.19.2.6}toggle}{134}{subsubsection.7.19.2.6}
+\contentsline {subsection}{\numberline {7.19.3}Dokumentation der Datenelemente}{134}{subsection.7.19.3}
+\contentsline {subsubsection}{\numberline {7.19.3.1}confirmBtn}{134}{subsubsection.7.19.3.1}
+\contentsline {subsubsection}{\numberline {7.19.3.2}goodSelector}{134}{subsubsection.7.19.3.2}
+\contentsline {subsubsection}{\numberline {7.19.3.3}trainRenderer}{134}{subsubsection.7.19.3.3}
+\contentsline {subsubsection}{\numberline {7.19.3.4}trainstationList}{135}{subsubsection.7.19.3.4}
+\contentsline {subsubsection}{\numberline {7.19.3.5}tsCoords}{135}{subsubsection.7.19.3.5}
+\contentsline {subsubsection}{\numberline {7.19.3.6}tsCount}{135}{subsubsection.7.19.3.6}
+\contentsline {subsubsection}{\numberline {7.19.3.7}wagonCount}{135}{subsubsection.7.19.3.7}
+\contentsline {section}{\numberline {7.20}Route\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}List\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Interface Klassenreferenz}{135}{section.7.20}
+\contentsline {subsection}{\numberline {7.20.1}Beschreibung der Konstruktoren und Destruktoren}{136}{subsection.7.20.1}
+\contentsline {subsubsection}{\numberline {7.20.1.1}RouteListInterface()}{137}{subsubsection.7.20.1.1}
+\contentsline {subsection}{\numberline {7.20.2}Dokumentation der Elementfunktionen}{137}{subsection.7.20.2}
+\contentsline {subsubsection}{\numberline {7.20.2.1}deleteRoute}{137}{subsubsection.7.20.2.1}
+\contentsline {subsubsection}{\numberline {7.20.2.2}sendRequestRoutes}{138}{subsubsection.7.20.2.2}
+\contentsline {subsubsection}{\numberline {7.20.2.3}toggle}{138}{subsubsection.7.20.2.3}
+\contentsline {subsection}{\numberline {7.20.3}Dokumentation der Datenelemente}{138}{subsection.7.20.3}
+\contentsline {subsubsection}{\numberline {7.20.3.1}routeList}{138}{subsubsection.7.20.3.1}
+\contentsline {section}{\numberline {7.21}Scene Klassenreferenz}{139}{section.7.21}
+\contentsline {subsection}{\numberline {7.21.1}Beschreibung der Konstruktoren und Destruktoren}{141}{subsection.7.21.1}
+\contentsline {subsubsection}{\numberline {7.21.1.1}Scene()}{142}{subsubsection.7.21.1.1}
+\contentsline {subsection}{\numberline {7.21.2}Dokumentation der Elementfunktionen}{142}{subsection.7.21.2}
+\contentsline {subsubsection}{\numberline {7.21.2.1}generateWorld()}{142}{subsubsection.7.21.2.1}
+\contentsline {subsubsection}{\numberline {7.21.2.2}getTileAt()}{143}{subsubsection.7.21.2.2}
+\contentsline {subsubsection}{\numberline {7.21.2.3}onSetTile}{144}{subsubsection.7.21.2.3}
+\contentsline {subsubsection}{\numberline {7.21.2.4}setActiveTile()}{144}{subsubsection.7.21.2.4}
+\contentsline {subsubsection}{\numberline {7.21.2.5}setTileAt()}{146}{subsubsection.7.21.2.5}
+\contentsline {subsubsection}{\numberline {7.21.2.6}tick()}{146}{subsubsection.7.21.2.6}
+\contentsline {subsubsection}{\numberline {7.21.2.7}tileChanged()}{147}{subsubsection.7.21.2.7}
+\contentsline {subsubsection}{\numberline {7.21.2.8}tileUpdate}{147}{subsubsection.7.21.2.8}
+\contentsline {subsubsection}{\numberline {7.21.2.9}updatePlayerPosition}{147}{subsubsection.7.21.2.9}
+\contentsline {subsection}{\numberline {7.21.3}Dokumentation der Datenelemente}{148}{subsection.7.21.3}
+\contentsline {subsubsection}{\numberline {7.21.3.1}activeTile}{148}{subsubsection.7.21.3.1}
+\contentsline {subsubsection}{\numberline {7.21.3.2}data}{148}{subsubsection.7.21.3.2}
+\contentsline {subsubsection}{\numberline {7.21.3.3}dataModel}{148}{subsubsection.7.21.3.3}
+\contentsline {subsubsection}{\numberline {7.21.3.4}graphicsManager}{149}{subsubsection.7.21.3.4}
+\contentsline {subsubsection}{\numberline {7.21.3.5}highlighter}{149}{subsubsection.7.21.3.5}
+\contentsline {subsubsection}{\numberline {7.21.3.6}MAP\_SIZE}{149}{subsubsection.7.21.3.6}
+\contentsline {subsubsection}{\numberline {7.21.3.7}players}{149}{subsubsection.7.21.3.7}
+\contentsline {subsubsection}{\numberline {7.21.3.8}radiusHighlighter}{149}{subsubsection.7.21.3.8}
+\contentsline {subsubsection}{\numberline {7.21.3.9}secondPlayer}{149}{subsubsection.7.21.3.9}
+\contentsline {subsubsection}{\numberline {7.21.3.10}showRadius}{149}{subsubsection.7.21.3.10}
+\contentsline {subsubsection}{\numberline {7.21.3.11}textHint}{149}{subsubsection.7.21.3.11}
+\contentsline {subsubsection}{\numberline {7.21.3.12}TILE\_SIZE}{150}{subsubsection.7.21.3.12}
+\contentsline {section}{\numberline {7.22}Side\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Panel Klassenreferenz}{150}{section.7.22}
+\contentsline {subsection}{\numberline {7.22.1}Beschreibung der Konstruktoren und Destruktoren}{151}{subsection.7.22.1}
+\contentsline {subsubsection}{\numberline {7.22.1.1}SidePanel()}{151}{subsubsection.7.22.1.1}
+\contentsline {subsection}{\numberline {7.22.2}Dokumentation der Elementfunktionen}{152}{subsection.7.22.2}
+\contentsline {subsubsection}{\numberline {7.22.2.1}hookDataModel()}{152}{subsubsection.7.22.2.1}
+\contentsline {subsection}{\numberline {7.22.3}Dokumentation der Datenelemente}{152}{subsection.7.22.3}
+\contentsline {subsubsection}{\numberline {7.22.3.1}layout}{152}{subsubsection.7.22.3.1}
+\contentsline {subsubsection}{\numberline {7.22.3.2}moneyLabel}{152}{subsubsection.7.22.3.2}
+\contentsline {subsubsection}{\numberline {7.22.3.3}positionLabel}{153}{subsubsection.7.22.3.3}
+\contentsline {subsubsection}{\numberline {7.22.3.4}timeLabel}{153}{subsubsection.7.22.3.4}
+\contentsline {section}{\numberline {7.23}Tool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tip\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Menu Klassenreferenz}{153}{section.7.23}
+\contentsline {subsection}{\numberline {7.23.1}Beschreibung der Konstruktoren und Destruktoren}{154}{subsection.7.23.1}
+\contentsline {subsubsection}{\numberline {7.23.1.1}ToolTipMenu()}{155}{subsubsection.7.23.1.1}
+\contentsline {subsection}{\numberline {7.23.2}Dokumentation der Elementfunktionen}{155}{subsection.7.23.2}
+\contentsline {subsubsection}{\numberline {7.23.2.1}hide()}{155}{subsubsection.7.23.2.1}
+\contentsline {subsubsection}{\numberline {7.23.2.2}setText()}{155}{subsubsection.7.23.2.2}
+\contentsline {subsubsection}{\numberline {7.23.2.3}showAt()}{156}{subsubsection.7.23.2.3}
+\contentsline {subsection}{\numberline {7.23.3}Dokumentation der Datenelemente}{156}{subsection.7.23.3}
+\contentsline {subsubsection}{\numberline {7.23.3.1}textlabel}{157}{subsubsection.7.23.3.1}
+\contentsline {section}{\numberline {7.24}Train\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Renderer Klassenreferenz}{157}{section.7.24}
+\contentsline {subsection}{\numberline {7.24.1}Beschreibung der Konstruktoren und Destruktoren}{159}{subsection.7.24.1}
+\contentsline {subsubsection}{\numberline {7.24.1.1}TrainRenderer()}{159}{subsubsection.7.24.1.1}
+\contentsline {subsection}{\numberline {7.24.2}Dokumentation der Elementfunktionen}{159}{subsection.7.24.2}
+\contentsline {subsubsection}{\numberline {7.24.2.1}addWagon()}{159}{subsubsection.7.24.2.1}
+\contentsline {subsubsection}{\numberline {7.24.2.2}deleteAllWagons()}{159}{subsubsection.7.24.2.2}
+\contentsline {subsubsection}{\numberline {7.24.2.3}mouseReleaseEvent}{160}{subsubsection.7.24.2.3}
+\contentsline {subsubsection}{\numberline {7.24.2.4}paintEvent()}{160}{subsubsection.7.24.2.4}
+\contentsline {subsubsection}{\numberline {7.24.2.5}triggerRemoveWagon}{160}{subsubsection.7.24.2.5}
+\contentsline {subsection}{\numberline {7.24.3}Dokumentation der Datenelemente}{160}{subsection.7.24.3}
+\contentsline {subsubsection}{\numberline {7.24.3.1}background}{160}{subsubsection.7.24.3.1}
+\contentsline {subsubsection}{\numberline {7.24.3.2}graphicsManager}{160}{subsubsection.7.24.3.2}
+\contentsline {subsubsection}{\numberline {7.24.3.3}sky}{161}{subsubsection.7.24.3.3}
+\contentsline {subsubsection}{\numberline {7.24.3.4}train}{161}{subsubsection.7.24.3.4}
+\contentsline {subsubsection}{\numberline {7.24.3.5}wagon}{161}{subsubsection.7.24.3.5}
+\contentsline {subsubsection}{\numberline {7.24.3.6}wagons}{161}{subsubsection.7.24.3.6}
+\contentsline {section}{\numberline {7.25}View Klassenreferenz}{161}{section.7.25}
+\contentsline {subsection}{\numberline {7.25.1}Beschreibung der Konstruktoren und Destruktoren}{165}{subsection.7.25.1}
+\contentsline {subsubsection}{\numberline {7.25.1.1}View()}{165}{subsubsection.7.25.1.1}
+\contentsline {subsection}{\numberline {7.25.2}Dokumentation der Elementfunktionen}{165}{subsection.7.25.2}
+\contentsline {subsubsection}{\numberline {7.25.2.1}enableAnimation()}{165}{subsubsection.7.25.2.1}
+\contentsline {subsubsection}{\numberline {7.25.2.2}fluidMove()}{166}{subsubsection.7.25.2.2}
+\contentsline {subsubsection}{\numberline {7.25.2.3}fluidMovement()}{167}{subsubsection.7.25.2.3}
+\contentsline {subsubsection}{\numberline {7.25.2.4}fluidZoom()}{167}{subsubsection.7.25.2.4}
+\contentsline {subsubsection}{\numberline {7.25.2.5}keyPressEvent()}{168}{subsubsection.7.25.2.5}
+\contentsline {subsubsection}{\numberline {7.25.2.6}leftclick()}{168}{subsubsection.7.25.2.6}
+\contentsline {subsubsection}{\numberline {7.25.2.7}mouseMoveEvent()}{169}{subsubsection.7.25.2.7}
+\contentsline {subsubsection}{\numberline {7.25.2.8}mousePressEvent()}{170}{subsubsection.7.25.2.8}
+\contentsline {subsubsection}{\numberline {7.25.2.9}mouseReleaseEvent()}{170}{subsubsection.7.25.2.9}
+\contentsline {subsubsection}{\numberline {7.25.2.10}onLeftclick}{171}{subsubsection.7.25.2.10}
+\contentsline {subsubsection}{\numberline {7.25.2.11}onRightclick}{171}{subsubsection.7.25.2.11}
+\contentsline {subsubsection}{\numberline {7.25.2.12}onTrainStationClick}{172}{subsubsection.7.25.2.12}
+\contentsline {subsubsection}{\numberline {7.25.2.13}paintEvent()}{172}{subsubsection.7.25.2.13}
+\contentsline {subsubsection}{\numberline {7.25.2.14}render()}{172}{subsubsection.7.25.2.14}
+\contentsline {subsubsection}{\numberline {7.25.2.15}rightclick()}{173}{subsubsection.7.25.2.15}
+\contentsline {subsubsection}{\numberline {7.25.2.16}setDataModel()}{173}{subsubsection.7.25.2.16}
+\contentsline {subsubsection}{\numberline {7.25.2.17}tick()}{173}{subsubsection.7.25.2.17}
+\contentsline {subsubsection}{\numberline {7.25.2.18}wheelEvent()}{174}{subsubsection.7.25.2.18}
+\contentsline {subsubsection}{\numberline {7.25.2.19}zoomInAnimation}{174}{subsubsection.7.25.2.19}
+\contentsline {subsection}{\numberline {7.25.3}Dokumentation der Datenelemente}{174}{subsection.7.25.3}
+\contentsline {subsubsection}{\numberline {7.25.3.1}codeCount}{175}{subsubsection.7.25.3.1}
+\contentsline {subsubsection}{\numberline {7.25.3.2}currentScale}{175}{subsubsection.7.25.3.2}
+\contentsline {subsubsection}{\numberline {7.25.3.3}dataModel}{175}{subsubsection.7.25.3.3}
+\contentsline {subsubsection}{\numberline {7.25.3.4}doAnimations}{175}{subsubsection.7.25.3.4}
+\contentsline {subsubsection}{\numberline {7.25.3.5}doPaint}{175}{subsubsection.7.25.3.5}
+\contentsline {subsubsection}{\numberline {7.25.3.6}dragOriginX}{175}{subsubsection.7.25.3.6}
+\contentsline {subsubsection}{\numberline {7.25.3.7}dragOriginY}{175}{subsubsection.7.25.3.7}
+\contentsline {subsubsection}{\numberline {7.25.3.8}dragPosX}{175}{subsubsection.7.25.3.8}
+\contentsline {subsubsection}{\numberline {7.25.3.9}dragPosY}{176}{subsubsection.7.25.3.9}
+\contentsline {subsubsection}{\numberline {7.25.3.10}mouseDown}{176}{subsubsection.7.25.3.10}
+\contentsline {subsubsection}{\numberline {7.25.3.11}mouseX}{176}{subsubsection.7.25.3.11}
+\contentsline {subsubsection}{\numberline {7.25.3.12}mouseY}{176}{subsubsection.7.25.3.12}
+\contentsline {subsubsection}{\numberline {7.25.3.13}scene}{176}{subsubsection.7.25.3.13}
+\contentsline {subsubsection}{\numberline {7.25.3.14}tooltip}{176}{subsubsection.7.25.3.14}
 \contentsline {chapter}{\numberline {8}Datei-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dokumentation}{177}{chapter.8}
 \contentsline {section}{\numberline {8.1}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.cpp-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{177}{section.8.1}
 \contentsline {section}{\numberline {8.2}src/application\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}server/animationentity.h-\/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dateireferenz}{177}{section.8.2}

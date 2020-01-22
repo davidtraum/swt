@@ -127,6 +127,12 @@ long \mbox{\hyperlink{classMapRenderer_ab9fd15b49ae3ceb4e72556fe391a6099}{last\+
 \item 
 int \mbox{\hyperlink{classMapRenderer_af3d50b6c4d191b4cb119dacc1aeffb43}{frame\+Count}} \{0\}
 \item 
+int \mbox{\hyperlink{classMapRenderer_a72c4a62cb4485d0008aa724a0db40d25}{ticks\+Skipped}} \{0\}
+\item 
+int \mbox{\hyperlink{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}{time\+To\+Render}} \{0\}
+\item 
+int \mbox{\hyperlink{classMapRenderer_abbb6e52787dbe614ce9153a1d9263eb6}{framerate\+Delay}} \{20\}
+\item 
 int \mbox{\hyperlink{classMapRenderer_aa0ec851388918d4a13d329cf088b4c69}{fps}} \{0\}
 \item 
 double \mbox{\hyperlink{classMapRenderer_a157332ede504131e45f7482d7b6c7118}{vx}} \{0\}
@@ -687,6 +693,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{frameCount}{frameCount}}
 {\footnotesize\ttfamily int Map\+Renderer\+::frame\+Count \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMapRenderer_abbb6e52787dbe614ce9153a1d9263eb6}\label{classMapRenderer_abbb6e52787dbe614ce9153a1d9263eb6}} 
+\index{MapRenderer@{MapRenderer}!framerateDelay@{framerateDelay}}
+\index{framerateDelay@{framerateDelay}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{framerateDelay}{framerateDelay}}
+{\footnotesize\ttfamily int Map\+Renderer\+::framerate\+Delay \{20\}\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classMapRenderer_a79778cecbf7f8fbab2619f821d82eb6c}\label{classMapRenderer_a79778cecbf7f8fbab2619f821d82eb6c}} 
 \index{MapRenderer@{MapRenderer}!graphicsManager@{graphicsManager}}
 \index{graphicsManager@{graphicsManager}!MapRenderer@{MapRenderer}}
@@ -789,11 +801,23 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{showHighlight}{showHighlight}}
 {\footnotesize\ttfamily bool Map\+Renderer\+::show\+Highlight \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMapRenderer_a72c4a62cb4485d0008aa724a0db40d25}\label{classMapRenderer_a72c4a62cb4485d0008aa724a0db40d25}} 
+\index{MapRenderer@{MapRenderer}!ticksSkipped@{ticksSkipped}}
+\index{ticksSkipped@{ticksSkipped}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{ticksSkipped}{ticksSkipped}}
+{\footnotesize\ttfamily int Map\+Renderer\+::ticks\+Skipped \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classMapRenderer_ae87488b2b2aec44b5ae36e8cda4ed393}\label{classMapRenderer_ae87488b2b2aec44b5ae36e8cda4ed393}} 
 \index{MapRenderer@{MapRenderer}!tileSize@{tileSize}}
 \index{tileSize@{tileSize}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{tileSize}{tileSize}}
 {\footnotesize\ttfamily int Map\+Renderer\+::tile\+Size \{64\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}\label{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}} 
+\index{MapRenderer@{MapRenderer}!timeToRender@{timeToRender}}
+\index{timeToRender@{timeToRender}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{timeToRender}{timeToRender}}
+{\footnotesize\ttfamily int Map\+Renderer\+::time\+To\+Render \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_a157332ede504131e45f7482d7b6c7118}\label{classMapRenderer_a157332ede504131e45f7482d7b6c7118}} 
 \index{MapRenderer@{MapRenderer}!vx@{vx}}

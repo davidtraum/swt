@@ -65,6 +65,9 @@ private:
     QList<AnimationMovement *> movementAnimations;
     long lastFpsTake{0};
     int frameCount{0};
+    int ticksSkipped{0};
+    int timeToRender{0};
+    int framerateDelay{20};
     int fps{0};
     double vx{0},vy{0};
     int moveStepsLeft{0};
