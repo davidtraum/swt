@@ -535,7 +535,7 @@ void MapRenderer::cloudAnimation()
     img = img.scaled(img.width()*3, img.height()*3);
     QString paths[] = {
         "140:140;100:100",
-        "160:140;200:100",
+        "160:150;200:100",
         "160:160;200:200",
         "160:160;200:100"
     };
