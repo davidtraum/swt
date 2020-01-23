@@ -76,7 +76,6 @@ void Client::run() {
                 }
 
                 */
-
             input = socket->read(1);
             if(input.at(0) == char(255)){
                 while(socket->bytesAvailable()<=0);
@@ -84,6 +83,7 @@ void Client::run() {
                 while(socket->bytesAvailable()<input[0]);
                 data = socket->read(input[0]);
                 processCommand(data);
+                msleep(1);
             }
 
             //socket->flush();

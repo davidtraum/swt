@@ -280,7 +280,7 @@ void MapRenderer::tick()
         ticksSkipped=0;
     }
     ticksSkipped++;
-    if(timeSinceCloudSpawn>5000){
+    if(timeSinceCloudSpawn>2000){
         spawnCloud();
         timeSinceCloudSpawn = 0;
     }
