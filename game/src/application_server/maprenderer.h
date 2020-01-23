@@ -11,6 +11,7 @@
 #include "point.h"
 #include "animationmovement.h"
 #include "sprite.h"
+#include "mousedecor.h"
 
 class MapRenderer: public QWidget
 {

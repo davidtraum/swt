@@ -32,6 +32,7 @@ SOURCES += \
     maptile.cpp \
     menubar.cpp \
     minimap.cpp \
+    mousedecor.cpp \
     player.cpp \
     point.cpp \
     renderthread.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     maptile.h \
     menubar.h \
     minimap.h \
+    mousedecor.h \
     player.h \
     point.h \
     renderthread.h \

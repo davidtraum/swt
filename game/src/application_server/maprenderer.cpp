@@ -24,6 +24,8 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     }
 
     data[150][150].setType(MapTile::DEPOT_H);
+    data[150][151].setType(MapTile::STATION_H);
+    data[150][152].setType(MapTile::TERMINAL_H);
 
     QWidget::setMouseTracking(true);
     QWidget::setFocusPolicy(Qt::FocusPolicy::StrongFocus);
@@ -88,11 +90,25 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                 painter->drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
             }
     }
-
+    Point pos = toScreenPosition(activeTile.getX(), activeTile.getY());
     if(showHighlight){
-        Point pos = toScreenPosition(activeTile.getX(), activeTile.getY());
         painter->drawRect(pos.getX(), pos.getY(), tileSize,tileSize);
     }
+
+            switch(data[activeTile.getX()][activeTile.getY()].getType()){
+                case MapTile::DEPOT_H:
+                case MapTile::DEPOT_V:
+                    painter->drawRect(pos.getX()-dataModel->RADIUS_DEPOT, pos.getY()-dataModel->RADIUS_DEPOT, dataModel->RADIUS_DEPOT*2+64, dataModel->RADIUS_DEPOT*2+64);
+                    break;
+                case MapTile::STATION_H:
+                case MapTile::STATION_V:
+                    painter->drawRect(pos.getX()-dataModel->RADIUS_STATION, pos.getY()-dataModel->RADIUS_STATION, dataModel->RADIUS_STATION*2+64, dataModel->RADIUS_STATION*2+64);
+                    break;
+                case MapTile::TERMINAL_H:
+                case MapTile::TERMINAL_V:
+                    painter->drawRect(pos.getX()-dataModel->RADIUS_TERMINAL, pos.getY()-dataModel->RADIUS_TERMINAL, dataModel->RADIUS_TERMINAL*2+64, dataModel->RADIUS_TERMINAL*2+64);
+                    break;
+            }
 
 
     QWidget::paintEvent(event);

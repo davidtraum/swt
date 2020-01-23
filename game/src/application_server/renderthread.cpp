@@ -16,9 +16,8 @@ RenderThread::RenderThread(MapRenderer * pRenderer):
  */
 void RenderThread::run()
 {
-    qDebug() << "Render Thread gestartet";
     while(true){
-        QThread::msleep(1);
+        QThread::msleep(2);
         renderer->renderFrame();
     }
 }
