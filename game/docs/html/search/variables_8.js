@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['image_675',['image',['../classAnimationEntity.html#a038fe084db31d6e1d3109cec347f6fdf',1,'AnimationEntity']]],
-  ['ip_676',['ip',['../classDataModel.html#a32e94d7559dea5f25325d481ed30d513',1,'DataModel']]],
-  ['item_677',['item',['../classAnimationMovement.html#aed8f02f150d63181d6cf43ccf72d16a3',1,'AnimationMovement']]]
+  ['image_689',['image',['../classAnimationEntity.html#a038fe084db31d6e1d3109cec347f6fdf',1,'AnimationEntity']]],
+  ['images_690',['images',['../classSprite.html#aac4bb2b6c633581edda8a82c34dec7dc',1,'Sprite']]],
+  ['index_691',['index',['../classSprite.html#a69aec04a5200f8fc3711878b70adf900',1,'Sprite']]],
+  ['ip_692',['ip',['../classDataModel.html#a32e94d7559dea5f25325d481ed30d513',1,'DataModel']]],
+  ['item_693',['item',['../classAnimationMovement.html#aed8f02f150d63181d6cf43ccf72d16a3',1,'AnimationMovement']]]
 ];

@@ -10,6 +10,7 @@
 #include "maptile.h"
 #include "point.h"
 #include "animationmovement.h"
+#include "sprite.h"
 
 class MapRenderer: public QWidget
 {
@@ -52,6 +53,8 @@ public:
     MapTile data[300][300];
     Point offset{145*64,145*64};
     int codeCount;
+
+    Sprite * testSprite;
 
 private:
     GraphicsManager * graphicsManager;

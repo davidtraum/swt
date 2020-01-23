@@ -40,6 +40,7 @@ SOURCES += \
     routelistinterface.cpp \
     scene.cpp \
     sidepanel.cpp \
+    sprite.cpp \
     tooltipmenu.cpp \
     trainrenderer.cpp \
     view.cpp
@@ -69,6 +70,7 @@ HEADERS += \
     routeinterface.h \
     scene.h \
     sidepanel.h \
+    sprite.h \
     tooltipmenu.h \
     tooltipmenu.h \
     trainrenderer.h \

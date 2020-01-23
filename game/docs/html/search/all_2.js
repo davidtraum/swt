@@ -19,6 +19,7 @@ var searchData=
   ['coordinatex_38',['coordinateX',['../classDataModel.html#adddcc70d54445fd7e93ec7016c06ca66',1,'DataModel']]],
   ['coordinatey_39',['coordinateY',['../classDataModel.html#a0dcb89a7fda479001ef8f92203c00d43',1,'DataModel']]],
   ['corn_40',['CORN',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5afa7d344048608f12f4bda47bb3ef6f87',1,'MapTile']]],
-  ['currentrotation_41',['currentRotation',['../classMapTile.html#a5008fe4f2e62b24dfc56a6366e68f4f5',1,'MapTile']]],
-  ['currentscale_42',['currentScale',['../classView.html#a01cf6ac75c04e38bfb0b471c22b21697',1,'View']]]
+  ['count_41',['count',['../classSprite.html#aad16c963b4bdd44da65d228c357b737f',1,'Sprite']]],
+  ['currentrotation_42',['currentRotation',['../classMapTile.html#a5008fe4f2e62b24dfc56a6366e68f4f5',1,'MapTile']]],
+  ['currentscale_43',['currentScale',['../classView.html#a01cf6ac75c04e38bfb0b471c22b21697',1,'View']]]
 ];

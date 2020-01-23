@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <ctime>
 #include <QHBoxLayout>
+#include "sprite.h"
 
 /**
  * @brief MapRenderer::MapRenderer Erzeugt einen neuen MapRenderer
@@ -29,6 +30,8 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     QWidget::setFocus();
 
     buffer = new QPixmap(this->width(), this->height());
+
+    testSprite = new Sprite(new QImage(":/images/sprite/sheet_explosion.png"), 25,64);
 
     showHighlight = true;
     codeCount = 0;
@@ -100,6 +103,9 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         painterReal.drawImage(0,0,buffer->toImage().scaled(buffer->width()*scale, buffer->height()*scale));
     }
 
+    painterReal.drawImage(0,0,testSprite->getImage().scaled(256,256));
+
+
     if(showExpertDetails){
         painterReal.drawText(10,20, "Render Details (F3)");
         painterReal.drawText(10,40,"Render Time: " + QString::number(renderTime/1000) + "ms");
@@ -148,6 +154,7 @@ void MapRenderer::mousePressEvent(QMouseEvent *event)
     mouseDown = true;
     dragPosition.set(event->x(), event->y());
     dragOrigin.set(event->x(), event->y());
+    QWidget::setCursor(QCursor(Qt::PointingHandCursor));
 }
 
 void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
@@ -158,6 +165,7 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
         emit leftclick();
         emit tileClick(activeTile.getX(), activeTile.getY(), data[activeTile.getX()][activeTile.getY()].getType());
     }
+    QWidget::setCursor(QCursor());
 }
 
 void MapRenderer::mouseMoveEvent(QMouseEvent *event)
@@ -272,7 +280,7 @@ void MapRenderer::tick()
         ticksSkipped=0;
     }
     ticksSkipped++;
-    if(timeSinceCloudSpawn>2000){
+    if(timeSinceCloudSpawn>5000){
         spawnCloud();
         timeSinceCloudSpawn = 0;
     }
@@ -284,6 +292,7 @@ void MapRenderer::tick()
  */
 void MapRenderer::logicUpdate()
 {
+    testSprite->step();
     for(AnimationMovement * anim : movementAnimations){
         if(anim->move()){
             movementAnimations.removeOne(anim);

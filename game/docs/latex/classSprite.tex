@@ -1,0 +1,112 @@
+\hypertarget{classSprite}{}\doxysection{Sprite Klassenreferenz}
+\label{classSprite}\index{Sprite@{Sprite}}
+
+
+{\ttfamily \#include $<$sprite.\+h$>$}
+
+
+
+Zusammengehörigkeiten von Sprite\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classSprite__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSprite_a58ee2f1b922726cadeb3bc821ecd3223}{Sprite}} (Q\+Image $\ast$, int, int)
+\item 
+Q\+Image \mbox{\hyperlink{classSprite_a37b20fb41171754d6cc893a1efe9cea8}{get\+Image}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSprite_a37b20fb41171754d6cc893a1efe9cea8}{Sprite\+::get\+Image}} Liefert das aktuelle Bild des Sprites zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSprite_a27169dde66b588811cd6165c5f26c67f}{step}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSprite_a27169dde66b588811cd6165c5f26c67f}{Sprite\+::step}} Führt einen Animationsschritt durch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+Q\+List$<$ Q\+Image $>$ \mbox{\hyperlink{classSprite_aac4bb2b6c633581edda8a82c34dec7dc}{images}}
+\item 
+int \mbox{\hyperlink{classSprite_a69aec04a5200f8fc3711878b70adf900}{index}} \{0\}
+\item 
+int \mbox{\hyperlink{classSprite_aad16c963b4bdd44da65d228c357b737f}{count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\mbox{\Hypertarget{classSprite_a58ee2f1b922726cadeb3bc821ecd3223}\label{classSprite_a58ee2f1b922726cadeb3bc821ecd3223}} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{Q\+Image $\ast$}]{p\+Image,  }\item[{int}]{p\+Count,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classSprite_a37b20fb41171754d6cc893a1efe9cea8}\label{classSprite_a37b20fb41171754d6cc893a1efe9cea8}} 
+\index{Sprite@{Sprite}!getImage@{getImage}}
+\index{getImage@{getImage}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily Q\+Image Sprite\+::get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classSprite_a37b20fb41171754d6cc893a1efe9cea8}{Sprite\+::get\+Image}} Liefert das aktuelle Bild des Sprites zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Das aktuelle Bild. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classSprite_a37b20fb41171754d6cc893a1efe9cea8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSprite_a27169dde66b588811cd6165c5f26c67f}\label{classSprite_a27169dde66b588811cd6165c5f26c67f}} 
+\index{Sprite@{Sprite}!step@{step}}
+\index{step@{step}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily void Sprite\+::step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classSprite_a27169dde66b588811cd6165c5f26c67f}{Sprite\+::step}} Führt einen Animationsschritt durch. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSprite_a27169dde66b588811cd6165c5f26c67f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classSprite_aad16c963b4bdd44da65d228c357b737f}\label{classSprite_aad16c963b4bdd44da65d228c357b737f}} 
+\index{Sprite@{Sprite}!count@{count}}
+\index{count@{count}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int Sprite\+::count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSprite_aac4bb2b6c633581edda8a82c34dec7dc}\label{classSprite_aac4bb2b6c633581edda8a82c34dec7dc}} 
+\index{Sprite@{Sprite}!images@{images}}
+\index{images@{images}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{images}{images}}
+{\footnotesize\ttfamily Q\+List$<$Q\+Image$>$ Sprite\+::images\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSprite_a69aec04a5200f8fc3711878b70adf900}\label{classSprite_a69aec04a5200f8fc3711878b70adf900}} 
+\index{Sprite@{Sprite}!index@{index}}
+\index{index@{index}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int Sprite\+::index \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/application\+\_\+server/\mbox{\hyperlink{sprite_8h}{sprite.\+h}}\item 
+src/application\+\_\+server/\mbox{\hyperlink{sprite_8cpp}{sprite.\+cpp}}\end{DoxyCompactItemize}
