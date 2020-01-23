@@ -20,7 +20,7 @@ class WayLogic:
         wayTmp.append(karte[pXA][pYA])
         
         case = 0
-
+        print("neuer Aufruf")
         while(True):
 
             if(case == 0):

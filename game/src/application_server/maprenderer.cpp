@@ -31,7 +31,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
 
     buffer = new QPixmap(this->width(), this->height());
 
-    testSprite = new Sprite(new QImage(":/images/sprite/sheet_explosion.png"), 25,64);
+//testSprite = new Sprite(new QImage(":/images/sprite/sheet_explosion.png"), 25,64);
 
     showHighlight = true;
     codeCount = 0;
@@ -103,7 +103,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         painterReal.drawImage(0,0,buffer->toImage().scaled(buffer->width()*scale, buffer->height()*scale));
     }
 
-    painterReal.drawImage(0,0,testSprite->getImage().scaled(256,256));
+    //painterReal.drawImage(0,0,testSprite->getImage().scaled(256,256));
 
 
     if(showExpertDetails){
@@ -292,7 +292,7 @@ void MapRenderer::tick()
  */
 void MapRenderer::logicUpdate()
 {
-    testSprite->step();
+    //testSprite->step();
     for(AnimationMovement * anim : movementAnimations){
         if(anim->move()){
             movementAnimations.removeOne(anim);

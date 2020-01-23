@@ -54,7 +54,7 @@ public:
     Point offset{145*64,145*64};
     int codeCount;
 
-    Sprite * testSprite;
+    //Sprite * testSprite;
 
 private:
     GraphicsManager * graphicsManager;

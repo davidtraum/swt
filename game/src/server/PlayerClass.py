@@ -54,13 +54,10 @@ class Player:
 
     def startRoute(self, pStations, pWagons):     #Startet die übergebene Route
         tsTmp = []
-        print("Test1")
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
-            print("Test2")
         routeTmp = RouteLogic(None, tsTmp, pWagons, self.karte)
-        handOver = routeTmp.sendProtocolString()
-        self.tasks.append(routeTmp)
+        handOver = routeTmp.sendProtocolString()        
         return handOver
         
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
