@@ -26,21 +26,26 @@ class RouteLogic:
             x1 = self.trainstations[i].getX()
             y1 = self.trainstations[i].getY()
             x2 = self.trainstations[i+1].getX()
-            y2 = self.trainstations[i+1].getY()  
-            tmpCurves += WayLogic.getCurves(self.karte, x1, y1, x2, y2)
-            tmpCurves += ';'
-        print(tmpCurves)
+            y2 = self.trainstations[i+1].getY()
+            if(x1 != x2 and y1 != y2): 
+                tmpCurves += WayLogic.getCurves(self.karte, x1, y1, x2, y2)
+                tmpCurves += ';'                
         x1 = self.trainstations[0].getX()
         y1 = self.trainstations[0].getY()
         x2 = self.trainstations[-1].getX()
         y2 = self.trainstations[-1].getY()
-
-        print("DAS MUSS REIN ------------  " +  WayLogic.getCurves(self.karte, x2, y2, x1, y1, True))
         
         if (WayLogic.getCurves(self.karte, x2, y2, x1, y1, True) == ""):
             tmpCurves = tmpCurves[:-1]
         
-        return str(self.countId) + "+" + str(x1) + ":" + str(y1) + ";" + tmpCurves + WayLogic.getCurves(self.karte, x2, y2, x1, y1, True)
+        if(x1 != x2 and y1 != y2):
+            print("wayBack")
+            wayBack = WayLogic.getCurves(self.karte, x2, y2, x1, y1, True)
+            print("wayBackhatgeklappt")
+        else:
+            wayBack = ''
+
+        return str(self.countId) + "+" + str(x1) + ":" + str(y1) + ";" + tmpCurves + wayBack
 
     
     def calculateTime(self):    #Berechnet die benötigte Zeit, die die Route in Anspruch nimmt

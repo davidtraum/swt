@@ -510,7 +510,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     print(*wagonTypes, sep='_', end='\n')
 
                     handOver = self.player.addRoute(tsStops, wagonTypes)
-                    broadcast()
+                    broadcast("ROUTE+PLAY+" + handOver)
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
                     handOver = "ROUTES+"
