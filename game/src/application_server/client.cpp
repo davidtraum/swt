@@ -48,6 +48,7 @@ void Client::run() {
     QString overshoot = "";
     QByteArray input;
     int length = 0;
+    int count = 0;
     while(true){
         //socket->waitForReadyRead();
         if (socket->bytesAvailable()>0){
@@ -83,7 +84,11 @@ void Client::run() {
                 while(socket->bytesAvailable()<input[0]);
                 data = socket->read(input[0]);
                 processCommand(data);
-                msleep(1);
+                count++;
+                if(count>5){
+                    msleep(1);
+                    count=0;
+                }
             }
 
             //socket->flush();

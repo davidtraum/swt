@@ -19,10 +19,13 @@ AnimationMovement::AnimationMovement(AnimationEntity * pItem, QString pPath):
  * @param path Ein String im Format X1:Y1;X2:Y2;X3:Y3...
  */
 void AnimationMovement::parsePath(QString data) {
+    qDebug() << "Parsing animation " << data;
     QStringList points = data.split(";");
     for(QString point : points){
         QStringList coords = point.split(":");
-        path.push_back(new Point(coords[0].toInt()*64, coords[1].toInt()*64));
+        if(coords.length()==2){
+            path.push_back(new Point(coords[0].toInt()*64, coords[1].toInt()*64));
+        }
     }
 }
 
@@ -36,6 +39,7 @@ AnimationEntity *AnimationMovement::getEntity()
  */
 bool AnimationMovement::move() {
     if(pointIndex==-1){
+        if(path.length()<=1)return true;
         item->setPosition(path.first()->getX(), path.first()->getY());
         pointIndex=1;
         calculateVector(0,1);

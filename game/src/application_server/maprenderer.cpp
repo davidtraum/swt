@@ -313,6 +313,7 @@ void MapRenderer::logicUpdate()
         if(anim->move()){
             movementAnimations.removeOne(anim);
             delete anim;
+            break;
         }else{
             Point pos = anim->getEntity()->getPosition();
             pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
