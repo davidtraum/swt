@@ -132,6 +132,7 @@ void RouteInterface::confirmRoute()
     }
     handOver += "~";
     emit sendConfirmRoute(handOver);
+    this->toggle();
 }
 
 void RouteInterface::removeWagon() {
