@@ -22,12 +22,15 @@ class RouteLogic:
 
     def sendProtocolString(self):
         tmpCurves = ''
+        for i in range(len(self.trainstations)):
+            print(self.trainstations[i].getX())
+        print(self.trainstations)
         for i in range(len(self.trainstations)-1):
             x1 = self.trainstations[i].getX()
             y1 = self.trainstations[i].getY()
             x2 = self.trainstations[i+1].getX()
             y2 = self.trainstations[i+1].getY()
-            if(x1 != x2 and y1 != y2): 
+            if(x1 != x2 or y1 != y2): 
                 tmpCurves += WayLogic.getCurves(self.karte, x1, y1, x2, y2)
                 tmpCurves += ';'                
         x1 = self.trainstations[0].getX()
@@ -38,7 +41,7 @@ class RouteLogic:
         if (WayLogic.getCurves(self.karte, x2, y2, x1, y1, True) == ""):
             tmpCurves = tmpCurves[:-1]
         
-        if(x1 != x2 and y1 != y2):
+        if(x1 != x2 or y1 != y2):
             print("wayBack")
             wayBack = WayLogic.getCurves(self.karte, x2, y2, x1, y1, True)
             print("wayBackhatgeklappt")
