@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QList>
+#include <QThread>
 
 #include "graphicsmanager.h"
 #include "datamodel.h"
@@ -25,6 +26,8 @@ public:
     void keyReleaseEvent(QKeyEvent *event) override;
 
     void tick();
+    void logicUpdate();
+    void renderFrame();
 
     void demo();
 

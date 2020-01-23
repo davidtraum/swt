@@ -34,6 +34,7 @@ SOURCES += \
     minimap.cpp \
     player.cpp \
     point.cpp \
+    renderthread.cpp \
     river.cpp \
     routeinterface.cpp \
     routelistinterface.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     minimap.h \
     player.h \
     point.h \
+    renderthread.h \
     river.h \
     routeListInterface.h \
     routeinterface.h \

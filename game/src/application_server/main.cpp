@@ -27,6 +27,7 @@
 #include "routeinterface.h"
 #include "routeListInterface.h"
 #include "maprenderer.h"
+#include "renderthread.h"
 
 
 GraphicsManager * graphics;
@@ -84,6 +85,8 @@ int main(int argc, char *argv[])
     mapRenderer = new MapRenderer(graphics, dataModel);
     QTimer::singleShot(2000, []{
       mainWindow->setCentralWidget(mapRenderer);
+      RenderThread * renderThread = new RenderThread(mapRenderer);
+      renderThread->start();
       mapRenderer->cloudAnimation();
     });
 

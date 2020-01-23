@@ -32,6 +32,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
 
     showHighlight = true;
     codeCount = 0;
+
 }
 
 /**
@@ -83,10 +84,6 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     }
 
     for(AnimationMovement * anim : movementAnimations){
-        if(anim->move()){
-            movementAnimations.removeOne(anim);
-            delete anim;
-        }else{
             Point pos = anim->getEntity()->getPosition();
             pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
             if(anim->getEntity()->rotation>0){
@@ -98,7 +95,6 @@ void MapRenderer::paintEvent(QPaintEvent *event)
             }else{
                 painter->drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
             }
-        }
     }
 
     if(showHighlight){
@@ -283,18 +279,42 @@ void MapRenderer::keyReleaseEvent(QKeyEvent *event)
 
 void MapRenderer::tick()
 {
-    if(ticksSkipped>=framerateDelay-timeToRender){
-        if(!rendering)
-            update();
-        ticksSkipped = 0;
-
+    if(ticksSkipped>=framerateDelay){
+        logicUpdate();
+        ticksSkipped=0;
     }
     ticksSkipped++;
-    if(timeSinceCloudSpawn>1500){
+    if(timeSinceCloudSpawn>1000){
         spawnCloud();
         timeSinceCloudSpawn = 0;
     }
     timeSinceCloudSpawn++;
+}
+
+/**
+ * @brief MapRenderer::logicUpdate Führt einen Logikschritt durch (Animationen etc.)
+ */
+void MapRenderer::logicUpdate()
+{
+    for(AnimationMovement * anim : movementAnimations){
+        if(anim->move()){
+            movementAnimations.removeOne(anim);
+            delete anim;
+        }else{
+            Point pos = anim->getEntity()->getPosition();
+            pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
+        }
+    }
+}
+
+/**
+ * @brief MapRenderer::renderFrame Rendert ein Frame.
+ */
+void MapRenderer::renderFrame()
+{
+    if(!rendering){
+        update();
+    }
 }
 
 /**
