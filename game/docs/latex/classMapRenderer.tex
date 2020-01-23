@@ -81,6 +81,8 @@ void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animat
 \item 
 void \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{cloud\+Animation}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolkp\+Scaleen-\/\+Animation aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}{spawn\+Cloud}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}{Map\+Renderer\+::spawn\+Cloud}} Erzeugt eine neue Wolke die über die Karte fliegt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{animate\+Scale}} (double)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{Map\+Renderer\+::animate\+Scale}} Animiert die Skalierung. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
@@ -130,6 +132,8 @@ int \mbox{\hyperlink{classMapRenderer_af3d50b6c4d191b4cb119dacc1aeffb43}{frame\+
 int \mbox{\hyperlink{classMapRenderer_a72c4a62cb4485d0008aa724a0db40d25}{ticks\+Skipped}} \{0\}
 \item 
 int \mbox{\hyperlink{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}{time\+To\+Render}} \{0\}
+\item 
+int \mbox{\hyperlink{classMapRenderer_ac2dd2e96a4b3a2601e05cef0f1772105}{time\+Since\+Cloud\+Spawn}} \{0\}
 \item 
 int \mbox{\hyperlink{classMapRenderer_abbb6e52787dbe614ce9153a1d9263eb6}{framerate\+Delay}} \{20\}
 \item 
@@ -571,12 +575,46 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}\label{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}} 
+\index{MapRenderer@{MapRenderer}!spawnCloud@{spawnCloud}}
+\index{spawnCloud@{spawnCloud}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{spawnCloud()}{spawnCloud()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::spawn\+Cloud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}{Map\+Renderer\+::spawn\+Cloud}} Erzeugt eine neue Wolke die über die Karte fliegt. 
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}\label{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c}} 
 \index{MapRenderer@{MapRenderer}!tick@{tick}}
 \index{tick@{tick}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c_cgraph}
+\end{center}
+\end{figure}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -812,6 +850,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{tileSize@{tileSize}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{tileSize}{tileSize}}
 {\footnotesize\ttfamily int Map\+Renderer\+::tile\+Size \{64\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_ac2dd2e96a4b3a2601e05cef0f1772105}\label{classMapRenderer_ac2dd2e96a4b3a2601e05cef0f1772105}} 
+\index{MapRenderer@{MapRenderer}!timeSinceCloudSpawn@{timeSinceCloudSpawn}}
+\index{timeSinceCloudSpawn@{timeSinceCloudSpawn}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{timeSinceCloudSpawn}{timeSinceCloudSpawn}}
+{\footnotesize\ttfamily int Map\+Renderer\+::time\+Since\+Cloud\+Spawn \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}\label{classMapRenderer_ae728005e6a2b8c139e8d9f1cdae24fe8}} 
 \index{MapRenderer@{MapRenderer}!timeToRender@{timeToRender}}

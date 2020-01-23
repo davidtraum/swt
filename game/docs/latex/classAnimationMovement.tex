@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,7 +28,9 @@ bool \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{
 void \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{set\+Repeat}} (bool)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{Animation\+Movement\+::set\+Repeat}} Setzt ob die Animation in Endlosschleife läuft. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{set\+Speed}} (double)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{set\+Auto\+Rotate}} (bool)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{Animation\+Movement\+::set\+Auto\+Rotate}} Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +44,8 @@ double \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classAnimationMovement_a1941cd9536bfd7765344a2c871061bc5}{repeat}} \{true\}
+\item 
+bool \mbox{\hyperlink{classAnimationMovement_ab053c64f2ab02a53d85b4708171e08ac}{auto\+Rotate}} \{true\}
 \item 
 int \mbox{\hyperlink{classAnimationMovement_ad39fc5a14101457df422b7a419d0a38d}{direction}} \{1\}
 \item 
@@ -148,6 +153,24 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}\label{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}} 
+\index{AnimationMovement@{AnimationMovement}!setAutoRotate@{setAutoRotate}}
+\index{setAutoRotate@{setAutoRotate}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{setAutoRotate()}{setAutoRotate()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::set\+Auto\+Rotate (\begin{DoxyParamCaption}\item[{bool}]{p\+Status }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{Animation\+Movement\+::set\+Auto\+Rotate}} Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}\label{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}} 
 \index{AnimationMovement@{AnimationMovement}!setRepeat@{setRepeat}}
 \index{setRepeat@{setRepeat}!AnimationMovement@{AnimationMovement}}
@@ -163,7 +186,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em p\+Status} & true = endlos, false = einmalig \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -185,7 +209,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Speed} & Die Geschwindigkeit (1=normal, 2=doppelt...) \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -215,6 +240,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Datenelemente}
+\mbox{\Hypertarget{classAnimationMovement_ab053c64f2ab02a53d85b4708171e08ac}\label{classAnimationMovement_ab053c64f2ab02a53d85b4708171e08ac}} 
+\index{AnimationMovement@{AnimationMovement}!autoRotate@{autoRotate}}
+\index{autoRotate@{autoRotate}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{autoRotate}{autoRotate}}
+{\footnotesize\ttfamily bool Animation\+Movement\+::auto\+Rotate \{true\}\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classAnimationMovement_ad39fc5a14101457df422b7a419d0a38d}\label{classAnimationMovement_ad39fc5a14101457df422b7a419d0a38d}} 
 \index{AnimationMovement@{AnimationMovement}!direction@{direction}}
 \index{direction@{direction}!AnimationMovement@{AnimationMovement}}

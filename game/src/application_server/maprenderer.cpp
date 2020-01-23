@@ -290,6 +290,11 @@ void MapRenderer::tick()
 
     }
     ticksSkipped++;
+    if(timeSinceCloudSpawn>1500){
+        spawnCloud();
+        timeSinceCloudSpawn = 0;
+    }
+    timeSinceCloudSpawn++;
 }
 
 /**
@@ -563,6 +568,22 @@ void MapRenderer::cloudAnimation()
     }
     scale = 0.5;
     animateScale(1);
+}
+
+/**
+ * @brief MapRenderer::spawnCloud Erzeugt eine neue Wolke die über die Karte fliegt.
+ */
+void MapRenderer::spawnCloud()
+{
+    int ypos = rand() % 300;
+    QImage img(":/images/cloud/cloud0_transparent.png");
+    double scale = 0.5 + ((rand() % 100)*0.02);
+    AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img.scaled(img.width()*scale, img.height()*scale))),
+                                                     "-10:" + QString::number(ypos)  + ";300:" + QString::number(ypos));
+    anim->setSpeed(2 + (0.1/scale)*8);
+    anim->setRepeat(false);
+    anim->setAutoRotate(false);
+    movementAnimations.push_back(anim);
 }
 
 /**

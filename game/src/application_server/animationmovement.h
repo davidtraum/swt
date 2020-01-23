@@ -16,12 +16,14 @@ public:
     bool move();
     void setRepeat(bool);
     void setSpeed(double);
+    void setAutoRotate(bool);
 
 private:
     void calculateVector(Point origin, Point target);
     void calculateVector(int origin, int target);
     double targetDistance();
     bool repeat{true};
+    bool autoRotate{true};
     int direction{1};
     double speed{1};
     AnimationEntity * item;

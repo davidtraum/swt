@@ -42,6 +42,7 @@ public:
     void animateMovement(QImage, QString, double);
 
     void cloudAnimation();
+    void spawnCloud();
 
     void animateScale(double);
 
@@ -67,6 +68,7 @@ private:
     int frameCount{0};
     int ticksSkipped{0};
     int timeToRender{0};
+    int timeSinceCloudSpawn{0};
     int framerateDelay{20};
     int fps{0};
     double vx{0},vy{0};

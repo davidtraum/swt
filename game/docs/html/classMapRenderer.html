@@ -159,6 +159,9 @@ Signale</h2></td></tr>
 <tr class="memitem:a742fba1dadf2f2bcabe5d8e2fa73042a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#a742fba1dadf2f2bcabe5d8e2fa73042a">cloudAnimation</a> ()</td></tr>
 <tr class="memdesc:a742fba1dadf2f2bcabe5d8e2fa73042a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapRenderer.html#a742fba1dadf2f2bcabe5d8e2fa73042a" title="MapRenderer::cloudAnimation Führt eine WolkpScaleen-Animation aus.">MapRenderer::cloudAnimation</a> Führt eine WolkpScaleen-Animation aus.  <a href="classMapRenderer.html#a742fba1dadf2f2bcabe5d8e2fa73042a">Mehr ...</a><br /></td></tr>
 <tr class="separator:a742fba1dadf2f2bcabe5d8e2fa73042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0aa93d6c80aa3817424207b088d5a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#aba0aa93d6c80aa3817424207b088d5a5">spawnCloud</a> ()</td></tr>
+<tr class="memdesc:aba0aa93d6c80aa3817424207b088d5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapRenderer.html#aba0aa93d6c80aa3817424207b088d5a5" title="MapRenderer::spawnCloud Erzeugt eine neue Wolke die über die Karte fliegt.">MapRenderer::spawnCloud</a> Erzeugt eine neue Wolke die über die Karte fliegt.  <a href="classMapRenderer.html#aba0aa93d6c80aa3817424207b088d5a5">Mehr ...</a><br /></td></tr>
+<tr class="separator:aba0aa93d6c80aa3817424207b088d5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af09cc87016da102e1874f9c4a42fd963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#af09cc87016da102e1874f9c4a42fd963">animateScale</a> (double)</td></tr>
 <tr class="memdesc:af09cc87016da102e1874f9c4a42fd963"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapRenderer.html#af09cc87016da102e1874f9c4a42fd963" title="MapRenderer::animateScale Animiert die Skalierung.">MapRenderer::animateScale</a> Animiert die Skalierung.  <a href="classMapRenderer.html#af09cc87016da102e1874f9c4a42fd963">Mehr ...</a><br /></td></tr>
 <tr class="separator:af09cc87016da102e1874f9c4a42fd963"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +213,8 @@ Private Attribute</h2></td></tr>
 <tr class="separator:a72c4a62cb4485d0008aa724a0db40d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae728005e6a2b8c139e8d9f1cdae24fe8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#ae728005e6a2b8c139e8d9f1cdae24fe8">timeToRender</a> {0}</td></tr>
 <tr class="separator:ae728005e6a2b8c139e8d9f1cdae24fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2dd2e96a4b3a2601e05cef0f1772105"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#ac2dd2e96a4b3a2601e05cef0f1772105">timeSinceCloudSpawn</a> {0}</td></tr>
+<tr class="separator:ac2dd2e96a4b3a2601e05cef0f1772105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb6e52787dbe614ce9153a1d9263eb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#abbb6e52787dbe614ce9153a1d9263eb6">framerateDelay</a> {20}</td></tr>
 <tr class="separator:abbb6e52787dbe614ce9153a1d9263eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ec851388918d4a13d329cf088b4c69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapRenderer.html#aa0ec851388918d4a13d329cf088b4c69">fps</a> {0}</td></tr>
@@ -975,6 +980,37 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 </div>
 </div>
+<a id="aba0aa93d6c80aa3817424207b088d5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0aa93d6c80aa3817424207b088d5a5">&#9670;&nbsp;</a></span>spawnCloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapRenderer::spawnCloud </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapRenderer.html#aba0aa93d6c80aa3817424207b088d5a5" title="MapRenderer::spawnCloud Erzeugt eine neue Wolke die über die Karte fliegt.">MapRenderer::spawnCloud</a> Erzeugt eine neue Wolke die über die Karte fliegt. </p>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5_cgraph.svg" width="398" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5_icgraph.svg" width="542" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a6f2ca0227403d4aa4e6bbd54d2d3ea5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f2ca0227403d4aa4e6bbd54d2d3ea5c">&#9670;&nbsp;</a></span>tick()</h2>
 
@@ -989,6 +1025,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapRenderer_a6f2ca0227403d4aa4e6bbd54d2d3ea5c_cgraph.svg" width="578" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
@@ -1737,6 +1779,28 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
       <table class="memname">
         <tr>
           <td class="memname">int MapRenderer::tileSize {64}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2dd2e96a4b3a2601e05cef0f1772105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2dd2e96a4b3a2601e05cef0f1772105">&#9670;&nbsp;</a></span>timeSinceCloudSpawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MapRenderer::timeSinceCloudSpawn {0}</td>
         </tr>
       </table>
   </td>

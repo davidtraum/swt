@@ -867,6 +867,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/train_background.png \
 		../application_server/train.png \
 		../application_server/cloud0.png \
+		../application_server/cloud0_transparent.png \
 		../application_server/schiene_v.png \
 		../application_server/schiene_h.png \
 		../application_server/schiene_kurve.png \
@@ -1889,6 +1890,25 @@ moc_menubar.cpp: ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlayer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplayer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmultimedia.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediacontent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaresource.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QUrl \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qaudio.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkconfiguration.h \
 		../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
@@ -1955,14 +1975,11 @@ moc_menubar.cpp: ../application_server/menubar.h \
 		../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QThread \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qthread.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QStringList \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString \
 		../application_server/maprenderer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		../application_server/point.h \
@@ -3228,6 +3245,22 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextcursor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextformat.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlayer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplayer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmultimedia.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediacontent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaresource.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QUrl \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qaudio.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkconfiguration.h \
 		../application_server/routeinterface.h \
 		../application_server/trainrenderer.h \
 		../application_server/goodselector.h \
@@ -4578,6 +4611,25 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpen.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlayer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplayer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmultimedia.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediacontent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaresource.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QUrl \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QVariant \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetaobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qaudio.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qnetworkconfiguration.h \
 		../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
@@ -4644,14 +4696,11 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QThread \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qthread.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QStringList \
-		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QString \
 		../application_server/maprenderer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		../application_server/point.h \
@@ -4666,7 +4715,8 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QToolButton \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtoolbutton.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QMenu \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmenu.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QSlider
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menubar.o ../application_server/menubar.cpp
 
 minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \

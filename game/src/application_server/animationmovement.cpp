@@ -78,6 +78,14 @@ void AnimationMovement::setSpeed(double pSpeed)
     speed = pSpeed;
 }
 
+/**
+ * @brief AnimationMovement::setAutoRotate Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll.
+ */
+void AnimationMovement::setAutoRotate(bool pStatus)
+{
+    autoRotate = pStatus;
+}
+
 void AnimationMovement::calculateVector(Point origin, Point target)
 {
     int vxt = target.getX() - origin.getX();
@@ -85,7 +93,7 @@ void AnimationMovement::calculateVector(Point origin, Point target)
     double len = sqrt(vxt*vxt + vyt*vyt);
     vx = vxt/len;
     vy = vyt/len;
-    if(item->autoRotate){
+    if(item->autoRotate && autoRotate){
         if(abs(vx) > abs(vy)){
             if(vx<0){
                 item->rotation = 270;

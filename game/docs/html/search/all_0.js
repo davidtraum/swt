@@ -14,5 +14,5 @@ var searchData=
   ['animationmovement_2ecpp_11',['animationmovement.cpp',['../animationmovement_8cpp.html',1,'']]],
   ['animationmovement_2eh_12',['animationmovement.h',['../animationmovement_8h.html',1,'']]],
   ['attachgraphicsmanager_13',['attachGraphicsManager',['../classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f',1,'MapTile']]],
-  ['autorotate_14',['autoRotate',['../classAnimationEntity.html#a7858fe407a049df6f339f600f282ca46',1,'AnimationEntity']]]
+  ['autorotate_14',['autoRotate',['../classAnimationEntity.html#a7858fe407a049df6f339f600f282ca46',1,'AnimationEntity::autoRotate()'],['../classAnimationMovement.html#ab053c64f2ab02a53d85b4708171e08ac',1,'AnimationMovement::autoRotate()']]]
 ];
