@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Map\+Renderer\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,7 +30,9 @@ Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
 void \mbox{\hyperlink{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a}{on\+Tile\+Change}} (int, int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a}{Map\+Renderer\+::on\+Tile\+Change}} Wird aufgerufen wenn sich eine Kachel ändert. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{enable\+Highlight}} (bool)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{Map\+Renderer\+::enable\+Highlight}} Wird aufgerufen wenn der \mbox{\hyperlink{classHighlighter}{Highlighter}} aktiviert wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{Map\+Renderer\+::enable\+Highlight}} Wird aufgerufen wenn der \mbox{\hyperlink{classHighlighter}{Highlighter}} aktiviert wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{set\+Logic\+Speed}} (int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{Map\+Renderer\+::set\+Logic\+Speed}} Ändert die Geschwindigkeit der Logikschleife. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -422,11 +426,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classMapRenderer_ae20163bc4a97f6f9b9894aa186143716}{Map\+Renderer\+::logic\+Update}} Führt einen Logikschritt durch (Animationen etc.) 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{classMapRenderer_ae20163bc4a97f6f9b9894aa186143716_cgraph}
+\includegraphics[width=350pt]{classMapRenderer_ae20163bc4a97f6f9b9894aa186143716_cgraph}
 \end{center}
 \end{figure}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
@@ -557,7 +562,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em event} & Ein Q\+Paint\+Event. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -587,6 +593,21 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a3581e7b75ea4eed2798d6a2e4e201e87_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}\label{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}} 
+\index{MapRenderer@{MapRenderer}!setLogicSpeed@{setLogicSpeed}}
+\index{setLogicSpeed@{setLogicSpeed}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{setLogicSpeed}{setLogicSpeed}}
+{\footnotesize\ttfamily void Map\+Renderer\+::set\+Logic\+Speed (\begin{DoxyParamCaption}\item[{int}]{p\+Delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{Map\+Renderer\+::set\+Logic\+Speed}} Ändert die Geschwindigkeit der Logikschleife. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Delay} & Die Verzögerung in ms zwischen den Schritten. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}\label{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}} 
 \index{MapRenderer@{MapRenderer}!setViewportTilePosition@{setViewportTilePosition}}
 \index{setViewportTilePosition@{setViewportTilePosition}!MapRenderer@{MapRenderer}}
@@ -648,7 +669,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

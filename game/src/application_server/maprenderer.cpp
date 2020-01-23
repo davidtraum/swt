@@ -53,17 +53,6 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     }
 
 
-    if(moveStepsLeft>0){
-        offset.move(int(vx),int(vy));
-        dataModel->updateCoordinates(offset.getX()/tileSize, offset.getY()/tileSize);
-        moveStepsLeft--;
-    }
-
-    if(scaleStepsLeft>0){
-        scale += scaleVector;
-        scaleStepsLeft--;
-    }
-
     Point minPos = getMinPos().toTile();
     Point maxPos = getMaxPos().toTile();
     for(int x = minPos.getX(); x<maxPos.getX(); x++){
@@ -165,7 +154,6 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
 {
     mouseDown = false;
     if(event->x() - dragOrigin.getX() == 0 && event->y() - dragOrigin.getY() == 0){
-        qDebug() << "lc";
         Point pos = mapPosition(event->x(), event->y());
         emit leftclick();
         emit tileClick(activeTile.getX(), activeTile.getY(), data[activeTile.getX()][activeTile.getY()].getType());
@@ -284,7 +272,7 @@ void MapRenderer::tick()
         ticksSkipped=0;
     }
     ticksSkipped++;
-    if(timeSinceCloudSpawn>1000){
+    if(timeSinceCloudSpawn>2000){
         spawnCloud();
         timeSinceCloudSpawn = 0;
     }
@@ -304,6 +292,16 @@ void MapRenderer::logicUpdate()
             Point pos = anim->getEntity()->getPosition();
             pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
         }
+    }
+    if(moveStepsLeft>0){
+        offset.move(int(vx),int(vy));
+        dataModel->updateCoordinates(offset.getX()/tileSize, offset.getY()/tileSize);
+        moveStepsLeft--;
+    }
+
+    if(scaleStepsLeft>0){
+        scale += scaleVector;
+        scaleStepsLeft--;
     }
 }
 
@@ -634,6 +632,15 @@ void MapRenderer::onTileChange(int px, int py, int type)
 void MapRenderer::enableHighlight(bool status)
 {
     showHighlight = status;
+}
+
+/**
+ * @brief MapRenderer::setLogicSpeed Ändert die Geschwindigkeit der Logikschleife.
+ * @param pDelay Die Verzögerung in ms zwischen den Schritten.
+ */
+void MapRenderer::setLogicSpeed(int pDelay)
+{
+    framerateDelay = pDelay;
 }
 
 

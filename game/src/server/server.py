@@ -408,8 +408,12 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
 
     #send('ROUTE+PLAY+' + unserKoordinatenString);
     def send(self, pText):
-        self.connection.sendall(('CMD+' + pText + '~').encode())
-        print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
+        self.connection.send(bytes([0,0,0,0,0,0,255, len(pText)]))
+        self.connection.sendall(pText.encode())
+        #print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
+
+    def forceSync(self):
+        self.send("SYNC")
 
     def disconnect(self):   #Disconnectet einen Client
         global clients
@@ -441,6 +445,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                                 self.send(world.data[x][y].getProtocolString())
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))
+                    self.forceSync()
                     
             elif(args[0] == 'BUILD'):   #Befehlsverarbeitung BUILD
                 posX = int(args[2])
@@ -505,7 +510,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     print(*wagonTypes, sep='_', end='\n')
 
                     handOver = self.player.addRoute(tsStops, wagonTypes)
-                    broadcast("ROUTE+PLAY+" + handOver)
+                    broadcast()
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
                     handOver = "ROUTES+"
@@ -536,17 +541,17 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
         global world
         buffer = b""
         while True:
-            #try:
-            data = self.connection.recv(1)
-            if(data == b'~'):
-                self.processCommand(buffer.decode())
-                buffer = b""
-            else:
-                buffer += data
-            #except Exception as e:
-                #print(e)
-                #self.disconnect()
-                #break
+            try:
+                data = self.connection.recv(1)
+                if(data == b'~'):
+                    self.processCommand(buffer.decode())
+                    buffer = b""
+                else:
+                    buffer += data
+            except Exception as e:
+                print(e)
+                self.disconnect()
+                break
             
             
 

@@ -24,10 +24,6 @@ void AnimationMovement::parsePath(QString data) {
         QStringList coords = point.split(":");
         path.push_back(new Point(coords[0].toInt()*64, coords[1].toInt()*64));
     }
-    qDebug() << "Punkte eingelesen.";
-    for(Point * p : path){
-        qDebug() << "Punkt: " << p->getX() << " / " << p->getY();
-    }
 }
 
 AnimationEntity *AnimationMovement::getEntity()

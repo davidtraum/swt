@@ -29,7 +29,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
-    debug = true;
+    debug = false;
 
     socket->waitForConnected(3000);
 
@@ -46,6 +46,7 @@ void Client::run() {
     QString data;
     QString buffer = "";
     QString overshoot = "";
+    QByteArray input;
     int length = 0;
     while(true){
         //socket->waitForReadyRead();
@@ -76,20 +77,14 @@ void Client::run() {
 
                 */
 
-            data = socket->read(1);
-
-                if(data.contains("~")) {
-                    //qDebug() << "Länge der gelesenen Daten (Socket): " + QString::number(buffer.length());
-                    //QStringList strList = data.split("~");
-                    processCommand(buffer);
-                    buffer = "";
-                }
-                else {
-
-                    buffer += data;
-                    qDebug() << buffer;     //Wenn man das hier rausnimmt stürzt das Programm ab
-
-                }
+            input = socket->read(1);
+            if(input.at(0) == char(255)){
+                while(socket->bytesAvailable()<=0);
+                input = socket->read(1);
+                while(socket->bytesAvailable()<input[0]);
+                data = socket->read(input[0]);
+                processCommand(data);
+            }
 
             //socket->flush();
 
@@ -130,20 +125,19 @@ void Client::processCommand(QString cmd){
         QStringList split = cmd.split("+");
 
         if(split.length()>1){
-            if((split[1]=="TILE") && split.length()==6){
-                emit tileChanged(split[2].toInt(),split[3].toInt(), split[4].toInt(), split[5].toInt());
+            if((split[0]=="TILE") && split.length()==5){
+                emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
             }
-            else if(split[1]=="POS" && split.length()==4){
-                emit playerPositionChange(split[2].toInt(), split[3].toInt());
+            else if(split[0]=="POS" && split.length()==3){
+                emit playerPositionChange(split[1].toInt(), split[2].toInt());
             }
-            else if(split[1]=="MAP"){
-                if(split[2]=="DONE"){
+            else if(split[0]=="MAP"){
+                if(split[1]=="DONE"){
                     qDebug() << "Map loaded";
-                    sleep(100);
                     emit onMapLoaded(true);
                 }
             }
-            else if (split[1]=="ROUTES") {
+            else if (split[0]=="ROUTES") {
                 for (int i= 0; i < split.length(); i++) {
 
                     //tmpRoutes[i] = split[i+2];
@@ -151,11 +145,12 @@ void Client::processCommand(QString cmd){
                 }
 
             }
-            else if(split[1]=="TIME" && split.length()==3){
-                dataModel->setTime(split[2].toInt());
+            else if(split[0]=="TIME" && split.length()==2){
+                dataModel->setTime(split[1].toInt());
             }
-            else if(split[1] == "ROUTE" && split.length()==5){
-                mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[4]);
+            else if(split[0] == "ROUTE" && split.length()==4){
+                mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[3]);
+            }else if(split[0] == "SYNC"){
             }
 
         }
@@ -184,7 +179,6 @@ void Client::onPositionChange(int pX, int pY){
  * @brief Client::onLeftclick Führt einen Linksclick durch.
  */
 void Client::onLeftclick(){
-    qDebug() << "<olc" << " " << dataModel->getMode();
     switch(dataModel->getMode()){
         case DataModel::TRAIN_STATION:
             socket->write(QString::fromStdString("BUILD STATION " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + " STATION~").toLocal8Bit());

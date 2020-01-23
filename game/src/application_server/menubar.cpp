@@ -101,6 +101,16 @@ MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel
     connect(volumeSlider, &QSlider::valueChanged, musicPlayer, &QMediaPlayer::setVolume);
     this->addWidget(volumeSlider);
 
+
+    QSlider * speedSlider = new QSlider();
+    speedSlider->setFixedWidth(200);
+    speedSlider->setOrientation(Qt::Horizontal);
+    speedSlider->setRange(0,50);
+    speedSlider->setValue(20);
+    connect(speedSlider, &QSlider::valueChanged, pRenderer, &MapRenderer::setLogicSpeed);
+    this->addWidget(speedSlider);
+
+
     QWidget *spacer = new QWidget(this);
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     this->addWidget(spacer);

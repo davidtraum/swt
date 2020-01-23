@@ -87,6 +87,7 @@ private:
 public slots:
     void onTileChange(int,int,int);
     void enableHighlight(bool);
+    void setLogicSpeed(int);
 
 signals:
     void tileClick(int,int,int);
