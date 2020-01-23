@@ -14,6 +14,8 @@ class WayLogic:
     #gibt Länge von Bahnhof A nach B    
     @staticmethod
     def wayStationAToB(karte, pXA=0, pYA=0, pXB = 0, pYB = 0):
+        print(pXA)
+        print(pYA)
         originXA = pXA
         originYA = pYA
         wayTmp = []
@@ -171,7 +173,6 @@ class WayLogic:
     def  getCurves(karte, pXA, pYA, pXB, pYB, pBool = False): 
         print('vorStationAtoB')
         wayTmp = WayLogic.wayStationAToB(karte, int(pXA), int(pYA), int(pXB), int(pYB))
-        print(wayTmp)
         returnTmp = ''
         for i in range(len(wayTmp)):
             print(wayTmp[i].getType())

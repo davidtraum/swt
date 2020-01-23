@@ -154,6 +154,7 @@ void Client::processCommand(QString cmd){
                 dataModel->setTime(split[1].toInt());
             }
             else if(split[0] == "ROUTE" && split.length()==4){
+                qDebug() << split[3];
                 mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[3]);
             }else if(split[0] == "SYNC"){
             }

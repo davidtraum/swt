@@ -30,7 +30,8 @@ class RouteLogic:
             y1 = self.trainstations[i].getY()
             x2 = self.trainstations[i+1].getX()
             y2 = self.trainstations[i+1].getY()
-            if(x1 != x2 or y1 != y2): 
+            if(x1 != x2 or y1 != y2):
+                print("rufe in Schleife auf:", i) 
                 tmpCurves += WayLogic.getCurves(self.karte, x1, y1, x2, y2)
                 tmpCurves += ';'                
         x1 = self.trainstations[0].getX()
@@ -38,7 +39,7 @@ class RouteLogic:
         x2 = self.trainstations[-1].getX()
         y2 = self.trainstations[-1].getY()
         
-        if (WayLogic.getCurves(self.karte, x2, y2, x1, y1, True) == ""):
+        if ((x1 != x2 or y1 != y2) and WayLogic.getCurves(self.karte, x2, y2, x1, y1, True) == ""):
             tmpCurves = tmpCurves[:-1]
         
         if(x1 != x2 or y1 != y2):
@@ -46,8 +47,8 @@ class RouteLogic:
             wayBack = WayLogic.getCurves(self.karte, x2, y2, x1, y1, True)
             print("wayBackhatgeklappt")
         else:
-            wayBack = ''
-
+             tmpCurves = tmpCurves[:-1]
+             wayBack = ''
         return str(self.countId) + "+" + str(x1) + ":" + str(y1) + ";" + tmpCurves + wayBack
 
     
