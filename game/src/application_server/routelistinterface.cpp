@@ -18,8 +18,6 @@ RouteListInterface::RouteListInterface()
     routeList->setSelectionMode(QAbstractItemView::ExtendedSelection);  //mehrere Elemente der Liste gleichzeitig anwählbar mit STRG
 
     routeList->setMaximumHeight(600);
-    routeList->addItem("Beispielroute 1: Vom Ring bis an die Wolga, 8 Stationen -- Angehängte Waggons: Kohle, Kohle, Weizen, Passagiere");
-    routeList->addItem("Beispielroute 2: Durch den Monsun, 3 Stationen -- Angehängte Waggons: Passagiere, Kohle, Weizen, Partyartikel");
 
     layout->addWidget(routeList);
 
@@ -64,5 +62,61 @@ void RouteListInterface::deleteRoute() {
     delete routeList->takeItem(routeList->currentRow());
     qDebug() << "WURDE GELÖSCHT";
 
+}
+
+/**
+ * @brief RouteListInterface::receiveRoutes Formatiert die Liste aus Strings zu schöneren einzelnen Strings, die mit dem QListWidget routeList im Interface dargestellt werden.
+ */
+void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
+    QString routeString = "Cooler Routenname: ";
+    bool wagonsReceived = false;
+    bool firstRoute = true;
+    int coordCount = 0;
+    QRegExp re("\\d*"); //Eine Nummer, beliebig viele Stellen
+
+    for (int i=1; i < routeStringList->length(); i++) {
+        qDebug() << "Schleifendurchlauf " << i;
+        if ( (wagonsReceived && re.exactMatch(routeStringList->at(i))) || routeStringList->at(i) == "END") {
+            qDebug() << "Vollständige Route empfangen";
+            routeList->addItem(routeString);
+            wagonsReceived = false;
+            firstRoute = false;
+            routeString = "Cooler Routenname: ";
+            coordCount = 0;
+        }
+
+        if ( routeStringList->at(i) == "COAL" ||
+             routeStringList->at(i) == "FOOD" ||
+             routeStringList->at(i) == "LIVESTOCK" ||
+             routeStringList->at(i) == "WOOD" ||
+             routeStringList->at(i) == "CORN" ||
+             routeStringList->at(i) == "GOODS" ||
+             routeStringList->at(i) == "PAPER" ||
+             routeStringList->at(i) == "MAIL" ||
+             routeStringList->at(i) == "PASSENGERS" ) {
+
+            if (wagonsReceived == false) {
+                routeString += "- Angehängte Waggons: ";
+            }
+            else {
+                routeString += ", ";
+            }
+            wagonsReceived = true;
+        }
+        else if ( re.exactMatch(routeStringList->at(i)) ) {
+            coordCount++;
+        }
+
+        if (routeStringList->at(i) != "ROUTES" && routeStringList->at(i) != "END") {
+            routeString += routeStringList->at(i);
+        }
+
+        if (coordCount%2 == 0 && wagonsReceived == false) {
+            routeString += ", ";
+        }
+        else if (coordCount%2 == 1) {
+            routeString += "/";
+        }
+    }
 }
 

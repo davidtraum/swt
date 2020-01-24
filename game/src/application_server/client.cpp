@@ -29,7 +29,9 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
-    debug = false;
+    debug = true;
+
+    QWidget::connect(this, &Client::sendRouteString, routeListInterface, &RouteListInterface::receiveRoutes);
 
     socket->waitForConnected(3000);
 
@@ -85,7 +87,7 @@ void Client::run() {
                 data = socket->read(input[0]);
                 processCommand(data);
                 count++;
-                if(count>5){
+                if(count>2){
                     msleep(1);
                     count=0;
                 }
@@ -128,6 +130,7 @@ void Client::processCommand(QString cmd){
     try {
 
         QStringList split = cmd.split("+");
+        splitPointer = new QStringList(split);
 
         if(split.length()>1){
             if((split[0]=="TILE") && split.length()==5){
@@ -143,12 +146,8 @@ void Client::processCommand(QString cmd){
                 }
             }
             else if (split[0]=="ROUTES") {
-                for (int i= 0; i < split.length(); i++) {
-
-                    //tmpRoutes[i] = split[i+2];
-                    //qDebug() << "Empfangen: " + tmpRoutes[i];
-                }
-
+                qDebug() << "Angekommen!";
+                emit sendRouteString(splitPointer);
             }
             else if(split[0]=="TIME" && split.length()==2){
                 dataModel->setTime(split[1].toInt());
@@ -156,7 +155,8 @@ void Client::processCommand(QString cmd){
             else if(split[0] == "ROUTE" && split.length()==4){
                 qDebug() << split[3];
                 mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[3]);
-            }else if(split[0] == "SYNC"){
+            }
+            else if(split[0] == "SYNC"){
             }
 
         }

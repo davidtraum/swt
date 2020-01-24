@@ -23,6 +23,7 @@ signals:
 public slots:
     void toggle();
     void deleteRoute();
+    void receiveRoutes(QStringList *);
 };
 
 #endif // ROUTELISTINTERFACE_H

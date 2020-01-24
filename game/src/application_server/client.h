@@ -31,12 +31,14 @@ private:
     RouteListInterface * routeListInterface;
     int tickcount{0};
     void processCommand(QString command);
+    QStringList * splitPointer;
 
 signals:
     void mapLoaded();
     void tileChanged(int,int,int,int);
     void playerPositionChange(int,int);
     void onMapLoaded(bool);
+    QStringList sendRouteString(QStringList *);
 
 public slots:
     void onPositionChange(int,int);

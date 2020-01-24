@@ -520,7 +520,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     handOver = handOver.replace("]", "")
                     handOver = handOver.replace(" ", "")
                     handOver = handOver.replace("'", "")
-                    
+
+                    handOver += "+END"
+                                        
                     print("HandOver:" + handOver)
                     self.send(handOver)
                 
