@@ -28,6 +28,7 @@
 #include "routeListInterface.h"
 #include "maprenderer.h"
 #include "renderthread.h"
+#include "videowidget.h"
 
 
 GraphicsManager * graphics;
@@ -98,6 +99,9 @@ int main(int argc, char *argv[])
     RouteListInterface * routeListInterface = new RouteListInterface();
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeListInterface);
 
+    Videowidget * videoWidget = new Videowidget();
+    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, videoWidget);
+
     tooltip->setParent(view);
     tooltip->show();
 
@@ -137,7 +141,7 @@ int main(int argc, char *argv[])
 
     mapRenderer->setLayout(viewLayout);
 
-
+    //QWidget::connect(mapRenderer, &MapRenderer::sendPlayBridge, videoWidget, &Videowidget::toggle);     //Connect spielt Video ab, wenn Brücke gebaut wird
 
     view->resetMatrix();
     view->currentScale=0.05;

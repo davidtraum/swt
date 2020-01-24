@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QObject>
+#include <QVideoWidget>
 
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
@@ -29,7 +30,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
-    debug = true;
+    debug = false;
 
     QWidget::connect(this, &Client::sendRouteString, routeListInterface, &RouteListInterface::receiveRoutes);
     QWidget::connect(routeListInterface, &RouteListInterface::sendDeleteSignal, this, &Client::cancelRoute);
@@ -231,6 +232,8 @@ void Client::onLeftclick(){
             socket->write(QString::fromStdString("REMOVE " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
             socket->flush();
             break;
+        default:
+            break;
     }
 }
 
@@ -242,5 +245,8 @@ void Client::onRightclick()
     socket->write(QString::fromStdString("BUILD INTERACT " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
     socket->flush();
 }
+
+
+
 
 

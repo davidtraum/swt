@@ -32,6 +32,7 @@ private:
     int tickcount{0};
     void processCommand(QString command);
     QStringList * splitPointer;
+    void playBridgeVideo();
 
 signals:
     void mapLoaded();

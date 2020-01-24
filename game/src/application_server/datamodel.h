@@ -46,12 +46,12 @@ public:
     const int RADIUS_DEPOT = 1*64;
     const int RADIUS_STATION = 2*64;
     const int RADIUS_TERMINAL = 3*64;
+    static bool mapLoaded;
 
 private:
     int balance;
     long time;
     int coordinateX,coordinateY;
-    bool mapLoaded{false};
     QString ip;
     quint16 port;
     QLabel * balanceLabel;

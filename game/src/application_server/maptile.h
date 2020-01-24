@@ -64,6 +64,9 @@ private:
     int currentRotation{0};
     City * city;
     GraphicsManager * graphicsManager;
+
+signals:
+    void playBridge();
 };
 
 #endif // MAPTILE_H

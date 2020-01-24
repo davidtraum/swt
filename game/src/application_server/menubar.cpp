@@ -153,3 +153,4 @@ void MenuBar::slotCloseConnection()
 {
     qDebug()<<"close";
 }
+

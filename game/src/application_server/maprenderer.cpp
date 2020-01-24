@@ -649,6 +649,10 @@ void MapRenderer::animateScale(double pScale)
 void MapRenderer::onTileChange(int px, int py, int type)
 {
     data[px][py].setType(MapTile::TYPE(type));
+
+    if ((type == 22 || type == 23) && DataModel::mapLoaded) {
+        emit sendPlayBridge();
+    }
 }
 
 /**

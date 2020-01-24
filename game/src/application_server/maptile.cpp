@@ -2,6 +2,8 @@
 #include <QDebug>
 #include <QBrush>
 #include <QColor>
+#include <QMediaPlayer>
+#include <QVideoWidget>
 
 /**
  * @brief MapTile::MapTile Konstruktor.
@@ -316,5 +318,11 @@ int MapTile::getX(){
 int MapTile::getY(){
     return int(pixmapItem->y()/64);
 }
+
+
+
+
+
+
 
 

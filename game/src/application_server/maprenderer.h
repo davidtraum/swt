@@ -97,6 +97,7 @@ signals:
     void tileClick(int,int,int);
     void leftclick();
     void positionChange(int,int);
+    void sendPlayBridge();
 };
 
 #endif // MAPRENDERER_H

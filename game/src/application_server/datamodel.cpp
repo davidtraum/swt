@@ -1,6 +1,9 @@
 #include "datamodel.h"
 #include <QDebug>
 
+
+bool DataModel::mapLoaded = false;
+
 /**
  * @brief DataModel::DataModel Diese Klasse verwaltet alle globalen Daten rund um den Spielverlauf, z.B. den Kontostand.
  */

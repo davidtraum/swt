@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QMediaPlayer>
+#include <QVideoWidget>
 #include <QDebug>
 
 /**

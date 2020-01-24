@@ -44,6 +44,7 @@ SOURCES += \
     sprite.cpp \
     tooltipmenu.cpp \
     trainrenderer.cpp \
+    videowidget.cpp \
     view.cpp
 
 HEADERS += \
@@ -76,6 +77,7 @@ HEADERS += \
     tooltipmenu.h \
     tooltipmenu.h \
     trainrenderer.h \
+    videowidget.h \
     view.h
 
 FORMS += \

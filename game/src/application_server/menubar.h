@@ -29,6 +29,9 @@ private slots:
 
     void slotOpenConnection();
     void slotCloseConnection();
+
+public slots:
+
 };
 
 #endif // MENUBAR_H
