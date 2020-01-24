@@ -57,18 +57,22 @@ class Player:
         tsTmp = []
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
-        self.routeObjectList.append(RouteLogic(None, tsTmp, pWagons, self.karte))
+        self.routeObjectList.append(RouteLogic(None, tsTmp, pWagons, self.karte, pRouteName))
         handOver = self.routeObjectList[-1].sendProtocolString()        
         return handOver
 
+    #Löscht die Route (Objekt und Listenelement) mit dem passenden Namen
     def cancelRoute(self, pRouteName):
         for i in range(len(self.routes)):
             if (self.routes[i][0] == pRouteName):
                 self.routes.pop(i)
+                print("route popped")
         for i in range(len(self.routeObjectList)):
             if (self.routeObjectList[i].routeName == pRouteName):
+                tmpID = self.routeObjectList[i].id
+                print("ID wird gelöscht: " + str(tmpID))
                 del self.routeObjectList[i]
-                self.routeObjectList.pop(i)
+                return tmpID
         print("ROUTE GELÖSCHT: " + pRouteName)
                 
         

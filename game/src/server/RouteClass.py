@@ -61,11 +61,6 @@ class RouteLogic:
             
         self.timeNeeded.append(len(tmp))
         print (self.timeNeeded)
-
-    @staticmethod
-    def deleteRoute(pRouteName):
-        pass
-            
         
     def do_loop(self):  #Der Loop, der die Züge in der Logik die Route abfahren lässt                      
         if(time.time() - self.last_mach_was > float(self.timeNeeded[self.stationCounter]) * 0.5):

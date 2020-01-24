@@ -531,7 +531,8 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     self.send(handOver)
 
                 elif(args[1] == "DELETE"):
-                    self.player.cancelRoute(args[2])
+                    deletedID = self.player.cancelRoute(args[2])
+                    broadcast("ROUTE+DELETE+" + str(deletedID))
                 
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")

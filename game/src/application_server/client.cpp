@@ -167,9 +167,15 @@ void Client::processCommand(QString cmd){
             else if(split[0]=="TIME" && split.length()==2){
                 dataModel->setTime(split[1].toInt());
             }
-            else if(split[0] == "ROUTE" && split.length()==4){
+            else if(split[0] == "ROUTE" && split.length()==4){  //Starte Animation
                 qDebug() << split[3];
                 mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[3]);
+            }
+            else if(split[0] == "ROUTE" && split.length()==3) {    //Beende Animation
+                qDebug() << "Route mit folgender ID wird nicht mehr wiederholt: " << split[2];
+
+                //Hier bitte Animation Repeat auf False setzen
+
             }
             else if(split[0] == "SYNC"){
             }
