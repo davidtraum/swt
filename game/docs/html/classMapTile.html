@@ -66,6 +66,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#signals">Signale</a> &#124;
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
 <a href="#pri-attribs">Private Attribute</a> &#124;
 <a href="classMapTile-members.html">Aufstellung aller Elemente</a>  </div>
@@ -78,7 +79,8 @@ $(function() {
 <div class="dynheader">
 Zusammengehörigkeiten von MapTile:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile__coll__graph.svg" width="296" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMapTile__coll__graph.svg" width="296" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -129,6 +131,11 @@ Zusammengehörigkeiten von MapTile:</div>
  }</td></tr>
 <tr class="separator:addf1438faf6be80e9a1cd44a26483fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signale</h2></td></tr>
+<tr class="memitem:a9d367dbc670192938874c6bf6f1db683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a9d367dbc670192938874c6bf6f1db683">playBridge</a> ()</td></tr>
+<tr class="separator:a9d367dbc670192938874c6bf6f1db683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a6da7ca3dbcbb19d52a929064094c4070"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a6da7ca3dbcbb19d52a929064094c4070">MapTile</a> (<a class="el" href="classGraphicsManager.html">GraphicsManager</a> *pGraphicsManager)</td></tr>
@@ -175,6 +182,9 @@ Zusammengehörigkeiten von MapTile:</div>
 <tr class="memitem:a27013c9d383c819e1af233e551f63bbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf">getY</a> ()</td></tr>
 <tr class="memdesc:a27013c9d383c819e1af233e551f63bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf" title="MapTile::getY.">MapTile::getY</a>.  <a href="classMapTile.html#a27013c9d383c819e1af233e551f63bbf">Mehr ...</a><br /></td></tr>
 <tr class="separator:a27013c9d383c819e1af233e551f63bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85010ea238a9347a863a672d28e34fb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#a85010ea238a9347a863a672d28e34fb0">isTrainStation</a> ()</td></tr>
+<tr class="memdesc:a85010ea238a9347a863a672d28e34fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#a85010ea238a9347a863a672d28e34fb0" title="MapTile::isTrainStation Prüft ob die Kachel ein Bahnhof ist.">MapTile::isTrainStation</a> Prüft ob die Kachel ein Bahnhof ist.  <a href="classMapTile.html#a85010ea238a9347a863a672d28e34fb0">Mehr ...</a><br /></td></tr>
+<tr class="separator:a85010ea238a9347a863a672d28e34fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f">attachGraphicsManager</a> (<a class="el" href="classGraphicsManager.html">GraphicsManager</a> *pGraphicsManager)</td></tr>
 <tr class="memdesc:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f" title="MapTile::attachGraphicsManager Setzte den GraphicsManager.">MapTile::attachGraphicsManager</a> Setzte den <a class="el" href="classGraphicsManager.html">GraphicsManager</a>.  <a href="classMapTile.html#ab4bb0d1a5821e262be17c6d6fcd29f6f">Mehr ...</a><br /></td></tr>
 <tr class="separator:ab4bb0d1a5821e262be17c6d6fcd29f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -528,6 +538,51 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <p><a class="el" href="classMapTile.html#af1dc148431a17720f9254eae4034a49f" title="MapTile::isRiver Checkt ob die Kachel ein Fluss ist.">MapTile::isRiver</a> Checkt ob die Kachel ein Fluss ist. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Ob die Kachel ein Fluss ist. </dd></dl>
+
+</div>
+</div>
+<a id="a85010ea238a9347a863a672d28e34fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85010ea238a9347a863a672d28e34fb0">&#9670;&nbsp;</a></span>isTrainStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MapTile::isTrainStation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMapTile.html#a85010ea238a9347a863a672d28e34fb0" title="MapTile::isTrainStation Prüft ob die Kachel ein Bahnhof ist.">MapTile::isTrainStation</a> Prüft ob die Kachel ein Bahnhof ist. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>true wenn Bahnhof. </dd></dl>
+
+</div>
+</div>
+<a id="a9d367dbc670192938874c6bf6f1db683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d367dbc670192938874c6bf6f1db683">&#9670;&nbsp;</a></span>playBridge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapTile::playBridge </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

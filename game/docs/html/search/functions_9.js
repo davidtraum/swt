@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['leftclick_549',['leftclick',['../classMapRenderer.html#a40bfbbd290c2f2621eea53b24e9452d6',1,'MapRenderer::leftclick()'],['../classView.html#a8583722c800d6f301bbe52941cc0b824',1,'View::leftclick()']]],
-  ['logicupdate_550',['logicUpdate',['../classMapRenderer.html#ae20163bc4a97f6f9b9894aa186143716',1,'MapRenderer']]]
+  ['keypressevent_583',['keyPressEvent',['../classView.html#aca6faa6bfdfbaf8214f62ddced6d169c',1,'View']]],
+  ['keyreleaseevent_584',['keyReleaseEvent',['../classMapRenderer.html#a9f43e4b3db6a2cda8ea7cabf1bc6f805',1,'MapRenderer']]]
 ];

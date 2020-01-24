@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Map\+Tile\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Tile\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,6 +61,11 @@ enum \mbox{\hyperlink{classMapTile_addf1438faf6be80e9a1cd44a26483fb5}{T\+Y\+PE}}
 \mbox{\hyperlink{classMapTile_addf1438faf6be80e9a1cd44a26483fb5a884de5d6e770617143c33b78140676d4}{S\+T\+E\+EL}}
  \}
 \end{DoxyCompactItemize}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMapTile_a9d367dbc670192938874c6bf6f1db683}{play\+Bridge}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -93,6 +99,8 @@ int \mbox{\hyperlink{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}{getX}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_aaee6fda415f2a6ff305f48d342a8a47b}{Map\+Tile\+::getX}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classMapTile_a27013c9d383c819e1af233e551f63bbf}{getY}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a27013c9d383c819e1af233e551f63bbf}{Map\+Tile\+::getY}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMapTile_a85010ea238a9347a863a672d28e34fb0}{is\+Train\+Station}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_a85010ea238a9347a863a672d28e34fb0}{Map\+Tile\+::is\+Train\+Station}} Prüft ob die Kachel ein Bahnhof ist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapTile_ab4bb0d1a5821e262be17c6d6fcd29f6f}{attach\+Graphics\+Manager}} (\mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}} $\ast$p\+Graphics\+Manager)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapTile_ab4bb0d1a5821e262be17c6d6fcd29f6f}{Map\+Tile\+::attach\+Graphics\+Manager}} Setzte den \mbox{\hyperlink{classGraphicsManager}{Graphics\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
@@ -465,6 +473,25 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Ob die Kachel ein Fluss ist. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a85010ea238a9347a863a672d28e34fb0}\label{classMapTile_a85010ea238a9347a863a672d28e34fb0}} 
+\index{MapTile@{MapTile}!isTrainStation@{isTrainStation}}
+\index{isTrainStation@{isTrainStation}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{isTrainStation()}{isTrainStation()}}
+{\footnotesize\ttfamily bool Map\+Tile\+::is\+Train\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapTile_a85010ea238a9347a863a672d28e34fb0}{Map\+Tile\+::is\+Train\+Station}} Prüft ob die Kachel ein Bahnhof ist. 
+
+\begin{DoxyReturn}{Rückgabe}
+true wenn Bahnhof. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapTile_a9d367dbc670192938874c6bf6f1db683}\label{classMapTile_a9d367dbc670192938874c6bf6f1db683}} 
+\index{MapTile@{MapTile}!playBridge@{playBridge}}
+\index{playBridge@{playBridge}!MapTile@{MapTile}}
+\doxysubsubsection{\texorpdfstring{playBridge}{playBridge}}
+{\footnotesize\ttfamily void Map\+Tile\+::play\+Bridge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
 \mbox{\Hypertarget{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}\label{classMapTile_a95eefbf7247ae6adef4aaee0a35eaa4f}} 
 \index{MapTile@{MapTile}!setCity@{setCity}}
 \index{setCity@{setCity}!MapTile@{MapTile}}

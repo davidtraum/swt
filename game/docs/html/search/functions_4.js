@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['fluidmove_506',['fluidMove',['../classView.html#a240c2bf51520324466ab8f2e435f77b2',1,'View']]],
-  ['fluidmovement_507',['fluidMovement',['../classView.html#a5b3625ec64bc9d2432cc09d33e6879f1',1,'View']]],
-  ['fluidzoom_508',['fluidZoom',['../classView.html#a33de978d43cde59ae344035ebcb60184',1,'View']]],
-  ['formattime_509',['formatTime',['../classDataModel.html#a0f0049332a55bb6de5bd2d0d53f3b93f',1,'DataModel']]]
+  ['enableanimation_537',['enableAnimation',['../classView.html#a105b23bffbbea3af00bc47fc38a5e98c',1,'View']]],
+  ['enablehighlight_538',['enableHighlight',['../classMapRenderer.html#a82791127116e4479409baeefb5224145',1,'MapRenderer']]]
 ];

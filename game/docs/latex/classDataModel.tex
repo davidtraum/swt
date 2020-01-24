@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Data\+Model\+:\nopagebreak
+Klassendiagramm für Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Data\+Model\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -121,6 +123,13 @@ const int \mbox{\hyperlink{classDataModel_ab55248da018310388cb901503fc9d72e}{R\+
 const int \mbox{\hyperlink{classDataModel_a64f7698fee48465c91dede8a6ffd4b99}{R\+A\+D\+I\+U\+S\+\_\+\+S\+T\+A\+T\+I\+ON}} = 2$\ast$64
 \item 
 const int \mbox{\hyperlink{classDataModel_aec19cedd38e0013387b5d822b2d8d9c3}{R\+A\+D\+I\+U\+S\+\_\+\+T\+E\+R\+M\+I\+N\+AL}} = 3$\ast$64
+\item 
+\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{classDataModel_a46d499723f55697cd3c5d64aa9179f42}{main\+Window}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Statische öffentliche Attribute}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}{map\+Loaded}} = false
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
@@ -132,8 +141,6 @@ long \mbox{\hyperlink{classDataModel_a317b1b09cd4bbc946c625e0dcfd89132}{time}}
 int \mbox{\hyperlink{classDataModel_adddcc70d54445fd7e93ec7016c06ca66}{coordinateX}}
 \item 
 int \mbox{\hyperlink{classDataModel_a0dcb89a7fda479001ef8f92203c00d43}{coordinateY}}
-\item 
-bool \mbox{\hyperlink{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}{map\+Loaded}} \{false\}
 \item 
 Q\+String \mbox{\hyperlink{classDataModel_a32e94d7559dea5f25325d481ed30d513}{ip}}
 \item 
@@ -150,8 +157,6 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_afde9d11c991d9b458d3f2c260c9718f
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_adb8796c6636e436c8a40095b1999a565}{connection\+Label}}
 \item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}{mode}} \{M\+O\+D\+E\+::\+D\+E\+F\+A\+U\+LT\}
-\item 
-\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{classDataModel_a46d499723f55697cd3c5d64aa9179f42}{main\+Window}}
 \end{DoxyCompactItemize}
 
 
@@ -839,13 +844,13 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{DataModel@{DataModel}!mainWindow@{mainWindow}}
 \index{mainWindow@{mainWindow}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMainWindow}{Main\+Window}}$\ast$ Data\+Model\+::main\+Window\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMainWindow}{Main\+Window}}$\ast$ Data\+Model\+::main\+Window}
 
 \mbox{\Hypertarget{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}\label{classDataModel_a5a582fa87078d51ea50bcae372efd4d0}} 
 \index{DataModel@{DataModel}!mapLoaded@{mapLoaded}}
 \index{mapLoaded@{mapLoaded}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{mapLoaded}{mapLoaded}}
-{\footnotesize\ttfamily bool Data\+Model\+::map\+Loaded \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Data\+Model\+::map\+Loaded = false\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}\label{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}} 
 \index{DataModel@{DataModel}!mode@{mode}}

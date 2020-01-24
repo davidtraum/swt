@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['datamodel_500',['DataModel',['../classDataModel.html#a70f95987bad406f81676ceb31dca34fe',1,'DataModel']]],
-  ['deleteallwagons_501',['deleteAllWagons',['../classTrainRenderer.html#ad06bf7433f9c79eedc698d088599db83',1,'TrainRenderer']]],
-  ['deleteroute_502',['deleteRoute',['../classRouteListInterface.html#aad51133162380c0afbc1b194e45f868d',1,'RouteListInterface']]],
-  ['demo_503',['demo',['../classMapRenderer.html#a6b690a49223b2006a4816b706a4b156e',1,'MapRenderer']]]
+  ['calculatevector_526',['calculateVector',['../classAnimationMovement.html#a0ec9be9fcfb79cc886d112d39670a980',1,'AnimationMovement::calculateVector(Point origin, Point target)'],['../classAnimationMovement.html#a98614fc05b08f2cadc06b1bff199d6aa',1,'AnimationMovement::calculateVector(int origin, int target)']]],
+  ['cancelroute_527',['cancelRoute',['../classClient.html#a0b4e78a6e662211ccc78d8f756ff3d8e',1,'Client']]],
+  ['city_528',['City',['../classCity.html#a75453c1c691bf3465388edb586542176',1,'City::City(int pX, int pY, int pSize)'],['../classCity.html#a1b1f549430f0a7ecd0ec7b1605415193',1,'City::City()']]],
+  ['client_529',['Client',['../classClient.html#a259d03bc8e9c317d6aeb86a68d7d0b22',1,'Client']]],
+  ['cloudanimation_530',['cloudAnimation',['../classMapRenderer.html#a742fba1dadf2f2bcabe5d8e2fa73042a',1,'MapRenderer']]],
+  ['confirmroute_531',['confirmRoute',['../classRouteInterface.html#a8ed62f131137618a65696d43fbfec345',1,'RouteInterface']]]
 ];

@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Client\+:\nopagebreak
+Klassendiagramm für Client\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Client\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Client\+:\nopagebreak
+Zusammengehörigkeiten von Client\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,7 +36,11 @@ void \mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{on\+Rightcl
 void \mbox{\hyperlink{classClient_ada128336cc2851c3695585eb1f72c81f}{send\+Route}} (Q\+String)
 \item 
 void \mbox{\hyperlink{classClient_a0117b947b8fa4c074ad042aa58b81f0c}{request\+Routes}} ()
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}{cancel\+Route}} (Q\+List\+Widget\+Item $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}{Client\+::cancel\+Route}} Schickt einen Befehl zum Server die entsprechende Route zu löschen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a069e060eb4e572f2d7a1de1713263a73}{send\+Train\+Pass}} (int, int, int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a069e060eb4e572f2d7a1de1713263a73}{Client\+::send\+Train\+Pass}} Sendet eine Zugposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,6 +51,8 @@ void \mbox{\hyperlink{classClient_abf75ead98e9700dd6e26539b0e1eb9af}{tile\+Chang
 void \mbox{\hyperlink{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}{player\+Position\+Change}} (int, int)
 \item 
 void \mbox{\hyperlink{classClient_a60cad535b42ae3555ae1f69b14902344}{on\+Map\+Loaded}} (bool)
+\item 
+Q\+String\+List \mbox{\hyperlink{classClient_ae811d490fb8997558d324a8284d84023}{send\+Route\+String}} (Q\+String\+List $\ast$)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
@@ -64,7 +72,9 @@ Q\+String $\ast$ \mbox{\hyperlink{classClient_adeade7921ca6ce27f5980805aa0acd9f}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classClient_a4cc6ded21fb38d6341fd91314156920e}{process\+Command}} (Q\+String command)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a4cc6ded21fb38d6341fd91314156920e}{Client\+::process\+Command}} Führt einen empfangenen Befehl aus dem Serverprotokoll aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a4cc6ded21fb38d6341fd91314156920e}{Client\+::process\+Command}} Führt einen empfangenen Befehl aus dem Serverprotokoll aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_aea2f90dc4a6cdf9c0b7e55b7c48552a9}{play\+Bridge\+Video}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -81,6 +91,8 @@ bool \mbox{\hyperlink{classClient_a764f0d6601b0c32acc45ba1606b0c2c9}{debug}}
 \mbox{\hyperlink{classRouteListInterface}{Route\+List\+Interface}} $\ast$ \mbox{\hyperlink{classClient_a295774ea94eb86ce3a5391225309f232}{route\+List\+Interface}}
 \item 
 int \mbox{\hyperlink{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}{tickcount}} \{0\}
+\item 
+Q\+String\+List $\ast$ \mbox{\hyperlink{classClient_a03e96537fb3b1a7b227f7daef34a6fd1}{split\+Pointer}}
 \end{DoxyCompactItemize}
 
 
@@ -95,7 +107,8 @@ int \mbox{\hyperlink{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}{tickcount}} 
 
 \mbox{\hyperlink{classClient_a259d03bc8e9c317d6aeb86a68d7d0b22}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -105,6 +118,29 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}\label{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}} 
+\index{Client@{Client}!cancelRoute@{cancelRoute}}
+\index{cancelRoute@{cancelRoute}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{cancelRoute}{cancelRoute}}
+{\footnotesize\ttfamily void Client\+::cancel\+Route (\begin{DoxyParamCaption}\item[{Q\+List\+Widget\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}{Client\+::cancel\+Route}} Schickt einen Befehl zum Server die entsprechende Route zu löschen. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em item} & Das Item des Q\+List\+Widget der ausgewählten Zeile. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classClient_a7eb68233905bad7e20ed057bb67ab856}\label{classClient_a7eb68233905bad7e20ed057bb67ab856}} 
 \index{Client@{Client}!mapLoaded@{mapLoaded}}
 \index{mapLoaded@{mapLoaded}!Client@{Client}}
@@ -189,6 +225,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=339pt]{classClient_a423592967803355986a359fb34e268ad_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classClient_aea2f90dc4a6cdf9c0b7e55b7c48552a9}\label{classClient_aea2f90dc4a6cdf9c0b7e55b7c48552a9}} 
+\index{Client@{Client}!playBridgeVideo@{playBridgeVideo}}
+\index{playBridgeVideo@{playBridgeVideo}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{playBridgeVideo()}{playBridgeVideo()}}
+{\footnotesize\ttfamily void Client\+::play\+Bridge\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}\label{classClient_afe36a25e08b9abdcc6a9bd40b79e2973}} 
 \index{Client@{Client}!playerPositionChange@{playerPositionChange}}
 \index{playerPositionChange@{playerPositionChange}!Client@{Client}}
@@ -217,7 +259,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em cmd} & Der Befehl als String. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -267,7 +310,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{Client\+::run}} Startet den Client-\/\+Thread. 
 
-socket-\/$>$wait\+For\+Ready\+Read(); data = socket-\/$>$read(1); split = data.\+split(\char`\"{}$\sim$\char`\"{}); length = split.\+length(); for(int i = 0; i$<$length-\/1; i++)\{ if(length$>$2 \&\& split\mbox{[}1\mbox{]}.length()$>$0)\{ if(i$<$length-\/2)\{ process\+Command(split\mbox{[}i\mbox{]}); \}else\{ if(i==length-\/2)\{ if(split\mbox{[}length-\/1\mbox{]}.length() $>$ 0)\{ process\+Command(split\mbox{[}i\mbox{]}); overshoot = split\mbox{[}length-\/1\mbox{]}; \}else\{ overshoot = split\mbox{[}i\mbox{]}; \} \} \} \}else\{ overshoot = data; \} \}Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+socket-\/$>$wait\+For\+Ready\+Read(); data = socket-\/$>$read(1); split = data.\+split(\char`\"{}$\sim$\char`\"{}); length = split.\+length(); for(int i = 0; i$<$length-\/1; i++)\{ if(length$>$2 \&\& split\mbox{[}1\mbox{]}.length()$>$0)\{ if(i$<$length-\/2)\{ process\+Command(split\mbox{[}i\mbox{]}); \}else\{ if(i==length-\/2)\{ if(split\mbox{[}length-\/1\mbox{]}.length() $>$ 0)\{ process\+Command(split\mbox{[}i\mbox{]}); overshoot = split\mbox{[}length-\/1\mbox{]}; \}else\{ overshoot = split\mbox{[}i\mbox{]}; \} \} \} \}else\{ overshoot = data; \} \}Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -285,6 +329,47 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classClient_ada128336cc2851c3695585eb1f72c81f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClient_ae811d490fb8997558d324a8284d84023}\label{classClient_ae811d490fb8997558d324a8284d84023}} 
+\index{Client@{Client}!sendRouteString@{sendRouteString}}
+\index{sendRouteString@{sendRouteString}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendRouteString}{sendRouteString}}
+{\footnotesize\ttfamily Q\+String\+List Client\+::send\+Route\+String (\begin{DoxyParamCaption}\item[{Q\+String\+List $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClient_ae811d490fb8997558d324a8284d84023_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClient_a069e060eb4e572f2d7a1de1713263a73}\label{classClient_a069e060eb4e572f2d7a1de1713263a73}} 
+\index{Client@{Client}!sendTrainPass@{sendTrainPass}}
+\index{sendTrainPass@{sendTrainPass}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendTrainPass}{sendTrainPass}}
+{\footnotesize\ttfamily void Client\+::send\+Train\+Pass (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{px,  }\item[{int}]{py }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classClient_a069e060eb4e572f2d7a1de1713263a73}{Client\+::send\+Train\+Pass}} Sendet eine Zugposition. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em px} & Die X-\/\+Koordinate. \\
+\hline
+{\em py} & Die Y-\/\+Koordinate. \\
+\hline
+{\em pid} & Die ID vom Zug. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classClient_a069e060eb4e572f2d7a1de1713263a73_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classClient_abf75ead98e9700dd6e26539b0e1eb9af}\label{classClient_abf75ead98e9700dd6e26539b0e1eb9af}} 
@@ -338,6 +423,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{socket@{socket}!Client@{Client}}
 \doxysubsubsection{\texorpdfstring{socket}{socket}}
 {\footnotesize\ttfamily Q\+Tcp\+Socket$\ast$ Client\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClient_a03e96537fb3b1a7b227f7daef34a6fd1}\label{classClient_a03e96537fb3b1a7b227f7daef34a6fd1}} 
+\index{Client@{Client}!splitPointer@{splitPointer}}
+\index{splitPointer@{splitPointer}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{splitPointer}{splitPointer}}
+{\footnotesize\ttfamily Q\+String\+List$\ast$ Client\+::split\+Pointer\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}\label{classClient_a9ff09ca2e2b0f3c448d8ac8bc0940c6d}} 
 \index{Client@{Client}!tickcount@{tickcount}}

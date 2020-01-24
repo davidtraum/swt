@@ -533,7 +533,8 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 elif(args[1] == "DELETE"):
                     deletedID = self.player.cancelRoute(args[2])
                     broadcast("ROUTE+DELETE+" + str(deletedID))
-                
+                elif(args[1] == "PASS"):
+                    print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
                 

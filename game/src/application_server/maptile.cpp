@@ -319,6 +319,15 @@ int MapTile::getY(){
     return int(pixmapItem->y()/64);
 }
 
+/**
+ * @brief MapTile::isTrainStation Prüft ob die Kachel ein Bahnhof ist.
+ * @return true wenn Bahnhof.
+ */
+bool MapTile::isTrainStation()
+{
+    return type == DEPOT_H || type == DEPOT_V || type == STATION_H || type == STATION_V || type == TERMINAL_H || type == TERMINAL_V;
+}
+
 
 
 

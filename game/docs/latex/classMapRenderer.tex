@@ -6,16 +6,18 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{classMapRenderer__inherit__graph}
+\includegraphics[width=206pt]{classMapRenderer__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +32,9 @@ void \mbox{\hyperlink{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a}{on\+Ti
 void \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{enable\+Highlight}} (bool)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a82791127116e4479409baeefb5224145}{Map\+Renderer\+::enable\+Highlight}} Wird aufgerufen wenn der \mbox{\hyperlink{classHighlighter}{Highlighter}} aktiviert wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{set\+Logic\+Speed}} (int)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{Map\+Renderer\+::set\+Logic\+Speed}} Ändert die Geschwindigkeit der Logikschleife. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}{Map\+Renderer\+::set\+Logic\+Speed}} Ändert die Geschwindigkeit der Logikschleife. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b}{handle\+Reached\+Point}} (int, int, \mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b}{Map\+Renderer\+::handle\+Reached\+Point}} Wird aufgerufen, wenn eine Animation einen neuen Punkt erreicht. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,6 +43,10 @@ void \mbox{\hyperlink{classMapRenderer_afa767e16b404b7b7d05992916888a40b}{tile\+
 void \mbox{\hyperlink{classMapRenderer_a40bfbbd290c2f2621eea53b24e9452d6}{leftclick}} ()
 \item 
 void \mbox{\hyperlink{classMapRenderer_a82d507632fc2b25ba43961e4d9cd3057}{position\+Change}} (int, int)
+\item 
+void \mbox{\hyperlink{classMapRenderer_ab28082ca46c61b3e090f169a5c1a7c76}{send\+Play\+Bridge}} ()
+\item 
+void \mbox{\hyperlink{classMapRenderer_aa397c765ec01e46c5c5ac5d3f30ea6aa}{on\+Train\+Pass}} (int, int, int)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
@@ -79,12 +87,16 @@ void \mbox{\hyperlink{classMapRenderer_a15bd2845914440803193a2209b1a9230}{animat
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a15bd2845914440803193a2209b1a9230}{Map\+Renderer\+::animate\+Movement\+To\+Tile\+Position}} Führt eine Bewegungsanimation zu einer Kachelkoordinate durch. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{set\+Viewport\+Tile\+Position}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a4cb99b1a8f20b978c64f41e22cde070d}{Map\+Renderer\+::set\+Viewport\+Tile\+Position}} Verschiebt den Viewport zu einer Tile-\/\+Koordinate. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}{animate\+Movement}} (Q\+Image, Q\+String)
+void \mbox{\hyperlink{classMapRenderer_a58a55f100157958cf39c7028b12ef569}{animate\+Movement\+Tracked}} (Q\+Image, Q\+String, int id=-\/1)
 \item 
 void \mbox{\hyperlink{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}{animate\+Movement}} (Q\+Image, Q\+String, double)
 \item 
+void \mbox{\hyperlink{classMapRenderer_a37d712e19b31db09e555976bb8647df7}{delete\+Animation\+Id}} (int)
+\item 
 void \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{cloud\+Animation}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}{Map\+Renderer\+::cloud\+Animation}} Führt eine Wolkp\+Scaleen-\/\+Animation aus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapRenderer_a01e6e2a8caf5b352dbee62382de8c346}{bridge\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a01e6e2a8caf5b352dbee62382de8c346}{Map\+Renderer\+::bridge\+Animation}} Startet die Brückenbau-\/\+Sequenz. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}{spawn\+Cloud}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_aba0aa93d6c80aa3817424207b088d5a5}{Map\+Renderer\+::spawn\+Cloud}} Erzeugt eine neue Wolke die über die Karte fliegt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{animate\+Scale}} (double)
@@ -98,6 +110,11 @@ void \mbox{\hyperlink{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}{animat
 \item 
 int \mbox{\hyperlink{classMapRenderer_affd16d6371faa316bffe22e3b3f1e4a4}{code\+Count}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMapRenderer_a80be8bf24bdc1ab7fdb7e6a1508e1f36}{on\+Video\+State\+Change}} (Q\+Media\+Player\+::\+State)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMapRenderer_a80be8bf24bdc1ab7fdb7e6a1508e1f36}{Map\+Renderer\+::on\+Video\+State\+Change}} Wird aufgerufen wenn der Status des Videos sich ändert. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -162,6 +179,10 @@ int \mbox{\hyperlink{classMapRenderer_a968a84cb8d342b22c2996ec5f83e216f}{ea1c}} 
 int \mbox{\hyperlink{classMapRenderer_a733fa3b45a42e8600a8504f9fad8f2af}{half\+Size}} \{\mbox{\hyperlink{classMapRenderer_ae87488b2b2aec44b5ae36e8cda4ed393}{tile\+Size}}/2\}
 \item 
 Q\+Pixmap $\ast$ \mbox{\hyperlink{classMapRenderer_a3e922266a37368f5d30ed73bb0d25390}{buffer}}
+\item 
+Q\+Media\+Player $\ast$ \mbox{\hyperlink{classMapRenderer_aa2dbca0da71decd692f2c0a62d3b6b52}{video\+Player}}
+\item 
+Q\+Video\+Widget $\ast$ \mbox{\hyperlink{classMapRenderer_ae68cc50625fc3d2966f4e9625ab5b176}{video\+Widget}}
 \end{DoxyCompactItemize}
 
 
@@ -186,23 +207,10 @@ Q\+Pixmap $\ast$ \mbox{\hyperlink{classMapRenderer_a3e922266a37368f5d30ed73bb0d2
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
-\mbox{\Hypertarget{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}\label{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795}} 
-\index{MapRenderer@{MapRenderer}!animateMovement@{animateMovement}}
-\index{animateMovement@{animateMovement}!MapRenderer@{MapRenderer}}
-\doxysubsubsection{\texorpdfstring{animateMovement()}{animateMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Map\+Renderer\+::animate\+Movement (\begin{DoxyParamCaption}\item[{Q\+Image}]{img,  }\item[{Q\+String}]{path }\end{DoxyParamCaption})}
-
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMapRenderer_aa798710f4ea856a9ccc8d789e7c27795_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}\label{classMapRenderer_a919be325b2604b720ed0fa2eb5676592}} 
 \index{MapRenderer@{MapRenderer}!animateMovement@{animateMovement}}
 \index{animateMovement@{animateMovement}!MapRenderer@{MapRenderer}}
-\doxysubsubsection{\texorpdfstring{animateMovement()}{animateMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{animateMovement()}{animateMovement()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::animate\+Movement (\begin{DoxyParamCaption}\item[{Q\+Image}]{img,  }\item[{Q\+String}]{path,  }\item[{double}]{speed }\end{DoxyParamCaption})}
 
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
@@ -210,6 +218,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMapRenderer_a919be325b2604b720ed0fa2eb5676592_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a919be325b2604b720ed0fa2eb5676592_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMapRenderer_a15bd2845914440803193a2209b1a9230}\label{classMapRenderer_a15bd2845914440803193a2209b1a9230}} 
@@ -236,6 +252,28 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a15bd2845914440803193a2209b1a9230_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a58a55f100157958cf39c7028b12ef569}\label{classMapRenderer_a58a55f100157958cf39c7028b12ef569}} 
+\index{MapRenderer@{MapRenderer}!animateMovementTracked@{animateMovementTracked}}
+\index{animateMovementTracked@{animateMovementTracked}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{animateMovementTracked()}{animateMovementTracked()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::animate\+Movement\+Tracked (\begin{DoxyParamCaption}\item[{Q\+Image}]{img,  }\item[{Q\+String}]{path,  }\item[{int}]{id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a58a55f100157958cf39c7028b12ef569_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a58a55f100157958cf39c7028b12ef569_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}\label{classMapRenderer_af09cc87016da102e1874f9c4a42fd963}} 
 \index{MapRenderer@{MapRenderer}!animateScale@{animateScale}}
 \index{animateScale@{animateScale}!MapRenderer@{MapRenderer}}
@@ -258,6 +296,16 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_af09cc87016da102e1874f9c4a42fd963_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a01e6e2a8caf5b352dbee62382de8c346}\label{classMapRenderer_a01e6e2a8caf5b352dbee62382de8c346}} 
+\index{MapRenderer@{MapRenderer}!bridgeAnimation@{bridgeAnimation}}
+\index{bridgeAnimation@{bridgeAnimation}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{bridgeAnimation()}{bridgeAnimation()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::bridge\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a01e6e2a8caf5b352dbee62382de8c346}{Map\+Renderer\+::bridge\+Animation}} Startet die Brückenbau-\/\+Sequenz. 
+
 \mbox{\Hypertarget{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}\label{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a}} 
 \index{MapRenderer@{MapRenderer}!cloudAnimation@{cloudAnimation}}
 \index{cloudAnimation@{cloudAnimation}!MapRenderer@{MapRenderer}}
@@ -282,6 +330,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a742fba1dadf2f2bcabe5d8e2fa73042a_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a37d712e19b31db09e555976bb8647df7}\label{classMapRenderer_a37d712e19b31db09e555976bb8647df7}} 
+\index{MapRenderer@{MapRenderer}!deleteAnimationId@{deleteAnimationId}}
+\index{deleteAnimationId@{deleteAnimationId}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{deleteAnimationId()}{deleteAnimationId()}}
+{\footnotesize\ttfamily void Map\+Renderer\+::delete\+Animation\+Id (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}\label{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}} 
 \index{MapRenderer@{MapRenderer}!demo@{demo}}
 \index{demo@{demo}!MapRenderer@{MapRenderer}}
@@ -292,7 +346,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classMapRenderer_a6b690a49223b2006a4816b706a4b156e}{Map\+Renderer\+::demo}} Zeigt eine Demo-\/\+Visualisierung. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -388,13 +443,49 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=328pt]{classMapRenderer_a16e18fbc2209227f9c891349b49079e4_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b}\label{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b}} 
+\index{MapRenderer@{MapRenderer}!handleReachedPoint@{handleReachedPoint}}
+\index{handleReachedPoint@{handleReachedPoint}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{handleReachedPoint}{handleReachedPoint}}
+{\footnotesize\ttfamily void Map\+Renderer\+::handle\+Reached\+Point (\begin{DoxyParamCaption}\item[{int}]{px,  }\item[{int}]{py,  }\item[{\mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$}]{anim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b}{Map\+Renderer\+::handle\+Reached\+Point}} Wird aufgerufen, wenn eine Animation einen neuen Punkt erreicht. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em px} & Die X-\/\+Koordinate \\
+\hline
+{\em py} & Die Y-\/\+Koordinate \\
+\hline
+{\em anim} & Die Animation \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_a8a4025ac579a3a9ec1b56544431f263b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMapRenderer_a9f43e4b3db6a2cda8ea7cabf1bc6f805}\label{classMapRenderer_a9f43e4b3db6a2cda8ea7cabf1bc6f805}} 
 \index{MapRenderer@{MapRenderer}!keyReleaseEvent@{keyReleaseEvent}}
 \index{keyReleaseEvent@{keyReleaseEvent}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -544,6 +635,35 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=339pt]{classMapRenderer_a472525cfdf5cd4ab4ed226457ae6f55a_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_aa397c765ec01e46c5c5ac5d3f30ea6aa}\label{classMapRenderer_aa397c765ec01e46c5c5ac5d3f30ea6aa}} 
+\index{MapRenderer@{MapRenderer}!onTrainPass@{onTrainPass}}
+\index{onTrainPass@{onTrainPass}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{onTrainPass}{onTrainPass}}
+{\footnotesize\ttfamily void Map\+Renderer\+::on\+Train\+Pass (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapRenderer_aa397c765ec01e46c5c5ac5d3f30ea6aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMapRenderer_a80be8bf24bdc1ab7fdb7e6a1508e1f36}\label{classMapRenderer_a80be8bf24bdc1ab7fdb7e6a1508e1f36}} 
+\index{MapRenderer@{MapRenderer}!onVideoStateChange@{onVideoStateChange}}
+\index{onVideoStateChange@{onVideoStateChange}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{onVideoStateChange}{onVideoStateChange}}
+{\footnotesize\ttfamily void Map\+Renderer\+::on\+Video\+State\+Change (\begin{DoxyParamCaption}\item[{Q\+Media\+Player\+::\+State}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classMapRenderer_a80be8bf24bdc1ab7fdb7e6a1508e1f36}{Map\+Renderer\+::on\+Video\+State\+Change}} Wird aufgerufen wenn der Status des Videos sich ändert. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em state} & Der neue Status. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMapRenderer_afda821c83a4e0b63eb8325597f4fc6ef}\label{classMapRenderer_afda821c83a4e0b63eb8325597f4fc6ef}} 
 \index{MapRenderer@{MapRenderer}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!MapRenderer@{MapRenderer}}
@@ -589,6 +709,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classMapRenderer_a3581e7b75ea4eed2798d6a2e4e201e87_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMapRenderer_ab28082ca46c61b3e090f169a5c1a7c76}\label{classMapRenderer_ab28082ca46c61b3e090f169a5c1a7c76}} 
+\index{MapRenderer@{MapRenderer}!sendPlayBridge@{sendPlayBridge}}
+\index{sendPlayBridge@{sendPlayBridge}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{sendPlayBridge}{sendPlayBridge}}
+{\footnotesize\ttfamily void Map\+Renderer\+::send\+Play\+Bridge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
 \mbox{\Hypertarget{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}\label{classMapRenderer_a2be324ae01f261af8cf3403df83d4768}} 
 \index{MapRenderer@{MapRenderer}!setLogicSpeed@{setLogicSpeed}}
 \index{setLogicSpeed@{setLogicSpeed}!MapRenderer@{MapRenderer}}
@@ -919,6 +1045,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{timeToRender@{timeToRender}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{timeToRender}{timeToRender}}
 {\footnotesize\ttfamily int Map\+Renderer\+::time\+To\+Render \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_aa2dbca0da71decd692f2c0a62d3b6b52}\label{classMapRenderer_aa2dbca0da71decd692f2c0a62d3b6b52}} 
+\index{MapRenderer@{MapRenderer}!videoPlayer@{videoPlayer}}
+\index{videoPlayer@{videoPlayer}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{videoPlayer}{videoPlayer}}
+{\footnotesize\ttfamily Q\+Media\+Player$\ast$ Map\+Renderer\+::video\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_ae68cc50625fc3d2966f4e9625ab5b176}\label{classMapRenderer_ae68cc50625fc3d2966f4e9625ab5b176}} 
+\index{MapRenderer@{MapRenderer}!videoWidget@{videoWidget}}
+\index{videoWidget@{videoWidget}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{videoWidget}{videoWidget}}
+{\footnotesize\ttfamily Q\+Video\+Widget$\ast$ Map\+Renderer\+::video\+Widget\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_a157332ede504131e45f7482d7b6c7118}\label{classMapRenderer_a157332ede504131e45f7482d7b6c7118}} 
 \index{MapRenderer@{MapRenderer}!vx@{vx}}

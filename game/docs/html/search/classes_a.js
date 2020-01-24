@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['view_425',['View',['../classView.html',1,'']]]
+  ['videowidget_451',['Videowidget',['../classVideowidget.html',1,'']]],
+  ['view_452',['View',['../classView.html',1,'']]]
 ];

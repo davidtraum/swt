@@ -26,6 +26,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
     connect(mapRenderer, &MapRenderer::leftclick, this, &Client::onLeftclick);
     connect(this, &Client::onMapLoaded, dataModel, &DataModel::setMapLoaded);
+    connect(mapRenderer, &MapRenderer::onTrainPass, this, &Client::sendTrainPass);
     emit onMapLoaded(false);
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
@@ -125,6 +126,17 @@ void Client::cancelRoute(QListWidgetItem * item) {
 
 }
 
+/**
+ * @brief Client::sendTrainPass Sendet eine Zugposition.
+ * @param px Die X-Koordinate.
+ * @param py Die Y-Koordinate.
+ * @param pid Die ID vom Zug.
+ */
+void Client::sendTrainPass(int pid, int px, int py)
+{
+    socket->write(QString("ROUTE PASS " + QString::number(pid) + " " + QString::number(px) + " " + QString::number(py) + "~").toLocal8Bit());
+}
+
 void Client::sendRoute(QString routeString){
     qDebug() << "An Socket: " + routeString;
     socket->write(routeString.toLocal8Bit());
@@ -169,14 +181,10 @@ void Client::processCommand(QString cmd){
                 dataModel->setTime(split[1].toInt());
             }
             else if(split[0] == "ROUTE" && split.length()==4){  //Starte Animation
-                qDebug() << split[3];
-                mapRenderer->animateMovement(QImage(":/images/train_top.png"), split[3]);
+                mapRenderer->animateMovementTracked(QImage(":/images/train_top.png"), split[3], split[2].toInt());
             }
             else if(split[0] == "ROUTE" && split.length()==3) {    //Beende Animation
                 qDebug() << "Route mit folgender ID wird nicht mehr wiederholt: " << split[2];
-
-                //Hier bitte Animation Repeat auf False setzen
-
             }
             else if(split[0] == "SYNC"){
             }

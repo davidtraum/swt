@@ -48,6 +48,7 @@ public slots:
     void sendRoute(QString);
     void requestRoutes();
     void cancelRoute(QListWidgetItem *);
+    void sendTrainPass(int,int,int);
 
 };
 

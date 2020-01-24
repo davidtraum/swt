@@ -13,8 +13,8 @@ AnimationEntity::AnimationEntity(QImage * pImage, int pX, int pY):
     y = int(pY);
 }
 
-AnimationEntity::AnimationEntity(QImage * pImage):
-    image{pImage}
+AnimationEntity::AnimationEntity(QImage * pImage, int pId):
+    image{pImage}, id{pId}
 {
 
 }
@@ -65,6 +65,15 @@ void AnimationEntity::setPosition(int px, int py)
 QImage *AnimationEntity::getImage()
 {
     return image;
+}
+
+/**
+ * @brief AnimationEntity::getId Liefert die ID zurück.
+ * @return Die Animationsid.
+ */
+int AnimationEntity::getId()
+{
+    return id;
 }
 
 

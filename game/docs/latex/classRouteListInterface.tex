@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Route\+List\+Interface\+:\nopagebreak
+Klassendiagramm für Route\+List\+Interface\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Route\+List\+Interface\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Route\+List\+Interface\+:\nopagebreak
+Zusammengehörigkeiten von Route\+List\+Interface\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,11 +30,15 @@ Zusammengehörigkeiten von Route\+List\+Interface\+:\nopagebreak
 void \mbox{\hyperlink{classRouteListInterface_a89601e6903f18dae77c8990bf884fb91}{toggle}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteListInterface_a89601e6903f18dae77c8990bf884fb91}{Route\+List\+Interface\+::toggle}} Wechselt die Sichtbarkeit des Widgets. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRouteListInterface_aad51133162380c0afbc1b194e45f868d}{delete\+Route}} ()
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e}{receive\+Routes}} (Q\+String\+List $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e}{Route\+List\+Interface\+::receive\+Routes}} Formatiert die Liste aus Strings zu schöneren einzelnen Strings, die mit dem Q\+List\+Widget route\+List im Interface dargestellt werden. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signale}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classRouteListInterface_a041bcff66f2bd82d4df83c5c72cd2b15}{send\+Request\+Routes}} ()
+\item 
+void \mbox{\hyperlink{classRouteListInterface_a75a2298ae09d2e13b3fc38cdf7787cd6}{send\+Delete\+Signal}} (Q\+List\+Widget\+Item $\ast$)
 \end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
@@ -74,6 +80,38 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=314pt]{classRouteListInterface_aad51133162380c0afbc1b194e45f868d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e}\label{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e}} 
+\index{RouteListInterface@{RouteListInterface}!receiveRoutes@{receiveRoutes}}
+\index{receiveRoutes@{receiveRoutes}!RouteListInterface@{RouteListInterface}}
+\doxysubsubsection{\texorpdfstring{receiveRoutes}{receiveRoutes}}
+{\footnotesize\ttfamily void Route\+List\+Interface\+::receive\+Routes (\begin{DoxyParamCaption}\item[{Q\+String\+List $\ast$}]{route\+String\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e}{Route\+List\+Interface\+::receive\+Routes}} Formatiert die Liste aus Strings zu schöneren einzelnen Strings, die mit dem Q\+List\+Widget route\+List im Interface dargestellt werden. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classRouteListInterface_a44d42eab7ee98a546e1112692e7dcc6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRouteListInterface_a75a2298ae09d2e13b3fc38cdf7787cd6}\label{classRouteListInterface_a75a2298ae09d2e13b3fc38cdf7787cd6}} 
+\index{RouteListInterface@{RouteListInterface}!sendDeleteSignal@{sendDeleteSignal}}
+\index{sendDeleteSignal@{sendDeleteSignal}!RouteListInterface@{RouteListInterface}}
+\doxysubsubsection{\texorpdfstring{sendDeleteSignal}{sendDeleteSignal}}
+{\footnotesize\ttfamily void Route\+List\+Interface\+::send\+Delete\+Signal (\begin{DoxyParamCaption}\item[{Q\+List\+Widget\+Item $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRouteListInterface_a75a2298ae09d2e13b3fc38cdf7787cd6_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classRouteListInterface_a041bcff66f2bd82d4df83c5c72cd2b15}\label{classRouteListInterface_a041bcff66f2bd82d4df83c5c72cd2b15}} 

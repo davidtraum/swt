@@ -86,8 +86,19 @@ void AnimationMovement::setAutoRotate(bool pStatus)
     autoRotate = pStatus;
 }
 
+/**
+ * @brief AnimationMovement::setEmitChanges Setzt ob jede Punktänderung emitted wird.
+ */
+void AnimationMovement::setEmitChanges(bool status)
+{
+    emitChanges = status;
+}
+
 void AnimationMovement::calculateVector(Point origin, Point target)
 {
+    if(emitChanges){
+        emit reachedPoint(origin.getX()/64, origin.getY()/64, this);
+    }
     int vxt = target.getX() - origin.getX();
     int vyt = target.getY() - origin.getY();
     double len = sqrt(vxt*vxt + vyt*vyt);
@@ -124,3 +135,4 @@ double AnimationMovement::targetDistance()
     double dvy = target.getY() - item->getY();
     return sqrt(dvx*dvx + dvy*dvy);
 }
+

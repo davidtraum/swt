@@ -579,9 +579,11 @@ void MapRenderer::setViewportTilePosition(int px, int py)
     dataModel->updateCoordinates(px,py);
 }
 
-void MapRenderer::animateMovement(QImage img, QString path)
+void MapRenderer::animateMovementTracked(QImage img, QString path, int id)
 {
-    AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img)), path);
+    AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img), id), path);
+    anim->setEmitChanges(true);
+    connect(anim, &AnimationMovement::reachedPoint, this, &MapRenderer::handleReachedPoint);
     movementAnimations.push_back(anim);
 }
 
@@ -685,6 +687,19 @@ void MapRenderer::enableHighlight(bool status)
 void MapRenderer::setLogicSpeed(int pDelay)
 {
     framerateDelay = pDelay;
+}
+
+/**
+ * @brief MapRenderer::handleReachedPoint Wird aufgerufen, wenn eine Animation einen neuen Punkt erreicht.
+ * @param px Die X-Koordinate
+ * @param py Die Y-Koordinate
+ * @param anim Die Animation
+ */
+void MapRenderer::handleReachedPoint(int px, int py, AnimationMovement * anim)
+{
+    if(data[px][py].isTrainStation()){
+        emit onTrainPass(anim->getEntity()->getId(), px,py);
+    }
 }
 
 /**

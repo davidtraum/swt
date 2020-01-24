@@ -81,12 +81,14 @@ $(function() {
 <div class="dynheader">
 Klassendiagramm für Client:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient__inherit__graph.svg" width="164" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Zusammengehörigkeiten von Client:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -104,6 +106,12 @@ Zusammengehörigkeiten von Client:</div>
 <tr class="separator:ada128336cc2851c3695585eb1f72c81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0117b947b8fa4c074ad042aa58b81f0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a0117b947b8fa4c074ad042aa58b81f0c">requestRoutes</a> ()</td></tr>
 <tr class="separator:a0117b947b8fa4c074ad042aa58b81f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4e78a6e662211ccc78d8f756ff3d8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a0b4e78a6e662211ccc78d8f756ff3d8e">cancelRoute</a> (QListWidgetItem *)</td></tr>
+<tr class="memdesc:a0b4e78a6e662211ccc78d8f756ff3d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a0b4e78a6e662211ccc78d8f756ff3d8e" title="Client::cancelRoute Schickt einen Befehl zum Server die entsprechende Route zu löschen.">Client::cancelRoute</a> Schickt einen Befehl zum Server die entsprechende Route zu löschen.  <a href="classClient.html#a0b4e78a6e662211ccc78d8f756ff3d8e">Mehr ...</a><br /></td></tr>
+<tr class="separator:a0b4e78a6e662211ccc78d8f756ff3d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069e060eb4e572f2d7a1de1713263a73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a069e060eb4e572f2d7a1de1713263a73">sendTrainPass</a> (int, int, int)</td></tr>
+<tr class="memdesc:a069e060eb4e572f2d7a1de1713263a73"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a069e060eb4e572f2d7a1de1713263a73" title="Client::sendTrainPass Sendet eine Zugposition.">Client::sendTrainPass</a> Sendet eine Zugposition.  <a href="classClient.html#a069e060eb4e572f2d7a1de1713263a73">Mehr ...</a><br /></td></tr>
+<tr class="separator:a069e060eb4e572f2d7a1de1713263a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signale</h2></td></tr>
@@ -115,6 +123,8 @@ Signale</h2></td></tr>
 <tr class="separator:afe36a25e08b9abdcc6a9bd40b79e2973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60cad535b42ae3555ae1f69b14902344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a60cad535b42ae3555ae1f69b14902344">onMapLoaded</a> (bool)</td></tr>
 <tr class="separator:a60cad535b42ae3555ae1f69b14902344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae811d490fb8997558d324a8284d84023"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae811d490fb8997558d324a8284d84023">sendRouteString</a> (QStringList *)</td></tr>
+<tr class="separator:ae811d490fb8997558d324a8284d84023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
@@ -137,6 +147,8 @@ Private Methoden</h2></td></tr>
 <tr class="memitem:a4cc6ded21fb38d6341fd91314156920e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a4cc6ded21fb38d6341fd91314156920e">processCommand</a> (QString command)</td></tr>
 <tr class="memdesc:a4cc6ded21fb38d6341fd91314156920e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html#a4cc6ded21fb38d6341fd91314156920e" title="Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus.">Client::processCommand</a> Führt einen empfangenen Befehl aus dem Serverprotokoll aus.  <a href="classClient.html#a4cc6ded21fb38d6341fd91314156920e">Mehr ...</a><br /></td></tr>
 <tr class="separator:a4cc6ded21fb38d6341fd91314156920e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2f90dc4a6cdf9c0b7e55b7c48552a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aea2f90dc4a6cdf9c0b7e55b7c48552a9">playBridgeVideo</a> ()</td></tr>
+<tr class="separator:aea2f90dc4a6cdf9c0b7e55b7c48552a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attribute</h2></td></tr>
@@ -154,6 +166,8 @@ Private Attribute</h2></td></tr>
 <tr class="separator:a295774ea94eb86ce3a5391225309f232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ff09ca2e2b0f3c448d8ac8bc0940c6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9ff09ca2e2b0f3c448d8ac8bc0940c6d">tickcount</a> {0}</td></tr>
 <tr class="separator:a9ff09ca2e2b0f3c448d8ac8bc0940c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e96537fb3b1a7b227f7daef34a6fd1"><td class="memItemLeft" align="right" valign="top">QStringList *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a03e96537fb3b1a7b227f7daef34a6fd1">splitPointer</a></td></tr>
+<tr class="separator:a03e96537fb3b1a7b227f7daef34a6fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="a259d03bc8e9c317d6aeb86a68d7d0b22"></a>
@@ -210,12 +224,53 @@ Private Attribute</h2></td></tr>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_a259d03bc8e9c317d6aeb86a68d7d0b22_cgraph.svg" width="100%" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_a259d03bc8e9c317d6aeb86a68d7d0b22_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a0b4e78a6e662211ccc78d8f756ff3d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4e78a6e662211ccc78d8f756ff3d8e">&#9670;&nbsp;</a></span>cancelRoute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::cancelRoute </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classClient.html#a0b4e78a6e662211ccc78d8f756ff3d8e" title="Client::cancelRoute Schickt einen Befehl zum Server die entsprechende Route zu löschen.">Client::cancelRoute</a> Schickt einen Befehl zum Server die entsprechende Route zu löschen. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Das Item des QListWidget der ausgewählten Zeile. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a0b4e78a6e662211ccc78d8f756ff3d8e_icgraph.svg" width="296" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a7eb68233905bad7e20ed057bb67ab856"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7eb68233905bad7e20ed057bb67ab856">&#9670;&nbsp;</a></span>mapLoaded</h2>
 
@@ -391,6 +446,31 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 
 </div>
 </div>
+<a id="aea2f90dc4a6cdf9c0b7e55b7c48552a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2f90dc4a6cdf9c0b7e55b7c48552a9">&#9670;&nbsp;</a></span>playBridgeVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::playBridgeVideo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afe36a25e08b9abdcc6a9bd40b79e2973"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe36a25e08b9abdcc6a9bd40b79e2973">&#9670;&nbsp;</a></span>playerPositionChange</h2>
 
@@ -466,7 +546,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a4cc6ded21fb38d6341fd91314156920e_cgraph.svg" width="456" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_a4cc6ded21fb38d6341fd91314156920e_cgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
@@ -556,7 +637,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_ad2cfacbefea1e51e34c4697403fb82cb_cgraph.svg" width="587" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classClient_ad2cfacbefea1e51e34c4697403fb82cb_cgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -588,6 +670,96 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classClient_ada128336cc2851c3695585eb1f72c81f_icgraph.svg" width="394" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae811d490fb8997558d324a8284d84023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae811d490fb8997558d324a8284d84023">&#9670;&nbsp;</a></span>sendRouteString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList Client::sendRouteString </td>
+          <td>(</td>
+          <td class="paramtype">QStringList *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_ae811d490fb8997558d324a8284d84023_icgraph.svg" width="527" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a069e060eb4e572f2d7a1de1713263a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069e060eb4e572f2d7a1de1713263a73">&#9670;&nbsp;</a></span>sendTrainPass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::sendTrainPass </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>py</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classClient.html#a069e060eb4e572f2d7a1de1713263a73" title="Client::sendTrainPass Sendet eine Zugposition.">Client::sendTrainPass</a> Sendet eine Zugposition. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">px</td><td>Die X-Koordinate. </td></tr>
+    <tr><td class="paramname">py</td><td>Die Y-Koordinate. </td></tr>
+    <tr><td class="paramname">pid</td><td>Die ID vom Zug. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classClient_a069e060eb4e572f2d7a1de1713263a73_icgraph.svg" width="315" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -767,6 +939,28 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
       <table class="memname">
         <tr>
           <td class="memname">QTcpSocket* Client::socket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03e96537fb3b1a7b227f7daef34a6fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e96537fb3b1a7b227f7daef34a6fd1">&#9670;&nbsp;</a></span>splitPointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList* Client::splitPointer</td>
         </tr>
       </table>
   </td>

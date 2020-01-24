@@ -56,6 +56,7 @@ public:
     void setCity(City * pCity);
     int getX();
     int getY();
+    bool isTrainStation();
     void attachGraphicsManager(GraphicsManager * pGraphicsManager);
 
 private:

@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Entity\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Entity\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,7 +19,7 @@ Zusammengehörigkeiten von Animation\+Entity\+:\nopagebreak
 \item 
 \mbox{\hyperlink{classAnimationEntity_ac9ce21ab0c84f7e2c473f7ad75f0444b}{Animation\+Entity}} (Q\+Image $\ast$, int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_ac9ce21ab0c84f7e2c473f7ad75f0444b}{Animation\+Entity\+::\+Animation\+Entity}} Erzeugt ein neues Animation-\/\+Entity. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classAnimationEntity_a1f97fca022631d6036f9b3848c7d2707}{Animation\+Entity}} (Q\+Image $\ast$)
+\mbox{\hyperlink{classAnimationEntity_a7f3e681df29e7ec5f3d47cef1fcc8ef1}{Animation\+Entity}} (Q\+Image $\ast$, int \mbox{\hyperlink{classAnimationEntity_a3580c15e446ae2ee695f1c774cd3a4dd}{id}}=-\/1)
 \item 
 \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classAnimationEntity_a27d4b33376d52204b0f45c9334cc1f13}{get\+Position}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a27d4b33376d52204b0f45c9334cc1f13}{Animation\+Entity\+::get\+Position}} Liefert die Position. \end{DoxyCompactList}\item 
@@ -31,7 +32,9 @@ double \mbox{\hyperlink{classAnimationEntity_a1c0ea4c96d31efc6b5b40c3150113061}{
 void \mbox{\hyperlink{classAnimationEntity_adf453b23baf39c44a6ee36f1b9899e0d}{set\+Position}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_adf453b23baf39c44a6ee36f1b9899e0d}{Animation\+Entity\+::set\+Position}} Setzt die Position des Elements. \end{DoxyCompactList}\item 
 Q\+Image $\ast$ \mbox{\hyperlink{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}{get\+Image}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}{Animation\+Entity\+::get\+Image}} Liefert die Grafik des Animationselements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}{Animation\+Entity\+::get\+Image}} Liefert die Grafik des Animationselements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}{Animation\+Entity\+::get\+Id}} Liefert die ID zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +46,8 @@ int \mbox{\hyperlink{classAnimationEntity_a1f5ece9d289b64ade3039f17e01fc5f0}{rot
 \begin{DoxyCompactItemize}
 \item 
 Q\+Image $\ast$ \mbox{\hyperlink{classAnimationEntity_a038fe084db31d6e1d3109cec347f6fdf}{image}}
+\item 
+int \mbox{\hyperlink{classAnimationEntity_a3580c15e446ae2ee695f1c774cd3a4dd}{id}} \{-\/1\}
 \item 
 double \mbox{\hyperlink{classAnimationEntity_a5510cf88e10b6a23d60e964f27840afe}{x}} \{0\}
 \item 
@@ -70,15 +75,36 @@ double \mbox{\hyperlink{classAnimationEntity_a625e15c96b5464603f9b3fe52c8c2613}{
 {\em pY} & Die Y-\/\+Startposition. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAnimationEntity_a1f97fca022631d6036f9b3848c7d2707}\label{classAnimationEntity_a1f97fca022631d6036f9b3848c7d2707}} 
+\mbox{\Hypertarget{classAnimationEntity_a7f3e681df29e7ec5f3d47cef1fcc8ef1}\label{classAnimationEntity_a7f3e681df29e7ec5f3d47cef1fcc8ef1}} 
 \index{AnimationEntity@{AnimationEntity}!AnimationEntity@{AnimationEntity}}
 \index{AnimationEntity@{AnimationEntity}!AnimationEntity@{AnimationEntity}}
 \doxysubsubsection{\texorpdfstring{AnimationEntity()}{AnimationEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Animation\+Entity\+::\+Animation\+Entity (\begin{DoxyParamCaption}\item[{Q\+Image $\ast$}]{p\+Image }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Animation\+Entity\+::\+Animation\+Entity (\begin{DoxyParamCaption}\item[{Q\+Image $\ast$}]{p\+Image,  }\item[{int}]{id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
 
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
+\mbox{\Hypertarget{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}\label{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}} 
+\index{AnimationEntity@{AnimationEntity}!getId@{getId}}
+\index{getId@{getId}!AnimationEntity@{AnimationEntity}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Animation\+Entity\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}{Animation\+Entity\+::get\+Id}} Liefert die ID zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Die Animationsid. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}\label{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}} 
 \index{AnimationEntity@{AnimationEntity}!getImage@{getImage}}
 \index{getImage@{getImage}!AnimationEntity@{AnimationEntity}}
@@ -180,6 +206,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{autoRotate@{autoRotate}!AnimationEntity@{AnimationEntity}}
 \doxysubsubsection{\texorpdfstring{autoRotate}{autoRotate}}
 {\footnotesize\ttfamily bool Animation\+Entity\+::auto\+Rotate \{true\}}
+
+\mbox{\Hypertarget{classAnimationEntity_a3580c15e446ae2ee695f1c774cd3a4dd}\label{classAnimationEntity_a3580c15e446ae2ee695f1c774cd3a4dd}} 
+\index{AnimationEntity@{AnimationEntity}!id@{id}}
+\index{id@{id}!AnimationEntity@{AnimationEntity}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Animation\+Entity\+::id \{-\/1\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationEntity_a038fe084db31d6e1d3109cec347f6fdf}\label{classAnimationEntity_a038fe084db31d6e1d3109cec347f6fdf}} 
 \index{AnimationEntity@{AnimationEntity}!image@{image}}

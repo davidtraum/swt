@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zoominanimation_659',['zoomInAnimation',['../classView.html#a1e1a3f29a5b539e3f8991cba46721e8f',1,'View']]]
+  ['wheelevent_706',['wheelEvent',['../classMapRenderer.html#a1dd302fd88ea977f54416c7e1f2e5875',1,'MapRenderer::wheelEvent()'],['../classView.html#a094f2fd748e2855fcd4ec42d171e5bbe',1,'View::wheelEvent()']]]
 ];

@@ -47,8 +47,9 @@ public:
 
     void setViewportTilePosition(int,int);
 
-    void animateMovement(QImage, QString);
+    void animateMovementTracked(QImage, QString, int id = -1);
     void animateMovement(QImage, QString, double);
+    void deleteAnimationId(int);
 
     void cloudAnimation();
     void bridgeAnimation();
@@ -99,6 +100,7 @@ public slots:
     void onTileChange(int,int,int);
     void enableHighlight(bool);
     void setLogicSpeed(int);
+    void handleReachedPoint(int,int,AnimationMovement *);
 private slots:
     void onVideoStateChange(QMediaPlayer::State);
 
@@ -107,6 +109,7 @@ signals:
     void leftclick();
     void positionChange(int,int);
     void sendPlayBridge();
+    void onTrainPass(int,int,int);
 };
 
 #endif // MAPRENDERER_H

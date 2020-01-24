@@ -6,13 +6,29 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Klassendiagramm für Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=203pt]{classAnimationMovement__coll__graph}
+\includegraphics[width=203pt]{classAnimationMovement__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classAnimationMovement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Signale}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}{reached\+Point}} (int, int, \mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$)
+\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,7 +45,9 @@ void \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{
 void \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{set\+Speed}} (double)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{Animation\+Movement\+::set\+Speed}} Setzt die Geschwindigkeit der Animation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{set\+Auto\+Rotate}} (bool)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{Animation\+Movement\+::set\+Auto\+Rotate}} Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{Animation\+Movement\+::set\+Auto\+Rotate}} Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{set\+Emit\+Changes}} (bool)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{Animation\+Movement\+::set\+Emit\+Changes}} Setzt ob jede Punktänderung emitted wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,6 +63,8 @@ double \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313
 bool \mbox{\hyperlink{classAnimationMovement_a1941cd9536bfd7765344a2c871061bc5}{repeat}} \{true\}
 \item 
 bool \mbox{\hyperlink{classAnimationMovement_ab053c64f2ab02a53d85b4708171e08ac}{auto\+Rotate}} \{true\}
+\item 
+bool \mbox{\hyperlink{classAnimationMovement_adfcb445da05b9b5ed83956d97b363e3b}{emit\+Changes}} \{false\}
 \item 
 int \mbox{\hyperlink{classAnimationMovement_ad39fc5a14101457df422b7a419d0a38d}{direction}} \{1\}
 \item 
@@ -120,6 +140,14 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ Animation\+Movement\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}\label{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}} 
 \index{AnimationMovement@{AnimationMovement}!move@{move}}
 \index{move@{move}!AnimationMovement@{AnimationMovement}}
@@ -152,6 +180,20 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}\label{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}} 
+\index{AnimationMovement@{AnimationMovement}!reachedPoint@{reachedPoint}}
+\index{reachedPoint@{reachedPoint}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{reachedPoint}{reachedPoint}}
+{\footnotesize\ttfamily void Animation\+Movement\+::reached\+Point (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{\mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}\label{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}} 
 \index{AnimationMovement@{AnimationMovement}!setAutoRotate@{setAutoRotate}}
 \index{setAutoRotate@{setAutoRotate}!AnimationMovement@{AnimationMovement}}
@@ -167,6 +209,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}\label{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}} 
+\index{AnimationMovement@{AnimationMovement}!setEmitChanges@{setEmitChanges}}
+\index{setEmitChanges@{setEmitChanges}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{setEmitChanges()}{setEmitChanges()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::set\+Emit\+Changes (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{Animation\+Movement\+::set\+Emit\+Changes}} Setzt ob jede Punktänderung emitted wird. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_ac08c2750866d7ed93bcede356626883b_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}\label{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}} 
@@ -206,7 +266,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Speed} & Die Geschwindigkeit (1=normal, 2=doppelt...) \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -247,6 +308,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{direction@{direction}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{direction}{direction}}
 {\footnotesize\ttfamily int Animation\+Movement\+::direction \{1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_adfcb445da05b9b5ed83956d97b363e3b}\label{classAnimationMovement_adfcb445da05b9b5ed83956d97b363e3b}} 
+\index{AnimationMovement@{AnimationMovement}!emitChanges@{emitChanges}}
+\index{emitChanges@{emitChanges}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{emitChanges}{emitChanges}}
+{\footnotesize\ttfamily bool Animation\+Movement\+::emit\+Changes \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}\label{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}} 
 \index{AnimationMovement@{AnimationMovement}!item@{item}}
