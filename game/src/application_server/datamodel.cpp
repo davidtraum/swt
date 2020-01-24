@@ -197,6 +197,7 @@ void DataModel::setGuiPositionLabel(QLabel *label){
     updateCoordinates(coordinateX, coordinateY);
 }
 
+
 /**
  * @brief DataModel::setStatusDisplayLabel Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird.
  * @param label Ein Pointer auf ein QLabel Objekt.

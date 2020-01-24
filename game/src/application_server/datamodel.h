@@ -4,6 +4,9 @@
 #include <string>
 #include <QLabel>
 #include <QWidget>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+
 
 #include "mainwindow.h"
 #include "player.h"
@@ -47,6 +50,7 @@ public:
     const int RADIUS_STATION = 2*64;
     const int RADIUS_TERMINAL = 3*64;
     static bool mapLoaded;
+    MainWindow * mainWindow;
 
 private:
     int balance;
@@ -61,8 +65,6 @@ private:
     QLabel * connectionLabel;
 
     MODE mode{MODE::DEFAULT};
-
-    MainWindow * mainWindow;
 
 signals:
     void positionChange(int,int);

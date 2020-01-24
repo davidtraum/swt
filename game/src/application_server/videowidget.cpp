@@ -12,20 +12,18 @@ Videowidget::Videowidget() {
     QDockWidget::setFeatures(nullptr);
     QDockWidget::setVisible(false);
 
-    QGroupBox * mainWidget = new QGroupBox(" Routen verwalten");
+    QGroupBox * mainWidget = new QGroupBox("Brücke wird gebaut...");
 
     QVBoxLayout * layout = new QVBoxLayout(mainWidget);
 
-    layout->setAlignment(Qt::AlignCenter);
-
     mainWidget->setLayout(layout);
 
-    QMediaPlayer * player = new QMediaPlayer;
+    player = new QMediaPlayer;
 
     QMediaPlaylist * playlist = new QMediaPlaylist(player);
     playlist->addMedia(QUrl("qrc:/video/building_bridge.mp4"));
 
-    QVideoWidget * videoWidget = new QVideoWidget;
+    videoWidget = new QVideoWidget;
     player->setVideoOutput(videoWidget);
 
     videoWidget->show();
@@ -46,6 +44,8 @@ void Videowidget::toggle() {
         QDockWidget::setVisible(true);
 
         qDebug() << "Video startet";
+        qDebug() << player;
         player->play();
+
     }
 }

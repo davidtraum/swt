@@ -17,7 +17,7 @@ public:
 
 private:
     QMediaPlayer * player;
-    QVideoWidget * video;
+    QVideoWidget * videoWidget;
 
 signals:
 

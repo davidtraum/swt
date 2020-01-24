@@ -31,6 +31,12 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     QWidget::setFocusPolicy(Qt::FocusPolicy::StrongFocus);
     QWidget::setFocus();
 
+    videoWidget = new QVideoWidget(dataModel->mainWindow);
+    videoPlayer = new QMediaPlayer();
+    videoPlayer->setMedia(QUrl("qrc:/video/building_bridge.mp4"));
+    videoPlayer->setVideoOutput(videoWidget);
+    connect(videoPlayer, &QMediaPlayer::stateChanged, this, &MapRenderer::onVideoStateChange);
+
     buffer = new QPixmap(this->width(), this->height());
 
 //testSprite = new Sprite(new QImage(":/images/sprite/sheet_explosion.png"), 25,64);
@@ -615,6 +621,14 @@ void MapRenderer::cloudAnimation()
 }
 
 /**
+ * @brief MapRenderer::bridgeAnimation Startet die Brückenbau-Sequenz
+ */
+void MapRenderer::bridgeAnimation()
+{
+
+}
+
+/**
  * @brief MapRenderer::spawnCloud Erzeugt eine neue Wolke die über die Karte fliegt.
  */
 void MapRenderer::spawnCloud()
@@ -650,8 +664,8 @@ void MapRenderer::onTileChange(int px, int py, int type)
 {
     data[px][py].setType(MapTile::TYPE(type));
 
-    if ((type == 22 || type == 23) && DataModel::mapLoaded) {
-        emit sendPlayBridge();
+    if ((type == MapTile::BRIDGE_H || type == MapTile::BRIDGE_V) && DataModel::mapLoaded) {
+        videoPlayer->play();
     }
 }
 
@@ -671,6 +685,20 @@ void MapRenderer::enableHighlight(bool status)
 void MapRenderer::setLogicSpeed(int pDelay)
 {
     framerateDelay = pDelay;
+}
+
+/**
+ * @brief MapRenderer::onVideoStateChange Wird aufgerufen wenn der Status des Videos sich ändert.
+ * @param state Der neue Status.
+ */
+void MapRenderer::onVideoStateChange(QMediaPlayer::State state)
+{
+    qDebug() << state;
+    if(state == QMediaPlayer::EndOfMedia) {
+        dataModel->mainWindow->setCentralWidget(this);
+    }else if(state == QMediaPlayer::PlayingState) {
+        dataModel->mainWindow->setCentralWidget(videoWidget);
+    }
 }
 
 

@@ -15,6 +15,7 @@
 #include <QGridLayout>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QVideoWidget>
 
 #include "mainwindow.h"
 #include "main.h"
@@ -99,8 +100,8 @@ int main(int argc, char *argv[])
     RouteListInterface * routeListInterface = new RouteListInterface();
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeListInterface);
 
-    Videowidget * videoWidget = new Videowidget();
-    mainWindow->addDockWidget(Qt::BottomDockWidgetArea, videoWidget);
+    //Videowidget * videoWidget = new Videowidget();
+    //mainWindow->addDockWidget(Qt::BottomDockWidgetArea, videoWidget);
 
     tooltip->setParent(view);
     tooltip->show();
@@ -108,6 +109,17 @@ int main(int argc, char *argv[])
     QWidget * widget = new QWidget(mainWindow);
     QGridLayout * layout = new QGridLayout(widget);
     widget->setLayout(layout);
+
+    QMediaPlayer * videoPlayer = new QMediaPlayer();
+    videoPlayer->setMedia(QUrl("qrc:/video/building_bridge.mp4"));
+
+    QVideoWidget * videoWidget = new QVideoWidget();
+    videoPlayer->setVideoOutput(videoWidget);
+
+
+
+    //mainWindow->setCentralWidget(videoWidget);
+
 
 
     //Musik-Playlist: Song hinzufügen mit addMedia()

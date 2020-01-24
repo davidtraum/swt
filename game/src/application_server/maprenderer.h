@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QList>
 #include <QThread>
+#include <QVideoWidget>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 #include "graphicsmanager.h"
 #include "datamodel.h"
@@ -31,6 +34,7 @@ public:
     void logicUpdate();
     void renderFrame();
 
+
     void demo();
 
     Point mapPosition(int,int);
@@ -47,6 +51,7 @@ public:
     void animateMovement(QImage, QString, double);
 
     void cloudAnimation();
+    void bridgeAnimation();
     void spawnCloud();
 
     void animateScale(double);
@@ -87,11 +92,15 @@ private:
     int ea1c{0};
     int halfSize{tileSize/2};
     QPixmap * buffer;
+    QMediaPlayer * videoPlayer;
+    QVideoWidget * videoWidget;
 
 public slots:
     void onTileChange(int,int,int);
     void enableHighlight(bool);
     void setLogicSpeed(int);
+private slots:
+    void onVideoStateChange(QMediaPlayer::State);
 
 signals:
     void tileClick(int,int,int);
