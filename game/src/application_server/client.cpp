@@ -103,10 +103,15 @@ void Client::run() {
     //socket->deleteLater();
 }
 
+/**
+ * @brief Client::requestMap Fragt beim Server die gesamten Kartendaten an
+ */
 void Client::requestMap(){
     socket->write("MAP GET~");
 }
-
+/**
+ * @brief Client::requestRoutes Fragt beim Server eine Liste aller Routen des Spielers an.
+ */
 void Client::requestRoutes() {
     socket->write("ROUTE GET~");
     qDebug() << "ROUTE GET~ an Server gesendet";
@@ -120,7 +125,7 @@ void Client::cancelRoute(QListWidgetItem * item) {
     qDebug() << "cancel Route called";
     QString handOver = item->text();
     QStringList handOverList = handOver.split(":");
-    handOver = "ROUTE DELETE " + handOverList[0] + " ";
+    handOver = "ROUTE DELETE " + handOverList[0] + "~";
     qDebug() << "HandOver: " + handOver;
     socket->write(handOver.toLocal8Bit());
 
@@ -137,6 +142,10 @@ void Client::sendTrainPass(int pid, int px, int py)
     socket->write(QString("ROUTE PASS " + QString::number(pid) + " " + QString::number(px) + " " + QString::number(py) + "~").toLocal8Bit());
 }
 
+/**
+ * @brief Client::sendRoute Schicke die Daten einer neuen Route an den Server, sodass dieser diese speichern kann.
+ * @param routeString Der String mit den Daten über die Route (Name + Koordinaten + Wagons)
+ */
 void Client::sendRoute(QString routeString){
     qDebug() << "An Socket: " + routeString;
     socket->write(routeString.toLocal8Bit());
@@ -185,6 +194,7 @@ void Client::processCommand(QString cmd){
             }
             else if(split[0] == "ROUTE" && split.length()==3) {    //Beende Animation
                 qDebug() << "Route mit folgender ID wird nicht mehr wiederholt: " << split[2];
+                mapRenderer->deleteAnimationId(split[2].toInt());
             }
             else if(split[0] == "SYNC"){
             }

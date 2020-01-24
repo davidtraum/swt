@@ -54,6 +54,9 @@ void RouteListInterface::toggle() {
     qDebug() << this->isVisible();
 }
 
+/**
+ * @brief RouteListInterface::deleteRoute Sendet ein Signal, sodass die Route des Sielers vom Server gelöscht wird.
+ */
 void RouteListInterface::deleteRoute() {
 
     qDebug() << "Items werden gelöscht...";

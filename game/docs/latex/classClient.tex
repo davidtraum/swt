@@ -6,8 +6,7 @@
 
 
 
-Klassendiagramm für Client\+:
-\nopagebreak
+Klassendiagramm für Client\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Klassendiagramm für Client\+:
 \end{figure}
 
 
-Zusammengehörigkeiten von Client\+:
-\nopagebreak
+Zusammengehörigkeiten von Client\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,9 +32,9 @@ void \mbox{\hyperlink{classClient_a1be75a3d041ef5b07d4f0f50d3f21e9c}{on\+Leftcli
 void \mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{on\+Rightclick}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a423592967803355986a359fb34e268ad}{Client\+::on\+Rightclick}} Führt einen Rechtsklick durch. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_ada128336cc2851c3695585eb1f72c81f}{send\+Route}} (Q\+String)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_ada128336cc2851c3695585eb1f72c81f}{Client\+::send\+Route}} Schicke die Daten einer neuen Route an den Server, sodass dieser diese speichern kann. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_a0117b947b8fa4c074ad042aa58b81f0c}{request\+Routes}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a0117b947b8fa4c074ad042aa58b81f0c}{Client\+::request\+Routes}} Fragt beim Server eine Liste aller Routen des Spielers an. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}{cancel\+Route}} (Q\+List\+Widget\+Item $\ast$)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a0b4e78a6e662211ccc78d8f756ff3d8e}{Client\+::cancel\+Route}} Schickt einen Befehl zum Server die entsprechende Route zu löschen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_a069e060eb4e572f2d7a1de1713263a73}{send\+Train\+Pass}} (int, int, int)
@@ -62,7 +60,7 @@ Q\+String\+List \mbox{\hyperlink{classClient_ae811d490fb8997558d324a8284d84023}{
 void \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{run}} () override
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_ad2cfacbefea1e51e34c4697403fb82cb}{Client\+::run}} Startet den Client-\/\+Thread. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classClient_a88311ac4a5f132a2fd5dcee110cb98c3}{request\+Map}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClient_a88311ac4a5f132a2fd5dcee110cb98c3}{Client\+::request\+Map}} Fragt beim Server die gesamten Kartendaten an. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Öffentliche Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -107,8 +105,7 @@ Q\+String\+List $\ast$ \mbox{\hyperlink{classClient_a03e96537fb3b1a7b227f7daef34
 
 \mbox{\hyperlink{classClient_a259d03bc8e9c317d6aeb86a68d7d0b22}{Client\+::\+Client}} Erzeugt einen neuen \mbox{\hyperlink{classClient}{Client}}. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -133,8 +130,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
 {\em item} & Das Item des Q\+List\+Widget der ausgewählten Zeile. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -280,7 +276,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{requestMap()}{requestMap()}}
 {\footnotesize\ttfamily void Client\+::request\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+
+
+\mbox{\hyperlink{classClient_a88311ac4a5f132a2fd5dcee110cb98c3}{Client\+::request\+Map}} Fragt beim Server die gesamten Kartendaten an. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -293,7 +294,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{requestRoutes}{requestRoutes}}
 {\footnotesize\ttfamily void Client\+::request\+Routes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+
+
+\mbox{\hyperlink{classClient_a0117b947b8fa4c074ad042aa58b81f0c}{Client\+::request\+Routes}} Fragt beim Server eine Liste aller Routen des Spielers an. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -324,7 +330,17 @@ socket-\/$>$wait\+For\+Ready\+Read(); data = socket-\/$>$read(1); split = data.\
 \doxysubsubsection{\texorpdfstring{sendRoute}{sendRoute}}
 {\footnotesize\ttfamily void Client\+::send\+Route (\begin{DoxyParamCaption}\item[{Q\+String}]{route\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+
+
+\mbox{\hyperlink{classClient_ada128336cc2851c3695585eb1f72c81f}{Client\+::send\+Route}} Schicke die Daten einer neuen Route an den Server, sodass dieser diese speichern kann. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em route\+String} & Der String mit den Daten über die Route (Name + Koordinaten + Wagons) \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -337,8 +353,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{sendRouteString}{sendRouteString}}
 {\footnotesize\ttfamily Q\+String\+List Client\+::send\+Route\+String (\begin{DoxyParamCaption}\item[{Q\+String\+List $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -364,8 +379,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 {\em pid} & Die ID vom Zug. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
