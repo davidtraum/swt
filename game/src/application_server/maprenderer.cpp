@@ -595,6 +595,19 @@ void MapRenderer::animateMovement(QImage img, QString path, double speed)
 }
 
 /**
+ * @brief MapRenderer::deleteAnimationId Löscht eine Animation anhand der Entity-Id.
+ * @param pid Die Entity-Id.
+ */
+void MapRenderer::deleteAnimationId(int pid)
+{
+    for(AnimationMovement * anim : movementAnimations){
+        if(anim->getEntity()->getId() == pid){
+            anim->setRepeat(false);
+        }
+    }
+}
+
+/**
  * @brief MapRenderer::cloudAnimation Führt eine WolkpScaleen-Animation aus
  */
 void MapRenderer::cloudAnimation()
