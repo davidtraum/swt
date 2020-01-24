@@ -96,16 +96,17 @@ class TrainStationLogic:
 
     def updateStorage(self, pType):
         if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 
-                if(TrainStationLogic.NEEDED_RESSOURCES[pType] < self.STORAGE[pType]):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
+                if(True or TrainStationLogic.NEEDED_RESSOURCES[pType] < self.STORAGE[pType]):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
                     self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
                     self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType]   #Ressourcen werden Verbraucht 
+                    #print(pType,":", self.STORAGE[pType])
                     if(self.STORAGE[pType] >= self.maxStorage):
                         self.STORAGE[pType] = self.maxStorage            
 
     def do_loop(self):
         if(time.time() - self.last_mach_was > 1.2):
-            print("1.2 sekunden sind um")
-            for key in self.STORAGE:
+            #print("1.2 sekunden sind um")
+            for key in self.STORAGE:               
 	            self.updateStorage(key)
             self.last_mach_was = time.time()
 

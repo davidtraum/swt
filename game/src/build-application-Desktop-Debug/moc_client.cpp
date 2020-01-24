@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Client_t {
-    QByteArrayData data[15];
-    char stringdata0[187];
+    QByteArrayData data[16];
+    char stringdata0[201];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,7 +45,8 @@ QT_MOC_LITERAL(10, 121, 12), // "onRightclick"
 QT_MOC_LITERAL(11, 134, 9), // "sendRoute"
 QT_MOC_LITERAL(12, 144, 13), // "requestRoutes"
 QT_MOC_LITERAL(13, 158, 11), // "cancelRoute"
-QT_MOC_LITERAL(14, 170, 16) // "QListWidgetItem*"
+QT_MOC_LITERAL(14, 170, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(15, 187, 13) // "sendTrainPass"
 
     },
     "Client\0mapLoaded\0\0tileChanged\0"
@@ -53,7 +54,7 @@ QT_MOC_LITERAL(14, 170, 16) // "QListWidgetItem*"
     "sendRouteString\0QStringList*\0"
     "onPositionChange\0onLeftclick\0onRightclick\0"
     "sendRoute\0requestRoutes\0cancelRoute\0"
-    "QListWidgetItem*"
+    "QListWidgetItem*\0sendTrainPass"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +64,7 @@ static const uint qt_meta_data_Client[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,19 +72,20 @@ static const uint qt_meta_data_Client[] = {
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x06 /* Public */,
-       3,    4,   70,    2, 0x06 /* Public */,
-       4,    2,   79,    2, 0x06 /* Public */,
-       5,    1,   84,    2, 0x06 /* Public */,
-       6,    1,   87,    2, 0x06 /* Public */,
+       1,    0,   74,    2, 0x06 /* Public */,
+       3,    4,   75,    2, 0x06 /* Public */,
+       4,    2,   84,    2, 0x06 /* Public */,
+       5,    1,   89,    2, 0x06 /* Public */,
+       6,    1,   92,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    2,   90,    2, 0x0a /* Public */,
-       9,    0,   95,    2, 0x0a /* Public */,
-      10,    0,   96,    2, 0x0a /* Public */,
-      11,    1,   97,    2, 0x0a /* Public */,
-      12,    0,  100,    2, 0x0a /* Public */,
-      13,    1,  101,    2, 0x0a /* Public */,
+       8,    2,   95,    2, 0x0a /* Public */,
+       9,    0,  100,    2, 0x0a /* Public */,
+      10,    0,  101,    2, 0x0a /* Public */,
+      11,    1,  102,    2, 0x0a /* Public */,
+      12,    0,  105,    2, 0x0a /* Public */,
+      13,    1,  106,    2, 0x0a /* Public */,
+      15,    3,  109,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -99,6 +101,7 @@ static const uint qt_meta_data_Client[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 14,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
 
        0        // eod
 };
@@ -121,6 +124,7 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 8: _t->sendRoute((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 9: _t->requestRoutes(); break;
         case 10: _t->cancelRoute((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 11: _t->sendTrainPass((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -188,13 +192,13 @@ int Client::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

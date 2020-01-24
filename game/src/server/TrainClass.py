@@ -8,13 +8,14 @@ class TrainLogic:
         self.maxWagons = 10
         self.wagons = []
 
-    def addWagons(self, pStartTrainstation, pEndTrainstation, pType):   #Waggons werden angehängt
+    def addWagons(self, pStartTrainstation, pType):   #Waggons werden angehängt
         for i in range(len(pType)):        
-            self.wagons.append(WagonLogic(pStartTrainstation, pEndTrainstation, pType[i]))
+            self.wagons.append(WagonLogic(pStartTrainstation, None, pType[i]))
             self.wagons[i].loadWagon()
         return True
         
-    def removeWagon(self, pType):   #Waggons werden abgekoppelt
+    def removeWagon(self, pEndTrainstation, pType):   #Waggons werden abgekoppelt
+        self.wagons.endTrainstation = pEndTrainstation
         for i in range(len(pType)):
             self.wagons[-1].unloadWagon()
             self.wagons.pop()

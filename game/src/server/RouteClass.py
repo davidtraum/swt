@@ -18,7 +18,8 @@ class RouteLogic:
         self.last_mach_was = 0
         self.stationCounter = 0 #Zähler an welchen Bahnhof man ist
         #self.calculateTime()
-        #self.train.addWagons(self.trainstations[0], self.trainstations[1], self.wagons) #erste Strecke
+        self.train = TrainLogic()
+        
 
     def sendProtocolString(self):
         tmpCurves = ''

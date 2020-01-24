@@ -151,7 +151,7 @@ class MapTile:
             self.logic = pLogic(self, None)
         if(pLogic == TrainStationLogic):
             self.logic = pLogic(self, None, pRange, 2, karte)
-            #tasks.append(self.logic)
+            tasks.append(self.logic)
         
 
 
@@ -312,7 +312,7 @@ class World:
                 self.data[150][150].initLogic(TrainStationLogic, self.data)
                 self.data[150][150].type = 16
                 testTrainstations.append(self.data[150][150])
-                print(self.data[150][150].getType())         
+                #print(self.data[150][150].getType())         
                 for i in range(0,10):
                     if(i != 9):
                         world.tileInteract(149-i, 150, 'RAIL')
@@ -535,6 +535,12 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                 elif(args[1] == "PASS"):
                     print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
+                    for i in range(len(self.player.routeObjectList)):
+                        if(self.player.routeObjectList[i].id == int(args[2])):
+                            routeTmp = self.player.routeObjectList[i]
+                    routeTmp.train.wagons = []
+                    print("vor addWagons")
+                    routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
                 
