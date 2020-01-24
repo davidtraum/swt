@@ -19,6 +19,7 @@ private:
 
 signals:
     void sendRequestRoutes();
+    void sendDeleteSignal(QListWidgetItem *);
 
 public slots:
     void toggle();

@@ -24,6 +24,7 @@ private:
     QListWidget * trainstationList;
     GoodSelector * goodSelector;
     QPushButton * confirmBtn;
+    QLineEdit * routeName;
 
 public slots:
     void toggle();

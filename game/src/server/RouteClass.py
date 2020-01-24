@@ -6,12 +6,12 @@ import time
 class RouteLogic:
     allRoutes = []
     countId = 0
-    def __init__(self, pPlayer, pTrainstations, pWagons, pKarte, pTrainName = 'testtrain'):
+    def __init__(self, pPlayer, pTrainstations, pWagons, pKarte, pRouteName = 'testtrain'):
         self.player = pPlayer
         self.karte = pKarte
         self.trainstations = pTrainstations
         self.wagons = pWagons
-        self.train = TrainLogic(pTrainName)  #neuer Zug
+        self.routeName = pRouteName
         RouteLogic.countId += 1
         self.id = RouteLogic.countId
         self.timeNeeded = []        #Anzahl der Schienen
@@ -62,8 +62,9 @@ class RouteLogic:
         self.timeNeeded.append(len(tmp))
         print (self.timeNeeded)
 
-        
-            
+    @staticmethod
+    def deleteRoute(pRouteName):
+        pass
             
         
     def do_loop(self):  #Der Loop, der die Züge in der Logik die Route abfahren lässt                      

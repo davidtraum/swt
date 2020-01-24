@@ -489,6 +489,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 
                 if(args[1] == "TS"):    #Client schickt Route mit Zwischenstops
                     i = i-2
+                    
                     while True:
                         if(args[i+3] == "TS"):
                             i = i+3
@@ -498,7 +499,10 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                             print("Springe in Wagong rein ", i)
                             print("i ist ", i)
                             for j in range(i+4,len(args)):
-                                wagonTypes.append(args[j])
+                                if (args[j] == "COAL" or args[j] == "CORN" or args[j] == "PASSENGERS" or args[j] == "LIVESTOCK" or args[j] == "WOOD" or args[j] == "MAIL" or args[j] == "FOOD" or args[j] == "GOODS"):
+                                    wagonTypes.append(args[j])
+                                else:
+                                    routeName = args[j] 
                                 print("Bin in Wagons Schleife ", j)
                             break
                     
@@ -509,7 +513,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     print("Wagon Types: ")
                     print(*wagonTypes, sep='_', end='\n')
 
-                    handOver = self.player.addRoute(tsStops, wagonTypes)
+                    handOver = self.player.addRoute(routeName, tsStops, wagonTypes)
                     broadcast("ROUTE+PLAY+" + handOver)
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
@@ -525,6 +529,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                                         
                     print("HandOver:" + handOver)
                     self.send(handOver)
+
+                elif(args[1] == "DELETE"):
+                    self.player.cancelRoute(args[2])
                 
                 else:
                     print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")

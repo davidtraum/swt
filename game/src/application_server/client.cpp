@@ -32,6 +32,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     debug = true;
 
     QWidget::connect(this, &Client::sendRouteString, routeListInterface, &RouteListInterface::receiveRoutes);
+    QWidget::connect(routeListInterface, &RouteListInterface::sendDeleteSignal, this, &Client::cancelRoute);
 
     socket->waitForConnected(3000);
 
@@ -107,6 +108,20 @@ void Client::requestMap(){
 void Client::requestRoutes() {
     socket->write("ROUTE GET~");
     qDebug() << "ROUTE GET~ an Server gesendet";
+}
+
+/**
+ * @brief Client::cancelRoute Schickt einen Befehl zum Server die entsprechende Route zu löschen.
+ * @param item Das Item des QListWidget der ausgewählten Zeile.
+ */
+void Client::cancelRoute(QListWidgetItem * item) {
+    qDebug() << "cancel Route called";
+    QString handOver = item->text();
+    QStringList handOverList = handOver.split(":");
+    handOver = "ROUTE DELETE " + handOverList[0] + " ";
+    qDebug() << "HandOver: " + handOver;
+    socket->write(handOver.toLocal8Bit());
+
 }
 
 void Client::sendRoute(QString routeString){

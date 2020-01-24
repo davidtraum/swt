@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QLineEdit>
 #include <QPushButton>
 #include <QGroupBox>
 #include <QString>
@@ -35,6 +36,11 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     goodSelector = new GoodSelector();
     connect(goodSelector, &GoodSelector::addWagonClicked, this, &RouteInterface::addWagon);
     vlayout->addWidget(goodSelector);
+
+    routeName = new QLineEdit;
+    routeName->setMaximumWidth(220);
+    routeName->setText("Routenname eingeben");
+    vlayout->addWidget(routeName);
 
     QHBoxLayout * buttons = new QHBoxLayout(mainWidget);
     QPushButton * confirmBtn = new QPushButton("Bestätigen");
@@ -130,6 +136,7 @@ void RouteInterface::confirmRoute()
             handOver += " " + QString::fromStdString(wagon.first);
         }
     }
+    handOver += " " + routeName->text().replace(" ", "");
     handOver += "~";
     emit sendConfirmRoute(handOver);
     this->toggle();

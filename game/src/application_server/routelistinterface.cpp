@@ -15,7 +15,7 @@ RouteListInterface::RouteListInterface()
     QVBoxLayout * layout = new QVBoxLayout(mainWidget);
 
     routeList = new QListWidget();
-    routeList->setSelectionMode(QAbstractItemView::ExtendedSelection);  //mehrere Elemente der Liste gleichzeitig anwählbar mit STRG
+    routeList->setSelectionMode(QAbstractItemView::SingleSelection);  //mehrere Elemente der Liste gleichzeitig anwählbar mit STRG
 
     routeList->setMaximumHeight(600);
 
@@ -59,7 +59,10 @@ void RouteListInterface::deleteRoute() {
     qDebug() << "Items werden gelöscht...";
 
     qDebug() << routeList;
+
+    emit sendDeleteSignal(routeList->takeItem(routeList->currentRow()));
     delete routeList->takeItem(routeList->currentRow());
+
     qDebug() << "WURDE GELÖSCHT";
 
 }
@@ -68,22 +71,14 @@ void RouteListInterface::deleteRoute() {
  * @brief RouteListInterface::receiveRoutes Formatiert die Liste aus Strings zu schöneren einzelnen Strings, die mit dem QListWidget routeList im Interface dargestellt werden.
  */
 void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
-    QString routeString = "Cooler Routenname: ";
+    QString routeString = routeStringList->at(1) + ": ";
     bool wagonsReceived = false;
     bool firstRoute = true;
     int coordCount = 0;
     QRegExp re("\\d*"); //Eine Nummer, beliebig viele Stellen
 
-    for (int i=1; i < routeStringList->length(); i++) {
+    for (int i=2; i < routeStringList->length(); i++) {
         qDebug() << "Schleifendurchlauf " << i;
-        if ( (wagonsReceived && re.exactMatch(routeStringList->at(i))) || routeStringList->at(i) == "END") {
-            qDebug() << "Vollständige Route empfangen";
-            routeList->addItem(routeString);
-            wagonsReceived = false;
-            firstRoute = false;
-            routeString = "Cooler Routenname: ";
-            coordCount = 0;
-        }
 
         if ( routeStringList->at(i) == "COAL" ||
              routeStringList->at(i) == "FOOD" ||
@@ -105,6 +100,15 @@ void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
         }
         else if ( re.exactMatch(routeStringList->at(i)) ) {
             coordCount++;
+        }
+
+        if ( (wagonsReceived && re.exactMatch(routeStringList->at(i))) || routeStringList->at(i) == "END") {
+            qDebug() << "Vollständige Route empfangen";
+            routeList->addItem(routeString);
+            wagonsReceived = false;
+            firstRoute = false;
+            routeString = "Cooler Routenname: ";
+            coordCount = 0;
         }
 
         if (routeStringList->at(i) != "ROUTES" && routeStringList->at(i) != "END") {

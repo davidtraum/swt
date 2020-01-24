@@ -12,6 +12,7 @@ class Player:
         self.tasks = pTasks
         self.karte = pKarte
         self.routes = []
+        self.routeObjectList = []
         #Beim Laden von Speicherdaten muss das Spielerobjekt mit gespeichertem Guthaben neu erstellt werden
         with open('playerData.json', 'r') as f:
             playerData =json.load(f)
@@ -45,20 +46,31 @@ class Player:
     def addValue(self, amount): #fügt Guthaben zum Konto des Spielers hinzu (negativer Wert: Abzug)
         self.money += amount
 
-    def addRoute(self, pRoute, pWagons):    #Füge eine Route zur Liste aller Routen des Spielers hinzu   
-        self.routes.append([pRoute, pWagons])
+    def addRoute(self, pRouteName, pRoute, pWagons):    #Füge eine Route zur Liste aller Routen des Spielers hinzu   
+        self.routes.append([pRouteName, pRoute, pWagons])
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
         print("Neue Route wird gestartet.")
-        return self.startRoute(self.routes[-1][0], self.routes[-1][1])
+        return self.startRoute(self.routes[-1][0], self.routes[-1][1], self.routes[-1][2])
 
-    def startRoute(self, pStations, pWagons):     #Startet die übergebene Route
+    def startRoute(self, pRouteName, pStations, pWagons):     #Startet die übergebene Route
         tsTmp = []
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
-        routeTmp = RouteLogic(None, tsTmp, pWagons, self.karte)
-        handOver = routeTmp.sendProtocolString()        
+        self.routeObjectList.append(RouteLogic(None, tsTmp, pWagons, self.karte))
+        handOver = self.routeObjectList[-1].sendProtocolString()        
         return handOver
+
+    def cancelRoute(self, pRouteName):
+        for i in range(len(self.routes)):
+            if (self.routes[i][0] == pRouteName):
+                self.routes.pop(i)
+        for i in range(len(self.routeObjectList)):
+            if (self.routeObjectList[i].routeName == pRouteName):
+                del self.routeObjectList[i]
+                self.routeObjectList.pop(i)
+        print("ROUTE GELÖSCHT: " + pRouteName)
+                
         
     def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
         #with open('playerData.json', 'r+') as f:

@@ -46,6 +46,7 @@ public slots:
     void onRightclick();
     void sendRoute(QString);
     void requestRoutes();
+    void cancelRoute(QListWidgetItem *);
 
 };
 
