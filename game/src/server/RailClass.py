@@ -1,6 +1,7 @@
 import types
 from WayClass import WayLogic
 
+
 class RailLogic:
 
     def __init__(self, pTile, pPlayer):

@@ -35,7 +35,7 @@ void \mbox{\hyperlink{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}{
 void \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{parse\+Path}} (Q\+String \mbox{\hyperlink{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}{path}})
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_aa5c9cf85e8ad816a15090185f273bddc}{Animation\+Movement\+::parse\+Path}} Liest einen Animationspfad aus einem String ein. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ \mbox{\hyperlink{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}{get\+Entity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}{Animation\+Movement\+::get\+Entity}} Liefert das Animation Entity. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{move}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_a80d0ce22ed161fcf03cc6f5106c58526}{set\+Repeat}} (bool)
@@ -52,9 +52,9 @@ void \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{
 void \mbox{\hyperlink{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}{calculate\+Vector}} (\mbox{\hyperlink{classPoint}{Point}} origin, \mbox{\hyperlink{classPoint}{Point}} target)
 \item 
 void \mbox{\hyperlink{classAnimationMovement_a98614fc05b08f2cadc06b1bff199d6aa}{calculate\+Vector}} (int origin, int target)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}{Animation\+Movement\+::calculate\+Vector}} Berechnet den Vektor, den die Animation entlangläuft. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}{target\+Distance}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}{Animation\+Movement\+::target\+Distance}} Liefert die Distanz bis zum Animationsziel. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attribute}
 \begin{DoxyCompactItemize}
 \item 
@@ -105,7 +105,19 @@ int \mbox{\hyperlink{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}{p
 \doxysubsubsection{\texorpdfstring{calculateVector()}{calculateVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Animation\+Movement\+::calculate\+Vector (\begin{DoxyParamCaption}\item[{int}]{origin,  }\item[{int}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+
+
+\mbox{\hyperlink{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980}{Animation\+Movement\+::calculate\+Vector}} Berechnet den Vektor, den die Animation entlangläuft. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em origin} & der Ursprung der Animation \\
+\hline
+{\em target} & das Ziel der Animation \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -125,7 +137,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=296pt]{classAnimationMovement_a0ec9be9fcfb79cc886d112d39670a980_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -138,7 +151,15 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}} $\ast$ Animation\+Movement\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+
+
+\mbox{\hyperlink{classAnimationMovement_afa899606a17b3a76e8c8f5b9f2e3dbf8}{Animation\+Movement\+::get\+Entity}} Liefert das Animation Entity. 
+
+\begin{DoxyReturn}{Rückgabe}
+das Animation Entity 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -155,7 +176,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classAnimationMovement_a9cdb7ef489af5bb1a09c94747c73a213}{Animation\+Movement\+::move}} Führt einen Schritt der Animation durch. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,7 +205,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{reachedPoint}{reachedPoint}}
 {\footnotesize\ttfamily void Animation\+Movement\+::reached\+Point (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{\mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -274,14 +297,23 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{targetDistance()}{targetDistance()}}
 {\footnotesize\ttfamily double Animation\+Movement\+::target\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+
+
+\mbox{\hyperlink{classAnimationMovement_a44ca067fe462153208cd2a23fa455313}{Animation\+Movement\+::target\+Distance}} Liefert die Distanz bis zum Animationsziel. 
+
+\begin{DoxyReturn}{Rückgabe}
+Distanz bis zum Animationsziel 
+\end{DoxyReturn}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=341pt]{classAnimationMovement_a44ca067fe462153208cd2a23fa455313_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

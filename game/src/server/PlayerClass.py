@@ -3,11 +3,15 @@ from RailClass import RailLogic
 from TrainStationClass import TrainStationLogic
 from WayClass import WayLogic
 from RouteClass import RouteLogic
+import uuid as uuidmodule
+
+def uuid():
+    return uuidmodule.uuid4().hex
 
 class Player:
 
-    def __init__(self, pId, pIp, pTasks, pKarte):
-        self.id = pId
+    def __init__(self, pIp, pTasks, pKarte):
+        self.id = uuid()
         self.ip = pIp
         self.tasks = pTasks
         self.karte = pKarte

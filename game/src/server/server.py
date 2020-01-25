@@ -424,7 +424,7 @@ class ClientThread(Thread):
         self.connection = pConnection
         self.commandBuffer = ""
         print("CLIENT THREAD WIRD GESTARTET")
-        self.player = Player(clientCount, 1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
+        self.player = Player(1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
 
     #Sendet den Text pText als Befehl an den Client. Befehlteile werden mit "+" voneinander getrennt
@@ -625,7 +625,13 @@ class ClientThread(Thread):
 DEFAULT_CONFIG = {
     'port': 2000,
     'bind_ip': 'localhost',
-    'max_players': 5}
+    'max_players': 5,
+    'game' : {
+        'prices': {
+            'station':
+        }
+    }
+    }
 
 CONFIG_FILE = 'config.json'
 
