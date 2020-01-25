@@ -49,6 +49,7 @@ RouteListInterface::RouteListInterface()
  */
 void RouteListInterface::toggle() {
     qDebug() << "RouteListInterface toggled";
+    routeList->clear(); //Lösche vorher gespeicherte Elemente der Liste
     emit sendRequestRoutes();   //Fragt beim Server nach einer Liste aller Routen, die dieser Spieler aktuell am Laufen hat
     QDockWidget::setVisible(!QDockWidget::isVisible());
     qDebug() << this->isVisible();
