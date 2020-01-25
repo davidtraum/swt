@@ -42,6 +42,10 @@ AnimationEntity *AnimationMovement::getEntity()
  * @brief AnimationMovement::move Führt einen Schritt der Animation durch.
  */
 bool AnimationMovement::move() {
+    if(pauseToGo>0) {
+        pauseToGo--;
+        return false;
+    }
     if(pointIndex==-1){
         if(path.length()<=1)return true;
         item->setPosition(path.first()->getX(), path.first()->getY());
@@ -96,6 +100,15 @@ void AnimationMovement::setAutoRotate(bool pStatus)
 void AnimationMovement::setEmitChanges(bool status)
 {
     emitChanges = status;
+}
+
+/**
+ * @brief AnimationMovement::pauseSteps Die Anzahl der zu überspringenden Schritte.
+ * @param pSteps Die Schrittzahl.
+ */
+void AnimationMovement::pauseSteps(int pSteps)
+{
+    pauseToGo = pSteps;
 }
 
 void AnimationMovement::calculateVector(Point origin, Point target)

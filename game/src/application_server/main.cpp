@@ -100,25 +100,9 @@ int main(int argc, char *argv[])
     RouteListInterface * routeListInterface = new RouteListInterface();
     mainWindow->addDockWidget(Qt::BottomDockWidgetArea, routeListInterface);
 
-    //Videowidget * videoWidget = new Videowidget();
-    //mainWindow->addDockWidget(Qt::BottomDockWidgetArea, videoWidget);
 
     tooltip->setParent(view);
     tooltip->show();
-
-    QWidget * widget = new QWidget(mainWindow);
-    QGridLayout * layout = new QGridLayout(widget);
-    widget->setLayout(layout);
-
-    QMediaPlayer * videoPlayer = new QMediaPlayer();
-    videoPlayer->setMedia(QUrl("qrc:/video/building_bridge.mp4"));
-
-    QVideoWidget * videoWidget = new QVideoWidget();
-    videoPlayer->setVideoOutput(videoWidget);
-
-
-
-    //mainWindow->setCentralWidget(videoWidget);
 
 
 
@@ -143,16 +127,20 @@ int main(int argc, char *argv[])
 
 
     Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
+    QVBoxLayout * rightLayout = new QVBoxLayout();
     QGridLayout * viewLayout = new QGridLayout();
     QWidget *spacerWidget = new QWidget();
     spacerWidget->setAttribute( Qt::WA_TransparentForMouseEvents );
     spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     viewLayout->addWidget(spacerWidget,0,1);
     viewLayout->addWidget(spacerWidget,1,0);
+    viewLayout->addLayout(rightLayout, 0,2);
+    rightLayout->addWidget(map);
 
-    InfoWidget * iwidget = new InfoWidget();
-    viewLayout->addWidget(iwidget,1,1);
-    viewLayout->addWidget(map,0,2);
+    InfoWidget * infoWidget = new InfoWidget();
+    infoWidget->setStyleSheet("background-color: white");
+    rightLayout->addWidget(infoWidget);
+    dataModel->setInfoWidget(infoWidget);
 
     mapRenderer->setLayout(viewLayout);
 

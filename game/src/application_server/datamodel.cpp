@@ -32,7 +32,6 @@ int DataModel::getBalance()
 void DataModel::updateBalance(int pBalance)
 {
     balance = pBalance;
-    balanceLabel->setText("<img height=\"32\" src=\":/icons/cash.svg\"></img> <h2>" + QString::fromStdString(std::to_string(balance)) + "$</h2>");
 }
 
 /**
@@ -70,6 +69,7 @@ void DataModel::setTime(long pTime)
  */
 void DataModel::timeTick(){
     time++;
+    timeString = formatTime(time);
     //timeLabel->setText("<img height=\"32\" src=\":/icons/clock.svg\"></img> <h2>" + QString::fromStdString(formatTime(time)) + "</h2>");
 }
 
@@ -78,10 +78,19 @@ void DataModel::timeTick(){
  * @param pTime Der Timecode.
  * @return Der Text.
  */
-std::string DataModel::formatTime(long pTime){
+QString DataModel::formatTime(long pTime){
     long hrs = pTime / 1000;
     long mins = long(((pTime % 1000) / 1000.0)*60);
-    return "Tag " + std::to_string((hrs/24)+1) + "<br>" + std::to_string(hrs) + ":" + (mins < 10 ? "0" + std::to_string(mins) : std::to_string(mins))  + "h";
+    return QString("Tag " + QString::number((hrs/24)+1) + ", " +  QString::number(hrs) + ":" + (mins < 10 ? "0" + QString::number(mins) : QString::number(mins))  + "h");
+}
+
+/**
+ * @brief DataModel::getFormattedTime Liefert die gecachte formatierte Zeit zurück.
+ * @return Ein QString.
+ */
+QString DataModel::getFormattedTime()
+{
+    return timeString;
 }
 
 /**
@@ -213,6 +222,24 @@ void DataModel::setStatusDisplayLabel(QLabel *label){
 void DataModel::setConnectionLabel(QLabel *label)
 {
     connectionLabel = label;
+}
+
+/**
+ * @brief DataModel::setInfoWidget Setzt das Info Widget
+ * @param widget Das Info Widget.
+ */
+void DataModel::setInfoWidget(InfoWidget *widget)
+{
+    infoWidget = widget;
+}
+
+/**
+ * @brief DataModel::getInfoWidget Liefet das gespeicherte Info Widget.
+ * @return Das Info Widget.
+ */
+InfoWidget *DataModel::getInfoWidget()
+{
+    return infoWidget;
 }
 
 /**

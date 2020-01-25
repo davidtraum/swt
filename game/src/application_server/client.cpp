@@ -155,6 +155,8 @@ void Client::processCommand(QString cmd){
                     qDebug() << "Map loaded";
                     emit onMapLoaded(true);
                 }
+            }else if(split[0] == "MONEY"){
+                dataModel->updateBalance(split[1].toInt());
             }
             else if (split[0]=="ROUTES") {
                 qDebug() << "Angekommen!";

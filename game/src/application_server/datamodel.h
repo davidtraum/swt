@@ -1,15 +1,16 @@
 #ifndef DATAMODEL_H
 #define DATAMODEL_H
 
-#include <string>
 #include <QLabel>
 #include <QWidget>
+#include <QString>
 #include <QMediaPlayer>
 #include <QVideoWidget>
 
 
 #include "mainwindow.h"
 #include "player.h"
+#include "infowidget.h"
 
 class DataModel: public QObject
 {
@@ -27,7 +28,8 @@ public:
     int getHoverX();
     int getHoverY();
     void toggleFullscreen();
-    std::string formatTime(long pTime);
+    QString formatTime(long pTime);
+    QString getFormattedTime();
     void setConnectionInfo(QString pString);
     QString * getIP();
     quint16 getPort();
@@ -36,6 +38,8 @@ public:
     void setGuiPositionLabel(QLabel * label);
     void setStatusDisplayLabel(QLabel * label);
     void setConnectionLabel(QLabel * label);
+    void setInfoWidget(InfoWidget * widget);
+    InfoWidget * getInfoWidget();
     enum MODE{DEFAULT,
               TRAIN_STATION,
               TRAIN_DEPOT,
@@ -57,12 +61,14 @@ private:
     long time;
     int coordinateX,coordinateY;
     QString ip;
+    QString timeString;
     quint16 port;
     QLabel * balanceLabel;
     QLabel * timeLabel;
     QLabel * positionLabel;
     QLabel * statusDisplay;
     QLabel * connectionLabel;
+    InfoWidget * infoWidget;
 
     MODE mode{MODE::DEFAULT};
 

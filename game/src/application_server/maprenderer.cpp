@@ -114,6 +114,8 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                 case MapTile::TERMINAL_V:
                     painter->drawRect(pos.getX()-dataModel->RADIUS_TERMINAL, pos.getY()-dataModel->RADIUS_TERMINAL, dataModel->RADIUS_TERMINAL*2+64, dataModel->RADIUS_TERMINAL*2+64);
                     break;
+                default:
+                    break;
             }
 
 
@@ -127,6 +129,8 @@ void MapRenderer::paintEvent(QPaintEvent *event)
 
     //painterReal.drawImage(0,0,testSprite->getImage().scaled(256,256));
 
+    painterReal.drawText(this->width()-310,330, dataModel->getFormattedTime());
+    painterReal.drawText(this->width()-310, 350, QString(QString::number(dataModel->getBalance()) + "$"));
 
     if(showExpertDetails){
         painterReal.drawText(10,20, "Render Details (F3)");
@@ -182,10 +186,17 @@ void MapRenderer::mousePressEvent(QMouseEvent *event)
 void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
 {
     mouseDown = false;
+    dataModel->getInfoWidget()->hide();
     if(event->x() - dragOrigin.getX() == 0 && event->y() - dragOrigin.getY() == 0){
         Point pos = mapPosition(event->x(), event->y());
-        emit leftclick();
-        emit tileClick(activeTile.getX(), activeTile.getY(), data[activeTile.getX()][activeTile.getY()].getType());
+        if(event->button() == Qt::RightButton) {
+            if(data[activeTile.getX()][activeTile.getY()].isTrainStation()) {
+                dataModel->getInfoWidget()->show();
+            }
+        }else{
+            emit leftclick();
+            emit tileClick(activeTile.getX(), activeTile.getY(), data[activeTile.getX()][activeTile.getY()].getType());
+        }
     }
     QWidget::setCursor(QCursor());
 }
@@ -712,6 +723,7 @@ void MapRenderer::handleReachedPoint(int px, int py, AnimationMovement * anim)
 {
     if(data[px][py].isTrainStation()){
         emit onTrainPass(anim->getEntity()->getId(), px,py);
+        anim->pauseSteps(60);
     }
 }
 
