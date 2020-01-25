@@ -29,6 +29,10 @@ void AnimationMovement::parsePath(QString data) {
     }
 }
 
+/**
+ * @brief AnimationMovement::getEntity Liefert das Animation Entity
+ * @return das Animation Entity
+ */
 AnimationEntity *AnimationMovement::getEntity()
 {
     return item;
@@ -123,11 +127,20 @@ void AnimationMovement::calculateVector(Point origin, Point target)
     vy*=speed;
 }
 
+/**
+ * @brief AnimationMovement::calculateVector Berechnet den Vektor, den die Animation entlangläuft
+ * @param origin der Ursprung der Animation
+ * @param target das Ziel der Animation
+ */
 void AnimationMovement::calculateVector(int origin, int target)
 {
     calculateVector(*path.at(origin), *path.at(target));
 }
 
+/**
+ * @brief AnimationMovement::targetDistance Liefert die Distanz bis zum Animationsziel
+ * @return Distanz bis zum Animationsziel
+ */
 double AnimationMovement::targetDistance()
 {
     Point target = *path.at(pointIndex);

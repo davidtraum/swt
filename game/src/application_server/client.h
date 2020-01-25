@@ -17,7 +17,7 @@ class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, View * pView, DataModel * pDataModel, RouteListInterface *);
+    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, RouteListInterface *);
     void run() override;
     void requestMap();
     QString * tmpRoutes;

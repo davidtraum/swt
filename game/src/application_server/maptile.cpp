@@ -228,6 +228,10 @@ int MapTile::getRotation(){
     return currentRotation;
 }
 
+/**
+ * @brief MapTile::getRotationDeg Liefert die aktuelle Rotation in Grad
+ * @return 0,90,180 oder 270
+ */
 int MapTile::getRotationDeg()
 {
     switch(currentRotation){

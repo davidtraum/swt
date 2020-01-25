@@ -121,6 +121,9 @@ void RouteInterface::addWagon(QString * name)
         }
 }
 
+/**
+ * @brief RouteInterface::confirmRoute Sendet dem Server die Informationen der erstellten Route in Form eines Strings, sodass dieser die Route auf dem Server erzeugen kann.
+ */
 void RouteInterface::confirmRoute()
 {
     QString handOver = "ROUTE";
@@ -142,6 +145,9 @@ void RouteInterface::confirmRoute()
     this->toggle();
 }
 
+/**
+ * @brief RouteInterface::removeWagon Zählt die Anzahl der aktuell angehängten Waggons herunter.
+ */
 void RouteInterface::removeWagon() {
     wagonCount--;
     qDebug() << "Waggon gelöscht - Anzahl: " << wagonCount;

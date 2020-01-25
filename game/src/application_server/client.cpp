@@ -9,7 +9,7 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, View * pView, DataModel * pDataModel, RouteListInterface * pRouteListInterface)
+Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, DataModel * pDataModel, RouteListInterface * pRouteListInterface)
 {
     tickcount=0;
     scene = pScene;
@@ -52,36 +52,10 @@ void Client::run() {
     QString buffer = "";
     QString overshoot = "";
     QByteArray input;
-    int length = 0;
     int count = 0;
     while(true){
         //socket->waitForReadyRead();
         if (socket->bytesAvailable()>0){
-                /**
-                socket->waitForReadyRead();
-                data = socket->read(1);
-                split = data.split("~");
-                length = split.length();
-                for(int i = 0; i<length-1; i++){
-                    if(length>2 && split[1].length()>0){
-                        if(i<length-2){
-                            processCommand(split[i]);
-                        }else{
-                            if(i==length-2){
-                                if(split[length-1].length() > 0){
-                                    processCommand(split[i]);
-                                    overshoot = split[length-1];
-                                }else{
-                                    overshoot = split[i];
-                                }
-                            }
-                        }
-                    }else{
-                        overshoot = data;
-                    }
-                }
-
-                */
             input = socket->read(1);
             if(input.at(0) == char(255)){
                 while(socket->bytesAvailable()<=0);

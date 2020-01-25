@@ -12,6 +12,10 @@ Highlighter::Highlighter()
     setZValue(2);
 }
 
+/**
+ * @brief Highlighter::setColor Setzt die Farbe des Highlighters.
+ * @param pColor Die Farbe
+ */
 void Highlighter::setColor(QColor pColor)
 {
     outline->setColor(pColor);

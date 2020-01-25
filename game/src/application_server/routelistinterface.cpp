@@ -73,6 +73,7 @@ void RouteListInterface::deleteRoute() {
 
 /**
  * @brief RouteListInterface::receiveRoutes Formatiert die Liste aus Strings zu schöneren einzelnen Strings, die mit dem QListWidget routeList im Interface dargestellt werden.
+ * @param routeStringList die Liste der empfangenen Routen in Form von Strings
  */
 void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
     QString routeString = routeStringList->at(1) + ": ";
