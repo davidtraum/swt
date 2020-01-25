@@ -140,7 +140,7 @@ class TrainStationLogic:
             boolTmp = 0
             #print(pType)
             if(pType != 'PASSENGERS' and self.NUMBER_OF_PRODUCTION_BUILDINGS[pType] > 0):
-                print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS[pType])
+                print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS)
                 for keys in TrainStationLogic.NEEDED_RESSOURCES[pType]:  #überprüft ob genug Ressourcen vorhanden um zu Produzieren
                     if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]):
                         boolTmp += 1

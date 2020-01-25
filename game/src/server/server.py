@@ -132,7 +132,7 @@ class MapTile:
     
     #Liefert true zurück, wenn das MapTile eine Erzeugungsstatte ist
     def isProducingBuilding(self):
-        return self.type >= 24 and self.type <= 25 or self.type == 2
+        return self.type >= 24 and self.type <= 32 or self.type == 2
 
     #Gibt True zurück, wenn an der Stelle ein vertikaler Bahnhof ist
     def checkRotationStationVertical(self):
@@ -596,6 +596,7 @@ class ClientThread(Thread):
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                     
                 elif(args[1] == "PASS"):
+                    routeTmp = []
                     print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                     for i in range(len(self.player.routeObjectList)):
                         if(self.player.routeObjectList[i].id == int(args[2])):
