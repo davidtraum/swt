@@ -20,6 +20,7 @@ public:
     void setSpeed(double);
     void setAutoRotate(bool);
     void setEmitChanges(bool);
+    void pauseSteps(int);
 
 private:
     void calculateVector(Point origin, Point target);
@@ -29,6 +30,7 @@ private:
     bool autoRotate{true};
     bool emitChanges{false};
     int direction{1};
+    int pauseToGo{0};
     double speed{1};
     AnimationEntity * item;
     QList<Point *> path;

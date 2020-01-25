@@ -1,11 +1,13 @@
 <map id="Client::run" name="Client::run">
-<area shape="rect" id="node1" title="Client::run Startet den Client&#45;Thread." alt="" coords="5,134,88,161"/>
-<area shape="rect" id="node2" href="$classClient.html#a4cc6ded21fb38d6341fd91314156920e" title="Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus." alt="" coords="136,134,311,161"/>
-<area shape="rect" id="node3" href="$classMapRenderer.html#a58a55f100157958cf39c7028b12ef569" title=" " alt="" coords="359,68,581,109"/>
-<area shape="rect" id="node8" href="$classMapRenderer.html#a37d712e19b31db09e555976bb8647df7" title="MapRenderer::deleteAnimationId Löscht eine Animation anhand der Entity&#45;Id." alt="" coords="360,134,580,161"/>
-<area shape="rect" id="node9" href="$classDataModel.html#a75f38e795a59558568e22dbb095d24ac" title="DataModel::setTime Setzt den aktuellen Zeitstempel." alt="" coords="397,185,543,211"/>
-<area shape="rect" id="node4" href="$classMapRenderer.html#a8a4025ac579a3a9ec1b56544431f263b" title="MapRenderer::handleReachedPoint Wird aufgerufen, wenn eine Animation einen neuen Punkt erreicht." alt="" coords="629,35,837,76"/>
-<area shape="rect" id="node7" href="$classAnimationMovement.html#ac08c2750866d7ed93bcede356626883b" title="AnimationMovement::setEmitChanges Setzt ob jede Punktänderung emitted wird." alt="" coords="657,100,809,141"/>
+<area shape="rect" id="node1" title="Client::run Startet den Client&#45;Thread." alt="" coords="5,189,88,215"/>
+<area shape="rect" id="node2" href="$classClient.html#a4cc6ded21fb38d6341fd91314156920e" title="Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus." alt="" coords="136,189,311,215"/>
+<area shape="rect" id="node3" href="$classMapRenderer.html#a58a55f100157958cf39c7028b12ef569" title=" " alt="" coords="359,97,581,139"/>
+<area shape="rect" id="node9" href="$classMapRenderer.html#a37d712e19b31db09e555976bb8647df7" title="MapRenderer::deleteAnimationId Löscht eine Animation anhand der Entity&#45;Id." alt="" coords="360,163,580,190"/>
+<area shape="rect" id="node10" href="$classDataModel.html#a75f38e795a59558568e22dbb095d24ac" title="DataModel::setTime Setzt den aktuellen Zeitstempel." alt="" coords="397,214,543,241"/>
+<area shape="rect" id="node11" href="$classDataModel.html#abc9c6c796348870e45fda933739585d5" title="DataModel::updateBalance Aktualisiert den Kontostand. Auch in Anzeigen etc." alt="" coords="376,265,564,291"/>
+<area shape="rect" id="node4" href="$classMapRenderer.html#a8a4025ac579a3a9ec1b56544431f263b" title="MapRenderer::handleReachedPoint Wird aufgerufen, wenn eine Animation einen neuen Punkt erreicht." alt="" coords="629,64,837,105"/>
+<area shape="rect" id="node8" href="$classAnimationMovement.html#ac08c2750866d7ed93bcede356626883b" title="AnimationMovement::setEmitChanges Setzt ob jede Punktänderung emitted wird." alt="" coords="657,129,809,171"/>
 <area shape="rect" id="node5" href="$classAnimationMovement.html#afa899606a17b3a76e8c8f5b9f2e3dbf8" title="AnimationMovement::getEntity Liefert das Animation Entity." alt="" coords="885,5,1037,47"/>
 <area shape="rect" id="node6" href="$classAnimationEntity.html#a44265778f36955ef1bdaf322bff386c9" title="AnimationEntity::getId Liefert die ID zurück." alt="" coords="886,71,1037,98"/>
+<area shape="rect" id="node7" href="$classAnimationMovement.html#a296515672535ad2a568c9f33028a3706" title="AnimationMovement::pauseSteps Die Anzahl der zu überspringenden Schritte." alt="" coords="885,123,1037,164"/>
 </map>

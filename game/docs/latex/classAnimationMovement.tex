@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Animation\+Movement\+:\nopagebreak
+Klassendiagramm für Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Animation\+Movement\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -45,7 +47,9 @@ void \mbox{\hyperlink{classAnimationMovement_abee6a37d2f482a521120d528c2bc84dc}{
 void \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{set\+Auto\+Rotate}} (bool)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ae9d448d345c9021f2d5f40ff8e04a18d}{Animation\+Movement\+::set\+Auto\+Rotate}} Setzt ob sich das Bild automatisch in Bewegungsrichtung drehen soll. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{set\+Emit\+Changes}} (bool)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{Animation\+Movement\+::set\+Emit\+Changes}} Setzt ob jede Punktänderung emitted wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{Animation\+Movement\+::set\+Emit\+Changes}} Setzt ob jede Punktänderung emitted wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationMovement_a296515672535ad2a568c9f33028a3706}{pause\+Steps}} (int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a296515672535ad2a568c9f33028a3706}{Animation\+Movement\+::pause\+Steps}} Die Anzahl der zu überspringenden Schritte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,6 +69,8 @@ bool \mbox{\hyperlink{classAnimationMovement_ab053c64f2ab02a53d85b4708171e08ac}{
 bool \mbox{\hyperlink{classAnimationMovement_adfcb445da05b9b5ed83956d97b363e3b}{emit\+Changes}} \{false\}
 \item 
 int \mbox{\hyperlink{classAnimationMovement_ad39fc5a14101457df422b7a419d0a38d}{direction}} \{1\}
+\item 
+int \mbox{\hyperlink{classAnimationMovement_a1a37d3675f14620f02a5a7a981cdb270}{pause\+To\+Go}} \{0\}
 \item 
 double \mbox{\hyperlink{classAnimationMovement_a891d3c87763b524ed60f1005ea25c1d5}{speed}} \{1\}
 \item 
@@ -195,6 +201,29 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em path} & Ein String im Format X1\+:Y1;X2\+:Y2;X3\+:Y3... \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAnimationMovement_a296515672535ad2a568c9f33028a3706}\label{classAnimationMovement_a296515672535ad2a568c9f33028a3706}} 
+\index{AnimationMovement@{AnimationMovement}!pauseSteps@{pauseSteps}}
+\index{pauseSteps@{pauseSteps}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{pauseSteps()}{pauseSteps()}}
+{\footnotesize\ttfamily void Animation\+Movement\+::pause\+Steps (\begin{DoxyParamCaption}\item[{int}]{p\+Steps }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationMovement_a296515672535ad2a568c9f33028a3706}{Animation\+Movement\+::pause\+Steps}} Die Anzahl der zu überspringenden Schritte. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em p\+Steps} & Die Schrittzahl. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationMovement_a296515672535ad2a568c9f33028a3706_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}\label{classAnimationMovement_a9387f3bdf129e82ef558d16d446769d1}} 
 \index{AnimationMovement@{AnimationMovement}!reachedPoint@{reachedPoint}}
 \index{reachedPoint@{reachedPoint}!AnimationMovement@{AnimationMovement}}
@@ -345,6 +374,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{path@{path}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{path}{path}}
 {\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classPoint}{Point}} $\ast$$>$ Animation\+Movement\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_a1a37d3675f14620f02a5a7a981cdb270}\label{classAnimationMovement_a1a37d3675f14620f02a5a7a981cdb270}} 
+\index{AnimationMovement@{AnimationMovement}!pauseToGo@{pauseToGo}}
+\index{pauseToGo@{pauseToGo}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{pauseToGo}{pauseToGo}}
+{\footnotesize\ttfamily int Animation\+Movement\+::pause\+To\+Go \{0\}\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}\label{classAnimationMovement_a22a188ad994ed550898dba91080b95c4}} 
 \index{AnimationMovement@{AnimationMovement}!pointIndex@{pointIndex}}

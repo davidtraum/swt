@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Data\+Model\+:\nopagebreak
+Klassendiagramm für Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Data\+Model\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Data\+Model\+:\nopagebreak
+Zusammengehörigkeiten von Data\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -89,8 +91,10 @@ int \mbox{\hyperlink{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e}{get\+Hove
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aa1d162f385c1d41293178156ed66f014}{Data\+Model\+::get\+HoverX}} Gibt die aktuelle Koordinate der Kachel zurück über der die Maus ist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}{toggle\+Fullscreen}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a6d8acc40d2adf1a5ab5c314f7e2727c6}{Data\+Model\+::toggle\+Fullscreen}} Toggled den Vollbildmodus. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{format\+Time}} (long p\+Time)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3}{format\+Time}} (long p\+Time)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classDataModel_a2c37750a8ee02decb50bd94889bfb60d}{get\+Formatted\+Time}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a2c37750a8ee02decb50bd94889bfb60d}{Data\+Model\+::get\+Formatted\+Time}} Liefert die gecachte formatierte Zeit zurück. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{set\+Connection\+Info}} (Q\+String p\+String)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a3bbffe568b3bc32a4da5ac21226dad42}{Data\+Model\+::set\+Connection\+Info}} Setzt die Verbindungsinformation als String. \end{DoxyCompactList}\item 
 Q\+String $\ast$ \mbox{\hyperlink{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}{get\+IP}} ()
@@ -107,6 +111,10 @@ void \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{set\+Sta
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{Data\+Model\+::set\+Status\+Display\+Label}} Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_ab56663b4faa2051a7de2b22c937643f4}{set\+Connection\+Label}} (Q\+Label $\ast$label)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{Data\+Model\+::set\+Status\+Display\+Label}} Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataModel_a1cbf7b9a89a911351f49276d3c556523}{set\+Info\+Widget}} (\mbox{\hyperlink{classInfoWidget}{Info\+Widget}} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1cbf7b9a89a911351f49276d3c556523}{Data\+Model\+::set\+Info\+Widget}} Setzt das Info Widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInfoWidget}{Info\+Widget}} $\ast$ \mbox{\hyperlink{classDataModel_a02fb9e1685440362e401e9c9213f7228}{get\+Info\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a02fb9e1685440362e401e9c9213f7228}{Data\+Model\+::get\+Info\+Widget}} Liefet das gespeicherte Info Widget. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{set\+Mode}} (\mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}})
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{Data\+Model\+::set\+Mode}} Setzt den aktuellen Bearbeitungsmodus. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a083d84049b068cd355ce6aaa396e7c79}{get\+Mode}} ()
@@ -142,6 +150,8 @@ int \mbox{\hyperlink{classDataModel_a0dcb89a7fda479001ef8f92203c00d43}{coordinat
 \item 
 Q\+String \mbox{\hyperlink{classDataModel_a32e94d7559dea5f25325d481ed30d513}{ip}}
 \item 
+Q\+String \mbox{\hyperlink{classDataModel_af29c5fdf7fbe21dd7e0248cdda5f0bfb}{time\+String}}
+\item 
 quint16 \mbox{\hyperlink{classDataModel_ad0600b5b3c94ed79290f41102637abef}{port}}
 \item 
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_a600ee15bba4b83c510afc3fb0b579672}{balance\+Label}}
@@ -153,6 +163,8 @@ Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_aa437ce67fe0141a9821946af7d8bd38
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_afde9d11c991d9b458d3f2c260c9718fd}{status\+Display}}
 \item 
 Q\+Label $\ast$ \mbox{\hyperlink{classDataModel_adb8796c6636e436c8a40095b1999a565}{connection\+Label}}
+\item 
+\mbox{\hyperlink{classInfoWidget}{Info\+Widget}} $\ast$ \mbox{\hyperlink{classDataModel_ad7892998d15bec32446655956d611bc8}{info\+Widget}}
 \item 
 \mbox{\hyperlink{classDataModel_a59651530f7b7d568f6d86b0e6a7d1a12}{M\+O\+DE}} \mbox{\hyperlink{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}{mode}} \{M\+O\+D\+E\+::\+D\+E\+F\+A\+U\+LT\}
 \end{DoxyCompactItemize}
@@ -211,15 +223,15 @@ R\+E\+M\+O\+VE&\\
 
 
 \doxysubsection{Dokumentation der Elementfunktionen}
-\mbox{\Hypertarget{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}\label{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}} 
+\mbox{\Hypertarget{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3}\label{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3}} 
 \index{DataModel@{DataModel}!formatTime@{formatTime}}
 \index{formatTime@{formatTime}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{formatTime()}{formatTime()}}
-{\footnotesize\ttfamily std\+::string Data\+Model\+::format\+Time (\begin{DoxyParamCaption}\item[{long}]{p\+Time }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Q\+String Data\+Model\+::format\+Time (\begin{DoxyParamCaption}\item[{long}]{p\+Time }\end{DoxyParamCaption})}
 
 
 
-\mbox{\hyperlink{classDataModel_a0f0049332a55bb6de5bd2d0d53f3b93f}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. 
+\mbox{\hyperlink{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3}{Data\+Model\+::format\+Time}} Formattiert einen Timecode als String. 
 
 
 \begin{DoxyParams}{Parameter}
@@ -229,6 +241,14 @@ R\+E\+M\+O\+VE&\\
 \begin{DoxyReturn}{Rückgabe}
 Der Text. 
 \end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a0c5795c0e25bc065b5009dc9e1352ea3_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_a0706aa63d7955b77be45afe44dfec440}\label{classDataModel_a0706aa63d7955b77be45afe44dfec440}} 
 \index{DataModel@{DataModel}!getBalance@{getBalance}}
 \index{getBalance@{getBalance}!DataModel@{DataModel}}
@@ -242,6 +262,35 @@ Der Text.
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Kontostand. 
 \end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a0706aa63d7955b77be45afe44dfec440_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a2c37750a8ee02decb50bd94889bfb60d}\label{classDataModel_a2c37750a8ee02decb50bd94889bfb60d}} 
+\index{DataModel@{DataModel}!getFormattedTime@{getFormattedTime}}
+\index{getFormattedTime@{getFormattedTime}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getFormattedTime()}{getFormattedTime()}}
+{\footnotesize\ttfamily Q\+String Data\+Model\+::get\+Formatted\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a2c37750a8ee02decb50bd94889bfb60d}{Data\+Model\+::get\+Formatted\+Time}} Liefert die gecachte formatierte Zeit zurück. 
+
+\begin{DoxyReturn}{Rückgabe}
+Ein Q\+String. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a2c37750a8ee02decb50bd94889bfb60d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classDataModel_aa1d162f385c1d41293178156ed66f014}\label{classDataModel_aa1d162f385c1d41293178156ed66f014}} 
 \index{DataModel@{DataModel}!getHoverX@{getHoverX}}
 \index{getHoverX@{getHoverX}!DataModel@{DataModel}}
@@ -280,6 +329,27 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_aa9db6a6d8619c898e9ab369f6c49479e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a02fb9e1685440362e401e9c9213f7228}\label{classDataModel_a02fb9e1685440362e401e9c9213f7228}} 
+\index{DataModel@{DataModel}!getInfoWidget@{getInfoWidget}}
+\index{getInfoWidget@{getInfoWidget}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{getInfoWidget()}{getInfoWidget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInfoWidget}{Info\+Widget}} $\ast$ Data\+Model\+::get\+Info\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a02fb9e1685440362e401e9c9213f7228}{Data\+Model\+::get\+Info\+Widget}} Liefet das gespeicherte Info Widget. 
+
+\begin{DoxyReturn}{Rückgabe}
+Das Info Widget. 
+\end{DoxyReturn}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a02fb9e1685440362e401e9c9213f7228_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}\label{classDataModel_a8f97eec924a697993ce25cb3be5d8ecf}} 
@@ -528,7 +598,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -540,6 +611,29 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDataModel_a1cbf7b9a89a911351f49276d3c556523}\label{classDataModel_a1cbf7b9a89a911351f49276d3c556523}} 
+\index{DataModel@{DataModel}!setInfoWidget@{setInfoWidget}}
+\index{setInfoWidget@{setInfoWidget}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{setInfoWidget()}{setInfoWidget()}}
+{\footnotesize\ttfamily void Data\+Model\+::set\+Info\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInfoWidget}{Info\+Widget}} $\ast$}]{widget }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDataModel_a1cbf7b9a89a911351f49276d3c556523}{Data\+Model\+::set\+Info\+Widget}} Setzt das Info Widget. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em widget} & Das Info Widget. \\
+\hline
+\end{DoxyParams}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classDataModel_a1cbf7b9a89a911351f49276d3c556523_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classDataModel_ada1f4f25f2cf78f62a0f29ace3dc11f8}\label{classDataModel_ada1f4f25f2cf78f62a0f29ace3dc11f8}} 
@@ -716,6 +810,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. 
 
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataModel_a0c605d45cde1e17a0611c004732ac6ee_cgraph}
+\end{center}
+\end{figure}
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -755,7 +857,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Balance} & Der neue Kontostand. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -831,6 +934,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{coordinateY@{coordinateY}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{coordinateY}{coordinateY}}
 {\footnotesize\ttfamily int Data\+Model\+::coordinateY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_ad7892998d15bec32446655956d611bc8}\label{classDataModel_ad7892998d15bec32446655956d611bc8}} 
+\index{DataModel@{DataModel}!infoWidget@{infoWidget}}
+\index{infoWidget@{infoWidget}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{infoWidget}{infoWidget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInfoWidget}{Info\+Widget}}$\ast$ Data\+Model\+::info\+Widget\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classDataModel_a32e94d7559dea5f25325d481ed30d513}\label{classDataModel_a32e94d7559dea5f25325d481ed30d513}} 
 \index{DataModel@{DataModel}!ip@{ip}}
@@ -909,6 +1018,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{timeLabel@{timeLabel}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{timeLabel}{timeLabel}}
 {\footnotesize\ttfamily Q\+Label$\ast$ Data\+Model\+::time\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataModel_af29c5fdf7fbe21dd7e0248cdda5f0bfb}\label{classDataModel_af29c5fdf7fbe21dd7e0248cdda5f0bfb}} 
+\index{DataModel@{DataModel}!timeString@{timeString}}
+\index{timeString@{timeString}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{timeString}{timeString}}
+{\footnotesize\ttfamily Q\+String Data\+Model\+::time\+String\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
