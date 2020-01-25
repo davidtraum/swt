@@ -517,8 +517,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     broadcast("ROUTE+PLAY+" + handOver)
 
                 elif(args[1] == "GET"):     #Client verlangt nach einer Liste mit allen ihm zugehörigen Routen
-                    handOver = "ROUTES+"
-                    handOver = handOver + str(self.player.routes)
+                    handOver = str(self.player.routes)
                     handOver = handOver.replace(",", "+")
                     handOver = handOver.replace("[", "")
                     handOver = handOver.replace("]", "")
@@ -532,20 +531,25 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     nameWritten = False
                     handOver = ""
                     
-                    for i in range(1, len(handOverList)):
+                    for i in range(0, len(handOverList)):
                         
                         if ( handOverList[i] == "COAL" or handOverList[i] == "FOOD" or handOverList[i] == "LIVESTOCK" or handOverList[i] == "WOOD" or handOverList[i] == "CORN" or handOverList[i] == "GOODS" or handOverList[i] == "PAPER" or handOverList[i] == "MAIL" or handOverList[i] == "PASSENGERS" ):
                             wagonsWritten = True
                             coordsWritten = False
-                        elif (wagonsWritten):
+                            print("WAGGON GEFUNDEN")
+                        elif (wagonsWritten or i == len(handOverList)):
                             coordsWritten = True
                             wagonsWritten = False
                             print("HandOver in Schleife: " + handOver)
                             self.send("ROUTES+" + handOver)
                             handOver = ""
+                        else:
+                            print("KEIN WAGGON, aber auch kein ENDE")
 
                         handOver += handOverList[i] + "+"
                         print("Schleifendurchlauf " + str(i) + "   " + handOver)
+
+                    self.send("ROUTES+" + handOver) #Letzte Route auch senden
                         
                 elif(args[1] == "DELETE"):
                     deletedID = self.player.cancelRoute(args[2])
