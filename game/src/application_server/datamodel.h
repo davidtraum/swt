@@ -50,9 +50,9 @@ public:
     void setMode(MODE);
     MODE getMode();
     Player * secondPlayer;
-    const int RADIUS_DEPOT = 1*64;
-    const int RADIUS_STATION = 2*64;
-    const int RADIUS_TERMINAL = 3*64;
+    const int RADIUS_DEPOT = 2*64;
+    const int RADIUS_STATION = 3*64;
+    const int RADIUS_TERMINAL = 4*64;
     static bool mapLoaded;
     MainWindow * mainWindow;
 
