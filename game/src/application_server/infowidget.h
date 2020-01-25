@@ -8,6 +8,14 @@ class InfoWidget: public QWidget
 {
 public:
     InfoWidget();
+    QLabel * headerLabel;
+    QLabel * headerGut;
+    QLabel * headerLager;
+    QLabel * headerPreis;
+
+    QLabel * contentGut;
+    QLabel * contentLager;
+    QLabel * contentPreis;
 
 };
 

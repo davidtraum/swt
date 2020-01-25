@@ -137,8 +137,13 @@ int main(int argc, char *argv[])
     viewLayout->addLayout(rightLayout, 0,2);
     rightLayout->addWidget(map);
 
+    QWidget * spacerVert = new QWidget();
+    spacerVert->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    spacerVert->setFixedHeight(40);
+    spacerVert->setFixedWidth(0);
+    rightLayout->addWidget(spacerVert);
+
     InfoWidget * infoWidget = new InfoWidget();
-    infoWidget->setStyleSheet("background-color: white");
     rightLayout->addWidget(infoWidget);
     dataModel->setInfoWidget(infoWidget);
 
