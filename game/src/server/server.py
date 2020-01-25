@@ -541,7 +541,7 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                             coordsWritten = True
                             wagonsWritten = False
                             print("HandOver in Schleife: " + handOver)
-                            self.send("ROUTES+" + handOver + "+END")
+                            self.send("ROUTES+" + handOver)
                             handOver = ""
 
                         handOver += handOverList[i] + "+"
