@@ -628,7 +628,12 @@ DEFAULT_CONFIG = {
     'max_players': 5,
     'game' : {
         'prices': {
-            'station':
+            'depot': 100
+            'station': 250
+            'terminal': 500
+            'bridge': 50
+            'rail': 20
+            'remove': 10
         }
     }
     }
