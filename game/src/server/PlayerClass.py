@@ -25,35 +25,42 @@ class Player:
             if (self.id == 4):
                 self.money = playerData['p4_money']    #Guthaben wird aus playerData-JSON ausgelesen
 
+    #Gibt das Guthaben des Spielers zurück
     def getMoney(self):
         return self.money
 
+    #Gibt die IP des Spielers zurück
     def getIp(self):
         return self.ip
-    
+
+    #Gibt True zurück, wenn der Spieler Besitzer der Schiene ist
     def isOwnerRail(self, railObject):  #Prüft Gültigkeit einer Aktion des Spielers (Besitz des Objekts), z.B. beim Abreißen von Schienen benötigt
         if (self.id == railObject.player):  #Spieler-ID passt zur im Objekt gespeicherten ID?
             return True
         else:
             return False
-
+        
+    #Gibt True zurück, wenn der Spieler Besitzer des Bahnhofs ist
     def isOwnerTrainstration(self, trainStationObject):  #Prüft Gültigkeit einer Aktion des Spielers (Besitz des Objekts)
         if (self.id == trainStationObject.player):   #Spieler-ID passt zur im Objekt gespeicherten ID?
             return True
         else:
             return False
 
+    #Fügt dem Konto des Spielers Guthaben hinzu (negativ -> Geld wird abgezogen)
     def addValue(self, amount): #fügt Guthaben zum Konto des Spielers hinzu (negativer Wert: Abzug)
         self.money += amount
 
-    def addRoute(self, pRouteName, pRoute, pWagons):    #Füge eine Route zur Liste aller Routen des Spielers hinzu   
+    #Füge eine Route zur Liste aller Routen des Spielers hinzu 
+    def addRoute(self, pRouteName, pRoute, pWagons):      
         self.routes.append([pRouteName, pRoute, pWagons])
         print("Route hinzugefügt. Aktuelle Routen des Spielers: ")
         print(self.routes)
         print("Neue Route wird gestartet.")
         return self.startRoute(self.routes[-1][0], self.routes[-1][1], self.routes[-1][2])
 
-    def startRoute(self, pRouteName, pStations, pWagons):     #Startet die übergebene Route
+    #Startet die übergebene Route
+    def startRoute(self, pRouteName, pStations, pWagons):     
         tsTmp = []
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
@@ -76,8 +83,8 @@ class Player:
                 return tmpID
         print("ROUTE GELÖSCHT: " + pRouteName)
                 
-        
-    def __del__(self):  #Werte wie Guthaben müssen in JSON gespeichert werden, wenn der Spieler offline geht.
+    #Werte wie Guthaben sollten in JSON gespeichert werden, wenn der Spieler offline geht.
+    def __del__(self):  
         #with open('playerData.json', 'r+') as f:
         #    playerData = json.load(f)
         #    data['money'] = self.money #Guthaben wird gesichert

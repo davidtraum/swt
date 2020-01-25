@@ -3,8 +3,10 @@ from multiprocessing import Process
 from threading import Thread
 import time
 
+#Die Objekte dieser Klasse speichern Ressourcen und dienen der Route als Haltepunkte. Jeder Bahnhof hat je nach Typ einen anderen Radius in dem er Ressourcen sammeln kann.
 class TrainStationLogic:
-    
+
+    #Ressourcen-Daten des Bahnhofs:
     PRODUCING = {
             'CORN': 100,
             'COAL': 100,
@@ -155,9 +157,9 @@ class TrainStationLogic:
             if(self.connectedUp == True or self.connectedDown == True):
                 return 'TERMINAL_V'
 
-
+    #Prüft ob eine Kachel in Reichweite zur Trainstation ist
     @staticmethod
-    def checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte):    #Prüft ob eine Kachel in Reichweite zur Trainstation ist
+    def checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte):    
         sideLenght = 2*pRange+1             #Seitenlänge
         for column in range(pRange*2+1):    #Spalten    
             for row in range(pRange*2+1):   #Reihe
@@ -165,9 +167,10 @@ class TrainStationLogic:
                     return True
                 else:
                     return False
-    
+
+    #Schienen dürfen nur gelegt werden, wenn andere Schiene oder Bahnhof in der Nähe ist
     @staticmethod
-    def checkConnectableRails(player, x_Pos, y_Pos, karte):     #Schienen dürfen nur gelegt werden, wenn andere Schiene oder Bahnhof in der Nähe ist
+    def checkConnectableRails(player, x_Pos, y_Pos, karte):     
         railConnectableRight = False;   #Schiene rechts ist verbindbar?
         railConnectableLeft = False;    #Schiene links ist verbindbar?
         railConnectableUp = False;      #Schiene oben ist verbindbar?
@@ -216,8 +219,9 @@ class TrainStationLogic:
         
         return railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown
 
+    #Diese Funktion ermöglicht den Bau von Schienen + Kurvenlogik
     @staticmethod
-    def build(x_Pos, y_Pos, pPlayer, pRange, karte):        #Diese Funktion ermöglicht den Bau von Schienen + Kurvenlogik
+    def build(x_Pos, y_Pos, pPlayer, pRange, karte):        
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = TrainStationLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte)
         print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)
         if(not TrainStationLogic.checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte)):
@@ -339,7 +343,8 @@ class TrainStationLogic:
         else:
             print('Kann Bahnhof hier nicht bauen!')
 
-    def remove(self, x_Pos,y_Pos, pPlayer, karte):      #Entferne Das Maptile und setze es auf Gras zurück
+    #Entferne Das Maptile und setze es auf Gras zurück
+    def remove(self, x_Pos,y_Pos, pPlayer, karte):      
         if(karte[x_Pos][y_Pos].player == pPlayer):
             if(self.connectedRight + self.connectedLeft + self.connectedUp +self.connectedDown == 1):
                 karte[x_Pos][y_Pos].setType('GRASS')    #Maptile wird wieder auf Gras gesetzt

@@ -16,7 +16,8 @@ clients = []
 clientCount = 0
 tasks = []
 
-def broadcast(pText, exclude=None):     #Ein Broadcast geht an alle verbundenen Clients raus
+#Ein Broadcast geht an alle verbundenen Clients raus
+def broadcast(pText, exclude=None):     
     global clients
     for client in clients:
         try:
@@ -25,7 +26,7 @@ def broadcast(pText, exclude=None):     #Ein Broadcast geht an alle verbundenen 
         except Exception:
             client.disconnect()
 
-
+#Die Klasse MapTile dient zur Bestimmung des Typs der Kacheln auf der Karte
 class MapTile:
     TYPES = {
         'GRASS': 0,
@@ -73,16 +74,19 @@ class MapTile:
         self.setType(pType, share=False)
         self.logic = pLogic
         
-
+    #Gibt die Position des MapTiles zurück
     def getPos(self):
         return self.x, self.y
 
+    #Gibt die x-Koordinate des MapTiles zurück
     def getX(self):
         return self.x
 
+    #Gibt die y-Koordinate des MapTiles zurück
     def getY(self):
         return self.y
 
+    #Setzt den Typ der Kachel auf den Typ pType
     def setType(self, pType, share=True, resetRotation=True):
         if(resetRotation):
             self.setRotation(0)
@@ -91,18 +95,21 @@ class MapTile:
             broadcast(self.getProtocolString())
             #print("Kachel bei ", self.x, " ", self.y, " geändert. ", self.type)
 
+    #Gibt den Typ der Kachel zurück
     def getType(self):        
         return self.type
-    
+
+    #Gibt den Typ der Kachel als String zurück
     def getStringType(self):
         for key in MapTile.TYPES:
             if(MapTile.TYPES[key]==self.type):
                 return key
         
-
+    #Setzt die Rotation der Kachel
     def setRotation(self, pRotation):
         self.rotation = pRotation
 
+    #Das MapTile wird einmal im Uhrzeigersinn gedreht
     def rotateClockwise(self, share=True):
         self.rotation+=1
         if(self.rotation>3):
@@ -110,32 +117,37 @@ class MapTile:
         if(share):
             broadcast(self.getProtocolString())
 
-
+    #Liefert true zurück, wenn das MapTile ein Fluss ist
     def isRiver(self):
         return self.type >= 3 and self.type <= 8
 
+    #Liefert true zurück, wenn das MapTile eine Schiene ist
     def isRail(self):
         return self.type >= 9 and self.type <= 14 or self.type == 22 or self.type == 23
-
+    
+    #Liefert true zurück, wenn das MapTile ein Bahnhof ist
     def isTrainStation(self):
         return self.type >= 16 and self.type <= 21
     
+    #Liefert true zurück, wenn das MapTile eine Erzeugungsstatte ist
     def isProducingBuilding(self):
         return self.type >= 24 and self.type <= 25 or self.type == 2
 
+    #Gibt True zurück, wenn an der Stelle ein vertikaler Bahnhof ist
     def checkRotationStationVertical(self):
         return self.type == 17 or self.type == 19 or self.type == 21
 
+    #Gibt einen an den Client verschickbaren String zurück, der die Eigenschaften des MapTiles beinhaltet
     def getProtocolString(self):
-        #print('der gesendete Typ ist:')
-        #print(self.type)
         return 'TILE+' + str(self.x) + '+' + str(self.y) + '+' + str(self.type) + '+' + str(self.rotation)
 
+    #Gibt true zurück, wenn der übergebene Typ mit der Gruppe übereinstimmt
     def isInGroup(self, types):
         for type in types:
             if(self.type == MapTile.TYPES[type]):
                 return True
 
+    #Wird aufgerufen, wenn sich die Logik des MapTiles ändert (wenn z.B. eine Schiene platziert wird)
     def logicUpdate(self):
         if(self.logic != None):
             print("MapTile @ LogicUpdate ", self.x, " " , self.y)            
@@ -145,6 +157,7 @@ class MapTile:
                 print("MapTile @ LogicChanged ", newType)
                 self.setType(newType)
 
+    #Initialisiert Logikelemente des entsprechenden Kacheltyps, wenn diese auf der Karte platziert werden
     def initLogic(self, pLogic, karte = None, pRange = 2):
         print("Init logic @ ", self.x, " ", self.y)
         if(pLogic == RailLogic or pLogic == BridgeLogic):
@@ -154,7 +167,7 @@ class MapTile:
             tasks.append(self.logic)
         
 
-
+#Diese Klasse beinhaltet die Karteninformationen (Jede Kachel steht für ein MapTile)
 class World:
 
     def __init__(self):
@@ -165,25 +178,30 @@ class World:
             for y in range(300):
                 self.data[x].append(MapTile(x,y,'GRASS'))
 
+    #Gibt eine zufällige x-y-Position auf der Karte zurück
     def randomPosition(self):
         return (random.randint(0, 299), random.randint(0, 299))
 
+    #Prüft ob die übergebenen Koordinaten eine gültige Position sind, also nicht außerhalb der generierten Karte vorliegen
     def isValidPosition(self, posX, posY):
         return posX >= 0 and posY >= 0 and posX < 300 and posY < 300
 
+    #Gibt true zurück, wenn man bei den übergebenen Koordinaten x,y bauen darf. Es darf nur auf Wald und Wiese gebaut werden.
     def canPlaceObject(self, posX, posY):       
         return self.data[posX][posY].isInGroup(('GRASS', 'FOREST')) or False
 
-        
+    #Prüft ob an der übergebenen Position eine Schiene/Brücke auf den Fluss gebaut werden kann    
     def canPlaceRailOnRiver(self, posX, posY):
         return self.data[posX][posY].isInGroup(('RIVER_H', 'RIVER_V')) or False
 
+    #Gibt die Spielzeit zurück
     def getGametime(self):
         currentTime = int(time.time()*1000)
         diff = currentTime - self.startTime
         return int(diff/20)
-
-    def tileInteract(self, posX, posY, pType):  #Funktion zur Unterscheidung welche Interaktion mit einem MapTile durchgeführt wurde.
+    
+    #Funktion zur Unterscheidung welche Interaktion mit einem MapTile durchgeführt wurde.
+    def tileInteract(self, posX, posY, pType):  
         print("Interact ", posX, " ", posY, " ", pType)
         if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
@@ -202,8 +220,9 @@ class World:
             TrainStationLogic.build(posX, posY, None, 6, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
-    
-    def tileRemove(self, posX, posY):  #entferne ein Maptile (wird zu Flachland/Gras)
+
+    #Entfernt ein Maptile (wird zu Flachland/Gras)
+    def tileRemove(self, posX, posY):  
         if(self.data[posX][posY].type >= 9 and self.data[posX][posY].type <= 14):
             print("Remove Rail Request at ", posX, " ", posY)
             self.data[posX][posY].logic.remove(posX, posY, None, self.data)
@@ -215,7 +234,8 @@ class World:
             self.data[posX][posY].setType('GRASS')
         #self.data[posX][posY]
 
-    def generateWorld(self):    #Weltgenerierung nach Start des Servers
+    #Weltgenerierung nach Start des Servers
+    def generateWorld(self):    
         print("Welt wird generiert...")
         size = 300
         for x in range(size):
@@ -355,8 +375,6 @@ class World:
             testWagons=[]
             for j in range(7):
                 testWagons.append("CORN")
-            #RouteLogic.allRoutes.append(RouteLogic(None, testTrainstations, testWagons, self.data))
-            #tasks.append(RouteLogic.allRoutes[-1])
             
         #Generierung von Meeren
         if False: #Setze True zum aktivieren
@@ -376,9 +394,10 @@ class World:
                     self.data[x][y].setType('WATER') 
                 for x in range(random.randint(minX,150-(y-150))):
                     self.data[299-x][y].setType('WATER')
-                     
 
-class GameLoopThread(Thread):   #GameLoop lässt die Zeit im Spiel weiterlaufen
+                     
+#GameLoop lässt die Zeit im Spiel weiterlaufen
+class GameLoopThread(Thread):  
 
     def __init__(self, tickspeed=20):
         Thread.__init__(self)
@@ -396,7 +415,9 @@ class GameLoopThread(Thread):   #GameLoop lässt die Zeit im Spiel weiterlaufen
             self.do_loop()
             time.sleep(self.tickspeed)
 
-class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
+
+#Jeder Client erhält seinen eigenen Thread
+class ClientThread(Thread):     
 
     def __init__(self, pConnection):
         Thread.__init__(self)
@@ -406,16 +427,18 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
         self.player = Player(clientCount, 1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
 
-    #send('ROUTE+PLAY+' + unserKoordinatenString);
+    #Sendet den Text pText als Befehl an den Client. Befehlteile werden mit "+" voneinander getrennt
     def send(self, pText):
         self.connection.send(bytes([0,0,0,0,0,0,255, len(pText)]))
         self.connection.sendall(pText.encode())
         #print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
 
+    #Zwingt den Client sich mit dem Server zu synchronisieren
     def forceSync(self):
         self.send("SYNC")
 
-    def disconnect(self):   #Disconnectet einen Client
+    #Disconnectet einen Client
+    def disconnect(self):   
         global clients
         global clientCount
         if(self in clients):
@@ -429,13 +452,14 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
         except Exception:
             print("FEHLER BEIM DISCONNECT")
 
-    def processCommand(self,command):   #Befehlsverarbeitung
+    #Befehlsverarbeitung (Befehle des Client). Unterschiedliche Befehle lösen unterschiedliche Routinen aus.
+    def processCommand(self,command):   
             global world
             print(command)
-            args = command.split(" ")
+            args = command.split(" ")   #Der Server versteht Befehle mit " " Leerzeichen als Trennung
 
-            
-            if(args[0] == 'MAP'):   #Befehlsverarbeitung MAP
+            #Befehlsverarbeitung MAP
+            if(args[0] == 'MAP'):   
                 if(args[1] == 'GET'):
                     # TILE X Y TYP ROTATION
                     for x in range(300):
@@ -446,8 +470,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     self.send("MAP+DONE")
                     self.send("TIME+" + str(world.getGametime()))
                     self.forceSync()
-                    
-            elif(args[0] == 'BUILD'):   #Befehlsverarbeitung BUILD
+
+            #Befehlsverarbeitung BUILD
+            elif(args[0] == 'BUILD'):   
                 posX = int(args[2])
                 posY = int(args[3])
                 if(args[1] == 'RAIL'):
@@ -482,7 +507,8 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 posY = int(args[2])
                 world.tileRemove(posX, posY)
 
-            elif(args[0] == 'ROUTE'):   #Befehlsverarbeitung ROUTE
+            #Befehlsverarbeitung ROUTE
+            elif(args[0] == 'ROUTE'):   
                 tsStops = [[]]     #speichert Koordinaten der Haltestellen auf der Route
                 wagonTypes = []
                 i=0    #Damit Array in Schleife bei 0 beginnt
@@ -530,9 +556,9 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     coordsWritten = False
                     nameWritten = False
                     handOver = ""
-                    
+
+                    #Schickt die Routen des Spielers einzeln als Strings an den Client
                     for i in range(0, len(handOverList)):
-                        
                         if ( handOverList[i] == "COAL" or handOverList[i] == "FOOD" or handOverList[i] == "LIVESTOCK" or handOverList[i] == "WOOD" or handOverList[i] == "CORN" or handOverList[i] == "GOODS" or handOverList[i] == "PAPER" or handOverList[i] == "MAIL" or handOverList[i] == "PASSENGERS" ):
                             wagonsWritten = True
                             coordsWritten = False
@@ -545,15 +571,14 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                             handOver = ""
                         else:
                             print("KEIN WAGGON, aber auch kein ENDE")
-
                         handOver += handOverList[i] + "+"
                         print("Schleifendurchlauf " + str(i) + "   " + handOver)
-
                     self.send("ROUTES+" + handOver) #Letzte Route auch senden
                         
                 elif(args[1] == "DELETE"):
                     deletedID = self.player.cancelRoute(args[2])
                     broadcast("ROUTE+DELETE+" + str(deletedID))
+                    
                 elif(args[1] == "PASS"):
                     print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                     for i in range(len(self.player.routeObjectList)):
@@ -563,9 +588,10 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     print("vor addWagons")
                     routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
                 else:
-                    print("Client sendete fehlerhafte Route: Kein Bahnhof ausgewählt!")
-                
-            elif(args[0] == 'POS'):   #Befehlsverarbeitung POS
+                    print("Client sendete fehlerhaften ROUTE-Befehl!")
+
+            #Befehlsverarbeitung POS
+            elif(args[0] == 'POS'):   
                 #print("got pos update " + command)
                 posX = int(args[1])
                 posY = int(args[2])
@@ -575,7 +601,8 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 print("Befehl nicht verstanden: ")
                 print(command)
 
-    def run(self):  #Server wartet im Thread auf Befehle des Clients bis dieser die Verbindung trennt
+    #Server wartet im Thread auf Befehle des Clients bis dieser die Verbindung trennt
+    def run(self):  
         global world
         buffer = b""
         while True:
@@ -591,8 +618,10 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                 self.disconnect()
                 break
             
-            
 
+#-----------------STARTROUTINE-------------------#
+            
+#Wenn keine Config existiert wird eine neue mit diesen Einstellungen generiert:
 DEFAULT_CONFIG = {
     'port': 2000,
     'bind_ip': 'localhost',
@@ -650,7 +679,7 @@ gameloop.start()
 print("Server wird gestartet...")
 print(CONFIG)
 
-
+#Warte stets auf eingehende Verbindungen von Clients
 try:
     while True:
         connection, address = server.accept()
@@ -661,7 +690,7 @@ try:
         clients.append(thread)
         print("Anzahl verbundener Clients: " + str(clientCount))
         
-        
+#Wenn der Server beendet wird, werden Clients vorher vom Server getrennt        
 except KeyboardInterrupt:
     for client in clients:
         client.disconnect()

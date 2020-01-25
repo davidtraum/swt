@@ -20,7 +20,7 @@ class RouteLogic:
         #self.calculateTime()
         self.train = TrainLogic()
         
-
+    #Sendet dem Client eine Auflistung aller Kurven und Zwischenbahnhöfe in Form eines Strings
     def sendProtocolString(self):
         tmpCurves = ''
         for i in range(len(self.trainstations)):
@@ -52,8 +52,8 @@ class RouteLogic:
              wayBack = ''
         return str(self.countId) + "+" + str(x1) + ":" + str(y1) + ";" + tmpCurves + wayBack
 
-    
-    def calculateTime(self):    #Berechnet die benötigte Zeit, die die Route in Anspruch nimmt
+    #Berechnet die benötigte Zeit, die die Route in Anspruch nimmt
+    def calculateTime(self):    
         for i in range(len(self.trainstations)-1):
             print(self.trainstations[i])
             print(self.trainstations[i+1])            
@@ -62,8 +62,9 @@ class RouteLogic:
             
         self.timeNeeded.append(len(tmp))
         print (self.timeNeeded)
-        
-    def do_loop(self):  #Der Loop, der die Züge in der Logik die Route abfahren lässt                      
+
+    #Der Loop, der die Züge in der Logik die Route abfahren lässt
+    def do_loop(self):                        
         if(time.time() - self.last_mach_was > float(self.timeNeeded[self.stationCounter]) * 0.5):
             print("Bahnhof ",self.stationCounter," erreicht")
             self.train.removeWagon(self.wagons)            
