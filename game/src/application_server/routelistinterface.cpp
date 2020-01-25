@@ -110,7 +110,7 @@ void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
             routeList->addItem(routeString);
             wagonsReceived = false;
             firstRoute = false;
-            routeString = "Cooler Routenname: ";
+            routeString = "";
             coordCount = 0;
         }
 

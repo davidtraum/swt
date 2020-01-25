@@ -523,13 +523,30 @@ class ClientThread(Thread):     #Jeder Client erhält seinen eigenen Thread
                     handOver = handOver.replace("[", "")
                     handOver = handOver.replace("]", "")
                     handOver = handOver.replace(" ", "")
-                    handOver = handOver.replace("'", "")
+                    handOver = handOver.replace("'", "")             
+                    print("HandOver ganzer String:" + handOver)
+                    
+                    handOverList = handOver.split("+")
+                    wagonsWritten = False
+                    coordsWritten = False
+                    nameWritten = False
+                    handOver = ""
+                    
+                    for i in range(1, len(handOverList)):
+                        
+                        if ( handOverList[i] == "COAL" or handOverList[i] == "FOOD" or handOverList[i] == "LIVESTOCK" or handOverList[i] == "WOOD" or handOverList[i] == "CORN" or handOverList[i] == "GOODS" or handOverList[i] == "PAPER" or handOverList[i] == "MAIL" or handOverList[i] == "PASSENGERS" ):
+                            wagonsWritten = True
+                            coordsWritten = False
+                        elif (wagonsWritten):
+                            coordsWritten = True
+                            wagonsWritten = False
+                            print("HandOver in Schleife: " + handOver)
+                            self.send("ROUTES+" + handOver + "+END")
+                            handOver = ""
 
-                    handOver += "+END"
-                                        
-                    print("HandOver:" + handOver)
-                    self.send(handOver)
-
+                        handOver += handOverList[i] + "+"
+                        print("Schleifendurchlauf " + str(i) + "   " + handOver)
+                        
                 elif(args[1] == "DELETE"):
                     deletedID = self.player.cancelRoute(args[2])
                     broadcast("ROUTE+DELETE+" + str(deletedID))

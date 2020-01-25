@@ -67,7 +67,8 @@ class Player:
             if (self.routes[i][0] == pRouteName):
                 self.routes.pop(i)
                 print("route popped")
-        for i in range(len(self.routeObjectList)):
+        for i in range(len(self.routeObjectList)):      #Hier bei mehreren Routen in der Liste manchmal "list index out of range"?
+            print("In For Schleife gesprungen")
             if (self.routeObjectList[i].routeName == pRouteName):
                 tmpID = self.routeObjectList[i].id
                 print("ID wird gelöscht: " + str(tmpID))
