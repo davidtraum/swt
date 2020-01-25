@@ -596,7 +596,6 @@ class ClientThread(Thread):
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                     
                 elif(args[1] == "PASS"):
-                    routeTmp = []
                     print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                     for i in range(len(self.player.routeObjectList)):
                         if(self.player.routeObjectList[i].id == int(args[2])):
