@@ -60,14 +60,19 @@ void RouteListInterface::toggle() {
  */
 void RouteListInterface::deleteRoute() {
 
-    qDebug() << "Items werden gelöscht...";
+    if (routeList->count() != 0) {
+        qDebug() << "Items werden gelöscht...";
 
-    qDebug() << routeList;
+        qDebug() << routeList;
 
-    emit sendDeleteSignal(routeList->takeItem(routeList->currentRow()));
-    delete routeList->takeItem(routeList->currentRow());
+        emit sendDeleteSignal(routeList->takeItem(routeList->currentRow()));
+        delete routeList->takeItem(routeList->currentRow());
 
-    qDebug() << "WURDE GELÖSCHT";
+        qDebug() << "WURDE GELÖSCHT";
+    }
+    else {
+        qDebug() << "Keine Route zum Löschen ausgewählt.";
+    }
 
 }
 
