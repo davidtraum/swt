@@ -11,7 +11,7 @@
 #include "datamodel.h"
 #include "view.h"
 #include "maprenderer.h"
-#include "routeListInterface.h"
+#include "routelistinterface.h"
 
 class Client: public QThread
 {

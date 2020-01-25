@@ -13,7 +13,7 @@
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
 MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface, QMediaPlayer * musicPlayer) :
-    scene{pScene}, mapRenderer{pRenderer}, dataModel{pDataModel}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}
+    scene{pScene}, dataModel{pDataModel}, mapRenderer{pRenderer}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
     this->setMovable(false);

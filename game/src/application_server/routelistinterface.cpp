@@ -1,4 +1,4 @@
-#include "routeListInterface.h"
+#include "routelistinterface.h"
 
 #include <QGroupBox>
 #include <QHBoxLayout>
@@ -78,7 +78,6 @@ void RouteListInterface::deleteRoute() {
 void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
     QString routeString = routeStringList->at(1) + ": ";
     bool wagonsReceived = false;
-    bool firstRoute = true;
     int coordCount = 0;
     QRegExp re("\\d*"); //Eine Nummer, beliebig viele Stellen
 
@@ -111,7 +110,6 @@ void RouteListInterface::receiveRoutes(QStringList * routeStringList) {
             qDebug() << "Vollständige Route empfangen";
             routeList->addItem(routeString);
             wagonsReceived = false;
-            firstRoute = false;
             routeString = "";
             coordCount = 0;
         }

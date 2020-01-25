@@ -71,8 +71,8 @@ HEADERS += \
     point.h \
     renderthread.h \
     river.h \
-    routeListInterface.h \
     routeinterface.h \
+    routelistinterface.h \
     scene.h \
     sidepanel.h \
     sprite.h \
