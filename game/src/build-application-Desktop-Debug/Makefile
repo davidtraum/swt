@@ -59,6 +59,7 @@ SOURCES       = ../application_server/animationentity.cpp \
 		../application_server/goodselector.cpp \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
+		../application_server/infowidget.cpp \
 		../application_server/main.cpp \
 		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
@@ -105,6 +106,7 @@ OBJECTS       = animationentity.o \
 		goodselector.o \
 		graphicsmanager.o \
 		highlighter.o \
+		infowidget.o \
 		main.o \
 		mainmenu.o \
 		mainwindow.o \
@@ -234,6 +236,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/goodselector.h \
 		../application_server/graphicsmanager.h \
 		../application_server/highlighter.h \
+		../application_server/infowidget.h \
 		../application_server/main.h \
 		../application_server/mainmenu.h \
 		../application_server/mainwindow.h \
@@ -264,6 +267,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../application_server/goodselector.cpp \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
+		../application_server/infowidget.cpp \
 		../application_server/main.cpp \
 		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
@@ -495,8 +499,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/mousedecor.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/river.h ../application_server/routeListInterface.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/mousedecor.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/infowidget.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/mousedecor.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/river.h ../application_server/routeListInterface.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/infowidget.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/mousedecor.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -914,6 +918,9 @@ graphicsmanager.o: ../application_server/graphicsmanager.cpp ../application_serv
 highlighter.o: ../application_server/highlighter.cpp ../application_server/highlighter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o highlighter.o ../application_server/highlighter.cpp
 
+infowidget.o: ../application_server/infowidget.cpp ../application_server/infowidget.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o infowidget.o ../application_server/infowidget.cpp
+
 main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/main.h \
 		../application_server/datamodel.h \
@@ -941,7 +948,8 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/minimap.h \
 		../application_server/gameloop.h \
 		../application_server/renderthread.h \
-		../application_server/videowidget.h
+		../application_server/videowidget.h \
+		../application_server/infowidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
 mainmenu.o: ../application_server/mainmenu.cpp ../application_server/mainmenu.h

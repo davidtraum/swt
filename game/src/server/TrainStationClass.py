@@ -18,20 +18,55 @@ class TrainStationLogic:
             'STEEL': 100,
             'PATROLEUM': 100,
             'WOOD': 100,
-            'FOOD': 100
+            'FOOD': 100,
+            'NOTHING': 0
             }
     NEEDED_RESSOURCES = {
-            'CORN': 0,
-            'COAL': 0,
-            'PASSENGERS': 0,
-            'MAIL' : 0,
-            'LIVESTOCK': 0,
-            'GOODS': 0,
-            'PAPER': 0,
-            'STEEL': 0,
-            'PATROLEUM': 0,
-            'WOOD': 0,
-            'FOOD': 0        }
+            'CORN': {
+                'NOTHING': 0
+            },
+
+            'COAL': {
+                'NOTHING': 0
+            },
+            'PASSENGERS':{
+                'PASSENGERS': 50,
+                'MAIL': 50,
+                'FOOD': 100,
+                'GOODS': 200,
+                'PAPER': 100,
+                'PATROLEUM': 50,
+                'CORN': 20
+            },
+            'MAIL' : {
+                'NOTHING': 0
+            },
+            'LIVESTOCK': {
+                'CORN': 50
+            },
+            'GOODS': {
+                'WOOD': 50,
+                'STEEL': 50
+            },
+            'PAPER': {
+                'WOOD': 50
+            },
+            'STEEL': {
+                'COAL': 50
+            },
+            'PATROLEUM': {
+                'NOTHING': 0
+            },
+            'WOOD': {
+                'NOTHING': 0
+            },
+            'FOOD': {
+                'LIVESTOCK': 50
+            }, 
+            'NOTHING':{
+                'NOTHING': 0 #Nur für die Logik
+            }       }
+
 
     def __init__(self, pTile, pPlayer, pRange, pPrice,karte, tickspeed = 20):
         self. STORAGE = {
@@ -45,7 +80,8 @@ class TrainStationLogic:
             'STEEL': 0,
             'PATROLEUM': 0,
             'WOOD': 0,
-            'FOOD': 0 
+            'FOOD': 0,
+            'NOTHING' : 0 #Wert nur für Logik der Funktionen 
         }         
 
         self.PRICES ={
@@ -59,7 +95,8 @@ class TrainStationLogic:
             'STEEL': 100,
             'PATROLEUM': 100,
             'WOOD': 100,
-            'FOOD': 100
+            'FOOD': 100,
+            'NOTHING': 0
 
         }
         self.NUMBER_OF_PRODUCTION_BUILDINGS = {
@@ -73,7 +110,9 @@ class TrainStationLogic:
             'STEEL': 0,
             'PATROLEUM': 0,
             'WOOD': 0,
-            'FOOD': 0
+            'FOOD': 0,
+            'NOTHING': 0,
+
             
         }
         self.range = pRange
@@ -98,13 +137,26 @@ class TrainStationLogic:
 
     def updateStorage(self, pType):
         if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 
-                if(True or TrainStationLogic.NEEDED_RESSOURCES[pType] < self.STORAGE[pType]):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
-                    self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
-                    self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType]   #Ressourcen werden Verbraucht 
-                    #print(pType,":", self.STORAGE[pType])
+            boolTmp = 0
+            print(pType)
+            if(pType != 'PASSENGERS'):
+                for keys in TrainStationLogic.NEEDED_RESSOURCES[pType]:  #überprüft ob genug Ressourcen vorhanden um zu Produzieren
+                    if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]):
+                        boolTmp += 1
+                if(boolTmp == 0 ):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
+                    if(pType != 'PASSENGERS'):
+                        self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
+                    for keys in TrainStationLogic.NEEDED_RESSOURCES[pType] : 
+                        if(pType != 'PASSENGERS'):                  
+                            self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType][keys]*self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]   #Ressourcen werden Verbraucht 
+                    print(pType,":", self.STORAGE[pType])
                     if(self.STORAGE[pType] >= self.maxStorage):
-                        self.STORAGE[pType] = self.maxStorage            
-
+                        if(pType != 'PASSENGERS'):
+                            self.STORAGE[pType] = self.maxStorage
+            else:
+                self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]    
+            return True            
+        return False    
     def do_loop(self):
         if(time.time() - self.last_mach_was > 1.2):
             #print("1.2 sekunden sind um")
@@ -133,8 +185,19 @@ class TrainStationLogic:
         
 
     def updatePrices(self):
-        for key in self.NUMBER_OF_PRODUCTION_BUILDINGS:
-            self.PRICES[key] += 50 * self.NUMBER_OF_PRODUCTION_BUILDINGS[key]  
+        self.PRICES['CORN'] += TrainStationLogic.NEEDED_RESSOURCES['LIVESTOCK']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['LIVESTOCK']
+        self.PRICES['CORN'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['COAL'] += TrainStationLogic.NEEDED_RESSOURCES['STEEL']['COAL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['STEEL']
+        self.PRICES['PASSENGERS'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PASSENGERS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['MAIL'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['MAIL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['LIVESTOCK'] += TrainStationLogic.NEEDED_RESSOURCES['FOOD']['LIVESTOCK']*self.NUMBER_OF_PRODUCTION_BUILDINGS['FOOD']
+        self.PRICES['GOODS'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['GOODS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['PAPER'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PAPER']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['STEEL'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['STEEL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
+        self.PRICES['PATROLEUM'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PATROLEUM']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PAPER']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PAPER']
+        self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
+        self.PRICES['FOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['FOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
 
     def getType(self):  #gibt Typ des Bahnhofs zurück        
         if(self.range == 2):            
