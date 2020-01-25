@@ -62,6 +62,7 @@ class MapTile:
         'PETROLEUM': 30,
         'PAPER': 31,
         'STEEL': 32
+        
  
                 
     }

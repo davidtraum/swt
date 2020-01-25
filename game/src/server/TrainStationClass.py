@@ -16,7 +16,7 @@ class TrainStationLogic:
             'GOODS': 100,
             'PAPER': 100,
             'STEEL': 100,
-            'PATROLEUM': 100,
+            'PETROLEUM': 100,
             'WOOD': 100,
             'FOOD': 100,
             'NOTHING': 0
@@ -35,7 +35,7 @@ class TrainStationLogic:
                 'FOOD': 100,
                 'GOODS': 200,
                 'PAPER': 100,
-                'PATROLEUM': 50,
+                'PETROLEUM': 50,
                 'CORN': 20
             },
             'MAIL' : {
@@ -54,7 +54,7 @@ class TrainStationLogic:
             'STEEL': {
                 'COAL': 50
             },
-            'PATROLEUM': {
+            'PETROLEUM': {
                 'NOTHING': 0
             },
             'WOOD': {
@@ -78,7 +78,7 @@ class TrainStationLogic:
             'GOODS': 0,
             'PAPER': 0,
             'STEEL': 0,
-            'PATROLEUM': 0,
+            'PETROLEUM': 0,
             'WOOD': 0,
             'FOOD': 0,
             'NOTHING' : 0 #Wert nur für Logik der Funktionen 
@@ -93,7 +93,7 @@ class TrainStationLogic:
             'GOODS': 100,
             'PAPER': 100,
             'STEEL': 100,
-            'PATROLEUM': 100,
+            'PETROLEUM': 100,
             'WOOD': 100,
             'FOOD': 100,
             'NOTHING': 0
@@ -108,7 +108,7 @@ class TrainStationLogic:
             'GOODS': 0,
             'PAPER': 0,
             'STEEL': 0,
-            'PATROLEUM': 0,
+            'PETROLEUM': 0,
             'WOOD': 0,
             'FOOD': 0,
             'NOTHING': 0,
@@ -138,13 +138,15 @@ class TrainStationLogic:
     def updateStorage(self, pType):
         if(self.STORAGE[pType] <= self.maxStorage):                                 #Wenn noch Platz im Lager ist                 
             boolTmp = 0
-            print(pType)
-            if(pType != 'PASSENGERS'):
+            #print(pType)
+            if(pType != 'PASSENGERS' and self.NUMBER_OF_PRODUCTION_BUILDINGS[pType] > 0):
+                print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS[pType])
                 for keys in TrainStationLogic.NEEDED_RESSOURCES[pType]:  #überprüft ob genug Ressourcen vorhanden um zu Produzieren
                     if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]):
                         boolTmp += 1
+                print('boolTmp:' ,boolTmp)               
                 if(boolTmp == 0 ):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
-                    if(pType != 'PASSENGERS'):
+                    if(pType != 'PASSENGERS'):                        
                         self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
                     for keys in TrainStationLogic.NEEDED_RESSOURCES[pType] : 
                         if(pType != 'PASSENGERS'):                  
@@ -155,6 +157,8 @@ class TrainStationLogic:
                             self.STORAGE[pType] = self.maxStorage
             else:
                 self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]    
+                #print(pType,":", self.STORAGE[pType])
+                #print('Anzahl Produktionsgebäude', self.NUMBER_OF_PRODUCTION_BUILDINGS[pType])
             return True            
         return False    
     def do_loop(self):
@@ -176,6 +180,7 @@ class TrainStationLogic:
         for i in range((-1*self.range), self.range+1):
             for j in range((-1*self.range), self.range+1):                
                 if(self.x_Pos +i  >=0 and self.x_Pos + i <= 299 and self.y_Pos + j  >=0 and self.y_Pos +j <= 299):
+                    print(karte[self.x_Pos+i][self.y_Pos+j].getStringType())
                     if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):                        
                         if(karte[self.x_Pos+i][self.y_Pos+j].getType() == 2):
                             self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS'] += 1
@@ -194,7 +199,7 @@ class TrainStationLogic:
         self.PRICES['GOODS'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['GOODS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
         self.PRICES['PAPER'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PAPER']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
         self.PRICES['STEEL'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['STEEL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
-        self.PRICES['PATROLEUM'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PATROLEUM']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['PETROLEUM'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PETROLEUM']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
         self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PAPER']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PAPER']
         self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
         self.PRICES['FOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['FOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
