@@ -10,7 +10,7 @@ def uuid():
 
 class Player:
 
-    def __init__(self, pIp, pTasks, pKarte):
+    def __init__(self, pIp, pTasks, pKarte, pMoney):
         self.id = uuid()
         self.ip = pIp
         self.tasks = pTasks
@@ -18,7 +18,7 @@ class Player:
         self.routes = []
         self.routeObjectList = []
         #Beim Laden von Speicherdaten muss das Spielerobjekt mit gespeichertem Guthaben neu erstellt werden
-        with open('playerData.json', 'r') as f:
+        """with open('playerData.json', 'r') as f:
             playerData =json.load(f)
             if (self.id == 1):
                 self.money = playerData['p1_money']    #Guthaben wird aus playerData-JSON ausgelesen
@@ -28,10 +28,16 @@ class Player:
                 self.money = playerData['p3_money']    #Guthaben wird aus playerData-JSON ausgelesen
             if (self.id == 4):
                 self.money = playerData['p4_money']    #Guthaben wird aus playerData-JSON ausgelesen
+        """
+
+        self.money = pMoney
 
     #Gibt das Guthaben des Spielers zurück
     def getMoney(self):
         return self.money
+
+    def hasMoney(self, count):
+        return self.money >= count
 
     #Gibt die IP des Spielers zurück
     def getIp(self):

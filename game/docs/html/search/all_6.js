@@ -35,7 +35,7 @@ var searchData=
   ['getx_114',['getX',['../classAnimationEntity.html#af9863fe8cb62e7345d4e78600eef71b7',1,'AnimationEntity::getX()'],['../classMapTile.html#aaee6fda415f2a6ff305f48d342a8a47b',1,'MapTile::getX()'],['../classPoint.html#a0b82a4aa9614c11854abc507d89a70a9',1,'Point::getX()']]],
   ['gety_115',['getY',['../classAnimationEntity.html#a1c0ea4c96d31efc6b5b40c3150113061',1,'AnimationEntity::getY()'],['../classMapTile.html#a27013c9d383c819e1af233e551f63bbf',1,'MapTile::getY()'],['../classPoint.html#a3770f321c49dfe7ca463900fddc2e2bc',1,'Point::getY()']]],
   ['goods_116',['GOODS',['../classMapTile.html#addf1438faf6be80e9a1cd44a26483fb5aa8e133559e325c5755ba33bdcaa41782',1,'MapTile']]],
-  ['goodselector_117',['GoodSelector',['../classGoodSelector.html',1,'GoodSelector'],['../classRouteInterface.html#a1e4e6a656141f8203506006aa2350947',1,'RouteInterface::goodSelector()'],['../classGoodSelector.html#a318ae07eed877943990004799f9b7c0f',1,'GoodSelector::GoodSelector()']]],
+  ['goodselector_117',['GoodSelector',['../classGoodSelector.html',1,'GoodSelector'],['../classGoodSelector.html#a318ae07eed877943990004799f9b7c0f',1,'GoodSelector::GoodSelector()'],['../classRouteInterface.html#a1e4e6a656141f8203506006aa2350947',1,'RouteInterface::goodSelector()']]],
   ['goodselector_2ecpp_118',['goodselector.cpp',['../goodselector_8cpp.html',1,'']]],
   ['goodselector_2eh_119',['goodselector.h',['../goodselector_8h.html',1,'']]],
   ['graphics_120',['GRAPHICS',['../classGraphicsManager.html#a137c5ad6b72043918becb5dc74a8c5dd',1,'GraphicsManager::GRAPHICS()'],['../main_8cpp.html#aa07458f3555202507fc8025e8cae6126',1,'graphics():&#160;main.cpp'],['../main_8h.html#aa07458f3555202507fc8025e8cae6126',1,'graphics():&#160;main.cpp']]],

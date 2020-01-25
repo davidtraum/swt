@@ -25,6 +25,7 @@ SOURCES += \
     goodselector.cpp \
     graphicsmanager.cpp \
     highlighter.cpp \
+    infowidget.cpp \
     main.cpp \
     mainmenu.cpp \
     mainwindow.cpp \
@@ -57,6 +58,7 @@ HEADERS += \
     goodselector.h \
     graphicsmanager.h \
     highlighter.h \
+    infowidget.h \
     main.h \
     mainmenu.h \
     mainwindow.h \

@@ -205,21 +205,22 @@ class World:
         print("Interact ", posX, " ", posY, " ", pType)
         if(pType == 'RAIL' and self.canPlaceObject(posX, posY)):
             print("Placing rail...")
-            RailLogic.build(posX, posY, None, self.data)
+            return RailLogic.build(posX, posY, None, self.data)
         elif(pType == 'RAIL' and self.canPlaceRailOnRiver(posX, posY)):
             print("Placing bridge...")
-            BridgeLogic.build(posX, posY, None, self.data, self.data[posX][posY].getType())
+            return BridgeLogic.build(posX, posY, None, self.data, self.data[posX][posY].getType())
         elif(pType == 'DEPOT' and self.canPlaceObject):
             print("Placing depot...")
-            TrainStationLogic.build(posX, posY, None, 2, self.data)
+            return TrainStationLogic.build(posX, posY, None, 2, self.data)
         elif(pType == 'STATION' and self.canPlaceObject):
             print("Placing station...")
-            TrainStationLogic.build(posX, posY, None, 4, self.data)
+            return TrainStationLogic.build(posX, posY, None, 4, self.data)
         elif(pType == 'TERMINAL' and self.canPlaceObject):
             print("Placing terminal...")
-            TrainStationLogic.build(posX, posY, None, 6, self.data)
+            return TrainStationLogic.build(posX, posY, None, 6, self.data)
         else:
             print("Cant place rail " + str(self.data[posX][posY].getType()))
+            return False
 
     #Entfernt ein Maptile (wird zu Flachland/Gras)
     def tileRemove(self, posX, posY):  
@@ -424,7 +425,7 @@ class ClientThread(Thread):
         self.connection = pConnection
         self.commandBuffer = ""
         print("CLIENT THREAD WIRD GESTARTET")
-        self.player = Player(1234, tasks, world.data) #"1234" muss durch IP ersetzt werden.
+        self.player = Player(1234, tasks, world.data, CONFIG['game']['defaultmoney']) #"1234" muss durch IP ersetzt werden.
         print("Client Thread gestartet.")
 
     #Sendet den Text pText als Befehl an den Client. Befehlteile werden mit "+" voneinander getrennt
@@ -432,6 +433,9 @@ class ClientThread(Thread):
         self.connection.send(bytes([0,0,0,0,0,0,255, len(pText)]))
         self.connection.sendall(pText.encode())
         #print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
+
+    def syncMoney(self):
+        self.send("MONEY+" + str(self.player.money))
 
     #Zwingt den Client sich mit dem Server zu synchronisieren
     def forceSync(self):
@@ -478,17 +482,28 @@ class ClientThread(Thread):
                 if(args[1] == 'RAIL'):
                     print("Build Rail Request at ", args[2], " ", args[3])
                     #world.data[posX][posY].setType('RAIL_H')
-                    world.tileInteract(posX, posY, 'RAIL')
+                    if(self.player.hasMoney(CONFIG['game']['prices']['bridge'])):
+                        if(world.tileInteract(posX, posY, 'RAIL')):
+                            self.player.money -= CONFIG['game']['prices']['bridge']
+                            self.syncMoney()
                 elif(args[1] == 'STATION'):                    
                     print("Build Trainstation Request at ", args[2], " ", args[3])
                     if(args[4] == 'DEPOT'):    
-                        world.tileInteract(posX, posY, 'DEPOT')
-                        print("Build Depot Request at ", args[2], " ", args[3])
+                        if(self.player.hasMoney(CONFIG['game']['prices']['depot'])):
+                            if(world.tileInteract(posX, posY, 'DEPOT')):
+                                self.player.money -= CONFIG['game']['prices']['depot']
+                                self.syncMoney()
                     if(args[4] == 'STATION'):    
-                        world.tileInteract(posX, posY, 'STATION')
+                        if(self.player.hasMoney(CONFIG['game']['prices']['station'])):
+                            if(world.tileInteract(posX, posY, 'STATION')):
+                                self.player.money -= CONFIG['game']['prices']['station']
+                                self.syncMoney()
                         print("Build Station Request at ", args[2], " ", args[3])
                     if(args[4] == 'TERMINAL'):    
-                        world.tileInteract(posX, posY, 'TERMINAL')
+                        if(self.player.hasMoney(CONFIG['game']['prices']['terminal'])):
+                            if(world.tileInteract(posX, posY, 'TERMINAL')):
+                                self.player.money -= CONFIG['game']['prices']['terminal']
+                                self.syncMoney()
                         print("Build Terminal Request at ", args[2], " ", args[3])
                 if(args[1] == 'INTERACT'):
                     print("Build interact")
@@ -628,13 +643,14 @@ DEFAULT_CONFIG = {
     'max_players': 5,
     'game' : {
         'prices': {
-            'depot': 100
-            'station': 250
-            'terminal': 500
-            'bridge': 50
-            'rail': 20
-            'remove': 10
-        }
+            'depot': 100,
+            'station': 250,
+            'terminal': 500,
+            'bridge': 50,
+            'rail': 20,
+            'remove': 10,
+        },
+        'defaultmoney': 2000
     }
     }
 

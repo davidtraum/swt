@@ -91,7 +91,7 @@ class RailLogic:
         print(railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown)
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
             print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
-        
+            return False
         
         elif (railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1): #1 Schienen vebindbar Unten,Oben, Rechts oder Links
             karte[x_Pos][y_Pos].initLogic(RailLogic) #Schiene wird gebaut.
@@ -229,6 +229,8 @@ class RailLogic:
 
         else:
             print("Spielerabfrage") #z.B. mit vie
+
+        return True
     
     def remove(self, x_Pos,y_Pos,pPlayer,karte): 
         print("removing Rail at: ",x_Pos," ", y_Pos)

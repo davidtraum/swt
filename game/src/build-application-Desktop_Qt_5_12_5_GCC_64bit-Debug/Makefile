@@ -61,6 +61,7 @@ SOURCES       = ../application_server/animationentity.cpp \
 		../application_server/goodselector.cpp \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
+		../application_server/infowidget.cpp \
 		../application_server/main.cpp \
 		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
@@ -107,6 +108,7 @@ OBJECTS       = animationentity.o \
 		goodselector.o \
 		graphicsmanager.o \
 		highlighter.o \
+		infowidget.o \
 		main.o \
 		mainmenu.o \
 		mainwindow.o \
@@ -348,6 +350,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/goodselector.h \
 		../application_server/graphicsmanager.h \
 		../application_server/highlighter.h \
+		../application_server/infowidget.h \
 		../application_server/main.h \
 		../application_server/mainmenu.h \
 		../application_server/mainwindow.h \
@@ -378,6 +381,7 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/goodselector.cpp \
 		../application_server/graphicsmanager.cpp \
 		../application_server/highlighter.cpp \
+		../application_server/infowidget.cpp \
 		../application_server/main.cpp \
 		../application_server/mainmenu.cpp \
 		../application_server/mainwindow.cpp \
@@ -821,8 +825,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/mousedecor.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/river.h ../application_server/routeListInterface.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/mousedecor.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/infowidget.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/mousedecor.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/river.h ../application_server/routeListInterface.h ../application_server/routeinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/infowidget.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/mousedecor.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -4412,6 +4416,120 @@ highlighter.o: ../application_server/highlighter.cpp ../application_server/highl
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qbrush.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o highlighter.o ../application_server/highlighter.cpp
 
+infowidget.o: ../application_server/infowidget.cpp ../application_server/infowidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLCDNumber \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlcdnumber.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobal.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qconfig.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtcore-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlogging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qflags.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmutex.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qversiontagging.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtgui-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstring.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qchar.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringliteral.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringview.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiterator.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpair.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qregexp.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmargins.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qrect.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsize.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qpoint.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpalette.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcolor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qrgb.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qrgba64.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qbrush.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvector.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qregion.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qline.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtransform.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qimage.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qhash.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfont.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qcursor.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qevent.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qvariant.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qmap.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdebug.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qlocale.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qset.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qurl.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfile.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QWidget \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgridlayout.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o infowidget.o ../application_server/infowidget.cpp
+
 main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QApplication \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -4660,7 +4778,10 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		../application_server/gameloop.h \
 		../application_server/renderthread.h \
 		../application_server/videowidget.h \
-		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QHBoxLayout
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		../application_server/infowidget.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QLCDNumber \
+		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlcdnumber.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../application_server/main.cpp
 
 mainmenu.o: ../application_server/mainmenu.cpp ../application_server/mainmenu.h

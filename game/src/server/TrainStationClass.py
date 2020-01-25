@@ -228,6 +228,7 @@ class TrainStationLogic:
             print("kein Bahnhof in Range")
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
                 print("Bahnhöfe koennen nur an bestehendes Schienennetz gebaut werden!")
+                return False
 
             if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1):   #Eine Schiene verbindbar.
                 karte[x_Pos][y_Pos].initLogic(TrainStationLogic,  karte, pRange,)                
@@ -342,6 +343,9 @@ class TrainStationLogic:
             
         else:
             print('Kann Bahnhof hier nicht bauen!')
+            return False
+
+        return True
 
     #Entferne Das Maptile und setze es auf Gras zurück
     def remove(self, x_Pos,y_Pos, pPlayer, karte):      

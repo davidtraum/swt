@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp_472',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2eh_473',['main.h',['../main_8h.html',1,'']]],
-  ['mainmenu_2ecpp_474',['mainmenu.cpp',['../mainmenu_8cpp.html',1,'']]],
-  ['mainmenu_2eh_475',['mainmenu.h',['../mainmenu_8h.html',1,'']]],
-  ['mainwindow_2ecpp_476',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh_477',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
-  ['maprenderer_2ecpp_478',['maprenderer.cpp',['../maprenderer_8cpp.html',1,'']]],
-  ['maprenderer_2eh_479',['maprenderer.h',['../maprenderer_8h.html',1,'']]],
-  ['maptile_2ecpp_480',['maptile.cpp',['../maptile_8cpp.html',1,'']]],
-  ['maptile_2eh_481',['maptile.h',['../maptile_8h.html',1,'']]],
-  ['menubar_2ecpp_482',['menubar.cpp',['../menubar_8cpp.html',1,'']]],
-  ['menubar_2eh_483',['menubar.h',['../menubar_8h.html',1,'']]],
-  ['minimap_2ecpp_484',['minimap.cpp',['../minimap_8cpp.html',1,'']]],
-  ['minimap_2eh_485',['minimap.h',['../minimap_8h.html',1,'']]],
-  ['mousedecor_2ecpp_486',['mousedecor.cpp',['../mousedecor_8cpp.html',1,'']]],
-  ['mousedecor_2eh_487',['mousedecor.h',['../mousedecor_8h.html',1,'']]]
+  ['infowidget_2ecpp_476',['infowidget.cpp',['../infowidget_8cpp.html',1,'']]],
+  ['infowidget_2eh_477',['infowidget.h',['../infowidget_8h.html',1,'']]]
 ];

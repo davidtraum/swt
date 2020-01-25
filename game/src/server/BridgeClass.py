@@ -82,7 +82,8 @@ class BridgeLogic():
     def build(x_Pos,y_Pos, pPlayer, karte, riverType):        
         railConnectableRight, railConnectableLeft,  railConnectableUp, railConnectableDown = BridgeLogic.checkConnectableRails(pPlayer,x_Pos ,y_Pos , karte,riverType)
         if(railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 0): #Keine Schiene verbindbar.
-            print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")        
+            print("Schienen koennen nur an bestehendes Schienennetz gebaut werden")    
+            return False    
         
         
         elif (railConnectableUp + railConnectableDown + railConnectableRight + railConnectableLeft == 1): #1 Schienen vebindbar Unten,Oben, Rechts oder Links
@@ -218,6 +219,8 @@ class BridgeLogic():
 
         else:
             print("Spielerabfrage") #z.B. mit vie
+
+        return True
     def remove(self, x_Pos,y_Pos,pPlayer,karte): 
         print("removing Rail at: ",x_Pos," ", y_Pos)
         if(karte[x_Pos][y_Pos].logic.player == pPlayer):

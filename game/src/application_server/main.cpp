@@ -30,6 +30,7 @@
 #include "maprenderer.h"
 #include "renderthread.h"
 #include "videowidget.h"
+#include "infowidget.h"
 
 
 GraphicsManager * graphics;
@@ -74,7 +75,6 @@ int main(int argc, char *argv[])
     dataModel = new DataModel(mainWindow);
 
     scene = new Scene(graphics, dataModel);
-
 
 
     ToolTipMenu * tooltip = new ToolTipMenu();
@@ -149,6 +149,9 @@ int main(int argc, char *argv[])
     spacerWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     viewLayout->addWidget(spacerWidget,0,1);
     viewLayout->addWidget(spacerWidget,1,0);
+
+    InfoWidget * iwidget = new InfoWidget();
+    viewLayout->addWidget(iwidget,1,1);
     viewLayout->addWidget(map,0,2);
 
     mapRenderer->setLayout(viewLayout);
