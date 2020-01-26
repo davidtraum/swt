@@ -596,13 +596,17 @@ class ClientThread(Thread):
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                     
                 elif(args[1] == "PASS"):
-                    print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
-                    for i in range(len(self.player.routeObjectList)):
-                        if(self.player.routeObjectList[i].id == int(args[2])):
-                            routeTmp = self.player.routeObjectList[i]
-                    routeTmp.train.wagons = []
-                    print("vor addWagons")
-                    routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
+                    if 'routeTmp' in locals():
+                        print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
+                        for i in range(len(self.player.routeObjectList)):
+                            if(self.player.routeObjectList[i].id == int(args[2])):
+                                routeTmp = self.player.routeObjectList[i]
+                        routeTmp.train.wagons = []
+                        print("vor addWagons")
+                        routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
+                    else:
+                        print("pass-Befehl ignoriert, da routeTmp == None (Route ist eine gelöschte Route)")
+                        pass
                 else:
                     print("Client sendete fehlerhaften ROUTE-Befehl!")
 

@@ -140,18 +140,18 @@ class TrainStationLogic:
             boolTmp = 0
             #print(pType)
             if(pType != 'PASSENGERS' and self.NUMBER_OF_PRODUCTION_BUILDINGS[pType] > 0):
-                print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS)
+                #print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS)
                 for keys in TrainStationLogic.NEEDED_RESSOURCES[pType]:  #überprüft ob genug Ressourcen vorhanden um zu Produzieren
                     if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]):
                         boolTmp += 1
-                print('boolTmp:' ,boolTmp)               
+                #print('boolTmp:' ,boolTmp)               
                 if(boolTmp == 0 ):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
                     if(pType != 'PASSENGERS'):                        
                         self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
                     for keys in TrainStationLogic.NEEDED_RESSOURCES[pType] : 
                         if(pType != 'PASSENGERS'):                  
                             self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType][keys]*self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]   #Ressourcen werden Verbraucht 
-                    print(pType,":", self.STORAGE[pType])
+                    #print(pType,":", self.STORAGE[pType])
                     if(self.STORAGE[pType] >= self.maxStorage):
                         if(pType != 'PASSENGERS'):
                             self.STORAGE[pType] = self.maxStorage
@@ -180,7 +180,7 @@ class TrainStationLogic:
         for i in range((-1*self.range), self.range+1):
             for j in range((-1*self.range), self.range+1):                
                 if(self.x_Pos +i  >=0 and self.x_Pos + i <= 299 and self.y_Pos + j  >=0 and self.y_Pos +j <= 299):
-                    print(karte[self.x_Pos+i][self.y_Pos+j].getStringType())
+                    #print(karte[self.x_Pos+i][self.y_Pos+j].getStringType())
                     if(karte[self.x_Pos+i][self.y_Pos+j].isProducingBuilding()):                        
                         if(karte[self.x_Pos+i][self.y_Pos+j].getType() == 2):
                             self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS'] += 1
