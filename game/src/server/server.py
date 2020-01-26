@@ -522,7 +522,10 @@ class ClientThread(Thread):
                 posX = int(args[1])
                 posY = int(args[2])
                 world.tileRemove(posX, posY)
-
+            elif(args[0] == 'INFO'):
+                if(args[1] == 'GET'):                    
+                    broadcast(world.data[int(args[2])][int(args[3])].logic.getProtocolStringStorage())
+                    broadcast(world.data[int(args[2])][int(args[3])].logic.getProtocolStringPrices())
             #Befehlsverarbeitung ROUTE
             elif(args[0] == 'ROUTE'):   
                 tsStops = [[]]     #speichert Koordinaten der Haltestellen auf der Route
@@ -606,7 +609,7 @@ class ClientThread(Thread):
                         routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
                     else:
                         print("pass-Befehl ignoriert, da routeTmp == None (Route ist eine gelöschte Route)")
-                        pass
+                        pass                
                 else:
                     print("Client sendete fehlerhaften ROUTE-Befehl!")
 

@@ -9,13 +9,14 @@
 /**
  * @brief Client::Client Erzeugt einen neuen Client.
  */
-Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, DataModel * pDataModel, RouteListInterface * pRouteListInterface)
+Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRenderer, DataModel * pDataModel, RouteListInterface * pRouteListInterface, InfoWidget * pInfoWidget)
 {
     tickcount=0;
     scene = pScene;
     mapRenderer = pMapRenderer;
     routeListInterface = pRouteListInterface;
     dataModel = pDataModel;
+    infoWidget = pInfoWidget;
     dataModel->setConnectionInfo(*connectionInfo);
     QStringList split = connectionInfo->split(":");
     QString iP = split[0];
@@ -31,7 +32,7 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     socket = new QTcpSocket(this);
     socket->connectToHost(iP, port);
 
-    debug = false;
+    debug = true;
 
     QWidget::connect(this, &Client::sendRouteString, routeListInterface, &RouteListInterface::receiveRoutes);
     QWidget::connect(routeListInterface, &RouteListInterface::sendDeleteSignal, this, &Client::cancelRoute);
@@ -117,6 +118,16 @@ void Client::sendTrainPass(int pid, int px, int py)
 }
 
 /**
+ * @brief Client::requestInfo Fragt beim Client nach einer Auflistung der Informationen an der Stelle x,y auf der Karte an.
+ * @param px Die X-Koordinate.
+ * @param py Die Y-Koordinate.
+ */
+void Client::requestInfo(int px, int py)
+{
+    socket->write(QString("INFO GET " + QString::number(px) + " " + QString::number(py) + "~").toLocal8Bit());
+}
+
+/**
  * @brief Client::sendRoute Schicke die Daten einer neuen Route an den Server, sodass dieser diese speichern kann.
  * @param routeString Der String mit den Daten über die Route (Name + Koordinaten + Wagons)
  */
@@ -155,7 +166,18 @@ void Client::processCommand(QString cmd){
                     qDebug() << "Map loaded";
                     emit onMapLoaded(true);
                 }
-            }else if(split[0] == "MONEY"){
+            }
+            else if (split[0] == "INFO") {
+                if (split[1] == "PRICE") {
+                    qDebug() << "Price Info bekommen: " << split[2];
+                    infoWidget->setContentPreis(split[2]);
+                }
+                else if (split[1] == "STORE") {
+                    qDebug() << "Store Info bekommen: " << split[2];
+                    infoWidget->setContentLager(split[2]);
+                }
+            }
+            else if(split[0] == "MONEY"){
                 dataModel->updateBalance(split[1].toInt());
             }
             else if (split[0]=="ROUTES") {

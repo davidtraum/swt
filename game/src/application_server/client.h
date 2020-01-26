@@ -12,12 +12,13 @@
 #include "view.h"
 #include "maprenderer.h"
 #include "routelistinterface.h"
+#include "infowidget.h"
 
 class Client: public QThread
 {
     Q_OBJECT
 public:
-    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, RouteListInterface *);
+    Client(QString * connectionInfo, Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, RouteListInterface *, InfoWidget *);
     void run() override;
     void requestMap();
     QString * tmpRoutes;
@@ -29,6 +30,7 @@ private:
     MapRenderer * mapRenderer;
     bool debug;
     RouteListInterface * routeListInterface;
+    InfoWidget * infoWidget;
     int tickcount{0};
     void processCommand(QString command);
     QStringList * splitPointer;
@@ -49,6 +51,7 @@ public slots:
     void requestRoutes();
     void cancelRoute(QListWidgetItem *);
     void sendTrainPass(int,int,int);
+    void requestInfo(int, int);
 
 };
 

@@ -225,6 +225,26 @@ class TrainStationLogic:
             if(self.connectedUp == True or self.connectedDown == True):
                 return 'TERMINAL_V'
 
+    def getProtocolStringPrices(self):  #gibt Protokollstring für Preise zurück
+        print('start')
+        s='INFO+PRICE+'
+        for keys in self.PRICES.keys():
+            if(keys != 'NOTHING'):
+                s+= str(self.PRICES[keys])+' \n'
+        print(s)
+        
+        return s[:-2]
+
+    def getProtocolStringStorage(self): #gibt Protokollstring für Lager zurück
+        s='INFO+STORE+'
+        for keys in self.STORAGE.keys():
+            if(keys != 'NOTHING'):
+                s+= str(self.STORAGE[keys])+' \n'
+        print(s)
+        return s[:-2]
+
+
+    
     #Prüft ob eine Kachel in Reichweite zur Trainstation ist
     @staticmethod
     def checkIfStationInRange(x_Pos, y_Pos, pPlayer, pRange, karte):    

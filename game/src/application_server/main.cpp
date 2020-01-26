@@ -119,13 +119,6 @@ int main(int argc, char *argv[])
     player->play();
 
 
-    menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface, player);
-    menuBar->setParent(mainWindow);
-    menuBar->show();
-    menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
-    mainWindow->addToolBar(menuBar);
-
-
     Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
     QVBoxLayout * rightLayout = new QVBoxLayout();
     QGridLayout * viewLayout = new QGridLayout();
@@ -146,6 +139,12 @@ int main(int argc, char *argv[])
     InfoWidget * infoWidget = new InfoWidget();
     rightLayout->addWidget(infoWidget);
     dataModel->setInfoWidget(infoWidget);
+
+    menuBar = new MenuBar(scene,mapRenderer, dataModel, view, routeInterface, routeListInterface, player, infoWidget);
+    menuBar->setParent(mainWindow);
+    menuBar->show();
+    menuBar->setStyleSheet("background-color: rgb(150,150,255); color: black;");
+    mainWindow->addToolBar(menuBar);
 
     mapRenderer->setLayout(viewLayout);
 

@@ -191,6 +191,8 @@ void MapRenderer::mouseReleaseEvent(QMouseEvent *event)
         Point pos = mapPosition(event->x(), event->y());
         if(event->button() == Qt::RightButton) {
             if(data[activeTile.getX()][activeTile.getY()].isTrainStation()) {
+                dataModel->getInfoWidget()->sendInfoRequest(pos.getX(), pos.getY());
+                qDebug() << "sendInforRequest called";
                 dataModel->getInfoWidget()->show();
             }
         }else{

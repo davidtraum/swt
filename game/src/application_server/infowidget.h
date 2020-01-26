@@ -6,6 +6,7 @@
 
 class InfoWidget: public QWidget
 {
+    Q_OBJECT
 public:
     InfoWidget();
     QLabel * headerLabel;
@@ -21,12 +22,17 @@ public:
     QString getContentLager();
     QString getContentPreis();
 
+    void sendInfoRequest(int,int);
+
 
 private:
     QLabel * contentGut;
     QLabel * contentLager;
     QLabel * contentPreis;
 
+signals:
+
+    void sendInfoSignal(int,int);
 
 
 };

@@ -1,5 +1,7 @@
 #include "infowidget.h"
+
 #include <QVBoxLayout>
+#include <QDebug>
 /**
  * @brief InfoWidget::InfoWidget Erzeugt ein Info Widget
  */
@@ -30,20 +32,22 @@ InfoWidget::InfoWidget()
     hLayoutHeader->addWidget(headerPreis);
 
     contentGut = new QLabel();
-    contentGut->setText("Getreide \nKohle \nPassagiere \nMail \nVieh \nPakete \nHolz \nStahl \nNahrung \nPetroleum \nPapier");
+    contentGut->setText("Getreide \nKohle \nPassagiere \nMail \nVieh \nPakete \nPapier \nStahl \nPetroleum \nHolz \nNahrung");
     hLayoutContent->addWidget(contentGut);
 
-    contentGut = new QLabel();
-    contentGut->setText("NAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN");
-    hLayoutContent->addWidget(contentGut);
+    contentLager = new QLabel();
+    contentLager->setText("NAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN");
+    hLayoutContent->addWidget(contentLager);
 
-    contentGut = new QLabel();
-    contentGut->setText("NAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN");
-    hLayoutContent->addWidget(contentGut);
+    contentPreis = new QLabel();
+    contentPreis->setText("NAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN \nNAN");
+    hLayoutContent->addWidget(contentPreis);
 
+    hLayoutContent->setAlignment(Qt::AlignTop);
     vLayout->setAlignment(Qt::AlignTop);
     vLayout->addLayout(hLayoutHeader);
     vLayout->addLayout(hLayoutContent);
+
 
     setStyleSheet("background-color:rgb(150,150,255)");
 
@@ -52,13 +56,19 @@ InfoWidget::InfoWidget()
 }
 
 void InfoWidget::setContentGut(QString str) {
+    qDebug() << "in setContentGut" << str;
     contentGut->setText(str);
+    qDebug() << "danach";
 }
 void InfoWidget::setContentLager(QString str) {
+    qDebug() << "in setContentLager" << str;
     contentLager->setText(str);
+    qDebug() << "danach";
 }
 void InfoWidget::setContentPreis(QString str) {
+    qDebug() << "in setContentPreis" << str;
     contentPreis->setText(str);
+    qDebug() << "danach";
 }
 
 QString InfoWidget::getContentGut() {
@@ -69,4 +79,8 @@ QString InfoWidget::getContentLager() {
 }
 QString InfoWidget::getContentPreis() {
     return contentPreis->text();
+}
+
+void InfoWidget::sendInfoRequest(int x, int y){
+    emit sendInfoSignal(x,y);
 }

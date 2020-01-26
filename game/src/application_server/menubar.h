@@ -9,13 +9,15 @@
 #include "routeinterface.h"
 #include "maprenderer.h"
 #include "routelistinterface.h"
+#include "infowidget.h"
+
 
 class MenuBar: public QToolBar
 {
    Q_OBJECT
 
 public:
-    MenuBar(Scene* pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface *, RouteListInterface *, QMediaPlayer *);
+    MenuBar(Scene* pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface *, RouteListInterface *, QMediaPlayer *, InfoWidget *);
 
 private:
     Scene* scene;
@@ -24,6 +26,7 @@ private:
     View * view;
     RouteInterface * routeInterface;
     RouteListInterface * routeListInterface;
+    InfoWidget * infoWidget;
 
 private slots:
 

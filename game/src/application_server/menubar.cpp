@@ -1,7 +1,9 @@
 #include "menubar.h"
-#include <QDebug>
+#include "infowidget.h"
 #include "client.h"
 #include "datamodel.h"
+
+#include <QDebug>
 #include <QIcon>
 #include <QTimer>
 #include <QImage>
@@ -9,11 +11,12 @@
 #include <QMenu>
 #include <QSlider>
 
+
 /**
  * @brief MenuBar::MenuBar Erzeugt Menüstruktur.
  */
-MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface, QMediaPlayer * musicPlayer) :
-    scene{pScene}, dataModel{pDataModel}, mapRenderer{pRenderer}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}
+MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel, View * pView, RouteInterface * pRouteInterface, RouteListInterface * pRouteListInterface, QMediaPlayer * musicPlayer, InfoWidget * pInfoWidget) :
+    scene{pScene}, dataModel{pDataModel}, mapRenderer{pRenderer}, view{pView}, routeInterface{pRouteInterface}, routeListInterface{pRouteListInterface}, infoWidget{pInfoWidget}
 {
     this->setStyleSheet("background-color: rgb(150,150,255);");
     this->setMovable(false);
@@ -136,11 +139,13 @@ void MenuBar::slotOpenConnection(){
                                          &ok);
 
     if(ok){
-        Client * client = new Client(&text, scene, mapRenderer, dataModel, routeListInterface);
+        Client * client = new Client(&text, scene, mapRenderer, dataModel, routeListInterface, infoWidget);
 
         QWidget::connect(routeInterface, &RouteInterface::sendConfirmRoute, client, &Client::sendRoute);
 
         QWidget::connect(routeListInterface, &RouteListInterface::sendRequestRoutes, client, &Client::requestRoutes);
+
+        QWidget::connect(infoWidget, &InfoWidget::sendInfoSignal, client, &Client::requestInfo);
 
         QTimer::singleShot(1000, [client]{client->requestMap();});
     }

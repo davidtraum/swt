@@ -87,6 +87,7 @@ SOURCES       = ../application_server/animationentity.cpp \
 		moc_datamodel.cpp \
 		moc_gameloop.cpp \
 		moc_goodselector.cpp \
+		moc_infowidget.cpp \
 		moc_mainwindow.cpp \
 		moc_maprenderer.cpp \
 		moc_menubar.cpp \
@@ -135,6 +136,7 @@ OBJECTS       = animationentity.o \
 		moc_datamodel.o \
 		moc_gameloop.o \
 		moc_goodselector.o \
+		moc_infowidget.o \
 		moc_mainwindow.o \
 		moc_maprenderer.o \
 		moc_menubar.o \
@@ -621,9 +623,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_animationmovement.cpp moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_routelistinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_videowidget.cpp moc_view.cpp
+compiler_moc_header_make_all: moc_animationmovement.cpp moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_infowidget.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_routelistinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_videowidget.cpp moc_view.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_animationmovement.cpp moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_routelistinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_videowidget.cpp moc_view.cpp
+	-$(DEL_FILE) moc_animationmovement.cpp moc_client.cpp moc_datamodel.cpp moc_gameloop.cpp moc_goodselector.cpp moc_infowidget.cpp moc_mainwindow.cpp moc_maprenderer.cpp moc_menubar.cpp moc_minimap.cpp moc_routeinterface.cpp moc_routelistinterface.cpp moc_scene.cpp moc_trainrenderer.cpp moc_videowidget.cpp moc_view.cpp
 moc_animationmovement.cpp: ../application_server/point.h \
 		../application_server/animationentity.h \
 		../application_server/animationmovement.h \
@@ -691,6 +693,11 @@ moc_goodselector.cpp: ../application_server/goodselector.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/goodselector.h -o moc_goodselector.cpp
+
+moc_infowidget.cpp: ../application_server/infowidget.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/matthias/Dokumente/Informatik/SWT Praktikum/Git/swt/game/src/application_server' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../application_server/infowidget.h -o moc_infowidget.cpp
 
 moc_mainwindow.cpp: ../application_server/mainwindow.h \
 		moc_predefs.h \
@@ -1168,6 +1175,9 @@ moc_gameloop.o: moc_gameloop.cpp
 
 moc_goodselector.o: moc_goodselector.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_goodselector.o moc_goodselector.cpp
+
+moc_infowidget.o: moc_infowidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_infowidget.o moc_infowidget.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
