@@ -13,9 +13,21 @@ public:
     QLabel * headerLager;
     QLabel * headerPreis;
 
+    void setContentGut(QString);
+    void setContentLager(QString);
+    void setContentPreis(QString);
+
+    QString getContentGut();
+    QString getContentLager();
+    QString getContentPreis();
+
+
+private:
     QLabel * contentGut;
     QLabel * contentLager;
     QLabel * contentPreis;
+
+
 
 };
 

@@ -50,3 +50,24 @@ InfoWidget::InfoWidget()
     QWidget::setLayout(vLayout);
 
 }
+
+
+void InfoWidget::setContentGut(QString str) {
+    contentGut->setText(str);
+}
+void InfoWidget::setContentLager(QString str) {
+    contentLager->setText(str);
+}
+void InfoWidget::setContentPreis(QString str) {
+    contentPreis->setText(str);
+}
+
+QString InfoWidget::getContentGut() {
+    return contentGut->text();
+}
+QString InfoWidget::getContentLager() {
+    return contentLager->text();
+}
+QString InfoWidget::getContentPreis() {
+    return contentPreis->text();
+}

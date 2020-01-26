@@ -198,7 +198,7 @@ void DataModel::setGuiTimeLabel(QLabel *label){
 }
 
 /**
- * @brief DataModel::setGuiTimeLabel Setzt das Label in welchem die Koordinate dargestellt wird.
+ * @brief DataModel::setGuiPositionLabel Setzt das Label in welchem die Koordinate dargestellt wird.
  * @param label Ein Pointer auf ein QLabel Objekt.
  */
 void DataModel::setGuiPositionLabel(QLabel *label){
