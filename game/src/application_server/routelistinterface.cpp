@@ -41,6 +41,7 @@ RouteListInterface::RouteListInterface()
 
     QDockWidget::setWidget(mainWidget);
     mainWidget->setStyleSheet("background-color:rgb(150,150,255)");
+    this->setStyleSheet("background-color:rgb(150,150,255)");
 
 }
 

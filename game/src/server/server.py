@@ -548,7 +548,7 @@ class ClientThread(Thread):
                                 print("Bin in Wagons Schleife ", j)
                             break
                     
-                    tsStops.pop(0)     #Lösche erstes Listenelement, da immer leer (Bugfix-Workaround)
+                    tsStops.pop(0)     #Lösche erstes Listenelement, da immer leer
                     print("Routen-Befehl gespeichert: ")    
                     print("TS Coords: ")
                     print(*tsStops, sep='_', end='\n')

@@ -51,7 +51,6 @@ InfoWidget::InfoWidget()
 
 }
 
-
 void InfoWidget::setContentGut(QString str) {
     contentGut->setText(str);
 }

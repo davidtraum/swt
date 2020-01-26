@@ -28,7 +28,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
 
     trainstationList = new QListWidget();
     trainstationList->setFixedWidth(250);
-    trainstationList->setMaximumHeight(600);
+    trainstationList->setMaximumHeight(200);
 
     QVBoxLayout *  vlayout = new QVBoxLayout(mainWidget);
     vlayout->addWidget(trainstationList);
@@ -56,6 +56,9 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
     connect(cancelBtn, SIGNAL (clicked()), this, SLOT (toggle())); //schließe RouteInterface
     buttons->addWidget(cancelBtn);
 
+    vlayout->setAlignment(Qt::AlignTop);
+    layout->setAlignment(Qt::AlignTop);
+
     vlayout->addLayout(buttons);
     layout->addLayout(vlayout);
 
@@ -63,6 +66,7 @@ RouteInterface::RouteInterface(GraphicsManager * gm)
 
     QDockWidget::setWidget(mainWidget);
     mainWidget->setStyleSheet("background-color:rgb(150,150,255)");
+    this->setStyleSheet("background-color:rgb(150,150,255)");
 
     wagonCount = 0;
     tsCount = 0;
