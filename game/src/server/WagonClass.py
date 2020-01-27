@@ -33,11 +33,11 @@ class WagonLogic:   #Waggons werden an Züge angehängt
         trainstationGood = self.endTrainstation.logic.STORAGE[self.type]
         if self.amount + trainstationGood <= self.endTrainstation.logic.maxStorage:
             self.endTrainstation.logic.STORAGE[self.type] += self.amount
-            self.player.money += self.amount * self.startTrainstation.logic.PRICES[self.type]
+            self.player.money += self.amount * self.endTrainstation.logic.PRICES[self.type]
             return True
         elif self.amount + trainstationGood > self.endTrainstation.logic.STORAGE[self.type]:
             self.endTrainstation.logic.STORAGE[self.type] = self.endTrainstation.logic.maxStorage
-            self.player.money += self.amount * self.startTrainstation.logic.PRICES[self.type]
+            self.player.money += self.amount * self.endTrainstation.logic.PRICES[self.type]
             return False     
     
 
