@@ -74,7 +74,7 @@ class Player:
         tsTmp = []
         for i in range(len(pStations)):
             tsTmp.append(self.karte[int(pStations[i][0])][int(pStations[i][1])])    
-        self.routeObjectList.append(RouteLogic(None, tsTmp, pWagons, self.karte, pRouteName))
+        self.routeObjectList.append(RouteLogic(self, tsTmp, pWagons, self.karte, pRouteName))
         handOver = self.routeObjectList[-1].sendProtocolString()        
         return handOver
 

@@ -2,21 +2,23 @@
 from WagonClass import WagonLogic
 
 class TrainLogic:
-    def  __init__(self, name = "testzug"):
+    def  __init__(self, pPlayer, name = "testzug"):
         self.trainName = name
         self.speed = 10
         self.maxWagons = 10
         self.wagons = []
+        self.player = pPlayer
+        self.wagonList = []
 
-    def addWagons(self, pStartTrainstation, pType):   #Waggons werden angehängt
+    def addWagons(self, pStartTrainstation, pEndTrainstation, pType, pPlayer):   #Waggons werden angehängt
+        self.wagonList = pType
         for i in range(len(pType)):        
-            self.wagons.append(WagonLogic(pStartTrainstation, None, pType[i]))
+            self.wagons.append(WagonLogic(pStartTrainstation, pEndTrainstation, pType[i], pPlayer))
             self.wagons[i].loadWagon()
         return True
         
-    def removeWagon(self, pEndTrainstation, pType):   #Waggons werden abgekoppelt
-        self.wagons.endTrainstation = pEndTrainstation
-        for i in range(len(pType)):
+    def removeWagons(self, pEndTrainstation):   #Waggons werden abgekoppelt        
+        for i in range(len(self.wagonList)):            
             self.wagons[-1].unloadWagon()
             self.wagons.pop()
         return True

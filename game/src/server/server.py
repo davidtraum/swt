@@ -599,14 +599,27 @@ class ClientThread(Thread):
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                     
                 elif(args[1] == "PASS"):
+                    routeTmp = None
                     if 'routeTmp' in locals():
                         print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                         for i in range(len(self.player.routeObjectList)):
                             if(self.player.routeObjectList[i].id == int(args[2])):
                                 routeTmp = self.player.routeObjectList[i]
-                        routeTmp.train.wagons = []
+                        if(len(routeTmp.train.wagons) != 0):
+                            routeTmp.train.removeWagons(world.data[int(args[3])][int(args[4])])
+                            self.syncMoney()                                                                     
                         print("vor addWagons")
-                        routeTmp.train.addWagons(world.data[int(args[3])][int(args[4])], routeTmp.wagons)
+                        print(routeTmp.lenStationList)
+                        if(routeTmp.stationCounter +1 <= routeTmp.lenStationList-1 ):
+                            print('Counter', routeTmp.stationCounter)
+                            routeTmp.train.addWagons(routeTmp.trainstations[routeTmp.stationCounter],routeTmp.trainstations[routeTmp.stationCounter+1] , routeTmp.wagons, routeTmp.player)
+                            routeTmp.stationCounter += 1 
+                            self.syncMoney()                                                      
+                        else:
+                            print('Counter', routeTmp.stationCounter)
+                            routeTmp.train.addWagons(routeTmp.trainstations[-1],routeTmp.trainstations[0] , routeTmp.wagons, routeTmp.player)
+                            routeTmp.stationCounter = 0                        
+                            self.syncMoney()
                     else:
                         print("pass-Befehl ignoriert, da routeTmp == None (Route ist eine gelöschte Route)")
                         pass                

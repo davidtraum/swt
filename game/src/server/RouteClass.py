@@ -10,15 +10,17 @@ class RouteLogic:
         self.player = pPlayer
         self.karte = pKarte
         self.trainstations = pTrainstations
-        self.wagons = pWagons
         self.routeName = pRouteName
         RouteLogic.countId += 1
         self.id = RouteLogic.countId
         self.timeNeeded = []        #Anzahl der Schienen
         self.last_mach_was = 0
         self.stationCounter = 0 #Zähler an welchen Bahnhof man ist
+        self.lenStationList = len(self.trainstations)
         #self.calculateTime()
-        self.train = TrainLogic()
+        self.train = TrainLogic(self.player) 
+        self.wagons = pWagons       
+       
         
     #Sendet dem Client eine Auflistung aller Kurven und Zwischenbahnhöfe in Form eines Strings
     def sendProtocolString(self):
