@@ -1,16 +1,16 @@
 {
-    "port": 2100,
+    "port": 2000,
     "bind_ip": "localhost",
     "max_players": 5,
     "game": {
         "prices": {
-            "depot": 100,
-            "station": 250,
-            "terminal": 500,
+            "depot": 200,
+            "station": 500,
+            "terminal": 1000,
             "bridge": 50,
-            "rail": 20,
+            "rail": 50,
             "remove": 10
         },
-        "defaultmoney": 2000
+        "defaultmoney": 5000
     }
 }

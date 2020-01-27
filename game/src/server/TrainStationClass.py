@@ -8,17 +8,17 @@ class TrainStationLogic:
 
     #Ressourcen-Daten des Bahnhofs:
     PRODUCING = {
-            'CORN': 100,
-            'COAL': 100,
-            'PASSENGERS': 25,
-            'MAIL' : 25,
-            'LIVESTOCK': 100,
-            'GOODS': 100,
-            'PAPER': 100,
-            'STEEL': 100,
-            'PETROLEUM': 100,
-            'WOOD': 100,
-            'FOOD': 100,
+            'CORN': 20,
+            'COAL': 20,
+            'PASSENGERS': 10,
+            'MAIL' : 10,
+            'LIVESTOCK': 10,
+            'GOODS': 10,
+            'PAPER': 10,
+            'STEEL': 10,
+            'PETROLEUM': 10,
+            'WOOD': 20,
+            'FOOD': 10,
             'NOTHING': 0
             }
     NEEDED_RESSOURCES = {
@@ -85,17 +85,17 @@ class TrainStationLogic:
         }         
 
         self.PRICES ={
-            'CORN': 100,
-            'COAL': 100,
-            'PASSENGERS': 100,
-            'MAIL': 100,
-            'LIVESTOCK': 100,
-            'GOODS': 100,
-            'PAPER': 100,
-            'STEEL': 100,
-            'PETROLEUM': 100,
-            'WOOD': 100,
-            'FOOD': 100,
+            'CORN': 20,
+            'COAL': 20,
+            'PASSENGERS': 20,
+            'MAIL': 20,
+            'LIVESTOCK': 30,
+            'GOODS': 20,
+            'PAPER': 30,
+            'STEEL': 30,
+            'PETROLEUM': 30,
+            'WOOD': 20,
+            'FOOD': 35,
             'NOTHING': 0
 
         }
@@ -190,19 +190,19 @@ class TrainStationLogic:
         
 
     def updatePrices(self):
-        self.PRICES['CORN'] += TrainStationLogic.NEEDED_RESSOURCES['LIVESTOCK']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['LIVESTOCK']
-        self.PRICES['CORN'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['COAL'] += TrainStationLogic.NEEDED_RESSOURCES['STEEL']['COAL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['STEEL']
-        self.PRICES['PASSENGERS'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PASSENGERS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['MAIL'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['MAIL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['LIVESTOCK'] += TrainStationLogic.NEEDED_RESSOURCES['FOOD']['LIVESTOCK']*self.NUMBER_OF_PRODUCTION_BUILDINGS['FOOD']
-        self.PRICES['GOODS'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['GOODS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['PAPER'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PAPER']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['STEEL'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['STEEL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
-        self.PRICES['PETROLEUM'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PETROLEUM']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
-        self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PAPER']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PAPER']
-        self.PRICES['WOOD'] += TrainStationLogic.NEEDED_RESSOURCES['GOODS']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']
-        self.PRICES['FOOD'] += TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['FOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']
+        self.PRICES['CORN'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['LIVESTOCK']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['LIVESTOCK']/30))
+        self.PRICES['CORN'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['CORN']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['COAL'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['STEEL']['COAL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['STEEL']/30))
+        self.PRICES['PASSENGERS'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PASSENGERS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['MAIL'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['MAIL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['LIVESTOCK'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['FOOD']['LIVESTOCK']*self.NUMBER_OF_PRODUCTION_BUILDINGS['FOOD']/30))
+        self.PRICES['GOODS'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['GOODS']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['PAPER'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PAPER']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['STEEL'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['GOODS']['STEEL']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']/30))
+        self.PRICES['PETROLEUM'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['PETROLEUM']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
+        self.PRICES['WOOD'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PAPER']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PAPER']/30))
+        self.PRICES['WOOD'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['GOODS']['WOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['GOODS']/30))
+        self.PRICES['FOOD'] += int(round(TrainStationLogic.NEEDED_RESSOURCES['PASSENGERS']['FOOD']*self.NUMBER_OF_PRODUCTION_BUILDINGS['PASSENGERS']/30))
 
     def getType(self):  #gibt Typ des Bahnhofs zurück        
         if(self.range == 2):            
