@@ -81,9 +81,11 @@ class Player:
     #Löscht die Route (Objekt und Listenelement) mit dem passenden Namen
     def cancelRoute(self, pRouteName):
         for i in range(len(self.routes)):
+            print('Zähler:', i)
             if (self.routes[i][0] == pRouteName):
                 self.routes.pop(i)
                 print("route popped")
+                break
         for i in range(len(self.routeObjectList)):      #Hier bei mehreren Routen in der Liste manchmal "list index out of range"?
             print("In For Schleife gesprungen")
             if (self.routeObjectList[i].routeName == pRouteName):

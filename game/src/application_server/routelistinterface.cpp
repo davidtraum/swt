@@ -67,7 +67,6 @@ void RouteListInterface::deleteRoute() {
         qDebug() << routeList;
 
         emit sendDeleteSignal(routeList->takeItem(routeList->currentRow()));
-        delete routeList->takeItem(routeList->currentRow());
 
         qDebug() << "WURDE GELÖSCHT";
     }

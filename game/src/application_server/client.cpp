@@ -197,6 +197,12 @@ void Client::processCommand(QString cmd){
             }
             else if(split[0] == "SYNC"){
             }
+            else{
+                qDebug() << "Nicht verstanden:";
+                for(int i = 0; i<split.length(); i++){
+                qDebug() << split[i];
+                }
+            }
 
         }
 

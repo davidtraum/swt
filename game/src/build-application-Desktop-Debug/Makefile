@@ -586,6 +586,7 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/kompass.png \
 		../application_server/show_routes.svg \
 		../application_server/location.svg \
+		../application_server/icon_WOOD.png \
 		../application_server/hammer.svg \
 		../application_server/cog.svg \
 		../application_server/icon_COAL.svg \
@@ -602,11 +603,14 @@ qrc_Graphics.cpp: ../application_server/Graphics.qrc \
 		../application_server/cash.svg \
 		../application_server/icon_MAIL.png \
 		../application_server/cross.svg \
+		../application_server/icon_PAPER.png \
+		../application_server/icon_STEEL.png \
 		../application_server/bridge.svg \
 		../application_server/icon_LIVESTOCK.png \
 		../application_server/pin_white.svg \
 		../application_server/verbindungstrennung.svg \
 		../application_server/trainstation.svg \
+		../application_server/icon_PETROLEUM.png \
 		../application_server/icon_CORN.png \
 		../application_server/train.svg \
 		../application_server/tools.svg \
@@ -642,10 +646,10 @@ moc_client.cpp: ../application_server/scene.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -660,6 +664,7 @@ moc_datamodel.cpp: ../application_server/mainwindow.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/datamodel.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -672,9 +677,9 @@ moc_gameloop.cpp: ../application_server/maprenderer.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -710,9 +715,9 @@ moc_maprenderer.cpp: ../application_server/graphicsmanager.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -731,6 +736,7 @@ moc_menubar.cpp: ../application_server/scene.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/routeinterface.h \
@@ -738,7 +744,6 @@ moc_menubar.cpp: ../application_server/scene.h \
 		../application_server/goodselector.h \
 		../application_server/client.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -756,9 +761,9 @@ moc_minimap.cpp: ../application_server/maprenderer.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -780,10 +785,10 @@ moc_routeinterface.cpp: ../application_server/trainrenderer.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -808,6 +813,7 @@ moc_scene.cpp: ../application_server/maptile.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/scene.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -834,6 +840,7 @@ moc_view.cpp: ../application_server/scene.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/tooltipmenu.h \
 		../application_server/view.h \
 		moc_predefs.h \
@@ -881,10 +888,10 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -903,7 +910,8 @@ datamodel.o: ../application_server/datamodel.cpp ../application_server/datamodel
 		../application_server/mainwindow.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
-		../application_server/infowidget.h
+		../application_server/infowidget.h \
+		../application_server/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamodel.o ../application_server/datamodel.cpp
 
 gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h \
@@ -914,9 +922,9 @@ gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h 
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -946,6 +954,7 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/client.h \
 		../application_server/scene.h \
 		../application_server/maptile.h \
@@ -954,7 +963,6 @@ main.o: ../application_server/main.cpp ../application_server/mainwindow.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -985,9 +993,9 @@ maprenderer.o: ../application_server/maprenderer.cpp ../application_server/mapre
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1009,6 +1017,7 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/routeinterface.h \
@@ -1016,7 +1025,6 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		../application_server/goodselector.h \
 		../application_server/client.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1032,9 +1040,9 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1059,9 +1067,9 @@ renderthread.o: ../application_server/renderthread.cpp ../application_server/ren
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1084,10 +1092,10 @@ routeinterface.o: ../application_server/routeinterface.cpp ../application_server
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		../application_server/tooltipmenu.h \
 		../application_server/maprenderer.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1107,7 +1115,8 @@ scene.o: ../application_server/scene.cpp ../application_server/scene.h \
 		../application_server/highlighter.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
-		../application_server/infowidget.h
+		../application_server/infowidget.h \
+		../application_server/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scene.o ../application_server/scene.cpp
 
 sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel.h \
@@ -1116,12 +1125,12 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		../application_server/player.h \
 		../application_server/highlighter.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/minimap.h \
 		../application_server/maprenderer.h \
 		../application_server/graphicsmanager.h \
 		../application_server/maptile.h \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
@@ -1152,6 +1161,7 @@ view.o: ../application_server/view.cpp ../application_server/view.h \
 		../application_server/datamodel.h \
 		../application_server/mainwindow.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/tooltipmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o view.o ../application_server/view.cpp
 

@@ -596,11 +596,18 @@ class ClientThread(Thread):
                         
                 elif(args[1] == "DELETE"):
                     deletedID = self.player.cancelRoute(args[2])
+                    print("ROUTE+DELETE+" + str(deletedID))
                     broadcast("ROUTE+DELETE+" + str(deletedID))
                     
                 elif(args[1] == "PASS"):
                     routeTmp = None
-                    if 'routeTmp' in locals():
+                    routeExistiert = 0
+                    print('Länge RoutenObjekt:', len(self.player.routeObjectList))
+                    for i in range(len(self.player.routeObjectList)):
+                        print(self.player.routeObjectList[i].id,  args[2])
+                        if(self.player.routeObjectList[i].id == int(args[2])):
+                            routeExistiert = 1
+                    if(routeExistiert == 1):
                         print("Route: Zug nr. ", args[2], "hat den Bahnhof bei", args[3], "/", args[4], "passiert.")
                         for i in range(len(self.player.routeObjectList)):
                             if(self.player.routeObjectList[i].id == int(args[2])):
