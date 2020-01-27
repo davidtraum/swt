@@ -11,6 +11,7 @@
 #include "mainwindow.h"
 #include "player.h"
 #include "infowidget.h"
+#include "point.h"
 
 class DataModel: public QObject
 {
@@ -53,6 +54,7 @@ public:
     const int RADIUS_DEPOT = 2*64;
     const int RADIUS_STATION = 3*64;
     const int RADIUS_TERMINAL = 4*64;
+    Point minPos{0,0},maxPos{0,0};
     static bool mapLoaded;
     MainWindow * mainWindow;
 

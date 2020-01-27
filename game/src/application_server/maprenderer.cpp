@@ -66,6 +66,8 @@ void MapRenderer::paintEvent(QPaintEvent *event)
 
     Point minPos = getMinPos().toTile();
     Point maxPos = getMaxPos().toTile();
+    dataModel->minPos = minPos;
+    dataModel->maxPos = maxPos;
     for(int x = minPos.getX(); x<maxPos.getX(); x++){
         for(int y = minPos.getY(); y<maxPos.getY(); y++){
             if(x > 0 && y > 0 && x < 300 && y < 300){

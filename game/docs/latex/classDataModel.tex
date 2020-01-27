@@ -106,7 +106,7 @@ void \mbox{\hyperlink{classDataModel_aa43618b4473a997594d2f971f3e50874}{set\+Gui
 void \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{set\+Gui\+Time\+Label}} (Q\+Label $\ast$label)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{Data\+Model\+::set\+Gui\+Time\+Label}} Setzt das Label in welchem die Zeit dargestellt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_aacb6a19e48624b83281db172ef01ef4f}{set\+Gui\+Position\+Label}} (Q\+Label $\ast$label)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{Data\+Model\+::set\+Gui\+Time\+Label}} Setzt das Label in welchem die Koordinate dargestellt wird. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_aacb6a19e48624b83281db172ef01ef4f}{Data\+Model\+::set\+Gui\+Position\+Label}} Setzt das Label in welchem die Koordinate dargestellt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{set\+Status\+Display\+Label}} (Q\+Label $\ast$label)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDataModel_a5d8d8010d722b2085b54049a4afe9a02}{Data\+Model\+::set\+Status\+Display\+Label}} Setzt das Label in dem der aktuelle Bearbeitungsmodus angezeigt wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDataModel_ab56663b4faa2051a7de2b22c937643f4}{set\+Connection\+Label}} (Q\+Label $\ast$label)
@@ -124,11 +124,15 @@ void \mbox{\hyperlink{classDataModel_a1f235aecefc009c138f6b97bb38f6f32}{set\+Mod
 \item 
 \mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classDataModel_a5641210f99ef2a3267f1185b458ed5a5}{second\+Player}}
 \item 
-const int \mbox{\hyperlink{classDataModel_ab55248da018310388cb901503fc9d72e}{R\+A\+D\+I\+U\+S\+\_\+\+D\+E\+P\+OT}} = 1$\ast$64
+const int \mbox{\hyperlink{classDataModel_ab55248da018310388cb901503fc9d72e}{R\+A\+D\+I\+U\+S\+\_\+\+D\+E\+P\+OT}} = 2$\ast$64
 \item 
-const int \mbox{\hyperlink{classDataModel_a64f7698fee48465c91dede8a6ffd4b99}{R\+A\+D\+I\+U\+S\+\_\+\+S\+T\+A\+T\+I\+ON}} = 2$\ast$64
+const int \mbox{\hyperlink{classDataModel_a64f7698fee48465c91dede8a6ffd4b99}{R\+A\+D\+I\+U\+S\+\_\+\+S\+T\+A\+T\+I\+ON}} = 3$\ast$64
 \item 
-const int \mbox{\hyperlink{classDataModel_aec19cedd38e0013387b5d822b2d8d9c3}{R\+A\+D\+I\+U\+S\+\_\+\+T\+E\+R\+M\+I\+N\+AL}} = 3$\ast$64
+const int \mbox{\hyperlink{classDataModel_aec19cedd38e0013387b5d822b2d8d9c3}{R\+A\+D\+I\+U\+S\+\_\+\+T\+E\+R\+M\+I\+N\+AL}} = 4$\ast$64
+\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classDataModel_accc1a72b79ebf32eab77f885045b8cbe}{min\+Pos}} \{0,0\}
+\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classDataModel_a61fdba1e46eab54e88dee0269b0d7320}{max\+Pos}} \{0,0\}
 \item 
 \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ \mbox{\hyperlink{classDataModel_a46d499723f55697cd3c5d64aa9179f42}{main\+Window}}
 \end{DoxyCompactItemize}
@@ -241,8 +245,7 @@ R\+E\+M\+O\+VE&\\
 \begin{DoxyReturn}{Rückgabe}
 Der Text. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -262,8 +265,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Kontostand. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -283,8 +285,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \begin{DoxyReturn}{Rückgabe}
 Ein Q\+String. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -304,7 +305,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 \begin{DoxyReturn}{Rückgabe}
 Eine Kachel-\/\+Koordinate. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -324,7 +326,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Eine Kachel-\/\+Koordinate. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -344,8 +347,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{DoxyReturn}{Rückgabe}
 Das Info Widget. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -378,7 +380,8 @@ Die IP Adresse als Q\+String
 \begin{DoxyReturn}{Rückgabe}
 Der aktuelle Modus. 
 \end{DoxyReturn}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -430,7 +433,8 @@ Der Timecode.
 \doxysubsubsection{\texorpdfstring{positionChange}{positionChange}}
 {\footnotesize\ttfamily void Data\+Model\+::position\+Change (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -469,7 +473,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 {\em p\+String} & Die IP und der Port im Format IP\+:P\+O\+RT \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -562,21 +567,23 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 
 
-\mbox{\hyperlink{classDataModel_ab74444c84fdf3bd06ba46c80463dfe5b}{Data\+Model\+::set\+Gui\+Time\+Label}} Setzt das Label in welchem die Koordinate dargestellt wird. 
+\mbox{\hyperlink{classDataModel_aacb6a19e48624b83281db172ef01ef4f}{Data\+Model\+::set\+Gui\+Position\+Label}} Setzt das Label in welchem die Koordinate dargestellt wird. 
 
 
 \begin{DoxyParams}{Parameter}
 {\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classDataModel_aacb6a19e48624b83281db172ef01ef4f_cgraph}
 \end{center}
 \end{figure}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -598,8 +605,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em label} & Ein Pointer auf ein Q\+Label Objekt. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -628,8 +634,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em widget} & Das Info Widget. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -646,7 +651,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 
 \mbox{\hyperlink{classDataModel_ada1f4f25f2cf78f62a0f29ace3dc11f8}{Data\+Model\+::set\+Map\+Loaded}} Setzt das die Karte geladen wurde. 
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -810,8 +816,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 \mbox{\hyperlink{classDataModel_a0c605d45cde1e17a0611c004732ac6ee}{Data\+Model\+::time\+Tick}} Wird aufgerufen wenn eine Zeiteinheit verstrichen ist. Erhöht den Timecode. 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
-\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -857,8 +862,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 {\em p\+Balance} & Der neue Kontostand. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
-\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -882,7 +886,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
 {\em pY} & Die Y Koordinate. \\
 \hline
 \end{DoxyParams}
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -895,7 +900,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{viewChange}{viewChange}}
 {\footnotesize\ttfamily void Data\+Model\+::view\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -959,6 +965,18 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{mapLoaded}{mapLoaded}}
 {\footnotesize\ttfamily bool Data\+Model\+::map\+Loaded = false\hspace{0.3cm}{\ttfamily [static]}}
 
+\mbox{\Hypertarget{classDataModel_a61fdba1e46eab54e88dee0269b0d7320}\label{classDataModel_a61fdba1e46eab54e88dee0269b0d7320}} 
+\index{DataModel@{DataModel}!maxPos@{maxPos}}
+\index{maxPos@{maxPos}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{maxPos}{maxPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Data\+Model\+::max\+Pos \{0,0\}}
+
+\mbox{\Hypertarget{classDataModel_accc1a72b79ebf32eab77f885045b8cbe}\label{classDataModel_accc1a72b79ebf32eab77f885045b8cbe}} 
+\index{DataModel@{DataModel}!minPos@{minPos}}
+\index{minPos@{minPos}!DataModel@{DataModel}}
+\doxysubsubsection{\texorpdfstring{minPos}{minPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Data\+Model\+::min\+Pos \{0,0\}}
+
 \mbox{\Hypertarget{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}\label{classDataModel_a3d22e7dd78eb5b3f918a6b0e78d670d6}} 
 \index{DataModel@{DataModel}!mode@{mode}}
 \index{mode@{mode}!DataModel@{DataModel}}
@@ -981,19 +999,19 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{DataModel@{DataModel}!RADIUS\_DEPOT@{RADIUS\_DEPOT}}
 \index{RADIUS\_DEPOT@{RADIUS\_DEPOT}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{RADIUS\_DEPOT}{RADIUS\_DEPOT}}
-{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+D\+E\+P\+OT = 1$\ast$64}
+{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+D\+E\+P\+OT = 2$\ast$64}
 
 \mbox{\Hypertarget{classDataModel_a64f7698fee48465c91dede8a6ffd4b99}\label{classDataModel_a64f7698fee48465c91dede8a6ffd4b99}} 
 \index{DataModel@{DataModel}!RADIUS\_STATION@{RADIUS\_STATION}}
 \index{RADIUS\_STATION@{RADIUS\_STATION}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{RADIUS\_STATION}{RADIUS\_STATION}}
-{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+S\+T\+A\+T\+I\+ON = 2$\ast$64}
+{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+S\+T\+A\+T\+I\+ON = 3$\ast$64}
 
 \mbox{\Hypertarget{classDataModel_aec19cedd38e0013387b5d822b2d8d9c3}\label{classDataModel_aec19cedd38e0013387b5d822b2d8d9c3}} 
 \index{DataModel@{DataModel}!RADIUS\_TERMINAL@{RADIUS\_TERMINAL}}
 \index{RADIUS\_TERMINAL@{RADIUS\_TERMINAL}!DataModel@{DataModel}}
 \doxysubsubsection{\texorpdfstring{RADIUS\_TERMINAL}{RADIUS\_TERMINAL}}
-{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+T\+E\+R\+M\+I\+N\+AL = 3$\ast$64}
+{\footnotesize\ttfamily const int Data\+Model\+::\+R\+A\+D\+I\+U\+S\+\_\+\+T\+E\+R\+M\+I\+N\+AL = 4$\ast$64}
 
 \mbox{\Hypertarget{classDataModel_a5641210f99ef2a3267f1185b458ed5a5}\label{classDataModel_a5641210f99ef2a3267f1185b458ed5a5}} 
 \index{DataModel@{DataModel}!secondPlayer@{secondPlayer}}

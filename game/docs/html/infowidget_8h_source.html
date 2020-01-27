@@ -80,16 +80,57 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classInfoWidget.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInfoWidget.html">InfoWidget</a>: <span class="keyword">public</span> QWidget</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classInfoWidget.html#a13029ebc98085747fd7d4935630a6afd">InfoWidget</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif // INFOWIDGET_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classInfoWidget.html#a13029ebc98085747fd7d4935630a6afd">InfoWidget</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classInfoWidget.html#af850fc48c1777e50002f68912923f94b">   12</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#af850fc48c1777e50002f68912923f94b">headerLabel</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classInfoWidget.html#a0ebc124ad6028639e0ec7d052eaaf8dc">   13</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#a0ebc124ad6028639e0ec7d052eaaf8dc">headerGut</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classInfoWidget.html#aac4009287e4e30550e5ae0605b01b623">   14</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#aac4009287e4e30550e5ae0605b01b623">headerLager</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classInfoWidget.html#a232e6bb08a67df723b54d1e9ca220ded">   15</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#a232e6bb08a67df723b54d1e9ca220ded">headerPreis</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInfoWidget.html#accbcc08b48fc953c6bf57ebdf1252546">setContentGut</a>(QString);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInfoWidget.html#aa9d882a7013f1c77ed8ec2b9ffdd8c74">setContentLager</a>(QString);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInfoWidget.html#ab9bb4bebcc19b99fff90d8349c1e8ed5">setContentPreis</a>(QString);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QString <a class="code" href="classInfoWidget.html#a8bd353726b176be5076bde8966e84196">getContentGut</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QString <a class="code" href="classInfoWidget.html#a6b1448c7c2450b0bfce44c92b7b7981f">getContentLager</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QString <a class="code" href="classInfoWidget.html#a9778ea667dc373e517761b1c53b48db4">getContentPreis</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInfoWidget.html#ad36e6350d6579343a54f4409f297c571">sendInfoRequest</a>(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classInfoWidget.html#a2b1f33faa103d859257db7ca96de517c">   29</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#a2b1f33faa103d859257db7ca96de517c">contentGut</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classInfoWidget.html#a2e8c084397c5bef5bc47cff0e15767aa">   30</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#a2e8c084397c5bef5bc47cff0e15767aa">contentLager</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classInfoWidget.html#ad45b7b29993f5c22b6fbb46b95daa8a8">   31</a></span>&#160;    QLabel * <a class="code" href="classInfoWidget.html#ad45b7b29993f5c22b6fbb46b95daa8a8">contentPreis</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;signals:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInfoWidget.html#abae8095bc85c13034c3348f256ef355e">sendInfoSignal</a>(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // INFOWIDGET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassInfoWidget_html_af850fc48c1777e50002f68912923f94b"><div class="ttname"><a href="classInfoWidget.html#af850fc48c1777e50002f68912923f94b">InfoWidget::headerLabel</a></div><div class="ttdeci">QLabel * headerLabel</div><div class="ttdef"><b>Definition:</b> infowidget.h:12</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a232e6bb08a67df723b54d1e9ca220ded"><div class="ttname"><a href="classInfoWidget.html#a232e6bb08a67df723b54d1e9ca220ded">InfoWidget::headerPreis</a></div><div class="ttdeci">QLabel * headerPreis</div><div class="ttdef"><b>Definition:</b> infowidget.h:15</div></div>
 <div class="ttc" id="aclassInfoWidget_html"><div class="ttname"><a href="classInfoWidget.html">InfoWidget</a></div><div class="ttdef"><b>Definition:</b> infowidget.h:7</div></div>
-<div class="ttc" id="aclassInfoWidget_html_a13029ebc98085747fd7d4935630a6afd"><div class="ttname"><a href="classInfoWidget.html#a13029ebc98085747fd7d4935630a6afd">InfoWidget::InfoWidget</a></div><div class="ttdeci">InfoWidget()</div><div class="ttdoc">InfoWidget::InfoWidget Erzeugt ein Info Widget.</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:6</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a6b1448c7c2450b0bfce44c92b7b7981f"><div class="ttname"><a href="classInfoWidget.html#a6b1448c7c2450b0bfce44c92b7b7981f">InfoWidget::getContentLager</a></div><div class="ttdeci">QString getContentLager()</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:77</div></div>
+<div class="ttc" id="aclassInfoWidget_html_ad45b7b29993f5c22b6fbb46b95daa8a8"><div class="ttname"><a href="classInfoWidget.html#ad45b7b29993f5c22b6fbb46b95daa8a8">InfoWidget::contentPreis</a></div><div class="ttdeci">QLabel * contentPreis</div><div class="ttdef"><b>Definition:</b> infowidget.h:31</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a8bd353726b176be5076bde8966e84196"><div class="ttname"><a href="classInfoWidget.html#a8bd353726b176be5076bde8966e84196">InfoWidget::getContentGut</a></div><div class="ttdeci">QString getContentGut()</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:74</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a13029ebc98085747fd7d4935630a6afd"><div class="ttname"><a href="classInfoWidget.html#a13029ebc98085747fd7d4935630a6afd">InfoWidget::InfoWidget</a></div><div class="ttdeci">InfoWidget()</div><div class="ttdoc">InfoWidget::InfoWidget Erzeugt ein Info Widget.</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:8</div></div>
+<div class="ttc" id="aclassInfoWidget_html_aa9d882a7013f1c77ed8ec2b9ffdd8c74"><div class="ttname"><a href="classInfoWidget.html#aa9d882a7013f1c77ed8ec2b9ffdd8c74">InfoWidget::setContentLager</a></div><div class="ttdeci">void setContentLager(QString)</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:63</div></div>
 <div class="ttc" id="ainfowidget_8h_html"><div class="ttname"><a href="infowidget_8h.html">infowidget.h</a></div></div>
+<div class="ttc" id="aclassInfoWidget_html_ab9bb4bebcc19b99fff90d8349c1e8ed5"><div class="ttname"><a href="classInfoWidget.html#ab9bb4bebcc19b99fff90d8349c1e8ed5">InfoWidget::setContentPreis</a></div><div class="ttdeci">void setContentPreis(QString)</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:68</div></div>
+<div class="ttc" id="aclassInfoWidget_html_ad36e6350d6579343a54f4409f297c571"><div class="ttname"><a href="classInfoWidget.html#ad36e6350d6579343a54f4409f297c571">InfoWidget::sendInfoRequest</a></div><div class="ttdeci">void sendInfoRequest(int, int)</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:84</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a2e8c084397c5bef5bc47cff0e15767aa"><div class="ttname"><a href="classInfoWidget.html#a2e8c084397c5bef5bc47cff0e15767aa">InfoWidget::contentLager</a></div><div class="ttdeci">QLabel * contentLager</div><div class="ttdef"><b>Definition:</b> infowidget.h:30</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a2b1f33faa103d859257db7ca96de517c"><div class="ttname"><a href="classInfoWidget.html#a2b1f33faa103d859257db7ca96de517c">InfoWidget::contentGut</a></div><div class="ttdeci">QLabel * contentGut</div><div class="ttdef"><b>Definition:</b> infowidget.h:29</div></div>
+<div class="ttc" id="aclassInfoWidget_html_aac4009287e4e30550e5ae0605b01b623"><div class="ttname"><a href="classInfoWidget.html#aac4009287e4e30550e5ae0605b01b623">InfoWidget::headerLager</a></div><div class="ttdeci">QLabel * headerLager</div><div class="ttdef"><b>Definition:</b> infowidget.h:14</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a9778ea667dc373e517761b1c53b48db4"><div class="ttname"><a href="classInfoWidget.html#a9778ea667dc373e517761b1c53b48db4">InfoWidget::getContentPreis</a></div><div class="ttdeci">QString getContentPreis()</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:80</div></div>
+<div class="ttc" id="aclassInfoWidget_html_abae8095bc85c13034c3348f256ef355e"><div class="ttname"><a href="classInfoWidget.html#abae8095bc85c13034c3348f256ef355e">InfoWidget::sendInfoSignal</a></div><div class="ttdeci">void sendInfoSignal(int, int)</div></div>
+<div class="ttc" id="aclassInfoWidget_html_a0ebc124ad6028639e0ec7d052eaaf8dc"><div class="ttname"><a href="classInfoWidget.html#a0ebc124ad6028639e0ec7d052eaaf8dc">InfoWidget::headerGut</a></div><div class="ttdeci">QLabel * headerGut</div><div class="ttdef"><b>Definition:</b> infowidget.h:13</div></div>
+<div class="ttc" id="aclassInfoWidget_html_accbcc08b48fc953c6bf57ebdf1252546"><div class="ttname"><a href="classInfoWidget.html#accbcc08b48fc953c6bf57ebdf1252546">InfoWidget::setContentGut</a></div><div class="ttdeci">void setContentGut(QString)</div><div class="ttdef"><b>Definition:</b> infowidget.cpp:58</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">

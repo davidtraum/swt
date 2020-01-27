@@ -43,6 +43,9 @@ void Minimap::paintEvent(QPaintEvent *event)
     painter.drawImage(0,0,map);
 
     painter.setPen(Qt::red);
+    painter.drawRect(dataModel->minPos.getX(), dataModel->minPos.getY(),
+                      dataModel->maxPos.getX()-dataModel->minPos.getX(),
+                     dataModel->maxPos.getY()-dataModel->minPos.getY());
     painter.drawImage(QRectF(dataModel->getHoverX()-16, dataModel->getHoverY()-28,32,32), location);
     painter.drawImage(QRectF(dataModel->secondPlayer->posX-16, dataModel->secondPlayer->posY-28,32,32), location_white);
     painter.drawImage(QRectF(10,10, 280, 280), compass);

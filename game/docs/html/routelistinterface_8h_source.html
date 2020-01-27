@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Railroad Tycoon Prototyp: src/application_server/routelistinterface.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="schiene_h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Railroad Tycoon Prototyp
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">SWT Praktikum</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c6321f114837da3d6e2438c49f4e78f.html">application_server</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">routelistinterface.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="routelistinterface_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ROUTELISTINTERFACE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ROUTELISTINTERFACE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDockWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QListWidget&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphicsmanager_8h.html">graphicsmanager.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classRouteListInterface.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRouteListInterface.html">RouteListInterface</a> : <span class="keyword">public</span> QDockWidget</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classRouteListInterface.html#ad8af31a3f20a7d109420cae6de3316c5">RouteListInterface</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRouteListInterface.html#a19d727baffe9a3b0db85f0bf954c035d">   15</a></span>&#160;    QListWidget * <a class="code" href="classRouteListInterface.html#a19d727baffe9a3b0db85f0bf954c035d">routeList</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;signals:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteListInterface.html#a041bcff66f2bd82d4df83c5c72cd2b15">sendRequestRoutes</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteListInterface.html#a75a2298ae09d2e13b3fc38cdf7787cd6">sendDeleteSignal</a>(QListWidgetItem *);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteListInterface.html#a89601e6903f18dae77c8990bf884fb91">toggle</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteListInterface.html#aad51133162380c0afbc1b194e45f868d">deleteRoute</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRouteListInterface.html#a44d42eab7ee98a546e1112692e7dcc6e">receiveRoutes</a>(QStringList *);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // ROUTELISTINTERFACE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassRouteListInterface_html_a041bcff66f2bd82d4df83c5c72cd2b15"><div class="ttname"><a href="classRouteListInterface.html#a041bcff66f2bd82d4df83c5c72cd2b15">RouteListInterface::sendRequestRoutes</a></div><div class="ttdeci">void sendRequestRoutes()</div></div>
+<div class="ttc" id="aclassRouteListInterface_html_a89601e6903f18dae77c8990bf884fb91"><div class="ttname"><a href="classRouteListInterface.html#a89601e6903f18dae77c8990bf884fb91">RouteListInterface::toggle</a></div><div class="ttdeci">void toggle()</div><div class="ttdoc">RouteListInterface::toggle Wechselt die Sichtbarkeit des Widgets.</div><div class="ttdef"><b>Definition:</b> routelistinterface.cpp:51</div></div>
+<div class="ttc" id="aclassRouteListInterface_html_a19d727baffe9a3b0db85f0bf954c035d"><div class="ttname"><a href="classRouteListInterface.html#a19d727baffe9a3b0db85f0bf954c035d">RouteListInterface::routeList</a></div><div class="ttdeci">QListWidget * routeList</div><div class="ttdef"><b>Definition:</b> routelistinterface.h:15</div></div>
+<div class="ttc" id="aclassRouteListInterface_html_a75a2298ae09d2e13b3fc38cdf7787cd6"><div class="ttname"><a href="classRouteListInterface.html#a75a2298ae09d2e13b3fc38cdf7787cd6">RouteListInterface::sendDeleteSignal</a></div><div class="ttdeci">void sendDeleteSignal(QListWidgetItem *)</div></div>
+<div class="ttc" id="aroutelistinterface_8h_html"><div class="ttname"><a href="routelistinterface_8h.html">routelistinterface.h</a></div></div>
+<div class="ttc" id="aclassRouteListInterface_html"><div class="ttname"><a href="classRouteListInterface.html">RouteListInterface</a></div><div class="ttdef"><b>Definition:</b> routelistinterface.h:10</div></div>
+<div class="ttc" id="agraphicsmanager_8h_html"><div class="ttname"><a href="graphicsmanager_8h.html">graphicsmanager.h</a></div></div>
+<div class="ttc" id="aclassRouteListInterface_html_a44d42eab7ee98a546e1112692e7dcc6e"><div class="ttname"><a href="classRouteListInterface.html#a44d42eab7ee98a546e1112692e7dcc6e">RouteListInterface::receiveRoutes</a></div><div class="ttdeci">void receiveRoutes(QStringList *)</div><div class="ttdoc">RouteListInterface::receiveRoutes Formatiert die Liste aus Strings zu schöneren einzelnen Strings,...</div><div class="ttdef"><b>Definition:</b> routelistinterface.cpp:84</div></div>
+<div class="ttc" id="aclassRouteListInterface_html_aad51133162380c0afbc1b194e45f868d"><div class="ttname"><a href="classRouteListInterface.html#aad51133162380c0afbc1b194e45f868d">RouteListInterface::deleteRoute</a></div><div class="ttdeci">void deleteRoute()</div><div class="ttdoc">RouteListInterface::deleteRoute Sendet ein Signal, sodass die Route des Sielers vom Server gelöscht w...</div><div class="ttdef"><b>Definition:</b> routelistinterface.cpp:62</div></div>
+<div class="ttc" id="aclassRouteListInterface_html_ad8af31a3f20a7d109420cae6de3316c5"><div class="ttname"><a href="classRouteListInterface.html#ad8af31a3f20a7d109420cae6de3316c5">RouteListInterface::RouteListInterface</a></div><div class="ttdeci">RouteListInterface()</div><div class="ttdef"><b>Definition:</b> routelistinterface.cpp:7</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
