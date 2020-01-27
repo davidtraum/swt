@@ -125,7 +125,7 @@ class TrainStationLogic:
         self.connectedUp = False #obenverbunden?
         self.connectedDown = False #untenverbunden?
         self.player = pPlayer # Spieler X  
-        self.maxStorage = 2000  
+        self.maxStorage = 1000  
         Thread.__init__(self)
         self.tickspeed = tickspeed/1000.0
         self.last_mach_was = 0
