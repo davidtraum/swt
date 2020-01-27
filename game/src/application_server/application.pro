@@ -33,11 +33,9 @@ SOURCES += \
     maptile.cpp \
     menubar.cpp \
     minimap.cpp \
-    mousedecor.cpp \
     player.cpp \
     point.cpp \
     renderthread.cpp \
-    river.cpp \
     routeinterface.cpp \
     routelistinterface.cpp \
     scene.cpp \
@@ -66,11 +64,9 @@ HEADERS += \
     maptile.h \
     menubar.h \
     minimap.h \
-    mousedecor.h \
     player.h \
     point.h \
     renderthread.h \
-    river.h \
     routeinterface.h \
     routelistinterface.h \
     scene.h \
