@@ -544,7 +544,7 @@ class ClientThread(Thread):
                             print("Springe in Wagong rein ", i)
                             print("i ist ", i)
                             for j in range(i+4,len(args)):
-                                if (args[j] == "COAL" or args[j] == "CORN" or args[j] == "PASSENGERS" or args[j] == "LIVESTOCK" or args[j] == "WOOD" or args[j] == "MAIL" or args[j] == "FOOD" or args[j] == "GOODS"):
+                                if (args[j] == "COAL" or args[j] == "CORN" or args[j] == "PASSENGERS" or args[j] == "LIVESTOCK" or args[j] == "WOOD" or args[j] == "MAIL" or args[j] == "FOOD" or args[j] == "GOODS" or args[j] == "PAPER" or args[j] == "STEEL" or args[j] == "PETROLEUM"):
                                     wagonTypes.append(args[j])
                                 else:
                                     routeName = args[j] 
@@ -578,7 +578,7 @@ class ClientThread(Thread):
 
                     #Schickt die Routen des Spielers einzeln als Strings an den Client
                     for i in range(0, len(handOverList)):
-                        if ( handOverList[i] == "COAL" or handOverList[i] == "FOOD" or handOverList[i] == "LIVESTOCK" or handOverList[i] == "WOOD" or handOverList[i] == "CORN" or handOverList[i] == "GOODS" or handOverList[i] == "PAPER" or handOverList[i] == "MAIL" or handOverList[i] == "PASSENGERS" ):
+                        if ( handOverList[i] == "COAL" or handOverList[i] == "PETROLEUM" or handOverList[i] == "FOOD" or handOverList[i] == "LIVESTOCK" or handOverList[i] == "WOOD" or handOverList[i] == "CORN" or handOverList[i] == "GOODS" or handOverList[i] == "PAPER" or handOverList[i] == "MAIL" or handOverList[i] == "PASSENGERS" or handOverList[i] == "STEEL"):
                             wagonsWritten = True
                             coordsWritten = False
                             print("WAGGON GEFUNDEN")

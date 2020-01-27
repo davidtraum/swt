@@ -141,6 +141,7 @@ void Client::sendRoute(QString routeString){
  * @param cmd Der Befehl als String.
  */
 void Client::processCommand(QString cmd){
+
     if(debug) {
         qDebug() << "[CLIENT] Command: " + cmd;
     }
