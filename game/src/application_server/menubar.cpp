@@ -39,13 +39,13 @@ MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel
     buildButton->setCursor(QCursor(Qt::PointingHandCursor));
     QMenu *buildMenu=new QMenu(buildButton);
     QMenu * trainStationMenu = new QMenu("Bahnhof bauen");
-    QAction * stationMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Bahnhof", this);
-    stationMode->connect(stationMode, &QAction::triggered, dataModel, &DataModel::setTrainStationMode);
-    trainStationMenu->addAction(stationMode);
-    QAction * depotMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Depot", this);
+    QAction * depotMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Depot (1.000$)", this);
     depotMode->connect(depotMode, &QAction::triggered, dataModel, &DataModel::setDepotMode);
     trainStationMenu->addAction(depotMode);
-    QAction * terminalMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Terminal", this);
+    QAction * stationMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Bahnhof (10.000$)", this);
+    stationMode->connect(stationMode, &QAction::triggered, dataModel, &DataModel::setTrainStationMode);
+    trainStationMenu->addAction(stationMode);
+    QAction * terminalMode = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/trainstation.svg"))),"Terminal(50.000$)", this);
     terminalMode->connect(terminalMode, &QAction::triggered, dataModel, &DataModel::setTerminalMode);
     trainStationMenu->addAction(terminalMode);
     buildMenu->addMenu(trainStationMenu);
