@@ -142,7 +142,7 @@ class TrainStationLogic:
             if(pType != 'PASSENGERS' and self.NUMBER_OF_PRODUCTION_BUILDINGS[pType] > 0):
                 #print('Anzahl Produktionsgebäude:',pType , self.NUMBER_OF_PRODUCTION_BUILDINGS)
                 for keys in TrainStationLogic.NEEDED_RESSOURCES[pType]:  #überprüft ob genug Ressourcen vorhanden um zu Produzieren
-                    if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]):
+                    if(self.STORAGE[keys] <  TrainStationLogic.NEEDED_RESSOURCES[pType][keys]*self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]):
                         boolTmp += 1
                 #print('boolTmp:' ,boolTmp)               
                 if(boolTmp == 0 ):   #überprüft ob genug Ressourcen vorhanden um zu Produzieren
@@ -150,7 +150,7 @@ class TrainStationLogic:
                         self.STORAGE[pType] += TrainStationLogic.PRODUCING[pType]* self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]        #fügt Produktion zum Lager hinzu  
                     for keys in TrainStationLogic.NEEDED_RESSOURCES[pType] : 
                         if(pType != 'PASSENGERS'):                  
-                            self.STORAGE[pType] -= TrainStationLogic.NEEDED_RESSOURCES[pType][keys]*self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]   #Ressourcen werden Verbraucht 
+                            self.STORAGE[keys] -= TrainStationLogic.NEEDED_RESSOURCES[pType][keys]*self.NUMBER_OF_PRODUCTION_BUILDINGS[pType]   #Ressourcen werden Verbraucht 
                     #print(pType,":", self.STORAGE[pType])
                     if(self.STORAGE[pType] >= self.maxStorage):
                         if(pType != 'PASSENGERS'):
