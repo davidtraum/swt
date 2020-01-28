@@ -726,6 +726,7 @@ void MapRenderer::handleReachedPoint(int px, int py, AnimationMovement * anim)
  */
 void MapRenderer::onVideoStateChange(QMediaPlayer::State state)
 {
+    return;
     qDebug() << state;
     if(state == QMediaPlayer::EndOfMedia) {
         dataModel->mainWindow->setCentralWidget(this);
