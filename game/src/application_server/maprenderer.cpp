@@ -42,7 +42,7 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
     showHighlight = true;
     codeCount = 0;
 
-    dataModel->toggleFullscreen();
+    //dataModel->toggleFullscreen();
 }
 
 /**
