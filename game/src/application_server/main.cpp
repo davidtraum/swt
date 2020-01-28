@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
     QMediaPlaylist * playlist = new QMediaPlaylist(player);
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    for (int i=2; i<3; i++) {
+    for (int i=2; i<4; i++) {
         playlist->addMedia(QUrl("qrc:/data/soundtrack_"+QString::number(i)+".mp3"));
         qDebug() << "Song " << i << " hinzugefügt.";
     }

@@ -243,31 +243,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Data.cpp release\qrc_Graphics.cpp
 release/qrc_Data.cpp: ../application_server/Data.qrc \
 		C:/Qt/5.12.2/mingw73_32/bin/rcc.exe \
-		../application_server/soundtrack_20.mp3 \
-		../application_server/soundtrack_21.mp3 \
-		../application_server/soundtrack_22.mp3 \
-		../application_server/soundtrack_23.mp3 \
-		../application_server/soundtrack_10.mp3 \
-		../application_server/soundtrack_11.mp3 \
-		../application_server/soundtrack_12.mp3 \
-		../application_server/soundtrack_0.mp3 \
-		../application_server/soundtrack_13.mp3 \
-		../application_server/soundtrack_1.mp3 \
 		../application_server/soundtrack_2.mp3 \
-		../application_server/soundtrack_14.mp3 \
-		../application_server/soundtrack_15.mp3 \
-		../application_server/soundtrack_3.mp3 \
-		../application_server/soundtrack_4.mp3 \
-		../application_server/soundtrack_16.mp3 \
-		../application_server/soundtrack_5.mp3 \
-		../application_server/soundtrack_17.mp3 \
-		../application_server/soundtrack_6.mp3 \
-		../application_server/soundtrack_18.mp3 \
-		../application_server/soundtrack_7.mp3 \
-		../application_server/soundtrack_19.mp3 \
-		../application_server/soundtrack_8.mp3 \
-		../application_server/soundtrack_9.mp3 \
 		../application_server/cities.json \
+		../application_server/soundtrack_3.mp3 \
 		../application_server/mono.ttf \
 		../application_server/raleway.ttf \
 		../application_server/minecraft.ttf
