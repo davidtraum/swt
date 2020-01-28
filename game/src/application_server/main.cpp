@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     qDebug() << QFontDatabase::addApplicationFont(":/fonts/mono.ttf");
     mainWindow = new MainWindow();
     //mainWindow->setCursor(QCursor(QPixmap(":/images/highres/cursor.png"), 0,0));
-    //a.setFont(QFont(QFontDatabase::applicationFontFamilies(0).at(0)));
+    a.setFont(QFont(QFontDatabase::applicationFontFamilies(0).at(0)));
 
 
     mainWindow->setWindowTitle("Railroad Tycoon");
@@ -113,23 +113,15 @@ int main(int argc, char *argv[])
     QMediaPlaylist * playlist = new QMediaPlaylist(player);
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    for (int i=0; i<24; i++) {
+    for (int i=2; i<3; i++) {
         playlist->addMedia(QUrl("qrc:/data/soundtrack_"+QString::number(i)+".mp3"));
         qDebug() << "Song " << i << " hinzugefügt.";
     }
 
     playlist->shuffle();
 
-    QDir pathDir(":/data/soundtrack_2.mp3");
-    if (pathDir.exists())
-    {
-        qDebug() << "EXISTIERT";
-    }
-    else {
-        qDebug() << "EXITSIERT NICHT";
-    }
 
-    playlist->setCurrentIndex(1);
+    playlist->setCurrentIndex(0);
     player->setPlaylist(playlist);
     player->play();
     qDebug() << playlist->mediaCount();

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>
+        Railroad Tycoon Gruppe 5
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="fontawesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+    <img class="title" src="logo.png">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mx-2 my-2">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-file-pdf"></i> Dokumente</h5>
+                    <p class="card-text">Hier findet man unser Dokument, inklusive Diagramme, Reflexion, Protokolle und
+                        Dokumentation</p>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i> Download (.pdf)</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card mx-2 my-2">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-gamepad"></i> Spiel</h5>
+                    <p class="card-text">Hier findet man alle Code-Dateien, inklusive Protoyp und kompilierter
+                        Programme.
+                        <br>
+                    </p>
+                    <a href="https://github.com/davidtraum/swt/archive/master.zip" class="btn btn-primary"><i
+                            class="fas fa-file-download"></i> Download (.zip)</a>
+                            <button type="button" class="btn btn-sec" data-toggle="modal" data-target="#anleitung">
+                                <i class="fas fa-play"></i> Anleitung zum ausführen
+                              </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="anleitung" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-play"></i> Anleitung zum starten</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Die kompilierten Programme befinden sich für Linux und Windows unter
+                    <b>game/src/build-[Compiler]</b>
+                    <div class=""><br>
+                        Um das Programm selbst zu kompilieren und zu starten kann man die Datei
+                        <b>game/src/application_server/application.pro</b> mit QT Creator öffnen.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        © 2020 Gruppe 5 Entertainment
+    </footer>
+</body>
+
+</html>

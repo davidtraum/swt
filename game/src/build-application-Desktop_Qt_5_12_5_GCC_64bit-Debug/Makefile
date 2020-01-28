@@ -69,11 +69,9 @@ SOURCES       = ../application_server/animationentity.cpp \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
 		../application_server/minimap.cpp \
-		../application_server/mousedecor.cpp \
 		../application_server/player.cpp \
 		../application_server/point.cpp \
 		../application_server/renderthread.cpp \
-		../application_server/river.cpp \
 		../application_server/routeinterface.cpp \
 		../application_server/routelistinterface.cpp \
 		../application_server/scene.cpp \
@@ -117,11 +115,9 @@ OBJECTS       = animationentity.o \
 		maptile.o \
 		menubar.o \
 		minimap.o \
-		mousedecor.o \
 		player.o \
 		point.o \
 		renderthread.o \
-		river.o \
 		routeinterface.o \
 		routelistinterface.o \
 		scene.o \
@@ -360,11 +356,9 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/maptile.h \
 		../application_server/menubar.h \
 		../application_server/minimap.h \
-		../application_server/mousedecor.h \
 		../application_server/player.h \
 		../application_server/point.h \
 		../application_server/renderthread.h \
-		../application_server/river.h \
 		../application_server/routeinterface.h \
 		../application_server/routelistinterface.h \
 		../application_server/scene.h \
@@ -391,11 +385,9 @@ DIST          = /home/david/Qt/5.12.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../application_server/maptile.cpp \
 		../application_server/menubar.cpp \
 		../application_server/minimap.cpp \
-		../application_server/mousedecor.cpp \
 		../application_server/player.cpp \
 		../application_server/point.cpp \
 		../application_server/renderthread.cpp \
-		../application_server/river.cpp \
 		../application_server/routeinterface.cpp \
 		../application_server/routelistinterface.cpp \
 		../application_server/scene.cpp \
@@ -827,8 +819,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/Data.qrc ../application_server/Graphics.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/david/Qt/5.12.5/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/infowidget.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/mousedecor.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/river.h ../application_server/routeinterface.h ../application_server/routelistinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/infowidget.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/mousedecor.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/river.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.h ../application_server/animationmovement.h ../application_server/city.h ../application_server/client.h ../application_server/datamodel.h ../application_server/gameloop.h ../application_server/goodselector.h ../application_server/graphicsmanager.h ../application_server/highlighter.h ../application_server/infowidget.h ../application_server/main.h ../application_server/mainmenu.h ../application_server/mainwindow.h ../application_server/maprenderer.h ../application_server/maptile.h ../application_server/menubar.h ../application_server/minimap.h ../application_server/player.h ../application_server/point.h ../application_server/renderthread.h ../application_server/routeinterface.h ../application_server/routelistinterface.h ../application_server/scene.h ../application_server/sidepanel.h ../application_server/sprite.h ../application_server/tooltipmenu.h ../application_server/tooltipmenu.h ../application_server/trainrenderer.h ../application_server/videowidget.h ../application_server/view.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../application_server/animationentity.cpp ../application_server/animationmovement.cpp ../application_server/city.cpp ../application_server/client.cpp ../application_server/datamodel.cpp ../application_server/gameloop.cpp ../application_server/goodselector.cpp ../application_server/graphicsmanager.cpp ../application_server/highlighter.cpp ../application_server/infowidget.cpp ../application_server/main.cpp ../application_server/mainmenu.cpp ../application_server/mainwindow.cpp ../application_server/maprenderer.cpp ../application_server/maptile.cpp ../application_server/menubar.cpp ../application_server/minimap.cpp ../application_server/player.cpp ../application_server/point.cpp ../application_server/renderthread.cpp ../application_server/routeinterface.cpp ../application_server/routelistinterface.cpp ../application_server/scene.cpp ../application_server/sidepanel.cpp ../application_server/sprite.cpp ../application_server/tooltipmenu.cpp ../application_server/trainrenderer.cpp ../application_server/videowidget.cpp ../application_server/view.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../application_server/mainwindow.ui $(DISTDIR)/
 
 
@@ -858,9 +850,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Data.cpp qrc_Graphics.cpp
 qrc_Data.cpp: ../application_server/Data.qrc \
 		/home/david/Qt/5.12.5/gcc_64/bin/rcc \
+		../application_server/soundtrack_2.mp3 \
 		../application_server/cities.json \
-		../application_server/Sweden.mp3 \
-		../application_server/ThomasAndFriendsTitle.mp3 \
+		../application_server/soundtrack_3.mp3 \
 		../application_server/mono.ttf \
 		../application_server/raleway.ttf \
 		../application_server/minecraft.ttf
@@ -1225,6 +1217,7 @@ moc_client.cpp: ../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -1244,11 +1237,9 @@ moc_client.cpp: ../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
@@ -1416,6 +1407,7 @@ moc_datamodel.cpp: ../application_server/datamodel.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/datamodel.h -o moc_datamodel.cpp
@@ -1571,15 +1563,14 @@ moc_gameloop.cpp: ../application_server/gameloop.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
@@ -2114,15 +2105,14 @@ moc_maprenderer.cpp: ../application_server/maprenderer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/maprenderer.h -o moc_maprenderer.cpp
@@ -2293,6 +2283,7 @@ moc_menubar.cpp: ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -2343,11 +2334,9 @@ moc_menubar.cpp: ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
@@ -2504,15 +2493,14 @@ moc_minimap.cpp: ../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/minimap.h -o moc_minimap.cpp
@@ -2704,6 +2692,7 @@ moc_routeinterface.cpp: ../application_server/routeinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -2722,11 +2711,9 @@ moc_routeinterface.cpp: ../application_server/routeinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
@@ -3021,6 +3008,7 @@ moc_scene.cpp: ../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		moc_predefs.h \
 		/home/david/Qt/5.12.5/gcc_64/bin/moc
 	/home/david/Qt/5.12.5/gcc_64/bin/moc $(DEFINES) --include /home/david/Development/Uni/swt/game/src/build-application-Desktop_Qt_5_12_5_GCC_64bit-Debug/moc_predefs.h -I/home/david/Qt/5.12.5/gcc_64/mkspecs/linux-g++ -I/home/david/Development/Uni/swt/game/src/application_server -I/home/david/Qt/5.12.5/gcc_64/include -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia -I/home/david/Qt/5.12.5/gcc_64/include/QtWidgets -I/home/david/Qt/5.12.5/gcc_64/include/QtGui -I/home/david/Qt/5.12.5/gcc_64/include/QtNetwork -I/home/david/Qt/5.12.5/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/c++/9/x86_64-suse-linux -I/usr/include/c++/9/backward -I/usr/lib64/gcc/x86_64-suse-linux/9/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/9/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../application_server/scene.h -o moc_scene.cpp
@@ -3437,6 +3425,7 @@ moc_view.cpp: ../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/tooltipmenu.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
@@ -3819,6 +3808,7 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -3838,11 +3828,9 @@ client.o: ../application_server/client.cpp ../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qdockwidget.h \
@@ -4029,6 +4017,7 @@ datamodel.o: ../application_server/datamodel.cpp ../application_server/datamodel
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamodel.o ../application_server/datamodel.cpp
 
@@ -4183,15 +4172,14 @@ gameloop.o: ../application_server/gameloop.cpp ../application_server/gameloop.h 
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
@@ -4830,6 +4818,9 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediabindableinterface.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDir \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qdir.h \
+		/home/david/Qt/5.12.5/gcc_64/include/QtCore/qfileinfo.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets/QVideoWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets/qvideowidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimediaWidgets/qtmultimediawidgetdefs.h \
@@ -4847,6 +4838,7 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/client.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/QTcpSocket \
 		/home/david/Qt/5.12.5/gcc_64/include/QtNetwork/qtcpsocket.h \
@@ -4876,11 +4868,9 @@ main.o: ../application_server/main.cpp /home/david/Qt/5.12.5/gcc_64/include/QtWi
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		../application_server/maprenderer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QListWidget \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qlistwidget.h \
@@ -5215,15 +5205,14 @@ maprenderer.o: ../application_server/maprenderer.cpp ../application_server/mapre
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h \
@@ -5539,6 +5528,7 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -5589,11 +5579,9 @@ menubar.o: ../application_server/menubar.cpp ../application_server/menubar.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QIcon \
@@ -5758,15 +5746,14 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPaintEvent \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qpainter.h \
@@ -5775,9 +5762,6 @@ minimap.o: ../application_server/minimap.cpp ../application_server/minimap.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QRectF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o minimap.o ../application_server/minimap.cpp
-
-mousedecor.o: ../application_server/mousedecor.cpp ../application_server/mousedecor.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mousedecor.o ../application_server/mousedecor.cpp
 
 player.o: ../application_server/player.cpp ../application_server/player.h \
 		../application_server/highlighter.h \
@@ -6028,20 +6012,16 @@ renderthread.o: ../application_server/renderthread.cpp ../application_server/ren
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o renderthread.o ../application_server/renderthread.cpp
-
-river.o: ../application_server/river.cpp ../application_server/river.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o river.o ../application_server/river.cpp
 
 routeinterface.o: ../application_server/routeinterface.cpp ../application_server/routeinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QDockWidget \
@@ -6230,6 +6210,7 @@ routeinterface.o: ../application_server/routeinterface.cpp ../application_server
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsView \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsview.h \
@@ -6248,11 +6229,9 @@ routeinterface.o: ../application_server/routeinterface.cpp ../application_server
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/QMediaPlaylist \
 		/home/david/Qt/5.12.5/gcc_64/include/QtMultimedia/qmediaplaylist.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		../application_server/routelistinterface.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QCursor \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
@@ -6559,6 +6538,7 @@ scene.o: ../application_server/scene.cpp ../application_server/scene.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QDebug \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPen \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QPainter \
@@ -6713,6 +6693,7 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/minimap.h \
 		../application_server/maprenderer.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QList \
@@ -6726,12 +6707,10 @@ sidepanel.o: ../application_server/sidepanel.cpp ../application_server/sidepanel
 		../application_server/maptile.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../application_server/city.h \
-		../application_server/point.h \
 		../application_server/animationmovement.h \
 		../application_server/animationentity.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtCore/QObject \
 		../application_server/sprite.h \
-		../application_server/mousedecor.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QVBoxLayout \
@@ -7372,6 +7351,7 @@ view.o: ../application_server/view.cpp ../application_server/view.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/qicon.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtGui/QKeyEvent \
 		../application_server/infowidget.h \
+		../application_server/point.h \
 		../application_server/tooltipmenu.h \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/QGroupBox \
 		/home/david/Qt/5.12.5/gcc_64/include/QtWidgets/qgroupbox.h \
