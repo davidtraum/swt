@@ -49,18 +49,18 @@ MenuBar::MenuBar(Scene * pScene, MapRenderer * pRenderer, DataModel * pDataModel
     terminalMode->connect(terminalMode, &QAction::triggered, dataModel, &DataModel::setTerminalMode);
     trainStationMenu->addAction(terminalMode);
     buildMenu->addMenu(trainStationMenu);
-    QAction * bridgeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/bridge.svg"))),"Brücke bauen", this);
-    bridgeEditor->connect(bridgeEditor, &QAction::triggered, dataModel, &DataModel::setBridgeMode);
-    bridgeEditor->setShortcut(Qt::Key_2);
-    buildMenu->addAction(bridgeEditor);
+    //QAction * bridgeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/bridge.svg"))),"Brücke bauen", this);
+    //bridgeEditor->connect(bridgeEditor, &QAction::triggered, dataModel, &DataModel::setBridgeMode);
+    //bridgeEditor->setShortcut(Qt::Key_2);
+    //buildMenu->addAction(bridgeEditor);
     QAction * railEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/rail.svg"))),"Schienen verlegen", this);
     railEditor->setShortcut(Qt::Key_3);
     railEditor->connect(railEditor, &QAction::triggered, dataModel, &DataModel::setRailPlacementMode);
     buildMenu->addAction(railEditor);
-    QAction * removeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/wrecking-ball.svg"))),"Entferne", this);
-    removeEditor->setShortcut(Qt::Key_4);
-    removeEditor->connect(removeEditor, &QAction::triggered, dataModel, &DataModel::setRemoveMode);
-    buildMenu->addAction(removeEditor);
+    //QAction * removeEditor = new QAction(QIcon(QPixmap::fromImage(QImage(":/icons/wrecking-ball.svg"))),"Entferne", this);
+    //removeEditor->setShortcut(Qt::Key_4);
+    //removeEditor->connect(removeEditor, &QAction::triggered, dataModel, &DataModel::setRemoveMode);
+    //buildMenu->addAction(removeEditor);
 
     buildButton->setMenu(buildMenu);
     this->addWidget(buildButton);

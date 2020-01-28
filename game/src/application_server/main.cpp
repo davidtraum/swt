@@ -15,6 +15,7 @@
 #include <QGridLayout>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QDir>
 #include <QVideoWidget>
 
 #include "mainwindow.h"
@@ -64,7 +65,8 @@ int main(int argc, char *argv[])
     qDebug() << QFontDatabase::addApplicationFont(":/fonts/mono.ttf");
     mainWindow = new MainWindow();
     //mainWindow->setCursor(QCursor(QPixmap(":/images/highres/cursor.png"), 0,0));
-    a.setFont(QFont(QFontDatabase::applicationFontFamilies(0).at(0)));
+    //a.setFont(QFont(QFontDatabase::applicationFontFamilies(0).at(0)));
+
 
     mainWindow->setWindowTitle("Railroad Tycoon");
     mainWindow->setWindowIcon(QIcon(":/images/highres/icon.png"));
@@ -111,13 +113,30 @@ int main(int argc, char *argv[])
     QMediaPlaylist * playlist = new QMediaPlaylist;
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    playlist->addMedia(QUrl("qrc:/data/Sweden.mp3"));
-    playlist->addMedia(QUrl("qrc:/data/ThomasAndFriendsTitle.mp3"));
+    for (int i=0; i<24; i++) {
+        playlist->addMedia(QUrl("qrc:/data/soundtrack_"+QString::number(i)+".mp3"));
+        qDebug() << "Song " << i << " hinzugefügt.";
+    }
+
+    playlist->shuffle();
+
+    QDir pathDir(":/data/soundtrack2.mp3");
+    if (pathDir.exists())
+    {
+        qDebug() << "EXISTIERT";
+    }
+    else {
+        qDebug() << "EXITSIERT NICHT";
+    }
 
     playlist->setCurrentIndex(1);
     player->setPlaylist(playlist);
     player->play();
+    qDebug() << playlist->mediaCount();
+    qDebug() << player->isAudioAvailable();
+    qDebug() << player->mediaStatus();
 
+    qDebug() << "DANACH";
 
     Minimap * map = new Minimap(300,300, mapRenderer, dataModel);
     QVBoxLayout * rightLayout = new QVBoxLayout();

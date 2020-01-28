@@ -110,6 +110,9 @@ void View::leftclick(QMouseEvent * pEvent, MapTile * pTile)
         case MapTile::STATION_V:
             emit onTrainStationClick(pTile->getX(), pTile->getY());
             break;
+    default:
+        break;
+
     }
 }
 
@@ -261,7 +264,7 @@ void View::keyPressEvent(QKeyEvent *event){
 
     qDebug() << "codeCount " << QString::number(codeCount);
 
-    //Hier gibt es nichts zu sehen:
+
     if (codeCount == 10) {
         qDebug("KONAMI CODE");
         QWidget* box = new QWidget();

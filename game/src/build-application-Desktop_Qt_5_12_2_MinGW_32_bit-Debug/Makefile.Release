@@ -243,9 +243,31 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Data.cpp release\qrc_Graphics.cpp
 release/qrc_Data.cpp: ../application_server/Data.qrc \
 		C:/Qt/5.12.2/mingw73_32/bin/rcc.exe \
+		../application_server/soundtrack_20.mp3 \
+		../application_server/soundtrack_21.mp3 \
+		../application_server/soundtrack_22.mp3 \
+		../application_server/soundtrack_23.mp3 \
+		../application_server/soundtrack_10.mp3 \
+		../application_server/soundtrack_11.mp3 \
+		../application_server/soundtrack_12.mp3 \
+		../application_server/soundtrack_0.mp3 \
+		../application_server/soundtrack_13.mp3 \
+		../application_server/soundtrack_1.mp3 \
+		../application_server/soundtrack_2.mp3 \
+		../application_server/soundtrack_14.mp3 \
+		../application_server/soundtrack_15.mp3 \
+		../application_server/soundtrack_3.mp3 \
+		../application_server/soundtrack_4.mp3 \
+		../application_server/soundtrack_16.mp3 \
+		../application_server/soundtrack_5.mp3 \
+		../application_server/soundtrack_17.mp3 \
+		../application_server/soundtrack_6.mp3 \
+		../application_server/soundtrack_18.mp3 \
+		../application_server/soundtrack_7.mp3 \
+		../application_server/soundtrack_19.mp3 \
+		../application_server/soundtrack_8.mp3 \
+		../application_server/soundtrack_9.mp3 \
 		../application_server/cities.json \
-		../application_server/Sweden.mp3 \
-		../application_server/ThomasAndFriendsTitle.mp3 \
 		../application_server/mono.ttf \
 		../application_server/raleway.ttf \
 		../application_server/minecraft.ttf
@@ -4213,6 +4235,9 @@ release/main.o: ../application_server/main.cpp C:/Qt/5.12.2/mingw73_32/include/Q
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/QMediaPlaylist \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediaplaylist.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediabindableinterface.h \
+		C:/Qt/5.12.2/mingw73_32/include/QtCore/QDir \
+		C:/Qt/5.12.2/mingw73_32/include/QtCore/qdir.h \
+		C:/Qt/5.12.2/mingw73_32/include/QtCore/qfileinfo.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimediaWidgets/QVideoWidget \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimediaWidgets/qvideowidget.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimediaWidgets/qtmultimediawidgetdefs.h \
@@ -4406,22 +4431,6 @@ release/mainwindow.o: ../application_server/mainwindow.cpp ../application_server
 		C:/Qt/5.12.2/mingw73_32/include/QtGui/qicon.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/QVariant \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QApplication \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.12.2/mingw73_32/include/QtWidgets/QWidget \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediaobject.h \
@@ -4436,6 +4445,7 @@ release/mainwindow.o: ../application_server/mainwindow.cpp ../application_server
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/QSharedDataPointer \
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/QString \
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/QUrl \
+		C:/Qt/5.12.2/mingw73_32/include/QtCore/QVariant \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qmediaenumdebug.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.12.2/mingw73_32/include/QtMultimedia/qaudio.h \
