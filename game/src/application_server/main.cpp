@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
 
     //Musik-Playlist: Song hinzufügen mit addMedia()
     QMediaPlayer * player = new QMediaPlayer;
-    QMediaPlaylist * playlist = new QMediaPlaylist;
+    QMediaPlaylist * playlist = new QMediaPlaylist(player);
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
     for (int i=0; i<24; i++) {
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 
     playlist->shuffle();
 
-    QDir pathDir(":/data/soundtrack2.mp3");
+    QDir pathDir(":/data/soundtrack_2.mp3");
     if (pathDir.exists())
     {
         qDebug() << "EXISTIERT";
@@ -178,8 +178,6 @@ int main(int argc, char *argv[])
     mainWindow->show();
 
     timeTicker();
-
-
 
     QLabel * startscreen = new QLabel();
     startscreen->setPixmap(QPixmap::fromImage(QImage(":/images/highres/rrt_logo_grp5.png").scaled(1000,1500,Qt::KeepAspectRatio)));

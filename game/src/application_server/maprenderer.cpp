@@ -39,11 +39,10 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
 
     buffer = new QPixmap(this->width(), this->height());
 
-//testSprite = new Sprite(new QImage(":/images/sprite/sheet_explosion.png"), 25,64);
-
     showHighlight = true;
     codeCount = 0;
 
+    dataModel->toggleFullscreen();
 }
 
 /**
@@ -78,7 +77,6 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                     painter->drawImage(-halfSize,-halfSize, data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize, tileSize));
                     painter->restore();
                 }else{
-                    //painter.drawRect(x*(tileSize*scale)-offset.getX(),y*(tileSize*scale)-offset.getY(), tileSize,tileSize);
                     painter->drawImage(x*(tileSize)-offset.getX(),y*(tileSize)-offset.getY(), data[x][y].getPixmapItem()->pixmap().toImage().scaled(tileSize, tileSize));
                 }
             }
@@ -128,8 +126,6 @@ void MapRenderer::paintEvent(QPaintEvent *event)
     if(scale < 1 || scale > 1){
         painterReal.drawImage(0,0,buffer->toImage().scaled(buffer->width()*scale, buffer->height()*scale));
     }
-
-    //painterReal.drawImage(0,0,testSprite->getImage().scaled(256,256));
 
     painterReal.drawText(this->width()-310,330, dataModel->getFormattedTime());
     painterReal.drawText(this->width()-310, 350, QString(QString::number(dataModel->getBalance()) + "$"));
@@ -288,9 +284,6 @@ void MapRenderer::keyReleaseEvent(QKeyEvent *event)
         break;
       }
 
-    //qDebug() << "codeCount " << QString::number(codeCount);
-
-    //Hier gibt es nichts zu sehen:
     if (codeCount == 10) {
         qDebug("KONAMI CODE");
         QWidget* box = new QWidget();
@@ -500,7 +493,6 @@ void MapRenderer::demo()
         data[4][y].setType(MapTile::RAIL_V);
     }
     animateMovement(QImage(":/images/train_top.png"), "3:5;5:5", 0.5);
-    //animateMovement(QImage(":/images/train_top.png"), "4:6;4:9");
 
     for(int x = 7; x<=9; x++){
         data[x][5].setType(MapTile::RAIL_H);
@@ -513,7 +505,6 @@ void MapRenderer::demo()
     data[7][5].setType(MapTile::RAIL_RB);
     data[7][9].setType(MapTile::RAIL_RT);
     animateMovement(QImage(":/images/train_top.png"), "9:5;7:5;7:9;9:9;7:9;7:5", 10);
-    //animateMovement(QImage(":/images/train_top.png"), "8:7;9:7");
 
     for(int x = 11; x<=13; x++){
         data[x][5].setType(MapTile::RAIL_H);
@@ -535,13 +526,11 @@ void MapRenderer::demo()
     for(int y = 6; y<=9; y++){
         data[16][y].setType(MapTile::RAIL_V);
     }
-    //animateMovement(QImage(":/images/train_top.png"), "15:5;17:5");
     animateMovement(QImage(":/images/train_top.png"), "16:6;16:9", 4);
 
 
     emit dataModel->viewChange();
 
-    //for(int i = 0; i<100; i++){animateMovement(QImage(":/images/thomasAndFriends.png"), QString::number(random()%10)+":"+QString::number(random()%10) + ";" + QString::number(random()%50) + ":" + QString::number(random()%50), random()%2+1);}
 }
 
 
