@@ -21,7 +21,6 @@ Client::Client(QString * connectionInfo, Scene * pScene, MapRenderer * pMapRende
     QStringList split = connectionInfo->split(":");
     QString iP = split[0];
     unsigned short int port =  quint16(split[1].toInt());
-    //connect(this, &Client::tileChanged, scene, &Scene::onSetTile);
     connect(this, &Client::tileChanged, mapRenderer, &MapRenderer::onTileChange);
     connect(dataModel, &DataModel::positionChange, this, &Client::onPositionChange);
     connect(this, &Client::playerPositionChange, scene, &Scene::updatePlayerPosition);
@@ -55,7 +54,6 @@ void Client::run() {
     QByteArray input;
     int count = 0;
     while(true){
-        //socket->waitForReadyRead();
         if (socket->bytesAvailable()>0){
             input = socket->read(1);
             if(input.at(0) == char(255)){
@@ -70,12 +68,8 @@ void Client::run() {
                     count=0;
                 }
             }
-
-            //socket->flush();
-
         }
     }
-    //socket->deleteLater();
 }
 
 /**
@@ -112,8 +106,7 @@ void Client::cancelRoute(QListWidgetItem * item) {
  * @param py Die Y-Koordinate.
  * @param pid Die ID vom Zug.
  */
-void Client::sendTrainPass(int pid, int px, int py)
-{
+void Client::sendTrainPass(int pid, int px, int py) {
     socket->write(QString("ROUTE PASS " + QString::number(pid) + " " + QString::number(px) + " " + QString::number(py) + "~").toLocal8Bit());
 }
 
@@ -122,8 +115,7 @@ void Client::sendTrainPass(int pid, int px, int py)
  * @param px Die X-Koordinate.
  * @param py Die Y-Koordinate.
  */
-void Client::requestInfo(int px, int py)
-{
+void Client::requestInfo(int px, int py) {
     socket->write(QString("INFO GET " + QString::number(px) + " " + QString::number(py) + "~").toLocal8Bit());
 }
 
@@ -140,7 +132,7 @@ void Client::sendRoute(QString routeString){
  * @brief Client::processCommand Führt einen empfangenen Befehl aus dem Serverprotokoll aus.
  * @param cmd Der Befehl als String.
  */
-void Client::processCommand(QString cmd){
+void Client::processCommand(QString cmd) {
 
     if(debug) {
         qDebug() << "[CLIENT] Command: " + cmd;
@@ -156,36 +148,36 @@ void Client::processCommand(QString cmd){
         splitPointer = new QStringList(split);
 
         if(split.length()>1){
-            if((split[0]=="TILE") && split.length()==5){
+            if((split[0]=="TILE") && split.length()==5){    //MapTile verändert
                 emit tileChanged(split[1].toInt(),split[2].toInt(), split[3].toInt(), split[4].toInt());
             }
-            else if(split[0]=="POS" && split.length()==3){
+            else if(split[0]=="POS" && split.length()==3){  //Position verändert
                 emit playerPositionChange(split[1].toInt(), split[2].toInt());
             }
-            else if(split[0]=="MAP"){
+            else if(split[0]=="MAP"){   //Map fertig geladen
                 if(split[1]=="DONE"){
                     qDebug() << "Map loaded";
                     emit onMapLoaded(true);
                 }
             }
-            else if (split[0] == "INFO") {
-                if (split[1] == "PRICE") {
+            else if (split[0] == "INFO") {  //Informationsübertragung
+                if (split[1] == "PRICE") {  //Preisinfo Bahnhof
                     qDebug() << "Price Info bekommen: " << split[2];
                     infoWidget->setContentPreis(split[2]);
                 }
-                else if (split[1] == "STORE") {
+                else if (split[1] == "STORE") { //Lagerinfo Bahnhof
                     qDebug() << "Store Info bekommen: " << split[2];
                     infoWidget->setContentLager(split[2]);
                 }
             }
-            else if(split[0] == "MONEY"){
+            else if(split[0] == "MONEY"){   //Geldupdate
                 dataModel->updateBalance(split[1].toInt());
             }
-            else if (split[0]=="ROUTES") {
+            else if (split[0]=="ROUTES") {  //Liste aller Spielerrouten
                 qDebug() << "Angekommen!";
                 emit sendRouteString(splitPointer);
             }
-            else if(split[0]=="TIME" && split.length()==2){
+            else if(split[0]=="TIME" && split.length()==2){ //Zeitübermittlung
                 dataModel->setTime(split[1].toInt());
             }
             else if(split[0] == "ROUTE" && split.length()==4){  //Starte Animation
@@ -195,12 +187,13 @@ void Client::processCommand(QString cmd){
                 qDebug() << "Route mit folgender ID wird nicht mehr wiederholt: " << split[2];
                 mapRenderer->deleteAnimationId(split[2].toInt());
             }
-            else if(split[0] == "SYNC"){
+            else if(split[0] == "SYNC"){    //Synchronisiere mit Server
+                qDebug() << "SYNC Befehl erhalten.";
             }
             else{
                 qDebug() << "Nicht verstanden:";
                 for(int i = 0; i<split.length(); i++){
-                qDebug() << split[i];
+                    qDebug() << split[i];
                 }
             }
 
@@ -220,10 +213,8 @@ void Client::processCommand(QString cmd){
  * @param pX Der X-Index.
  * @param pY Der Y-Index.
  */
-void Client::onPositionChange(int pX, int pY){
-    //qDebug() << QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY) + "~").toLocal8Bit();
+void Client::onPositionChange(int pX, int pY) {
     socket->write(QString::fromStdString("POS " + std::to_string(pX) + " " + std::to_string(pY) + "~").toLocal8Bit());
-    //socket->flush();
 }
 
 /**
@@ -263,8 +254,7 @@ void Client::onLeftclick(){
 /**
  * @brief Client::onRightclick Führt einen Rechtsklick durch
  */
-void Client::onRightclick()
-{
+void Client::onRightclick() {
     socket->write(QString::fromStdString("BUILD INTERACT " + std::to_string(dataModel->getHoverX()) + " " + std::to_string(dataModel->getHoverY()) + "~").toLocal8Bit());
     socket->flush();
 }
