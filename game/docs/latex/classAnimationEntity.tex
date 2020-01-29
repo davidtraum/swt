@@ -6,7 +6,8 @@
 
 
 
-Zusammengehörigkeiten von Animation\+Entity\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Entity\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,6 +31,10 @@ double \mbox{\hyperlink{classAnimationEntity_a1c0ea4c96d31efc6b5b40c3150113061}{
 \item 
 void \mbox{\hyperlink{classAnimationEntity_adf453b23baf39c44a6ee36f1b9899e0d}{set\+Position}} (int, int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_adf453b23baf39c44a6ee36f1b9899e0d}{Animation\+Entity\+::set\+Position}} Setzt die Position des Elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0}{set\+Scale}} (double)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0}{Animation\+Entity\+::set\+Scale}} Setzt die Skalierung der Grafik. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c}{get\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c}{Animation\+Entity\+::get\+Scale}} Liefert den Skalierungsfaktor. \end{DoxyCompactList}\item 
 Q\+Image $\ast$ \mbox{\hyperlink{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}{get\+Image}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationEntity_a930b6719a582b492c58a6625eeab4ef2}{Animation\+Entity\+::get\+Image}} Liefert die Grafik des Animationselements. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classAnimationEntity_a44265778f36955ef1bdaf322bff386c9}{get\+Id}} ()
@@ -51,6 +56,8 @@ int \mbox{\hyperlink{classAnimationEntity_a3580c15e446ae2ee695f1c774cd3a4dd}{id}
 double \mbox{\hyperlink{classAnimationEntity_a5510cf88e10b6a23d60e964f27840afe}{x}} \{0\}
 \item 
 double \mbox{\hyperlink{classAnimationEntity_a625e15c96b5464603f9b3fe52c8c2613}{y}} \{0\}
+\item 
+double \mbox{\hyperlink{classAnimationEntity_a4696dc0b5db530f4e42f2cc9f84ce0c2}{scale}}
 \end{DoxyCompactItemize}
 
 
@@ -129,6 +136,24 @@ Ein Q\+Image.
 \begin{DoxyReturn}{Rückgabe}
 Die Position als \mbox{\hyperlink{classPoint}{Point}}. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c}\label{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c}} 
+\index{AnimationEntity@{AnimationEntity}!getScale@{getScale}}
+\index{getScale@{getScale}!AnimationEntity@{AnimationEntity}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily double Animation\+Entity\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c}{Animation\+Entity\+::get\+Scale}} Liefert den Skalierungsfaktor. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationEntity_a2a7865731ba20b0922afeb73e0c93b0c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classAnimationEntity_af9863fe8cb62e7345d4e78600eef71b7}\label{classAnimationEntity_af9863fe8cb62e7345d4e78600eef71b7}} 
 \index{AnimationEntity@{AnimationEntity}!getX@{getX}}
 \index{getX@{getX}!AnimationEntity@{AnimationEntity}}
@@ -196,6 +221,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \includegraphics[width=350pt]{classAnimationEntity_adf453b23baf39c44a6ee36f1b9899e0d_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0}\label{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0}} 
+\index{AnimationEntity@{AnimationEntity}!setScale@{setScale}}
+\index{setScale@{setScale}!AnimationEntity@{AnimationEntity}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Animation\+Entity\+::set\+Scale (\begin{DoxyParamCaption}\item[{double}]{p\+Scale }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0}{Animation\+Entity\+::set\+Scale}} Setzt die Skalierung der Grafik. 
+
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimationEntity_a91db2be2aa8484356f39c0ffeae482e0_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Dokumentation der Datenelemente}
@@ -222,6 +265,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{rotation@{rotation}!AnimationEntity@{AnimationEntity}}
 \doxysubsubsection{\texorpdfstring{rotation}{rotation}}
 {\footnotesize\ttfamily int Animation\+Entity\+::rotation \{0\}}
+
+\mbox{\Hypertarget{classAnimationEntity_a4696dc0b5db530f4e42f2cc9f84ce0c2}\label{classAnimationEntity_a4696dc0b5db530f4e42f2cc9f84ce0c2}} 
+\index{AnimationEntity@{AnimationEntity}!scale@{scale}}
+\index{scale@{scale}!AnimationEntity@{AnimationEntity}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily double Animation\+Entity\+::scale\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classAnimationEntity_a5510cf88e10b6a23d60e964f27840afe}\label{classAnimationEntity_a5510cf88e10b6a23d60e964f27840afe}} 
 \index{AnimationEntity@{AnimationEntity}!x@{x}}

@@ -21,6 +21,8 @@ public:
     void setAutoRotate(bool);
     void setEmitChanges(bool);
     void pauseSteps(int);
+    bool isTrain{false};
+    int moveCount{0};
 
 private:
     void calculateVector(Point origin, Point target);

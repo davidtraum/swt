@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Animation\+Movement\+:\nopagebreak
+Klassendiagramm für Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Animation\+Movement\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Animation\+Movement\+:\nopagebreak
+Zusammengehörigkeiten von Animation\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -48,6 +50,13 @@ void \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_ac08c2750866d7ed93bcede356626883b}{Animation\+Movement\+::set\+Emit\+Changes}} Setzt ob jede Punktänderung emitted wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationMovement_a296515672535ad2a568c9f33028a3706}{pause\+Steps}} (int)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAnimationMovement_a296515672535ad2a568c9f33028a3706}{Animation\+Movement\+::pause\+Steps}} Die Anzahl der zu überspringenden Schritte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Öffentliche Attribute}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAnimationMovement_a114f0a3795581ab9438242ce129fac98}{is\+Train}} \{false\}
+\item 
+int \mbox{\hyperlink{classAnimationMovement_a690913ed28057b463c4a6a136592559c}{move\+Count}} \{0\}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Methoden}
 \begin{DoxyCompactItemize}
 \item 
@@ -360,11 +369,23 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{emitChanges}{emitChanges}}
 {\footnotesize\ttfamily bool Animation\+Movement\+::emit\+Changes \{false\}\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classAnimationMovement_a114f0a3795581ab9438242ce129fac98}\label{classAnimationMovement_a114f0a3795581ab9438242ce129fac98}} 
+\index{AnimationMovement@{AnimationMovement}!isTrain@{isTrain}}
+\index{isTrain@{isTrain}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{isTrain}{isTrain}}
+{\footnotesize\ttfamily bool Animation\+Movement\+::is\+Train \{false\}}
+
 \mbox{\Hypertarget{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}\label{classAnimationMovement_aed8f02f150d63181d6cf43ccf72d16a3}} 
 \index{AnimationMovement@{AnimationMovement}!item@{item}}
 \index{item@{item}!AnimationMovement@{AnimationMovement}}
 \doxysubsubsection{\texorpdfstring{item}{item}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classAnimationEntity}{Animation\+Entity}}$\ast$ Animation\+Movement\+::item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnimationMovement_a690913ed28057b463c4a6a136592559c}\label{classAnimationMovement_a690913ed28057b463c4a6a136592559c}} 
+\index{AnimationMovement@{AnimationMovement}!moveCount@{moveCount}}
+\index{moveCount@{moveCount}!AnimationMovement@{AnimationMovement}}
+\doxysubsubsection{\texorpdfstring{moveCount}{moveCount}}
+{\footnotesize\ttfamily int Animation\+Movement\+::move\+Count \{0\}}
 
 \mbox{\Hypertarget{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}\label{classAnimationMovement_ab88e8417e874473764bfdb1d17c21e3d}} 
 \index{AnimationMovement@{AnimationMovement}!path@{path}}

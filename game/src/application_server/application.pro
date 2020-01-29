@@ -38,6 +38,7 @@ SOURCES += \
     renderthread.cpp \
     routeinterface.cpp \
     routelistinterface.cpp \
+    scaleanimation.cpp \
     scene.cpp \
     sidepanel.cpp \
     sprite.cpp \
@@ -69,6 +70,7 @@ HEADERS += \
     renderthread.h \
     routeinterface.h \
     routelistinterface.h \
+    scaleanimation.h \
     scene.h \
     sidepanel.h \
     sprite.h \

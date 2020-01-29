@@ -14,6 +14,7 @@
 #include "point.h"
 #include "animationmovement.h"
 #include "sprite.h"
+#include "scaleanimation.h"
 
 class MapRenderer: public QWidget
 {
@@ -76,6 +77,7 @@ private:
     double scale{1};
     bool showExpertDetails{false};
     QList<AnimationMovement *> movementAnimations;
+    QList<ScaleAnimation *> scaleAnimations;
     long lastFpsTake{0};
     int frameCount{0};
     int ticksSkipped{0};

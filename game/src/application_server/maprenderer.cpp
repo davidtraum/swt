@@ -23,10 +23,6 @@ MapRenderer::MapRenderer(GraphicsManager * pGraphicsManager, DataModel * pDataMo
         }
     }
 
-    data[150][150].setType(MapTile::DEPOT_H);
-    data[150][151].setType(MapTile::STATION_H);
-    data[150][152].setType(MapTile::TERMINAL_H);
-
     QWidget::setMouseTracking(true);
     QWidget::setFocusPolicy(Qt::FocusPolicy::StrongFocus);
     QWidget::setFocus();
@@ -96,6 +92,25 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                 painter->drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
             }
     }
+    for(ScaleAnimation * anim : scaleAnimations){
+        Point pos = anim->entity->getPosition();
+        pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
+        painter->setOpacity((1-(anim->entity->getScale()/anim->end))+0.1);
+        if(anim->entity->rotation > 0){
+            painter->save();
+            painter->translate(pos.getX()+halfSize, pos.getY()+halfSize);
+            painter->rotate(anim->entity->rotation);
+            painter->drawImage(-halfSize,-halfSize, anim->entity->getImage()->scaled(int(anim->entity->getImage()->width()*anim->entity->getScale()),                                                                                int(anim->entity->getImage()->height()*anim->entity->getScale())));
+            painter->restore();
+        }else{
+            painter->drawImage(pos.getX()+ ((anim->entity->getImage()->width() * anim->end) * (1-(anim->entity->getScale()/anim->end))) * 0.5,
+                               pos.getY() + ((anim->entity->getImage()->height() * anim->end) * (1-(anim->entity->getScale()/anim->end))) * 0.5,
+                               anim->entity->getImage()->scaled(int(anim->entity->getImage()->width()*anim->entity->getScale()),
+                                                                                        int(anim->entity->getImage()->height()*anim->entity->getScale())));
+        }
+        painter->setOpacity(1);
+    }
+
     Point pos = toScreenPosition(activeTile.getX(), activeTile.getY());
     if(showHighlight){
         painter->drawRect(pos.getX(), pos.getY(), tileSize,tileSize);
@@ -137,7 +152,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
         painterReal.drawText(10, 70, "Possible FPS: " + QString::number(1000000/renderTime));
         painterReal.drawText(10, 85, "Index Position: " + QString::number(activeTile.getX()) + "/" + QString::number(activeTile.getY()));
         painterReal.drawText(10, 100, "Tiles drawn: " + QString::number((maxPos.getX() - minPos.getY()) * (maxPos.getY() - minPos.getY())));
-        painterReal.drawText(10, 115, "Active animations: " + QString::number(movementAnimations.length()));
+        painterReal.drawText(10, 115, "Active animations: " + QString::number(movementAnimations.length()+scaleAnimations.length()));
         painterReal.drawText(10, 130, "Scale: " + QString::number(scale) + "x");
     }
 
@@ -323,14 +338,29 @@ void MapRenderer::tick()
 void MapRenderer::logicUpdate()
 {
     //testSprite->step();
+    for(ScaleAnimation * anim : scaleAnimations) {
+        if(anim->step()){
+            scaleAnimations.removeOne(anim);
+            //delete anim;
+            break;
+        }
+    }
     for(AnimationMovement * anim : movementAnimations){
         if(anim->move()){
             movementAnimations.removeOne(anim);
             delete anim;
             break;
         }else{
-            Point pos = anim->getEntity()->getPosition();
-            pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
+            if(anim->isTrain){
+                if(anim->moveCount > 20) {
+                    AnimationEntity * entity = new AnimationEntity(new QImage(":/images/cloud/smoke.png"), int(anim->getEntity()->getX()-64),int(anim->getEntity()->getY()-64));
+                    ScaleAnimation * scale = new ScaleAnimation(entity, 0, 1, 0.005+((rand()%100)/100.0)*0.005);
+                    scaleAnimations.push_back(scale);
+                    anim->moveCount = 0;
+                }else{
+                    anim->moveCount++;
+                }
+            }
         }
     }
     if(moveStepsLeft>0){
@@ -586,6 +616,7 @@ void MapRenderer::setViewportTilePosition(int px, int py)
 void MapRenderer::animateMovementTracked(QImage img, QString path, int id)
 {
     AnimationMovement * anim = new AnimationMovement(new AnimationEntity(new QImage(img), id), path);
+    anim->isTrain = true;
     anim->setEmitChanges(true);
     connect(anim, &AnimationMovement::reachedPoint, this, &MapRenderer::handleReachedPoint);
     movementAnimations.push_back(anim);

@@ -59,6 +59,21 @@ void AnimationEntity::setPosition(int px, int py)
 }
 
 /**
+ * @brief AnimationEntity::setScale Setzt die Skalierung der Grafik.
+ */
+void AnimationEntity::setScale(double pScale)
+{
+    scale = pScale;
+}
+
+/**
+ * @brief AnimationEntity::getScale Liefert den Skalierungsfaktor.
+ */
+double AnimationEntity::getScale(){
+    return scale;
+}
+
+/**
  * @brief AnimationEntity::getImage Liefert die Grafik des Animationselements.
  * @return Ein QImage.
  */

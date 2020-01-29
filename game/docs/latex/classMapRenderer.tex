@@ -6,7 +6,8 @@
 
 
 
-Klassendiagramm für Map\+Renderer\+:\nopagebreak
+Klassendiagramm für Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Klassendiagramm für Map\+Renderer\+:\nopagebreak
 \end{figure}
 
 
-Zusammengehörigkeiten von Map\+Renderer\+:\nopagebreak
+Zusammengehörigkeiten von Map\+Renderer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -143,6 +145,8 @@ double \mbox{\hyperlink{classMapRenderer_a8ba34d6a402ea3c5e7173d768f2943b9}{scal
 bool \mbox{\hyperlink{classMapRenderer_ab180758afa832266b33d8aca5029f10a}{show\+Expert\+Details}} \{false\}
 \item 
 Q\+List$<$ \mbox{\hyperlink{classAnimationMovement}{Animation\+Movement}} $\ast$ $>$ \mbox{\hyperlink{classMapRenderer_ab3f1d2dfc928131d220574e69302202b}{movement\+Animations}}
+\item 
+Q\+List$<$ \mbox{\hyperlink{classScaleAnimation}{Scale\+Animation}} $\ast$ $>$ \mbox{\hyperlink{classMapRenderer_a1ac342f90e4e8604143a98511b53f42c}{scale\+Animations}}
 \item 
 long \mbox{\hyperlink{classMapRenderer_ab9fd15b49ae3ceb4e72556fe391a6099}{last\+Fps\+Take}} \{0\}
 \item 
@@ -522,7 +526,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 
 \mbox{\hyperlink{classMapRenderer_ae20163bc4a97f6f9b9894aa186143716}{Map\+Renderer\+::logic\+Update}} Führt einen Logikschritt durch (Animationen etc.) 
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -797,7 +802,8 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Map\+Renderer\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1003,6 +1009,12 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \index{scale@{scale}!MapRenderer@{MapRenderer}}
 \doxysubsubsection{\texorpdfstring{scale}{scale}}
 {\footnotesize\ttfamily double Map\+Renderer\+::scale \{1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMapRenderer_a1ac342f90e4e8604143a98511b53f42c}\label{classMapRenderer_a1ac342f90e4e8604143a98511b53f42c}} 
+\index{MapRenderer@{MapRenderer}!scaleAnimations@{scaleAnimations}}
+\index{scaleAnimations@{scaleAnimations}!MapRenderer@{MapRenderer}}
+\doxysubsubsection{\texorpdfstring{scaleAnimations}{scaleAnimations}}
+{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classScaleAnimation}{Scale\+Animation}} $\ast$$>$ Map\+Renderer\+::scale\+Animations\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classMapRenderer_ab9552161f6c5a6bbfc65f8e1232ca43e}\label{classMapRenderer_ab9552161f6c5a6bbfc65f8e1232ca43e}} 
 \index{MapRenderer@{MapRenderer}!scaleStepsLeft@{scaleStepsLeft}}
