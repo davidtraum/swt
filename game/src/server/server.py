@@ -431,7 +431,7 @@ class ClientThread(Thread):
 
     #Sendet den Text pText als Befehl an den Client. Befehlteile werden mit "+" voneinander getrennt
     def send(self, pText):
-        self.connection.send(bytes([0,0,0,0,0,0,255, len(pText)]))
+        self.connection.send(bytes([0,0,0,0,255, len(pText)]))
         self.connection.sendall(pText.encode())
         #print("An Client gesendet: " + 'CMD+' + pText + '~')    #Testausgabe
 

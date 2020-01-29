@@ -92,6 +92,7 @@ void MapRenderer::paintEvent(QPaintEvent *event)
                 painter->drawImage(pos.getX(), pos.getY(), *anim->getEntity()->getImage());
             }
     }
+
     for(ScaleAnimation * anim : scaleAnimations){
         Point pos = anim->entity->getPosition();
         pos.set((pos.getX() - offset.getX()), (pos.getY() - offset.getY()));
@@ -354,7 +355,7 @@ void MapRenderer::logicUpdate()
             if(anim->isTrain){
                 if(anim->moveCount > 20) {
                     AnimationEntity * entity = new AnimationEntity(new QImage(":/images/cloud/smoke.png"), int(anim->getEntity()->getX()-64),int(anim->getEntity()->getY()-64));
-                    ScaleAnimation * scale = new ScaleAnimation(entity, 0, 1, 0.005+((rand()%100)/100.0)*0.005);
+                    ScaleAnimation * scale = new ScaleAnimation(entity, 0, 10, 0.005+((rand()%100)/100.0)*0.005);
                     scaleAnimations.push_back(scale);
                     anim->moveCount = 0;
                 }else{
